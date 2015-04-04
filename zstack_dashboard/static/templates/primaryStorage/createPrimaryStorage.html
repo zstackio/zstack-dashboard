@@ -1,0 +1,73 @@
+<div kendo-window="winCreatePrimaryStorage__" k-visible="false" k-options="winCreatePrimaryStorageOptions__">
+    <div class="row">
+        <div class="col-sm-15">
+            <div class="tab-content">
+                <div id="createPrimaryStorageInfo" class="tab-pane active">
+                    <div class="alert alert-warning col-sm-21" ng-show="!infoPage.hasZone()">
+                        No zone has been created. Please go to <a href="/#/zone">zone page</a> to create a new one.
+                    </div>
+
+                    <h4 class="z-win-h4">CREATE PRIMARY STORAGE</h4>
+                    <form class="form" id="formCreate">
+                        <div class="form-group col-sm-24">
+                            <label for="zone">ZONE</label>
+                            <select id="zone" kendo-drop-down-list k-options="zoneList" class="z-win-dropdown" ng-model="infoPage.zoneUuid"></select>
+                            <p class="z-hint">(Required) select zone where the Primary Storage is being created</p>
+                        </div>
+                        <div class="form-group col-sm-21">
+                            <label for="name">NAME</label>
+                            <input class="form-control" type="text" id="name" placeholder="(Required) max length of 255 characters" ng-model="infoPage.name" required data-message="name is required">
+                        </div>
+                        <div class="form-group col-sm-21">
+                            <label for="description">DESCRIPTION</label>
+                            <textarea  class="form-control" rows="5" id="description" placeholder="(Optional) max length of 2048 characters" ng-model="infoPage.description"></textarea>
+                        </div>
+                        <div class="form-group col-sm-24">
+                            <label for="type">TYPE</label>
+                            <select id="type" kendo-drop-down-list k-options="typeList" class="z-win-dropdown" ng-model="infoPage.type"></select>
+                            <p class="z-hint">(Required) select type of primary storage</p>
+                        </div>
+                        <div class="form-group col-sm-21">
+                            <label for="url" class="z-block-label">URL</label>
+                            <input id="url" type="text" ng-model="infoPage.url" class="form-control" placeholder="(Required) Url of primary storage">
+                            <p class="z-hint">(Required) for NFS primary storage, url is 'ip_or_dns_name:absolute_path', for example, '192.168.0.10:/primaryStorage'</p>
+                            <div class="alert alert-danger col-sm-21" ng-show="!infoPage.isUrlValid()">
+                                Not a valid NFS mount path. Valid mount path must be in format of ip_or_dns_name:absolute_path, '192.168.0.10:/primaryStorage'
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="createPrimaryStorageCluster" class="tab-pane">
+                    <div class="alert alert-warning col-sm-21" ng-show="!clusterPage.hasCluster()">
+                        No cluster is eligible to attach. Please click 'Add' button to proceed.
+                    </div>
+
+                    <h4 class="z-win-h4">ATTACH CLUSTER</h4>
+                    <form class="form">
+                        <div class="form-group col-sm-18">
+                            <label for="ps">CLUSTER</label>
+                            <select id="ps" kendo-multi-select="clusterList__" k-options="clusterListOptions__" class="z-win-dropdown"></select>
+                            <p class="z-hint">(Optional) select one or more cluster to attach. Or do it later after creating primary storage</p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="form-group col-sm-21">
+                    <button type="button" class="btn btn-default" ng-click="button.previousClick()" ng-disabled="!button.canPreviousProceed()">Previous</button>
+                    <button type="button" class="btn btn-primary" ng-disabled="!button.canNextProceed()" ng-click="button.nextClick()">{{button.nextButtonName()}}</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-7">
+            <div class="z-wizard-bar">
+                <ul class="nav">
+                    <li class="active"><a data-target="#createPrimaryStorageInfo" ng-click="button.pageClick('createPrimaryStorageInfo')">PRIMARY STORAGE INFO</a></li>
+                    <li ng-class="{disabled: !psPage.isActive()}"><a data-target="#createPrimaryStorageCluster" ng-click="button.pageClick('createPrimaryStorageCluster')">ATTACH CLUSTER</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>

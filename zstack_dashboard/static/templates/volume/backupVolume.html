@@ -1,0 +1,20 @@
+<div kendo-window="backupDataVolume__" k-options="backupDataVolumeOptions__" k-visible="false">
+    <div>
+        <div class="alert alert-warning col-sm-21" ng-show="!hasBackupStorage()">
+            No backup storage is eligible. If no backup storage has been added, please go to <a href="/#/backupStorage">backup storage page</a> to add a new one.
+            Or please attach an existing backup storage to the zone this data volume belongs to.
+        </div>
+
+        <h4 class="z-win-h4">BACKUP DATA VOLUME</h4>
+        <form class="form">
+            <div class="form-group col-sm-18">
+                <label for="ps">BACKUP STORAGE</label>
+                <select id="ps" kendo-drop-down-list="backupStorageList__" k-options="backupStorageOptions__" class="z-win-dropdown" ng-model="bsUuid"></select>
+            </div>
+            <div class="form-group col-lg-18">
+                <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+                <button type="button" class="btn btn-primary" ng-disabled="!canProceed()" ng-click="done()">Backup</button>
+            </div>
+        </form>
+    </div>
+</div>

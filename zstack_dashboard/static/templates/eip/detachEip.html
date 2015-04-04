@@ -1,0 +1,45 @@
+<div kendo-window="detachEip__" k-options="optionsDetachEip__" k-visible="false">
+    <div>
+        <h4 class="z-win-h4">DETACH EIP</h4>
+
+        <table class="table z-table-borderless">
+            <tr>
+                <td><span class="z-label">VM NAME:</span></td>
+                <td><span class="z-description">{{vm.name}}</span></td>
+            </tr>
+            <tr>
+                <td><span class="z-label">VM STATE:</span></td>
+                <td><span class="{{vmStateLabel()}}">{{vm.state}}</span></td>
+            </tr>
+            <tr>
+                <td><span class="z-label">VM HYPERVISOR:</span></td>
+                <td><span>{{vm.hypervisorType}}</span></td>
+            </tr>
+            <tr>
+                <td><span class="z-label">NIC DEVICE ID:</span></td>
+                <td><span>{{vm.nicDeviceId}}</span></td>
+            </tr>
+            <tr>
+                <td><span class="z-label">NIC MAC:</span></td>
+                <td><span>{{vm.nicMac}}</span></td>
+            </tr>
+            <tr>
+                <td><span class="z-label">NIC IP:</span></td>
+                <td><span>{{vm.nicIp}}</span></td>
+            </tr>
+            <tr>
+                <td><span class="z-label">NIC NETMASK:</span></td>
+                <td><span>{{vm.nicNetmask}}</span></td>
+            </tr>
+            <tr>
+                <td><span class="z-label">NIC GATEWAY:</span></td>
+                <td><span>{{vm.nicGateway}}</span></td>
+            </tr>
+        </table>
+
+        <p style="color: red" ng-show="!isVmInCorrectState()">Eip can only be detached when vm is Running or Stopped</p>
+
+        <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+        <button type="button" class="btn btn-danger" ng-disabled="!canProceed()" ng-click="done()">Detach</button>
+    </div>
+</div>

@@ -1,0 +1,213 @@
+<div style="display: none">
+    <div z-confirm="deletePortForwarding" z-options="optionsDeletePortForwarding"></div>
+    <div z-port-forwarding-attach-vm="attachPortForwarding" z-options="optionsAttachPortForwarding"></div>
+    <div z-port-forwarding-detach-vm="detachPortForwarding" z-options="optionsDetachPortForwarding"></div>
+</div>
+
+<div class="z-pane">
+    <ol class="breadcrumb">
+        <li><a href="/#/portForwarding">PORT FORWARDING</a></li>
+        <li class="active"><a href>{{model.current.name}}</a></li>
+    </ol>
+
+    <h1>{{model.current.name}}</h1>
+
+    <div class="z-pane-toolbar" ng-show="funcToolbarShow()">
+        <div class="btn-group-sm">
+            <button type="button" class="btn btn-default btn-sm z-ribbon-button" ng-click="funcRefresh()">
+                <i class="fa fa-refresh"></i>
+            </button>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    Action <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">Enable</a></li>
+                    <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">Disable</a></li>
+                    <li><a href ng-click="action.attach()" ng-show="model.current.isAttachShow()">Attach</a></li>
+                    <li><a href ng-click="action.detach()" ng-show="model.current.isDetachShow()">Detach</a></li>
+                    <li class="divider"></li>
+                    <li><a href style="color:red" ng-click="funcDelete(deletePortForwarding)">Delete</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <ul class="nav nav-pills">
+        <li class="active"><a data-target="#info" data-toggle="pill" href>Info</a></li>
+        <li><a data-target="#vip" data-toggle="pill" href>VIP</a></li>
+        <li ng-show="nic != null"><a data-target="#nic" data-toggle="pill" href>Vm Nic</a></li>
+    </ul>
+
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="info">
+            <tags-input ng-model="optionsTag.tags" display-property="tag" min-length="1"
+                        on-tag-added="optionsTag.createTag($tag)" on-tag-removed="optionsTag.deleteTag($tag)"
+                        add-on-comma="false" replace-spaces-with-dashes="false" ng-show="optionsTag.isShow()"></tags-input>
+
+            <div class="panel panel-default" z-panel-header-in>
+                <div class="panel-heading">
+                    <a class="accordion-toggle" data-target="#infoDetails" data-toggle="collapse" href>
+                        <i class="z-collapse fa fa-chevron-down"></i>
+                        <span>&nbsp; DETAILS</span>
+                    </a>
+                </div>
+
+                <div id="infoDetails" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <table class="table z-table-borderless">
+                            <tr>
+                                <td><span class="z-label">DESCRIPTION:</span></td>
+                                <td><span class="z-description">{{model.current.description}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">STATE:</span></td>
+                                <td><span class="{{model.current.stateLabel()}}">{{model.current.state}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">VIP START PORT:</span></td>
+                                <td><span class="z-description">{{model.current.vipPortStart}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">VIP END PORT:</span></td>
+                                <td><span class="z-description">{{model.current.vipPortEnd}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">GUEST START PORT:</span></td>
+                                <td><span class="z-description">{{model.current.privatePortStart}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">GUEST END PORT:</span></td>
+                                <td><span class="z-description">{{model.current.privatePortEnd}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">ALLOWED CIDR:</span></td>
+                                <td><span class="z-description">{{model.current.allowedCidr}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">PROTOCOL:</span></td>
+                                <td><span class="z-description">{{model.current.protocolType}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">UUID:</span></td>
+                                <td><span>{{model.current.uuid}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">CREATED DATE:</span></td>
+                                <td><span>{{model.current.createDate}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">LAST UPDATED DATE:</span></td>
+                                <td><span>{{model.current.lastOpDate}}</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane" id="vip">
+            <table class="table z-table-borderless" style="margin-left: 10px">
+                <tr>
+                    <td><span class="z-label">NAME:</span></td>
+                    <td><span>{{vip.name}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">DESCRIPTION:</span></td>
+                    <td><span class="z-description">{{vip.description}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">STATE:</span></td>
+                    <td><span class="{{vip.stateLabel()}}">{{vip.state}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">IP:</span></td>
+                    <td><span>{{vip.ip}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">GATEWAY:</span></td>
+                    <td><span>{{vip.gateway}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">NETMASK:</span></td>
+                    <td><span>{{vip.netmask}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">USE:</span></td>
+                    <td><span>{{vip.useFor}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">SERVICE PROVIDER:</span></td>
+                    <td><span>{{vip.serviceProvider}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">L3 NETWORK UUID:</span></td>
+                    <td><a href="/#/l3Network/{{vip.l3NetworkUuid}}">{{vip.l3NetworkUuid}}</a></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">PEER L3 NETWORK UUID:</span></td>
+                    <td><a href="/#/l3Network/{{vip.peerL3NetworkUuid}}">{{vip.peerL3NetworkUuid}}</a></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">UUID:</span></td>
+                    <td><span><a href="/#/vip/{{vip.uuid}}">{{vip.uuid}}</a></span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">CREATED DATE:</span></td>
+                    <td><span>{{model.current.createDate}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">LAST UPDATED DATE:</span></td>
+                    <td><span>{{model.current.lastOpDate}}</span></td>
+                </tr>
+            </table>
+        </div>
+
+
+        <div class="tab-pane" id="nic">
+            <table class="table z-table-borderless">
+                <tr>
+                    <td><span class="z-label">IP:</span></td>
+                    <td><span>{{nic.ip}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">GATEWAY:</span></td>
+                    <td><span>{{nic.gateway}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">NETMASK:</span></td>
+                    <td><span>{{nic.netmask}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">MAC:</span></td>
+                    <td><span>{{nic.mac}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">DEVICE ID:</span></td>
+                    <td><span>{{nic.deviceId}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">L3 NETWORK UUID:</span></td>
+                    <td><a href="/#/l3Network/{{nic.l3NetworkUuid}}">{{nic.l3NetworkUuid}}</a></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">VM INSTANCE UUID:</span></td>
+                    <td><a href="/#/vmInstance/{{nic.vmInstanceUuid}}">{{nic.vmInstanceUuid}}</a></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">UUID:</span></td>
+                    <td><span>{{nic.uuid}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">CREATED DATE:</span></td>
+                    <td><span>{{nic.createDate}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">LAST UPDATED DATE:</span></td>
+                    <td><span>{{nic.lastOpDate}}</span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

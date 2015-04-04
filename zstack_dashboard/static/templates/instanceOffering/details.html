@@ -1,0 +1,97 @@
+<div style="display: none">
+    <div z-confirm="deleteInstanceOffering" z-options="optionsDeleteInstanceOffering"></div>
+</div>
+
+<div class="z-pane">
+    <ol class="breadcrumb">
+        <li><a href="/#/instanceOffering">Instance Offering</a></li>
+        <li class="active"><a href>{{model.current.name}}</a></li>
+    </ol>
+
+    <h1>{{model.current.name}}</h1>
+
+    <div class="z-pane-toolbar" ng-show="funcToolbarShow()">
+        <div class="btn-group-sm">
+            <button type="button" class="btn btn-default btn-sm z-ribbon-button" ng-click="funcRefresh()">
+                <i class="fa fa-refresh"></i>
+            </button>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    Action <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">Enable</a></li>
+                    <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">Disable</a></li>
+                    <li class="divider"></li>
+                    <li><a href style="color:red" ng-click="funcDelete(deleteInstanceOffering)">Delete</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <ul class="nav nav-pills">
+        <li class="active"><a data-target="#info" data-toggle="pill" href>Info</a></li>
+    </ul>
+
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="info">
+            <tags-input ng-model="optionsTag.tags" display-property="tag" min-length="1"
+                        on-tag-added="optionsTag.createTag($tag)" on-tag-removed="optionsTag.deleteTag($tag)"
+                        add-on-comma="false" replace-spaces-with-dashes="false" ng-show="optionsTag.isShow()"></tags-input>
+
+            <div class="panel panel-default" z-panel-header-in>
+                <div class="panel-heading">
+                    <a class="accordion-toggle" data-target="#infoDetails" data-toggle="collapse" href>
+                        <i class="z-collapse fa fa-chevron-down"></i>
+                        <span>&nbsp; DETAILS</span>
+                    </a>
+                </div>
+
+                <div id="infoDetails" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <table class="table z-table-borderless">
+                            <tr>
+                                <td><span class="z-label">DESCRIPTION:</span></td>
+                                <td><span class="z-description">{{model.current.description}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">STATE:</span></td>
+                                <td><span class="{{model.current.stateLabel()}}">{{model.current.state}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">CPU NUMBER:</span></td>
+                                <td><span>{{model.current.cpuNum}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">CPU SPEED:</span></td>
+                                <td><span>{{model.current.cpuSpeed}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">MEMORY:</span></td>
+                                <td><span>{{model.current.memorySize | size}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">ALLOCATOR STRATEGY:</span></td>
+                                <td><span>{{model.current.allocatorStrategy}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">UUID:</span></td>
+                                <td><span>{{model.current.uuid}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">CREATED DATE:</span></td>
+                                <td><span>{{model.current.createDate}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">LAST UPDATED DATE:</span></td>
+                                <td><span>{{model.current.lastOpDate}}</span></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

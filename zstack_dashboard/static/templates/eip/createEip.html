@@ -1,0 +1,92 @@
+<div kendo-window="winCreateEip__" k-visible="false" k-options="winCreateEipOptions__">
+    <div class="row">
+        <div class="col-sm-15">
+            <div class="tab-content">
+                <div id="createEipVip" class="tab-pane active">
+                    <div class="alert alert-warning col-sm-21" ng-show="!vipPage.hasL3Network() && vipPage.method == 'new'">
+                        No L3 network has been created. Please go to <a href="/#/l3Network">L3 network page</a> to create a new one.
+                    </div>
+
+                    <div class="alert alert-warning col-sm-21" ng-show="!vipPage.hasVip() && vipPage.method == 'existing'">
+                        No VIP has been created, please change VIP METHOD to 'Create New VIP' to create a new one.
+                    </div>
+
+                    <h4 class="z-win-h4">SELECT VIP</h4>
+                    <form class="form" id="vipForm">
+                        <div class="form-group col-sm-24">
+                            <label for="method">VIP METHOD</label>
+                            <select id="method" ng-disabled="vipPage.vip != null" kendo-drop-down-list k-options="vipMethodOptions__" class="z-win-dropdown" ng-model="vipPage.method"></select>
+                            <p class="z-hint">Choose to use an existing VIP or create a new one</p>
+                        </div>
+
+                        <div class="form-group col-sm-24" ng-show="vipPage.method == 'existing'">
+                            <label for="cvip">VIP</label>
+                            <select id="cvip" kendo-combo-box k-options="vipListOptions__" class="z-win-dropdown" ng-model="vipPage.vipUuid"></select>
+                            <p class="z-hint">(Required) Select a VIP for creating EIP</p>
+                        </div>
+
+                        <div class="form-group col-sm-24" ng-show="vipPage.method == 'new'">
+                            <label for="l3nw">L3 NETWORK</label>
+                            <select id="l3nw" kendo-drop-down-list k-options="l3NetworkListOptions__" class="z-win-dropdown" ng-model="vipPage.l3NetworkUuid"></select>
+                            <p class="z-hint">(Required) L3 network from which this VIP is being allocated</p>
+                        </div>
+
+                        <div class="form-group col-sm-24" ng-show="vipPage.method == 'new' && vipPage.isVipCreating">
+                            <img src="static/img/ajax-loader.gif" width="17px" height="17px">
+                            <span class="z-label">Creating new VIP ...</span>
+                        </div>
+
+                        <div class="form-group col-sm-24" ng-show="vipPage.method == 'new' && vipPage.vip != null">
+                            <label for="cvip">VIP</label>
+                            <p><strong>{{vipPage.vip.ip}}</strong></p>
+                        </div>
+
+                        <div class="form-group col-sm-6" ng-show="vipPage.method == 'new'">
+                            <button type="button" class="btn btn-default" ng-click="vipPage.create()" ng-disabled="!vipPage.canCreate()">
+                                <i class="fa fa-plus" style="font-size: 1.2em"></i>
+                                <span>Create VIP</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="createEipInfo" class="tab-pane">
+                    <div class="alert alert-warning col-sm-21" ng-show="!infoPage.hasVm()">
+                        No vm instance is eligible to attach. Please fill out 'NAME' field and click 'Create' button to proceed.
+                    </div>
+
+                    <h4 class="z-win-h4">EIP INFO</h4>
+                    <form class="form" id="formCreate">
+                        <div class="form-group col-sm-24">
+                            <label for="nic">VM INSTANCE</label>
+                            <select id="nic" kendo-combo-box k-options="vmListOptions__" k-placeholder="'Select VM Instance'" class="z-win-dropdown" ng-model="infoPage.vmNicUuid"></select>
+                            <p class="z-hint">(Optional) Select vm instance to bind the eip. If vm has multiple nics, each nic will be listed as separate item. Or you can attach an EIP to vm after creating</p>
+                        </div>
+                        <div class="form-group col-sm-21">
+                            <label for="name">NAME</label>
+                            <input class="form-control" type="text" id="name" placeholder="(Required) max length of 255 characters" ng-model="infoPage.name" required data-message="name is required">
+                        </div>
+                        <div class="form-group col-sm-21">
+                            <label for="description">DESCRIPTION</label>
+                            <textarea  class="form-control" rows="5" id="description" placeholder="(Optional) max length of 2048 characters" ng-model="infoPage.description"></textarea>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="form-group col-sm-21">
+                    <button type="button" class="btn btn-primary" ng-disabled="!button.canNextProceed()" ng-click="button.nextClick()">{{button.nextButtonName()}}</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-7">
+            <div class="z-wizard-bar">
+                <ul class="nav">
+                    <li class="active"><a data-target="#createEipVip" ng-click="button.pageClick('createEipVip')">SELECT VIP</a></li>
+                    <li><a data-target="#createEipInfo" ng-click="button.pageClick('createEipInfo')">EIP INFO</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>

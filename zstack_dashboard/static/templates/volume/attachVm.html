@@ -1,0 +1,20 @@
+<div kendo-window="attachVmInstance__" k-visible="false">
+    <div>
+        <div class="alert alert-warning col-sm-21" ng-show="!hasVm()">
+            No vm instance has been created. Please go to <a href="/#/vmInstance">vm instance page</a> to create a new one.
+        </div>
+
+        <h4 class="z-win-h4">ATTACH VM INSTANCE</h4>
+        <form class="form">
+            <div class="form-group col-sm-18">
+                <label for="ps">VM INSTANCE</label>
+                <select id="ps" kendo-drop-down-list k-options="vmInstanceListOptions__" class="z-win-dropdown"></select>
+                <p class="z-hint">(Required) only vm that is Running or Stopped are listed here</p>
+            </div>
+            <div class="form-group col-lg-18">
+                <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+                <button type="button" class="btn btn-primary" ng-disabled="!canProceed()" ng-click="done()">Attach</button>
+            </div>
+        </form>
+    </div>
+</div>

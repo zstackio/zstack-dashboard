@@ -1,0 +1,106 @@
+<div kendo-window="winCreateVmInstance__" k-visible="false" k-options="winCreateVmInstanceOptions__">
+    <div class="row">
+        <div class="col-sm-15">
+            <div class="tab-content">
+                <div id="createVmInstanceInfo" class="tab-pane active">
+                    <div class="alert alert-warning col-sm-21" ng-show="!infoPage.hasImage()">
+                        No image is eligible to create vm. Eligible images are ones with state 'Enabled' and status 'Ready'.
+                    </div>
+                    <div class="alert alert-warning col-sm-21" ng-show="!infoPage.hasInstanceOffering()">
+                        No instance offering is eligible to create vm. Eligible instance offerings are ones with state 'Enabled'.
+                    </div>
+                    <div class="alert alert-warning col-sm-21" ng-show="!infoPage.hasL3Network()">
+                        No L3 network is eligible to create vm. Eligible L3 networks are ones with state 'Enabled'.
+                    </div>
+
+                    <h4 class="z-win-h4">VM INSTANCE INFO</h4>
+                    <form class="form">
+                        <div class="form-group col-sm-24">
+                            <label for="instOffering">INSTANCE OFFERING</label>
+                            <select id="instOffering" kendo-drop-down-list k-options="instanceOfferingOptions__" class="z-win-dropdown" ng-model="infoPage.instanceOfferingUuid"></select>
+                        </div>
+                        <div class="form-group col-sm-24">
+                            <label for="image">IMAGE</label>
+                            <select id="image" kendo-drop-down-list k-options="imageOptions__" class="z-win-dropdown" ng-model="infoPage.imageUuid"></select>
+                        </div>
+                        <div ng-switch="infoPage.imageMediaType">
+                            <div ng-switch-when="ISO">
+                                <div class="form-group col-sm-24">
+                                    <label for="rootDisk">ROOT VOLUME DISK OFFERING</label>
+                                    <select id="rootDisk" kendo-drop-down-list="rootDiskOfferingList__" k-options="rootDiskOfferingOptions__" class="z-win-dropdown" ng-model="infoPage.rootDiskOfferingUuid"></select>
+                                    <p class="z-hint">(Required) select disk offering to create root volume for installing guest OS from the ISO image</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-24">
+                            <label for="l3">L3 NETWORK</label>
+                            <select id="l3" kendo-multi-select="l3NetworkList__" k-options="l3NetworkOptions__" class="z-win-dropdown"></select>
+                            <p class="z-hint">(Required) select one or more l3Networks on which vm will have nics</p>
+                        </div>
+                        <div class="form-group col-sm-24" ng-show="infoPage.l3NetworkUuids.length > 1">
+                            <label for="dl3">DEFAULT L3 NETWORK</label>
+                            <select id="dl3" kendo-drop-down-list="defaultL3NetworkList__" k-options="defaultL3NetworkOptions__" class="z-win-dropdown" ng-model="infoPage.defaultL3NetworkUuid"></select>
+                            <p class="z-hint">(Required) select a default L3 network which provides default route and DNS to VM</p>
+                        </div>
+                        <div class="form-group col-sm-24">
+                            <label for="diskOffering">DATA DISK OFFERING</label>
+                            <select id="diskOffering" kendo-multi-select="diskOfferingList__" k-options="diskOfferingOptions__" class="z-win-dropdown"></select>
+                            <p class="z-hint">(Optional) select one or more data disk offering which will be used to create vm's data disks</p>
+                        </div>
+                        <div class="form-group col-sm-24">
+                            <label for="name">NAME</label>
+                            <input class="form-control z-win-input" type="text" id="name" placeholder="(Required) max length of 255 characters" ng-model="infoPage.name" required data-message="name is required">
+                        </div>
+                        <div class="form-group col-sm-24">
+                            <label for="hostname">HOST NAME</label>
+                            <input class="form-control z-win-input" type="text" id="hostname" placeholder="(Optional) hostname on default L3 network" ng-model="infoPage.hostname">
+                            <p class="z-hint">For VM that has only one L3 network, the only L3 network is the default L3 network</p>
+                        </div>
+                        <div class="form-group col-sm-24">
+                            <label for="description">DESCRIPTION</label>
+                            <textarea  class="form-control z-win-input" rows="5" id="description" placeholder="(Optional) max length of 2048 characters" ng-model="infoPage.description"></textarea>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="createVmInstanceLocation" class="tab-pane">
+                    <h4 class="z-win-h4">SELECT LOCATION</h4>
+                    <form class="form">
+                        <div class="form-group col-sm-18">
+                            <label for="zone">ZONE</label>
+                            <select id="zone" kendo-combo-box k-options="zoneOptions__" k-placeholder="'Select Zone'" class="z-win-dropdown" k-ng-model="locationPage.zoneUuid"></select>
+                        </div>
+
+                        <div class="form-group col-sm-18">
+                            <label for="cluster">CLUSTER</label>
+                            <select id="cluster" kendo-combo-box k-options="clusterOptions__" k-placeholder="'Select Cluster'" class="z-win-dropdown" k-ng-model="locationPage.clusterUuid"></select>
+                        </div>
+
+                        <div class="form-group col-sm-18">
+                            <label for="host">HOST</label>
+                            <select id="host" kendo-combo-box k-options="hostOptions__" k-placeholder="'Select Host'" class="z-win-dropdown" k-ng-model="locationPage.hostUuid"></select>
+                        </div>
+                    </form>
+
+                    <div class="col-sm-18" style="margin-bottom: 10px">
+                        <span class="z-hint">(Optional) Specify location to create the vm. The precedence is host over cluster over zone. If no location is specified, a target host is automatically chosen by using allocator strategy defined in instance offering</span>
+                    </div>
+
+                </div>
+
+                <div class="form-group col-sm-18">
+                    <button type="button" class="btn btn-default" ng-click="button.previousClick()" ng-disabled="!button.canPreviousProceed()">Previous</button>
+                    <button type="button" class="btn btn-primary" ng-disabled="!button.canNextProceed()" ng-click="button.nextClick()">{{button.nextButtonName()}}</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-7 z-wizard-bar">
+            <ul class="nav">
+                <li class="active"><a data-target="#createVmInstanceInfo" ng-click="button.pageClick('createVmInstanceInfo')">VM INSTANCE INFO</a></li>
+                <li ng-class="{disabled: !psPage.isActive()}"><a data-target="#createVmInstanceLocation" ng-click="button.pageClick('createVmInstanceLocation')">LOCATION</a></li>
+            </ul>
+        </div>
+
+    </div>
+</div>

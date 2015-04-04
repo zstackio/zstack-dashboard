@@ -1,0 +1,209 @@
+<div kendo-window="winCreateL3Network__" k-visible="false" k-options="winCreateL3NetworkOptions__">
+    <div class="row">
+        <div class="col-sm-15">
+            <div class="tab-content">
+                <div id="createL3NetworkInfo" class="tab-pane active">
+                    <div class="alert alert-warning col-sm-21" ng-show="!infoPage.hasL2Network()">
+                        No L2 network has been created. Please go to <a href="/#/l2Network">L2 network page</a> to create a new one.
+                    </div>
+
+                    <h4 class="z-win-h4">CREATE L3 NETWORK</h4>
+                    <form class="form" id="formCreate">
+                        <div class="form-group col-sm-24">
+                            <label for="zone">ZONE</label>
+                            <select id="zone" kendo-drop-down-list k-options="optionsZoneList__" class="z-win-dropdown" ng-model="infoPage.zoneUuid"></select>
+                            <p class="z-hint">(Required) select zone where the l3Network is going to create</p>
+                        </div>
+                        <div class="form-group col-sm-24">
+                            <label for="l2">L2 NETWORK</label>
+                            <select id="l2" kendo-drop-down-list k-options="optionsL2NetworkList__" class="z-win-dropdown" ng-model="infoPage.l2NetworkUuid"></select>
+                            <p class="z-hint">(Required) select l2Network on which the l3Network is going to create</p>
+                        </div>
+                        <div class="form-group col-sm-18">
+                            <label for="name">NAME</label>
+                            <input class="form-control" type="text" id="name" placeholder="(Required) max length of 255 characters" ng-model="infoPage.name" required data-message="name is required">
+                        </div>
+                        <div class="form-group col-sm-18">
+                            <label for="description">DESCRIPTION</label>
+                            <textarea  class="form-control" rows="5" id="description" placeholder="(Optional) max length of 2048 characters" ng-model="infoPage.description"></textarea>
+                        </div>
+                        <div class="form-group col-sm-18">
+                            <label for="description">DOMAIN NAME</label>
+                            <input class="form-control" rows="5" id="domain" placeholder="(Optional) DNS domain name" ng-model="infoPage.dnsDomain"></textarea>
+                        </div>
+                        <div class="form-group col-sm-18">
+                            <label for="type">TYPE</label>
+                            <select id="type" kendo-drop-down-list k-options="optionsL3NetworkTypeList__" class="z-win-dropdown" ng-model="infoPage.type"></select>
+                            <p class="z-hint">(Required) select type of l3Network</p>
+                        </div>
+                        <div class="form-group col-sm-18">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" ng-model="infoPage.system"> <strong>SYSTEM NETWORK</strong>
+                                </label>
+                            </div>
+                            <p class="z-hint">(Optional) if checked, the network will be created as system network from which user vm cannot create</p>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="createL3NetworkIpRange" class="tab-pane">
+                    <h4 class="z-win-h4">ADD IP RANGE</h4>
+                    <form class="form" id="iprange">
+                        <div class="form-group col-sm-21">
+                            <label for="iprangeName">NAME</label>
+                            <input class="form-control" type="text" id="ipRangeName" placeholder="(Required) max of 255 characters" ng-model="ipRangePage.name">
+                        </div>
+                        <div class="form-group col-sm-21">
+                            <label for="idesc">DESCRIPTION</label>
+                            <textarea  class="form-control" rows="5" id="idesc" placeholder="(Optional) max length of 2048 characters" ng-model="ipRangePage.description"></textarea>
+                        </div>
+                        <div class="form-group col-sm-21">
+                            <label for="method">METHOD</label>
+                            <select id="method" kendo-drop-down-list k-options="methodOptions__" class="z-win-dropdown" ng-model="ipRangePage.method"></select>
+                            <p class="z-hint">Choose using CIDR or IP range</p>
+                        </div>
+
+                        <div ng-switch="ipRangePage.method">
+                            <div ng-switch-when="range">
+                                <div class="form-group col-sm-21">
+                                    <label for="sip">START IP</label>
+                                    <input class="form-control" type="text" id="sip" placeholder="(Required) IP range start" ng-model="ipRangePage.startIp">
+                                    <div class="alert alert-danger col-sm-21" ng-show="!ipRangePage.isStartIpValid()">
+                                        Not a valid IPv4 address
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-21">
+                                    <label for="eip">END IP</label>
+                                    <input class="form-control" type="text" id="eip" placeholder="(Required) IP range end" ng-model="ipRangePage.endIp">
+                                    <div class="alert alert-danger col-sm-21" ng-show="!ipRangePage.isEndIpValid()">
+                                        Not a valid IPv4 address
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-21">
+                                    <label for="netmask">NETMASK</label>
+                                    <input class="form-control" type="text" id="netmask" placeholder="(Required) netmask" ng-model="ipRangePage.netmask">
+                                    <div class="alert alert-danger col-sm-21" ng-show="!ipRangePage.isNetmaskValid()">
+                                        Not a valid IPv4 address
+                                    </div>
+                                </div>
+                                <div class="form-group col-sm-21">
+                                    <label for="gateway">GATEWAY</label>
+                                    <input class="form-control" type="text" id="gateway" placeholder="(Required) gateway" ng-model="ipRangePage.gateway">
+                                    <div class="alert alert-danger col-sm-21" ng-show="!ipRangePage.isGatewayValid()">
+                                        Not a valid IPv4 address
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-switch-when="cidr">
+                                <div class="form-group col-sm-21">
+                                    <label for="cidr">NETWORK CIDR</label>
+                                    <input class="form-control" type="text" id="cidr" placeholder="(Required) for example, 10.0.0.0/24" ng-model="ipRangePage.cidr">
+                                    <div class="alert alert-danger col-sm-18" ng-show="!ipRangePage.isCidrValid()">
+                                        Not a valid network CIDR. A valid CIDR is, for example, 10.0.0.0/24.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-sm-6">
+                            <button type="button" class="btn btn-default" ng-click="ipRangePage.add()" ng-disabled="!ipRangePage.canAdd()">
+                                <i class="fa fa-plus" style="font-size: 1.2em"></i>
+                                <span>Add</span>
+                            </button>
+                        </div>
+                    </form>
+
+                    <div ng-switch="ipRangePage.isGridShow()">
+                        <div ng-switch-when="false" class="col-sm-21">
+                            <p class="z-hint">You can add ip range now or do it later after creating l3 network</p>
+                        </div>
+                        <div ng-switch-when="true" class="col-sm-21">
+                            <div kendo-grid k-options="optionsIpRangeGrid__"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="createL3NetworkDns" class="tab-pane">
+                    <h4 class="z-win-h4">ADD DNS</h4>
+                    <form class="form">
+                        <div class="form-group col-sm-21">
+                            <label for="dns">DNS</label>
+                            <input class="form-control" type="text" id="dns" placeholder="(Required) IPv4 address of DNS server" ng-model="dnsPage.dns">
+                            <div class="alert alert-danger col-sm-21" ng-show="!dnsPage.isDnsValid()">
+                                Not a valid IPv4 address
+                            </div>
+                        </div>
+
+                        <div class="form-group col-sm-6">
+                            <button type="button" class="btn btn-default" ng-click="dnsPage.add()" ng-disabled="!dnsPage.canAdd()">
+                                <i class="fa fa-plus" style="font-size: 1.2em"></i>
+                                <span>Add</span>
+                            </button>
+                        </div>
+                    </form>
+
+                    <div ng-switch="dnsPage.isGridShow()">
+                        <div ng-switch-when="false" class="col-sm-21">
+                            <p class="z-hint">You can add DNS now or do it later after creating l3 network</p>
+                        </div>
+                        <div ng-switch-when="true" class="col-sm-21">
+                            <div kendo-grid k-options="optionsDnsGrid__"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="createL3NetworkService" class="tab-pane">
+                    <h4 class="z-win-h4">SELECT NETWORK SERVICE</h4>
+                    <form class="form">
+                        <div class="form-group col-sm-24">
+                            <label for="provider">PROVIDER</label>
+                            <select id="provider" kendo-drop-down-list k-options="optionsProviderList__" class="z-win-dropdown" ng-model="servicePage.providerUuid"></select>
+                            <p class="z-hint">(Required) select network service provider</p>
+                        </div>
+                        <div class="form-group col-sm-24">
+                            <label for="service">SERVICE</label>
+                            <select id="service" kendo-drop-down-list k-options="optionsServiceList__" class="z-win-dropdown" ng-model="servicePage.serviceType"></select>
+                            <p class="z-hint">(Required) select network service the l3Network is going to attach</p>
+                        </div>
+
+                        <div class="form-group col-sm-6">
+                            <button type="button" class="btn btn-default" ng-click="servicePage.add()" ng-disabled="!servicePage.canAdd()">
+                                <i class="fa fa-plus" style="font-size: 1.2em"></i>
+                                <span>Add</span>
+                            </button>
+                        </div>
+
+                        <div ng-switch="servicePage.isGridShow()">
+                            <div ng-switch-when="false" class="col-sm-21">
+                                <p class="z-hint">The network service must be selected now, otherwise the l3Network will be created without any network service enabled</p>
+                            </div>
+                            <div ng-switch-when="true" class="col-sm-21">
+                                <div kendo-grid k-options="optionsNetworkServiceGrid__"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="form-group col-sm-21" style="margin-top: 10px">
+                    <button type="button" class="btn btn-default" ng-click="button.previousClick()" ng-disabled="!button.canPreviousProceed()">Previous</button>
+                    <button type="button" class="btn btn-primary" ng-disabled="!button.canNextProceed()" ng-click="button.nextClick()">{{button.nextButtonName()}}</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-7">
+            <div class="z-wizard-bar">
+                <ul class="nav">
+                    <li class="active"><a data-target="#createL3NetworkInfo" ng-click="button.pageClick('createL3NetworkInfo')">L3 NETWORK INFO</a></li>
+                    <li ng-class="{disabled: !psPage.isActive()}"><a data-target="#createL3NetworkIpRange" ng-click="button.pageClick('createL3NetworkIpRange')">ADD IP RANGE</a></li>
+                    <li ng-class="{disabled: !psPage.isActive()}"><a data-target="#createL3NetworkDns" ng-click="button.pageClick('createL3NetworkDns')">ADD DNS</a></li>
+                    <li ng-class="{disabled: !psPage.isActive()}"><a data-target="#createL3NetworkService" ng-click="button.pageClick('createL3NetworkService')">SELECT NETWORK SERVICE</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>

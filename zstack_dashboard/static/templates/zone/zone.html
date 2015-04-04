@@ -1,0 +1,101 @@
+<div style="display: none">
+    <div kendo-window="winNewZone" k-visible="false" k-options="optionsNewZone">
+        <div>
+            <h4 class="z-win-h4">CREATE ZONE</h4>
+            <form class="form" id="formCreateZone">
+                <div class="form-group col-lg-18">
+                    <label for="name">NAME</label>
+                    <input class="form-control" type="text" id="name" placeholder="(Required) max length of 255 characters" ng-model="modelCreateZone.name" required data-message="name is required">
+                </div>
+                <div class="form-group col-lg-18">
+                    <label for="description">DESCRIPTION</label>
+                    <textarea  class="form-control" rows="5" id="description" placeholder="(Optional) max length of 2048 characters" ng-model="modelCreateZone.description"></textarea>
+                </div>
+                <div class="form-group col-lg-18">
+                    <button type="button" class="btn btn-default" ng-click="funcCreateZoneCancel(winNewZone)">Cancel</button>
+                    <button type="button" class="btn btn-primary" ng-disabled="!modelCreateZone.canCreate()" ng-click="funcCreateZoneDone(winNewZone)">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div z-delete-confirm="zoneDelete" z-options="optionsDeleteZone"></div>
+    <div z-create-cluster="winCreateCluster" z-options="optionsCreateCluster"></div>
+    <div z-search="zoneSearch" z-options="optionsSearch"></div>
+    <div z-create-primary-storage="winNewPrimaryStorage" z-options="optionsCreatePrimaryStorage"></div>
+    <div z-create-l2-network="winNewL2Network" z-options="optionsCreateL2Network"></div>
+</div>
+
+<div>
+    <h3 class="z-h3">ZONE</h3>
+    <div class="btn-group-sm z-btn-bar">
+        <button type="button" class="btn btn-default btn-sm" ng-click="funcRefresh()">
+            <i class="fa fa-refresh"></i>
+        </button>
+
+        <button type="button" class="btn btn-default btn-sm" ng-click="funcSearch(zoneSearch)">
+            <i class="fa fa-search"></i>
+        </button>
+
+        <div z-sort-by z-options="optionsSortBy"></div>
+
+        <button z-popover="popoverFilterBy" type="button" id="zoneFilter" z-content-id="zoneFilterContent" class="btn btn-default btn-sm" ng-click="funcShowPopoverFilterBy(popoverFilterBy)">
+            <i class="fa fa-filter"></i><span>&nbsp; {{filterBy.buttonName}}</span>
+        </button>
+
+        <button type="button" class="btn btn-success btn-sm" style="margin-left: 20px" ng-click="funcCreateZone(winNewZone)">
+            <i class="fa fa-plus"></i>
+            <span>&nbsp; New Zone</span>
+        </button>
+
+        <div id="zoneFilterContent" style="display: none">
+            <form class="form">
+                <div class="form-group">
+                    <label class="z-label">STATE</label>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="zoneStateRadio" ng-model="filterBy.state" value="All" checked>
+                            All
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="zoneStateRadio" ng-model="filterBy.state" value="Enabled">
+                            Enabled
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="zoneStateRadio" ng-model="filterBy.state" value="Disabled">
+                            Disabled
+                        </label>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-sm btn-primary" ng-click="funcFilterByConfirm(popoverFilterBy)">Confirm</button>
+            </form>
+        </div>
+
+        <div class="btn-group" ng-show="funcIsActionShow()">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" ng-disabled="funcIsActionDisabled()">
+                Action <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">Enable</a></li>
+                <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">Disable</a></li>
+                <li><a href ng-click="action.createCluster(winCreateCluster)">Create Cluster</a></li>
+                <li><a href ng-click="action.createL2Network()">Create L2Network</a></li>
+                <li><a href ng-click="action.addPrimaryStorage()">Add Primary Storage</a></li>
+                <li><a href ng-click="action.attachBackupStorage()">Attach Backup Storage</a></li>
+                <li class="divider"></li>
+                <li><a href style="color:red" ng-click="funcDeleteZone(zoneDelete)">Delete</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div kendo-grid="zoneGrid" k-options="optionsZoneGrid" z-grid-double-click="funcZoneGridDoubleClick" class="z-flat-table"></div>
+    <p class="z-hint">Single click column to show action button</p>
+    <p class="z-hint">Double click column to enter details page</p>
+
+</div>

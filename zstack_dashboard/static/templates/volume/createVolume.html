@@ -1,0 +1,58 @@
+<div kendo-window="winCreateVolume__" k-visible="false" k-options="winCreateVolumeOptions__">
+    <div class="row">
+        <div class="col-sm-15">
+            <div class="tab-content">
+                <div id="createVolumeInfo" class="tab-pane active">
+                    <div class="alert alert-warning col-sm-21" ng-show="!infoPage.hasDiskOffering()">
+                        No disk offering has been created. Please go to <a href="/#/diskOffering">disk offering page</a> to create a new one.
+                    </div>
+
+                    <h4 class="z-win-h4">CREATE DATA VOLUME</h4>
+                    <form class="form" id="formCreate">
+                        <div class="form-group col-sm-24">
+                            <label for="zone">DISK OFFERING</label>
+                            <select id="zone" kendo-drop-down-list k-options="diskOfferingOptions__" class="z-win-dropdown" ng-model="infoPage.diskOfferingUuid"></select>
+                        </div>
+                        <div class="form-group col-sm-21">
+                            <label for="name">NAME</label>
+                            <input class="form-control" type="text" id="name" placeholder="(Required) max length of 255 characters" ng-model="infoPage.name" required data-message="name is required">
+                        </div>
+                        <div class="form-group col-sm-21">
+                            <label for="description">DESCRIPTION</label>
+                            <textarea  class="form-control" rows="5" id="description" placeholder="(Optional) max length of 2048 characters" ng-model="infoPage.description"></textarea>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="attachVm" class="tab-pane">
+                    <div class="alert alert-warning col-sm-21" ng-show="!attachPage.hasVm()">
+                        No vm instance is eligible to attach. Please click 'Create' button to proceed.
+                    </div>
+
+                    <h4 class="z-win-h4">ATTACH VM</h4>
+                    <form class="form" id="formAttach">
+                        <div class="form-group col-sm-24">
+                            <label for="vm">VM INSTANCE</label>
+                            <select id="vm" kendo-combo-box  k-options="vmOptions__" k-placeholder="'Select VM'" class="z-win-dropdown" ng-model="attachPage.vmInstanceUuid"></select>
+                            <p class="z-hint">(Optional) select vm instance to attach the data volume, only vm that is Running or Stopped can attach volume</p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="form-group col-sm-21">
+                    <button type="button" class="btn btn-primary" ng-disabled="!button.canNextProceed()" ng-click="button.nextClick()">{{button.nextButtonName()}}</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-7">
+            <div class="z-wizard-bar">
+                <ul class="nav">
+                    <li class="active"><a data-target="#createVolumeInfo" ng-click="button.pageClick('createVolumeInfo')">VOLUME INFO</a></li>
+                    <li><a data-target="#attachVm" ng-click="button.pageClick('attachVm')">ATTACH VM</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>

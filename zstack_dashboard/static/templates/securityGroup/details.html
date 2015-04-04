@@ -1,0 +1,111 @@
+<div style="display: none">
+    <div z-delete-confirm="deleteSecurityGroup" z-options="optionsDeleteSecurityGroup"></div>
+    <div z-security-group-add-rule="addRule" z-options="optionsAddRule"></div>
+    <div z-security-group-delete-rule="deleteRule" z-options="optionsDeleteRule"></div>
+    <div z-security-group-attach-l3-network="attachL3Network" z-options="optionsAttachL3Network"></div>
+    <div z-security-group-detach-l3-network="detachL3Network" z-options="optionsDetachL3Network"></div>
+    <div z-delete-confirm="deleteSecurityGroup" z-options="optionsDeleteSecurityGroup"></div>
+    <div z-security-group-add-vm-nic="addVmNic" z-options="optionsAddVmNic"></div>
+    <div z-security-group-remove-vm-nic="removeVmNic" z-options="optionsRemoveVmNic"></div>
+</div>
+
+<div class="z-pane">
+    <ol class="breadcrumb">
+        <li><a href="/#/securityGroup">SECURITY GROUP</a></li>
+        <li class="active"><a href>{{model.current.name}}</a></li>
+    </ol>
+
+    <h1>{{model.current.name}}</h1>
+
+    <div class="z-pane-toolbar" ng-show="funcToolbarShow()">
+        <div class="btn-group-sm">
+            <button type="button" class="btn btn-default btn-sm z-ribbon-button" ng-click="funcRefresh()">
+                <i class="fa fa-refresh"></i>
+            </button>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" ng-disabled="funcIsActionDisabled()">
+                    Action <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">Enable</a></li>
+                    <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">Disable</a></li>
+                    <li><a href ng-click="action.addRule()">Add Rule</a></li>
+                    <li><a href ng-click="action.deleteRule()" ng-show="action.isDeleteRuleShow()">Delete Rule</a></li>
+                    <li><a href ng-click="action.addNic()">Add Vm Nic</a></li>
+                    <li><a href ng-click="action.removeNic()">Remove Vm Nic</a></li>
+                    <li><a href ng-click="action.attachL3Network()">Attach L3Network</a></li>
+                    <li><a href ng-click="action.detachL3Network()">Detach L3Network</a></li>
+                    <li class="divider"></li>
+                    <li><a href style="color:red" ng-click="funcDelete(deleteSecurityGroup)">Delete</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <ul class="nav nav-pills">
+        <li class="active"><a data-target="#info" data-toggle="pill" href>Info</a></li>
+        <li><a data-target="#rule" data-toggle="pill" href>Rules</a></li>
+        <li><a data-target="#l3Network" data-toggle="pill" href>L3 Networks</a></li>
+        <li><a data-target="#vmNic" data-toggle="pill" href>VM Nics</a></li>
+    </ul>
+
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="info">
+            <tags-input ng-model="optionsTag.tags" display-property="tag" min-length="1"
+                        on-tag-added="optionsTag.createTag($tag)" on-tag-removed="optionsTag.deleteTag($tag)"
+                        add-on-comma="false" replace-spaces-with-dashes="false" ng-show="optionsTag.isShow()"></tags-input>
+
+            <div class="panel panel-default" z-panel-header-in>
+                <div class="panel-heading">
+                    <a class="accordion-toggle" data-target="#infoDetails" data-toggle="collapse" href>
+                        <i class="z-collapse fa fa-chevron-down"></i>
+                        <span>&nbsp; DETAILS</span>
+                    </a>
+                </div>
+
+                <div id="infoDetails" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <table class="table z-table-borderless">
+                            <tr>
+                                <td><span class="z-label">DESCRIPTION:</span></td>
+                                <td><span class="z-description">{{model.current.description}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">STATE:</span></td>
+                                <td><span class="{{model.current.stateLabel()}}">{{model.current.state}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">UUID:</span></td>
+                                <td><span>{{model.current.uuid}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">CREATED DATE:</span></td>
+                                <td><span>{{model.current.createDate}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">LAST UPDATED DATE:</span></td>
+                                <td><span>{{model.current.lastOpDate}}</span></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane" id="rule">
+            <div kendo-grid k-options="optionsRulesGrid" class="z-flat-table"></div>
+        </div>
+
+        <div class="tab-pane" id="l3Network">
+            <div kendo-grid k-options="optionsL3NetworkGrid" class="z-flat-table"></div>
+            <p class="z-hint">L3Networks listing here have attached to this security group</p>
+        </div>
+
+        <div class="tab-pane" id="vmNic">
+            <div kendo-grid k-options="optionsVmNicGrid" class="z-flat-table"></div>
+            <p class="z-hint">Vm nics listing here have been added to this security group</p>
+        </div>
+    </div>
+</div>

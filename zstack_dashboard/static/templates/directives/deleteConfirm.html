@@ -1,0 +1,13 @@
+<div kendo-window="winDelete__" k-visible="false" k-options="optionsDelete__">
+    <div style="padding-bottom: 10px">
+        <h4 class="z-win-h4">{{title}}</h4>
+        <p><strong>{{description}}</strong></p>
+        <div id="description"></div>
+        <input class="form-control" style="width: 200px" type="text" ng-model="ok">
+        <p class="z-hint">Type 'ok' to confirm</p>
+        <div style="padding-top: 10px">
+            <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+            <button type="button" class="btn btn-danger" ng-disabled="ok != 'ok'" ng-click="confirm()">Delete</button>
+        </div>
+    </div>
+</div>

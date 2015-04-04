@@ -1,0 +1,25 @@
+<div kendo-window="detachVmInstance__" k-options="optionsDetachVm__" k-visible="false">
+    <div>
+        <h4 class="z-win-h4">DETACH VM INSTANCE</h4>
+
+        <table class="table z-table-borderless">
+            <tr>
+                <td><span class="z-label">NAME:</span></td>
+                <td><span class="z-description">{{vm.name}}</span></td>
+            </tr>
+            <tr>
+                <td><span class="z-label">STATE:</span></td>
+                <td><span class="{{vmStateLabel()}}">{{vm.state}}</span></td>
+            </tr>
+            <tr>
+                <td><span class="z-label">HYPERVISOR:</span></td>
+                <td><span>{{vm.hypervisorType}}</span></td>
+            </tr>
+        </table>
+
+        <p style="color: red" ng-show="!isVmInCorrectState()">Volume can only be detached when vm is Running or Stopped</p>
+
+        <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+        <button type="button" class="btn btn-danger" ng-disabled="!canProceed()" ng-click="done()">Detach</button>
+    </div>
+</div>

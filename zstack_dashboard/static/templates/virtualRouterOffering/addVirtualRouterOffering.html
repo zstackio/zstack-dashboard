@@ -1,0 +1,93 @@
+<div kendo-window="winCreateVirtualRouterOffering__" k-visible="false" k-options="winCreateVirtualRouterOfferingOptions__">
+    <div class="row">
+        <div class="col-sm-15">
+            <div class="tab-content">
+                <div id="createVirtualRouterOfferingInfo" class="tab-pane active">
+                    <div class="alert alert-warning col-sm-21" ng-show="!infoPage.hasZone()">
+                        No zone has been created. Please go to <a href="/#/zone">zone page</a> to create a new one.
+                    </div>
+                    <div class="alert alert-warning col-sm-21" ng-show="!infoPage.hasL3Network() && infoPage.hasZone()">
+                        No L3 network has been created in the zone.
+                    </div>
+                    <div class="alert alert-warning col-sm-21" ng-show="!infoPage.hasImage()">
+                        No image has been added. Please go to <a href="/#/image">image page</a> to add a new one.
+                    </div>
+                    <h4 class="z-win-h4">CREATE VIRTUAL ROUTER OFFERING</h4>
+                    <form class="form" id="formCreate">
+                        <div class="form-group col-sm-24">
+                            <label for="zone">ZONE</label>
+                            <select id="zone" kendo-drop-down-list k-options="zoneOptions__" class="z-win-dropdown" ng-model="infoPage.zoneUuid"></select>
+                        </div>
+                        <div class="form-group col-sm-21">
+                            <label for="name">NAME</label>
+                            <input class="form-control" type="text" id="name" placeholder="(Required) max length of 255 characters" ng-model="infoPage.name" required data-message="name is required">
+                        </div>
+                        <div class="form-group col-sm-21">
+                            <label for="description">DESCRIPTION</label>
+                            <textarea  class="form-control" rows="5" id="description" placeholder="(Optional) max length of 2048 characters" ng-model="infoPage.description"></textarea>
+                        </div>
+                        <div class="form-group col-sm-21">
+                            <label for="cpunum">CPU NUM</label>
+                            <input type="text" class="form-control" id="cpunum" placeholder="CPU number" ng-model="infoPage.cpuNum">
+                            <div class="alert alert-danger col-sm-21" ng-show="!infoPage.isCpuNumValid()">
+                                Not a number
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-21">
+                            <label for="cpuspeed">CPU SPEED</label>
+                            <input type="text" class="form-control" id="cpuspeed" placeholder="CPU speed in HZ" ng-model="infoPage.cpuSpeed">
+                            <div class="alert alert-danger col-sm-21" ng-show="!infoPage.isCpuSpeedValid()">
+                                Not a number
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-21">
+                            <label for="memory">MEMORY</label>
+                            <input type="text" class="form-control" id="memory" placeholder="can be suffixed with T/G/M/K, default is byte, e.g. 512M" ng-model="infoPage.memorySize">
+                            <div class="alert alert-danger col-sm-21" ng-show="!infoPage.isMemoryValid()">
+                                Not valid memory size. Memory size can only be a number suffixed with 'T/G/M/K'(or lowercase) or a number
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-24">
+                            <label for="image">IMAGE</label>
+                            <select id="image" kendo-drop-down-list k-options="imageOptions__" class="z-win-dropdown" ng-model="infoPage.imageUuid"></select>
+                        </div>
+                        <div class="form-group col-sm-24">
+                            <label for="mgmtL3">MANAGEMENT L3 NETWORK</label>
+                            <select id="mgmtL3" kendo-drop-down-list k-options="mgmtL3Options__" class="z-win-dropdown" ng-model="infoPage.managementNetworkUuid"></select>
+                        </div>
+                        <div class="form-group col-sm-24">
+                            <label for="pubL3">PUBLIC L3 NETWORK</label>
+                            <select id="pubL3" kendo-drop-down-list k-options="pubL3Options__" class="z-win-dropdown" ng-model="infoPage.publicNetworkUuid"></select>
+                        </div>
+                        <div class="form-group col-sm-24">
+                            <label for="allocator">ALLOCATOR STRATEGY</label>
+                            <select id="allocator" kendo-drop-down-list k-options="allocatorStrategyOptions__" class="z-win-dropdown" ng-model="infoPage.allocatorStrategy"></select>
+                            <p class="z-hint">(Optional) Host allocator strategy</p>
+                        </div>
+                        <div class="form-group col-sm-18">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" ng-model="infoPage.isDefault"> <strong>DEFAULT OFFERING</strong>
+                                </label>
+                            </div>
+                            <p class="z-hint">(Optional) if checked, the offering will be set as default offering. A zone can only has one default offering that is used to create virtual router when there are multiple offerings existing</p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="form-group col-sm-21">
+                    <button type="button" class="btn btn-primary" ng-disabled="!button.canNextProceed()" ng-click="button.nextClick()">{{button.nextButtonName()}}</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-7">
+            <div class="z-wizard-bar">
+                <ul class="nav">
+                    <li class="active"><a data-target="#createVirtualRouterOfferingInfo" ng-click="button.pageClick('createVirtualRouterOfferingInfo')">VIRTUAL ROUTER OFFERING INFO</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>

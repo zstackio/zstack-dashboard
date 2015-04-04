@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html ng-app="root">
+<head>
+    <title>zstack-ui</title>
+    <link href="{{ url_for('static', filename='css/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/kendo/kendo.common.min.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/kendo/kendo.common-bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/kendo/kendo.uniform.min.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/kendo/kendo.dataviz.min.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/kendo/kendo.dataviz.uniform.min.css') }}" rel="stylesheet" />
+    <!--
+    <link href="{{ url_for('static', filename='css/kendo/kendo.dataviz.bootstrap.min.css') }}" rel="stylesheet" />
+    -->
+    <link href="{{ url_for('static', filename='css/font-awesome/css/font-awesome.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/ng-tags-input.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/zstack1.css') }}" rel="stylesheet" />
+</head>
+
+
+{% raw %}
+<body ng-controller="MRoot.main" ng-cloak>
+
+<script id="successNotification" type="text/x-kendo-template">
+    <div class="z-success">
+        <h4><i class="fa fa-check-circle"></i>  SUCCESS</h4>
+        <p>#= msg #</p>
+        # if (data.link) { #
+        <a href="#: link #">See result</a>
+        #}#
+    </div>
+</script>
+
+<script id="errorNotification" type="text/x-kendo-template">
+    <div class="z-success">
+        <h4><i class="fa fa-check-circle"></i>  FAILURE</h4>
+        <p>#= msg #</p>
+        # if (data.link) { #
+        <a href="#: link #">See result</a>
+        #}#
+    </div>
+</script>
+
+<span kendo-notification="apiNotification" k-options="optionsNotification"></span>
+<div ng-include="'/static/templates/zone/templates.html'"></div>
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header" ng-controller="MNav.Controller">
+        <a class="navbar-brand" href="#">
+            <span>&nbsp; ZStack <img ng-show="funcIsProcessing()" src="static/img/ajax-loader.gif" width="17px" height="17px"> <span ng-show="funcIsProcessing()">{{ funcPendingRequestNum() }} requests in processing ...</span></span>
+        </a>
+    </div>
+
+    <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="/#/apiDetails">
+                    API Details
+                    <span class="badge badge-info">{{getApiDetailsNum()}}</span>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right" ng-show="isLogin()">
+            <li class="dropdown">
+                <a href class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-lg fa-user"></i>
+                    {{getAccountName()}}
+                    <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href ng-click="logout()">Sign Out</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid col-sm-24">
+    <div class="row">
+        <div id="sidebar" class="col-sm-4" ng-show="isLogin()">
+            <div class="panel-group" id="menu">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-target="#image" href="/#/dashboard">
+                                Dashboard
+                            </a>
+                        </h4>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title" data-toggle="collapse" data-target="#compute">
+                            Compute
+                        </h4>
+                    </div>
+                    <div id="compute" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <div class="list-group">
+                                <a href="/#/vmInstance" class="list-group-item">
+                                    <i class="fa fa-fw fa-sm fa-windows"></i>
+                                    <span class="menu-name"> Instance</span>&nbsp;
+                                </a>
+
+                                <a href="/#/host" class="list-group-item">
+                                    <i class="fa fa-fw fa-sm fa-laptop"></i>
+                                    <span class="menu-name"> Host</span>&nbsp;
+                                </a>
+                                <a href="/#/cluster" class="list-group-item">
+                                    <i class="fa fa-fw fa-sm fa-th"></i>
+                                    <span class="menu-name"> Cluster</span>&nbsp;
+                                </a>
+                                <a href="/#/zone" class="list-group-item">
+                                    <i class="fa fa-fw fa-sm fa-cloud"></i>
+                                    <span class="menu-name"> Zone</span>&nbsp;
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-target="#image" href="/#/image">
+                                Image
+                            </a>
+                        </h4>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title" data-toggle="collapse" data-target="#storage">
+                                Storage
+                        </h4>
+                    </div>
+                    <div id="storage" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <div class="list-group">
+                                <a href="/#/primaryStorage" class="list-group-item">
+                                    <i class="fa fa-fw fa-sm fa-hdd-o"></i>
+                                    <span class="menu-name"> Primary Storage</span>&nbsp;
+                                </a>
+
+                                <a href="/#/backupStorage" class="list-group-item">
+                                    <i class="fa fa-fw fa-sm fa-save"></i>
+                                    <span class="menu-name"> Backup Storage</span>&nbsp;
+                                </a>
+                                <a href="/#/volume" class="list-group-item">
+                                    <i class="fa fa-fw fa-sm fa-inbox"></i>
+                                    <span class="menu-name"> Volume</span>&nbsp;
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title" data-toggle="collapse" data-target="#network">
+                            Network
+                        </h4>
+                    </div>
+                    <div id="network" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <div class="list-group">
+                                <a href="/#/l2Network" class="list-group-item">
+                                    <i class="fa fa-fw fa-sm fa-download"></i>
+                                    <span class="menu-name"> L2 Network</span>&nbsp;
+                                </a>
+
+                                <a href="/#/l3Network" class="list-group-item">
+                                    <i class="fa fa-fw fa-sm fa-sort-amount-asc"></i>
+                                    <span class="menu-name"> L3 Network</span>&nbsp;
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title" data-toggle="collapse" data-target="#networkService">
+                            Network Service
+                        </h4>
+                    </div>
+                    <div id="networkService" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <div class="list-group">
+                                <a href="/#/securityGroup" class="list-group-item">
+                                    <i class="fa fa-fw fa-sm fa-shield"></i>
+                                    <span class="menu-name"> Security Group</span>&nbsp;
+                                </a>
+                                <a href="/#/vip" class="list-group-item">
+                                    <i class="fa fa-fw fa-sm fa-random"></i>
+                                    <span class="menu-name"> VIP</span>&nbsp;
+                                </a>
+                                <a href="/#/eip" class="list-group-item">
+                                    <i class="fa fa-fw fa-sm fa-random"></i>
+                                    <span class="menu-name"> EIP</span>&nbsp;
+                                </a>
+                                <a href="/#/portForwarding" class="list-group-item">
+                                    <i class="fa fa-fw fa-sm fa-random"></i>
+                                    <span class="menu-name"> Port Forwarding</span>&nbsp;
+                                </a>
+                                <a href="/#/virtualRouter" class="list-group-item">
+                                    <i class="fa fa-fw fa-sm fa-sitemap"></i>
+                                    <span class="menu-name"> Virtual Router</span>&nbsp;
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title" data-toggle="collapse" data-target="#configuration">
+                            Configuration
+                        </h4>
+                    </div>
+                    <div id="configuration" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <div class="list-group">
+                                <a href="/#/instanceOffering" class="list-group-item">
+                                    <i class="fa fa-fw fa-sm fa-download"></i>
+                                    <span class="menu-name"> Instance Offering</span>&nbsp;
+                                </a>
+
+                                <a href="/#/diskOffering" class="list-group-item">
+                                    <i class="fa fa-fw fa-sm fa-sort-amount-asc"></i>
+                                    <span class="menu-name"> Disk Offering</span>&nbsp;
+                                </a>
+
+                                <a href="/#/virtualRouterOffering" class="list-group-item">
+                                    <i class="fa fa-fw fa-sm fa-download"></i>
+                                    <span class="menu-name"> Virtual Router Offering</span>&nbsp;
+                                </a>
+
+                                <a href="/#/globalConfig" class="list-group-item">
+                                    <i class="fa fa-fw fa-sm fa-download"></i>
+                                    <span class="menu-name"> Global Configure</span>&nbsp;
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div ng-cloak class="ng-cloak">
+            <div class="col-sm-20">
+                <div ng-view=""></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endraw %}
+
+<script src="{{ url_for('static', filename='js/jquery-1.9.1.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/angular.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/angular-route.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/angular-cookies.js') }}"></script>
+<script src="{{ url_for('static', filename='js/kendo.all.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/sha512.js') }}"></script>
+<!--
+<script src="{{ url_for('static', filename='js/angular-kendo.js') }}"></script>
+-->
+<script src="{{ url_for('static', filename='js/ng-tags-input.js') }}"></script>
+<script src="{{ url_for('static', filename='app/app.js') }}"></script>
+</body>
+
+</html>

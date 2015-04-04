@@ -1,0 +1,140 @@
+#!/bin/sh
+
+# the following is chkconfig init header
+#
+# zstack-dashboard:  ZStack dashboard daemon
+#
+# chkconfig: 345 97 03
+# description:  This is a daemon instructed by zstack-dashboard \
+#               to start a web server for display ZStack UI\
+#               See http://zstack.org
+#
+# processname: nohup python zstack-dashboard/web.py >$DASHBOARD_LOG 2>&1 </dev/null &
+# pidfile: /var/run/zstack/zstack-dashboard.pid
+#
+pidfile='/var/run/zstack/zstack-dashboard.pid'
+VIRTUAL_ENV=/var/lib/zstack/virtualenv/zstack-dashboard
+[ ! -d $VIRTUAL_ENV ] && echo "Not find virtualenv in $VIRTUAL_ENV" && exit 1
+. $VIRTUAL_ENV/bin/activate
+
+DASHBOARD_LOG="/var/log/zstack/zstack-dashboard.log"
+mkdir -p `dirname $DASHBOARD_LOG`
+dashboard_pid=''
+
+get_pid_from_ps() {
+    dashboard_pid=`ps -aef|grep python|grep 'zstack_dashboard'|awk '{print $2}'`
+}
+
+check_status() {
+    if [ ! -f $pidfile ]; then
+        ps -aef|grep python|grep 'web.py' > /dev/null
+        if [ $? -eq 0 ]; then
+            get_pid_from_ps
+            if [ ! -z $dashboard_pid ]; then
+                echo "zstack-dashboard is running, pid is $dashboard_pid. ."
+                echo $dashboard_pid > $pidfile
+                exit 0
+            fi
+        fi
+        echo "zstack dashboard is stopped"
+        exit 0
+    else
+        pid=`cat $pidfile`
+        ps -p $pid > /dev/null
+        if [ $? -eq 0 ]; then
+            echo "zstack dashboard is running, pid is $pid"
+            exit 0
+        else
+            echo "zstack dashboard is stopped, but pidfile at $pidfile is not cleaned. It may be caused by the agent crashed at last time, manually cleaning it would be ok"
+            exit 1
+        fi
+    fi
+}
+
+stop_dashboard(){
+    echo "Stop zstack dashboard ..."
+    if [ ! -f $pidfile ]; then
+        ps -aef|grep python|grep 'web.py' > /dev/null
+        if [ $? -eq 0 ]; then
+            get_pid_from_ps
+            if [ ! -z $dashboard_pid ]; then
+                kill -3 $dashboard_pid
+                echo "zstack dashboard is killed"
+                kill -9 $dashboard_pid >/dev/null 2>&1
+                return 0
+            fi
+        fi
+        echo "Not find $pidfile , zstack dashboard might be stopped."
+        return 0
+    else
+        pid=`cat $pidfile`
+        ps -p $pid > /dev/null
+        if [ $? -eq 0 ]; then
+            kill -3 $pid
+            echo "zstack dashboard is killed"
+            kill -9 $pid >/dev/null 2>&1
+        else
+            echo "Not find process: $pid, zstack dashboard might be stopped."
+        fi
+        /bin/rm -f $pidfile
+    fi
+}
+
+start_dashboard(){
+    echo "Start zstack dashboard ..."
+    iptables-save | grep -- "-A INPUT -p tcp -m tcp --dport 5000 -j ACCEPT" > /dev/null || iptables -I INPUT -p tcp -m tcp --dport 5000 -j ACCEPT
+
+    if [ -f $pidfile ]; then
+        pid=`cat $pidfile`
+        ps -p $pid > /dev/null
+        if [ $? -eq 0 ]; then
+            echo "zstack dashboard is running with PID: $pid, wont' startup again."
+            return 0
+        else
+            /bin/rm -f $pidfile
+        fi
+    fi
+
+    ps -aef|grep python|grep 'web.py' > /dev/null
+    if [ $? -eq 0 ]; then
+        get_pid_from_ps
+        if [ ! -z $dashboard_pid ]; then
+            echo "zstack dashboard is already running with PID: $pid. Can't start zstack dashboard again."
+            echo $pid >$pidfile
+            return 0
+        fi
+    else
+        nohup python -c "from zstack_dashboard import web; web.main()" >$DASHBOARD_LOG 2>&1 </dev/null &
+        echo $! >$pidfile
+    fi
+    return 0
+}
+
+
+if [ $# -eq 0 ]; then
+    echo "usage: $0
+[start|stop|restart|status]"
+    exit 1
+fi
+
+if [ "$@" = "status" ]; then
+    check_status
+elif [ "$@" = "start" ]; then
+    start_dashboard
+elif [ "$@" = "stop" ]; then
+    stop_dashboard
+elif [ "$@" = "restart" ]; then
+    stop_dashboard
+    start_dashboard
+else
+    echo "Not support service: $@. Please use [start|stop|restart|status]"
+    exit 1
+fi
+
+if [ $? -eq 0 ]; then
+    echo "$@ zstack dashboard .... SUCCESS"
+    exit 0
+else
+    echo "$@ zstack dashboard .... FAILED"
+    exit 1
+fi

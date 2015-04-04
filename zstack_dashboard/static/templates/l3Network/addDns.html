@@ -1,0 +1,19 @@
+<div kendo-window="addDns__" k-options="optionsAddDns__" k-visible="false">
+    <div>
+        <h4 class="z-win-h4">ADD DNS</h4>
+        <form class="form">
+            <div class="form-group col-sm-21">
+                <label for="dns">DNS</label>
+                <input class="form-control" type="text" id="dns" placeholder="(Required) IPv4 address of DNS server" ng-model="dns">
+                <div class="alert alert-danger col-sm-21" ng-show="!isDnsValid()">
+                    Not a valid IPv4 address
+                </div>
+            </div>
+
+            <div class="form-group col-lg-18">
+                <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+                <button type="button" class="btn btn-primary" ng-disabled="!canProceed()" ng-click="done()">Add</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+<div kendo-window="addIpRange__" k-options="optionsAddIpRange__" k-visible="false">
+    <div>
+        <h4 class="z-win-h4">ADD IP RANGE</h4>
+        <form class="form">
+            <div class="form-group col-sm-18">
+                <label for="iprangeName">NAME</label>
+                <input class="form-control" type="text" id="ipRangeName" placeholder="(Required) max of 255 characters" ng-model="info.name">
+            </div>
+            <div class="form-group col-sm-18">
+                <label for="idesc">DESCRIPTION</label>
+                <textarea  class="form-control" rows="5" id="idesc" placeholder="(Optional) max length of 2048 characters" ng-model="info.description"></textarea>
+            </div>
+            <div class="form-group col-sm-18">
+                <label for="method">METHOD</label>
+                <select id="method" kendo-drop-down-list k-options="methodOptions__" class="z-win-dropdown" ng-model="info.method"></select>
+                <p class="z-hint">Choose using CIDR or IP range</p>
+            </div>
+
+            <div ng-switch="info.method">
+                <div ng-switch-when="range">
+                    <div class="form-group col-sm-18">
+                        <label for="sip">START IP</label>
+                        <input class="form-control" type="text" id="sip" placeholder="(Required) IP range start" ng-model="info.startIp">
+                        <div class="alert alert-danger col-sm-18" ng-show="!isStartIpValid()">
+                            Not a valid IPv4 address
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-18">
+                        <label for="eip">END IP</label>
+                        <input class="form-control" type="text" id="eip" placeholder="(Required) IP range end" ng-model="info.endIp">
+                        <div class="alert alert-danger col-sm-18" ng-show="!isEndIpValid()">
+                            Not a valid IPv4 address
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-18">
+                        <label for="netmask">NETMASK</label>
+                        <input class="form-control" type="text" id="netmask" placeholder="(Required) netmask" ng-model="info.netmask">
+                        <div class="alert alert-danger col-sm-18" ng-show="!isNetmaskValid()">
+                            Not a valid netmask
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-18">
+                        <label for="gateway">GATEWAY</label>
+                        <input class="form-control" type="text" id="gateway" placeholder="(Required) gateway" ng-model="info.gateway">
+                        <div class="alert alert-danger col-sm-18" ng-show="!isGatewayValid()">
+                            Not a valid IPv4 address
+                        </div>
+                    </div>
+                </div>
+                <div ng-switch-when="cidr">
+                    <div class="form-group col-sm-18">
+                        <label for="cidr">NETWORK CIDR</label>
+                        <input class="form-control" type="text" id="cidr" placeholder="(Required) for example, 10.0.0.0/24" ng-model="info.cidr">
+                        <div class="alert alert-danger col-sm-18" ng-show="!isNetworkCidrValid()">
+                            Not a valid network CIDR. A valid CIDR is, for example, 10.0.0.0/24.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group col-lg-18">
+                <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+                <button type="button" class="btn btn-primary" ng-disabled="!canProceed()" ng-click="done()">Add</button>
+            </div>
+        </form>
+    </div>
+</div>

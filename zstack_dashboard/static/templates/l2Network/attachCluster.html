@@ -1,0 +1,20 @@
+<div kendo-window="attachCluster__" k-visible="false">
+    <div>
+        <div class="alert alert-warning col-sm-21" ng-show="!hasCluster()">
+            No cluster has been created or all eligible clusters have been attached to this l2 network. Please go to <a href="/#/cluster">cluster page</a> to create a new one.
+        </div>
+
+        <h4 class="z-win-h4">ATTACH CLUSTER</h4>
+        <form class="form">
+            <div class="form-group col-sm-18">
+                <label for="ps">CLUSTER</label>
+                <select id="ps" kendo-multi-select="clusterList__" k-options="clusterListOptions__" class="z-win-dropdown"></select>
+                <p class="z-hint">(Required) select one or more cluster to attach</p>
+            </div>
+            <div class="form-group col-lg-18">
+                <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+                <button type="button" class="btn btn-primary" ng-disabled="!canProceed()" ng-click="done()">Attach</button>
+            </div>
+        </form>
+    </div>
+</div>

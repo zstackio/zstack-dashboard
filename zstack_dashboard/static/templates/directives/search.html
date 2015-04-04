@@ -1,0 +1,55 @@
+<div kendo-window="winSearch__" k-options="optionsSearch__" k-visible="false">
+    <h4 class="z-win-h4">QUERY {{name}}</h4>
+    <table class="table z-search-table">
+        <tr>
+            <th class="z-label">FIELD</th>
+            <th class="z-label">OP</th>
+            <th class="z-label">VALUE</th>
+            <th></th>
+        </tr>
+
+        <tr>
+            <td>
+                <select kendo-combo-box="fieldCombo__" k-options="optionsField">
+                </select>
+            </td>
+            <td>
+                <select kendo-drop-down-list="opDropdown__" k-options="optionsOp" style="width: 100px">
+                </select>
+            </td>
+            <td>
+                <input type="text" ng-model="currentCondition.value" style="width: 300px; height: 27px" ng-show="funcValueShow('text')">
+                <input type="text" kendo-date-time-picker="valueDateTime__" style="width: 300px;" k-options="valueTimestampOptions__" ng-model="currentCondition.dateTimeValue" ng-show="funcValueShow('timeStamp')">
+                <input type="text" kendo-drop-down-list="valueList__" k-options="valueListOptions__" ng-model="currentCondition.listValue" style="width: 300px;" ng-show="funcValueShow('list')">
+            </td>
+            <strong>{{currentCondition.dateTimeValue}}</strong>
+            <td>
+                <button type="button" class="btn btn-default" ng-click="funcAddCondition()" ng-disabled="!funcCanAdd()">
+                    <i class="fa fa-plus" style="font-size: 1.2em"></i>
+                </button>
+            </td>
+        </tr>
+    </table>
+
+    <div class="alert alert-danger" ng-show="duplicateCondition">
+        Duplicated condition
+    </div>
+
+    <table id="conditionTable" class="table table-striped" ng-show="funcCanConditionsShow()">
+        <tr>
+            <th class="z-label">CONDITIONS</th>
+        </tr>
+        <tr>
+            <td>
+                <span class="z-search-condition">name</span>
+                <span class="z-search-condition">=</span>
+                <span class="z-search-condition">Zone1</span>
+            </td>
+            <td>
+            </td>
+        </tr>
+    </table>
+
+    <button type="button" class="btn btn-default" ng-click="funcCancel()">Cancel</button>
+    <button type="button" class="btn btn-primary" ng-click="funcSearch()" ng-disabled="!funcCanConditionsShow()">Search</button>
+</div>

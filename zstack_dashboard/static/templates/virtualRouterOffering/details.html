@@ -1,0 +1,197 @@
+<div style="display: none">
+    <div z-confirm="deleteVirtualRouterOffering" z-options="optionsDeleteVirtualRouterOffering"></div>
+</div>
+
+<div class="z-pane">
+    <ol class="breadcrumb">
+        <li><a href="/#/virtualRouterOffering">Virtual Router Offering</a></li>
+        <li class="active"><a href>{{model.current.name}}</a></li>
+    </ol>
+
+    <h1>{{model.current.name}}</h1>
+
+    <div class="z-pane-toolbar" ng-show="funcToolbarShow()">
+        <div class="btn-group-sm">
+            <button type="button" class="btn btn-default btn-sm z-ribbon-button" ng-click="funcRefresh()">
+                <i class="fa fa-refresh"></i>
+            </button>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    Action <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">Enable</a></li>
+                    <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">Disable</a></li>
+                    <li class="divider"></li>
+                    <li><a href style="color:red" ng-click="funcDelete(deleteVirtualRouterOffering)">Delete</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <ul class="nav nav-pills">
+        <li class="active"><a data-target="#info" data-toggle="pill" href>Info</a></li>
+        <li><a data-target="#mgmtL3" data-toggle="pill" href>Management L3 Network</a></li>
+        <li><a data-target="#pubL3" data-toggle="pill" href>Public L3 Network</a></li>
+    </ul>
+
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="info">
+            <tags-input ng-model="optionsTag.tags" display-property="tag" min-length="1"
+                        on-tag-added="optionsTag.createTag($tag)" on-tag-removed="optionsTag.deleteTag($tag)"
+                        add-on-comma="false" replace-spaces-with-dashes="false" ng-show="optionsTag.isShow()"></tags-input>
+
+            <div class="panel panel-default" z-panel-header-in>
+                <div class="panel-heading">
+                    <a class="accordion-toggle" data-target="#infoDetails" data-toggle="collapse" href>
+                        <i class="z-collapse fa fa-chevron-down"></i>
+                        <span>&nbsp; DETAILS</span>
+                    </a>
+                </div>
+
+                <div id="infoDetails" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <table class="table z-table-borderless">
+                            <tr>
+                                <td><span class="z-label">DESCRIPTION:</span></td>
+                                <td><span class="z-description">{{model.current.description}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">STATE:</span></td>
+                                <td><span class="{{model.current.stateLabel()}}">{{model.current.state}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">CPU NUMBER:</span></td>
+                                <td><span>{{model.current.cpuNum}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">CPU SPEED:</span></td>
+                                <td><span>{{model.current.cpuSpeed}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">MEMORY:</span></td>
+                                <td><span>{{model.current.memorySize | size}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">IMAGE:</span></td>
+                                <td><a href="/#/image/{{model.current.imageUuid}}">{{model.current.imageUuid}}</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">DEFAULT OFFERING:</span></td>
+                                <td><span class="{{model.current.isDefaultLabel()}}">{{model.current.isDefault ? "TRUE":""}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">ALLOCATOR STRATEGY:</span></td>
+                                <td><span>{{model.current.allocatorStrategy}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">UUID:</span></td>
+                                <td><span>{{model.current.uuid}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">CREATED DATE:</span></td>
+                                <td><span>{{model.current.createDate}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">LAST UPDATED DATE:</span></td>
+                                <td><span>{{model.current.lastOpDate}}</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="tab-pane" id="mgmtL3">
+            <table class="table z-table-borderless">
+                <tr>
+                    <td><span class="z-label">NAME:</span></td>
+                    <td><span class="z-description">{{mgmtL3.name}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">DESCRIPTION:</span></td>
+                    <td><span class="z-description">{{mgmtL3.description}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">TYPE:</span></td>
+                    <td><span>{{mgmtL3.type}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">SYSTEM NETWORK:</span></td>
+                    <td><span>{{mgmtL3.system ? "TRUE":""}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">STATE:</span></td>
+                    <td><span>{{mgmtL3.state}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">UUID:</span></td>
+                    <td><span>{{mgmtL3.uuid}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">L2 NETWORK UUID:</span></td>
+                    <td><a href="/#/l2Network/{{mgmtL3.l2NetworkUuid}}">{{mgmtL3.l2NetworkUuid}}</a></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">ZONE UUID:</span></td>
+                    <td><a href="/#/zone/{{mgmtL3.zoneUuid}}">{{mgmtL3.zoneUuid}}</a></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">CREATED DATE:</span></td>
+                    <td><span>{{mgmtL3.createDate}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">LAST UPDATED DATE:</span></td>
+                    <td><span>{{mgmtL3.lastOpDate}}</span></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="tab-pane" id="pubL3">
+            <table class="table z-table-borderless">
+                <tr>
+                    <td><span class="z-label">NAME:</span></td>
+                    <td><span class="z-description">{{pubL3.name}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">DESCRIPTION:</span></td>
+                    <td><span class="z-description">{{pubL3.description}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">TYPE:</span></td>
+                    <td><span>{{pubL3.type}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">SYSTEM NETWORK:</span></td>
+                    <td><span>{{pubL3.system ? "TRUE":""}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">STATE:</span></td>
+                    <td><span>{{pubL3.state}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">UUID:</span></td>
+                    <td><span>{{pubL3.uuid}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">L2 NETWORK UUID:</span></td>
+                    <td><a href="/#/l2Network/{{pubL3.l2NetworkUuid}}">{{pubL3.l2NetworkUuid}}</a></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">ZONE UUID:</span></td>
+                    <td><a href="/#/zone/{{pubL3.zoneUuid}}">{{pubL3.zoneUuid}}</a></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">CREATED DATE:</span></td>
+                    <td><span>{{pubL3.createDate}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="z-label">LAST UPDATED DATE:</span></td>
+                    <td><span>{{pubL3.lastOpDate}}</span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,431 @@
+html {
+    font-family: "museo-sans",sans-serif,"helvetica neue",helvetica,serif;
+}
+
+html body ::-webkit-scrollbar {
+    width: 15px;
+    height: 15px;
+}
+html body ::-webkit-scrollbar-track {
+    background-clip: padding-box;
+    border: solid transparent;
+}
+html body ::-webkit-scrollbar-track :vertical {
+    border-width: 0 0 0 4px;
+}
+html body ::-webkit-scrollbar-track :horizontal {
+    border-width: 4px 0 0 0;
+}
+html body ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    background-clip: padding-box;
+    border: solid transparent;
+    border-width: 1px 1px 1px 6px;
+    padding: 100px 0 0;
+    box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.07);
+}
+html body ::-webkit-scrollbar-thumb:vertical {
+    min-height: 28px;
+}
+html body ::-webkit-scrollbar-thumb:horizontal {
+    min-width: 28px;
+    border-width: 1px 1px 5px 1px;
+    border-top: 2px solid transparent;
+}
+html body ::-webkit-scrollbar-corner {
+    background: transparent;
+}
+html body ::-webkit-scrollbar-button {
+    display: none;
+}
+
+/*
+p { word-break: break-all }
+*/
+
+/******************* override bootstrap **********************/
+.collapsing {
+    -webkit-transition: none;
+    transition: none;
+}
+
+#sidebar .panel-group .panel {
+    border-radius:0;
+}
+
+
+#sidebar .panel-default>.panel-heading {
+    background: transparent;
+}
+
+#sidebar .panel-default>.panel-heading:hover {
+    background-color: #f5f5f5;
+}
+
+#sidebar .panel-default>.panel-heading a:hover {
+    text-decoration: none;
+}
+
+#sidebar .panel-group .panel+.panel {
+    margin-top: 0;
+    border-top: 0;
+}
+
+#sidebar .list-group {
+    margin-bottom: 0;
+}
+
+#sidebar a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.active:focus {
+    color: #000000;
+    background-color: #f5f5f5;
+}
+
+#sidebar .list-group-item {
+    border: none;
+}
+
+.form-control {
+    height: auto;
+}
+
+/******************* end override bootstrap **********************/
+
+
+
+/******************* zstack view *********************************/
+.z-bar {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #C3C3C3;
+    height: 40px;
+    padding: 5px 20px;
+}
+
+.z-flat-table {
+}
+
+.z-btn-bar {
+    padding-bottom: 10px;
+}
+
+.z-block-dropdown {
+    display: block;
+}
+
+.z-block-label,
+.z-label {
+    color: #717171;
+}
+
+.z-block-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.z-search-table tbody > tr > td,
+.z-search-table tbody > tr > th,
+.z-search-table tr > td,
+.z-search-table tr > th {
+    border: 0;
+    padding: 4px;
+}
+
+.z-search-condition {
+    padding-right: 10px;
+    font-size: 1.2em;
+}
+
+.z-win-h4 {
+    padding-bottom: 20px;
+    margin-top: 0;
+    margin-left: 5px;
+}
+
+.z-hint {
+    line-height: 22px;
+    color: #aaa;
+    font-style: italic;
+    font-size: .9em;
+}
+
+.z-pane {
+}
+
+.z-pane .nav-pills>li.active>a,
+.z-pane .nav-pills>li.active>a:hover,
+.z-pane .nav-pills>li.active>a:focus {
+    color: #4389cc;
+    background: transparent;
+    border-bottom: 3px solid #4389cc;
+}
+
+.z-pane .nav {
+    margin-bottom: 10px;
+    background: #eeeeee;
+}
+
+.z-pane .breadcrumb {
+    background: transparent;
+    padding: 0;
+}
+
+.z-pane .nav-pills>li>a {
+    color: #474544;
+    background: transparent;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 0;
+}
+
+.z-pane .nav-pills>li>a:hover {
+    color: #4389cc;
+    background: transparent;
+}
+
+.z-pane .panel,
+.z-pane .panel-heading {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border: none;
+    background-color: transparent;
+    margin-bottom: 0;
+}
+
+.z-pane .panel-heading {
+    padding-left: 5px;
+}
+
+.z-pane .panel-heading a{
+    font-weight: bold;
+    color: #888888;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.z-pane .panel-heading a:hover{
+    text-decoration: none;
+}
+
+.z-pane .panel-body {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+.z-table-borderless tbody > tr > td {
+    border: 0;
+}
+
+.z-pane-toolbar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.z-win-dropdown,
+.z-win-input {
+    width: 400px;
+    display: block;
+}
+
+.z-success {
+    width: 200px;
+    padding: 10px 10px;
+}
+.z-success h4 {
+    font-size: 1.3em;
+    font-weight: normal;
+    display: inline-block;
+    vertical-align: middle;
+}
+.z-success img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+p.z-hint {
+    margin: 0;
+}
+
+.z-wizard-bar {
+    /*
+    position: fixed;
+    */
+}
+
+.z-wizard-bar .nav>li>a {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    color: #999;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.z-wizard-bar .nav>li.active {
+    border-left: 2px solid #563d7c;
+}
+
+.z-wizard-bar .nav>li.active>a {
+    color: #563D7C;
+}
+
+.z-win-footer-button-bar {
+    position: absolute;
+    left: 15px;
+    bottom: 0px;
+}
+
+.z-h3 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+/******************* end zstack view *********************************/
+
+/******************* override kendo ui ******************************/
+
+.k-notification-success.k-group {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #3c763d;
+}
+
+.k-notification-success.k-group a {
+    color: #2b542c;
+}
+
+.z-flat-table .k-header {
+    background-image: none;
+    /*
+    background-color: #F5F5F5;
+    */
+    background-color: #EEEEEE;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #717171;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.z-flat-table .k-grid-pager {
+    background: transparent none;
+}
+
+.z-flat-table .k-pager-nav {
+    border: none;
+}
+
+.z-flat-table .k-grid tbody td {
+    border: none;
+    border-bottom: 2px solid #eeeeee;
+}
+
+.k-grid tr td {
+    border-top: none;
+    border-bottom: none;
+}
+
+.z-flat-table tbody tr:hover {
+    background: #cee2f7;
+}
+
+.k-state-selected {
+    color: #3c3938;
+    background: #cee2f7;
+    border-color: #cee2f7;
+}
+
+.k-widget {
+    color: #000000;
+}
+
+.z-bar .k-dropdown-wrap.k-state-default{
+    background: transparent;
+    border-radius: 0;
+    border: none;
+}
+
+.z-capacity-table {
+    table-layout: fixed;
+}
+
+table.z-capacity-table th,
+table.z-capacity-table td.z-capacity-td {
+    font-size: large;
+    text-align:center;
+    vertical-align:middle;
+}
+
+
+.k-autocomplete.k-state-default,
+.k-picker-wrap.k-state-default,
+.k-numeric-wrap.k-state-default,
+.k-dropdown-wrap.k-state-default{
+    background: #ffffff;
+    border-radius: 0;
+}
+
+.k-window-titlebar {
+    border: none;
+    background: transparent;
+}
+
+div.k-treeview {
+    overflow: visible;
+}
+
+h4[data-toggle] {
+    cursor: pointer;
+}
+
+/*
+.k-grid *{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
+}
+*/
+
+/******************* end override kendo ui ******************************/
+
+/******************* override ng-tag *********************/
+.z-pane tags-input .tags .tag-item {
+    background: #d9edf7;
+    border-color: #bce8f1;
+    color: #31708f;
+}
+
+tags-input .tags {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    box-shadow: none;
+}
+
+tags-input .tags,
+tags-input .tags:hover,
+tags-input .tags:focus {
+    padding: 1px;
+    overflow: hidden;
+    word-wrap: break-word;
+    cursor: text;
+    background-color: transparent;
+}
+
+tags-input .tags:hover,
+tags-input .tags:focus {
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+    border: 1px solid darkgray;
+    box-shadow: 1px 1px 1px 0 lightgray inset;
+}
+/******************* end override ng-tag *********************/
+
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}

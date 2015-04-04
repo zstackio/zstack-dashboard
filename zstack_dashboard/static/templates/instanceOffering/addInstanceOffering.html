@@ -1,0 +1,60 @@
+<div kendo-window="winCreateInstanceOffering__" k-visible="false" k-options="winCreateInstanceOfferingOptions__">
+    <div class="row">
+        <div class="col-sm-15">
+            <div class="tab-content">
+                <div id="createInstanceOfferingInfo" class="tab-pane active">
+                    <h4 class="z-win-h4">ADD INSTANCE OFFERING</h4>
+                    <form class="form" id="formCreate">
+                        <div class="form-group col-sm-21">
+                            <label for="name">NAME</label>
+                            <input class="form-control" type="text" id="name" placeholder="(Required) max length of 255 characters" ng-model="infoPage.name" required data-message="name is required">
+                        </div>
+                        <div class="form-group col-sm-21">
+                            <label for="description">DESCRIPTION</label>
+                            <textarea  class="form-control" rows="5" id="description" placeholder="(Optional) max length of 2048 characters" ng-model="infoPage.description"></textarea>
+                        </div>
+                        <div class="form-group col-sm-21">
+                            <label for="cpunum">CPU NUM</label>
+                            <input type="text" class="form-control" id="cpunum" placeholder="CPU number" ng-model="infoPage.cpuNum">
+                            <div class="alert alert-danger col-sm-21" ng-show="!infoPage.isCpuNumValid()">
+                                Not a number
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-21">
+                            <label for="cpuspeed">CPU SPEED</label>
+                            <input type="text" class="form-control" id="cpuspeed" placeholder="CPU speed in HZ" ng-model="infoPage.cpuSpeed">
+                            <div class="alert alert-danger col-sm-21" ng-show="!infoPage.isCpuSpeedValid()">
+                                Not a number
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-21">
+                            <label for="memory">MEMORY</label>
+                            <input type="text" class="form-control" id="memory" placeholder="can be suffixed with T/G/M/K, default is byte, e.g. 512M" ng-class="col-sm-18" ng-model="infoPage.memorySize">
+                            <div class="alert alert-danger col-sm-21" ng-show="!infoPage.isMemoryValid()">
+                                Not valid memory size. Memory size can only be a number suffixed with 'T/G/M/K'(or lowercase) or a number
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-24">
+                            <label for="allocator">ALLOCATOR STRATEGY</label>
+                            <select id="allocator" kendo-drop-down-list k-options="allocatorStrategyOptions__" class="z-win-dropdown" ng-model="infoPage.allocatorStrategy"></select>
+                            <p class="z-hint">(Optional) Host allocator strategy</p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="form-group col-sm-21">
+                    <button type="button" class="btn btn-primary" ng-disabled="!button.canNextProceed()" ng-click="button.nextClick()">{{button.nextButtonName()}}</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-7">
+            <div class="z-wizard-bar">
+                <ul class="nav">
+                    <li class="active"><a data-target="#createInstanceOfferingInfo" ng-click="button.pageClick('createInstanceOfferingInfo')">INSTANCE OFFERING INFO</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>

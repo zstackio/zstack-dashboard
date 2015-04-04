@@ -1,0 +1,10 @@
+<div kendo-window="confirmBox__" k-options="optionsConfirmBox__" k-visible="false">
+    <div>
+        <h4 class="z-win-h4">{{title}}</h4>
+        <h4 class="z-win-h4">{{description}}</h4>
+        <div style="padding-top: 10px">
+            <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+            <button type="button" class="btn {{btnType}}" ng-disabled="!canProceed()" ng-click="confirm()">Confirm</button>
+        </div>
+    </div>
+</div>

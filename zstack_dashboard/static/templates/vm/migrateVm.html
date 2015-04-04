@@ -1,0 +1,17 @@
+<div kendo-window="migrateVm__" k-visible="false" k-options="migrateVmOptions__">
+    <div>
+        <h4 class="z-win-h4">MIGRATE VM INSTANCE</h4>
+        <form class="form">
+            <div class="form-group col-sm-18">
+                <label for="host">TARGET HOST</label>
+                <select id="host" kendo-drop-down-list k-options="hostOptions__" class="z-win-dropdown" ng-model="hostUuid"></select>
+                <p class="z-hint">(Required) select target host to which vm should migrate</p>
+            </div>
+
+            <div class="form-group col-lg-18">
+                <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+                <button type="button" class="btn btn-primary" ng-disabled="!canProceed()" ng-click="done()">Migrate</button>
+            </div>
+        </form>
+    </div>
+</div>

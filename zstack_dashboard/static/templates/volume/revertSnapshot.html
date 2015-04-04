@@ -1,0 +1,33 @@
+<div kendo-window="revertSnapshot__" k-options="optionsRevertSnapshot__" k-visible="false">
+    <div>
+        <h4 class="z-win-h4">REVERT VOLUME TO SNAPSHOT</h4>
+
+        <table class="table z-table-borderless">
+            <tr>
+                <td><span class="z-label">VOLUME NAME:</span></td>
+                <td><span class="z-description">{{volume.name}}</span></td>
+            </tr>
+            <tr>
+                <td><span class="z-label">VOLUME TYPE:</span></td>
+                <td><span class="z-description">{{volume.type}}</span></td>
+            </tr>
+            <tr>
+                <td><span class="z-label">SNAPSHOT NAME:</span></td>
+                <td><span>{{snapshot.name}}</span></td>
+            </tr>
+            <tr>
+                <td><span class="z-label">SNAPSHOT UUID:</span></td>
+                <td><span>{{snapshot.uuid}}</span></td>
+            </tr>
+            <tr ng-show="isVmInCorrectState()">
+                <td><span class="z-label">VM THE VOLUME ATTACHED:</span></td>
+                <td><span class="z-description">{{vm.name}}</span></td>
+            </tr>
+        </table>
+
+        <p style="color: red" ng-show="!isVmInCorrectState()">Volume can only be reverted to snapshot when vm it attaches is stopped</p>
+
+        <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+        <button type="button" class="btn btn-primary" ng-disabled="!canProceed()" ng-click="done()">Revert</button>
+    </div>
+</div>

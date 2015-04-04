@@ -1,0 +1,139 @@
+<div style="display: none">
+    <div z-confirm="deleteVolume" z-options="optionsDeleteVolume"></div>
+    <div z-volume-attach-vm="attachVm" z-options="optionsAttachVm"></div>
+    <div z-volume-detach-vm="detachVm" z-options="optionsDetachVm"></div>
+    <div z-volume-take-snapshot="takeSnapshot" z-options="optionsTakeSnapshot"></div>
+    <div z-volume-revert-to-snapshot="revertSnapshot" z-options="optionsRevertSnapshot"></div>
+    <div z-delete-confirm="deleteSnapshotWin" z-options="optionsDeleteSnapshot"></div>
+    <div z-backup-snapshot="backupSnapshotWin" z-options="optionsBackupSnapshot"></div>
+    <div z-backup-data-volume="backupDataVolumeWin" z-options="optionsBackupDataVolume"></div>
+    <div z-delete-snapshot-from-backup-storage="deleteSnapshotFromBackupStorageWin" z-options="optionsDeleteSnapshotFromBackupStorage"></div>
+    <div z-create-template-from-root-volume="createTemplateWin" z-options="optionsCreateTemplate"></div>
+</div>
+
+<div class="z-pane">
+    <ol class="breadcrumb">
+        <li><a href="/#/volume">VOLUME</a></li>
+        <li class="active"><a href>{{model.current.name}}</a></li>
+    </ol>
+
+    <h1>{{model.current.name}}</h1>
+
+    <div class="z-pane-toolbar" ng-show="funcToolbarShow()">
+        <div class="btn-group-sm">
+            <button type="button" class="btn btn-default btn-sm z-ribbon-button" ng-click="funcRefresh()">
+                <i class="fa fa-refresh"></i>
+            </button>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    Action <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">Enable</a></li>
+                    <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">Disable</a></li>
+                    <li><a href ng-click="action.attach()" ng-show="model.current.isAttachShow()">Attach</a></li>
+                    <li><a href ng-click="action.detach()" ng-show="model.current.isDetachShow()">Detach</a></li>
+                    <li><a href ng-click="action.takeSnapshot()" ng-show="model.current.isSnapshotShow()">Take Snapshot</a></li>
+                    <li><a href ng-click="action.createTemplate()" ng-show="model.current.isCreateTemplateShow()">Create Template</a></li>
+                    <li class="divider"></li>
+                    <li><a href style="color:red" ng-click="funcDeleteVolume(deleteVolume)" ng-show="model.current.isDeleteShow()">Delete</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <ul class="nav nav-pills">
+        <li class="active"><a data-target="#info" data-toggle="pill" href>Info</a></li>
+        <li><a data-target="#snapshot" data-toggle="pill" href>Snapshot</a></li>
+    </ul>
+
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="info">
+            <tags-input ng-model="optionsTag.tags" display-property="tag" min-length="1"
+                        on-tag-added="optionsTag.createTag($tag)" on-tag-removed="optionsTag.deleteTag($tag)"
+                        add-on-comma="false" replace-spaces-with-dashes="false" ng-show="optionsTag.isShow()"></tags-input>
+
+            <div class="panel panel-default" z-panel-header-in>
+                <div class="panel-heading">
+                    <a class="accordion-toggle" data-target="#infoDetails" data-toggle="collapse" href>
+                        <i class="z-collapse fa fa-chevron-down"></i>
+                        <span>&nbsp; DETAILS</span>
+                    </a>
+                </div>
+
+                <div id="infoDetails" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <table class="table z-table-borderless">
+                            <tr>
+                                <td><span class="z-label">DESCRIPTION:</span></td>
+                                <td><span class="z-description">{{model.current.description}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">STATE:</span></td>
+                                <td><span class="{{model.current.stateLabel()}}">{{model.current.state}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">STATUS:</span></td>
+                                <td><span class="{{model.current.statusLabel()}}">{{model.current.status}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">FORMAT:</span></td>
+                                <td><span>{{model.current.format}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">TYPE:</span></td>
+                                <td><span>{{model.current.type}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">DEVICE ID:</span></td>
+                                <td><span>{{model.current.deviceId}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">SIZE:</span></td>
+                                <td><span>{{model.current.size | size}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">INSTALL PATH:</span></td>
+                                <td><span>{{model.current.installPath}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">UUID:</span></td>
+                                <td><span>{{model.current.uuid}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">PRIMARY STORAGE UUID:</span></td>
+                                <td><a href="/#/primaryStorage/{{model.current.primaryStorageUuid}}">{{model.current.primaryStorageUuid}}</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">VM INSTANCE UUID:</span></td>
+                                <td><a href="/#/vmInstance/{{model.current.vmInstanceUuid}}">{{model.current.vmInstanceUuid}}</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">ROOT IMAGE UUID:</span></td>
+                                <td><a href="/#/image/{{model.current.rootImageUuid}}">{{model.current.rootImageUuid}}</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">DISK OFFERING UUID:</span></td>
+                                <td><a href="/#/diskOffering/{{model.current.diskOfferingUuid}}">{{model.current.diskOfferingUuid}}</a></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">CREATED DATE:</span></td>
+                                <td><span>{{model.current.createDate}}</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="z-label">LAST UPDATED DATE:</span></td>
+                                <td><span>{{model.current.lastOpDate}}</span></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane" id="snapshot">
+            <div kendo-tree-view="snapshotTree" k-options="optionsSnapshotTree"></div>
+        </div>
+    </div>
+</div>

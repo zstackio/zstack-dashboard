@@ -1,0 +1,2 @@
+include zstack-dashboard
+recursive-include zstack_dashboard/static *

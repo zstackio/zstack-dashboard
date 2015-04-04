@@ -1,0 +1,31 @@
+<div style="display: inline-block">
+    <button z-popover="popoverSortedBy__" type="button" id="sortBy__" z-content-id="sortByContent__" class="btn btn-default btn-sm" ng-click="funcShow(popoverSortedBy__)">
+        <i class="fa fa-sort-alpha-asc"></i><span>&nbsp; {{buttonName}}</span>
+    </button>
+
+    <div id="sortByContent__" style="display: none">
+        <form class="form">
+            <div class="form-group">
+                <label for="fieldList" class="z-label">FIELD</label>
+                <select kendo-drop-down-list id="fieldList" k-options="optionsSortBy__" class="z-block-dropdown" ng-model="field">
+                </select>
+            </div>
+
+            <div class="form-group">
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="sortRadio__" ng-model="direction" value="asc" checked>
+                        ASC
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="sortRadio__" ng-model="direction" value="desc">
+                        DESC
+                    </label>
+                </div>
+            </div>
+            <button type="button" class="btn btn-sm btn-primary" ng-click="funcSortByConfirm(popoverSortedBy__)">Confirm</button>
+        </form>
+    </div>
+</div>

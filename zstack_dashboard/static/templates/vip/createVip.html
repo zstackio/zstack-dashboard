@@ -1,0 +1,55 @@
+<div kendo-window="winCreateVip__" k-visible="false" k-options="winCreateVipOptions__">
+    <div class="row">
+        <div class="col-sm-15">
+            <div class="tab-content">
+                <div id="createVipInfo" class="tab-pane active">
+                    <div class="alert alert-warning col-sm-21" ng-show="!hasL3Network()">
+                        No L3 network has been created. Please go to <a href="/#/l3Network">L3 network page</a> to create a new one.
+                    </div>
+
+                    <h4 class="z-win-h4">ACQUIRE VIP</h4>
+                    <form class="form" id="formCreate">
+                        <div class="form-group col-sm-24">
+                            <label for="zone">ZONE</label>
+                            <select id="zone" kendo-drop-down-list k-options="zoneOptions__" class="z-win-dropdown" ng-model="zoneUuid"></select>
+                        </div>
+                        <div class="form-group col-sm-24">
+                            <label for="l3nw">L3 NETWORK</label>
+                            <select id="l3nw" kendo-drop-down-list k-options="l3NetworkListOptions__" class="z-win-dropdown" ng-model="infoPage.l3NetworkUuid"></select>
+                            <p class="z-hint">(Required) L3 network from which this VIP is being allocated</p>
+                        </div>
+                        <div class="form-group col-sm-21">
+                            <label for="name">NAME</label>
+                            <input class="form-control" type="text" id="name" placeholder="(Required) max length of 255 characters" ng-model="infoPage.name" required data-message="name is required">
+                        </div>
+                        <div class="form-group col-sm-21">
+                            <label for="description">DESCRIPTION</label>
+                            <textarea  class="form-control" rows="5" id="description" placeholder="(Optional) max length of 2048 characters" ng-model="infoPage.description"></textarea>
+                        </div>
+                        <div class="form-group col-sm-21">
+                            <label for="rip">REQUIRED IP</label>
+                            <input type="text" class="form-control" id="rip" placeholder="IPv4 address" ng-model="infoPage.requiredIp">
+                            <p class="z-hint">(Optional) Specify the ip you want to allocate from the l3 network, a failure will be reported if specified ip is not available. If omitted, an ip will be automatically allocated</p>
+                            <div class="alert alert-danger col-sm-21" ng-show="!infoPage.isVipValid()">
+                                Not a valid IPv4 address
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="form-group col-sm-21">
+                    <button type="button" class="btn btn-primary" ng-disabled="!button.canNextProceed()" ng-click="button.nextClick()">{{button.nextButtonName()}}</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-7">
+            <div class="z-wizard-bar">
+                <ul class="nav">
+                    <li class="active"><a data-target="#createVipInfo" ng-click="button.pageClick('createVipInfo')">VIP INFO</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>

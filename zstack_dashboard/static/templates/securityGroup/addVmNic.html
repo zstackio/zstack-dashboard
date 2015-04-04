@@ -1,0 +1,21 @@
+<div kendo-window="addVmNic__" k-visible="false" k-options="addVmNicOptions__">
+    <div>
+        <div class="alert alert-warning col-sm-21" ng-show="!hasVmNic()">
+            No vm nic is eligible to join in this security group. Please attach L3 network to this security group or create vm instance first
+        </div>
+
+        <h4 class="z-win-h4">ADD VM NIC TO SECURITY GROUP -- {{securityGroupName}}</h4>
+        <form class="form">
+            <div class="form-group col-sm-18">
+                <label for="nic">VM NIC</label>
+                <select id="nic" kendo-multi-select="vmNicList__" k-options="vmNicListOptions__" class="z-win-dropdown"></select>
+                <p class="z-hint">(Required) select one or more vm nic</p>
+            </div>
+
+            <div class="form-group col-lg-18">
+                <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+                <button type="button" class="btn btn-primary" ng-disabled="!canProceed()" ng-click="done()">ADD</button>
+            </div>
+        </form>
+    </div>
+</div>

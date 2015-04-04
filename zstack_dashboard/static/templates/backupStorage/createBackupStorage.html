@@ -1,0 +1,81 @@
+<div kendo-window="winCreateBackupStorage__" k-visible="false" k-options="winCreateBackupStorageOptions__">
+    <div class="row">
+        <div class="col-sm-15">
+            <div class="tab-content">
+                <div id="createBackupStorageInfo" class="tab-pane active">
+                    <h4 class="z-win-h4">CREATE BACKUP STORAGE</h4>
+                    <form class="form" id="formCreate">
+                        <div class="form-group col-sm-21">
+                            <label for="name">NAME</label>
+                            <input class="form-control" type="text" id="name" placeholder="(Required) max length of 255 characters" ng-model="infoPage.name" required data-message="name is required">
+                        </div>
+                        <div class="form-group col-sm-21">
+                            <label for="description">DESCRIPTION</label>
+                            <textarea  class="form-control" rows="5" id="description" placeholder="(Optional) max length of 2048 characters" ng-model="infoPage.description"></textarea>
+                        </div>
+                        <div class="form-group col-sm-24">
+                            <label for="type">TYPE</label>
+                            <select id="type" kendo-drop-down-list k-options="typeList" class="z-win-dropdown" ng-model="infoPage.type"></select>
+                            <p class="z-hint">(Required) select type of backup storage</p>
+                        </div>
+                        <div class="form-group col-sm-21">
+                            <label for="url" class="z-block-label">URL</label>
+                            <input id="url" type="text" ng-model="infoPage.url" class="form-control" placeholder="(Required) Url of backup storage">
+                            <p class="z-hint">(Required) for sftp backup storage, url is absolute directory path, for example, '/backupStorage'</p>
+                            <div class="alert alert-danger col-sm-21" ng-show="!infoPage.isUrlValid()">
+                                Not a valid path. Valid path must be an absolute path starting with '/'
+                            </div>
+                        </div>
+                        <div ng-switch="infoPage.type">
+                            <div ng-switch-when="SftpBackupStorage">
+                                <div class="form-group col-sm-21">
+                                    <label for="hostname">HOSTNAME</label>
+                                    <input type="text" class="form-control" id="hostname" placeholder="IP or DNS name of sftp server" ng-model="infoPage.hostname">
+                                </div>
+                                <div class="form-group col-sm-21">
+                                    <label for="username">USER NAME</label>
+                                    <input type="text" class="form-control" id="username" placeholder="ssh user name of sftp server" ng-model="infoPage.username">
+                                    <p class="z-hint">The user must have root privilege on sftp server</p>
+                                </div>
+                                <div class="form-group col-sm-21">
+                                    <label for="password">PASSWORD</label>
+                                    <input type="password" class="form-control" id="password" placeholder="ssh password of sftp server" ng-model="infoPage.password">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="createBackupStorageZone" class="tab-pane">
+                    <div class="alert alert-warning col-sm-21" ng-show="!zonePage.hasZone()">
+                        No zone is eligible to attach. Please click 'Add' button to proceed.
+                    </div>
+
+                    <h4 class="z-win-h4">ATTACH ZONE</h4>
+                    <form class="form">
+                        <div class="form-group col-sm-18">
+                            <label for="ps">ZONE</label>
+                            <select id="ps" kendo-multi-select="zoneList__" k-options="zoneListOptions__" class="z-win-dropdown"></select>
+                            <p class="z-hint">(Optional) select one or more zone to attach. Or do it later after adding backup storage</p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="form-group col-sm-21">
+                    <button type="button" class="btn btn-default" ng-click="button.previousClick()" ng-disabled="!button.canPreviousProceed()">Previous</button>
+                    <button type="button" class="btn btn-primary" ng-disabled="!button.canNextProceed()" ng-click="button.nextClick()">{{button.nextButtonName()}}</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-7">
+            <div class="z-wizard-bar">
+                <ul class="nav">
+                    <li class="active"><a data-target="#createBackupStorageInfo" ng-click="button.pageClick('createBackupStorageInfo')">BACKUP STORAGE INFO</a></li>
+                    <li ng-class="{disabled: !psPage.isActive()}"><a data-target="#createBackupStorageZone" ng-click="button.pageClick('createBackupStorageZone')">ATTACH ZONE</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>

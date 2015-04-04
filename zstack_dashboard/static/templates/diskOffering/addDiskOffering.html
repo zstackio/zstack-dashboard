@@ -1,0 +1,43 @@
+<div kendo-window="winCreateDiskOffering__" k-visible="false" k-options="winCreateDiskOfferingOptions__">
+    <div class="row">
+        <div class="col-sm-15">
+            <div class="tab-content">
+                <div id="createDiskOfferingInfo" class="tab-pane active">
+                    <h4 class="z-win-h4">ADD DISK OFFERING</h4>
+                    <form class="form" id="formCreate">
+                        <div class="form-group col-sm-21">
+                            <label for="name">NAME</label>
+                            <input class="form-control" type="text" id="name" placeholder="(Required) max length of 255 characters" ng-model="infoPage.name" required data-message="name is required">
+                        </div>
+                        <div class="form-group col-sm-21">
+                            <label for="description">DESCRIPTION</label>
+                            <textarea  class="form-control" rows="5" id="description" placeholder="(Optional) max length of 2048 characters" ng-model="infoPage.description"></textarea>
+                        </div>
+                        <div class="form-group col-sm-21">
+                            <label for="disk">DISK SIZE</label>
+                            <input type="text" class="form-control" id="disk" placeholder="can be suffixed with T/G/M/K, default is bytes, e.g 1T" ng-model="infoPage.diskSize">
+                        </div>
+                        <div class="form-group col-sm-24">
+                            <label for="allocator">ALLOCATOR STRATEGY</label>
+                            <select id="allocator" kendo-drop-down-list k-options="allocatorStrategyOptions__" class="z-win-dropdown" ng-model="infoPage.allocatorStrategy"></select>
+                            <p class="z-hint">(Optional) Primary storage allocator strategy</p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="form-group col-sm-21">
+                    <button type="button" class="btn btn-primary" ng-disabled="!button.canNextProceed()" ng-click="button.nextClick()">{{button.nextButtonName()}}</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-7">
+            <div class="z-wizard-bar">
+                <ul class="nav">
+                    <li class="active"><a data-target="#createDiskOfferingInfo" ng-click="button.pageClick('createDiskOfferingInfo')">DISK OFFERING INFO</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>

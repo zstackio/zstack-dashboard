@@ -1,0 +1,20 @@
+<div kendo-window="attachL2Network__" k-visible="false" k-options="attachL2NetworkOptions__">
+    <div>
+        <div class="alert alert-warning col-sm-21" ng-show="!hasL2Network()">
+            No L2 Network has been created. Please go to <a href="/#/l2Network">l2Network page</a> to create a new one.
+        </div>
+
+        <h4 class="z-win-h4">ATTACH L2 NETWORK</h4>
+        <form class="form">
+            <div class="form-group col-sm-18">
+                <label for="ps">L2 NETWORK</label>
+                <select id="ps" kendo-multi-select="l2NetworkList__" k-options="l2NetworkListOptions__" class="z-win-dropdown"></select>
+                <p class="z-hint">(Required) select one or more l2Network to attach</p>
+            </div>
+            <div class="form-group col-lg-18">
+                <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+                <button type="button" class="btn btn-primary" ng-disabled="!canProceed()" ng-click="done()">Attach</button>
+            </div>
+        </form>
+    </div>
+</div>

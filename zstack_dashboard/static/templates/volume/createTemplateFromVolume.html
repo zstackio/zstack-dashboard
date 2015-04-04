@@ -1,0 +1,55 @@
+<div kendo-window="createTemplateFromRootVolume__" k-options="createTemplateFromRootVolumeOptions__" k-visible="false">
+    <div>
+        <div class="alert alert-warning col-sm-21" ng-show="!hasBackupStorage()">
+            No backup storage is eligible. If no backup storage has been added, please go to <a href="/#/backupStorage">backup storage page</a> to add a new one.
+            Or please attach an existing backup storage to the zone this root volume belongs to.
+        </div>
+
+        <h4 class="z-win-h4">CREATE TEMPLATE FROM ROOT VOLUME</h4>
+        <div class="alert alert-warning col-sm-21" ng-show="!isVmInCorrectState()">
+            vm instance<a herf="/#/vmInstance/{{vm.uuid}}">{{vm.name}}</a> is in state of {{vm.state}}. A template can only be created
+            when vm is in state of Stopped
+        </div>
+        <form class="form">
+            <div class="form-group col-sm-18">
+                <label for="ps">BACKUP STORAGE</label>
+                <select id="ps" kendo-drop-down-list="backupStorageList__" k-options="backupStorageOptions__" class="z-win-dropdown" ng-model="bsUuid"></select>
+            </div>
+            <div class="form-group col-sm-18">
+                <label for="name">NAME</label>
+                <input class="form-control" type="text" id="name" placeholder="(Required) max length of 255 characters" ng-model="name" required data-message="name is required">
+            </div>
+            <div class="form-group col-sm-18">
+                <label for="description">DESCRIPTION</label>
+                <textarea  class="form-control" rows="5" id="description" placeholder="(Optional) max length of 2048 characters" ng-model="description"></textarea>
+            </div>
+            <div class="form-group col-sm-18">
+                <label for="hvType">PLATFORM</label>
+                <select id="hvType" kendo-drop-down-list="platformList__" k-options="platformOptions__" class="z-win-dropdown" ng-model="platform"></select>
+            </div>
+            <div class="form-group col-sm-18">
+                <label for="bits">BITS</label>
+                <select id="bits" kendo-drop-down-list="bitsList__" k-options="bitsOptions__" class="z-win-dropdown" ng-model="bits"></select>
+                <p class="z-hint">(Required) operating system bit, 32 bit or 64 bit</p>
+            </div>
+            <div class="form-group col-sm-18">
+                <label for="guestOsType">GUEST OS TYPE</label>
+                <input type="text" class="form-control" id="guestOsType" placeholder="guest os type" ng-model="guestOsType">
+            </div>
+
+            <div class="form-group col-sm-18">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="system"> <strong>SYSTEM TEMPLATE</strong>
+                    </label>
+                </div>
+                <p class="z-hint">(Optional) if checked, the template will be created as system template and will not be listed when creating a user vm</p>
+            </div>
+
+            <div class="form-group col-lg-18">
+                <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+                <button type="button" class="btn btn-primary" ng-disabled="!canProceed()" ng-click="done()">Create</button>
+            </div>
+        </form>
+    </div>
+</div>

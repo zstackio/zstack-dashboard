@@ -1,0 +1,31 @@
+<div kendo-window="editGlobalConfig__" k-options="editGlobalConfigOptions__" k-visible="false">
+    <div>
+        <h4 class="z-win-h4">EDIT GLOBAL CONFIG</h4>
+        <form class="form">
+            <div class="form-group col-sm-18">
+                <label for="category">CATEGORY</label>
+                <input class="form-control" type="text" id="category" ng-disabled="true" ng-model="category">
+            </div>
+
+            <div class="form-group col-sm-18">
+                <label for="category">NAME</label>
+                <input class="form-control" type="text" id="name" ng-disabled="true" ng-model="name">
+            </div>
+
+            <div class="form-group col-sm-18">
+                <label for="old">CURRENT VALUE</label>
+                <input class="form-control" type="text" id="old" ng-disabled="true" ng-model="currentValue">
+            </div>
+
+            <div class="form-group col-sm-18">
+                <label for="value">NEW VALUE</label>
+                <input class="form-control" type="text" id="value" ng-model="newValue">
+            </div>
+
+            <div class="form-group col-lg-18">
+                <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+                <button type="button" class="btn btn-primary" ng-disabled="!canProceed()" ng-click="done()">Done</button>
+            </div>
+        </form>
+    </div>
+</div>
