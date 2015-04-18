@@ -5,6 +5,7 @@
     <div z-volume-attach-vm="attachVm" z-options="optionsAttachVm"></div>
     <div z-volume-detach-vm="detachVm" z-options="optionsDetachVm"></div>
     <div z-backup-data-volume="backupDataVolumeWin" z-options="optionsBackupDataVolume"></div>
+    <div z-volume-take-snapshot="takeSnapshot" z-options="optionsTakeSnapshot"></div>
     <div z-create-template-from-root-volume="createTemplateWin" z-options="optionsCreateTemplate"></div>
 </div>
 
@@ -54,6 +55,7 @@
                 <li><a href ng-click="action.attach()" ng-show="model.current.isAttachShow()">Attach</a></li>
                 <li><a href ng-click="action.detach()" ng-show="model.current.isDetachShow()">Detach</a></li>
                 <li><a href ng-click="action.createTemplate()" ng-show="model.current.isCreateTemplateShow()">Create Template</a></li>
+                <li><a href ng-click="action.takeSnapshot()" ng-show="model.current.isSnapshotShow()">Take Snapshot</a></li>
                 <li class="divider"></li>
                 <li><a href style="color:red" ng-click="funcDeleteVolume(deleteVolume)" ng-show="model.current.isDeleteShow()">Delete</a></li>
             </ul>

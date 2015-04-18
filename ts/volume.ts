@@ -1180,6 +1180,10 @@ module MVolume {
                 volume: null
             };
 
+            $scope.optionsTakeSnapshot = {
+                volume: null
+            };
+
             $scope.optionsBackupDataVolume = {
                 volume: null
             };
@@ -1194,6 +1198,7 @@ module MVolume {
                 if (Utils.notNullnotUndefined($scope.model.current)) {
                     $scope.optionsAttachVm.volume = $scope.model.current;
                     $scope.optionsDetachVm.volume = $scope.model.current;
+                    $scope.optionsTakeSnapshot.volume = $scope.model.current;
                     $scope.optionsBackupDataVolume.volume = $scope.model.current;
                     $scope.optionsCreateTemplate.volume = $scope.model.current;
                 }
