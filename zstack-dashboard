@@ -69,13 +69,15 @@ stop_dashboard(){
         return 0
     else
         pid=`cat $pidfile`
-        ps -p $pid > /dev/null
-        if [ $? -eq 0 ]; then
-            kill -3 $pid
-            echo "zstack dashboard is killed"
-            kill -9 $pid >/dev/null 2>&1
-        else
-            echo "Not find process: $pid, zstack dashboard might be stopped."
+        if [ ! -z $pid ]; then
+            ps -p $pid > /dev/null
+            if [ $? -eq 0 ]; then
+                kill -3 $pid
+                echo "zstack dashboard is killed"
+                kill -9 $pid >/dev/null 2>&1
+            else
+                echo "Not find process: $pid, zstack dashboard might be stopped."
+            fi
         fi
         /bin/rm -f $pidfile
     fi
@@ -87,12 +89,14 @@ start_dashboard(){
 
     if [ -f $pidfile ]; then
         pid=`cat $pidfile`
-        ps -p $pid > /dev/null
-        if [ $? -eq 0 ]; then
-            echo "zstack dashboard is running with PID: $pid, wont' startup again."
-            return 0
-        else
-            /bin/rm -f $pidfile
+        if [ ! -z $pid ]; then
+            ps -p $pid > /dev/null
+            if [ $? -eq 0 ]; then
+                echo "zstack dashboard is running with PID: $pid, wont' startup again."
+                return 0
+            else
+                /bin/rm -f $pidfile
+            fi
         fi
     fi
 
