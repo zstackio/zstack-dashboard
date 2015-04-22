@@ -903,6 +903,10 @@ module MVolume {
                 return Utils.notNullnotUndefined($scope.model.current);
             };
 
+            $scope.funcDeleteVolume = () => {
+                $scope.deleteVolume.open();
+            };
+
             $scope.optionsDeleteVolume = {
                 title: 'DELETE VOLUME',
                 description: ()=> {

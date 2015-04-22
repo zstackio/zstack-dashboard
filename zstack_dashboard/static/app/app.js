@@ -19375,6 +19375,9 @@ var MVolume;
             $scope.funcToolbarShow = function () {
                 return Utils.notNullnotUndefined($scope.model.current);
             };
+            $scope.funcDeleteVolume = function () {
+                $scope.deleteVolume.open();
+            };
             $scope.optionsDeleteVolume = {
                 title: 'DELETE VOLUME',
                 description: function () {
