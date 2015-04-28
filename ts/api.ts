@@ -1359,6 +1359,19 @@ module ApiHeader {
   }
 
 
+  export class APIReconnectPrimaryStorageMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.storage.primary.APIReconnectPrimaryStorageMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
   export class APIDetachPrimaryStorageFromClusterMsg implements APIMessage {
     toApiMap() : any {
       var msg = {
@@ -3301,6 +3314,32 @@ module ApiHeader {
   }
 
 
+  export class APIAddIscsiFileSystemBackendPrimaryStorageMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.storage.primary.iscsi.APIAddIscsiFileSystemBackendPrimaryStorageMsg': this
+      };
+      return msg;
+    }
+    hostname : string;
+    sshUsername : string;
+    sshPassword : string;
+    filesystemType : string;
+    chapUsername : string;
+    chapPassword : string;
+    url : string;
+    name : string;
+    description : string;
+    type : string;
+    zoneUuid : string;
+    resourceUuid : string;
+    userTags : Array<string>;
+    systemTags : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
   export class APIAddKVMHostMsg implements APIMessage {
     toApiMap() : any {
       var msg = {
@@ -4251,6 +4290,7 @@ module ApiHeader {
     lastHostUuid : string;
     instanceOfferingUuid : string;
     rootVolumeUuid : string;
+    platform : string;
     defaultL3NetworkUuid : string;
     type : string;
     hypervisorType : string;
@@ -4537,15 +4577,6 @@ module ApiHeader {
   }
 
 
-  export class APIIsReadyToGoEvent {
-    managementNodeId : string;
-    API_EVENT : string;
-    success : boolean;
-    error : ErrorCode;
-    BINDING_KEY_PERFIX : string;
-  }
-
-
   export class DiskOfferingInventory {
     uuid : string;
     name : string;
@@ -4721,6 +4752,15 @@ module ApiHeader {
 
 
   export class APIChangePrimaryStorageStateEvent {
+    inventory : PrimaryStorageInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APIReconnectPrimaryStorageEvent {
     inventory : PrimaryStorageInventory;
     API_EVENT : string;
     success : boolean;
@@ -5472,6 +5512,7 @@ module ApiHeader {
     lastHostUuid : string;
     instanceOfferingUuid : string;
     rootVolumeUuid : string;
+    platform : string;
     defaultL3NetworkUuid : string;
     type : string;
     hypervisorType : string;
@@ -5779,6 +5820,7 @@ module ApiHeader {
     error : ErrorCode;
   }
 
+
   export class APIListGlobalConfigReply {
     inventories : GlobalConfigInventory[];
     success : boolean;
@@ -5947,6 +5989,13 @@ module ApiHeader {
   }
 
 
+  export class APIIsReadyToGoReply {
+    managementNodeId : string;
+    success : boolean;
+    error : ErrorCode;
+  }
+
+
   export class APISearchInstanceOfferingReply {
     content : string;
     success : boolean;
@@ -6028,6 +6077,7 @@ module ApiHeader {
 
   export class CreateTemplateFromVolumeOnPrimaryStorageReply {
     templateBackupStorageInstallPath : string;
+    format : string;
     success : boolean;
     error : ErrorCode;
   }
@@ -6660,7 +6710,7 @@ module ApiHeader {
   }
 
 
-  export class VirtualRouterInventory {
+  export class VirtualRouterVmInventory {
     publicNetworkUuid : string;
     applianceVmType : string;
     managementNetworkUuid : string;
@@ -6676,6 +6726,7 @@ module ApiHeader {
     lastHostUuid : string;
     instanceOfferingUuid : string;
     rootVolumeUuid : string;
+    platform : string;
     defaultL3NetworkUuid : string;
     type : string;
     hypervisorType : string;
@@ -6692,7 +6743,7 @@ module ApiHeader {
 
 
   export class APIQueryVirtualRouterVmReply {
-    inventories : Array<VirtualRouterInventory>;
+    inventories : Array<VirtualRouterVmInventory>;
     total : number;
     success : boolean;
     error : ErrorCode;
@@ -6938,6 +6989,30 @@ module ApiHeader {
   }
 
 
+  export class IscsiFileSystemBackendPrimaryStorageInventory {
+    chapUsername : string;
+    chapPassword : string;
+    hostname : string;
+    sshUsername : string;
+    sshPassword : string;
+    filesystemType : string;
+    uuid : string;
+    zoneUuid : string;
+    name : string;
+    url : string;
+    description : string;
+    totalCapacity : number;
+    availableCapacity : number;
+    type : string;
+    state : string;
+    status : string;
+    mountPath : string;
+    createDate : string;
+    lastOpDate : string;
+    attachedClusterUuids : Array<string>;
+  }
+
+
   export class VirtualRouterEipRefInventory {
     eipUuid : string;
     virtualRouterVmUuid : string;
@@ -6981,7 +7056,7 @@ module ApiHeader {
 
   export var TagResourceTypeVmNicVO = 'VmNicVO';
 
-  export var VmInstanceInventoryQueryable = ['uuid', 'name', 'description', 'zoneUuid', 'clusterUuid', 'imageUuid', 'hostUuid', 'lastHostUuid', 'instanceOfferingUuid', 'rootVolumeUuid', 'defaultL3NetworkUuid', 'type', 'hypervisorType', 'memorySize', 'cpuNum', 'cpuSpeed', 'allocatorStrategy', 'createDate', 'lastOpDate', 'state', 'vmNics.uuid', 'vmNics.vmInstanceUuid', 'vmNics.l3NetworkUuid', 'vmNics.ip', 'vmNics.mac', 'vmNics.netmask', 'vmNics.gateway', 'vmNics.metaData', 'vmNics.deviceId', 'vmNics.createDate', 'vmNics.lastOpDate', 'allVolumes.uuid', 'allVolumes.name', 'allVolumes.description', 'allVolumes.primaryStorageUuid', 'allVolumes.vmInstanceUuid', 'allVolumes.diskOfferingUuid', 'allVolumes.rootImageUuid', 'allVolumes.installPath', 'allVolumes.type', 'allVolumes.format', 'allVolumes.size', 'allVolumes.deviceId', 'allVolumes.state', 'allVolumes.status', 'allVolumes.createDate', 'allVolumes.lastOpDate'];
+  export var VmInstanceInventoryQueryable = ['uuid', 'name', 'description', 'zoneUuid', 'clusterUuid', 'imageUuid', 'hostUuid', 'lastHostUuid', 'instanceOfferingUuid', 'rootVolumeUuid', 'platform', 'defaultL3NetworkUuid', 'type', 'hypervisorType', 'memorySize', 'cpuNum', 'cpuSpeed', 'allocatorStrategy', 'createDate', 'lastOpDate', 'state', 'vmNics.uuid', 'vmNics.vmInstanceUuid', 'vmNics.l3NetworkUuid', 'vmNics.ip', 'vmNics.mac', 'vmNics.netmask', 'vmNics.gateway', 'vmNics.metaData', 'vmNics.deviceId', 'vmNics.createDate', 'vmNics.lastOpDate', 'allVolumes.uuid', 'allVolumes.name', 'allVolumes.description', 'allVolumes.primaryStorageUuid', 'allVolumes.vmInstanceUuid', 'allVolumes.diskOfferingUuid', 'allVolumes.rootImageUuid', 'allVolumes.installPath', 'allVolumes.type', 'allVolumes.format', 'allVolumes.size', 'allVolumes.deviceId', 'allVolumes.state', 'allVolumes.status', 'allVolumes.createDate', 'allVolumes.lastOpDate'];
 
 
   export var TagResourceTypeVmInstanceVO = 'VmInstanceVO';
@@ -7176,10 +7251,15 @@ module ApiHeader {
 
   export var TagResourceTypeApplianceVmFirewallRuleVO = 'ApplianceVmFirewallRuleVO';
 
-  export var ApplianceVmInventoryQueryable = ['applianceVmType', 'managementNetworkUuid', 'defaultRouteL3NetworkUuid', 'status', 'uuid', 'name', 'description', 'zoneUuid', 'clusterUuid', 'imageUuid', 'hostUuid', 'lastHostUuid', 'instanceOfferingUuid', 'rootVolumeUuid', 'defaultL3NetworkUuid', 'type', 'hypervisorType', 'memorySize', 'cpuNum', 'cpuSpeed', 'allocatorStrategy', 'createDate', 'lastOpDate', 'state', 'vmNics.uuid', 'vmNics.vmInstanceUuid', 'vmNics.l3NetworkUuid', 'vmNics.ip', 'vmNics.mac', 'vmNics.netmask', 'vmNics.gateway', 'vmNics.metaData', 'vmNics.deviceId', 'vmNics.createDate', 'vmNics.lastOpDate', 'allVolumes.uuid', 'allVolumes.name', 'allVolumes.description', 'allVolumes.primaryStorageUuid', 'allVolumes.vmInstanceUuid', 'allVolumes.diskOfferingUuid', 'allVolumes.rootImageUuid', 'allVolumes.installPath', 'allVolumes.type', 'allVolumes.format', 'allVolumes.size', 'allVolumes.deviceId', 'allVolumes.state', 'allVolumes.status', 'allVolumes.createDate', 'allVolumes.lastOpDate'];
+  export var ApplianceVmInventoryQueryable = ['applianceVmType', 'managementNetworkUuid', 'defaultRouteL3NetworkUuid', 'status', 'uuid', 'name', 'description', 'zoneUuid', 'clusterUuid', 'imageUuid', 'hostUuid', 'lastHostUuid', 'instanceOfferingUuid', 'rootVolumeUuid', 'platform', 'defaultL3NetworkUuid', 'type', 'hypervisorType', 'memorySize', 'cpuNum', 'cpuSpeed', 'allocatorStrategy', 'createDate', 'lastOpDate', 'state', 'vmNics.uuid', 'vmNics.vmInstanceUuid', 'vmNics.l3NetworkUuid', 'vmNics.ip', 'vmNics.mac', 'vmNics.netmask', 'vmNics.gateway', 'vmNics.metaData', 'vmNics.deviceId', 'vmNics.createDate', 'vmNics.lastOpDate', 'allVolumes.uuid', 'allVolumes.name', 'allVolumes.description', 'allVolumes.primaryStorageUuid', 'allVolumes.vmInstanceUuid', 'allVolumes.diskOfferingUuid', 'allVolumes.rootImageUuid', 'allVolumes.installPath', 'allVolumes.type', 'allVolumes.format', 'allVolumes.size', 'allVolumes.deviceId', 'allVolumes.state', 'allVolumes.status', 'allVolumes.createDate', 'allVolumes.lastOpDate'];
 
 
   export var TagResourceTypeApplianceVmVO = 'ApplianceVmVO';
+
+  export var IscsiFileSystemBackendPrimaryStorageInventoryQueryable = ['chapUsername', 'chapPassword', 'hostname', 'sshUsername', 'sshPassword', 'filesystemType', 'uuid', 'zoneUuid', 'name', 'url', 'description', 'totalCapacity', 'availableCapacity', 'type', 'state', 'status', 'mountPath', 'createDate', 'lastOpDate', 'attachedClusterUuids'];
+
+
+  export var TagResourceTypeIscsiFileSystemBackendPrimaryStorageVO = 'IscsiFileSystemBackendPrimaryStorageVO';
 
   export var SftpBackupStorageInventoryQueryable = ['hostname', 'uuid', 'name', 'url', 'description', 'totalCapacity', 'availableCapacity', 'type', 'state', 'status', 'createDate', 'lastOpDate', 'attachedZoneUuids'];
 
@@ -7196,6 +7276,11 @@ module ApiHeader {
 
   export var TagResourceTypeVirtualRouterEipRefVO = 'VirtualRouterEipRefVO';
 
+  export var VirtualRouterVmInventoryQueryable = ['publicNetworkUuid', 'applianceVmType', 'managementNetworkUuid', 'defaultRouteL3NetworkUuid', 'status', 'uuid', 'name', 'description', 'zoneUuid', 'clusterUuid', 'imageUuid', 'hostUuid', 'lastHostUuid', 'instanceOfferingUuid', 'rootVolumeUuid', 'platform', 'defaultL3NetworkUuid', 'type', 'hypervisorType', 'memorySize', 'cpuNum', 'cpuSpeed', 'allocatorStrategy', 'createDate', 'lastOpDate', 'state', 'vmNics.uuid', 'vmNics.vmInstanceUuid', 'vmNics.l3NetworkUuid', 'vmNics.ip', 'vmNics.mac', 'vmNics.netmask', 'vmNics.gateway', 'vmNics.metaData', 'vmNics.deviceId', 'vmNics.createDate', 'vmNics.lastOpDate', 'allVolumes.uuid', 'allVolumes.name', 'allVolumes.description', 'allVolumes.primaryStorageUuid', 'allVolumes.vmInstanceUuid', 'allVolumes.diskOfferingUuid', 'allVolumes.rootImageUuid', 'allVolumes.installPath', 'allVolumes.type', 'allVolumes.format', 'allVolumes.size', 'allVolumes.deviceId', 'allVolumes.state', 'allVolumes.status', 'allVolumes.createDate', 'allVolumes.lastOpDate'];
+
+
+  export var TagResourceTypeVirtualRouterVmVO = 'VirtualRouterVmVO';
+
   export var VirtualRouterVipInventoryQueryable = ['uuid', 'virtualRouterVmUuid'];
 
 
@@ -7205,11 +7290,6 @@ module ApiHeader {
 
 
   export var TagResourceTypeVirtualRouterPortForwardingRuleRefVO = 'VirtualRouterPortForwardingRuleRefVO';
-
-  export var VirtualRouterInventoryQueryable = ['publicNetworkUuid', 'applianceVmType', 'managementNetworkUuid', 'defaultRouteL3NetworkUuid', 'status', 'uuid', 'name', 'description', 'zoneUuid', 'clusterUuid', 'imageUuid', 'hostUuid', 'lastHostUuid', 'instanceOfferingUuid', 'rootVolumeUuid', 'defaultL3NetworkUuid', 'type', 'hypervisorType', 'memorySize', 'cpuNum', 'cpuSpeed', 'allocatorStrategy', 'createDate', 'lastOpDate', 'state', 'vmNics.uuid', 'vmNics.vmInstanceUuid', 'vmNics.l3NetworkUuid', 'vmNics.ip', 'vmNics.mac', 'vmNics.netmask', 'vmNics.gateway', 'vmNics.metaData', 'vmNics.deviceId', 'vmNics.createDate', 'vmNics.lastOpDate', 'allVolumes.uuid', 'allVolumes.name', 'allVolumes.description', 'allVolumes.primaryStorageUuid', 'allVolumes.vmInstanceUuid', 'allVolumes.diskOfferingUuid', 'allVolumes.rootImageUuid', 'allVolumes.installPath', 'allVolumes.type', 'allVolumes.format', 'allVolumes.size', 'allVolumes.deviceId', 'allVolumes.state', 'allVolumes.status', 'allVolumes.createDate', 'allVolumes.lastOpDate'];
-
-
-  export var TagResourceTypeVirtualRouterVO = 'VirtualRouterVO';
 
   export var PortForwardingRuleInventoryQueryable = ['uuid', 'name', 'description', 'vipIp', 'guestIp', 'vipUuid', 'vipPortStart', 'vipPortEnd', 'privatePortStart', 'privatePortEnd', 'vmNicUuid', 'protocolType', 'state', 'allowedCidr', 'createDate', 'lastOpDate'];
 
