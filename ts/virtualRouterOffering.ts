@@ -762,7 +762,6 @@ module MVirtualRouterOffering {
                     dataTextField: "name",
                     dataValueField: "uuid",
                     template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Platform:</span><span>#: platform #</span></div>' +
                         '<div style="color: black"><span class="z-label">Format:</span><span>#: format #</span></div>' +
                         '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
                 };
