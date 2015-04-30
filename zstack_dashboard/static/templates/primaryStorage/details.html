@@ -76,6 +76,14 @@
                                 <td><span class="z-label">URL:</span></td>
                                 <td><span>{{model.current.url}}</span></td>
                             </tr>
+                          <tr ng-switch="model.current.type">
+                            <td ng-switch-when="IscsiFileSystemBackendPrimaryStorage">
+                              <span class="z-label">HOSTNAME</span>
+                            </td>
+                            <td ng-switch-when="IscsiFileSystemBackendPrimaryStorage">
+                              <span>{{model.current.hostname}}</span>
+                            </td>
+                          </tr>
                             <tr>
                                 <td><span class="z-label">TOTAL CAPACITY:</span></td>
                                 <td><span>{{model.current.totalCapacity | size}}</span></td>

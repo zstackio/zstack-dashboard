@@ -35,6 +35,34 @@
                                 Not a valid NFS mount path. Valid mount path must be in format of ip_or_dns_name:absolute_path, '192.168.0.10:/primaryStorage'
                             </div>
                         </div>
+
+                      <div ng-switch="infoPage.type">
+                        <div ng-switch-when="IscsiFileSystemBackendPrimaryStorage">
+                          <div class="form-group col-sm-21">
+                            <label for="hostname">HOSTNAME</label>
+                            <input type="text" class="form-control" id="hostname" placeholder="IP or DNS name of btrfs server" ng-model="infoPage.hostname">
+                          </div>
+                          <div class="form-group col-sm-21">
+                            <label for="username">SSH USERNAME</label>
+                            <input type="text" class="form-control" id="username" placeholder="ssh user name of btrfs server" ng-model="infoPage.sshUsername">
+                            <p class="z-hint">The user must have root privilege on btrfs server</p>
+                          </div>
+                          <div class="form-group col-sm-21">
+                            <label for="password">SSH PASSWORD</label>
+                            <input type="password" class="form-control" id="password" placeholder="ssh password of btrfs server" ng-model="infoPage.sshPassword">
+                          </div>
+                          <div class="form-group col-sm-21">
+                            <label for="username">CHAP USERNAME</label>
+                            <input type="text" class="form-control" id="chapUsername" placeholder="chap username for iscsi server" ng-model="infoPage.chapUsername">
+                            <p class="z-hint">(Optional) CHAP username for ISCSI server</p>
+                          </div>
+                          <div class="form-group col-sm-21">
+                            <label for="password">CHAP PASSWORD</label>
+                            <input type="password" class="form-control" id="chapPassword" placeholder="chap password of iscsi server" ng-model="infoPage.chapPassword">
+                            <p class="z-hint">(Optional) CHAP password for ISCSI server</p>
+                          </div>
+                        </div>
+                      </div>
                     </form>
                 </div>
 

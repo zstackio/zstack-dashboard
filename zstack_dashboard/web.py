@@ -136,7 +136,7 @@ class CloudBus(object):
         self.options = options
         self.uuid = utils.uuid4()
 
-        self.amqp_url = 'amqp://localhost'
+        self.amqp_url = 'amqp://192.168.0.214'
 
         self.requests = {}
         self.p2p_exchange = kombu.Exchange(self.P2P_EXCHANGE, type='topic', passive=True)
