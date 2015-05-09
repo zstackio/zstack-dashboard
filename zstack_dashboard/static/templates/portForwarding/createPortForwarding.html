@@ -68,30 +68,30 @@
                         </div>
                         <div class="form-group col-sm-21">
                             <label for="sport">VIP START PORT</label>
-                            <input class="form-control" type="text" id="sport" placeholder="(Required) start port of vip, 0 ~ 65535" ng-model="infoPage.vipPortStart">
+                            <input class="form-control" type="text" id="sport" placeholder="(Required) start port of vip, 1 ~ 65535" ng-model="infoPage.vipPortStart">
                             <div class="alert alert-danger col-sm-21" ng-show="!infoPage.isVipStartPortValid()">
-                                Not a valid port. Valid port must be in range of [0, 65535]
+                                Not a valid port. Valid port must be in range of [1, 65535]
                             </div>
                         </div>
                         <div class="form-group col-sm-21">
                             <label for="eport">VIP END PORT</label>
-                            <input class="form-control" type="text" id="eport" placeholder="(Required) end port of vip, 0 ~ 65535" ng-model="infoPage.vipPortEnd">
+                            <input class="form-control" type="text" id="eport" placeholder="(Required) end port of vip, 1 ~ 65535" ng-model="infoPage.vipPortEnd">
                             <div class="alert alert-danger col-sm-21" ng-show="!infoPage.isVipEndPortValid()">
-                                Not a valid port. Valid port must be in range of [0, 65535]
+                                Not a valid port. Valid port must be in range of [1, 65535]
                             </div>
                         </div>
                         <div class="form-group col-sm-21">
                             <label for="gsport">GUEST START PORT</label>
-                            <input class="form-control" type="text" id="gsport" placeholder="(Required) start port of guest nic ip, 0 ~ 65535" ng-model="infoPage.privatePortStart">
+                            <input class="form-control" type="text" id="gsport" placeholder="(Required) start port of guest nic ip, 1 ~ 65535" ng-model="infoPage.privatePortStart">
                             <div class="alert alert-danger col-sm-21" ng-show="!infoPage.isGuestStartPortValid()">
-                                Not a valid port. Valid port must be in range of [0, 65535]
+                                Not a valid port. Valid port must be in range of [1, 65535]
                             </div>
                         </div>
                         <div class="form-group col-sm-21">
                             <label for="geport">GUEST END PORT</label>
-                            <input class="form-control" type="text" id="geport" placeholder="(Required) end port of guest nic ip, 0 ~ 65535" ng-model="infoPage.privatePortEnd">
+                            <input class="form-control" type="text" id="geport" placeholder="(Required) end port of guest nic ip, 1 ~ 65535" ng-model="infoPage.privatePortEnd">
                             <div class="alert alert-danger col-sm-21" ng-show="!infoPage.isGuestEndPortValid()">
-                                Not a valid port. Valid port must be in range of [0, 65535]
+                                Not a valid port. Valid port must be in range of [1, 65535]
                             </div>
                         </div>
                         <div class="form-group col-sm-21">

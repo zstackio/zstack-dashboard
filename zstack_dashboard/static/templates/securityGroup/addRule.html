@@ -8,16 +8,16 @@
             </div>
             <div class="form-group col-sm-18">
                 <label for="sport">PORT START</label>
-                <input class="form-control" id="sport" placeholder="(Optional) start port, 0~65535" ng-model="startPort">
+                <input class="form-control" id="sport" placeholder="(Optional) start port, 1~65535" ng-model="startPort">
                 <div class="alert alert-danger col-sm-21" ng-show="!isStartPortValid()">
-                    Not a valid port. Valid port must be in range of [0, 65535]
+                    Not a valid port. Valid port must be in range of [1, 65535]
                 </div>
             </div>
             <div class="form-group col-sm-18">
                 <label for="eport">PORT END</label>
-                <input class="form-control" type="text" id="eport" placeholder="(Required) end port, 0 ~ 65535" ng-model="endPort">
+                <input class="form-control" type="text" id="eport" placeholder="(Required) end port, 1 ~ 65535" ng-model="endPort">
                 <div class="alert alert-danger col-sm-21" ng-show="!isEndPortValid()">
-                    Not a valid port. Valid port must be in range of [0, 65535]
+                    Not a valid port. Valid port must be in range of [1, 65535]
                 </div>
             </div>
             <div class="form-group col-sm-18">

@@ -27,14 +27,14 @@
                             <label for="sport">START PORT</label>
                             <input class="form-control" type="text" id="sport" placeholder="(Required) Port range start" ng-model="rulePage.startPort">
                             <div class="alert alert-danger col-sm-21" ng-show="!rulePage.isStartPortValid()">
-                                Not a valid port. Valid port must be in range of [0, 65535]
+                                Not a valid port. Valid port must be in range of [1, 65535]
                             </div>
                         </div>
                         <div class="form-group col-sm-18">
                             <label for="eport">END PORT</label>
                             <input class="form-control" type="text" id="eport" placeholder="(Required) Port range end" ng-model="rulePage.endPort">
                             <div class="alert alert-danger col-sm-21" ng-show="!rulePage.isEndPortValid()">
-                                Not a valid port. Valid port must be in range of [0, 65535]
+                                Not a valid port. Valid port must be in range of [1, 65535]
                             </div>
                         </div>
                         <div class="form-group col-sm-18">
