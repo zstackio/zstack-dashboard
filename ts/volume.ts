@@ -1485,10 +1485,15 @@ module MVolume {
                 parent[$attrs.zVolumeAttachVm] = this;
                 this.options = parent[$attrs.zOptions];
 
+                var onSelect = (e: any) => {
+                    $scope.vmInstanceUuid = e.item.context.children[3].children[1].innerText;
+                };
+
                 $scope.vmInstanceListOptions__ = {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "uuid",
+                    select: onSelect,
                     template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
                         '<div style="color: black"><span class="z-label">Hypervisor:</span><span>#: hypervisorType #</span></div>' +
                         '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' +
