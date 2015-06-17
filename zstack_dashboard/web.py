@@ -136,7 +136,9 @@ class CloudBus(object):
         self.options = options
         self.uuid = utils.uuid4()
 
-        self.amqp_url = 'amqp://localhost'
+        rabbitmq_list = self.options.rabbitmq.split(';')
+        rabbitmq_list = ["amqp://%s" % r for r in rabbitmq_list]
+        self.amqp_url = ';'.join(rabbitmq_list)
 
         self.requests = {}
         self.p2p_exchange = kombu.Exchange(self.P2P_EXCHANGE, type='topic', passive=True)
@@ -287,6 +289,8 @@ class Server(object):
     def parse_arguments(self):
         parser = argparse.ArgumentParser()
         parser.add_argument("--config", help="configure file path")
+        parser.add_argument("--rabbitmq", help="a list of RabbitMQ url. A single url is in format of "
+                            "account:password@ip:port/virtual_host_name. Multiple urls are split by ';'. [DEFAULT] localhost", default='localhost')
         self.options = parser.parse_args()
 
     def stop(self):
