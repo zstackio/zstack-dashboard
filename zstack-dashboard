@@ -109,7 +109,8 @@ start_dashboard(){
             return 0
         fi
     else
-        nohup python -c "from zstack_dashboard import web; web.main()" >$DASHBOARD_LOG 2>&1 </dev/null &
+        shift
+        nohup python -c "from zstack_dashboard import web; web.main()" $* >$DASHBOARD_LOG 2>&1 </dev/null &
         echo $! >$pidfile
     fi
     return 0
