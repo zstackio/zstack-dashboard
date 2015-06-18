@@ -17417,9 +17417,11 @@ var MVmInstance;
     MVmInstance.VmInstanceModel = VmInstanceModel;
     var OVmInstanceGrid = (function (_super) {
         __extends(OVmInstanceGrid, _super);
-        function OVmInstanceGrid($scope, vmMgr) {
+        function OVmInstanceGrid($scope, vmMgr, hostMgr) {
+            var _this = this;
             _super.call(this);
             this.vmMgr = vmMgr;
+            this.hostMgr = hostMgr;
             _super.prototype.init.call(this, $scope, $scope.vmGrid);
             this.options.columns = [
                 {
@@ -17432,6 +17434,12 @@ var MVmInstance;
                     field: 'description',
                     title: 'DESCRIPTION',
                     width: '20%'
+                },
+                {
+                    field: 'host',
+                    title: 'HOST',
+                    width: '20%',
+                    template: '<a href="/\\#/host/{{dataItem.hostUuid}}">{{dataItem.managementIp}}</a>'
                 },
                 {
                     field: 'hypervisorType',
@@ -17459,6 +17467,17 @@ var MVmInstance;
                         data: vms,
                         total: total
                     });
+                    for (var j in vms) {
+                        var qobj = new ApiHeader.QueryObject();
+                        qobj.addCondition({ name: 'uuid', op: '=', value: vms[j].hostUuid });
+                        _this.hostMgr.query(qobj, function (hosts, total) {
+                            for (var i in vms) {
+                                if (vms[i].hostUuid == hosts[0].uuid) {
+                                    vms[i].managementIp = hosts[0].managementIp;
+                                }
+                            }
+                        });
+                    }
                 });
             };
         }
@@ -17799,15 +17818,16 @@ var MVmInstance;
     })();
     MVmInstance.DetailsController = DetailsController;
     var Controller = (function () {
-        function Controller($scope, vmMgr, hypervisorTypes, $location, $rootScope, $window) {
+        function Controller($scope, vmMgr, hostMgr, hypervisorTypes, $location, $rootScope, $window) {
             this.$scope = $scope;
             this.vmMgr = vmMgr;
+            this.hostMgr = hostMgr;
             this.hypervisorTypes = hypervisorTypes;
             this.$location = $location;
             this.$rootScope = $rootScope;
             this.$window = $window;
             $scope.model = new VmInstanceModel();
-            $scope.oVmInstanceGrid = new OVmInstanceGrid($scope, vmMgr);
+            $scope.oVmInstanceGrid = new OVmInstanceGrid($scope, vmMgr, hostMgr);
             $scope.action = new Action($scope, vmMgr);
             $scope.optionsSortBy = {
                 fields: [
@@ -17945,7 +17965,7 @@ var MVmInstance;
                 }
             });
         }
-        Controller.$inject = ['$scope', 'VmInstanceManager', 'hypervisorTypes', '$location', '$rootScope', '$window'];
+        Controller.$inject = ['$scope', 'VmInstanceManager', 'HostManager', 'hypervisorTypes', '$location', '$rootScope', '$window'];
         return Controller;
     })();
     MVmInstance.Controller = Controller;

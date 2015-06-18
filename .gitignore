@@ -35,3 +35,5 @@
 
 dist/
 zstack_dashboard.egg-info/
+
+.gitconfig
