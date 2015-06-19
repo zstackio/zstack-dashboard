@@ -126,12 +126,12 @@ fi
 if [ "$@" = "status" ]; then
     check_status
 elif [ "$@" = "start" ]; then
-    start_dashboard
+    start_dashboard $*
 elif [ "$@" = "stop" ]; then
     stop_dashboard
 elif [ "$@" = "restart" ]; then
     stop_dashboard
-    start_dashboard
+    start_dashboard $*
 else
     echo "Not support service: $@. Please use [start|stop|restart|status]"
     exit 1
