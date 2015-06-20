@@ -365,13 +365,24 @@ module MVmInstance {
             data: vms,
             total: total
           });
+
+          var hostUuids = [];
           for (var j in vms) {
+            var vm = vms[j];
+            if (vm.state == 'Running') {
+              hostUuids.push(vm.hostUuid);
+            }
+          }
+
+          if (hostUuids.length > 0) {
             var qobj = new ApiHeader.QueryObject();
-            qobj.addCondition({name: 'uuid', op: '=', value: vms[j].hostUuid});
+            qobj.addCondition({name: 'uuid', op: 'in', value: hostUuids.join()});
             this.hostMgr.query(qobj, (hosts : any, total:number)=> {
               for(var i in vms) {
-                if (vms[i].hostUuid == hosts[0].uuid) {
-                  vms[i].managementIp = hosts[0].managementIp;
+                for (var j in hosts) {
+                  if (vms[i].hostUuid == hosts[j].uuid) {
+                    vms[i].managementIp = hosts[j].managementIp;
+                  }
                 }
               }
             });
