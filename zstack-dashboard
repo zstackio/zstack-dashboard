@@ -123,13 +123,13 @@ if [ $# -eq 0 ]; then
     exit 1
 fi
 
-if [ "$@" = "status" ]; then
+if [ "$1" = "status" ]; then
     check_status
-elif [ "$@" = "start" ]; then
+elif [ "$1" = "start" ]; then
     start_dashboard $*
-elif [ "$@" = "stop" ]; then
+elif [ "$1" = "stop" ]; then
     stop_dashboard
-elif [ "$@" = "restart" ]; then
+elif [ "$1" = "restart" ]; then
     stop_dashboard
     start_dashboard $*
 else
