@@ -37,6 +37,7 @@ module MVmInstance {
 
   export class VmInstance extends ApiHeader.VmInstanceInventory {
     static STATES = ['Running', 'Starting', 'Stopping', 'Stopped', 'Rebooting', 'Migrating', 'Unknown', 'Created'];
+    managementIp: String;
     private inProgress : boolean;
 
     progressOn() {
@@ -316,7 +317,7 @@ module MVmInstance {
   }
 
   class OVmInstanceGrid extends Utils.OGrid {
-    constructor($scope: any, private vmMgr : VmInstanceManager) {
+    constructor($scope: any, private vmMgr : VmInstanceManager, private hostMgr : MHost.HostManager) {
       super();
       super.init($scope, $scope.vmGrid);
       this.options.columns = [
@@ -330,6 +331,12 @@ module MVmInstance {
           field: 'description',
           title: 'DESCRIPTION',
           width: '20%'
+        },
+        {
+          field: 'host',
+          title: 'HOST',
+          width: '20%',
+          template: '<a href="/\\#/host/{{dataItem.hostUuid}}">{{dataItem.managementIp}}</a>'
         },
         {
           field: 'hypervisorType',
@@ -358,6 +365,17 @@ module MVmInstance {
             data: vms,
             total: total
           });
+          for (var j in vms) {
+            var qobj = new ApiHeader.QueryObject();
+            qobj.addCondition({name: 'uuid', op: '=', value: vms[j].hostUuid});
+            this.hostMgr.query(qobj, (hosts : any, total:number)=> {
+              for(var i in vms) {
+                if (vms[i].hostUuid == hosts[0].uuid) {
+                  vms[i].managementIp = hosts[0].managementIp;
+                }
+              }
+            });
+          }
         });
       };
     }
@@ -726,12 +744,12 @@ module MVmInstance {
   }
 
   export class Controller {
-    static $inject = ['$scope', 'VmInstanceManager', 'hypervisorTypes', '$location', '$rootScope', '$window'];
+    static $inject = ['$scope', 'VmInstanceManager', 'HostManager', 'hypervisorTypes', '$location', '$rootScope', '$window'];
 
-    constructor(private $scope : any, private vmMgr : VmInstanceManager, private hypervisorTypes: string[],
+    constructor(private $scope : any, private vmMgr : VmInstanceManager, private hostMgr : MHost.HostManager, private hypervisorTypes: string[],
                 private $location : ng.ILocationService, private $rootScope : any, private $window) {
       $scope.model = new VmInstanceModel();
-      $scope.oVmInstanceGrid = new OVmInstanceGrid($scope, vmMgr);
+      $scope.oVmInstanceGrid = new OVmInstanceGrid($scope, vmMgr, hostMgr);
       $scope.action = new Action($scope, vmMgr);
       $scope.optionsSortBy = {
         fields: [
