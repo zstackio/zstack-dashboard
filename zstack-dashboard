@@ -54,7 +54,7 @@ check_status() {
 stop_dashboard(){
     echo "Stop zstack dashboard ..."
     if [ ! -f $pidfile ]; then
-        ps -aef|grep python|grep 'web.py' > /dev/null
+        ps -aef|grep python|grep 'zstack_dashboard' > /dev/null
         if [ $? -eq 0 ]; then
             get_pid_from_ps
             if [ ! -z $dashboard_pid ]; then
@@ -100,7 +100,7 @@ start_dashboard(){
         fi
     fi
 
-    ps -aef|grep python|grep 'web.py' > /dev/null
+    ps -aef|grep python|grep 'zstack_dashboard' > /dev/null
     if [ $? -eq 0 ]; then
         get_pid_from_ps
         if [ ! -z $dashboard_pid ]; then
