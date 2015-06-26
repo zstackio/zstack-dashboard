@@ -25,9 +25,19 @@ get_pid_from_ps() {
     dashboard_pid=`ps -aef|grep python|grep 'zstack_dashboard'|awk '{print $2}'`
 }
 
+use_ctl_if_possible() {
+    which zstack-ctl > /dev/null
+    if [ $? -eq 0 ]; then
+        zstack-ctl $1
+        exit $?
+    fi
+}
+
 check_status() {
+    use_ctl_if_possible() ui_status
+
     if [ ! -f $pidfile ]; then
-        ps -aef|grep python|grep 'web.py' > /dev/null
+        ps -aef|grep python|grep 'zstack_dashboard import web' > /dev/null
         if [ $? -eq 0 ]; then
             get_pid_from_ps
             if [ ! -z $dashboard_pid ]; then
@@ -52,9 +62,11 @@ check_status() {
 }
 
 stop_dashboard(){
+    use_ctl_if_possible() stop_ui
+
     echo "Stop zstack dashboard ..."
     if [ ! -f $pidfile ]; then
-        ps -aef|grep python|grep 'zstack_dashboard' > /dev/null
+        ps -aef|grep python|grep 'zstack_dashboard import web' > /dev/null
         if [ $? -eq 0 ]; then
             get_pid_from_ps
             if [ ! -z $dashboard_pid ]; then
@@ -84,6 +96,8 @@ stop_dashboard(){
 }
 
 start_dashboard(){
+    use_ctl_if_possible() start_ui
+
     echo "Start zstack dashboard ..."
     iptables-save | grep -- "-A INPUT -p tcp -m tcp --dport 5000 -j ACCEPT" > /dev/null || iptables -I INPUT -p tcp -m tcp --dport 5000 -j ACCEPT
 
@@ -100,7 +114,7 @@ start_dashboard(){
         fi
     fi
 
-    ps -aef|grep python|grep 'zstack_dashboard' > /dev/null
+    ps -aef|grep python|grep 'zstack_dashboard import web' > /dev/null
     if [ $? -eq 0 ]; then
         get_pid_from_ps
         if [ ! -z $dashboard_pid ]; then
