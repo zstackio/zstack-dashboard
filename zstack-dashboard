@@ -34,7 +34,7 @@ use_ctl_if_possible() {
 }
 
 check_status() {
-    use_ctl_if_possible() ui_status
+    use_ctl_if_possible ui_status
 
     if [ ! -f $pidfile ]; then
         ps -aef|grep python|grep 'zstack_dashboard import web' > /dev/null
@@ -62,7 +62,7 @@ check_status() {
 }
 
 stop_dashboard(){
-    use_ctl_if_possible() stop_ui
+    use_ctl_if_possible stop_ui
 
     echo "Stop zstack dashboard ..."
     if [ ! -f $pidfile ]; then
@@ -96,7 +96,7 @@ stop_dashboard(){
 }
 
 start_dashboard(){
-    use_ctl_if_possible() start_ui
+    use_ctl_if_possible start_ui
 
     echo "Start zstack dashboard ..."
     iptables-save | grep -- "-A INPUT -p tcp -m tcp --dport 5000 -j ACCEPT" > /dev/null || iptables -I INPUT -p tcp -m tcp --dport 5000 -j ACCEPT
