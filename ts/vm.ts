@@ -120,8 +120,12 @@ module MVmInstance {
       msg.hostUuid = vm.hostUuid;
       msg.resourceUuid = vm.resourceUuid;
       msg.defaultL3NetworkUuid = vm.defaultL3NetworkUuid;
+      msg.systemTags = []
+      for (var i = 0; i < vm.l3NetworkStaticIps.length; ++i) {
+        msg.systemTags.push('staticIp::' + vm.l3NetworkStaticIps[i].uuid + '::' + vm.l3NetworkStaticIps[i].staticIp);
+      }
       if (Utils.notNullnotUndefined(vm.hostname)) {
-        msg.systemTags = ['hostname::' + vm.hostname];
+        msg.systemTags.push('hostname::' + vm.hostname);
       }
       this.api.asyncApi(msg, (ret : ApiHeader.APICreateVmInstanceEvent)=> {
         var c = new VmInstance();
@@ -1026,8 +1030,8 @@ module MVmInstance {
       this.$scope.clusterOptions__.dataSource.data([]);
       this.$scope.hostOptions__.dataSource.data([]);
       this.$scope.l3NetworkOptions__.dataSource.data([]);
+      this.$scope.l3NetworkGrid__.dataSource.data([]);
       this.$scope.diskOfferingOptions__.dataSource.data([]);
-      this.$scope.l3NetworkList__.value([]);
       this.$scope.diskOfferingList__.value([]);
       this.$scope.button.reset();
       chain.then(()=> {
@@ -1152,7 +1156,10 @@ module MVmInstance {
           description: null,
           instanceOfferingUuid: null,
           imageUuid: null,
+          l3NetworkUuid: null,
+          l3NetworkIp: null,
           l3NetworkUuids: [],
+          l3NetworkStaticIps:[],
           dataDiskOfferingUuids: [],
           rootDiskOfferingUuid: null,
           imageMediaType: null,
@@ -1169,7 +1176,7 @@ module MVmInstance {
           },
 
           hasL3Network() : boolean {
-            return $scope.l3NetworkOptions__.dataSource.data().length > 0;
+            return $scope.l3NetworkGrid__.dataSource.data().length > 0;
           },
 
           canMoveToPrevious(): boolean {
@@ -1179,10 +1186,10 @@ module MVmInstance {
           canMoveToNext(): boolean {
             if (this.imageMediaType == 'RootVolumeTemplate') {
               return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.instanceOfferingUuid)
-                && Utils.notNullnotUndefined(this.imageUuid) && this.l3NetworkUuids.length > 0;
+                && Utils.notNullnotUndefined(this.imageUuid) && this.hasL3Network();
             } else {
               return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.instanceOfferingUuid)
-                && Utils.notNullnotUndefined(this.imageUuid) && this.l3NetworkUuids.length > 0 && Utils.notNullnotUndefined(this.rootDiskOfferingUuid);
+                && Utils.notNullnotUndefined(this.imageUuid) && this.hasL3Network() && Utils.notNullnotUndefined(this.rootDiskOfferingUuid);
             }
           },
 
@@ -1202,6 +1209,74 @@ module MVmInstance {
             return this.activeState;
           },
 
+          syncL3NetworkDataFromView(): void {
+            var l3NetworkGridRawData = $scope.l3NetworkGrid__.dataSource.data();
+
+            this.l3NetworkUuids = [];
+            this.l3NetworkStaticIps = [];
+            for (var i = 0; i < l3NetworkGridRawData.length; ++i) {
+              this.l3NetworkUuids.push(l3NetworkGridRawData[i].uuid);
+              if(Utils.notNullnotUndefined(this.l3NetworkIp) && this.l3NetworkIp != "") { 
+                this.l3NetworkStaticIps.push({
+                  uuid: l3NetworkGridRawData[i].uuid,
+                  staticIp: l3NetworkGridRawData[i].staticIp
+                });
+              }
+            }
+          },
+
+          addL3Network(): void {
+            if(!this.isStaticIpValid()) return;
+
+            var l3NetworkOptionsRawData = $scope.l3NetworkOptions__.dataSource.data();
+            var l3Network = null;
+            for (var i = 0; i < l3NetworkOptionsRawData.length; ++i) {
+              if(l3NetworkOptionsRawData[i].uuid == this.l3NetworkUuid) {
+                l3Network = l3NetworkOptionsRawData[i];
+                break;
+              }
+            }
+            if(Utils.notNullnotUndefined(this.l3NetworkIp)) { 
+              l3Network.staticIp = this.l3NetworkIp.trim();
+            }
+
+            this.l3NetworkIp = "";
+
+            var l3NetworkGridRawData = $scope.l3NetworkGrid__.dataSource.data();
+            var updated = false;
+            for (var i = 0; i < l3NetworkGridRawData.length; ++i) {
+              if(l3NetworkGridRawData[i].uuid == l3Network.uuid) {
+                l3NetworkGridRawData[i].staticIp = l3Network.staticIp;
+                updated = true;
+                break;
+              }
+            }
+
+            if(!updated) {
+              $scope.l3NetworkGrid__.dataSource.pushCreate(l3Network);
+            }
+            
+            this.syncL3NetworkDataFromView();
+
+            $scope.defaultL3NetworkOptions__.dataSource.data($scope.l3NetworkGrid__.dataSource.data());
+          },
+
+          delL3Network(uid): void {
+            var row = $scope.l3NetworkGrid__.dataSource.getByUid(uid);
+            $scope.l3NetworkGrid__.dataSource.remove(row);
+            this.syncL3NetworkDataFromView();
+          },
+
+          isStaticIpValid(): boolean {
+            if (Utils.notNullnotUndefined(this.l3NetworkIp)) {
+              if(this.l3NetworkIp.trim() == "")
+                return true;
+              else
+                return Utils.isIpv4Address(this.l3NetworkIp);
+            }
+            return true;
+          },
+
           getPageName(): string {
             return 'createVmInstanceInfo';
           },
@@ -1211,6 +1286,7 @@ module MVmInstance {
             this.description = null;
             this.imageUuid = null;
             this.dataDiskOfferingUuids = [];
+            this.l3NetworkIp = null;
             this.l3NetworkUuids = [];
             this.instanceOfferingUuid = null;
             this.activeState = false;
@@ -1219,6 +1295,39 @@ module MVmInstance {
             this.images = {};
             this.hostname = null;
           }
+        };
+
+        $scope.l3NetworkGrid__ = {
+            pageSize: 20,
+            resizable: true,
+            scrollable: true,
+            pageable: true,
+            columns: [
+                {
+                    width: '12%',
+                    title: '',
+                    template: '<button type="button" class="btn btn-xs btn-default" ng-click="infoPage.delL3Network(dataItem.uid)"><i class="fa fa-times"></i></button>'
+                },
+                {
+                    field: 'name',
+                    title: 'NAME',
+                    width: '44%'
+                },
+                {
+                    field: 'staticIp',
+                    title: 'STATIC IP',
+                    width: '44%'
+                }
+            ],
+
+            dataBound: (e)=> {
+                var grid = e.sender;
+                if (grid.dataSource.total() == 0 || grid.dataSource.totalPages() == 1) {
+                    grid.pager.element.hide();
+                }
+            },
+
+            dataSource: new kendo.data.DataSource([])
         };
 
         var locationPage: Utils.WizardPage = $scope.locationPage = {
@@ -1420,19 +1529,7 @@ module MVmInstance {
           dataTextField: "name",
           dataValueField: "uuid",
           template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-          '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
-
-          change: (e)=> {
-            Utils.safeApply($scope, ()=>{
-              var list = e.sender;
-              $scope.infoPage.l3NetworkUuids = [];
-              angular.forEach(list.dataItems(), (it)=>{
-                $scope.infoPage.l3NetworkUuids.push(it.uuid);
-              });
-
-              $scope.defaultL3NetworkOptions__.dataSource.data(list.dataItems());
-            });
-          }
+          '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
         };
 
         $scope.defaultL3NetworkOptions__ = {
