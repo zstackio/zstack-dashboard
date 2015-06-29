@@ -1240,8 +1240,6 @@ module MVmInstance {
               l3Network.staticIp = this.l3NetworkIp.trim();
             }
 
-            this.l3NetworkIp = "";
-
             var l3NetworkGridRawData = $scope.l3NetworkGrid__.dataSource.data();
             var updated = false;
             for (var i = 0; i < l3NetworkGridRawData.length; ++i) {
@@ -1259,6 +1257,8 @@ module MVmInstance {
             this.syncL3NetworkDataFromView();
 
             $scope.defaultL3NetworkOptions__.dataSource.data($scope.l3NetworkGrid__.dataSource.data());
+
+            this.l3NetworkIp = "";
           },
 
           delL3Network(uid): void {
