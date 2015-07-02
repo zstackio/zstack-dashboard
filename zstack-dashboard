@@ -28,15 +28,12 @@ get_pid_from_ps() {
 }
 
 use_ctl_if_possible() {
-    which zstack-ctl &>/dev/null
-    if [ $? -eq 0 ]; then
-        zstack-ctl $1
-        ret_result=$?
-        if [ $no_exit -eq 0 ];then
-            return $ret_result
-        fi
-        exit $ret_result
+    zstack-ctl $1
+    ret_result=$?
+    if [ $no_exit -eq 0 ];then
+        return $ret_result
     fi
+    exit $ret_result
 }
 
 check_status() {
