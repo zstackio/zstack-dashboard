@@ -37,6 +37,7 @@ module MVmInstance {
 
   export class VmInstance extends ApiHeader.VmInstanceInventory {
     static STATES = ['Running', 'Starting', 'Stopping', 'Stopped', 'Rebooting', 'Migrating', 'Unknown', 'Created'];
+    defaultIp: String;
     managementIp: String;
     private inProgress : boolean;
 
@@ -337,15 +338,16 @@ module MVmInstance {
           width: '20%'
         },
         {
-          field: 'host',
-          title: 'HOST',
+          field: 'defaultIp',
+          title: 'DEFAULT IP',
           width: '20%',
-          template: '<a href="/\\#/host/{{dataItem.hostUuid}}">{{dataItem.managementIp}}</a>'
+          template: '{{dataItem.defaultIp}}'
         },
         {
-          field: 'hypervisorType',
-          title: 'HYPERVISOR',
-          width: '20%'
+          field: 'hostIp',
+          title: 'HOST IP',
+          width: '20%',
+          template: '<a href="/\\#/host/{{dataItem.hostUuid}}">{{dataItem.managementIp}}</a>'
         },
         {
           field: 'state',
@@ -369,6 +371,16 @@ module MVmInstance {
             data: vms,
             total: total
           });
+
+          for (var i in vms) {
+            var defaultL3NetworkUuid = vms[i].defaultL3NetworkUuid;
+            for (var j in vms[i].vmNics) {
+              if(defaultL3NetworkUuid == vms[i].vmNics[j].l3NetworkUuid) {
+                vms[i].defaultIp = vms[i].vmNics[j].ip;
+                break;
+              }
+            }
+          }
 
           var hostUuids = [];
           for (var j in vms) {
