@@ -30,10 +30,18 @@
                         <div class="form-group col-sm-21">
                             <label for="url" class="z-block-label">URL</label>
                             <input id="url" type="text" ng-model="infoPage.url" class="form-control" placeholder="(Required) Url of primary storage">
-                            <p class="z-hint">(Required) for NFS primary storage, url is 'ip_or_dns_name:absolute_path', for example, '192.168.0.10:/primaryStorage'</p>
-                            <div class="alert alert-danger col-sm-21" ng-show="!infoPage.isUrlValid()">
+                            <p class="z-hint" ng-show="infoPage.type == 'NFS'">(Required) for NFS primary storage, url is 'ip_or_dns_name:absolute_path', for example, '192.168.0.10:/primaryStorage'</p>
+                            <p class="z-hint" ng-show="infoPage.type == 'LocalStorage'">(Required) for local storage, url is an absolute path, for example, '/volumes'. The folder will be created on every host.</p>
+                            <p class="z-hint" ng-show="infoPage.type == 'IscsiFileSystemBackendPrimaryStorage'">(Required) for ISCSI storage with BTRFS backend, url is an absolute path, for example, '/volumes'. The folder will be created on the BTRFS server.</p>
+                            <div class="alert alert-danger col-sm-21" ng-show="!infoPage.isUrlValid() && infoPage.type == 'NFS'">
                                 Not a valid NFS mount path. Valid mount path must be in format of ip_or_dns_name:absolute_path, '192.168.0.10:/primaryStorage'
                             </div>
+                          <div class="alert alert-danger col-sm-21" ng-show="!infoPage.isUrlValid() && infoPage.type == 'LocalStorage'">
+                            Not an absolute path. The path must be start with '/'
+                          </div>
+                          <div class="alert alert-danger col-sm-21" ng-show="!infoPage.isUrlValid() && infoPage.type == 'IscsiFileSystemBackendPrimaryStorage'">
+                            Not an absolute path. The path must be start with '/'
+                          </div>
                         </div>
 
                       <div ng-switch="infoPage.type">

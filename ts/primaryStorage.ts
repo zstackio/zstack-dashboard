@@ -855,7 +855,7 @@ module MPrimaryStorage {
               }
 
               return true;
-            } else if (this.type == 'IscsiFileSystemBackendPrimaryStorage' && Utils.notNullnotUndefined(this.url)) {
+            } else if (this.type == 'IscsiFileSystemBackendPrimaryStorage' || this.type == 'LocalStorage' && Utils.notNullnotUndefined(this.url)) {
               if (this.url.indexOf('/') != 0) {
                 return false;
               }
