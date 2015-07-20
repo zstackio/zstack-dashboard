@@ -186,6 +186,36 @@ module ApiHeader {
   }
 
 
+  export class APIUpdateVmInstanceMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.vm.APIUpdateVmInstanceMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    name : string;
+    description : string;
+    state : string;
+    defaultL3NetworkUuid : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIGetVmAttachableL3NetworkMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.vm.APIGetVmAttachableL3NetworkMsg': this
+      };
+      return msg;
+    }
+    vmInstanceUuid : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
   export class APIMigrateVmMsg implements APIMessage {
     toApiMap() : any {
       var msg = {
@@ -208,6 +238,20 @@ module ApiHeader {
       return msg;
     }
     uuid : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIChangeInstanceOfferingMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.vm.APIChangeInstanceOfferingMsg': this
+      };
+      return msg;
+    }
+    vmInstanceUuid : string;
+    instanceOfferingUuid : string;
     session : SessionInventory;
     timeout : number;
   }
@@ -278,6 +322,20 @@ module ApiHeader {
   }
 
 
+  export class APIAttachL3NetworkToVmMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.vm.APIAttachL3NetworkToVmMsg': this
+      };
+      return msg;
+    }
+    vmInstanceUuid : string;
+    l3NetworkUuid : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
   export class APIDestroyVmInstanceMsg implements APIMessage {
     toApiMap() : any {
       var msg = {
@@ -325,6 +383,19 @@ module ApiHeader {
   }
 
 
+  export class APIDetachL3NetworkFromVmMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.vm.APIDetachL3NetworkFromVmMsg': this
+      };
+      return msg;
+    }
+    vmNicUuid : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
   export class APIListVmNicMsg implements APIMessage {
     toApiMap() : any {
       var msg = {
@@ -335,20 +406,6 @@ module ApiHeader {
     length : number;
     offset : number;
     uuids : Array<string>;
-    session : SessionInventory;
-    timeout : number;
-  }
-
-
-  export class APIAttachNicToVmMsg implements APIMessage {
-    toApiMap() : any {
-      var msg = {
-        'org.zstack.header.vm.APIAttachNicToVmMsg': this
-      };
-      return msg;
-    }
-    vmInstanceUuid : string;
-    l3NetworkUuid : string;
     session : SessionInventory;
     timeout : number;
   }
@@ -457,6 +514,26 @@ module ApiHeader {
       return msg;
     }
     uuid : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIUpdateImageMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.image.APIUpdateImageMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    name : string;
+    description : string;
+    guestOsType : string;
+    mediaType : string;
+    format : string;
+    system : boolean;
+    platform : string;
     session : SessionInventory;
     timeout : number;
   }
@@ -677,6 +754,21 @@ module ApiHeader {
   }
 
 
+  export class APIUpdateVolumeMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.volume.APIUpdateVolumeMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    name : string;
+    description : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
   export class APIQueryVolumeMsg implements APIMessage {
     toApiMap() : any {
       var msg = {
@@ -727,6 +819,7 @@ module ApiHeader {
     name : string;
     description : string;
     primaryStorageUuid : string;
+    hostUuid : string;
     resourceUuid : string;
     userTags : Array<string>;
     systemTags : Array<string>;
@@ -949,6 +1042,21 @@ module ApiHeader {
     sortBy : string;
     sortDirection : string;
     fields : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIUpdateInstanceOfferingMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.configuration.APIUpdateInstanceOfferingMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    name : string;
+    description : string;
     session : SessionInventory;
     timeout : number;
   }
@@ -1191,6 +1299,21 @@ module ApiHeader {
   }
 
 
+  export class APIUpdateDiskOfferingMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.configuration.APIUpdateDiskOfferingMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    name : string;
+    description : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
   export class APIChangeDiskOfferingStateMsg implements APIMessage {
     toApiMap() : any {
       var msg = {
@@ -1298,6 +1421,21 @@ module ApiHeader {
   }
 
 
+  export class APIUpdatePrimaryStorageMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.storage.primary.APIUpdatePrimaryStorageMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    name : string;
+    description : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
   export class APIGetPrimaryStorageMsg implements APIMessage {
     toApiMap() : any {
       var msg = {
@@ -1340,6 +1478,19 @@ module ApiHeader {
     }
     uuid : string;
     stateEvent : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APISyncPrimaryStorageCapacityMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.storage.primary.APISyncPrimaryStorageCapacityMsg': this
+      };
+      return msg;
+    }
+    primaryStorageUuid : string;
     session : SessionInventory;
     timeout : number;
   }
@@ -1427,6 +1578,21 @@ module ApiHeader {
     }
     uuid : string;
     deleteMode : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIUpdateVolumeSnapshotMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.storage.snapshot.APIUpdateVolumeSnapshotMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    name : string;
+    description : string;
     session : SessionInventory;
     timeout : number;
   }
@@ -1656,6 +1822,21 @@ module ApiHeader {
   }
 
 
+  export class APIUpdateBackupStorageMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.storage.backup.APIUpdateBackupStorageMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    name : string;
+    description : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
   export class APIDeleteBackupStorageMsg implements APIMessage {
     toApiMap() : any {
       var msg = {
@@ -1715,6 +1896,37 @@ module ApiHeader {
     resourceUuid : string;
     userTags : Array<string>;
     systemTags : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIGetFreeIpMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.network.l3.APIGetFreeIpMsg': this
+      };
+      return msg;
+    }
+    l3NetworkUuid : string;
+    ipRangeUuid : string;
+    limit : number;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIUpdateL3NetworkMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.network.l3.APIUpdateL3NetworkMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    name : string;
+    description : string;
+    system : boolean;
     session : SessionInventory;
     timeout : number;
   }
@@ -1906,6 +2118,21 @@ module ApiHeader {
     }
     uuid : string;
     deleteMode : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIUpdateIpRangeMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.network.l3.APIUpdateIpRangeMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    name : string;
+    description : string;
     session : SessionInventory;
     timeout : number;
   }
@@ -2269,6 +2496,21 @@ module ApiHeader {
   }
 
 
+  export class APIUpdateL2NetworkMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.network.l2.APIUpdateL2NetworkMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    name : string;
+    description : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
   export class APIGetL2VlanNetworkMsg implements APIMessage {
     toApiMap() : any {
       var msg = {
@@ -2589,6 +2831,21 @@ module ApiHeader {
   }
 
 
+  export class APIUpdateClusterMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.cluster.APIUpdateClusterMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    name : string;
+    description : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
   export class APICreateClusterMsg implements APIMessage {
     toApiMap() : any {
       var msg = {
@@ -2637,6 +2894,20 @@ module ApiHeader {
   }
 
 
+  export class APIRemoveUserFromGroupMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.identity.APIRemoveUserFromGroupMsg': this
+      };
+      return msg;
+    }
+    userUuid : string;
+    groupUuid : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
   export class APIAttachPolicyToUserMsg implements APIMessage {
     toApiMap() : any {
       var msg = {
@@ -2646,6 +2917,20 @@ module ApiHeader {
     }
     userUuid : string;
     policyUuid : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIResetUserPasswordMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.identity.APIResetUserPasswordMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    password : string;
     session : SessionInventory;
     timeout : number;
   }
@@ -2679,6 +2964,55 @@ module ApiHeader {
   }
 
 
+  export class APIAddUserToGroupMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.identity.APIAddUserToGroupMsg': this
+      };
+      return msg;
+    }
+    userUuid : string;
+    groupUuid : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIQueryQuotaMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.identity.APIQueryQuotaMsg': this
+      };
+      return msg;
+    }
+    conditions : Array<QueryCondition>;
+    limit : number;
+    start : number;
+    count : boolean;
+    replyWithCount : boolean;
+    sortBy : string;
+    sortDirection : string;
+    fields : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIShareResourceMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.identity.APIShareResourceMsg': this
+      };
+      return msg;
+    }
+    resourceUuids : Array<string>;
+    accountUuids : Array<string>;
+    toPublic : boolean;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
   export class APIListPolicyMsg implements APIMessage {
     toApiMap() : any {
       var msg = {
@@ -2703,9 +3037,24 @@ module ApiHeader {
     }
     name : string;
     password : string;
+    type : string;
     resourceUuid : string;
     userTags : Array<string>;
     systemTags : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIDeleteAccountMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.identity.APIDeleteAccountMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    deleteMode : string;
     session : SessionInventory;
     timeout : number;
   }
@@ -2718,8 +3067,8 @@ module ApiHeader {
       };
       return msg;
     }
-    groupName : string;
-    groupDescription : string;
+    name : string;
+    description : string;
     resourceUuid : string;
     userTags : Array<string>;
     systemTags : Array<string>;
@@ -2735,7 +3084,7 @@ module ApiHeader {
       };
       return msg;
     }
-    userName : string;
+    name : string;
     password : string;
     resourceUuid : string;
     userTags : Array<string>;
@@ -2834,15 +3183,120 @@ module ApiHeader {
   }
 
 
-  export class APIAttachUserToUserGroupMsg implements APIMessage {
+  export class APIDetachPolicyFromUserGroupMsg implements APIMessage {
     toApiMap() : any {
       var msg = {
-        'org.zstack.header.identity.APIAttachUserToUserGroupMsg': this
+        'org.zstack.header.identity.APIDetachPolicyFromUserGroupMsg': this
       };
       return msg;
     }
-    userUuid : string;
+    policyUuid : string;
     groupUuid : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIUpdateQuotaMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.identity.APIUpdateQuotaMsg': this
+      };
+      return msg;
+    }
+    identityUuid : string;
+    name : string;
+    value : number;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIQueryAccountMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.identity.APIQueryAccountMsg': this
+      };
+      return msg;
+    }
+    conditions : Array<QueryCondition>;
+    limit : number;
+    start : number;
+    count : boolean;
+    replyWithCount : boolean;
+    sortBy : string;
+    sortDirection : string;
+    fields : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIQueryPolicyMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.identity.APIQueryPolicyMsg': this
+      };
+      return msg;
+    }
+    conditions : Array<QueryCondition>;
+    limit : number;
+    start : number;
+    count : boolean;
+    replyWithCount : boolean;
+    sortBy : string;
+    sortDirection : string;
+    fields : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIQueryUserMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.identity.APIQueryUserMsg': this
+      };
+      return msg;
+    }
+    conditions : Array<QueryCondition>;
+    limit : number;
+    start : number;
+    count : boolean;
+    replyWithCount : boolean;
+    sortBy : string;
+    sortDirection : string;
+    fields : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIDeletePolicyMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.identity.APIDeletePolicyMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    deleteMode : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIRevokeResourceSharingMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.identity.APIRevokeResourceSharingMsg': this
+      };
+      return msg;
+    }
+    resourceUuids : Array<string>;
+    toPublic : boolean;
+    accountUuids : Array<string>;
+    all : boolean;
     session : SessionInventory;
     timeout : number;
   }
@@ -2855,7 +3309,7 @@ module ApiHeader {
       };
       return msg;
     }
-    accountUuidToReset : string;
+    uuid : string;
     password : string;
     session : SessionInventory;
     timeout : number;
@@ -2922,6 +3376,20 @@ module ApiHeader {
   }
 
 
+  export class APIDeleteUserMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.identity.APIDeleteUserMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    deleteMode : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
   export class APISearchUserMsg implements APIMessage {
     toApiMap() : any {
       var msg = {
@@ -2935,6 +3403,20 @@ module ApiHeader {
     start : number;
     size : number;
     inventoryUuid : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIDeleteUserGroupMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.identity.APIDeleteUserGroupMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    deleteMode : string;
     session : SessionInventory;
     timeout : number;
   }
@@ -2966,6 +3448,21 @@ module ApiHeader {
   }
 
 
+  export enum StatementEffect {
+    Allow,
+    Deny
+  }
+
+
+  export class Statement {
+    name : string;
+    effect : StatementEffect;
+    principals : Array<string>;
+    actions : Array<string>;
+    resources : Array<string>;
+  }
+
+
   export class APICreatePolicyMsg implements APIMessage {
     toApiMap() : any {
       var msg = {
@@ -2975,10 +3472,59 @@ module ApiHeader {
     }
     name : string;
     description : string;
-    policyData : string;
+    statements : Array<Statement>;
     resourceUuid : string;
     userTags : Array<string>;
     systemTags : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIDetachPolicyFromUserMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.identity.APIDetachPolicyFromUserMsg': this
+      };
+      return msg;
+    }
+    policyUuid : string;
+    userUuid : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIQueryUserGroupMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.identity.APIQueryUserGroupMsg': this
+      };
+      return msg;
+    }
+    conditions : Array<QueryCondition>;
+    limit : number;
+    start : number;
+    count : boolean;
+    replyWithCount : boolean;
+    sortBy : string;
+    sortDirection : string;
+    fields : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIUpdateZoneMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.zone.APIUpdateZoneMsg': this
+      };
+      return msg;
+    }
+    name : string;
+    description : string;
+    uuid : string;
     session : SessionInventory;
     timeout : number;
   }
@@ -3133,6 +3679,21 @@ module ApiHeader {
     length : number;
     offset : number;
     uuids : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIUpdateHostMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.host.APIUpdateHostMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    name : string;
+    description : string;
     session : SessionInventory;
     timeout : number;
   }
@@ -3340,6 +3901,82 @@ module ApiHeader {
   }
 
 
+  export class APIQueryIscsiFileSystemBackendPrimaryStorageMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.storage.primary.iscsi.APIQueryIscsiFileSystemBackendPrimaryStorageMsg': this
+      };
+      return msg;
+    }
+    conditions : Array<QueryCondition>;
+    limit : number;
+    start : number;
+    count : boolean;
+    replyWithCount : boolean;
+    sortBy : string;
+    sortDirection : string;
+    fields : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIUpdateIscsiFileSystemBackendPrimaryStorageMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.storage.primary.iscsi.APIUpdateIscsiFileSystemBackendPrimaryStorageMsg': this
+      };
+      return msg;
+    }
+    chapUsername : string;
+    chapPassword : string;
+    sshUsername : string;
+    sshPassword : string;
+    uuid : string;
+    name : string;
+    description : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIAddLocalPrimaryStorageMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.storage.primary.local.APIAddLocalPrimaryStorageMsg': this
+      };
+      return msg;
+    }
+    url : string;
+    name : string;
+    description : string;
+    type : string;
+    zoneUuid : string;
+    resourceUuid : string;
+    userTags : Array<string>;
+    systemTags : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIUpdateKVMHostMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.kvm.APIUpdateKVMHostMsg': this
+      };
+      return msg;
+    }
+    username : string;
+    password : string;
+    uuid : string;
+    name : string;
+    description : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
   export class APIAddKVMHostMsg implements APIMessage {
     toApiMap() : any {
       var msg = {
@@ -3440,6 +4077,23 @@ module ApiHeader {
       return msg;
     }
     uuid : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIUpdateSftpBackupStorageMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.storage.backup.sftp.APIUpdateSftpBackupStorageMsg': this
+      };
+      return msg;
+    }
+    username : string;
+    password : string;
+    uuid : string;
+    name : string;
+    description : string;
     session : SessionInventory;
     timeout : number;
   }
@@ -3681,6 +4335,21 @@ module ApiHeader {
   }
 
 
+  export class APIUpdatePortForwardingRuleMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.network.service.portforwarding.APIUpdatePortForwardingRuleMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    name : string;
+    description : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
   export class APIListPortForwardingRuleMsg implements APIMessage {
     toApiMap() : any {
       var msg = {
@@ -3777,6 +4446,21 @@ module ApiHeader {
     }
     eipUuid : string;
     vipUuid : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIUpdateEipMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.network.service.eip.APIUpdateEipMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    name : string;
+    description : string;
     session : SessionInventory;
     timeout : number;
   }
@@ -4048,6 +4732,21 @@ module ApiHeader {
   }
 
 
+  export class APIUpdateSecurityGroupMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.network.securitygroup.APIUpdateSecurityGroupMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    name : string;
+    description : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
   export class APIDeleteVmNicFromSecurityGroupMsg implements APIMessage {
     toApiMap() : any {
       var msg = {
@@ -4112,6 +4811,21 @@ module ApiHeader {
     }
     uuid : string;
     deleteMode : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIUpdateVipMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.network.service.vip.APIUpdateVipMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    name : string;
+    description : string;
     session : SessionInventory;
     timeout : number;
   }
@@ -4306,7 +5020,7 @@ module ApiHeader {
   }
 
 
-  export class APIAttachNicToVmEvent {
+  export class APIDetachL3NetworkFromVmEvent {
     inventory : VmInstanceInventory;
     API_EVENT : string;
     success : boolean;
@@ -4316,6 +5030,15 @@ module ApiHeader {
 
 
   export class APIStartVmInstanceEvent {
+    inventory : VmInstanceInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APIAttachL3NetworkToVmEvent {
     inventory : VmInstanceInventory;
     API_EVENT : string;
     success : boolean;
@@ -4342,7 +5065,25 @@ module ApiHeader {
   }
 
 
+  export class APIUpdateVmInstanceEvent {
+    inventory : VmInstanceInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
   export class APIDestroyVmInstanceEvent {
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APIChangeInstanceOfferingEvent {
+    inventory : VmInstanceInventory;
     API_EVENT : string;
     success : boolean;
     error : ErrorCode;
@@ -4416,6 +5157,15 @@ module ApiHeader {
   }
 
 
+  export class APIUpdateImageEvent {
+    inventory : ImageInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
   export class APICreateDataVolumeTemplateFromVolumeEvent {
     inventory : ImageInventory;
     API_EVENT : string;
@@ -4478,6 +5228,15 @@ module ApiHeader {
 
 
   export class APIDetachDataVolumeFromVmEvent {
+    inventory : VolumeInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APIUpdateVolumeEvent {
     inventory : VolumeInventory;
     API_EVENT : string;
     success : boolean;
@@ -4609,6 +5368,15 @@ module ApiHeader {
   }
 
 
+  export class APIUpdateDiskOfferingEvent {
+    inventory : DiskOfferingInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
   export class APIDeleteInstanceOfferingEvent {
     API_EVENT : string;
     success : boolean;
@@ -4649,22 +5417,6 @@ module ApiHeader {
   }
 
 
-  export class APIGenerateApiTypeScriptDefinitionEvent {
-    API_EVENT : string;
-    success : boolean;
-    error : ErrorCode;
-    BINDING_KEY_PERFIX : string;
-  }
-
-
-  export class APIGenerateSqlVOViewEvent {
-    API_EVENT : string;
-    success : boolean;
-    error : ErrorCode;
-    BINDING_KEY_PERFIX : string;
-  }
-
-
   export class InstanceOfferingInventory {
     uuid : string;
     name : string;
@@ -4678,6 +5430,31 @@ module ApiHeader {
     createDate : string;
     lastOpDate : string;
     state : string;
+  }
+
+
+  export class APIUpdateInstanceOfferingEvent {
+    inventory : InstanceOfferingInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APIGenerateApiTypeScriptDefinitionEvent {
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APIGenerateSqlVOViewEvent {
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
   }
 
 
@@ -4716,14 +5493,6 @@ module ApiHeader {
   }
 
 
-  export class APIDeletePrimaryStorageEvent {
-    API_EVENT : string;
-    success : boolean;
-    error : ErrorCode;
-    BINDING_KEY_PERFIX : string;
-  }
-
-
   export class PrimaryStorageInventory {
     uuid : string;
     zoneUuid : string;
@@ -4732,6 +5501,8 @@ module ApiHeader {
     description : string;
     totalCapacity : number;
     availableCapacity : number;
+    totalPhysicalCapacity : number;
+    availablePhysicalCapacity : number;
     type : string;
     state : string;
     status : string;
@@ -4739,6 +5510,23 @@ module ApiHeader {
     createDate : string;
     lastOpDate : string;
     attachedClusterUuids : Array<string>;
+  }
+
+
+  export class APISyncPrimaryStorageCapacityEvent {
+    inventory : PrimaryStorageInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APIDeletePrimaryStorageEvent {
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
   }
 
 
@@ -4752,6 +5540,15 @@ module ApiHeader {
 
 
   export class APIChangePrimaryStorageStateEvent {
+    inventory : PrimaryStorageInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APIUpdatePrimaryStorageEvent {
     inventory : PrimaryStorageInventory;
     API_EVENT : string;
     success : boolean;
@@ -4788,6 +5585,15 @@ module ApiHeader {
 
 
   export class APIDeleteVolumeSnapshotEvent {
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APIUpdateVolumeSnapshotEvent {
+    inventory : VolumeSnapshotInventory;
     API_EVENT : string;
     success : boolean;
     error : ErrorCode;
@@ -4834,6 +5640,15 @@ module ApiHeader {
     createDate : string;
     lastOpDate : string;
     attachedZoneUuids : Array<string>;
+  }
+
+
+  export class APIUpdateBackupStorageEvent {
+    inventory : BackupStorageInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
   }
 
 
@@ -4981,6 +5796,24 @@ module ApiHeader {
   }
 
 
+  export class APIUpdateIpRangeEvent {
+    inventory : IpRangeInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APIUpdateL3NetworkEvent {
+    inventory : L3NetworkInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
   export class APIAddDnsToL3NetworkEvent {
     inventory : L3NetworkInventory;
     API_EVENT : string;
@@ -5110,6 +5943,15 @@ module ApiHeader {
 
 
   export class APICreateL2NetworkEvent {
+    inventory : L2NetworkInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APIUpdateL2NetworkEvent {
     inventory : L2NetworkInventory;
     API_EVENT : string;
     success : boolean;
@@ -5259,6 +6101,23 @@ module ApiHeader {
   }
 
 
+  export class APIUpdateClusterEvent {
+    inventory : ClusterInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APIRemoveUserFromGroupEvent {
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
   export class AccountInventory {
     uuid : string;
     name : string;
@@ -5276,7 +6135,63 @@ module ApiHeader {
   }
 
 
+  export class APIDeleteUserGroupEvent {
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
   export class APIAttachPolicyToUserEvent {
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APIShareResourceEvent {
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APIDetachPolicyFromUserGroupEvent {
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APIResetUserPasswordEvent {
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APIDeletePolicyEvent {
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APIAddUserToGroupEvent {
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APIDeleteAccountEvent {
     API_EVENT : string;
     success : boolean;
     error : ErrorCode;
@@ -5293,19 +6208,69 @@ module ApiHeader {
   }
 
 
-  export class PolicyInventory {
-    uuid : string;
+  export class QuotaInventory {
     name : string;
-    accountUuid : string;
-    type : string;
-    data : string;
-    createDate : string;
+    identityUuid : string;
+    identityType : string;
+    value : number;
     lastOpDate : string;
+    createDate : string;
+  }
+
+
+  export class APIUpdateQuotaEvent {
+    inventory : QuotaInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class PolicyInventory {
+    statements : Array<Statement>;
+    name : string;
+    uuid : string;
+    accountUuid : string;
   }
 
 
   export class APICreatePolicyEvent {
     inventory : PolicyInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class UserInventory {
+    uuid : string;
+    accountUuid : string;
+    name : string;
+    createDate : string;
+    lastOpDate : string;
+  }
+
+
+  export class APICreateUserEvent {
+    inventory : UserInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APIDetachPolicyFromUserEvent {
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APIDeleteUserEvent {
     API_EVENT : string;
     success : boolean;
     error : ErrorCode;
@@ -5320,37 +6285,6 @@ module ApiHeader {
     description : string;
     createDate : string;
     lastOpDate : string;
-    policies : Array<PolicyInventory>;
-  }
-
-
-  export class UserInventory {
-    uuid : string;
-    accountUuid : string;
-    name : string;
-    securityKey : string;
-    token : string;
-    createDate : string;
-    lastOpDate : string;
-    groups : Array<UserGroupInventory>;
-    policies : Array<PolicyInventory>;
-  }
-
-
-  export class APICreateUserEvent {
-    inventory : UserInventory;
-    API_EVENT : string;
-    success : boolean;
-    error : ErrorCode;
-    BINDING_KEY_PERFIX : string;
-  }
-
-
-  export class APIAttachUserToUserGroupEvent {
-    API_EVENT : string;
-    success : boolean;
-    error : ErrorCode;
-    BINDING_KEY_PERFIX : string;
   }
 
 
@@ -5371,6 +6305,14 @@ module ApiHeader {
   }
 
 
+  export class APIRevokeResourceSharingEvent {
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
   export class ZoneInventory {
     uuid : string;
     name : string;
@@ -5379,6 +6321,15 @@ module ApiHeader {
     type : string;
     createDate : string;
     lastOpDate : string;
+  }
+
+
+  export class APIUpdateZoneEvent {
+    inventory : ZoneInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
   }
 
 
@@ -5454,6 +6405,15 @@ module ApiHeader {
 
 
   export class APIReconnectHostEvent {
+    inventory : HostInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APIUpdateHostEvent {
     inventory : HostInventory;
     API_EVENT : string;
     success : boolean;
@@ -5601,6 +6561,15 @@ module ApiHeader {
   }
 
 
+  export class APIUpdatePortForwardingRuleEvent {
+    inventory : PortForwardingRuleInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
   export class EipInventory {
     uuid : string;
     name : string;
@@ -5616,6 +6585,15 @@ module ApiHeader {
 
 
   export class APIChangeEipStateEvent {
+    inventory : EipInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APIUpdateEipEvent {
     inventory : EipInventory;
     API_EVENT : string;
     success : boolean;
@@ -5720,6 +6698,15 @@ module ApiHeader {
   }
 
 
+  export class APIUpdateSecurityGroupEvent {
+    inventory : SecurityGroupInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
   export class APIDeleteVmNicFromSecurityGroupEvent {
     API_EVENT : string;
     success : boolean;
@@ -5789,6 +6776,15 @@ module ApiHeader {
   }
 
 
+  export class APIUpdateVipEvent {
+    inventory : VipInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
   export class APIDeleteVipEvent {
     API_EVENT : string;
     success : boolean;
@@ -5819,7 +6815,6 @@ module ApiHeader {
     success : boolean;
     error : ErrorCode;
   }
-
 
   export class APIListGlobalConfigReply {
     inventories : GlobalConfigInventory[];
@@ -5905,6 +6900,13 @@ module ApiHeader {
   export class APIQueryVmNicReply {
     inventories : Array<VmNicInventory>;
     total : number;
+    success : boolean;
+    error : ErrorCode;
+  }
+
+
+  export class APIGetVmAttachableL3NetworkReply {
+    inventories : Array<L3NetworkInventory>;
     success : boolean;
     error : ErrorCode;
   }
@@ -6248,6 +7250,21 @@ module ApiHeader {
   }
 
 
+  export class FreeIpInventory {
+    ipRangeUuid : string;
+    ip : string;
+    netmask : string;
+    gateway : string;
+  }
+
+
+  export class APIGetFreeIpReply {
+    inventories : Array<FreeIpInventory>;
+    success : boolean;
+    error : ErrorCode;
+  }
+
+
   export class APIQueryIpRangeReply {
     inventories : Array<IpRangeInventory>;
     total : number;
@@ -6468,6 +7485,14 @@ module ApiHeader {
   }
 
 
+  export class APIQueryUserGroupReply {
+    inventories : Array<UserGroupInventory>;
+    total : number;
+    success : boolean;
+    error : ErrorCode;
+  }
+
+
   export class APIGetUserReply {
     inventory : string;
     success : boolean;
@@ -6482,6 +7507,14 @@ module ApiHeader {
   }
 
 
+  export class APIQueryUserReply {
+    inventories : Array<UserInventory>;
+    total : number;
+    success : boolean;
+    error : ErrorCode;
+  }
+
+
   export class APIListAccountReply {
     inventories : Array<AccountInventory>;
     success : boolean;
@@ -6491,6 +7524,14 @@ module ApiHeader {
 
   export class APISearchPolicyReply {
     content : string;
+    success : boolean;
+    error : ErrorCode;
+  }
+
+
+  export class APIQueryAccountReply {
+    inventories : Array<AccountInventory>;
+    total : number;
     success : boolean;
     error : ErrorCode;
   }
@@ -6530,8 +7571,24 @@ module ApiHeader {
   }
 
 
+  export class APIQueryQuotaReply {
+    inventories : Array<QuotaInventory>;
+    total : number;
+    success : boolean;
+    error : ErrorCode;
+  }
+
+
   export class APIGetUserGroupReply {
     inventory : string;
+    success : boolean;
+    error : ErrorCode;
+  }
+
+
+  export class APIQueryPolicyReply {
+    inventories : Array<PolicyInventory>;
+    total : number;
     success : boolean;
     error : ErrorCode;
   }
@@ -6633,6 +7690,38 @@ module ApiHeader {
 
   export class APIListApplianceVmReply {
     inventories : Array<ApplianceVmInventory>;
+    success : boolean;
+    error : ErrorCode;
+  }
+
+
+  export class IscsiFileSystemBackendPrimaryStorageInventory {
+    chapUsername : string;
+    hostname : string;
+    sshUsername : string;
+    filesystemType : string;
+    uuid : string;
+    zoneUuid : string;
+    name : string;
+    url : string;
+    description : string;
+    totalCapacity : number;
+    availableCapacity : number;
+    totalPhysicalCapacity : number;
+    availablePhysicalCapacity : number;
+    type : string;
+    state : string;
+    status : string;
+    mountPath : string;
+    createDate : string;
+    lastOpDate : string;
+    attachedClusterUuids : Array<string>;
+  }
+
+
+  export class APIQueryIscsiFileSystemBackendPrimaryStorageReply {
+    inventories : Array<IscsiFileSystemBackendPrimaryStorageInventory>;
+    total : number;
     success : boolean;
     error : ErrorCode;
   }
@@ -6889,6 +7978,8 @@ module ApiHeader {
     uuid : string;
     totalCapacity : number;
     availableCapacity : number;
+    totalPhysicalCapacity : number;
+    availablePhsicalCapacity : number;
     createDate : string;
     lastOpDate : string;
   }
@@ -6954,6 +8045,30 @@ module ApiHeader {
   }
 
 
+  export class UserGroupPolicyRefInventory {
+    groupUuid : string;
+    policyUuid : string;
+    createDate : string;
+    lastOpDate : string;
+  }
+
+
+  export class UserPolicyRefInventory {
+    userUuid : string;
+    policyUuid : string;
+    createDate : string;
+    lastOpDate : string;
+  }
+
+
+  export class UserGroupUserRefInventory {
+    userUuid : string;
+    groupUuid : string;
+    createDate : string;
+    lastOpDate : string;
+  }
+
+
   export class SimulatorHostInventory {
     memoryCapacity : number;
     cpuCapacity : number;
@@ -6989,27 +8104,23 @@ module ApiHeader {
   }
 
 
-  export class IscsiFileSystemBackendPrimaryStorageInventory {
-    chapUsername : string;
-    chapPassword : string;
-    hostname : string;
-    sshUsername : string;
-    sshPassword : string;
-    filesystemType : string;
-    uuid : string;
+  export class KVMHostInventory {
+    username : string;
     zoneUuid : string;
     name : string;
-    url : string;
+    uuid : string;
+    clusterUuid : string;
     description : string;
-    totalCapacity : number;
-    availableCapacity : number;
-    type : string;
+    managementIp : string;
+    hypervisorType : string;
     state : string;
     status : string;
-    mountPath : string;
+    totalCpuCapacity : number;
+    availableCpuCapacity : number;
+    totalMemoryCapacity : number;
+    availableMemoryCapacity : number;
     createDate : string;
     lastOpDate : string;
-    attachedClusterUuids : Array<string>;
   }
 
 
@@ -7091,7 +8202,7 @@ module ApiHeader {
 
   export var TagResourceTypeDiskOfferingVO = 'DiskOfferingVO';
 
-  export var PrimaryStorageInventoryQueryable = ['uuid', 'zoneUuid', 'name', 'url', 'description', 'totalCapacity', 'availableCapacity', 'type', 'state', 'status', 'mountPath', 'createDate', 'lastOpDate', 'attachedClusterUuids'];
+  export var PrimaryStorageInventoryQueryable = ['uuid', 'zoneUuid', 'name', 'url', 'description', 'totalCapacity', 'availableCapacity', 'totalPhysicalCapacity', 'availablePhysicalCapacity', 'type', 'state', 'status', 'mountPath', 'createDate', 'lastOpDate', 'attachedClusterUuids'];
 
 
   export var TagResourceTypePrimaryStorageVO = 'PrimaryStorageVO';
@@ -7101,7 +8212,7 @@ module ApiHeader {
 
   export var TagResourceTypePrimaryStorageClusterRefVO = 'PrimaryStorageClusterRefVO';
 
-  export var PrimaryStorageCapacityInventoryQueryable = ['uuid', 'totalCapacity', 'availableCapacity', 'createDate', 'lastOpDate'];
+  export var PrimaryStorageCapacityInventoryQueryable = ['uuid', 'totalCapacity', 'availableCapacity', 'totalPhysicalCapacity', 'availablePhsicalCapacity', 'createDate', 'lastOpDate'];
 
 
   export var TagResourceTypePrimaryStorageCapacityVO = 'PrimaryStorageCapacityVO';
@@ -7206,17 +8317,17 @@ module ApiHeader {
 
   export var TagResourceTypeClusterVO = 'ClusterVO';
 
-  export var UserInventoryQueryable = ['uuid', 'accountUuid', 'name', 'securityKey', 'token', 'createDate', 'lastOpDate', 'groups.uuid', 'groups.accountUuid', 'groups.name', 'groups.description', 'groups.createDate', 'groups.lastOpDate', 'policies.uuid', 'policies.name', 'policies.accountUuid', 'policies.type', 'policies.data', 'policies.createDate', 'policies.lastOpDate', 'policies.uuid', 'policies.name', 'policies.accountUuid', 'policies.type', 'policies.data', 'policies.createDate', 'policies.lastOpDate'];
+  export var UserInventoryQueryable = ['uuid', 'accountUuid', 'name', 'createDate', 'lastOpDate'];
 
 
   export var TagResourceTypeUserVO = 'UserVO';
 
-  export var UserGroupInventoryQueryable = ['uuid', 'accountUuid', 'name', 'description', 'createDate', 'lastOpDate', 'policies.uuid', 'policies.name', 'policies.accountUuid', 'policies.type', 'policies.data', 'policies.createDate', 'policies.lastOpDate'];
+  export var UserGroupInventoryQueryable = ['uuid', 'accountUuid', 'name', 'description', 'createDate', 'lastOpDate'];
 
 
   export var TagResourceTypeUserGroupVO = 'UserGroupVO';
 
-  export var PolicyInventoryQueryable = ['uuid', 'name', 'accountUuid', 'type', 'data', 'createDate', 'lastOpDate'];
+  export var PolicyInventoryQueryable = ['statements.name', 'statements.effect', 'statements.principals', 'statements.actions', 'statements.resources', 'name', 'uuid', 'accountUuid'];
 
 
   export var TagResourceTypePolicyVO = 'PolicyVO';
@@ -7226,10 +8337,30 @@ module ApiHeader {
 
   export var TagResourceTypeAccountResourceRefVO = 'AccountResourceRefVO';
 
+  export var UserGroupPolicyRefInventoryQueryable = ['groupUuid', 'policyUuid', 'createDate', 'lastOpDate'];
+
+
+  export var TagResourceTypeUserGroupPolicyRefVO = 'UserGroupPolicyRefVO';
+
   export var AccountInventoryQueryable = ['uuid', 'name', 'createDate', 'lastOpDate'];
 
 
   export var TagResourceTypeAccountVO = 'AccountVO';
+
+  export var QuotaInventoryQueryable = ['name', 'identityUuid', 'identityType', 'value', 'lastOpDate', 'createDate'];
+
+
+  export var TagResourceTypeQuotaVO = 'QuotaVO';
+
+  export var UserPolicyRefInventoryQueryable = ['userUuid', 'policyUuid', 'createDate', 'lastOpDate'];
+
+
+  export var TagResourceTypeUserPolicyRefVO = 'UserPolicyRefVO';
+
+  export var UserGroupUserRefInventoryQueryable = ['userUuid', 'groupUuid', 'createDate', 'lastOpDate'];
+
+
+  export var TagResourceTypeUserGroupUserRefVO = 'UserGroupUserRefVO';
 
   export var ZoneInventoryQueryable = ['uuid', 'name', 'description', 'state', 'type', 'createDate', 'lastOpDate'];
 
@@ -7256,10 +8387,15 @@ module ApiHeader {
 
   export var TagResourceTypeApplianceVmVO = 'ApplianceVmVO';
 
-  export var IscsiFileSystemBackendPrimaryStorageInventoryQueryable = ['chapUsername', 'chapPassword', 'hostname', 'sshUsername', 'sshPassword', 'filesystemType', 'uuid', 'zoneUuid', 'name', 'url', 'description', 'totalCapacity', 'availableCapacity', 'type', 'state', 'status', 'mountPath', 'createDate', 'lastOpDate', 'attachedClusterUuids'];
+  export var IscsiFileSystemBackendPrimaryStorageInventoryQueryable = ['chapUsername', 'hostname', 'sshUsername', 'filesystemType', 'uuid', 'zoneUuid', 'name', 'url', 'description', 'totalCapacity', 'availableCapacity', 'totalPhysicalCapacity', 'availablePhysicalCapacity', 'type', 'state', 'status', 'mountPath', 'createDate', 'lastOpDate', 'attachedClusterUuids'];
 
 
   export var TagResourceTypeIscsiFileSystemBackendPrimaryStorageVO = 'IscsiFileSystemBackendPrimaryStorageVO';
+
+  export var KVMHostInventoryQueryable = ['username', 'zoneUuid', 'name', 'uuid', 'clusterUuid', 'description', 'managementIp', 'hypervisorType', 'state', 'status', 'totalCpuCapacity', 'availableCpuCapacity', 'totalMemoryCapacity', 'availableMemoryCapacity', 'createDate', 'lastOpDate'];
+
+
+  export var TagResourceTypeKVMHostVO = 'KVMHostVO';
 
   export var SftpBackupStorageInventoryQueryable = ['hostname', 'uuid', 'name', 'url', 'description', 'totalCapacity', 'availableCapacity', 'type', 'state', 'status', 'createDate', 'lastOpDate', 'attachedZoneUuids'];
 

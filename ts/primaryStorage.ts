@@ -147,6 +147,21 @@ module MPrimaryStorage {
       });
     }
 
+    reconnect(ps : PrimaryStorage) {
+      ps.progressOn();
+      var msg = new ApiHeader.APIReconnectPrimaryStorageMsg();
+      msg.uuid = ps.uuid;
+      ps.status = 'Connecting';
+      this.api.asyncApi(msg, (ret : ApiHeader.APIReconnectPrimaryStorageEvent) => {
+        ps.updateObservableObject(ret.inventory);
+        ps.progressOff();
+        this.$rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
+          msg: Utils.sprintf('Reconnected Primary Storage: {0}',ps.name),
+          link: Utils.sprintf('/#/primaryStorage/{0}', ps.uuid)
+        });
+      });
+    }
+
     enable(ps : PrimaryStorage) {
       ps.progressOn();
       var msg = new ApiHeader.APIChangePrimaryStorageStateMsg();
@@ -301,6 +316,10 @@ module MPrimaryStorage {
 
     addHost() {
 
+    }
+
+    reconnect() {
+      this.psMgr.reconnect(this.$scope.model.current);
     }
 
     attachL2Network() {

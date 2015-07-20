@@ -6,6 +6,7 @@ var ApiHeader;
         return SessionInventory;
     })();
     ApiHeader.SessionInventory = SessionInventory;
+
     var APISilentMsg = (function () {
         function APISilentMsg() {
         }
@@ -18,6 +19,7 @@ var ApiHeader;
         return APISilentMsg;
     })();
     ApiHeader.APISilentMsg = APISilentMsg;
+
     var FakePolicyAllowMsg = (function () {
         function FakePolicyAllowMsg() {
         }
@@ -30,6 +32,7 @@ var ApiHeader;
         return FakePolicyAllowMsg;
     })();
     ApiHeader.FakePolicyAllowMsg = FakePolicyAllowMsg;
+
     var FakePolicyDenyMsg = (function () {
         function FakePolicyDenyMsg() {
         }
@@ -42,6 +45,7 @@ var ApiHeader;
         return FakePolicyDenyMsg;
     })();
     ApiHeader.FakePolicyDenyMsg = FakePolicyDenyMsg;
+
     var FakePolicyAllowHas2RoleMsg = (function () {
         function FakePolicyAllowHas2RoleMsg() {
         }
@@ -54,12 +58,14 @@ var ApiHeader;
         return FakePolicyAllowHas2RoleMsg;
     })();
     ApiHeader.FakePolicyAllowHas2RoleMsg = FakePolicyAllowHas2RoleMsg;
+
     var QueryCondition = (function () {
         function QueryCondition() {
         }
         return QueryCondition;
     })();
     ApiHeader.QueryCondition = QueryCondition;
+
     var APIQueryGlobalConfigMsg = (function () {
         function APIQueryGlobalConfigMsg() {
         }
@@ -72,6 +78,7 @@ var ApiHeader;
         return APIQueryGlobalConfigMsg;
     })();
     ApiHeader.APIQueryGlobalConfigMsg = APIQueryGlobalConfigMsg;
+
     var APIListGlobalConfigMsg = (function () {
         function APIListGlobalConfigMsg() {
         }
@@ -84,6 +91,7 @@ var ApiHeader;
         return APIListGlobalConfigMsg;
     })();
     ApiHeader.APIListGlobalConfigMsg = APIListGlobalConfigMsg;
+
     var APIGetGlobalConfigMsg = (function () {
         function APIGetGlobalConfigMsg() {
         }
@@ -96,6 +104,7 @@ var ApiHeader;
         return APIGetGlobalConfigMsg;
     })();
     ApiHeader.APIGetGlobalConfigMsg = APIGetGlobalConfigMsg;
+
     var APIUpdateGlobalConfigMsg = (function () {
         function APIUpdateGlobalConfigMsg() {
         }
@@ -108,6 +117,7 @@ var ApiHeader;
         return APIUpdateGlobalConfigMsg;
     })();
     ApiHeader.APIUpdateGlobalConfigMsg = APIUpdateGlobalConfigMsg;
+
     var APIGenerateInventoryQueryDetailsMsg = (function () {
         function APIGenerateInventoryQueryDetailsMsg() {
         }
@@ -120,6 +130,7 @@ var ApiHeader;
         return APIGenerateInventoryQueryDetailsMsg;
     })();
     ApiHeader.APIGenerateInventoryQueryDetailsMsg = APIGenerateInventoryQueryDetailsMsg;
+
     var APIGenerateQueryableFieldsMsg = (function () {
         function APIGenerateQueryableFieldsMsg() {
         }
@@ -132,6 +143,7 @@ var ApiHeader;
         return APIGenerateQueryableFieldsMsg;
     })();
     ApiHeader.APIGenerateQueryableFieldsMsg = APIGenerateQueryableFieldsMsg;
+
     var APIGetHostAllocatorStrategiesMsg = (function () {
         function APIGetHostAllocatorStrategiesMsg() {
         }
@@ -144,6 +156,7 @@ var ApiHeader;
         return APIGetHostAllocatorStrategiesMsg;
     })();
     ApiHeader.APIGetHostAllocatorStrategiesMsg = APIGetHostAllocatorStrategiesMsg;
+
     var APIGetCpuMemoryCapacityMsg = (function () {
         function APIGetCpuMemoryCapacityMsg() {
         }
@@ -156,6 +169,33 @@ var ApiHeader;
         return APIGetCpuMemoryCapacityMsg;
     })();
     ApiHeader.APIGetCpuMemoryCapacityMsg = APIGetCpuMemoryCapacityMsg;
+
+    var APIUpdateVmInstanceMsg = (function () {
+        function APIUpdateVmInstanceMsg() {
+        }
+        APIUpdateVmInstanceMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.vm.APIUpdateVmInstanceMsg': this
+            };
+            return msg;
+        };
+        return APIUpdateVmInstanceMsg;
+    })();
+    ApiHeader.APIUpdateVmInstanceMsg = APIUpdateVmInstanceMsg;
+
+    var APIGetVmAttachableL3NetworkMsg = (function () {
+        function APIGetVmAttachableL3NetworkMsg() {
+        }
+        APIGetVmAttachableL3NetworkMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.vm.APIGetVmAttachableL3NetworkMsg': this
+            };
+            return msg;
+        };
+        return APIGetVmAttachableL3NetworkMsg;
+    })();
+    ApiHeader.APIGetVmAttachableL3NetworkMsg = APIGetVmAttachableL3NetworkMsg;
+
     var APIMigrateVmMsg = (function () {
         function APIMigrateVmMsg() {
         }
@@ -168,6 +208,7 @@ var ApiHeader;
         return APIMigrateVmMsg;
     })();
     ApiHeader.APIMigrateVmMsg = APIMigrateVmMsg;
+
     var APIStopVmInstanceMsg = (function () {
         function APIStopVmInstanceMsg() {
         }
@@ -180,18 +221,34 @@ var ApiHeader;
         return APIStopVmInstanceMsg;
     })();
     ApiHeader.APIStopVmInstanceMsg = APIStopVmInstanceMsg;
+
+    var APIChangeInstanceOfferingMsg = (function () {
+        function APIChangeInstanceOfferingMsg() {
+        }
+        APIChangeInstanceOfferingMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.vm.APIChangeInstanceOfferingMsg': this
+            };
+            return msg;
+        };
+        return APIChangeInstanceOfferingMsg;
+    })();
+    ApiHeader.APIChangeInstanceOfferingMsg = APIChangeInstanceOfferingMsg;
+
     var NOVTriple = (function () {
         function NOVTriple() {
         }
         return NOVTriple;
     })();
     ApiHeader.NOVTriple = NOVTriple;
+
     var NOLTriple = (function () {
         function NOLTriple() {
         }
         return NOLTriple;
     })();
     ApiHeader.NOLTriple = NOLTriple;
+
     var APISearchVmInstanceMsg = (function () {
         function APISearchVmInstanceMsg() {
         }
@@ -204,6 +261,7 @@ var ApiHeader;
         return APISearchVmInstanceMsg;
     })();
     ApiHeader.APISearchVmInstanceMsg = APISearchVmInstanceMsg;
+
     var APIGetVmAttachableDataVolumeMsg = (function () {
         function APIGetVmAttachableDataVolumeMsg() {
         }
@@ -216,6 +274,7 @@ var ApiHeader;
         return APIGetVmAttachableDataVolumeMsg;
     })();
     ApiHeader.APIGetVmAttachableDataVolumeMsg = APIGetVmAttachableDataVolumeMsg;
+
     var APIQueryVmNicMsg = (function () {
         function APIQueryVmNicMsg() {
         }
@@ -228,6 +287,20 @@ var ApiHeader;
         return APIQueryVmNicMsg;
     })();
     ApiHeader.APIQueryVmNicMsg = APIQueryVmNicMsg;
+
+    var APIAttachL3NetworkToVmMsg = (function () {
+        function APIAttachL3NetworkToVmMsg() {
+        }
+        APIAttachL3NetworkToVmMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.vm.APIAttachL3NetworkToVmMsg': this
+            };
+            return msg;
+        };
+        return APIAttachL3NetworkToVmMsg;
+    })();
+    ApiHeader.APIAttachL3NetworkToVmMsg = APIAttachL3NetworkToVmMsg;
+
     var APIDestroyVmInstanceMsg = (function () {
         function APIDestroyVmInstanceMsg() {
         }
@@ -240,6 +313,7 @@ var ApiHeader;
         return APIDestroyVmInstanceMsg;
     })();
     ApiHeader.APIDestroyVmInstanceMsg = APIDestroyVmInstanceMsg;
+
     var APIGetVmMigrationCandidateHostsMsg = (function () {
         function APIGetVmMigrationCandidateHostsMsg() {
         }
@@ -252,6 +326,7 @@ var ApiHeader;
         return APIGetVmMigrationCandidateHostsMsg;
     })();
     ApiHeader.APIGetVmMigrationCandidateHostsMsg = APIGetVmMigrationCandidateHostsMsg;
+
     var APIQueryVmInstanceMsg = (function () {
         function APIQueryVmInstanceMsg() {
         }
@@ -264,6 +339,20 @@ var ApiHeader;
         return APIQueryVmInstanceMsg;
     })();
     ApiHeader.APIQueryVmInstanceMsg = APIQueryVmInstanceMsg;
+
+    var APIDetachL3NetworkFromVmMsg = (function () {
+        function APIDetachL3NetworkFromVmMsg() {
+        }
+        APIDetachL3NetworkFromVmMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.vm.APIDetachL3NetworkFromVmMsg': this
+            };
+            return msg;
+        };
+        return APIDetachL3NetworkFromVmMsg;
+    })();
+    ApiHeader.APIDetachL3NetworkFromVmMsg = APIDetachL3NetworkFromVmMsg;
+
     var APIListVmNicMsg = (function () {
         function APIListVmNicMsg() {
         }
@@ -276,18 +365,7 @@ var ApiHeader;
         return APIListVmNicMsg;
     })();
     ApiHeader.APIListVmNicMsg = APIListVmNicMsg;
-    var APIAttachNicToVmMsg = (function () {
-        function APIAttachNicToVmMsg() {
-        }
-        APIAttachNicToVmMsg.prototype.toApiMap = function () {
-            var msg = {
-                'org.zstack.header.vm.APIAttachNicToVmMsg': this
-            };
-            return msg;
-        };
-        return APIAttachNicToVmMsg;
-    })();
-    ApiHeader.APIAttachNicToVmMsg = APIAttachNicToVmMsg;
+
     var APIListVmInstanceMsg = (function () {
         function APIListVmInstanceMsg() {
         }
@@ -300,6 +378,7 @@ var ApiHeader;
         return APIListVmInstanceMsg;
     })();
     ApiHeader.APIListVmInstanceMsg = APIListVmInstanceMsg;
+
     var APIRebootVmInstanceMsg = (function () {
         function APIRebootVmInstanceMsg() {
         }
@@ -312,6 +391,7 @@ var ApiHeader;
         return APIRebootVmInstanceMsg;
     })();
     ApiHeader.APIRebootVmInstanceMsg = APIRebootVmInstanceMsg;
+
     var APICreateVmInstanceMsg = (function () {
         function APICreateVmInstanceMsg() {
         }
@@ -324,6 +404,7 @@ var ApiHeader;
         return APICreateVmInstanceMsg;
     })();
     ApiHeader.APICreateVmInstanceMsg = APICreateVmInstanceMsg;
+
     var APIGetVmInstanceMsg = (function () {
         function APIGetVmInstanceMsg() {
         }
@@ -336,6 +417,7 @@ var ApiHeader;
         return APIGetVmInstanceMsg;
     })();
     ApiHeader.APIGetVmInstanceMsg = APIGetVmInstanceMsg;
+
     var APIStartVmInstanceMsg = (function () {
         function APIStartVmInstanceMsg() {
         }
@@ -348,6 +430,7 @@ var ApiHeader;
         return APIStartVmInstanceMsg;
     })();
     ApiHeader.APIStartVmInstanceMsg = APIStartVmInstanceMsg;
+
     var APIChangeImageStateMsg = (function () {
         function APIChangeImageStateMsg() {
         }
@@ -360,6 +443,7 @@ var ApiHeader;
         return APIChangeImageStateMsg;
     })();
     ApiHeader.APIChangeImageStateMsg = APIChangeImageStateMsg;
+
     var APIGetImageMsg = (function () {
         function APIGetImageMsg() {
         }
@@ -372,6 +456,20 @@ var ApiHeader;
         return APIGetImageMsg;
     })();
     ApiHeader.APIGetImageMsg = APIGetImageMsg;
+
+    var APIUpdateImageMsg = (function () {
+        function APIUpdateImageMsg() {
+        }
+        APIUpdateImageMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.image.APIUpdateImageMsg': this
+            };
+            return msg;
+        };
+        return APIUpdateImageMsg;
+    })();
+    ApiHeader.APIUpdateImageMsg = APIUpdateImageMsg;
+
     var APIDeleteImageMsg = (function () {
         function APIDeleteImageMsg() {
         }
@@ -384,6 +482,7 @@ var ApiHeader;
         return APIDeleteImageMsg;
     })();
     ApiHeader.APIDeleteImageMsg = APIDeleteImageMsg;
+
     var APISearchImageMsg = (function () {
         function APISearchImageMsg() {
         }
@@ -396,6 +495,7 @@ var ApiHeader;
         return APISearchImageMsg;
     })();
     ApiHeader.APISearchImageMsg = APISearchImageMsg;
+
     var APICreateDataVolumeTemplateFromVolumeMsg = (function () {
         function APICreateDataVolumeTemplateFromVolumeMsg() {
         }
@@ -408,6 +508,7 @@ var ApiHeader;
         return APICreateDataVolumeTemplateFromVolumeMsg;
     })();
     ApiHeader.APICreateDataVolumeTemplateFromVolumeMsg = APICreateDataVolumeTemplateFromVolumeMsg;
+
     var APICreateRootVolumeTemplateFromRootVolumeMsg = (function () {
         function APICreateRootVolumeTemplateFromRootVolumeMsg() {
         }
@@ -420,6 +521,7 @@ var ApiHeader;
         return APICreateRootVolumeTemplateFromRootVolumeMsg;
     })();
     ApiHeader.APICreateRootVolumeTemplateFromRootVolumeMsg = APICreateRootVolumeTemplateFromRootVolumeMsg;
+
     var APIQueryImageMsg = (function () {
         function APIQueryImageMsg() {
         }
@@ -432,6 +534,7 @@ var ApiHeader;
         return APIQueryImageMsg;
     })();
     ApiHeader.APIQueryImageMsg = APIQueryImageMsg;
+
     var APIListImageMsg = (function () {
         function APIListImageMsg() {
         }
@@ -444,6 +547,7 @@ var ApiHeader;
         return APIListImageMsg;
     })();
     ApiHeader.APIListImageMsg = APIListImageMsg;
+
     var APICreateRootVolumeTemplateFromVolumeSnapshotMsg = (function () {
         function APICreateRootVolumeTemplateFromVolumeSnapshotMsg() {
         }
@@ -456,6 +560,7 @@ var ApiHeader;
         return APICreateRootVolumeTemplateFromVolumeSnapshotMsg;
     })();
     ApiHeader.APICreateRootVolumeTemplateFromVolumeSnapshotMsg = APICreateRootVolumeTemplateFromVolumeSnapshotMsg;
+
     var APIAddImageMsg = (function () {
         function APIAddImageMsg() {
         }
@@ -468,6 +573,7 @@ var ApiHeader;
         return APIAddImageMsg;
     })();
     ApiHeader.APIAddImageMsg = APIAddImageMsg;
+
     var APIRequestConsoleAccessMsg = (function () {
         function APIRequestConsoleAccessMsg() {
         }
@@ -480,6 +586,7 @@ var ApiHeader;
         return APIRequestConsoleAccessMsg;
     })();
     ApiHeader.APIRequestConsoleAccessMsg = APIRequestConsoleAccessMsg;
+
     var APIBackupDataVolumeMsg = (function () {
         function APIBackupDataVolumeMsg() {
         }
@@ -492,6 +599,7 @@ var ApiHeader;
         return APIBackupDataVolumeMsg;
     })();
     ApiHeader.APIBackupDataVolumeMsg = APIBackupDataVolumeMsg;
+
     var APIAttachDataVolumeToVmMsg = (function () {
         function APIAttachDataVolumeToVmMsg() {
         }
@@ -504,6 +612,7 @@ var ApiHeader;
         return APIAttachDataVolumeToVmMsg;
     })();
     ApiHeader.APIAttachDataVolumeToVmMsg = APIAttachDataVolumeToVmMsg;
+
     var APISearchVolumeMsg = (function () {
         function APISearchVolumeMsg() {
         }
@@ -516,6 +625,20 @@ var ApiHeader;
         return APISearchVolumeMsg;
     })();
     ApiHeader.APISearchVolumeMsg = APISearchVolumeMsg;
+
+    var APIUpdateVolumeMsg = (function () {
+        function APIUpdateVolumeMsg() {
+        }
+        APIUpdateVolumeMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.volume.APIUpdateVolumeMsg': this
+            };
+            return msg;
+        };
+        return APIUpdateVolumeMsg;
+    })();
+    ApiHeader.APIUpdateVolumeMsg = APIUpdateVolumeMsg;
+
     var APIQueryVolumeMsg = (function () {
         function APIQueryVolumeMsg() {
         }
@@ -528,6 +651,7 @@ var ApiHeader;
         return APIQueryVolumeMsg;
     })();
     ApiHeader.APIQueryVolumeMsg = APIQueryVolumeMsg;
+
     var APICreateDataVolumeFromVolumeSnapshotMsg = (function () {
         function APICreateDataVolumeFromVolumeSnapshotMsg() {
         }
@@ -540,6 +664,7 @@ var ApiHeader;
         return APICreateDataVolumeFromVolumeSnapshotMsg;
     })();
     ApiHeader.APICreateDataVolumeFromVolumeSnapshotMsg = APICreateDataVolumeFromVolumeSnapshotMsg;
+
     var APICreateDataVolumeFromVolumeTemplateMsg = (function () {
         function APICreateDataVolumeFromVolumeTemplateMsg() {
         }
@@ -552,6 +677,7 @@ var ApiHeader;
         return APICreateDataVolumeFromVolumeTemplateMsg;
     })();
     ApiHeader.APICreateDataVolumeFromVolumeTemplateMsg = APICreateDataVolumeFromVolumeTemplateMsg;
+
     var APIDetachDataVolumeFromVmMsg = (function () {
         function APIDetachDataVolumeFromVmMsg() {
         }
@@ -564,6 +690,7 @@ var ApiHeader;
         return APIDetachDataVolumeFromVmMsg;
     })();
     ApiHeader.APIDetachDataVolumeFromVmMsg = APIDetachDataVolumeFromVmMsg;
+
     var APIGetVolumeMsg = (function () {
         function APIGetVolumeMsg() {
         }
@@ -576,6 +703,7 @@ var ApiHeader;
         return APIGetVolumeMsg;
     })();
     ApiHeader.APIGetVolumeMsg = APIGetVolumeMsg;
+
     var APICreateDataVolumeMsg = (function () {
         function APICreateDataVolumeMsg() {
         }
@@ -588,6 +716,7 @@ var ApiHeader;
         return APICreateDataVolumeMsg;
     })();
     ApiHeader.APICreateDataVolumeMsg = APICreateDataVolumeMsg;
+
     var APIGetDataVolumeAttachableVmMsg = (function () {
         function APIGetDataVolumeAttachableVmMsg() {
         }
@@ -600,6 +729,7 @@ var ApiHeader;
         return APIGetDataVolumeAttachableVmMsg;
     })();
     ApiHeader.APIGetDataVolumeAttachableVmMsg = APIGetDataVolumeAttachableVmMsg;
+
     var APIGetVolumeFormatMsg = (function () {
         function APIGetVolumeFormatMsg() {
         }
@@ -612,6 +742,7 @@ var ApiHeader;
         return APIGetVolumeFormatMsg;
     })();
     ApiHeader.APIGetVolumeFormatMsg = APIGetVolumeFormatMsg;
+
     var APIDeleteDataVolumeMsg = (function () {
         function APIDeleteDataVolumeMsg() {
         }
@@ -624,6 +755,7 @@ var ApiHeader;
         return APIDeleteDataVolumeMsg;
     })();
     ApiHeader.APIDeleteDataVolumeMsg = APIDeleteDataVolumeMsg;
+
     var APICreateVolumeSnapshotMsg = (function () {
         function APICreateVolumeSnapshotMsg() {
         }
@@ -636,6 +768,7 @@ var ApiHeader;
         return APICreateVolumeSnapshotMsg;
     })();
     ApiHeader.APICreateVolumeSnapshotMsg = APICreateVolumeSnapshotMsg;
+
     var APIListVolumeMsg = (function () {
         function APIListVolumeMsg() {
         }
@@ -648,6 +781,7 @@ var ApiHeader;
         return APIListVolumeMsg;
     })();
     ApiHeader.APIListVolumeMsg = APIListVolumeMsg;
+
     var APIChangeVolumeStateMsg = (function () {
         function APIChangeVolumeStateMsg() {
         }
@@ -660,6 +794,7 @@ var ApiHeader;
         return APIChangeVolumeStateMsg;
     })();
     ApiHeader.APIChangeVolumeStateMsg = APIChangeVolumeStateMsg;
+
     var APIIsReadyToGoMsg = (function () {
         function APIIsReadyToGoMsg() {
         }
@@ -672,6 +807,7 @@ var ApiHeader;
         return APIIsReadyToGoMsg;
     })();
     ApiHeader.APIIsReadyToGoMsg = APIIsReadyToGoMsg;
+
     var APIListDiskOfferingMsg = (function () {
         function APIListDiskOfferingMsg() {
         }
@@ -684,6 +820,7 @@ var ApiHeader;
         return APIListDiskOfferingMsg;
     })();
     ApiHeader.APIListDiskOfferingMsg = APIListDiskOfferingMsg;
+
     var APIGenerateApiTypeScriptDefinitionMsg = (function () {
         function APIGenerateApiTypeScriptDefinitionMsg() {
         }
@@ -696,6 +833,7 @@ var ApiHeader;
         return APIGenerateApiTypeScriptDefinitionMsg;
     })();
     ApiHeader.APIGenerateApiTypeScriptDefinitionMsg = APIGenerateApiTypeScriptDefinitionMsg;
+
     var APIDeleteDiskOfferingMsg = (function () {
         function APIDeleteDiskOfferingMsg() {
         }
@@ -708,6 +846,7 @@ var ApiHeader;
         return APIDeleteDiskOfferingMsg;
     })();
     ApiHeader.APIDeleteDiskOfferingMsg = APIDeleteDiskOfferingMsg;
+
     var APIGenerateGroovyClassMsg = (function () {
         function APIGenerateGroovyClassMsg() {
         }
@@ -720,6 +859,7 @@ var ApiHeader;
         return APIGenerateGroovyClassMsg;
     })();
     ApiHeader.APIGenerateGroovyClassMsg = APIGenerateGroovyClassMsg;
+
     var APIQueryInstanceOfferingMsg = (function () {
         function APIQueryInstanceOfferingMsg() {
         }
@@ -732,6 +872,20 @@ var ApiHeader;
         return APIQueryInstanceOfferingMsg;
     })();
     ApiHeader.APIQueryInstanceOfferingMsg = APIQueryInstanceOfferingMsg;
+
+    var APIUpdateInstanceOfferingMsg = (function () {
+        function APIUpdateInstanceOfferingMsg() {
+        }
+        APIUpdateInstanceOfferingMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.configuration.APIUpdateInstanceOfferingMsg': this
+            };
+            return msg;
+        };
+        return APIUpdateInstanceOfferingMsg;
+    })();
+    ApiHeader.APIUpdateInstanceOfferingMsg = APIUpdateInstanceOfferingMsg;
+
     var APICreateInstanceOfferingMsg = (function () {
         function APICreateInstanceOfferingMsg() {
         }
@@ -744,6 +898,7 @@ var ApiHeader;
         return APICreateInstanceOfferingMsg;
     })();
     ApiHeader.APICreateInstanceOfferingMsg = APICreateInstanceOfferingMsg;
+
     var APIGenerateApiJsonTemplateMsg = (function () {
         function APIGenerateApiJsonTemplateMsg() {
         }
@@ -756,6 +911,7 @@ var ApiHeader;
         return APIGenerateApiJsonTemplateMsg;
     })();
     ApiHeader.APIGenerateApiJsonTemplateMsg = APIGenerateApiJsonTemplateMsg;
+
     var APICreateDiskOfferingMsg = (function () {
         function APICreateDiskOfferingMsg() {
         }
@@ -768,6 +924,7 @@ var ApiHeader;
         return APICreateDiskOfferingMsg;
     })();
     ApiHeader.APICreateDiskOfferingMsg = APICreateDiskOfferingMsg;
+
     var APIGetInstanceOfferingMsg = (function () {
         function APIGetInstanceOfferingMsg() {
         }
@@ -780,6 +937,7 @@ var ApiHeader;
         return APIGetInstanceOfferingMsg;
     })();
     ApiHeader.APIGetInstanceOfferingMsg = APIGetInstanceOfferingMsg;
+
     var APIListInstanceOfferingMsg = (function () {
         function APIListInstanceOfferingMsg() {
         }
@@ -792,6 +950,7 @@ var ApiHeader;
         return APIListInstanceOfferingMsg;
     })();
     ApiHeader.APIListInstanceOfferingMsg = APIListInstanceOfferingMsg;
+
     var APISearchDnsMsg = (function () {
         function APISearchDnsMsg() {
         }
@@ -804,6 +963,7 @@ var ApiHeader;
         return APISearchDnsMsg;
     })();
     ApiHeader.APISearchDnsMsg = APISearchDnsMsg;
+
     var APISearchDiskOfferingMsg = (function () {
         function APISearchDiskOfferingMsg() {
         }
@@ -816,6 +976,7 @@ var ApiHeader;
         return APISearchDiskOfferingMsg;
     })();
     ApiHeader.APISearchDiskOfferingMsg = APISearchDiskOfferingMsg;
+
     var APIDeleteInstanceOfferingMsg = (function () {
         function APIDeleteInstanceOfferingMsg() {
         }
@@ -828,6 +989,7 @@ var ApiHeader;
         return APIDeleteInstanceOfferingMsg;
     })();
     ApiHeader.APIDeleteInstanceOfferingMsg = APIDeleteInstanceOfferingMsg;
+
     var APIGenerateSqlVOViewMsg = (function () {
         function APIGenerateSqlVOViewMsg() {
         }
@@ -840,6 +1002,7 @@ var ApiHeader;
         return APIGenerateSqlVOViewMsg;
     })();
     ApiHeader.APIGenerateSqlVOViewMsg = APIGenerateSqlVOViewMsg;
+
     var APIGenerateTestLinkDocumentMsg = (function () {
         function APIGenerateTestLinkDocumentMsg() {
         }
@@ -852,6 +1015,7 @@ var ApiHeader;
         return APIGenerateTestLinkDocumentMsg;
     })();
     ApiHeader.APIGenerateTestLinkDocumentMsg = APIGenerateTestLinkDocumentMsg;
+
     var APIChangeInstanceOfferingStateMsg = (function () {
         function APIChangeInstanceOfferingStateMsg() {
         }
@@ -864,6 +1028,7 @@ var ApiHeader;
         return APIChangeInstanceOfferingStateMsg;
     })();
     ApiHeader.APIChangeInstanceOfferingStateMsg = APIChangeInstanceOfferingStateMsg;
+
     var APIGenerateSqlIndexMsg = (function () {
         function APIGenerateSqlIndexMsg() {
         }
@@ -876,6 +1041,7 @@ var ApiHeader;
         return APIGenerateSqlIndexMsg;
     })();
     ApiHeader.APIGenerateSqlIndexMsg = APIGenerateSqlIndexMsg;
+
     var APIQueryDiskOfferingMsg = (function () {
         function APIQueryDiskOfferingMsg() {
         }
@@ -888,6 +1054,7 @@ var ApiHeader;
         return APIQueryDiskOfferingMsg;
     })();
     ApiHeader.APIQueryDiskOfferingMsg = APIQueryDiskOfferingMsg;
+
     var APIGetDiskOfferingMsg = (function () {
         function APIGetDiskOfferingMsg() {
         }
@@ -900,6 +1067,7 @@ var ApiHeader;
         return APIGetDiskOfferingMsg;
     })();
     ApiHeader.APIGetDiskOfferingMsg = APIGetDiskOfferingMsg;
+
     var APIGenerateSqlForeignKeyMsg = (function () {
         function APIGenerateSqlForeignKeyMsg() {
         }
@@ -912,6 +1080,20 @@ var ApiHeader;
         return APIGenerateSqlForeignKeyMsg;
     })();
     ApiHeader.APIGenerateSqlForeignKeyMsg = APIGenerateSqlForeignKeyMsg;
+
+    var APIUpdateDiskOfferingMsg = (function () {
+        function APIUpdateDiskOfferingMsg() {
+        }
+        APIUpdateDiskOfferingMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.configuration.APIUpdateDiskOfferingMsg': this
+            };
+            return msg;
+        };
+        return APIUpdateDiskOfferingMsg;
+    })();
+    ApiHeader.APIUpdateDiskOfferingMsg = APIUpdateDiskOfferingMsg;
+
     var APIChangeDiskOfferingStateMsg = (function () {
         function APIChangeDiskOfferingStateMsg() {
         }
@@ -924,6 +1106,7 @@ var ApiHeader;
         return APIChangeDiskOfferingStateMsg;
     })();
     ApiHeader.APIChangeDiskOfferingStateMsg = APIChangeDiskOfferingStateMsg;
+
     var APISearchInstanceOfferingMsg = (function () {
         function APISearchInstanceOfferingMsg() {
         }
@@ -936,6 +1119,7 @@ var ApiHeader;
         return APISearchInstanceOfferingMsg;
     })();
     ApiHeader.APISearchInstanceOfferingMsg = APISearchInstanceOfferingMsg;
+
     var APISearchPrimaryStorageMsg = (function () {
         function APISearchPrimaryStorageMsg() {
         }
@@ -948,6 +1132,7 @@ var ApiHeader;
         return APISearchPrimaryStorageMsg;
     })();
     ApiHeader.APISearchPrimaryStorageMsg = APISearchPrimaryStorageMsg;
+
     var APIGetPrimaryStorageTypesMsg = (function () {
         function APIGetPrimaryStorageTypesMsg() {
         }
@@ -960,6 +1145,7 @@ var ApiHeader;
         return APIGetPrimaryStorageTypesMsg;
     })();
     ApiHeader.APIGetPrimaryStorageTypesMsg = APIGetPrimaryStorageTypesMsg;
+
     var APIAttachPrimaryStorageToClusterMsg = (function () {
         function APIAttachPrimaryStorageToClusterMsg() {
         }
@@ -972,6 +1158,7 @@ var ApiHeader;
         return APIAttachPrimaryStorageToClusterMsg;
     })();
     ApiHeader.APIAttachPrimaryStorageToClusterMsg = APIAttachPrimaryStorageToClusterMsg;
+
     var APIListPrimaryStorageMsg = (function () {
         function APIListPrimaryStorageMsg() {
         }
@@ -984,6 +1171,7 @@ var ApiHeader;
         return APIListPrimaryStorageMsg;
     })();
     ApiHeader.APIListPrimaryStorageMsg = APIListPrimaryStorageMsg;
+
     var APIGetPrimaryStorageCapacityMsg = (function () {
         function APIGetPrimaryStorageCapacityMsg() {
         }
@@ -996,6 +1184,20 @@ var ApiHeader;
         return APIGetPrimaryStorageCapacityMsg;
     })();
     ApiHeader.APIGetPrimaryStorageCapacityMsg = APIGetPrimaryStorageCapacityMsg;
+
+    var APIUpdatePrimaryStorageMsg = (function () {
+        function APIUpdatePrimaryStorageMsg() {
+        }
+        APIUpdatePrimaryStorageMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.storage.primary.APIUpdatePrimaryStorageMsg': this
+            };
+            return msg;
+        };
+        return APIUpdatePrimaryStorageMsg;
+    })();
+    ApiHeader.APIUpdatePrimaryStorageMsg = APIUpdatePrimaryStorageMsg;
+
     var APIGetPrimaryStorageMsg = (function () {
         function APIGetPrimaryStorageMsg() {
         }
@@ -1008,6 +1210,7 @@ var ApiHeader;
         return APIGetPrimaryStorageMsg;
     })();
     ApiHeader.APIGetPrimaryStorageMsg = APIGetPrimaryStorageMsg;
+
     var APIQueryPrimaryStorageMsg = (function () {
         function APIQueryPrimaryStorageMsg() {
         }
@@ -1020,6 +1223,7 @@ var ApiHeader;
         return APIQueryPrimaryStorageMsg;
     })();
     ApiHeader.APIQueryPrimaryStorageMsg = APIQueryPrimaryStorageMsg;
+
     var APIChangePrimaryStorageStateMsg = (function () {
         function APIChangePrimaryStorageStateMsg() {
         }
@@ -1032,6 +1236,20 @@ var ApiHeader;
         return APIChangePrimaryStorageStateMsg;
     })();
     ApiHeader.APIChangePrimaryStorageStateMsg = APIChangePrimaryStorageStateMsg;
+
+    var APISyncPrimaryStorageCapacityMsg = (function () {
+        function APISyncPrimaryStorageCapacityMsg() {
+        }
+        APISyncPrimaryStorageCapacityMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.storage.primary.APISyncPrimaryStorageCapacityMsg': this
+            };
+            return msg;
+        };
+        return APISyncPrimaryStorageCapacityMsg;
+    })();
+    ApiHeader.APISyncPrimaryStorageCapacityMsg = APISyncPrimaryStorageCapacityMsg;
+
     var APIDeletePrimaryStorageMsg = (function () {
         function APIDeletePrimaryStorageMsg() {
         }
@@ -1044,6 +1262,7 @@ var ApiHeader;
         return APIDeletePrimaryStorageMsg;
     })();
     ApiHeader.APIDeletePrimaryStorageMsg = APIDeletePrimaryStorageMsg;
+
     var APIReconnectPrimaryStorageMsg = (function () {
         function APIReconnectPrimaryStorageMsg() {
         }
@@ -1056,6 +1275,7 @@ var ApiHeader;
         return APIReconnectPrimaryStorageMsg;
     })();
     ApiHeader.APIReconnectPrimaryStorageMsg = APIReconnectPrimaryStorageMsg;
+
     var APIDetachPrimaryStorageFromClusterMsg = (function () {
         function APIDetachPrimaryStorageFromClusterMsg() {
         }
@@ -1068,6 +1288,7 @@ var ApiHeader;
         return APIDetachPrimaryStorageFromClusterMsg;
     })();
     ApiHeader.APIDetachPrimaryStorageFromClusterMsg = APIDetachPrimaryStorageFromClusterMsg;
+
     var APIGetPrimaryStorageAllocatorStrategiesMsg = (function () {
         function APIGetPrimaryStorageAllocatorStrategiesMsg() {
         }
@@ -1080,6 +1301,7 @@ var ApiHeader;
         return APIGetPrimaryStorageAllocatorStrategiesMsg;
     })();
     ApiHeader.APIGetPrimaryStorageAllocatorStrategiesMsg = APIGetPrimaryStorageAllocatorStrategiesMsg;
+
     var APIQueryVolumeSnapshotTreeMsg = (function () {
         function APIQueryVolumeSnapshotTreeMsg() {
         }
@@ -1092,6 +1314,7 @@ var ApiHeader;
         return APIQueryVolumeSnapshotTreeMsg;
     })();
     ApiHeader.APIQueryVolumeSnapshotTreeMsg = APIQueryVolumeSnapshotTreeMsg;
+
     var APIDeleteVolumeSnapshotMsg = (function () {
         function APIDeleteVolumeSnapshotMsg() {
         }
@@ -1104,6 +1327,20 @@ var ApiHeader;
         return APIDeleteVolumeSnapshotMsg;
     })();
     ApiHeader.APIDeleteVolumeSnapshotMsg = APIDeleteVolumeSnapshotMsg;
+
+    var APIUpdateVolumeSnapshotMsg = (function () {
+        function APIUpdateVolumeSnapshotMsg() {
+        }
+        APIUpdateVolumeSnapshotMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.storage.snapshot.APIUpdateVolumeSnapshotMsg': this
+            };
+            return msg;
+        };
+        return APIUpdateVolumeSnapshotMsg;
+    })();
+    ApiHeader.APIUpdateVolumeSnapshotMsg = APIUpdateVolumeSnapshotMsg;
+
     var APIDeleteVolumeSnapshotFromBackupStorageMsg = (function () {
         function APIDeleteVolumeSnapshotFromBackupStorageMsg() {
         }
@@ -1116,6 +1353,7 @@ var ApiHeader;
         return APIDeleteVolumeSnapshotFromBackupStorageMsg;
     })();
     ApiHeader.APIDeleteVolumeSnapshotFromBackupStorageMsg = APIDeleteVolumeSnapshotFromBackupStorageMsg;
+
     var APIQueryVolumeSnapshotMsg = (function () {
         function APIQueryVolumeSnapshotMsg() {
         }
@@ -1128,6 +1366,7 @@ var ApiHeader;
         return APIQueryVolumeSnapshotMsg;
     })();
     ApiHeader.APIQueryVolumeSnapshotMsg = APIQueryVolumeSnapshotMsg;
+
     var APIRevertVolumeFromSnapshotMsg = (function () {
         function APIRevertVolumeFromSnapshotMsg() {
         }
@@ -1140,6 +1379,7 @@ var ApiHeader;
         return APIRevertVolumeFromSnapshotMsg;
     })();
     ApiHeader.APIRevertVolumeFromSnapshotMsg = APIRevertVolumeFromSnapshotMsg;
+
     var APIBackupVolumeSnapshotMsg = (function () {
         function APIBackupVolumeSnapshotMsg() {
         }
@@ -1152,6 +1392,7 @@ var ApiHeader;
         return APIBackupVolumeSnapshotMsg;
     })();
     ApiHeader.APIBackupVolumeSnapshotMsg = APIBackupVolumeSnapshotMsg;
+
     var APIGetVolumeSnapshotTreeMsg = (function () {
         function APIGetVolumeSnapshotTreeMsg() {
         }
@@ -1164,6 +1405,7 @@ var ApiHeader;
         return APIGetVolumeSnapshotTreeMsg;
     })();
     ApiHeader.APIGetVolumeSnapshotTreeMsg = APIGetVolumeSnapshotTreeMsg;
+
     var APIQueryBackupStorageMsg = (function () {
         function APIQueryBackupStorageMsg() {
         }
@@ -1176,6 +1418,7 @@ var ApiHeader;
         return APIQueryBackupStorageMsg;
     })();
     ApiHeader.APIQueryBackupStorageMsg = APIQueryBackupStorageMsg;
+
     var APIListBackupStorageMsg = (function () {
         function APIListBackupStorageMsg() {
         }
@@ -1188,6 +1431,7 @@ var ApiHeader;
         return APIListBackupStorageMsg;
     })();
     ApiHeader.APIListBackupStorageMsg = APIListBackupStorageMsg;
+
     var APIAttachBackupStorageToZoneMsg = (function () {
         function APIAttachBackupStorageToZoneMsg() {
         }
@@ -1200,6 +1444,7 @@ var ApiHeader;
         return APIAttachBackupStorageToZoneMsg;
     })();
     ApiHeader.APIAttachBackupStorageToZoneMsg = APIAttachBackupStorageToZoneMsg;
+
     var APISearchBackupStorageMsg = (function () {
         function APISearchBackupStorageMsg() {
         }
@@ -1212,6 +1457,7 @@ var ApiHeader;
         return APISearchBackupStorageMsg;
     })();
     ApiHeader.APISearchBackupStorageMsg = APISearchBackupStorageMsg;
+
     var APIGetBackupStorageMsg = (function () {
         function APIGetBackupStorageMsg() {
         }
@@ -1224,6 +1470,7 @@ var ApiHeader;
         return APIGetBackupStorageMsg;
     })();
     ApiHeader.APIGetBackupStorageMsg = APIGetBackupStorageMsg;
+
     var APIGetBackupStorageTypesMsg = (function () {
         function APIGetBackupStorageTypesMsg() {
         }
@@ -1236,6 +1483,7 @@ var ApiHeader;
         return APIGetBackupStorageTypesMsg;
     })();
     ApiHeader.APIGetBackupStorageTypesMsg = APIGetBackupStorageTypesMsg;
+
     var APIChangeBackupStorageStateMsg = (function () {
         function APIChangeBackupStorageStateMsg() {
         }
@@ -1248,6 +1496,7 @@ var ApiHeader;
         return APIChangeBackupStorageStateMsg;
     })();
     ApiHeader.APIChangeBackupStorageStateMsg = APIChangeBackupStorageStateMsg;
+
     var APIScanBackupStorageMsg = (function () {
         function APIScanBackupStorageMsg() {
         }
@@ -1260,6 +1509,7 @@ var ApiHeader;
         return APIScanBackupStorageMsg;
     })();
     ApiHeader.APIScanBackupStorageMsg = APIScanBackupStorageMsg;
+
     var APIGetBackupStorageCapacityMsg = (function () {
         function APIGetBackupStorageCapacityMsg() {
         }
@@ -1272,6 +1522,7 @@ var ApiHeader;
         return APIGetBackupStorageCapacityMsg;
     })();
     ApiHeader.APIGetBackupStorageCapacityMsg = APIGetBackupStorageCapacityMsg;
+
     var APIDetachBackupStorageFromZoneMsg = (function () {
         function APIDetachBackupStorageFromZoneMsg() {
         }
@@ -1284,6 +1535,20 @@ var ApiHeader;
         return APIDetachBackupStorageFromZoneMsg;
     })();
     ApiHeader.APIDetachBackupStorageFromZoneMsg = APIDetachBackupStorageFromZoneMsg;
+
+    var APIUpdateBackupStorageMsg = (function () {
+        function APIUpdateBackupStorageMsg() {
+        }
+        APIUpdateBackupStorageMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.storage.backup.APIUpdateBackupStorageMsg': this
+            };
+            return msg;
+        };
+        return APIUpdateBackupStorageMsg;
+    })();
+    ApiHeader.APIUpdateBackupStorageMsg = APIUpdateBackupStorageMsg;
+
     var APIDeleteBackupStorageMsg = (function () {
         function APIDeleteBackupStorageMsg() {
         }
@@ -1296,6 +1561,7 @@ var ApiHeader;
         return APIDeleteBackupStorageMsg;
     })();
     ApiHeader.APIDeleteBackupStorageMsg = APIDeleteBackupStorageMsg;
+
     var APIListL3NetworkMsg = (function () {
         function APIListL3NetworkMsg() {
         }
@@ -1308,6 +1574,7 @@ var ApiHeader;
         return APIListL3NetworkMsg;
     })();
     ApiHeader.APIListL3NetworkMsg = APIListL3NetworkMsg;
+
     var APIAddDnsToL3NetworkMsg = (function () {
         function APIAddDnsToL3NetworkMsg() {
         }
@@ -1320,6 +1587,7 @@ var ApiHeader;
         return APIAddDnsToL3NetworkMsg;
     })();
     ApiHeader.APIAddDnsToL3NetworkMsg = APIAddDnsToL3NetworkMsg;
+
     var APICreateL3NetworkMsg = (function () {
         function APICreateL3NetworkMsg() {
         }
@@ -1332,6 +1600,33 @@ var ApiHeader;
         return APICreateL3NetworkMsg;
     })();
     ApiHeader.APICreateL3NetworkMsg = APICreateL3NetworkMsg;
+
+    var APIGetFreeIpMsg = (function () {
+        function APIGetFreeIpMsg() {
+        }
+        APIGetFreeIpMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.network.l3.APIGetFreeIpMsg': this
+            };
+            return msg;
+        };
+        return APIGetFreeIpMsg;
+    })();
+    ApiHeader.APIGetFreeIpMsg = APIGetFreeIpMsg;
+
+    var APIUpdateL3NetworkMsg = (function () {
+        function APIUpdateL3NetworkMsg() {
+        }
+        APIUpdateL3NetworkMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.network.l3.APIUpdateL3NetworkMsg': this
+            };
+            return msg;
+        };
+        return APIUpdateL3NetworkMsg;
+    })();
+    ApiHeader.APIUpdateL3NetworkMsg = APIUpdateL3NetworkMsg;
+
     var APIDeleteIpRangeMsg = (function () {
         function APIDeleteIpRangeMsg() {
         }
@@ -1344,6 +1639,7 @@ var ApiHeader;
         return APIDeleteIpRangeMsg;
     })();
     ApiHeader.APIDeleteIpRangeMsg = APIDeleteIpRangeMsg;
+
     var APIChangeL3NetworkStateMsg = (function () {
         function APIChangeL3NetworkStateMsg() {
         }
@@ -1356,6 +1652,7 @@ var ApiHeader;
         return APIChangeL3NetworkStateMsg;
     })();
     ApiHeader.APIChangeL3NetworkStateMsg = APIChangeL3NetworkStateMsg;
+
     var APIGetL3NetworkMsg = (function () {
         function APIGetL3NetworkMsg() {
         }
@@ -1368,6 +1665,7 @@ var ApiHeader;
         return APIGetL3NetworkMsg;
     })();
     ApiHeader.APIGetL3NetworkMsg = APIGetL3NetworkMsg;
+
     var APIAddIpRangeMsg = (function () {
         function APIAddIpRangeMsg() {
         }
@@ -1380,6 +1678,7 @@ var ApiHeader;
         return APIAddIpRangeMsg;
     })();
     ApiHeader.APIAddIpRangeMsg = APIAddIpRangeMsg;
+
     var APIGetL3NetworkTypesMsg = (function () {
         function APIGetL3NetworkTypesMsg() {
         }
@@ -1392,6 +1691,7 @@ var ApiHeader;
         return APIGetL3NetworkTypesMsg;
     })();
     ApiHeader.APIGetL3NetworkTypesMsg = APIGetL3NetworkTypesMsg;
+
     var APISearchL3NetworkMsg = (function () {
         function APISearchL3NetworkMsg() {
         }
@@ -1404,6 +1704,7 @@ var ApiHeader;
         return APISearchL3NetworkMsg;
     })();
     ApiHeader.APISearchL3NetworkMsg = APISearchL3NetworkMsg;
+
     var APIAddIpRangeByNetworkCidrMsg = (function () {
         function APIAddIpRangeByNetworkCidrMsg() {
         }
@@ -1416,6 +1717,7 @@ var ApiHeader;
         return APIAddIpRangeByNetworkCidrMsg;
     })();
     ApiHeader.APIAddIpRangeByNetworkCidrMsg = APIAddIpRangeByNetworkCidrMsg;
+
     var APIQueryIpRangeMsg = (function () {
         function APIQueryIpRangeMsg() {
         }
@@ -1428,6 +1730,7 @@ var ApiHeader;
         return APIQueryIpRangeMsg;
     })();
     ApiHeader.APIQueryIpRangeMsg = APIQueryIpRangeMsg;
+
     var APIRemoveDnsFromL3NetworkMsg = (function () {
         function APIRemoveDnsFromL3NetworkMsg() {
         }
@@ -1440,6 +1743,7 @@ var ApiHeader;
         return APIRemoveDnsFromL3NetworkMsg;
     })();
     ApiHeader.APIRemoveDnsFromL3NetworkMsg = APIRemoveDnsFromL3NetworkMsg;
+
     var APIListIpRangeMsg = (function () {
         function APIListIpRangeMsg() {
         }
@@ -1452,6 +1756,7 @@ var ApiHeader;
         return APIListIpRangeMsg;
     })();
     ApiHeader.APIListIpRangeMsg = APIListIpRangeMsg;
+
     var APIGetIpAddressCapacityMsg = (function () {
         function APIGetIpAddressCapacityMsg() {
         }
@@ -1464,6 +1769,7 @@ var ApiHeader;
         return APIGetIpAddressCapacityMsg;
     })();
     ApiHeader.APIGetIpAddressCapacityMsg = APIGetIpAddressCapacityMsg;
+
     var APIDeleteL3NetworkMsg = (function () {
         function APIDeleteL3NetworkMsg() {
         }
@@ -1476,6 +1782,20 @@ var ApiHeader;
         return APIDeleteL3NetworkMsg;
     })();
     ApiHeader.APIDeleteL3NetworkMsg = APIDeleteL3NetworkMsg;
+
+    var APIUpdateIpRangeMsg = (function () {
+        function APIUpdateIpRangeMsg() {
+        }
+        APIUpdateIpRangeMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.network.l3.APIUpdateIpRangeMsg': this
+            };
+            return msg;
+        };
+        return APIUpdateIpRangeMsg;
+    })();
+    ApiHeader.APIUpdateIpRangeMsg = APIUpdateIpRangeMsg;
+
     var APIQueryL3NetworkMsg = (function () {
         function APIQueryL3NetworkMsg() {
         }
@@ -1488,6 +1808,7 @@ var ApiHeader;
         return APIQueryL3NetworkMsg;
     })();
     ApiHeader.APIQueryL3NetworkMsg = APIQueryL3NetworkMsg;
+
     var APIAttachNetworkServiceToL3NetworkMsg = (function () {
         function APIAttachNetworkServiceToL3NetworkMsg() {
         }
@@ -1500,6 +1821,7 @@ var ApiHeader;
         return APIAttachNetworkServiceToL3NetworkMsg;
     })();
     ApiHeader.APIAttachNetworkServiceToL3NetworkMsg = APIAttachNetworkServiceToL3NetworkMsg;
+
     var APIAddNetworkServiceProviderMsg = (function () {
         function APIAddNetworkServiceProviderMsg() {
         }
@@ -1512,6 +1834,7 @@ var ApiHeader;
         return APIAddNetworkServiceProviderMsg;
     })();
     ApiHeader.APIAddNetworkServiceProviderMsg = APIAddNetworkServiceProviderMsg;
+
     var APIQueryNetworkServiceL3NetworkRefMsg = (function () {
         function APIQueryNetworkServiceL3NetworkRefMsg() {
         }
@@ -1524,6 +1847,7 @@ var ApiHeader;
         return APIQueryNetworkServiceL3NetworkRefMsg;
     })();
     ApiHeader.APIQueryNetworkServiceL3NetworkRefMsg = APIQueryNetworkServiceL3NetworkRefMsg;
+
     var APIAttachNetworkServiceProviderToL2NetworkMsg = (function () {
         function APIAttachNetworkServiceProviderToL2NetworkMsg() {
         }
@@ -1536,6 +1860,7 @@ var ApiHeader;
         return APIAttachNetworkServiceProviderToL2NetworkMsg;
     })();
     ApiHeader.APIAttachNetworkServiceProviderToL2NetworkMsg = APIAttachNetworkServiceProviderToL2NetworkMsg;
+
     var APISearchNetworkServiceProviderMsg = (function () {
         function APISearchNetworkServiceProviderMsg() {
         }
@@ -1548,6 +1873,7 @@ var ApiHeader;
         return APISearchNetworkServiceProviderMsg;
     })();
     ApiHeader.APISearchNetworkServiceProviderMsg = APISearchNetworkServiceProviderMsg;
+
     var APIDetachNetworkServiceProviderFromL2NetworkMsg = (function () {
         function APIDetachNetworkServiceProviderFromL2NetworkMsg() {
         }
@@ -1560,6 +1886,7 @@ var ApiHeader;
         return APIDetachNetworkServiceProviderFromL2NetworkMsg;
     })();
     ApiHeader.APIDetachNetworkServiceProviderFromL2NetworkMsg = APIDetachNetworkServiceProviderFromL2NetworkMsg;
+
     var APIQueryNetworkServiceProviderMsg = (function () {
         function APIQueryNetworkServiceProviderMsg() {
         }
@@ -1572,6 +1899,7 @@ var ApiHeader;
         return APIQueryNetworkServiceProviderMsg;
     })();
     ApiHeader.APIQueryNetworkServiceProviderMsg = APIQueryNetworkServiceProviderMsg;
+
     var APIGetNetworkServiceTypesMsg = (function () {
         function APIGetNetworkServiceTypesMsg() {
         }
@@ -1584,6 +1912,7 @@ var ApiHeader;
         return APIGetNetworkServiceTypesMsg;
     })();
     ApiHeader.APIGetNetworkServiceTypesMsg = APIGetNetworkServiceTypesMsg;
+
     var APIGetNetworkServiceProviderMsg = (function () {
         function APIGetNetworkServiceProviderMsg() {
         }
@@ -1596,6 +1925,7 @@ var ApiHeader;
         return APIGetNetworkServiceProviderMsg;
     })();
     ApiHeader.APIGetNetworkServiceProviderMsg = APIGetNetworkServiceProviderMsg;
+
     var APIListNetworkServiceProviderMsg = (function () {
         function APIListNetworkServiceProviderMsg() {
         }
@@ -1608,6 +1938,7 @@ var ApiHeader;
         return APIListNetworkServiceProviderMsg;
     })();
     ApiHeader.APIListNetworkServiceProviderMsg = APIListNetworkServiceProviderMsg;
+
     var APIAttachL2NetworkToClusterMsg = (function () {
         function APIAttachL2NetworkToClusterMsg() {
         }
@@ -1620,6 +1951,7 @@ var ApiHeader;
         return APIAttachL2NetworkToClusterMsg;
     })();
     ApiHeader.APIAttachL2NetworkToClusterMsg = APIAttachL2NetworkToClusterMsg;
+
     var APIQueryL2VlanNetworkMsg = (function () {
         function APIQueryL2VlanNetworkMsg() {
         }
@@ -1632,6 +1964,7 @@ var ApiHeader;
         return APIQueryL2VlanNetworkMsg;
     })();
     ApiHeader.APIQueryL2VlanNetworkMsg = APIQueryL2VlanNetworkMsg;
+
     var APIGetL2NetworkMsg = (function () {
         function APIGetL2NetworkMsg() {
         }
@@ -1644,6 +1977,7 @@ var ApiHeader;
         return APIGetL2NetworkMsg;
     })();
     ApiHeader.APIGetL2NetworkMsg = APIGetL2NetworkMsg;
+
     var APIListL2NetworkMsg = (function () {
         function APIListL2NetworkMsg() {
         }
@@ -1656,6 +1990,7 @@ var ApiHeader;
         return APIListL2NetworkMsg;
     })();
     ApiHeader.APIListL2NetworkMsg = APIListL2NetworkMsg;
+
     var APISearchL2VlanNetworkMsg = (function () {
         function APISearchL2VlanNetworkMsg() {
         }
@@ -1668,6 +2003,7 @@ var ApiHeader;
         return APISearchL2VlanNetworkMsg;
     })();
     ApiHeader.APISearchL2VlanNetworkMsg = APISearchL2VlanNetworkMsg;
+
     var APICreateL2VlanNetworkMsg = (function () {
         function APICreateL2VlanNetworkMsg() {
         }
@@ -1680,6 +2016,7 @@ var ApiHeader;
         return APICreateL2VlanNetworkMsg;
     })();
     ApiHeader.APICreateL2VlanNetworkMsg = APICreateL2VlanNetworkMsg;
+
     var APIDetachL2NetworkFromClusterMsg = (function () {
         function APIDetachL2NetworkFromClusterMsg() {
         }
@@ -1692,6 +2029,7 @@ var ApiHeader;
         return APIDetachL2NetworkFromClusterMsg;
     })();
     ApiHeader.APIDetachL2NetworkFromClusterMsg = APIDetachL2NetworkFromClusterMsg;
+
     var APIDeleteL2NetworkMsg = (function () {
         function APIDeleteL2NetworkMsg() {
         }
@@ -1704,6 +2042,7 @@ var ApiHeader;
         return APIDeleteL2NetworkMsg;
     })();
     ApiHeader.APIDeleteL2NetworkMsg = APIDeleteL2NetworkMsg;
+
     var APISearchL2NetworkMsg = (function () {
         function APISearchL2NetworkMsg() {
         }
@@ -1716,6 +2055,7 @@ var ApiHeader;
         return APISearchL2NetworkMsg;
     })();
     ApiHeader.APISearchL2NetworkMsg = APISearchL2NetworkMsg;
+
     var APICreateL2NoVlanNetworkMsg = (function () {
         function APICreateL2NoVlanNetworkMsg() {
         }
@@ -1728,6 +2068,7 @@ var ApiHeader;
         return APICreateL2NoVlanNetworkMsg;
     })();
     ApiHeader.APICreateL2NoVlanNetworkMsg = APICreateL2NoVlanNetworkMsg;
+
     var APIListL2VlanNetworkMsg = (function () {
         function APIListL2VlanNetworkMsg() {
         }
@@ -1740,6 +2081,20 @@ var ApiHeader;
         return APIListL2VlanNetworkMsg;
     })();
     ApiHeader.APIListL2VlanNetworkMsg = APIListL2VlanNetworkMsg;
+
+    var APIUpdateL2NetworkMsg = (function () {
+        function APIUpdateL2NetworkMsg() {
+        }
+        APIUpdateL2NetworkMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.network.l2.APIUpdateL2NetworkMsg': this
+            };
+            return msg;
+        };
+        return APIUpdateL2NetworkMsg;
+    })();
+    ApiHeader.APIUpdateL2NetworkMsg = APIUpdateL2NetworkMsg;
+
     var APIGetL2VlanNetworkMsg = (function () {
         function APIGetL2VlanNetworkMsg() {
         }
@@ -1752,6 +2107,7 @@ var ApiHeader;
         return APIGetL2VlanNetworkMsg;
     })();
     ApiHeader.APIGetL2VlanNetworkMsg = APIGetL2VlanNetworkMsg;
+
     var APIGetL2NetworkTypesMsg = (function () {
         function APIGetL2NetworkTypesMsg() {
         }
@@ -1764,6 +2120,7 @@ var ApiHeader;
         return APIGetL2NetworkTypesMsg;
     })();
     ApiHeader.APIGetL2NetworkTypesMsg = APIGetL2NetworkTypesMsg;
+
     var APIQueryL2NetworkMsg = (function () {
         function APIQueryL2NetworkMsg() {
         }
@@ -1776,6 +2133,7 @@ var ApiHeader;
         return APIQueryL2NetworkMsg;
     })();
     ApiHeader.APIQueryL2NetworkMsg = APIQueryL2NetworkMsg;
+
     var APIDeleteSearchIndexMsg = (function () {
         function APIDeleteSearchIndexMsg() {
         }
@@ -1788,6 +2146,7 @@ var ApiHeader;
         return APIDeleteSearchIndexMsg;
     })();
     ApiHeader.APIDeleteSearchIndexMsg = APIDeleteSearchIndexMsg;
+
     var APISearchGenerateSqlTriggerMsg = (function () {
         function APISearchGenerateSqlTriggerMsg() {
         }
@@ -1800,6 +2159,7 @@ var ApiHeader;
         return APISearchGenerateSqlTriggerMsg;
     })();
     ApiHeader.APISearchGenerateSqlTriggerMsg = APISearchGenerateSqlTriggerMsg;
+
     var APICreateSearchIndexMsg = (function () {
         function APICreateSearchIndexMsg() {
         }
@@ -1812,6 +2172,7 @@ var ApiHeader;
         return APICreateSearchIndexMsg;
     })();
     ApiHeader.APICreateSearchIndexMsg = APICreateSearchIndexMsg;
+
     var APIQueryUserTagMsg = (function () {
         function APIQueryUserTagMsg() {
         }
@@ -1824,6 +2185,7 @@ var ApiHeader;
         return APIQueryUserTagMsg;
     })();
     ApiHeader.APIQueryUserTagMsg = APIQueryUserTagMsg;
+
     var APIQuerySystemTagMsg = (function () {
         function APIQuerySystemTagMsg() {
         }
@@ -1836,6 +2198,7 @@ var ApiHeader;
         return APIQuerySystemTagMsg;
     })();
     ApiHeader.APIQuerySystemTagMsg = APIQuerySystemTagMsg;
+
     var APIDeleteTagMsg = (function () {
         function APIDeleteTagMsg() {
         }
@@ -1848,6 +2211,7 @@ var ApiHeader;
         return APIDeleteTagMsg;
     })();
     ApiHeader.APIDeleteTagMsg = APIDeleteTagMsg;
+
     var APICreateUserTagMsg = (function () {
         function APICreateUserTagMsg() {
         }
@@ -1860,6 +2224,7 @@ var ApiHeader;
         return APICreateUserTagMsg;
     })();
     ApiHeader.APICreateUserTagMsg = APICreateUserTagMsg;
+
     var APICreateSystemTagMsg = (function () {
         function APICreateSystemTagMsg() {
         }
@@ -1872,6 +2237,7 @@ var ApiHeader;
         return APICreateSystemTagMsg;
     })();
     ApiHeader.APICreateSystemTagMsg = APICreateSystemTagMsg;
+
     var APIQueryTagMsg = (function () {
         function APIQueryTagMsg() {
         }
@@ -1884,6 +2250,7 @@ var ApiHeader;
         return APIQueryTagMsg;
     })();
     ApiHeader.APIQueryTagMsg = APIQueryTagMsg;
+
     var APIQueryManagementNodeMsg = (function () {
         function APIQueryManagementNodeMsg() {
         }
@@ -1896,6 +2263,7 @@ var ApiHeader;
         return APIQueryManagementNodeMsg;
     })();
     ApiHeader.APIQueryManagementNodeMsg = APIQueryManagementNodeMsg;
+
     var APIListManagementNodeMsg = (function () {
         function APIListManagementNodeMsg() {
         }
@@ -1908,6 +2276,7 @@ var ApiHeader;
         return APIListManagementNodeMsg;
     })();
     ApiHeader.APIListManagementNodeMsg = APIListManagementNodeMsg;
+
     var APICreateMessage = (function () {
         function APICreateMessage() {
         }
@@ -1920,6 +2289,7 @@ var ApiHeader;
         return APICreateMessage;
     })();
     ApiHeader.APICreateMessage = APICreateMessage;
+
     var APIListClusterMsg = (function () {
         function APIListClusterMsg() {
         }
@@ -1932,6 +2302,7 @@ var ApiHeader;
         return APIListClusterMsg;
     })();
     ApiHeader.APIListClusterMsg = APIListClusterMsg;
+
     var APIGetClusterMsg = (function () {
         function APIGetClusterMsg() {
         }
@@ -1944,6 +2315,7 @@ var ApiHeader;
         return APIGetClusterMsg;
     })();
     ApiHeader.APIGetClusterMsg = APIGetClusterMsg;
+
     var APISearchClusterMsg = (function () {
         function APISearchClusterMsg() {
         }
@@ -1956,6 +2328,7 @@ var ApiHeader;
         return APISearchClusterMsg;
     })();
     ApiHeader.APISearchClusterMsg = APISearchClusterMsg;
+
     var APIQueryClusterMsg = (function () {
         function APIQueryClusterMsg() {
         }
@@ -1968,6 +2341,7 @@ var ApiHeader;
         return APIQueryClusterMsg;
     })();
     ApiHeader.APIQueryClusterMsg = APIQueryClusterMsg;
+
     var APIDeleteClusterMsg = (function () {
         function APIDeleteClusterMsg() {
         }
@@ -1980,6 +2354,20 @@ var ApiHeader;
         return APIDeleteClusterMsg;
     })();
     ApiHeader.APIDeleteClusterMsg = APIDeleteClusterMsg;
+
+    var APIUpdateClusterMsg = (function () {
+        function APIUpdateClusterMsg() {
+        }
+        APIUpdateClusterMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.cluster.APIUpdateClusterMsg': this
+            };
+            return msg;
+        };
+        return APIUpdateClusterMsg;
+    })();
+    ApiHeader.APIUpdateClusterMsg = APIUpdateClusterMsg;
+
     var APICreateClusterMsg = (function () {
         function APICreateClusterMsg() {
         }
@@ -1992,6 +2380,7 @@ var ApiHeader;
         return APICreateClusterMsg;
     })();
     ApiHeader.APICreateClusterMsg = APICreateClusterMsg;
+
     var APIChangeClusterStateMsg = (function () {
         function APIChangeClusterStateMsg() {
         }
@@ -2004,6 +2393,7 @@ var ApiHeader;
         return APIChangeClusterStateMsg;
     })();
     ApiHeader.APIChangeClusterStateMsg = APIChangeClusterStateMsg;
+
     var APIAttachPolicyToUserGroupMsg = (function () {
         function APIAttachPolicyToUserGroupMsg() {
         }
@@ -2016,6 +2406,20 @@ var ApiHeader;
         return APIAttachPolicyToUserGroupMsg;
     })();
     ApiHeader.APIAttachPolicyToUserGroupMsg = APIAttachPolicyToUserGroupMsg;
+
+    var APIRemoveUserFromGroupMsg = (function () {
+        function APIRemoveUserFromGroupMsg() {
+        }
+        APIRemoveUserFromGroupMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.identity.APIRemoveUserFromGroupMsg': this
+            };
+            return msg;
+        };
+        return APIRemoveUserFromGroupMsg;
+    })();
+    ApiHeader.APIRemoveUserFromGroupMsg = APIRemoveUserFromGroupMsg;
+
     var APIAttachPolicyToUserMsg = (function () {
         function APIAttachPolicyToUserMsg() {
         }
@@ -2028,6 +2432,20 @@ var ApiHeader;
         return APIAttachPolicyToUserMsg;
     })();
     ApiHeader.APIAttachPolicyToUserMsg = APIAttachPolicyToUserMsg;
+
+    var APIResetUserPasswordMsg = (function () {
+        function APIResetUserPasswordMsg() {
+        }
+        APIResetUserPasswordMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.identity.APIResetUserPasswordMsg': this
+            };
+            return msg;
+        };
+        return APIResetUserPasswordMsg;
+    })();
+    ApiHeader.APIResetUserPasswordMsg = APIResetUserPasswordMsg;
+
     var APIGetAccountMsg = (function () {
         function APIGetAccountMsg() {
         }
@@ -2040,6 +2458,7 @@ var ApiHeader;
         return APIGetAccountMsg;
     })();
     ApiHeader.APIGetAccountMsg = APIGetAccountMsg;
+
     var APIListAccountMsg = (function () {
         function APIListAccountMsg() {
         }
@@ -2052,6 +2471,46 @@ var ApiHeader;
         return APIListAccountMsg;
     })();
     ApiHeader.APIListAccountMsg = APIListAccountMsg;
+
+    var APIAddUserToGroupMsg = (function () {
+        function APIAddUserToGroupMsg() {
+        }
+        APIAddUserToGroupMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.identity.APIAddUserToGroupMsg': this
+            };
+            return msg;
+        };
+        return APIAddUserToGroupMsg;
+    })();
+    ApiHeader.APIAddUserToGroupMsg = APIAddUserToGroupMsg;
+
+    var APIQueryQuotaMsg = (function () {
+        function APIQueryQuotaMsg() {
+        }
+        APIQueryQuotaMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.identity.APIQueryQuotaMsg': this
+            };
+            return msg;
+        };
+        return APIQueryQuotaMsg;
+    })();
+    ApiHeader.APIQueryQuotaMsg = APIQueryQuotaMsg;
+
+    var APIShareResourceMsg = (function () {
+        function APIShareResourceMsg() {
+        }
+        APIShareResourceMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.identity.APIShareResourceMsg': this
+            };
+            return msg;
+        };
+        return APIShareResourceMsg;
+    })();
+    ApiHeader.APIShareResourceMsg = APIShareResourceMsg;
+
     var APIListPolicyMsg = (function () {
         function APIListPolicyMsg() {
         }
@@ -2064,6 +2523,7 @@ var ApiHeader;
         return APIListPolicyMsg;
     })();
     ApiHeader.APIListPolicyMsg = APIListPolicyMsg;
+
     var APICreateAccountMsg = (function () {
         function APICreateAccountMsg() {
         }
@@ -2076,6 +2536,20 @@ var ApiHeader;
         return APICreateAccountMsg;
     })();
     ApiHeader.APICreateAccountMsg = APICreateAccountMsg;
+
+    var APIDeleteAccountMsg = (function () {
+        function APIDeleteAccountMsg() {
+        }
+        APIDeleteAccountMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.identity.APIDeleteAccountMsg': this
+            };
+            return msg;
+        };
+        return APIDeleteAccountMsg;
+    })();
+    ApiHeader.APIDeleteAccountMsg = APIDeleteAccountMsg;
+
     var APICreateUserGroupMsg = (function () {
         function APICreateUserGroupMsg() {
         }
@@ -2088,6 +2562,7 @@ var ApiHeader;
         return APICreateUserGroupMsg;
     })();
     ApiHeader.APICreateUserGroupMsg = APICreateUserGroupMsg;
+
     var APICreateUserMsg = (function () {
         function APICreateUserMsg() {
         }
@@ -2100,6 +2575,7 @@ var ApiHeader;
         return APICreateUserMsg;
     })();
     ApiHeader.APICreateUserMsg = APICreateUserMsg;
+
     var APILogInByUserMsg = (function () {
         function APILogInByUserMsg() {
         }
@@ -2112,6 +2588,7 @@ var ApiHeader;
         return APILogInByUserMsg;
     })();
     ApiHeader.APILogInByUserMsg = APILogInByUserMsg;
+
     var APISearchAccountMsg = (function () {
         function APISearchAccountMsg() {
         }
@@ -2124,6 +2601,7 @@ var ApiHeader;
         return APISearchAccountMsg;
     })();
     ApiHeader.APISearchAccountMsg = APISearchAccountMsg;
+
     var APISearchPolicyMsg = (function () {
         function APISearchPolicyMsg() {
         }
@@ -2136,6 +2614,7 @@ var ApiHeader;
         return APISearchPolicyMsg;
     })();
     ApiHeader.APISearchPolicyMsg = APISearchPolicyMsg;
+
     var APISessionMessage = (function () {
         function APISessionMessage() {
         }
@@ -2148,6 +2627,7 @@ var ApiHeader;
         return APISessionMessage;
     })();
     ApiHeader.APISessionMessage = APISessionMessage;
+
     var APIGetUserMsg = (function () {
         function APIGetUserMsg() {
         }
@@ -2160,6 +2640,7 @@ var ApiHeader;
         return APIGetUserMsg;
     })();
     ApiHeader.APIGetUserMsg = APIGetUserMsg;
+
     var APIGetUserGroupMsg = (function () {
         function APIGetUserGroupMsg() {
         }
@@ -2172,18 +2653,98 @@ var ApiHeader;
         return APIGetUserGroupMsg;
     })();
     ApiHeader.APIGetUserGroupMsg = APIGetUserGroupMsg;
-    var APIAttachUserToUserGroupMsg = (function () {
-        function APIAttachUserToUserGroupMsg() {
+
+    var APIDetachPolicyFromUserGroupMsg = (function () {
+        function APIDetachPolicyFromUserGroupMsg() {
         }
-        APIAttachUserToUserGroupMsg.prototype.toApiMap = function () {
+        APIDetachPolicyFromUserGroupMsg.prototype.toApiMap = function () {
             var msg = {
-                'org.zstack.header.identity.APIAttachUserToUserGroupMsg': this
+                'org.zstack.header.identity.APIDetachPolicyFromUserGroupMsg': this
             };
             return msg;
         };
-        return APIAttachUserToUserGroupMsg;
+        return APIDetachPolicyFromUserGroupMsg;
     })();
-    ApiHeader.APIAttachUserToUserGroupMsg = APIAttachUserToUserGroupMsg;
+    ApiHeader.APIDetachPolicyFromUserGroupMsg = APIDetachPolicyFromUserGroupMsg;
+
+    var APIUpdateQuotaMsg = (function () {
+        function APIUpdateQuotaMsg() {
+        }
+        APIUpdateQuotaMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.identity.APIUpdateQuotaMsg': this
+            };
+            return msg;
+        };
+        return APIUpdateQuotaMsg;
+    })();
+    ApiHeader.APIUpdateQuotaMsg = APIUpdateQuotaMsg;
+
+    var APIQueryAccountMsg = (function () {
+        function APIQueryAccountMsg() {
+        }
+        APIQueryAccountMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.identity.APIQueryAccountMsg': this
+            };
+            return msg;
+        };
+        return APIQueryAccountMsg;
+    })();
+    ApiHeader.APIQueryAccountMsg = APIQueryAccountMsg;
+
+    var APIQueryPolicyMsg = (function () {
+        function APIQueryPolicyMsg() {
+        }
+        APIQueryPolicyMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.identity.APIQueryPolicyMsg': this
+            };
+            return msg;
+        };
+        return APIQueryPolicyMsg;
+    })();
+    ApiHeader.APIQueryPolicyMsg = APIQueryPolicyMsg;
+
+    var APIQueryUserMsg = (function () {
+        function APIQueryUserMsg() {
+        }
+        APIQueryUserMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.identity.APIQueryUserMsg': this
+            };
+            return msg;
+        };
+        return APIQueryUserMsg;
+    })();
+    ApiHeader.APIQueryUserMsg = APIQueryUserMsg;
+
+    var APIDeletePolicyMsg = (function () {
+        function APIDeletePolicyMsg() {
+        }
+        APIDeletePolicyMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.identity.APIDeletePolicyMsg': this
+            };
+            return msg;
+        };
+        return APIDeletePolicyMsg;
+    })();
+    ApiHeader.APIDeletePolicyMsg = APIDeletePolicyMsg;
+
+    var APIRevokeResourceSharingMsg = (function () {
+        function APIRevokeResourceSharingMsg() {
+        }
+        APIRevokeResourceSharingMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.identity.APIRevokeResourceSharingMsg': this
+            };
+            return msg;
+        };
+        return APIRevokeResourceSharingMsg;
+    })();
+    ApiHeader.APIRevokeResourceSharingMsg = APIRevokeResourceSharingMsg;
+
     var APIResetAccountPasswordMsg = (function () {
         function APIResetAccountPasswordMsg() {
         }
@@ -2196,6 +2757,7 @@ var ApiHeader;
         return APIResetAccountPasswordMsg;
     })();
     ApiHeader.APIResetAccountPasswordMsg = APIResetAccountPasswordMsg;
+
     var APILogInByAccountMsg = (function () {
         function APILogInByAccountMsg() {
         }
@@ -2208,6 +2770,7 @@ var ApiHeader;
         return APILogInByAccountMsg;
     })();
     ApiHeader.APILogInByAccountMsg = APILogInByAccountMsg;
+
     var APIValidateSessionMsg = (function () {
         function APIValidateSessionMsg() {
         }
@@ -2220,6 +2783,7 @@ var ApiHeader;
         return APIValidateSessionMsg;
     })();
     ApiHeader.APIValidateSessionMsg = APIValidateSessionMsg;
+
     var APISearchUserGroupMsg = (function () {
         function APISearchUserGroupMsg() {
         }
@@ -2232,6 +2796,7 @@ var ApiHeader;
         return APISearchUserGroupMsg;
     })();
     ApiHeader.APISearchUserGroupMsg = APISearchUserGroupMsg;
+
     var APIListUserMsg = (function () {
         function APIListUserMsg() {
         }
@@ -2244,6 +2809,20 @@ var ApiHeader;
         return APIListUserMsg;
     })();
     ApiHeader.APIListUserMsg = APIListUserMsg;
+
+    var APIDeleteUserMsg = (function () {
+        function APIDeleteUserMsg() {
+        }
+        APIDeleteUserMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.identity.APIDeleteUserMsg': this
+            };
+            return msg;
+        };
+        return APIDeleteUserMsg;
+    })();
+    ApiHeader.APIDeleteUserMsg = APIDeleteUserMsg;
+
     var APISearchUserMsg = (function () {
         function APISearchUserMsg() {
         }
@@ -2256,6 +2835,20 @@ var ApiHeader;
         return APISearchUserMsg;
     })();
     ApiHeader.APISearchUserMsg = APISearchUserMsg;
+
+    var APIDeleteUserGroupMsg = (function () {
+        function APIDeleteUserGroupMsg() {
+        }
+        APIDeleteUserGroupMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.identity.APIDeleteUserGroupMsg': this
+            };
+            return msg;
+        };
+        return APIDeleteUserGroupMsg;
+    })();
+    ApiHeader.APIDeleteUserGroupMsg = APIDeleteUserGroupMsg;
+
     var APILogOutMsg = (function () {
         function APILogOutMsg() {
         }
@@ -2268,6 +2861,7 @@ var ApiHeader;
         return APILogOutMsg;
     })();
     ApiHeader.APILogOutMsg = APILogOutMsg;
+
     var APIGetPolicyMsg = (function () {
         function APIGetPolicyMsg() {
         }
@@ -2280,6 +2874,20 @@ var ApiHeader;
         return APIGetPolicyMsg;
     })();
     ApiHeader.APIGetPolicyMsg = APIGetPolicyMsg;
+
+    (function (StatementEffect) {
+        StatementEffect[StatementEffect["Allow"] = 0] = "Allow";
+        StatementEffect[StatementEffect["Deny"] = 1] = "Deny";
+    })(ApiHeader.StatementEffect || (ApiHeader.StatementEffect = {}));
+    var StatementEffect = ApiHeader.StatementEffect;
+
+    var Statement = (function () {
+        function Statement() {
+        }
+        return Statement;
+    })();
+    ApiHeader.Statement = Statement;
+
     var APICreatePolicyMsg = (function () {
         function APICreatePolicyMsg() {
         }
@@ -2292,6 +2900,46 @@ var ApiHeader;
         return APICreatePolicyMsg;
     })();
     ApiHeader.APICreatePolicyMsg = APICreatePolicyMsg;
+
+    var APIDetachPolicyFromUserMsg = (function () {
+        function APIDetachPolicyFromUserMsg() {
+        }
+        APIDetachPolicyFromUserMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.identity.APIDetachPolicyFromUserMsg': this
+            };
+            return msg;
+        };
+        return APIDetachPolicyFromUserMsg;
+    })();
+    ApiHeader.APIDetachPolicyFromUserMsg = APIDetachPolicyFromUserMsg;
+
+    var APIQueryUserGroupMsg = (function () {
+        function APIQueryUserGroupMsg() {
+        }
+        APIQueryUserGroupMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.identity.APIQueryUserGroupMsg': this
+            };
+            return msg;
+        };
+        return APIQueryUserGroupMsg;
+    })();
+    ApiHeader.APIQueryUserGroupMsg = APIQueryUserGroupMsg;
+
+    var APIUpdateZoneMsg = (function () {
+        function APIUpdateZoneMsg() {
+        }
+        APIUpdateZoneMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.zone.APIUpdateZoneMsg': this
+            };
+            return msg;
+        };
+        return APIUpdateZoneMsg;
+    })();
+    ApiHeader.APIUpdateZoneMsg = APIUpdateZoneMsg;
+
     var APIGetZoneMsg = (function () {
         function APIGetZoneMsg() {
         }
@@ -2304,6 +2952,7 @@ var ApiHeader;
         return APIGetZoneMsg;
     })();
     ApiHeader.APIGetZoneMsg = APIGetZoneMsg;
+
     var APIDeleteZoneMsg = (function () {
         function APIDeleteZoneMsg() {
         }
@@ -2316,6 +2965,7 @@ var ApiHeader;
         return APIDeleteZoneMsg;
     })();
     ApiHeader.APIDeleteZoneMsg = APIDeleteZoneMsg;
+
     var APICreateZoneMsg = (function () {
         function APICreateZoneMsg() {
         }
@@ -2328,6 +2978,7 @@ var ApiHeader;
         return APICreateZoneMsg;
     })();
     ApiHeader.APICreateZoneMsg = APICreateZoneMsg;
+
     var APISearchZoneMsg = (function () {
         function APISearchZoneMsg() {
         }
@@ -2340,6 +2991,7 @@ var ApiHeader;
         return APISearchZoneMsg;
     })();
     ApiHeader.APISearchZoneMsg = APISearchZoneMsg;
+
     var APIQueryZoneMsg = (function () {
         function APIQueryZoneMsg() {
         }
@@ -2352,6 +3004,7 @@ var ApiHeader;
         return APIQueryZoneMsg;
     })();
     ApiHeader.APIQueryZoneMsg = APIQueryZoneMsg;
+
     var APIListZonesMsg = (function () {
         function APIListZonesMsg() {
         }
@@ -2364,6 +3017,7 @@ var ApiHeader;
         return APIListZonesMsg;
     })();
     ApiHeader.APIListZonesMsg = APIListZonesMsg;
+
     var APIChangeZoneStateMsg = (function () {
         function APIChangeZoneStateMsg() {
         }
@@ -2376,6 +3030,7 @@ var ApiHeader;
         return APIChangeZoneStateMsg;
     })();
     ApiHeader.APIChangeZoneStateMsg = APIChangeZoneStateMsg;
+
     var APIChangeHostStateMsg = (function () {
         function APIChangeHostStateMsg() {
         }
@@ -2388,6 +3043,7 @@ var ApiHeader;
         return APIChangeHostStateMsg;
     })();
     ApiHeader.APIChangeHostStateMsg = APIChangeHostStateMsg;
+
     var APIReconnectHostMsg = (function () {
         function APIReconnectHostMsg() {
         }
@@ -2400,6 +3056,7 @@ var ApiHeader;
         return APIReconnectHostMsg;
     })();
     ApiHeader.APIReconnectHostMsg = APIReconnectHostMsg;
+
     var APIListHostMsg = (function () {
         function APIListHostMsg() {
         }
@@ -2412,6 +3069,20 @@ var ApiHeader;
         return APIListHostMsg;
     })();
     ApiHeader.APIListHostMsg = APIListHostMsg;
+
+    var APIUpdateHostMsg = (function () {
+        function APIUpdateHostMsg() {
+        }
+        APIUpdateHostMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.host.APIUpdateHostMsg': this
+            };
+            return msg;
+        };
+        return APIUpdateHostMsg;
+    })();
+    ApiHeader.APIUpdateHostMsg = APIUpdateHostMsg;
+
     var APIDeleteHostMsg = (function () {
         function APIDeleteHostMsg() {
         }
@@ -2424,6 +3095,7 @@ var ApiHeader;
         return APIDeleteHostMsg;
     })();
     ApiHeader.APIDeleteHostMsg = APIDeleteHostMsg;
+
     var APIGetHostMsg = (function () {
         function APIGetHostMsg() {
         }
@@ -2436,6 +3108,7 @@ var ApiHeader;
         return APIGetHostMsg;
     })();
     ApiHeader.APIGetHostMsg = APIGetHostMsg;
+
     var APISearchHostMsg = (function () {
         function APISearchHostMsg() {
         }
@@ -2448,6 +3121,7 @@ var ApiHeader;
         return APISearchHostMsg;
     })();
     ApiHeader.APISearchHostMsg = APISearchHostMsg;
+
     var APIGetHypervisorTypesMsg = (function () {
         function APIGetHypervisorTypesMsg() {
         }
@@ -2460,6 +3134,7 @@ var ApiHeader;
         return APIGetHypervisorTypesMsg;
     })();
     ApiHeader.APIGetHypervisorTypesMsg = APIGetHypervisorTypesMsg;
+
     var APIQueryHostMsg = (function () {
         function APIQueryHostMsg() {
         }
@@ -2472,6 +3147,7 @@ var ApiHeader;
         return APIQueryHostMsg;
     })();
     ApiHeader.APIQueryHostMsg = APIQueryHostMsg;
+
     var APIAddSimulatorHostMsg = (function () {
         function APIAddSimulatorHostMsg() {
         }
@@ -2484,6 +3160,7 @@ var ApiHeader;
         return APIAddSimulatorHostMsg;
     })();
     ApiHeader.APIAddSimulatorHostMsg = APIAddSimulatorHostMsg;
+
     var APIAddSimulatorPrimaryStorageMsg = (function () {
         function APIAddSimulatorPrimaryStorageMsg() {
         }
@@ -2496,6 +3173,7 @@ var ApiHeader;
         return APIAddSimulatorPrimaryStorageMsg;
     })();
     ApiHeader.APIAddSimulatorPrimaryStorageMsg = APIAddSimulatorPrimaryStorageMsg;
+
     var APIAddSimulatorBackupStorageMsg = (function () {
         function APIAddSimulatorBackupStorageMsg() {
         }
@@ -2508,6 +3186,7 @@ var ApiHeader;
         return APIAddSimulatorBackupStorageMsg;
     })();
     ApiHeader.APIAddSimulatorBackupStorageMsg = APIAddSimulatorBackupStorageMsg;
+
     var APIListApplianceVmMsg = (function () {
         function APIListApplianceVmMsg() {
         }
@@ -2520,6 +3199,7 @@ var ApiHeader;
         return APIListApplianceVmMsg;
     })();
     ApiHeader.APIListApplianceVmMsg = APIListApplianceVmMsg;
+
     var APIQueryApplianceVmMsg = (function () {
         function APIQueryApplianceVmMsg() {
         }
@@ -2532,6 +3212,7 @@ var ApiHeader;
         return APIQueryApplianceVmMsg;
     })();
     ApiHeader.APIQueryApplianceVmMsg = APIQueryApplianceVmMsg;
+
     var APIAddIscsiFileSystemBackendPrimaryStorageMsg = (function () {
         function APIAddIscsiFileSystemBackendPrimaryStorageMsg() {
         }
@@ -2544,6 +3225,59 @@ var ApiHeader;
         return APIAddIscsiFileSystemBackendPrimaryStorageMsg;
     })();
     ApiHeader.APIAddIscsiFileSystemBackendPrimaryStorageMsg = APIAddIscsiFileSystemBackendPrimaryStorageMsg;
+
+    var APIQueryIscsiFileSystemBackendPrimaryStorageMsg = (function () {
+        function APIQueryIscsiFileSystemBackendPrimaryStorageMsg() {
+        }
+        APIQueryIscsiFileSystemBackendPrimaryStorageMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.storage.primary.iscsi.APIQueryIscsiFileSystemBackendPrimaryStorageMsg': this
+            };
+            return msg;
+        };
+        return APIQueryIscsiFileSystemBackendPrimaryStorageMsg;
+    })();
+    ApiHeader.APIQueryIscsiFileSystemBackendPrimaryStorageMsg = APIQueryIscsiFileSystemBackendPrimaryStorageMsg;
+
+    var APIUpdateIscsiFileSystemBackendPrimaryStorageMsg = (function () {
+        function APIUpdateIscsiFileSystemBackendPrimaryStorageMsg() {
+        }
+        APIUpdateIscsiFileSystemBackendPrimaryStorageMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.storage.primary.iscsi.APIUpdateIscsiFileSystemBackendPrimaryStorageMsg': this
+            };
+            return msg;
+        };
+        return APIUpdateIscsiFileSystemBackendPrimaryStorageMsg;
+    })();
+    ApiHeader.APIUpdateIscsiFileSystemBackendPrimaryStorageMsg = APIUpdateIscsiFileSystemBackendPrimaryStorageMsg;
+
+    var APIAddLocalPrimaryStorageMsg = (function () {
+        function APIAddLocalPrimaryStorageMsg() {
+        }
+        APIAddLocalPrimaryStorageMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.storage.primary.local.APIAddLocalPrimaryStorageMsg': this
+            };
+            return msg;
+        };
+        return APIAddLocalPrimaryStorageMsg;
+    })();
+    ApiHeader.APIAddLocalPrimaryStorageMsg = APIAddLocalPrimaryStorageMsg;
+
+    var APIUpdateKVMHostMsg = (function () {
+        function APIUpdateKVMHostMsg() {
+        }
+        APIUpdateKVMHostMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.kvm.APIUpdateKVMHostMsg': this
+            };
+            return msg;
+        };
+        return APIUpdateKVMHostMsg;
+    })();
+    ApiHeader.APIUpdateKVMHostMsg = APIUpdateKVMHostMsg;
+
     var APIAddKVMHostMsg = (function () {
         function APIAddKVMHostMsg() {
         }
@@ -2556,6 +3290,7 @@ var ApiHeader;
         return APIAddKVMHostMsg;
     })();
     ApiHeader.APIAddKVMHostMsg = APIAddKVMHostMsg;
+
     var APIAddNfsPrimaryStorageMsg = (function () {
         function APIAddNfsPrimaryStorageMsg() {
         }
@@ -2568,6 +3303,7 @@ var ApiHeader;
         return APIAddNfsPrimaryStorageMsg;
     })();
     ApiHeader.APIAddNfsPrimaryStorageMsg = APIAddNfsPrimaryStorageMsg;
+
     var APIGetSftpBackupStorageMsg = (function () {
         function APIGetSftpBackupStorageMsg() {
         }
@@ -2580,6 +3316,7 @@ var ApiHeader;
         return APIGetSftpBackupStorageMsg;
     })();
     ApiHeader.APIGetSftpBackupStorageMsg = APIGetSftpBackupStorageMsg;
+
     var APISearchSftpBackupStorageMsg = (function () {
         function APISearchSftpBackupStorageMsg() {
         }
@@ -2592,6 +3329,7 @@ var ApiHeader;
         return APISearchSftpBackupStorageMsg;
     })();
     ApiHeader.APISearchSftpBackupStorageMsg = APISearchSftpBackupStorageMsg;
+
     var APIQuerySftpBackupStorageMsg = (function () {
         function APIQuerySftpBackupStorageMsg() {
         }
@@ -2604,6 +3342,7 @@ var ApiHeader;
         return APIQuerySftpBackupStorageMsg;
     })();
     ApiHeader.APIQuerySftpBackupStorageMsg = APIQuerySftpBackupStorageMsg;
+
     var APIReconnectSftpBackupStorageMsg = (function () {
         function APIReconnectSftpBackupStorageMsg() {
         }
@@ -2616,6 +3355,20 @@ var ApiHeader;
         return APIReconnectSftpBackupStorageMsg;
     })();
     ApiHeader.APIReconnectSftpBackupStorageMsg = APIReconnectSftpBackupStorageMsg;
+
+    var APIUpdateSftpBackupStorageMsg = (function () {
+        function APIUpdateSftpBackupStorageMsg() {
+        }
+        APIUpdateSftpBackupStorageMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.storage.backup.sftp.APIUpdateSftpBackupStorageMsg': this
+            };
+            return msg;
+        };
+        return APIUpdateSftpBackupStorageMsg;
+    })();
+    ApiHeader.APIUpdateSftpBackupStorageMsg = APIUpdateSftpBackupStorageMsg;
+
     var APIAddSftpBackupStorageMsg = (function () {
         function APIAddSftpBackupStorageMsg() {
         }
@@ -2628,6 +3381,7 @@ var ApiHeader;
         return APIAddSftpBackupStorageMsg;
     })();
     ApiHeader.APIAddSftpBackupStorageMsg = APIAddSftpBackupStorageMsg;
+
     var APIReconnectVirtualRouterMsg = (function () {
         function APIReconnectVirtualRouterMsg() {
         }
@@ -2640,6 +3394,7 @@ var ApiHeader;
         return APIReconnectVirtualRouterMsg;
     })();
     ApiHeader.APIReconnectVirtualRouterMsg = APIReconnectVirtualRouterMsg;
+
     var APICreateVirtualRouterVmMsg = (function () {
         function APICreateVirtualRouterVmMsg() {
         }
@@ -2652,6 +3407,7 @@ var ApiHeader;
         return APICreateVirtualRouterVmMsg;
     })();
     ApiHeader.APICreateVirtualRouterVmMsg = APICreateVirtualRouterVmMsg;
+
     var APIGetVirtualRouterOfferingMsg = (function () {
         function APIGetVirtualRouterOfferingMsg() {
         }
@@ -2664,6 +3420,7 @@ var ApiHeader;
         return APIGetVirtualRouterOfferingMsg;
     })();
     ApiHeader.APIGetVirtualRouterOfferingMsg = APIGetVirtualRouterOfferingMsg;
+
     var APISearchVirtualRouterVmMsg = (function () {
         function APISearchVirtualRouterVmMsg() {
         }
@@ -2676,6 +3433,7 @@ var ApiHeader;
         return APISearchVirtualRouterVmMsg;
     })();
     ApiHeader.APISearchVirtualRouterVmMsg = APISearchVirtualRouterVmMsg;
+
     var APIQueryVirtualRouterOfferingMsg = (function () {
         function APIQueryVirtualRouterOfferingMsg() {
         }
@@ -2688,6 +3446,7 @@ var ApiHeader;
         return APIQueryVirtualRouterOfferingMsg;
     })();
     ApiHeader.APIQueryVirtualRouterOfferingMsg = APIQueryVirtualRouterOfferingMsg;
+
     var APICreateVirtualRouterOfferingMsg = (function () {
         function APICreateVirtualRouterOfferingMsg() {
         }
@@ -2700,6 +3459,7 @@ var ApiHeader;
         return APICreateVirtualRouterOfferingMsg;
     })();
     ApiHeader.APICreateVirtualRouterOfferingMsg = APICreateVirtualRouterOfferingMsg;
+
     var APIQueryVirtualRouterVmMsg = (function () {
         function APIQueryVirtualRouterVmMsg() {
         }
@@ -2712,6 +3472,7 @@ var ApiHeader;
         return APIQueryVirtualRouterVmMsg;
     })();
     ApiHeader.APIQueryVirtualRouterVmMsg = APIQueryVirtualRouterVmMsg;
+
     var APISearchVirtualRouterOffingMsg = (function () {
         function APISearchVirtualRouterOffingMsg() {
         }
@@ -2724,6 +3485,7 @@ var ApiHeader;
         return APISearchVirtualRouterOffingMsg;
     })();
     ApiHeader.APISearchVirtualRouterOffingMsg = APISearchVirtualRouterOffingMsg;
+
     var APIAttachPortForwardingRuleMsg = (function () {
         function APIAttachPortForwardingRuleMsg() {
         }
@@ -2736,6 +3498,7 @@ var ApiHeader;
         return APIAttachPortForwardingRuleMsg;
     })();
     ApiHeader.APIAttachPortForwardingRuleMsg = APIAttachPortForwardingRuleMsg;
+
     var APIDetachPortForwardingRuleMsg = (function () {
         function APIDetachPortForwardingRuleMsg() {
         }
@@ -2748,6 +3511,7 @@ var ApiHeader;
         return APIDetachPortForwardingRuleMsg;
     })();
     ApiHeader.APIDetachPortForwardingRuleMsg = APIDetachPortForwardingRuleMsg;
+
     var APIGetPortForwardingAttachableVmNicsMsg = (function () {
         function APIGetPortForwardingAttachableVmNicsMsg() {
         }
@@ -2760,6 +3524,7 @@ var ApiHeader;
         return APIGetPortForwardingAttachableVmNicsMsg;
     })();
     ApiHeader.APIGetPortForwardingAttachableVmNicsMsg = APIGetPortForwardingAttachableVmNicsMsg;
+
     var APIChangePortForwardingRuleStateMsg = (function () {
         function APIChangePortForwardingRuleStateMsg() {
         }
@@ -2772,6 +3537,20 @@ var ApiHeader;
         return APIChangePortForwardingRuleStateMsg;
     })();
     ApiHeader.APIChangePortForwardingRuleStateMsg = APIChangePortForwardingRuleStateMsg;
+
+    var APIUpdatePortForwardingRuleMsg = (function () {
+        function APIUpdatePortForwardingRuleMsg() {
+        }
+        APIUpdatePortForwardingRuleMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.network.service.portforwarding.APIUpdatePortForwardingRuleMsg': this
+            };
+            return msg;
+        };
+        return APIUpdatePortForwardingRuleMsg;
+    })();
+    ApiHeader.APIUpdatePortForwardingRuleMsg = APIUpdatePortForwardingRuleMsg;
+
     var APIListPortForwardingRuleMsg = (function () {
         function APIListPortForwardingRuleMsg() {
         }
@@ -2784,6 +3563,7 @@ var ApiHeader;
         return APIListPortForwardingRuleMsg;
     })();
     ApiHeader.APIListPortForwardingRuleMsg = APIListPortForwardingRuleMsg;
+
     var APICreatePortForwardingRuleMsg = (function () {
         function APICreatePortForwardingRuleMsg() {
         }
@@ -2796,6 +3576,7 @@ var ApiHeader;
         return APICreatePortForwardingRuleMsg;
     })();
     ApiHeader.APICreatePortForwardingRuleMsg = APICreatePortForwardingRuleMsg;
+
     var APIQueryPortForwardingRuleMsg = (function () {
         function APIQueryPortForwardingRuleMsg() {
         }
@@ -2808,6 +3589,7 @@ var ApiHeader;
         return APIQueryPortForwardingRuleMsg;
     })();
     ApiHeader.APIQueryPortForwardingRuleMsg = APIQueryPortForwardingRuleMsg;
+
     var APIDeletePortForwardingRuleMsg = (function () {
         function APIDeletePortForwardingRuleMsg() {
         }
@@ -2820,6 +3602,7 @@ var ApiHeader;
         return APIDeletePortForwardingRuleMsg;
     })();
     ApiHeader.APIDeletePortForwardingRuleMsg = APIDeletePortForwardingRuleMsg;
+
     var APIDetachEipMsg = (function () {
         function APIDetachEipMsg() {
         }
@@ -2832,6 +3615,7 @@ var ApiHeader;
         return APIDetachEipMsg;
     })();
     ApiHeader.APIDetachEipMsg = APIDetachEipMsg;
+
     var APIGetEipAttachableVmNicsMsg = (function () {
         function APIGetEipAttachableVmNicsMsg() {
         }
@@ -2844,6 +3628,20 @@ var ApiHeader;
         return APIGetEipAttachableVmNicsMsg;
     })();
     ApiHeader.APIGetEipAttachableVmNicsMsg = APIGetEipAttachableVmNicsMsg;
+
+    var APIUpdateEipMsg = (function () {
+        function APIUpdateEipMsg() {
+        }
+        APIUpdateEipMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.network.service.eip.APIUpdateEipMsg': this
+            };
+            return msg;
+        };
+        return APIUpdateEipMsg;
+    })();
+    ApiHeader.APIUpdateEipMsg = APIUpdateEipMsg;
+
     var APIQueryEipMsg = (function () {
         function APIQueryEipMsg() {
         }
@@ -2856,6 +3654,7 @@ var ApiHeader;
         return APIQueryEipMsg;
     })();
     ApiHeader.APIQueryEipMsg = APIQueryEipMsg;
+
     var APIChangeEipStateMsg = (function () {
         function APIChangeEipStateMsg() {
         }
@@ -2868,6 +3667,7 @@ var ApiHeader;
         return APIChangeEipStateMsg;
     })();
     ApiHeader.APIChangeEipStateMsg = APIChangeEipStateMsg;
+
     var APIDeleteEipMsg = (function () {
         function APIDeleteEipMsg() {
         }
@@ -2880,6 +3680,7 @@ var ApiHeader;
         return APIDeleteEipMsg;
     })();
     ApiHeader.APIDeleteEipMsg = APIDeleteEipMsg;
+
     var APICreateEipMsg = (function () {
         function APICreateEipMsg() {
         }
@@ -2892,6 +3693,7 @@ var ApiHeader;
         return APICreateEipMsg;
     })();
     ApiHeader.APICreateEipMsg = APICreateEipMsg;
+
     var APIAttachEipMsg = (function () {
         function APIAttachEipMsg() {
         }
@@ -2904,6 +3706,7 @@ var ApiHeader;
         return APIAttachEipMsg;
     })();
     ApiHeader.APIAttachEipMsg = APIAttachEipMsg;
+
     var APIChangeSecurityGroupStateMsg = (function () {
         function APIChangeSecurityGroupStateMsg() {
         }
@@ -2916,6 +3719,7 @@ var ApiHeader;
         return APIChangeSecurityGroupStateMsg;
     })();
     ApiHeader.APIChangeSecurityGroupStateMsg = APIChangeSecurityGroupStateMsg;
+
     var APIDetachSecurityGroupFromL3NetworkMsg = (function () {
         function APIDetachSecurityGroupFromL3NetworkMsg() {
         }
@@ -2928,6 +3732,7 @@ var ApiHeader;
         return APIDetachSecurityGroupFromL3NetworkMsg;
     })();
     ApiHeader.APIDetachSecurityGroupFromL3NetworkMsg = APIDetachSecurityGroupFromL3NetworkMsg;
+
     var APIDeleteSecurityGroupRuleMsg = (function () {
         function APIDeleteSecurityGroupRuleMsg() {
         }
@@ -2940,6 +3745,7 @@ var ApiHeader;
         return APIDeleteSecurityGroupRuleMsg;
     })();
     ApiHeader.APIDeleteSecurityGroupRuleMsg = APIDeleteSecurityGroupRuleMsg;
+
     var APICreateSecurityGroupMsg = (function () {
         function APICreateSecurityGroupMsg() {
         }
@@ -2952,6 +3758,7 @@ var ApiHeader;
         return APICreateSecurityGroupMsg;
     })();
     ApiHeader.APICreateSecurityGroupMsg = APICreateSecurityGroupMsg;
+
     var APIListVmNicInSecurityGroupMsg = (function () {
         function APIListVmNicInSecurityGroupMsg() {
         }
@@ -2964,6 +3771,7 @@ var ApiHeader;
         return APIListVmNicInSecurityGroupMsg;
     })();
     ApiHeader.APIListVmNicInSecurityGroupMsg = APIListVmNicInSecurityGroupMsg;
+
     var APIQueryVmNicInSecurityGroupMsg = (function () {
         function APIQueryVmNicInSecurityGroupMsg() {
         }
@@ -2976,6 +3784,7 @@ var ApiHeader;
         return APIQueryVmNicInSecurityGroupMsg;
     })();
     ApiHeader.APIQueryVmNicInSecurityGroupMsg = APIQueryVmNicInSecurityGroupMsg;
+
     var APIQuerySecurityGroupMsg = (function () {
         function APIQuerySecurityGroupMsg() {
         }
@@ -2988,12 +3797,14 @@ var ApiHeader;
         return APIQuerySecurityGroupMsg;
     })();
     ApiHeader.APIQuerySecurityGroupMsg = APIQuerySecurityGroupMsg;
+
     var SecurityGroupRuleAO = (function () {
         function SecurityGroupRuleAO() {
         }
         return SecurityGroupRuleAO;
     })();
     ApiHeader.SecurityGroupRuleAO = SecurityGroupRuleAO;
+
     var APIAddSecurityGroupRuleMsg = (function () {
         function APIAddSecurityGroupRuleMsg() {
         }
@@ -3006,6 +3817,7 @@ var ApiHeader;
         return APIAddSecurityGroupRuleMsg;
     })();
     ApiHeader.APIAddSecurityGroupRuleMsg = APIAddSecurityGroupRuleMsg;
+
     var APIListSecurityGroupMsg = (function () {
         function APIListSecurityGroupMsg() {
         }
@@ -3018,6 +3830,7 @@ var ApiHeader;
         return APIListSecurityGroupMsg;
     })();
     ApiHeader.APIListSecurityGroupMsg = APIListSecurityGroupMsg;
+
     var APIQuerySecurityGroupRuleMsg = (function () {
         function APIQuerySecurityGroupRuleMsg() {
         }
@@ -3030,6 +3843,7 @@ var ApiHeader;
         return APIQuerySecurityGroupRuleMsg;
     })();
     ApiHeader.APIQuerySecurityGroupRuleMsg = APIQuerySecurityGroupRuleMsg;
+
     var APIDeleteSecurityGroupMsg = (function () {
         function APIDeleteSecurityGroupMsg() {
         }
@@ -3042,6 +3856,20 @@ var ApiHeader;
         return APIDeleteSecurityGroupMsg;
     })();
     ApiHeader.APIDeleteSecurityGroupMsg = APIDeleteSecurityGroupMsg;
+
+    var APIUpdateSecurityGroupMsg = (function () {
+        function APIUpdateSecurityGroupMsg() {
+        }
+        APIUpdateSecurityGroupMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.network.securitygroup.APIUpdateSecurityGroupMsg': this
+            };
+            return msg;
+        };
+        return APIUpdateSecurityGroupMsg;
+    })();
+    ApiHeader.APIUpdateSecurityGroupMsg = APIUpdateSecurityGroupMsg;
+
     var APIDeleteVmNicFromSecurityGroupMsg = (function () {
         function APIDeleteVmNicFromSecurityGroupMsg() {
         }
@@ -3054,6 +3882,7 @@ var ApiHeader;
         return APIDeleteVmNicFromSecurityGroupMsg;
     })();
     ApiHeader.APIDeleteVmNicFromSecurityGroupMsg = APIDeleteVmNicFromSecurityGroupMsg;
+
     var APIGetCandidateVmNicForSecurityGroupMsg = (function () {
         function APIGetCandidateVmNicForSecurityGroupMsg() {
         }
@@ -3066,6 +3895,7 @@ var ApiHeader;
         return APIGetCandidateVmNicForSecurityGroupMsg;
     })();
     ApiHeader.APIGetCandidateVmNicForSecurityGroupMsg = APIGetCandidateVmNicForSecurityGroupMsg;
+
     var APIAttachSecurityGroupToL3NetworkMsg = (function () {
         function APIAttachSecurityGroupToL3NetworkMsg() {
         }
@@ -3078,6 +3908,7 @@ var ApiHeader;
         return APIAttachSecurityGroupToL3NetworkMsg;
     })();
     ApiHeader.APIAttachSecurityGroupToL3NetworkMsg = APIAttachSecurityGroupToL3NetworkMsg;
+
     var APIAddVmNicToSecurityGroupMsg = (function () {
         function APIAddVmNicToSecurityGroupMsg() {
         }
@@ -3090,6 +3921,7 @@ var ApiHeader;
         return APIAddVmNicToSecurityGroupMsg;
     })();
     ApiHeader.APIAddVmNicToSecurityGroupMsg = APIAddVmNicToSecurityGroupMsg;
+
     var APIDeleteVipMsg = (function () {
         function APIDeleteVipMsg() {
         }
@@ -3102,6 +3934,20 @@ var ApiHeader;
         return APIDeleteVipMsg;
     })();
     ApiHeader.APIDeleteVipMsg = APIDeleteVipMsg;
+
+    var APIUpdateVipMsg = (function () {
+        function APIUpdateVipMsg() {
+        }
+        APIUpdateVipMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.network.service.vip.APIUpdateVipMsg': this
+            };
+            return msg;
+        };
+        return APIUpdateVipMsg;
+    })();
+    ApiHeader.APIUpdateVipMsg = APIUpdateVipMsg;
+
     var APIChangeVipStateMsg = (function () {
         function APIChangeVipStateMsg() {
         }
@@ -3114,6 +3960,7 @@ var ApiHeader;
         return APIChangeVipStateMsg;
     })();
     ApiHeader.APIChangeVipStateMsg = APIChangeVipStateMsg;
+
     var APICreateVipMsg = (function () {
         function APICreateVipMsg() {
         }
@@ -3126,6 +3973,7 @@ var ApiHeader;
         return APICreateVipMsg;
     })();
     ApiHeader.APICreateVipMsg = APICreateVipMsg;
+
     var APIQueryVipMsg = (function () {
         function APIQueryVipMsg() {
         }
@@ -3138,2027 +3986,2801 @@ var ApiHeader;
         return APIQueryVipMsg;
     })();
     ApiHeader.APIQueryVipMsg = APIQueryVipMsg;
+
     var ErrorCode = (function () {
         function ErrorCode() {
         }
         return ErrorCode;
     })();
     ApiHeader.ErrorCode = ErrorCode;
+
     var FakeApiEvent = (function () {
         function FakeApiEvent() {
         }
         return FakeApiEvent;
     })();
     ApiHeader.FakeApiEvent = FakeApiEvent;
+
     var GlobalConfigInventory = (function () {
         function GlobalConfigInventory() {
         }
         return GlobalConfigInventory;
     })();
     ApiHeader.GlobalConfigInventory = GlobalConfigInventory;
+
     var APIUpdateGlobalConfigEvent = (function () {
         function APIUpdateGlobalConfigEvent() {
         }
         return APIUpdateGlobalConfigEvent;
     })();
     ApiHeader.APIUpdateGlobalConfigEvent = APIUpdateGlobalConfigEvent;
+
     var InProgressEvent = (function () {
         function InProgressEvent() {
         }
         return InProgressEvent;
     })();
     ApiHeader.InProgressEvent = InProgressEvent;
+
     var FixedInProgressEvent = (function () {
         function FixedInProgressEvent() {
         }
         return FixedInProgressEvent;
     })();
     ApiHeader.FixedInProgressEvent = FixedInProgressEvent;
+
     var APIGenerateInventoryQueryDetailsEvent = (function () {
         function APIGenerateInventoryQueryDetailsEvent() {
         }
         return APIGenerateInventoryQueryDetailsEvent;
     })();
     ApiHeader.APIGenerateInventoryQueryDetailsEvent = APIGenerateInventoryQueryDetailsEvent;
+
     var APIGenerateQueryableFieldsEvent = (function () {
         function APIGenerateQueryableFieldsEvent() {
         }
         return APIGenerateQueryableFieldsEvent;
     })();
     ApiHeader.APIGenerateQueryableFieldsEvent = APIGenerateQueryableFieldsEvent;
+
     var VmNicInventory = (function () {
         function VmNicInventory() {
         }
         return VmNicInventory;
     })();
     ApiHeader.VmNicInventory = VmNicInventory;
+
     var VolumeInventory = (function () {
         function VolumeInventory() {
         }
         return VolumeInventory;
     })();
     ApiHeader.VolumeInventory = VolumeInventory;
+
     var VmInstanceInventory = (function () {
         function VmInstanceInventory() {
         }
         return VmInstanceInventory;
     })();
     ApiHeader.VmInstanceInventory = VmInstanceInventory;
-    var APIAttachNicToVmEvent = (function () {
-        function APIAttachNicToVmEvent() {
+
+    var APIDetachL3NetworkFromVmEvent = (function () {
+        function APIDetachL3NetworkFromVmEvent() {
         }
-        return APIAttachNicToVmEvent;
+        return APIDetachL3NetworkFromVmEvent;
     })();
-    ApiHeader.APIAttachNicToVmEvent = APIAttachNicToVmEvent;
+    ApiHeader.APIDetachL3NetworkFromVmEvent = APIDetachL3NetworkFromVmEvent;
+
     var APIStartVmInstanceEvent = (function () {
         function APIStartVmInstanceEvent() {
         }
         return APIStartVmInstanceEvent;
     })();
     ApiHeader.APIStartVmInstanceEvent = APIStartVmInstanceEvent;
+
+    var APIAttachL3NetworkToVmEvent = (function () {
+        function APIAttachL3NetworkToVmEvent() {
+        }
+        return APIAttachL3NetworkToVmEvent;
+    })();
+    ApiHeader.APIAttachL3NetworkToVmEvent = APIAttachL3NetworkToVmEvent;
+
     var APIStopVmInstanceEvent = (function () {
         function APIStopVmInstanceEvent() {
         }
         return APIStopVmInstanceEvent;
     })();
     ApiHeader.APIStopVmInstanceEvent = APIStopVmInstanceEvent;
+
     var APIMigrateVmEvent = (function () {
         function APIMigrateVmEvent() {
         }
         return APIMigrateVmEvent;
     })();
     ApiHeader.APIMigrateVmEvent = APIMigrateVmEvent;
+
+    var APIUpdateVmInstanceEvent = (function () {
+        function APIUpdateVmInstanceEvent() {
+        }
+        return APIUpdateVmInstanceEvent;
+    })();
+    ApiHeader.APIUpdateVmInstanceEvent = APIUpdateVmInstanceEvent;
+
     var APIDestroyVmInstanceEvent = (function () {
         function APIDestroyVmInstanceEvent() {
         }
         return APIDestroyVmInstanceEvent;
     })();
     ApiHeader.APIDestroyVmInstanceEvent = APIDestroyVmInstanceEvent;
+
+    var APIChangeInstanceOfferingEvent = (function () {
+        function APIChangeInstanceOfferingEvent() {
+        }
+        return APIChangeInstanceOfferingEvent;
+    })();
+    ApiHeader.APIChangeInstanceOfferingEvent = APIChangeInstanceOfferingEvent;
+
     var APICreateVmInstanceEvent = (function () {
         function APICreateVmInstanceEvent() {
         }
         return APICreateVmInstanceEvent;
     })();
     ApiHeader.APICreateVmInstanceEvent = APICreateVmInstanceEvent;
+
     var APIRebootVmInstanceEvent = (function () {
         function APIRebootVmInstanceEvent() {
         }
         return APIRebootVmInstanceEvent;
     })();
     ApiHeader.APIRebootVmInstanceEvent = APIRebootVmInstanceEvent;
+
     var ImageBackupStorageRefInventory = (function () {
         function ImageBackupStorageRefInventory() {
         }
         return ImageBackupStorageRefInventory;
     })();
     ApiHeader.ImageBackupStorageRefInventory = ImageBackupStorageRefInventory;
+
     var ImageInventory = (function () {
         function ImageInventory() {
         }
         return ImageInventory;
     })();
     ApiHeader.ImageInventory = ImageInventory;
+
     var APICreateRootVolumeTemplateFromRootVolumeEvent = (function () {
         function APICreateRootVolumeTemplateFromRootVolumeEvent() {
         }
         return APICreateRootVolumeTemplateFromRootVolumeEvent;
     })();
     ApiHeader.APICreateRootVolumeTemplateFromRootVolumeEvent = APICreateRootVolumeTemplateFromRootVolumeEvent;
+
     var APIChangeImageStateEvent = (function () {
         function APIChangeImageStateEvent() {
         }
         return APIChangeImageStateEvent;
     })();
     ApiHeader.APIChangeImageStateEvent = APIChangeImageStateEvent;
+
+    var APIUpdateImageEvent = (function () {
+        function APIUpdateImageEvent() {
+        }
+        return APIUpdateImageEvent;
+    })();
+    ApiHeader.APIUpdateImageEvent = APIUpdateImageEvent;
+
     var APICreateDataVolumeTemplateFromVolumeEvent = (function () {
         function APICreateDataVolumeTemplateFromVolumeEvent() {
         }
         return APICreateDataVolumeTemplateFromVolumeEvent;
     })();
     ApiHeader.APICreateDataVolumeTemplateFromVolumeEvent = APICreateDataVolumeTemplateFromVolumeEvent;
+
     var APICreateRootVolumeTemplateFromVolumeSnapshotEvent = (function () {
         function APICreateRootVolumeTemplateFromVolumeSnapshotEvent() {
         }
         return APICreateRootVolumeTemplateFromVolumeSnapshotEvent;
     })();
     ApiHeader.APICreateRootVolumeTemplateFromVolumeSnapshotEvent = APICreateRootVolumeTemplateFromVolumeSnapshotEvent;
+
     var APIAddImageEvent = (function () {
         function APIAddImageEvent() {
         }
         return APIAddImageEvent;
     })();
     ApiHeader.APIAddImageEvent = APIAddImageEvent;
+
     var APIDeleteImageEvent = (function () {
         function APIDeleteImageEvent() {
         }
         return APIDeleteImageEvent;
     })();
     ApiHeader.APIDeleteImageEvent = APIDeleteImageEvent;
+
     var ConsoleInventory = (function () {
         function ConsoleInventory() {
         }
         return ConsoleInventory;
     })();
     ApiHeader.ConsoleInventory = ConsoleInventory;
+
     var APIRequestConsoleAccessEvent = (function () {
         function APIRequestConsoleAccessEvent() {
         }
         return APIRequestConsoleAccessEvent;
     })();
     ApiHeader.APIRequestConsoleAccessEvent = APIRequestConsoleAccessEvent;
+
     var APICreateDataVolumeEvent = (function () {
         function APICreateDataVolumeEvent() {
         }
         return APICreateDataVolumeEvent;
     })();
     ApiHeader.APICreateDataVolumeEvent = APICreateDataVolumeEvent;
+
     var APIDetachDataVolumeFromVmEvent = (function () {
         function APIDetachDataVolumeFromVmEvent() {
         }
         return APIDetachDataVolumeFromVmEvent;
     })();
     ApiHeader.APIDetachDataVolumeFromVmEvent = APIDetachDataVolumeFromVmEvent;
+
+    var APIUpdateVolumeEvent = (function () {
+        function APIUpdateVolumeEvent() {
+        }
+        return APIUpdateVolumeEvent;
+    })();
+    ApiHeader.APIUpdateVolumeEvent = APIUpdateVolumeEvent;
+
     var APIDeleteDataVolumeEvent = (function () {
         function APIDeleteDataVolumeEvent() {
         }
         return APIDeleteDataVolumeEvent;
     })();
     ApiHeader.APIDeleteDataVolumeEvent = APIDeleteDataVolumeEvent;
+
     var APICreateDataVolumeFromVolumeSnapshotEvent = (function () {
         function APICreateDataVolumeFromVolumeSnapshotEvent() {
         }
         return APICreateDataVolumeFromVolumeSnapshotEvent;
     })();
     ApiHeader.APICreateDataVolumeFromVolumeSnapshotEvent = APICreateDataVolumeFromVolumeSnapshotEvent;
+
     var APIBackupDataVolumeEvent = (function () {
         function APIBackupDataVolumeEvent() {
         }
         return APIBackupDataVolumeEvent;
     })();
     ApiHeader.APIBackupDataVolumeEvent = APIBackupDataVolumeEvent;
+
     var APICreateDataVolumeFromVolumeTemplateEvent = (function () {
         function APICreateDataVolumeFromVolumeTemplateEvent() {
         }
         return APICreateDataVolumeFromVolumeTemplateEvent;
     })();
     ApiHeader.APICreateDataVolumeFromVolumeTemplateEvent = APICreateDataVolumeFromVolumeTemplateEvent;
+
     var APIChangeVolumeStateEvent = (function () {
         function APIChangeVolumeStateEvent() {
         }
         return APIChangeVolumeStateEvent;
     })();
     ApiHeader.APIChangeVolumeStateEvent = APIChangeVolumeStateEvent;
+
     var VolumeSnapshotBackupStorageRefInventory = (function () {
         function VolumeSnapshotBackupStorageRefInventory() {
         }
         return VolumeSnapshotBackupStorageRefInventory;
     })();
     ApiHeader.VolumeSnapshotBackupStorageRefInventory = VolumeSnapshotBackupStorageRefInventory;
+
     var VolumeSnapshotInventory = (function () {
         function VolumeSnapshotInventory() {
         }
         return VolumeSnapshotInventory;
     })();
     ApiHeader.VolumeSnapshotInventory = VolumeSnapshotInventory;
+
     var APICreateVolumeSnapshotEvent = (function () {
         function APICreateVolumeSnapshotEvent() {
         }
         return APICreateVolumeSnapshotEvent;
     })();
     ApiHeader.APICreateVolumeSnapshotEvent = APICreateVolumeSnapshotEvent;
+
     var APIAttachDataVolumeToVmEvent = (function () {
         function APIAttachDataVolumeToVmEvent() {
         }
         return APIAttachDataVolumeToVmEvent;
     })();
     ApiHeader.APIAttachDataVolumeToVmEvent = APIAttachDataVolumeToVmEvent;
+
     var DiskOfferingInventory = (function () {
         function DiskOfferingInventory() {
         }
         return DiskOfferingInventory;
     })();
     ApiHeader.DiskOfferingInventory = DiskOfferingInventory;
+
     var APICreateDiskOfferingEvent = (function () {
         function APICreateDiskOfferingEvent() {
         }
         return APICreateDiskOfferingEvent;
     })();
     ApiHeader.APICreateDiskOfferingEvent = APICreateDiskOfferingEvent;
+
     var APIChangeDiskOfferingStateEvent = (function () {
         function APIChangeDiskOfferingStateEvent() {
         }
         return APIChangeDiskOfferingStateEvent;
     })();
     ApiHeader.APIChangeDiskOfferingStateEvent = APIChangeDiskOfferingStateEvent;
+
+    var APIUpdateDiskOfferingEvent = (function () {
+        function APIUpdateDiskOfferingEvent() {
+        }
+        return APIUpdateDiskOfferingEvent;
+    })();
+    ApiHeader.APIUpdateDiskOfferingEvent = APIUpdateDiskOfferingEvent;
+
     var APIDeleteInstanceOfferingEvent = (function () {
         function APIDeleteInstanceOfferingEvent() {
         }
         return APIDeleteInstanceOfferingEvent;
     })();
     ApiHeader.APIDeleteInstanceOfferingEvent = APIDeleteInstanceOfferingEvent;
+
     var APIGenerateSqlForeignKeyEvent = (function () {
         function APIGenerateSqlForeignKeyEvent() {
         }
         return APIGenerateSqlForeignKeyEvent;
     })();
     ApiHeader.APIGenerateSqlForeignKeyEvent = APIGenerateSqlForeignKeyEvent;
+
     var APIDeleteDiskOfferingEvent = (function () {
         function APIDeleteDiskOfferingEvent() {
         }
         return APIDeleteDiskOfferingEvent;
     })();
     ApiHeader.APIDeleteDiskOfferingEvent = APIDeleteDiskOfferingEvent;
+
     var APIGenerateGroovyClassEvent = (function () {
         function APIGenerateGroovyClassEvent() {
         }
         return APIGenerateGroovyClassEvent;
     })();
     ApiHeader.APIGenerateGroovyClassEvent = APIGenerateGroovyClassEvent;
+
     var APIGenerateSqlIndexEvent = (function () {
         function APIGenerateSqlIndexEvent() {
         }
         return APIGenerateSqlIndexEvent;
     })();
     ApiHeader.APIGenerateSqlIndexEvent = APIGenerateSqlIndexEvent;
-    var APIGenerateApiTypeScriptDefinitionEvent = (function () {
-        function APIGenerateApiTypeScriptDefinitionEvent() {
-        }
-        return APIGenerateApiTypeScriptDefinitionEvent;
-    })();
-    ApiHeader.APIGenerateApiTypeScriptDefinitionEvent = APIGenerateApiTypeScriptDefinitionEvent;
-    var APIGenerateSqlVOViewEvent = (function () {
-        function APIGenerateSqlVOViewEvent() {
-        }
-        return APIGenerateSqlVOViewEvent;
-    })();
-    ApiHeader.APIGenerateSqlVOViewEvent = APIGenerateSqlVOViewEvent;
+
     var InstanceOfferingInventory = (function () {
         function InstanceOfferingInventory() {
         }
         return InstanceOfferingInventory;
     })();
     ApiHeader.InstanceOfferingInventory = InstanceOfferingInventory;
+
+    var APIUpdateInstanceOfferingEvent = (function () {
+        function APIUpdateInstanceOfferingEvent() {
+        }
+        return APIUpdateInstanceOfferingEvent;
+    })();
+    ApiHeader.APIUpdateInstanceOfferingEvent = APIUpdateInstanceOfferingEvent;
+
+    var APIGenerateApiTypeScriptDefinitionEvent = (function () {
+        function APIGenerateApiTypeScriptDefinitionEvent() {
+        }
+        return APIGenerateApiTypeScriptDefinitionEvent;
+    })();
+    ApiHeader.APIGenerateApiTypeScriptDefinitionEvent = APIGenerateApiTypeScriptDefinitionEvent;
+
+    var APIGenerateSqlVOViewEvent = (function () {
+        function APIGenerateSqlVOViewEvent() {
+        }
+        return APIGenerateSqlVOViewEvent;
+    })();
+    ApiHeader.APIGenerateSqlVOViewEvent = APIGenerateSqlVOViewEvent;
+
     var APICreateInstanceOfferingEvent = (function () {
         function APICreateInstanceOfferingEvent() {
         }
         return APICreateInstanceOfferingEvent;
     })();
     ApiHeader.APICreateInstanceOfferingEvent = APICreateInstanceOfferingEvent;
+
     var APIChangeInstanceOfferingStateEvent = (function () {
         function APIChangeInstanceOfferingStateEvent() {
         }
         return APIChangeInstanceOfferingStateEvent;
     })();
     ApiHeader.APIChangeInstanceOfferingStateEvent = APIChangeInstanceOfferingStateEvent;
+
     var APIGenerateTestLinkDocumentEvent = (function () {
         function APIGenerateTestLinkDocumentEvent() {
         }
         return APIGenerateTestLinkDocumentEvent;
     })();
     ApiHeader.APIGenerateTestLinkDocumentEvent = APIGenerateTestLinkDocumentEvent;
+
     var APIGenerateApiJsonTemplateEvent = (function () {
         function APIGenerateApiJsonTemplateEvent() {
         }
         return APIGenerateApiJsonTemplateEvent;
     })();
     ApiHeader.APIGenerateApiJsonTemplateEvent = APIGenerateApiJsonTemplateEvent;
-    var APIDeletePrimaryStorageEvent = (function () {
-        function APIDeletePrimaryStorageEvent() {
-        }
-        return APIDeletePrimaryStorageEvent;
-    })();
-    ApiHeader.APIDeletePrimaryStorageEvent = APIDeletePrimaryStorageEvent;
+
     var PrimaryStorageInventory = (function () {
         function PrimaryStorageInventory() {
         }
         return PrimaryStorageInventory;
     })();
     ApiHeader.PrimaryStorageInventory = PrimaryStorageInventory;
+
+    var APISyncPrimaryStorageCapacityEvent = (function () {
+        function APISyncPrimaryStorageCapacityEvent() {
+        }
+        return APISyncPrimaryStorageCapacityEvent;
+    })();
+    ApiHeader.APISyncPrimaryStorageCapacityEvent = APISyncPrimaryStorageCapacityEvent;
+
+    var APIDeletePrimaryStorageEvent = (function () {
+        function APIDeletePrimaryStorageEvent() {
+        }
+        return APIDeletePrimaryStorageEvent;
+    })();
+    ApiHeader.APIDeletePrimaryStorageEvent = APIDeletePrimaryStorageEvent;
+
     var APIDetachPrimaryStorageFromClusterEvent = (function () {
         function APIDetachPrimaryStorageFromClusterEvent() {
         }
         return APIDetachPrimaryStorageFromClusterEvent;
     })();
     ApiHeader.APIDetachPrimaryStorageFromClusterEvent = APIDetachPrimaryStorageFromClusterEvent;
+
     var APIChangePrimaryStorageStateEvent = (function () {
         function APIChangePrimaryStorageStateEvent() {
         }
         return APIChangePrimaryStorageStateEvent;
     })();
     ApiHeader.APIChangePrimaryStorageStateEvent = APIChangePrimaryStorageStateEvent;
+
+    var APIUpdatePrimaryStorageEvent = (function () {
+        function APIUpdatePrimaryStorageEvent() {
+        }
+        return APIUpdatePrimaryStorageEvent;
+    })();
+    ApiHeader.APIUpdatePrimaryStorageEvent = APIUpdatePrimaryStorageEvent;
+
     var APIReconnectPrimaryStorageEvent = (function () {
         function APIReconnectPrimaryStorageEvent() {
         }
         return APIReconnectPrimaryStorageEvent;
     })();
     ApiHeader.APIReconnectPrimaryStorageEvent = APIReconnectPrimaryStorageEvent;
+
     var APIAttachPrimaryStorageToClusterEvent = (function () {
         function APIAttachPrimaryStorageToClusterEvent() {
         }
         return APIAttachPrimaryStorageToClusterEvent;
     })();
     ApiHeader.APIAttachPrimaryStorageToClusterEvent = APIAttachPrimaryStorageToClusterEvent;
+
     var APIAddPrimaryStorageEvent = (function () {
         function APIAddPrimaryStorageEvent() {
         }
         return APIAddPrimaryStorageEvent;
     })();
     ApiHeader.APIAddPrimaryStorageEvent = APIAddPrimaryStorageEvent;
+
     var APIDeleteVolumeSnapshotEvent = (function () {
         function APIDeleteVolumeSnapshotEvent() {
         }
         return APIDeleteVolumeSnapshotEvent;
     })();
     ApiHeader.APIDeleteVolumeSnapshotEvent = APIDeleteVolumeSnapshotEvent;
+
+    var APIUpdateVolumeSnapshotEvent = (function () {
+        function APIUpdateVolumeSnapshotEvent() {
+        }
+        return APIUpdateVolumeSnapshotEvent;
+    })();
+    ApiHeader.APIUpdateVolumeSnapshotEvent = APIUpdateVolumeSnapshotEvent;
+
     var APIRevertVolumeFromSnapshotEvent = (function () {
         function APIRevertVolumeFromSnapshotEvent() {
         }
         return APIRevertVolumeFromSnapshotEvent;
     })();
     ApiHeader.APIRevertVolumeFromSnapshotEvent = APIRevertVolumeFromSnapshotEvent;
+
     var APIDeleteVolumeSnapshotFromBackupStorageEvent = (function () {
         function APIDeleteVolumeSnapshotFromBackupStorageEvent() {
         }
         return APIDeleteVolumeSnapshotFromBackupStorageEvent;
     })();
     ApiHeader.APIDeleteVolumeSnapshotFromBackupStorageEvent = APIDeleteVolumeSnapshotFromBackupStorageEvent;
+
     var APIBackupVolumeSnapshotEvent = (function () {
         function APIBackupVolumeSnapshotEvent() {
         }
         return APIBackupVolumeSnapshotEvent;
     })();
     ApiHeader.APIBackupVolumeSnapshotEvent = APIBackupVolumeSnapshotEvent;
+
     var BackupStorageInventory = (function () {
         function BackupStorageInventory() {
         }
         return BackupStorageInventory;
     })();
     ApiHeader.BackupStorageInventory = BackupStorageInventory;
+
+    var APIUpdateBackupStorageEvent = (function () {
+        function APIUpdateBackupStorageEvent() {
+        }
+        return APIUpdateBackupStorageEvent;
+    })();
+    ApiHeader.APIUpdateBackupStorageEvent = APIUpdateBackupStorageEvent;
+
     var APIDetachBackupStorageFromZoneEvent = (function () {
         function APIDetachBackupStorageFromZoneEvent() {
         }
         return APIDetachBackupStorageFromZoneEvent;
     })();
     ApiHeader.APIDetachBackupStorageFromZoneEvent = APIDetachBackupStorageFromZoneEvent;
+
     var APIScanBackupStorageEvent = (function () {
         function APIScanBackupStorageEvent() {
         }
         return APIScanBackupStorageEvent;
     })();
     ApiHeader.APIScanBackupStorageEvent = APIScanBackupStorageEvent;
+
     var APIAddBackupStorageEvent = (function () {
         function APIAddBackupStorageEvent() {
         }
         return APIAddBackupStorageEvent;
     })();
     ApiHeader.APIAddBackupStorageEvent = APIAddBackupStorageEvent;
+
     var APIAttachBackupStorageToZoneEvent = (function () {
         function APIAttachBackupStorageToZoneEvent() {
         }
         return APIAttachBackupStorageToZoneEvent;
     })();
     ApiHeader.APIAttachBackupStorageToZoneEvent = APIAttachBackupStorageToZoneEvent;
+
     var APIChangeBackupStorageStateEvent = (function () {
         function APIChangeBackupStorageStateEvent() {
         }
         return APIChangeBackupStorageStateEvent;
     })();
     ApiHeader.APIChangeBackupStorageStateEvent = APIChangeBackupStorageStateEvent;
+
     var APIDeleteBackupStorageEvent = (function () {
         function APIDeleteBackupStorageEvent() {
         }
         return APIDeleteBackupStorageEvent;
     })();
     ApiHeader.APIDeleteBackupStorageEvent = APIDeleteBackupStorageEvent;
+
     var IpRangeInventory = (function () {
         function IpRangeInventory() {
         }
         return IpRangeInventory;
     })();
     ApiHeader.IpRangeInventory = IpRangeInventory;
+
     var APIAddIpRangeEvent = (function () {
         function APIAddIpRangeEvent() {
         }
         return APIAddIpRangeEvent;
     })();
     ApiHeader.APIAddIpRangeEvent = APIAddIpRangeEvent;
+
     var NetworkServiceL3NetworkRefInventory = (function () {
         function NetworkServiceL3NetworkRefInventory() {
         }
         return NetworkServiceL3NetworkRefInventory;
     })();
     ApiHeader.NetworkServiceL3NetworkRefInventory = NetworkServiceL3NetworkRefInventory;
+
     var L3NetworkInventory = (function () {
         function L3NetworkInventory() {
         }
         return L3NetworkInventory;
     })();
     ApiHeader.L3NetworkInventory = L3NetworkInventory;
+
     var APIRemoveDnsFromL3NetworkEvent = (function () {
         function APIRemoveDnsFromL3NetworkEvent() {
         }
         return APIRemoveDnsFromL3NetworkEvent;
     })();
     ApiHeader.APIRemoveDnsFromL3NetworkEvent = APIRemoveDnsFromL3NetworkEvent;
+
     var APIDeleteL3NetworkEvent = (function () {
         function APIDeleteL3NetworkEvent() {
         }
         return APIDeleteL3NetworkEvent;
     })();
     ApiHeader.APIDeleteL3NetworkEvent = APIDeleteL3NetworkEvent;
+
     var APIChangeL3NetworkStateEvent = (function () {
         function APIChangeL3NetworkStateEvent() {
         }
         return APIChangeL3NetworkStateEvent;
     })();
     ApiHeader.APIChangeL3NetworkStateEvent = APIChangeL3NetworkStateEvent;
+
     var APIDeleteIpRangeEvent = (function () {
         function APIDeleteIpRangeEvent() {
         }
         return APIDeleteIpRangeEvent;
     })();
     ApiHeader.APIDeleteIpRangeEvent = APIDeleteIpRangeEvent;
+
     var APIAddIpRangeByNetworkCidrEvent = (function () {
         function APIAddIpRangeByNetworkCidrEvent() {
         }
         return APIAddIpRangeByNetworkCidrEvent;
     })();
     ApiHeader.APIAddIpRangeByNetworkCidrEvent = APIAddIpRangeByNetworkCidrEvent;
+
+    var APIUpdateIpRangeEvent = (function () {
+        function APIUpdateIpRangeEvent() {
+        }
+        return APIUpdateIpRangeEvent;
+    })();
+    ApiHeader.APIUpdateIpRangeEvent = APIUpdateIpRangeEvent;
+
+    var APIUpdateL3NetworkEvent = (function () {
+        function APIUpdateL3NetworkEvent() {
+        }
+        return APIUpdateL3NetworkEvent;
+    })();
+    ApiHeader.APIUpdateL3NetworkEvent = APIUpdateL3NetworkEvent;
+
     var APIAddDnsToL3NetworkEvent = (function () {
         function APIAddDnsToL3NetworkEvent() {
         }
         return APIAddDnsToL3NetworkEvent;
     })();
     ApiHeader.APIAddDnsToL3NetworkEvent = APIAddDnsToL3NetworkEvent;
+
     var APICreateL3NetworkEvent = (function () {
         function APICreateL3NetworkEvent() {
         }
         return APICreateL3NetworkEvent;
     })();
     ApiHeader.APICreateL3NetworkEvent = APICreateL3NetworkEvent;
+
     var NetworkServiceProviderInventory = (function () {
         function NetworkServiceProviderInventory() {
         }
         return NetworkServiceProviderInventory;
     })();
     ApiHeader.NetworkServiceProviderInventory = NetworkServiceProviderInventory;
+
     var APIDetachNetworkServiceProviderFromL2NetworkEvent = (function () {
         function APIDetachNetworkServiceProviderFromL2NetworkEvent() {
         }
         return APIDetachNetworkServiceProviderFromL2NetworkEvent;
     })();
     ApiHeader.APIDetachNetworkServiceProviderFromL2NetworkEvent = APIDetachNetworkServiceProviderFromL2NetworkEvent;
+
     var APIAddNetworkServiceProviderEvent = (function () {
         function APIAddNetworkServiceProviderEvent() {
         }
         return APIAddNetworkServiceProviderEvent;
     })();
     ApiHeader.APIAddNetworkServiceProviderEvent = APIAddNetworkServiceProviderEvent;
+
     var APIAttachNetworkServiceProviderToL2NetworkEvent = (function () {
         function APIAttachNetworkServiceProviderToL2NetworkEvent() {
         }
         return APIAttachNetworkServiceProviderToL2NetworkEvent;
     })();
     ApiHeader.APIAttachNetworkServiceProviderToL2NetworkEvent = APIAttachNetworkServiceProviderToL2NetworkEvent;
+
     var APIAttachNetworkServiceToL3NetworkEvent = (function () {
         function APIAttachNetworkServiceToL3NetworkEvent() {
         }
         return APIAttachNetworkServiceToL3NetworkEvent;
     })();
     ApiHeader.APIAttachNetworkServiceToL3NetworkEvent = APIAttachNetworkServiceToL3NetworkEvent;
+
     var L2NetworkInventory = (function () {
         function L2NetworkInventory() {
         }
         return L2NetworkInventory;
     })();
     ApiHeader.L2NetworkInventory = L2NetworkInventory;
+
     var APIAttachL2NetworkToClusterEvent = (function () {
         function APIAttachL2NetworkToClusterEvent() {
         }
         return APIAttachL2NetworkToClusterEvent;
     })();
     ApiHeader.APIAttachL2NetworkToClusterEvent = APIAttachL2NetworkToClusterEvent;
+
     var L2VlanNetworkInventory = (function () {
         function L2VlanNetworkInventory() {
         }
         return L2VlanNetworkInventory;
     })();
     ApiHeader.L2VlanNetworkInventory = L2VlanNetworkInventory;
+
     var APICreateL2VlanNetworkEvent = (function () {
         function APICreateL2VlanNetworkEvent() {
         }
         return APICreateL2VlanNetworkEvent;
     })();
     ApiHeader.APICreateL2VlanNetworkEvent = APICreateL2VlanNetworkEvent;
+
     var APIDetachL2NetworkFromClusterEvent = (function () {
         function APIDetachL2NetworkFromClusterEvent() {
         }
         return APIDetachL2NetworkFromClusterEvent;
     })();
     ApiHeader.APIDetachL2NetworkFromClusterEvent = APIDetachL2NetworkFromClusterEvent;
+
     var APIDeleteL2NetworkEvent = (function () {
         function APIDeleteL2NetworkEvent() {
         }
         return APIDeleteL2NetworkEvent;
     })();
     ApiHeader.APIDeleteL2NetworkEvent = APIDeleteL2NetworkEvent;
+
     var APICreateL2NetworkEvent = (function () {
         function APICreateL2NetworkEvent() {
         }
         return APICreateL2NetworkEvent;
     })();
     ApiHeader.APICreateL2NetworkEvent = APICreateL2NetworkEvent;
+
+    var APIUpdateL2NetworkEvent = (function () {
+        function APIUpdateL2NetworkEvent() {
+        }
+        return APIUpdateL2NetworkEvent;
+    })();
+    ApiHeader.APIUpdateL2NetworkEvent = APIUpdateL2NetworkEvent;
+
     var APIDeleteSearchIndexEvent = (function () {
         function APIDeleteSearchIndexEvent() {
         }
         return APIDeleteSearchIndexEvent;
     })();
     ApiHeader.APIDeleteSearchIndexEvent = APIDeleteSearchIndexEvent;
+
     var APISearchGenerateSqlTriggerEvent = (function () {
         function APISearchGenerateSqlTriggerEvent() {
         }
         return APISearchGenerateSqlTriggerEvent;
     })();
     ApiHeader.APISearchGenerateSqlTriggerEvent = APISearchGenerateSqlTriggerEvent;
+
     var APICreateSearchIndexEvent = (function () {
         function APICreateSearchIndexEvent() {
         }
         return APICreateSearchIndexEvent;
     })();
     ApiHeader.APICreateSearchIndexEvent = APICreateSearchIndexEvent;
+
     var UserTagInventory = (function () {
         function UserTagInventory() {
         }
         return UserTagInventory;
     })();
     ApiHeader.UserTagInventory = UserTagInventory;
+
     var APICreateUserTagEvent = (function () {
         function APICreateUserTagEvent() {
         }
         return APICreateUserTagEvent;
     })();
     ApiHeader.APICreateUserTagEvent = APICreateUserTagEvent;
+
     var APIDeleteTagEvent = (function () {
         function APIDeleteTagEvent() {
         }
         return APIDeleteTagEvent;
     })();
     ApiHeader.APIDeleteTagEvent = APIDeleteTagEvent;
+
     var TagInventory = (function () {
         function TagInventory() {
         }
         return TagInventory;
     })();
     ApiHeader.TagInventory = TagInventory;
+
     var APICreateTagEvent = (function () {
         function APICreateTagEvent() {
         }
         return APICreateTagEvent;
     })();
     ApiHeader.APICreateTagEvent = APICreateTagEvent;
+
     var SystemTagInventory = (function () {
         function SystemTagInventory() {
         }
         return SystemTagInventory;
     })();
     ApiHeader.SystemTagInventory = SystemTagInventory;
+
     var APICreateSystemTagEvent = (function () {
         function APICreateSystemTagEvent() {
         }
         return APICreateSystemTagEvent;
     })();
     ApiHeader.APICreateSystemTagEvent = APICreateSystemTagEvent;
+
     var APIEvent = (function () {
         function APIEvent() {
         }
         return APIEvent;
     })();
     ApiHeader.APIEvent = APIEvent;
+
     var APIDeleteClusterEvent = (function () {
         function APIDeleteClusterEvent() {
         }
         return APIDeleteClusterEvent;
     })();
     ApiHeader.APIDeleteClusterEvent = APIDeleteClusterEvent;
+
     var ClusterInventory = (function () {
         function ClusterInventory() {
         }
         return ClusterInventory;
     })();
     ApiHeader.ClusterInventory = ClusterInventory;
+
     var APICreateClusterEvent = (function () {
         function APICreateClusterEvent() {
         }
         return APICreateClusterEvent;
     })();
     ApiHeader.APICreateClusterEvent = APICreateClusterEvent;
+
     var APIChangeClusterStateEvent = (function () {
         function APIChangeClusterStateEvent() {
         }
         return APIChangeClusterStateEvent;
     })();
     ApiHeader.APIChangeClusterStateEvent = APIChangeClusterStateEvent;
+
+    var APIUpdateClusterEvent = (function () {
+        function APIUpdateClusterEvent() {
+        }
+        return APIUpdateClusterEvent;
+    })();
+    ApiHeader.APIUpdateClusterEvent = APIUpdateClusterEvent;
+
+    var APIRemoveUserFromGroupEvent = (function () {
+        function APIRemoveUserFromGroupEvent() {
+        }
+        return APIRemoveUserFromGroupEvent;
+    })();
+    ApiHeader.APIRemoveUserFromGroupEvent = APIRemoveUserFromGroupEvent;
+
     var AccountInventory = (function () {
         function AccountInventory() {
         }
         return AccountInventory;
     })();
     ApiHeader.AccountInventory = AccountInventory;
+
     var APICreateAccountEvent = (function () {
         function APICreateAccountEvent() {
         }
         return APICreateAccountEvent;
     })();
     ApiHeader.APICreateAccountEvent = APICreateAccountEvent;
+
+    var APIDeleteUserGroupEvent = (function () {
+        function APIDeleteUserGroupEvent() {
+        }
+        return APIDeleteUserGroupEvent;
+    })();
+    ApiHeader.APIDeleteUserGroupEvent = APIDeleteUserGroupEvent;
+
     var APIAttachPolicyToUserEvent = (function () {
         function APIAttachPolicyToUserEvent() {
         }
         return APIAttachPolicyToUserEvent;
     })();
     ApiHeader.APIAttachPolicyToUserEvent = APIAttachPolicyToUserEvent;
+
+    var APIShareResourceEvent = (function () {
+        function APIShareResourceEvent() {
+        }
+        return APIShareResourceEvent;
+    })();
+    ApiHeader.APIShareResourceEvent = APIShareResourceEvent;
+
+    var APIDetachPolicyFromUserGroupEvent = (function () {
+        function APIDetachPolicyFromUserGroupEvent() {
+        }
+        return APIDetachPolicyFromUserGroupEvent;
+    })();
+    ApiHeader.APIDetachPolicyFromUserGroupEvent = APIDetachPolicyFromUserGroupEvent;
+
+    var APIResetUserPasswordEvent = (function () {
+        function APIResetUserPasswordEvent() {
+        }
+        return APIResetUserPasswordEvent;
+    })();
+    ApiHeader.APIResetUserPasswordEvent = APIResetUserPasswordEvent;
+
+    var APIDeletePolicyEvent = (function () {
+        function APIDeletePolicyEvent() {
+        }
+        return APIDeletePolicyEvent;
+    })();
+    ApiHeader.APIDeletePolicyEvent = APIDeletePolicyEvent;
+
+    var APIAddUserToGroupEvent = (function () {
+        function APIAddUserToGroupEvent() {
+        }
+        return APIAddUserToGroupEvent;
+    })();
+    ApiHeader.APIAddUserToGroupEvent = APIAddUserToGroupEvent;
+
+    var APIDeleteAccountEvent = (function () {
+        function APIDeleteAccountEvent() {
+        }
+        return APIDeleteAccountEvent;
+    })();
+    ApiHeader.APIDeleteAccountEvent = APIDeleteAccountEvent;
+
     var APIResetAccountPasswordEvent = (function () {
         function APIResetAccountPasswordEvent() {
         }
         return APIResetAccountPasswordEvent;
     })();
     ApiHeader.APIResetAccountPasswordEvent = APIResetAccountPasswordEvent;
+
+    var QuotaInventory = (function () {
+        function QuotaInventory() {
+        }
+        return QuotaInventory;
+    })();
+    ApiHeader.QuotaInventory = QuotaInventory;
+
+    var APIUpdateQuotaEvent = (function () {
+        function APIUpdateQuotaEvent() {
+        }
+        return APIUpdateQuotaEvent;
+    })();
+    ApiHeader.APIUpdateQuotaEvent = APIUpdateQuotaEvent;
+
     var PolicyInventory = (function () {
         function PolicyInventory() {
         }
         return PolicyInventory;
     })();
     ApiHeader.PolicyInventory = PolicyInventory;
+
     var APICreatePolicyEvent = (function () {
         function APICreatePolicyEvent() {
         }
         return APICreatePolicyEvent;
     })();
     ApiHeader.APICreatePolicyEvent = APICreatePolicyEvent;
-    var UserGroupInventory = (function () {
-        function UserGroupInventory() {
-        }
-        return UserGroupInventory;
-    })();
-    ApiHeader.UserGroupInventory = UserGroupInventory;
+
     var UserInventory = (function () {
         function UserInventory() {
         }
         return UserInventory;
     })();
     ApiHeader.UserInventory = UserInventory;
+
     var APICreateUserEvent = (function () {
         function APICreateUserEvent() {
         }
         return APICreateUserEvent;
     })();
     ApiHeader.APICreateUserEvent = APICreateUserEvent;
-    var APIAttachUserToUserGroupEvent = (function () {
-        function APIAttachUserToUserGroupEvent() {
+
+    var APIDetachPolicyFromUserEvent = (function () {
+        function APIDetachPolicyFromUserEvent() {
         }
-        return APIAttachUserToUserGroupEvent;
+        return APIDetachPolicyFromUserEvent;
     })();
-    ApiHeader.APIAttachUserToUserGroupEvent = APIAttachUserToUserGroupEvent;
+    ApiHeader.APIDetachPolicyFromUserEvent = APIDetachPolicyFromUserEvent;
+
+    var APIDeleteUserEvent = (function () {
+        function APIDeleteUserEvent() {
+        }
+        return APIDeleteUserEvent;
+    })();
+    ApiHeader.APIDeleteUserEvent = APIDeleteUserEvent;
+
+    var UserGroupInventory = (function () {
+        function UserGroupInventory() {
+        }
+        return UserGroupInventory;
+    })();
+    ApiHeader.UserGroupInventory = UserGroupInventory;
+
     var APICreateUserGroupEvent = (function () {
         function APICreateUserGroupEvent() {
         }
         return APICreateUserGroupEvent;
     })();
     ApiHeader.APICreateUserGroupEvent = APICreateUserGroupEvent;
+
     var APIAttachPolicyToUserGroupEvent = (function () {
         function APIAttachPolicyToUserGroupEvent() {
         }
         return APIAttachPolicyToUserGroupEvent;
     })();
     ApiHeader.APIAttachPolicyToUserGroupEvent = APIAttachPolicyToUserGroupEvent;
+
+    var APIRevokeResourceSharingEvent = (function () {
+        function APIRevokeResourceSharingEvent() {
+        }
+        return APIRevokeResourceSharingEvent;
+    })();
+    ApiHeader.APIRevokeResourceSharingEvent = APIRevokeResourceSharingEvent;
+
     var ZoneInventory = (function () {
         function ZoneInventory() {
         }
         return ZoneInventory;
     })();
     ApiHeader.ZoneInventory = ZoneInventory;
+
+    var APIUpdateZoneEvent = (function () {
+        function APIUpdateZoneEvent() {
+        }
+        return APIUpdateZoneEvent;
+    })();
+    ApiHeader.APIUpdateZoneEvent = APIUpdateZoneEvent;
+
     var APIChangeZoneStateEvent = (function () {
         function APIChangeZoneStateEvent() {
         }
         return APIChangeZoneStateEvent;
     })();
     ApiHeader.APIChangeZoneStateEvent = APIChangeZoneStateEvent;
+
     var APICreateZoneEvent = (function () {
         function APICreateZoneEvent() {
         }
         return APICreateZoneEvent;
     })();
     ApiHeader.APICreateZoneEvent = APICreateZoneEvent;
+
     var APIDeleteZoneEvent = (function () {
         function APIDeleteZoneEvent() {
         }
         return APIDeleteZoneEvent;
     })();
     ApiHeader.APIDeleteZoneEvent = APIDeleteZoneEvent;
+
     var HostInventory = (function () {
         function HostInventory() {
         }
         return HostInventory;
     })();
     ApiHeader.HostInventory = HostInventory;
+
     var APIAddHostEvent = (function () {
         function APIAddHostEvent() {
         }
         return APIAddHostEvent;
     })();
     ApiHeader.APIAddHostEvent = APIAddHostEvent;
+
     var APIChangeHostStateEvent = (function () {
         function APIChangeHostStateEvent() {
         }
         return APIChangeHostStateEvent;
     })();
     ApiHeader.APIChangeHostStateEvent = APIChangeHostStateEvent;
+
     var APIDeleteHostEvent = (function () {
         function APIDeleteHostEvent() {
         }
         return APIDeleteHostEvent;
     })();
     ApiHeader.APIDeleteHostEvent = APIDeleteHostEvent;
+
     var APIReconnectHostEvent = (function () {
         function APIReconnectHostEvent() {
         }
         return APIReconnectHostEvent;
     })();
     ApiHeader.APIReconnectHostEvent = APIReconnectHostEvent;
+
+    var APIUpdateHostEvent = (function () {
+        function APIUpdateHostEvent() {
+        }
+        return APIUpdateHostEvent;
+    })();
+    ApiHeader.APIUpdateHostEvent = APIUpdateHostEvent;
+
     var SftpBackupStorageInventory = (function () {
         function SftpBackupStorageInventory() {
         }
         return SftpBackupStorageInventory;
     })();
     ApiHeader.SftpBackupStorageInventory = SftpBackupStorageInventory;
+
     var APIAddSftpBackupStorageEvent = (function () {
         function APIAddSftpBackupStorageEvent() {
         }
         return APIAddSftpBackupStorageEvent;
     })();
     ApiHeader.APIAddSftpBackupStorageEvent = APIAddSftpBackupStorageEvent;
+
     var APIReconnectSftpBackupStorageEvent = (function () {
         function APIReconnectSftpBackupStorageEvent() {
         }
         return APIReconnectSftpBackupStorageEvent;
     })();
     ApiHeader.APIReconnectSftpBackupStorageEvent = APIReconnectSftpBackupStorageEvent;
+
     var ApplianceVmInventory = (function () {
         function ApplianceVmInventory() {
         }
         return ApplianceVmInventory;
     })();
     ApiHeader.ApplianceVmInventory = ApplianceVmInventory;
+
     var APIReconnectVirtualRouterEvent = (function () {
         function APIReconnectVirtualRouterEvent() {
         }
         return APIReconnectVirtualRouterEvent;
     })();
     ApiHeader.APIReconnectVirtualRouterEvent = APIReconnectVirtualRouterEvent;
+
     var APIDeletePortForwardingRuleEvent = (function () {
         function APIDeletePortForwardingRuleEvent() {
         }
         return APIDeletePortForwardingRuleEvent;
     })();
     ApiHeader.APIDeletePortForwardingRuleEvent = APIDeletePortForwardingRuleEvent;
+
     var PortForwardingRuleInventory = (function () {
         function PortForwardingRuleInventory() {
         }
         return PortForwardingRuleInventory;
     })();
     ApiHeader.PortForwardingRuleInventory = PortForwardingRuleInventory;
+
     var APIChangePortForwardingRuleStateEvent = (function () {
         function APIChangePortForwardingRuleStateEvent() {
         }
         return APIChangePortForwardingRuleStateEvent;
     })();
     ApiHeader.APIChangePortForwardingRuleStateEvent = APIChangePortForwardingRuleStateEvent;
+
     var APIDetachPortForwardingRuleEvent = (function () {
         function APIDetachPortForwardingRuleEvent() {
         }
         return APIDetachPortForwardingRuleEvent;
     })();
     ApiHeader.APIDetachPortForwardingRuleEvent = APIDetachPortForwardingRuleEvent;
+
     var APIAttachPortForwardingRuleEvent = (function () {
         function APIAttachPortForwardingRuleEvent() {
         }
         return APIAttachPortForwardingRuleEvent;
     })();
     ApiHeader.APIAttachPortForwardingRuleEvent = APIAttachPortForwardingRuleEvent;
+
     var APICreatePortForwardingRuleEvent = (function () {
         function APICreatePortForwardingRuleEvent() {
         }
         return APICreatePortForwardingRuleEvent;
     })();
     ApiHeader.APICreatePortForwardingRuleEvent = APICreatePortForwardingRuleEvent;
+
+    var APIUpdatePortForwardingRuleEvent = (function () {
+        function APIUpdatePortForwardingRuleEvent() {
+        }
+        return APIUpdatePortForwardingRuleEvent;
+    })();
+    ApiHeader.APIUpdatePortForwardingRuleEvent = APIUpdatePortForwardingRuleEvent;
+
     var EipInventory = (function () {
         function EipInventory() {
         }
         return EipInventory;
     })();
     ApiHeader.EipInventory = EipInventory;
+
     var APIChangeEipStateEvent = (function () {
         function APIChangeEipStateEvent() {
         }
         return APIChangeEipStateEvent;
     })();
     ApiHeader.APIChangeEipStateEvent = APIChangeEipStateEvent;
+
+    var APIUpdateEipEvent = (function () {
+        function APIUpdateEipEvent() {
+        }
+        return APIUpdateEipEvent;
+    })();
+    ApiHeader.APIUpdateEipEvent = APIUpdateEipEvent;
+
     var APICreateEipEvent = (function () {
         function APICreateEipEvent() {
         }
         return APICreateEipEvent;
     })();
     ApiHeader.APICreateEipEvent = APICreateEipEvent;
+
     var APIDetachEipEvent = (function () {
         function APIDetachEipEvent() {
         }
         return APIDetachEipEvent;
     })();
     ApiHeader.APIDetachEipEvent = APIDetachEipEvent;
+
     var APIAttachEipEvent = (function () {
         function APIAttachEipEvent() {
         }
         return APIAttachEipEvent;
     })();
     ApiHeader.APIAttachEipEvent = APIAttachEipEvent;
+
     var APIDeleteEipEvent = (function () {
         function APIDeleteEipEvent() {
         }
         return APIDeleteEipEvent;
     })();
     ApiHeader.APIDeleteEipEvent = APIDeleteEipEvent;
+
     var SecurityGroupRuleInventory = (function () {
         function SecurityGroupRuleInventory() {
         }
         return SecurityGroupRuleInventory;
     })();
     ApiHeader.SecurityGroupRuleInventory = SecurityGroupRuleInventory;
+
     var SecurityGroupInventory = (function () {
         function SecurityGroupInventory() {
         }
         return SecurityGroupInventory;
     })();
     ApiHeader.SecurityGroupInventory = SecurityGroupInventory;
+
     var APIAttachSecurityGroupToL3NetworkEvent = (function () {
         function APIAttachSecurityGroupToL3NetworkEvent() {
         }
         return APIAttachSecurityGroupToL3NetworkEvent;
     })();
     ApiHeader.APIAttachSecurityGroupToL3NetworkEvent = APIAttachSecurityGroupToL3NetworkEvent;
+
     var APIDeleteSecurityGroupRuleEvent = (function () {
         function APIDeleteSecurityGroupRuleEvent() {
         }
         return APIDeleteSecurityGroupRuleEvent;
     })();
     ApiHeader.APIDeleteSecurityGroupRuleEvent = APIDeleteSecurityGroupRuleEvent;
+
     var APIAddVmNicToSecurityGroupEvent = (function () {
         function APIAddVmNicToSecurityGroupEvent() {
         }
         return APIAddVmNicToSecurityGroupEvent;
     })();
     ApiHeader.APIAddVmNicToSecurityGroupEvent = APIAddVmNicToSecurityGroupEvent;
+
     var APIChangeSecurityGroupStateEvent = (function () {
         function APIChangeSecurityGroupStateEvent() {
         }
         return APIChangeSecurityGroupStateEvent;
     })();
     ApiHeader.APIChangeSecurityGroupStateEvent = APIChangeSecurityGroupStateEvent;
+
+    var APIUpdateSecurityGroupEvent = (function () {
+        function APIUpdateSecurityGroupEvent() {
+        }
+        return APIUpdateSecurityGroupEvent;
+    })();
+    ApiHeader.APIUpdateSecurityGroupEvent = APIUpdateSecurityGroupEvent;
+
     var APIDeleteVmNicFromSecurityGroupEvent = (function () {
         function APIDeleteVmNicFromSecurityGroupEvent() {
         }
         return APIDeleteVmNicFromSecurityGroupEvent;
     })();
     ApiHeader.APIDeleteVmNicFromSecurityGroupEvent = APIDeleteVmNicFromSecurityGroupEvent;
+
     var APIAddSecurityGroupRuleEvent = (function () {
         function APIAddSecurityGroupRuleEvent() {
         }
         return APIAddSecurityGroupRuleEvent;
     })();
     ApiHeader.APIAddSecurityGroupRuleEvent = APIAddSecurityGroupRuleEvent;
+
     var APICreateSecurityGroupEvent = (function () {
         function APICreateSecurityGroupEvent() {
         }
         return APICreateSecurityGroupEvent;
     })();
     ApiHeader.APICreateSecurityGroupEvent = APICreateSecurityGroupEvent;
+
     var APIDetachSecurityGroupFromL3NetworkEvent = (function () {
         function APIDetachSecurityGroupFromL3NetworkEvent() {
         }
         return APIDetachSecurityGroupFromL3NetworkEvent;
     })();
     ApiHeader.APIDetachSecurityGroupFromL3NetworkEvent = APIDetachSecurityGroupFromL3NetworkEvent;
+
     var APIDeleteSecurityGroupEvent = (function () {
         function APIDeleteSecurityGroupEvent() {
         }
         return APIDeleteSecurityGroupEvent;
     })();
     ApiHeader.APIDeleteSecurityGroupEvent = APIDeleteSecurityGroupEvent;
+
     var VipInventory = (function () {
         function VipInventory() {
         }
         return VipInventory;
     })();
     ApiHeader.VipInventory = VipInventory;
+
     var APICreateVipEvent = (function () {
         function APICreateVipEvent() {
         }
         return APICreateVipEvent;
     })();
     ApiHeader.APICreateVipEvent = APICreateVipEvent;
+
+    var APIUpdateVipEvent = (function () {
+        function APIUpdateVipEvent() {
+        }
+        return APIUpdateVipEvent;
+    })();
+    ApiHeader.APIUpdateVipEvent = APIUpdateVipEvent;
+
     var APIDeleteVipEvent = (function () {
         function APIDeleteVipEvent() {
         }
         return APIDeleteVipEvent;
     })();
     ApiHeader.APIDeleteVipEvent = APIDeleteVipEvent;
+
     var APIChangeVipStateEvent = (function () {
         function APIChangeVipStateEvent() {
         }
         return APIChangeVipStateEvent;
     })();
     ApiHeader.APIChangeVipStateEvent = APIChangeVipStateEvent;
+
     var APIGetGlobalConfigReply = (function () {
         function APIGetGlobalConfigReply() {
         }
         return APIGetGlobalConfigReply;
     })();
     ApiHeader.APIGetGlobalConfigReply = APIGetGlobalConfigReply;
+
     var APIQueryGlobalConfigReply = (function () {
         function APIQueryGlobalConfigReply() {
         }
         return APIQueryGlobalConfigReply;
     })();
     ApiHeader.APIQueryGlobalConfigReply = APIQueryGlobalConfigReply;
+
     var APIListGlobalConfigReply = (function () {
         function APIListGlobalConfigReply() {
         }
         return APIListGlobalConfigReply;
     })();
     ApiHeader.APIListGlobalConfigReply = APIListGlobalConfigReply;
+
     var APIQueryReply = (function () {
         function APIQueryReply() {
         }
         return APIQueryReply;
     })();
     ApiHeader.APIQueryReply = APIQueryReply;
+
     var APIGetCpuMemoryCapacityReply = (function () {
         function APIGetCpuMemoryCapacityReply() {
         }
         return APIGetCpuMemoryCapacityReply;
     })();
     ApiHeader.APIGetCpuMemoryCapacityReply = APIGetCpuMemoryCapacityReply;
+
     var APIGetHostAllocatorStrategiesReply = (function () {
         function APIGetHostAllocatorStrategiesReply() {
         }
         return APIGetHostAllocatorStrategiesReply;
     })();
     ApiHeader.APIGetHostAllocatorStrategiesReply = APIGetHostAllocatorStrategiesReply;
+
     var APISearchVmInstanceReply = (function () {
         function APISearchVmInstanceReply() {
         }
         return APISearchVmInstanceReply;
     })();
     ApiHeader.APISearchVmInstanceReply = APISearchVmInstanceReply;
+
     var APIGetVmInstanceReply = (function () {
         function APIGetVmInstanceReply() {
         }
         return APIGetVmInstanceReply;
     })();
     ApiHeader.APIGetVmInstanceReply = APIGetVmInstanceReply;
+
     var APIGetVmAttachableDataVolumeReply = (function () {
         function APIGetVmAttachableDataVolumeReply() {
         }
         return APIGetVmAttachableDataVolumeReply;
     })();
     ApiHeader.APIGetVmAttachableDataVolumeReply = APIGetVmAttachableDataVolumeReply;
+
     var APIGetVmMigrationCandidateHostsReply = (function () {
         function APIGetVmMigrationCandidateHostsReply() {
         }
         return APIGetVmMigrationCandidateHostsReply;
     })();
     ApiHeader.APIGetVmMigrationCandidateHostsReply = APIGetVmMigrationCandidateHostsReply;
+
     var APIListVmInstanceReply = (function () {
         function APIListVmInstanceReply() {
         }
         return APIListVmInstanceReply;
     })();
     ApiHeader.APIListVmInstanceReply = APIListVmInstanceReply;
+
     var APIListVmNicReply = (function () {
         function APIListVmNicReply() {
         }
         return APIListVmNicReply;
     })();
     ApiHeader.APIListVmNicReply = APIListVmNicReply;
+
     var APIQueryVmInstanceReply = (function () {
         function APIQueryVmInstanceReply() {
         }
         return APIQueryVmInstanceReply;
     })();
     ApiHeader.APIQueryVmInstanceReply = APIQueryVmInstanceReply;
+
     var APIQueryVmNicReply = (function () {
         function APIQueryVmNicReply() {
         }
         return APIQueryVmNicReply;
     })();
     ApiHeader.APIQueryVmNicReply = APIQueryVmNicReply;
+
+    var APIGetVmAttachableL3NetworkReply = (function () {
+        function APIGetVmAttachableL3NetworkReply() {
+        }
+        return APIGetVmAttachableL3NetworkReply;
+    })();
+    ApiHeader.APIGetVmAttachableL3NetworkReply = APIGetVmAttachableL3NetworkReply;
+
     var APIGetImageReply = (function () {
         function APIGetImageReply() {
         }
         return APIGetImageReply;
     })();
     ApiHeader.APIGetImageReply = APIGetImageReply;
+
     var APIQueryImageReply = (function () {
         function APIQueryImageReply() {
         }
         return APIQueryImageReply;
     })();
     ApiHeader.APIQueryImageReply = APIQueryImageReply;
+
     var APIListImageReply = (function () {
         function APIListImageReply() {
         }
         return APIListImageReply;
     })();
     ApiHeader.APIListImageReply = APIListImageReply;
+
     var APISearchImageReply = (function () {
         function APISearchImageReply() {
         }
         return APISearchImageReply;
     })();
     ApiHeader.APISearchImageReply = APISearchImageReply;
+
     var VolumeFormatReplyStruct = (function () {
         function VolumeFormatReplyStruct() {
         }
         return VolumeFormatReplyStruct;
     })();
     ApiHeader.VolumeFormatReplyStruct = VolumeFormatReplyStruct;
+
     var APIGetVolumeFormatReply = (function () {
         function APIGetVolumeFormatReply() {
         }
         return APIGetVolumeFormatReply;
     })();
     ApiHeader.APIGetVolumeFormatReply = APIGetVolumeFormatReply;
+
     var APIGetDataVolumeAttachableVmReply = (function () {
         function APIGetDataVolumeAttachableVmReply() {
         }
         return APIGetDataVolumeAttachableVmReply;
     })();
     ApiHeader.APIGetDataVolumeAttachableVmReply = APIGetDataVolumeAttachableVmReply;
+
     var APIQueryVolumeReply = (function () {
         function APIQueryVolumeReply() {
         }
         return APIQueryVolumeReply;
     })();
     ApiHeader.APIQueryVolumeReply = APIQueryVolumeReply;
+
     var APIGetVolumeReply = (function () {
         function APIGetVolumeReply() {
         }
         return APIGetVolumeReply;
     })();
     ApiHeader.APIGetVolumeReply = APIGetVolumeReply;
+
     var APIListVolumeReply = (function () {
         function APIListVolumeReply() {
         }
         return APIListVolumeReply;
     })();
     ApiHeader.APIListVolumeReply = APIListVolumeReply;
+
     var APISearchVolumeReply = (function () {
         function APISearchVolumeReply() {
         }
         return APISearchVolumeReply;
     })();
     ApiHeader.APISearchVolumeReply = APISearchVolumeReply;
+
     var APIIsReadyToGoReply = (function () {
         function APIIsReadyToGoReply() {
         }
         return APIIsReadyToGoReply;
     })();
     ApiHeader.APIIsReadyToGoReply = APIIsReadyToGoReply;
+
     var APISearchInstanceOfferingReply = (function () {
         function APISearchInstanceOfferingReply() {
         }
         return APISearchInstanceOfferingReply;
     })();
     ApiHeader.APISearchInstanceOfferingReply = APISearchInstanceOfferingReply;
+
     var APIListDiskOfferingReply = (function () {
         function APIListDiskOfferingReply() {
         }
         return APIListDiskOfferingReply;
     })();
     ApiHeader.APIListDiskOfferingReply = APIListDiskOfferingReply;
+
     var APIListInstanceOfferingReply = (function () {
         function APIListInstanceOfferingReply() {
         }
         return APIListInstanceOfferingReply;
     })();
     ApiHeader.APIListInstanceOfferingReply = APIListInstanceOfferingReply;
+
     var APISearchDnsReply = (function () {
         function APISearchDnsReply() {
         }
         return APISearchDnsReply;
     })();
     ApiHeader.APISearchDnsReply = APISearchDnsReply;
+
     var APIGetInstanceOfferingReply = (function () {
         function APIGetInstanceOfferingReply() {
         }
         return APIGetInstanceOfferingReply;
     })();
     ApiHeader.APIGetInstanceOfferingReply = APIGetInstanceOfferingReply;
+
     var APIQueryDiskOfferingReply = (function () {
         function APIQueryDiskOfferingReply() {
         }
         return APIQueryDiskOfferingReply;
     })();
     ApiHeader.APIQueryDiskOfferingReply = APIQueryDiskOfferingReply;
+
     var APISearchDiskOfferingReply = (function () {
         function APISearchDiskOfferingReply() {
         }
         return APISearchDiskOfferingReply;
     })();
     ApiHeader.APISearchDiskOfferingReply = APISearchDiskOfferingReply;
+
     var APIGetDiskOfferingReply = (function () {
         function APIGetDiskOfferingReply() {
         }
         return APIGetDiskOfferingReply;
     })();
     ApiHeader.APIGetDiskOfferingReply = APIGetDiskOfferingReply;
+
     var APIQueryInstanceOfferingReply = (function () {
         function APIQueryInstanceOfferingReply() {
         }
         return APIQueryInstanceOfferingReply;
     })();
     ApiHeader.APIQueryInstanceOfferingReply = APIQueryInstanceOfferingReply;
+
     var APIListPrimaryStorageReply = (function () {
         function APIListPrimaryStorageReply() {
         }
         return APIListPrimaryStorageReply;
     })();
     ApiHeader.APIListPrimaryStorageReply = APIListPrimaryStorageReply;
+
     var APIGetPrimaryStorageTypesReply = (function () {
         function APIGetPrimaryStorageTypesReply() {
         }
         return APIGetPrimaryStorageTypesReply;
     })();
     ApiHeader.APIGetPrimaryStorageTypesReply = APIGetPrimaryStorageTypesReply;
+
     var CreateTemplateFromVolumeOnPrimaryStorageReply = (function () {
         function CreateTemplateFromVolumeOnPrimaryStorageReply() {
         }
         return CreateTemplateFromVolumeOnPrimaryStorageReply;
     })();
     ApiHeader.CreateTemplateFromVolumeOnPrimaryStorageReply = CreateTemplateFromVolumeOnPrimaryStorageReply;
+
     var APIGetPrimaryStorageReply = (function () {
         function APIGetPrimaryStorageReply() {
         }
         return APIGetPrimaryStorageReply;
     })();
     ApiHeader.APIGetPrimaryStorageReply = APIGetPrimaryStorageReply;
+
     var APISearchPrimaryStorageReply = (function () {
         function APISearchPrimaryStorageReply() {
         }
         return APISearchPrimaryStorageReply;
     })();
     ApiHeader.APISearchPrimaryStorageReply = APISearchPrimaryStorageReply;
+
     var APIGetPrimaryStorageAllocatorStrategiesReply = (function () {
         function APIGetPrimaryStorageAllocatorStrategiesReply() {
         }
         return APIGetPrimaryStorageAllocatorStrategiesReply;
     })();
     ApiHeader.APIGetPrimaryStorageAllocatorStrategiesReply = APIGetPrimaryStorageAllocatorStrategiesReply;
+
     var APIQueryPrimaryStorageReply = (function () {
         function APIQueryPrimaryStorageReply() {
         }
         return APIQueryPrimaryStorageReply;
     })();
     ApiHeader.APIQueryPrimaryStorageReply = APIQueryPrimaryStorageReply;
+
     var APIGetPrimaryStorageCapacityReply = (function () {
         function APIGetPrimaryStorageCapacityReply() {
         }
         return APIGetPrimaryStorageCapacityReply;
     })();
     ApiHeader.APIGetPrimaryStorageCapacityReply = APIGetPrimaryStorageCapacityReply;
+
     var APIQueryVolumeSnapshotReply = (function () {
         function APIQueryVolumeSnapshotReply() {
         }
         return APIQueryVolumeSnapshotReply;
     })();
     ApiHeader.APIQueryVolumeSnapshotReply = APIQueryVolumeSnapshotReply;
+
     var SnapshotLeafInventory = (function () {
         function SnapshotLeafInventory() {
         }
         return SnapshotLeafInventory;
     })();
     ApiHeader.SnapshotLeafInventory = SnapshotLeafInventory;
+
     var VolumeSnapshotTreeInventory = (function () {
         function VolumeSnapshotTreeInventory() {
         }
         return VolumeSnapshotTreeInventory;
     })();
     ApiHeader.VolumeSnapshotTreeInventory = VolumeSnapshotTreeInventory;
+
     var APIQueryVolumeSnapshotTreeReply = (function () {
         function APIQueryVolumeSnapshotTreeReply() {
         }
         return APIQueryVolumeSnapshotTreeReply;
     })();
     ApiHeader.APIQueryVolumeSnapshotTreeReply = APIQueryVolumeSnapshotTreeReply;
+
     var APIGetVolumeSnapshotTreeReply = (function () {
         function APIGetVolumeSnapshotTreeReply() {
         }
         return APIGetVolumeSnapshotTreeReply;
     })();
     ApiHeader.APIGetVolumeSnapshotTreeReply = APIGetVolumeSnapshotTreeReply;
+
     var APISearchBackupStorageReply = (function () {
         function APISearchBackupStorageReply() {
         }
         return APISearchBackupStorageReply;
     })();
     ApiHeader.APISearchBackupStorageReply = APISearchBackupStorageReply;
+
     var APIGetBackupStorageCapacityReply = (function () {
         function APIGetBackupStorageCapacityReply() {
         }
         return APIGetBackupStorageCapacityReply;
     })();
     ApiHeader.APIGetBackupStorageCapacityReply = APIGetBackupStorageCapacityReply;
+
     var APIQueryBackupStorageReply = (function () {
         function APIQueryBackupStorageReply() {
         }
         return APIQueryBackupStorageReply;
     })();
     ApiHeader.APIQueryBackupStorageReply = APIQueryBackupStorageReply;
+
     var APIGetBackupStorageTypesReply = (function () {
         function APIGetBackupStorageTypesReply() {
         }
         return APIGetBackupStorageTypesReply;
     })();
     ApiHeader.APIGetBackupStorageTypesReply = APIGetBackupStorageTypesReply;
+
     var APIGetBackupStorageReply = (function () {
         function APIGetBackupStorageReply() {
         }
         return APIGetBackupStorageReply;
     })();
     ApiHeader.APIGetBackupStorageReply = APIGetBackupStorageReply;
+
     var APIListBackupStorageReply = (function () {
         function APIListBackupStorageReply() {
         }
         return APIListBackupStorageReply;
     })();
     ApiHeader.APIListBackupStorageReply = APIListBackupStorageReply;
+
     var APIListIpRangeReply = (function () {
         function APIListIpRangeReply() {
         }
         return APIListIpRangeReply;
     })();
     ApiHeader.APIListIpRangeReply = APIListIpRangeReply;
+
     var APISearchL3NetworkReply = (function () {
         function APISearchL3NetworkReply() {
         }
         return APISearchL3NetworkReply;
     })();
     ApiHeader.APISearchL3NetworkReply = APISearchL3NetworkReply;
+
     var APIGetL3NetworkTypesReply = (function () {
         function APIGetL3NetworkTypesReply() {
         }
         return APIGetL3NetworkTypesReply;
     })();
     ApiHeader.APIGetL3NetworkTypesReply = APIGetL3NetworkTypesReply;
+
     var APIGetL3NetworkReply = (function () {
         function APIGetL3NetworkReply() {
         }
         return APIGetL3NetworkReply;
     })();
     ApiHeader.APIGetL3NetworkReply = APIGetL3NetworkReply;
+
     var APIGetIpAddressCapacityReply = (function () {
         function APIGetIpAddressCapacityReply() {
         }
         return APIGetIpAddressCapacityReply;
     })();
     ApiHeader.APIGetIpAddressCapacityReply = APIGetIpAddressCapacityReply;
+
     var APIQueryL3NetworkReply = (function () {
         function APIQueryL3NetworkReply() {
         }
         return APIQueryL3NetworkReply;
     })();
     ApiHeader.APIQueryL3NetworkReply = APIQueryL3NetworkReply;
+
+    var FreeIpInventory = (function () {
+        function FreeIpInventory() {
+        }
+        return FreeIpInventory;
+    })();
+    ApiHeader.FreeIpInventory = FreeIpInventory;
+
+    var APIGetFreeIpReply = (function () {
+        function APIGetFreeIpReply() {
+        }
+        return APIGetFreeIpReply;
+    })();
+    ApiHeader.APIGetFreeIpReply = APIGetFreeIpReply;
+
     var APIQueryIpRangeReply = (function () {
         function APIQueryIpRangeReply() {
         }
         return APIQueryIpRangeReply;
     })();
     ApiHeader.APIQueryIpRangeReply = APIQueryIpRangeReply;
+
     var APIListL3NetworkReply = (function () {
         function APIListL3NetworkReply() {
         }
         return APIListL3NetworkReply;
     })();
     ApiHeader.APIListL3NetworkReply = APIListL3NetworkReply;
+
     var APIQueryNetworkServiceL3NetworkRefReply = (function () {
         function APIQueryNetworkServiceL3NetworkRefReply() {
         }
         return APIQueryNetworkServiceL3NetworkRefReply;
     })();
     ApiHeader.APIQueryNetworkServiceL3NetworkRefReply = APIQueryNetworkServiceL3NetworkRefReply;
+
     var APISearchNetworkServiceProviderReply = (function () {
         function APISearchNetworkServiceProviderReply() {
         }
         return APISearchNetworkServiceProviderReply;
     })();
     ApiHeader.APISearchNetworkServiceProviderReply = APISearchNetworkServiceProviderReply;
+
     var APIGetNetworkServiceProviderReply = (function () {
         function APIGetNetworkServiceProviderReply() {
         }
         return APIGetNetworkServiceProviderReply;
     })();
     ApiHeader.APIGetNetworkServiceProviderReply = APIGetNetworkServiceProviderReply;
+
     var APIGetNetworkServiceTypesReply = (function () {
         function APIGetNetworkServiceTypesReply() {
         }
         return APIGetNetworkServiceTypesReply;
     })();
     ApiHeader.APIGetNetworkServiceTypesReply = APIGetNetworkServiceTypesReply;
+
     var APIListNetworkServiceProviderReply = (function () {
         function APIListNetworkServiceProviderReply() {
         }
         return APIListNetworkServiceProviderReply;
     })();
     ApiHeader.APIListNetworkServiceProviderReply = APIListNetworkServiceProviderReply;
+
     var APIQueryNetworkServiceProviderReply = (function () {
         function APIQueryNetworkServiceProviderReply() {
         }
         return APIQueryNetworkServiceProviderReply;
     })();
     ApiHeader.APIQueryNetworkServiceProviderReply = APIQueryNetworkServiceProviderReply;
+
     var APIGetL2VlanNetworkReply = (function () {
         function APIGetL2VlanNetworkReply() {
         }
         return APIGetL2VlanNetworkReply;
     })();
     ApiHeader.APIGetL2VlanNetworkReply = APIGetL2VlanNetworkReply;
+
     var APIGetL2NetworkReply = (function () {
         function APIGetL2NetworkReply() {
         }
         return APIGetL2NetworkReply;
     })();
     ApiHeader.APIGetL2NetworkReply = APIGetL2NetworkReply;
+
     var APIQueryL2VlanNetworkReply = (function () {
         function APIQueryL2VlanNetworkReply() {
         }
         return APIQueryL2VlanNetworkReply;
     })();
     ApiHeader.APIQueryL2VlanNetworkReply = APIQueryL2VlanNetworkReply;
+
     var APIGetL2NetworkTypesReply = (function () {
         function APIGetL2NetworkTypesReply() {
         }
         return APIGetL2NetworkTypesReply;
     })();
     ApiHeader.APIGetL2NetworkTypesReply = APIGetL2NetworkTypesReply;
+
     var APIListL2VlanNetworkReply = (function () {
         function APIListL2VlanNetworkReply() {
         }
         return APIListL2VlanNetworkReply;
     })();
     ApiHeader.APIListL2VlanNetworkReply = APIListL2VlanNetworkReply;
+
     var APISearchL2VlanNetworkReply = (function () {
         function APISearchL2VlanNetworkReply() {
         }
         return APISearchL2VlanNetworkReply;
     })();
     ApiHeader.APISearchL2VlanNetworkReply = APISearchL2VlanNetworkReply;
+
     var APIQueryL2NetworkReply = (function () {
         function APIQueryL2NetworkReply() {
         }
         return APIQueryL2NetworkReply;
     })();
     ApiHeader.APIQueryL2NetworkReply = APIQueryL2NetworkReply;
+
     var APISearchL2NetworkReply = (function () {
         function APISearchL2NetworkReply() {
         }
         return APISearchL2NetworkReply;
     })();
     ApiHeader.APISearchL2NetworkReply = APISearchL2NetworkReply;
+
     var APIListL2NetworkReply = (function () {
         function APIListL2NetworkReply() {
         }
         return APIListL2NetworkReply;
     })();
     ApiHeader.APIListL2NetworkReply = APIListL2NetworkReply;
+
     var APISearchReply = (function () {
         function APISearchReply() {
         }
         return APISearchReply;
     })();
     ApiHeader.APISearchReply = APISearchReply;
+
     var APIQueryUserTagReply = (function () {
         function APIQueryUserTagReply() {
         }
         return APIQueryUserTagReply;
     })();
     ApiHeader.APIQueryUserTagReply = APIQueryUserTagReply;
+
     var APIQuerySystemTagReply = (function () {
         function APIQuerySystemTagReply() {
         }
         return APIQuerySystemTagReply;
     })();
     ApiHeader.APIQuerySystemTagReply = APIQuerySystemTagReply;
+
     var APIQueryTagReply = (function () {
         function APIQueryTagReply() {
         }
         return APIQueryTagReply;
     })();
     ApiHeader.APIQueryTagReply = APIQueryTagReply;
+
     var ManagementNodeInventory = (function () {
         function ManagementNodeInventory() {
         }
         return ManagementNodeInventory;
     })();
     ApiHeader.ManagementNodeInventory = ManagementNodeInventory;
+
     var APIQueryManagementNodeReply = (function () {
         function APIQueryManagementNodeReply() {
         }
         return APIQueryManagementNodeReply;
     })();
     ApiHeader.APIQueryManagementNodeReply = APIQueryManagementNodeReply;
+
     var APIListManagementNodeReply = (function () {
         function APIListManagementNodeReply() {
         }
         return APIListManagementNodeReply;
     })();
     ApiHeader.APIListManagementNodeReply = APIListManagementNodeReply;
+
     var APIReply = (function () {
         function APIReply() {
         }
         return APIReply;
     })();
     ApiHeader.APIReply = APIReply;
+
     var APISearchClusterReply = (function () {
         function APISearchClusterReply() {
         }
         return APISearchClusterReply;
     })();
     ApiHeader.APISearchClusterReply = APISearchClusterReply;
+
     var APIListClusterReply = (function () {
         function APIListClusterReply() {
         }
         return APIListClusterReply;
     })();
     ApiHeader.APIListClusterReply = APIListClusterReply;
+
     var APIGetClusterReply = (function () {
         function APIGetClusterReply() {
         }
         return APIGetClusterReply;
     })();
     ApiHeader.APIGetClusterReply = APIGetClusterReply;
+
     var APIQueryClusterReply = (function () {
         function APIQueryClusterReply() {
         }
         return APIQueryClusterReply;
     })();
     ApiHeader.APIQueryClusterReply = APIQueryClusterReply;
+
     var APIListUserReply = (function () {
         function APIListUserReply() {
         }
         return APIListUserReply;
     })();
     ApiHeader.APIListUserReply = APIListUserReply;
+
+    var APIQueryUserGroupReply = (function () {
+        function APIQueryUserGroupReply() {
+        }
+        return APIQueryUserGroupReply;
+    })();
+    ApiHeader.APIQueryUserGroupReply = APIQueryUserGroupReply;
+
     var APIGetUserReply = (function () {
         function APIGetUserReply() {
         }
         return APIGetUserReply;
     })();
     ApiHeader.APIGetUserReply = APIGetUserReply;
+
     var APIGetAccountReply = (function () {
         function APIGetAccountReply() {
         }
         return APIGetAccountReply;
     })();
     ApiHeader.APIGetAccountReply = APIGetAccountReply;
+
+    var APIQueryUserReply = (function () {
+        function APIQueryUserReply() {
+        }
+        return APIQueryUserReply;
+    })();
+    ApiHeader.APIQueryUserReply = APIQueryUserReply;
+
     var APIListAccountReply = (function () {
         function APIListAccountReply() {
         }
         return APIListAccountReply;
     })();
     ApiHeader.APIListAccountReply = APIListAccountReply;
+
     var APISearchPolicyReply = (function () {
         function APISearchPolicyReply() {
         }
         return APISearchPolicyReply;
     })();
     ApiHeader.APISearchPolicyReply = APISearchPolicyReply;
+
+    var APIQueryAccountReply = (function () {
+        function APIQueryAccountReply() {
+        }
+        return APIQueryAccountReply;
+    })();
+    ApiHeader.APIQueryAccountReply = APIQueryAccountReply;
+
     var APILogOutReply = (function () {
         function APILogOutReply() {
         }
         return APILogOutReply;
     })();
     ApiHeader.APILogOutReply = APILogOutReply;
+
     var APISearchUserGroupReply = (function () {
         function APISearchUserGroupReply() {
         }
         return APISearchUserGroupReply;
     })();
     ApiHeader.APISearchUserGroupReply = APISearchUserGroupReply;
+
     var APIGetPolicyReply = (function () {
         function APIGetPolicyReply() {
         }
         return APIGetPolicyReply;
     })();
     ApiHeader.APIGetPolicyReply = APIGetPolicyReply;
+
     var APILogInReply = (function () {
         function APILogInReply() {
         }
         return APILogInReply;
     })();
     ApiHeader.APILogInReply = APILogInReply;
+
     var APIListPolicyReply = (function () {
         function APIListPolicyReply() {
         }
         return APIListPolicyReply;
     })();
     ApiHeader.APIListPolicyReply = APIListPolicyReply;
+
+    var APIQueryQuotaReply = (function () {
+        function APIQueryQuotaReply() {
+        }
+        return APIQueryQuotaReply;
+    })();
+    ApiHeader.APIQueryQuotaReply = APIQueryQuotaReply;
+
     var APIGetUserGroupReply = (function () {
         function APIGetUserGroupReply() {
         }
         return APIGetUserGroupReply;
     })();
     ApiHeader.APIGetUserGroupReply = APIGetUserGroupReply;
+
+    var APIQueryPolicyReply = (function () {
+        function APIQueryPolicyReply() {
+        }
+        return APIQueryPolicyReply;
+    })();
+    ApiHeader.APIQueryPolicyReply = APIQueryPolicyReply;
+
     var APISearchAccountReply = (function () {
         function APISearchAccountReply() {
         }
         return APISearchAccountReply;
     })();
     ApiHeader.APISearchAccountReply = APISearchAccountReply;
+
     var APISearchUserReply = (function () {
         function APISearchUserReply() {
         }
         return APISearchUserReply;
     })();
     ApiHeader.APISearchUserReply = APISearchUserReply;
+
     var APIValidateSessionReply = (function () {
         function APIValidateSessionReply() {
         }
         return APIValidateSessionReply;
     })();
     ApiHeader.APIValidateSessionReply = APIValidateSessionReply;
+
     var APIGetZoneReply = (function () {
         function APIGetZoneReply() {
         }
         return APIGetZoneReply;
     })();
     ApiHeader.APIGetZoneReply = APIGetZoneReply;
+
     var APISearchZoneReply = (function () {
         function APISearchZoneReply() {
         }
         return APISearchZoneReply;
     })();
     ApiHeader.APISearchZoneReply = APISearchZoneReply;
+
     var APIListZonesReply = (function () {
         function APIListZonesReply() {
         }
         return APIListZonesReply;
     })();
     ApiHeader.APIListZonesReply = APIListZonesReply;
+
     var APIQueryZoneReply = (function () {
         function APIQueryZoneReply() {
         }
         return APIQueryZoneReply;
     })();
     ApiHeader.APIQueryZoneReply = APIQueryZoneReply;
+
     var APIGetHypervisorTypesReply = (function () {
         function APIGetHypervisorTypesReply() {
         }
         return APIGetHypervisorTypesReply;
     })();
     ApiHeader.APIGetHypervisorTypesReply = APIGetHypervisorTypesReply;
+
     var APIGetHostReply = (function () {
         function APIGetHostReply() {
         }
         return APIGetHostReply;
     })();
     ApiHeader.APIGetHostReply = APIGetHostReply;
+
     var APIListHostReply = (function () {
         function APIListHostReply() {
         }
         return APIListHostReply;
     })();
     ApiHeader.APIListHostReply = APIListHostReply;
+
     var APISearchHostReply = (function () {
         function APISearchHostReply() {
         }
         return APISearchHostReply;
     })();
     ApiHeader.APISearchHostReply = APISearchHostReply;
+
     var APIQueryHostReply = (function () {
         function APIQueryHostReply() {
         }
         return APIQueryHostReply;
     })();
     ApiHeader.APIQueryHostReply = APIQueryHostReply;
+
     var APIQueryApplianceVmReply = (function () {
         function APIQueryApplianceVmReply() {
         }
         return APIQueryApplianceVmReply;
     })();
     ApiHeader.APIQueryApplianceVmReply = APIQueryApplianceVmReply;
+
     var APIListApplianceVmReply = (function () {
         function APIListApplianceVmReply() {
         }
         return APIListApplianceVmReply;
     })();
     ApiHeader.APIListApplianceVmReply = APIListApplianceVmReply;
-    var APIGetSftpBackupStorageReply = (function () {
-        function APIGetSftpBackupStorageReply() {
-        }
-        return APIGetSftpBackupStorageReply;
-    })();
-    ApiHeader.APIGetSftpBackupStorageReply = APIGetSftpBackupStorageReply;
-    var APIQuerySftpBackupStorageReply = (function () {
-        function APIQuerySftpBackupStorageReply() {
-        }
-        return APIQuerySftpBackupStorageReply;
-    })();
-    ApiHeader.APIQuerySftpBackupStorageReply = APIQuerySftpBackupStorageReply;
-    var APISearchSftpBackupStorageReply = (function () {
-        function APISearchSftpBackupStorageReply() {
-        }
-        return APISearchSftpBackupStorageReply;
-    })();
-    ApiHeader.APISearchSftpBackupStorageReply = APISearchSftpBackupStorageReply;
-    var APISearchVirtualRouterVmReply = (function () {
-        function APISearchVirtualRouterVmReply() {
-        }
-        return APISearchVirtualRouterVmReply;
-    })();
-    ApiHeader.APISearchVirtualRouterVmReply = APISearchVirtualRouterVmReply;
-    var APIGetVirtualRouterOfferingReply = (function () {
-        function APIGetVirtualRouterOfferingReply() {
-        }
-        return APIGetVirtualRouterOfferingReply;
-    })();
-    ApiHeader.APIGetVirtualRouterOfferingReply = APIGetVirtualRouterOfferingReply;
-    var APISearchVirtualRouterOffingReply = (function () {
-        function APISearchVirtualRouterOffingReply() {
-        }
-        return APISearchVirtualRouterOffingReply;
-    })();
-    ApiHeader.APISearchVirtualRouterOffingReply = APISearchVirtualRouterOffingReply;
-    var VirtualRouterOfferingInventory = (function () {
-        function VirtualRouterOfferingInventory() {
-        }
-        return VirtualRouterOfferingInventory;
-    })();
-    ApiHeader.VirtualRouterOfferingInventory = VirtualRouterOfferingInventory;
-    var APIQueryVirtualRouterOfferingReply = (function () {
-        function APIQueryVirtualRouterOfferingReply() {
-        }
-        return APIQueryVirtualRouterOfferingReply;
-    })();
-    ApiHeader.APIQueryVirtualRouterOfferingReply = APIQueryVirtualRouterOfferingReply;
-    var VirtualRouterVmInventory = (function () {
-        function VirtualRouterVmInventory() {
-        }
-        return VirtualRouterVmInventory;
-    })();
-    ApiHeader.VirtualRouterVmInventory = VirtualRouterVmInventory;
-    var APIQueryVirtualRouterVmReply = (function () {
-        function APIQueryVirtualRouterVmReply() {
-        }
-        return APIQueryVirtualRouterVmReply;
-    })();
-    ApiHeader.APIQueryVirtualRouterVmReply = APIQueryVirtualRouterVmReply;
-    var APIQueryPortForwardingRuleReply = (function () {
-        function APIQueryPortForwardingRuleReply() {
-        }
-        return APIQueryPortForwardingRuleReply;
-    })();
-    ApiHeader.APIQueryPortForwardingRuleReply = APIQueryPortForwardingRuleReply;
-    var APIListPortForwardingRuleReply = (function () {
-        function APIListPortForwardingRuleReply() {
-        }
-        return APIListPortForwardingRuleReply;
-    })();
-    ApiHeader.APIListPortForwardingRuleReply = APIListPortForwardingRuleReply;
-    var APIGetPortForwardingAttachableVmNicsReply = (function () {
-        function APIGetPortForwardingAttachableVmNicsReply() {
-        }
-        return APIGetPortForwardingAttachableVmNicsReply;
-    })();
-    ApiHeader.APIGetPortForwardingAttachableVmNicsReply = APIGetPortForwardingAttachableVmNicsReply;
-    var APIQueryEipReply = (function () {
-        function APIQueryEipReply() {
-        }
-        return APIQueryEipReply;
-    })();
-    ApiHeader.APIQueryEipReply = APIQueryEipReply;
-    var APIGetEipAttachableVmNicsReply = (function () {
-        function APIGetEipAttachableVmNicsReply() {
-        }
-        return APIGetEipAttachableVmNicsReply;
-    })();
-    ApiHeader.APIGetEipAttachableVmNicsReply = APIGetEipAttachableVmNicsReply;
-    var APIListSecurityGroupReply = (function () {
-        function APIListSecurityGroupReply() {
-        }
-        return APIListSecurityGroupReply;
-    })();
-    ApiHeader.APIListSecurityGroupReply = APIListSecurityGroupReply;
-    var APIQuerySecurityGroupRuleReply = (function () {
-        function APIQuerySecurityGroupRuleReply() {
-        }
-        return APIQuerySecurityGroupRuleReply;
-    })();
-    ApiHeader.APIQuerySecurityGroupRuleReply = APIQuerySecurityGroupRuleReply;
-    var APIGetCandidateVmNicForSecurityGroupReply = (function () {
-        function APIGetCandidateVmNicForSecurityGroupReply() {
-        }
-        return APIGetCandidateVmNicForSecurityGroupReply;
-    })();
-    ApiHeader.APIGetCandidateVmNicForSecurityGroupReply = APIGetCandidateVmNicForSecurityGroupReply;
-    var VmNicSecurityGroupRefInventory = (function () {
-        function VmNicSecurityGroupRefInventory() {
-        }
-        return VmNicSecurityGroupRefInventory;
-    })();
-    ApiHeader.VmNicSecurityGroupRefInventory = VmNicSecurityGroupRefInventory;
-    var APIListVmNicInSecurityGroupReply = (function () {
-        function APIListVmNicInSecurityGroupReply() {
-        }
-        return APIListVmNicInSecurityGroupReply;
-    })();
-    ApiHeader.APIListVmNicInSecurityGroupReply = APIListVmNicInSecurityGroupReply;
-    var APIQuerySecurityGroupReply = (function () {
-        function APIQuerySecurityGroupReply() {
-        }
-        return APIQuerySecurityGroupReply;
-    })();
-    ApiHeader.APIQuerySecurityGroupReply = APIQuerySecurityGroupReply;
-    var APIQueryVmNicInSecurityGroupReply = (function () {
-        function APIQueryVmNicInSecurityGroupReply() {
-        }
-        return APIQueryVmNicInSecurityGroupReply;
-    })();
-    ApiHeader.APIQueryVmNicInSecurityGroupReply = APIQueryVmNicInSecurityGroupReply;
-    var APIQueryVipReply = (function () {
-        function APIQueryVipReply() {
-        }
-        return APIQueryVipReply;
-    })();
-    ApiHeader.APIQueryVipReply = APIQueryVipReply;
-    var HostCapacityInventory = (function () {
-        function HostCapacityInventory() {
-        }
-        return HostCapacityInventory;
-    })();
-    ApiHeader.HostCapacityInventory = HostCapacityInventory;
-    var ConsoleProxyInventory = (function () {
-        function ConsoleProxyInventory() {
-        }
-        return ConsoleProxyInventory;
-    })();
-    ApiHeader.ConsoleProxyInventory = ConsoleProxyInventory;
-    var PrimaryStorageClusterRefInventory = (function () {
-        function PrimaryStorageClusterRefInventory() {
-        }
-        return PrimaryStorageClusterRefInventory;
-    })();
-    ApiHeader.PrimaryStorageClusterRefInventory = PrimaryStorageClusterRefInventory;
-    var PrimaryStorageCapacityInventory = (function () {
-        function PrimaryStorageCapacityInventory() {
-        }
-        return PrimaryStorageCapacityInventory;
-    })();
-    ApiHeader.PrimaryStorageCapacityInventory = PrimaryStorageCapacityInventory;
-    var BackupStorageZoneRefInventory = (function () {
-        function BackupStorageZoneRefInventory() {
-        }
-        return BackupStorageZoneRefInventory;
-    })();
-    ApiHeader.BackupStorageZoneRefInventory = BackupStorageZoneRefInventory;
-    var IpUseInventory = (function () {
-        function IpUseInventory() {
-        }
-        return IpUseInventory;
-    })();
-    ApiHeader.IpUseInventory = IpUseInventory;
-    var L3NetworkDnsInventory = (function () {
-        function L3NetworkDnsInventory() {
-        }
-        return L3NetworkDnsInventory;
-    })();
-    ApiHeader.L3NetworkDnsInventory = L3NetworkDnsInventory;
-    var NetworkServiceTypeInventory = (function () {
-        function NetworkServiceTypeInventory() {
-        }
-        return NetworkServiceTypeInventory;
-    })();
-    ApiHeader.NetworkServiceTypeInventory = NetworkServiceTypeInventory;
-    var NetworkServiceProviderL2NetworkRefInventory = (function () {
-        function NetworkServiceProviderL2NetworkRefInventory() {
-        }
-        return NetworkServiceProviderL2NetworkRefInventory;
-    })();
-    ApiHeader.NetworkServiceProviderL2NetworkRefInventory = NetworkServiceProviderL2NetworkRefInventory;
-    var L2NetworkClusterRefInventory = (function () {
-        function L2NetworkClusterRefInventory() {
-        }
-        return L2NetworkClusterRefInventory;
-    })();
-    ApiHeader.L2NetworkClusterRefInventory = L2NetworkClusterRefInventory;
-    var AccountResourceRefInventory = (function () {
-        function AccountResourceRefInventory() {
-        }
-        return AccountResourceRefInventory;
-    })();
-    ApiHeader.AccountResourceRefInventory = AccountResourceRefInventory;
-    var SimulatorHostInventory = (function () {
-        function SimulatorHostInventory() {
-        }
-        return SimulatorHostInventory;
-    })();
-    ApiHeader.SimulatorHostInventory = SimulatorHostInventory;
-    var ApplianceVmFirewallRuleInventory = (function () {
-        function ApplianceVmFirewallRuleInventory() {
-        }
-        return ApplianceVmFirewallRuleInventory;
-    })();
-    ApiHeader.ApplianceVmFirewallRuleInventory = ApplianceVmFirewallRuleInventory;
+
     var IscsiFileSystemBackendPrimaryStorageInventory = (function () {
         function IscsiFileSystemBackendPrimaryStorageInventory() {
         }
         return IscsiFileSystemBackendPrimaryStorageInventory;
     })();
     ApiHeader.IscsiFileSystemBackendPrimaryStorageInventory = IscsiFileSystemBackendPrimaryStorageInventory;
+
+    var APIQueryIscsiFileSystemBackendPrimaryStorageReply = (function () {
+        function APIQueryIscsiFileSystemBackendPrimaryStorageReply() {
+        }
+        return APIQueryIscsiFileSystemBackendPrimaryStorageReply;
+    })();
+    ApiHeader.APIQueryIscsiFileSystemBackendPrimaryStorageReply = APIQueryIscsiFileSystemBackendPrimaryStorageReply;
+
+    var APIGetSftpBackupStorageReply = (function () {
+        function APIGetSftpBackupStorageReply() {
+        }
+        return APIGetSftpBackupStorageReply;
+    })();
+    ApiHeader.APIGetSftpBackupStorageReply = APIGetSftpBackupStorageReply;
+
+    var APIQuerySftpBackupStorageReply = (function () {
+        function APIQuerySftpBackupStorageReply() {
+        }
+        return APIQuerySftpBackupStorageReply;
+    })();
+    ApiHeader.APIQuerySftpBackupStorageReply = APIQuerySftpBackupStorageReply;
+
+    var APISearchSftpBackupStorageReply = (function () {
+        function APISearchSftpBackupStorageReply() {
+        }
+        return APISearchSftpBackupStorageReply;
+    })();
+    ApiHeader.APISearchSftpBackupStorageReply = APISearchSftpBackupStorageReply;
+
+    var APISearchVirtualRouterVmReply = (function () {
+        function APISearchVirtualRouterVmReply() {
+        }
+        return APISearchVirtualRouterVmReply;
+    })();
+    ApiHeader.APISearchVirtualRouterVmReply = APISearchVirtualRouterVmReply;
+
+    var APIGetVirtualRouterOfferingReply = (function () {
+        function APIGetVirtualRouterOfferingReply() {
+        }
+        return APIGetVirtualRouterOfferingReply;
+    })();
+    ApiHeader.APIGetVirtualRouterOfferingReply = APIGetVirtualRouterOfferingReply;
+
+    var APISearchVirtualRouterOffingReply = (function () {
+        function APISearchVirtualRouterOffingReply() {
+        }
+        return APISearchVirtualRouterOffingReply;
+    })();
+    ApiHeader.APISearchVirtualRouterOffingReply = APISearchVirtualRouterOffingReply;
+
+    var VirtualRouterOfferingInventory = (function () {
+        function VirtualRouterOfferingInventory() {
+        }
+        return VirtualRouterOfferingInventory;
+    })();
+    ApiHeader.VirtualRouterOfferingInventory = VirtualRouterOfferingInventory;
+
+    var APIQueryVirtualRouterOfferingReply = (function () {
+        function APIQueryVirtualRouterOfferingReply() {
+        }
+        return APIQueryVirtualRouterOfferingReply;
+    })();
+    ApiHeader.APIQueryVirtualRouterOfferingReply = APIQueryVirtualRouterOfferingReply;
+
+    var VirtualRouterVmInventory = (function () {
+        function VirtualRouterVmInventory() {
+        }
+        return VirtualRouterVmInventory;
+    })();
+    ApiHeader.VirtualRouterVmInventory = VirtualRouterVmInventory;
+
+    var APIQueryVirtualRouterVmReply = (function () {
+        function APIQueryVirtualRouterVmReply() {
+        }
+        return APIQueryVirtualRouterVmReply;
+    })();
+    ApiHeader.APIQueryVirtualRouterVmReply = APIQueryVirtualRouterVmReply;
+
+    var APIQueryPortForwardingRuleReply = (function () {
+        function APIQueryPortForwardingRuleReply() {
+        }
+        return APIQueryPortForwardingRuleReply;
+    })();
+    ApiHeader.APIQueryPortForwardingRuleReply = APIQueryPortForwardingRuleReply;
+
+    var APIListPortForwardingRuleReply = (function () {
+        function APIListPortForwardingRuleReply() {
+        }
+        return APIListPortForwardingRuleReply;
+    })();
+    ApiHeader.APIListPortForwardingRuleReply = APIListPortForwardingRuleReply;
+
+    var APIGetPortForwardingAttachableVmNicsReply = (function () {
+        function APIGetPortForwardingAttachableVmNicsReply() {
+        }
+        return APIGetPortForwardingAttachableVmNicsReply;
+    })();
+    ApiHeader.APIGetPortForwardingAttachableVmNicsReply = APIGetPortForwardingAttachableVmNicsReply;
+
+    var APIQueryEipReply = (function () {
+        function APIQueryEipReply() {
+        }
+        return APIQueryEipReply;
+    })();
+    ApiHeader.APIQueryEipReply = APIQueryEipReply;
+
+    var APIGetEipAttachableVmNicsReply = (function () {
+        function APIGetEipAttachableVmNicsReply() {
+        }
+        return APIGetEipAttachableVmNicsReply;
+    })();
+    ApiHeader.APIGetEipAttachableVmNicsReply = APIGetEipAttachableVmNicsReply;
+
+    var APIListSecurityGroupReply = (function () {
+        function APIListSecurityGroupReply() {
+        }
+        return APIListSecurityGroupReply;
+    })();
+    ApiHeader.APIListSecurityGroupReply = APIListSecurityGroupReply;
+
+    var APIQuerySecurityGroupRuleReply = (function () {
+        function APIQuerySecurityGroupRuleReply() {
+        }
+        return APIQuerySecurityGroupRuleReply;
+    })();
+    ApiHeader.APIQuerySecurityGroupRuleReply = APIQuerySecurityGroupRuleReply;
+
+    var APIGetCandidateVmNicForSecurityGroupReply = (function () {
+        function APIGetCandidateVmNicForSecurityGroupReply() {
+        }
+        return APIGetCandidateVmNicForSecurityGroupReply;
+    })();
+    ApiHeader.APIGetCandidateVmNicForSecurityGroupReply = APIGetCandidateVmNicForSecurityGroupReply;
+
+    var VmNicSecurityGroupRefInventory = (function () {
+        function VmNicSecurityGroupRefInventory() {
+        }
+        return VmNicSecurityGroupRefInventory;
+    })();
+    ApiHeader.VmNicSecurityGroupRefInventory = VmNicSecurityGroupRefInventory;
+
+    var APIListVmNicInSecurityGroupReply = (function () {
+        function APIListVmNicInSecurityGroupReply() {
+        }
+        return APIListVmNicInSecurityGroupReply;
+    })();
+    ApiHeader.APIListVmNicInSecurityGroupReply = APIListVmNicInSecurityGroupReply;
+
+    var APIQuerySecurityGroupReply = (function () {
+        function APIQuerySecurityGroupReply() {
+        }
+        return APIQuerySecurityGroupReply;
+    })();
+    ApiHeader.APIQuerySecurityGroupReply = APIQuerySecurityGroupReply;
+
+    var APIQueryVmNicInSecurityGroupReply = (function () {
+        function APIQueryVmNicInSecurityGroupReply() {
+        }
+        return APIQueryVmNicInSecurityGroupReply;
+    })();
+    ApiHeader.APIQueryVmNicInSecurityGroupReply = APIQueryVmNicInSecurityGroupReply;
+
+    var APIQueryVipReply = (function () {
+        function APIQueryVipReply() {
+        }
+        return APIQueryVipReply;
+    })();
+    ApiHeader.APIQueryVipReply = APIQueryVipReply;
+
+    var HostCapacityInventory = (function () {
+        function HostCapacityInventory() {
+        }
+        return HostCapacityInventory;
+    })();
+    ApiHeader.HostCapacityInventory = HostCapacityInventory;
+
+    var ConsoleProxyInventory = (function () {
+        function ConsoleProxyInventory() {
+        }
+        return ConsoleProxyInventory;
+    })();
+    ApiHeader.ConsoleProxyInventory = ConsoleProxyInventory;
+
+    var PrimaryStorageClusterRefInventory = (function () {
+        function PrimaryStorageClusterRefInventory() {
+        }
+        return PrimaryStorageClusterRefInventory;
+    })();
+    ApiHeader.PrimaryStorageClusterRefInventory = PrimaryStorageClusterRefInventory;
+
+    var PrimaryStorageCapacityInventory = (function () {
+        function PrimaryStorageCapacityInventory() {
+        }
+        return PrimaryStorageCapacityInventory;
+    })();
+    ApiHeader.PrimaryStorageCapacityInventory = PrimaryStorageCapacityInventory;
+
+    var BackupStorageZoneRefInventory = (function () {
+        function BackupStorageZoneRefInventory() {
+        }
+        return BackupStorageZoneRefInventory;
+    })();
+    ApiHeader.BackupStorageZoneRefInventory = BackupStorageZoneRefInventory;
+
+    var IpUseInventory = (function () {
+        function IpUseInventory() {
+        }
+        return IpUseInventory;
+    })();
+    ApiHeader.IpUseInventory = IpUseInventory;
+
+    var L3NetworkDnsInventory = (function () {
+        function L3NetworkDnsInventory() {
+        }
+        return L3NetworkDnsInventory;
+    })();
+    ApiHeader.L3NetworkDnsInventory = L3NetworkDnsInventory;
+
+    var NetworkServiceTypeInventory = (function () {
+        function NetworkServiceTypeInventory() {
+        }
+        return NetworkServiceTypeInventory;
+    })();
+    ApiHeader.NetworkServiceTypeInventory = NetworkServiceTypeInventory;
+
+    var NetworkServiceProviderL2NetworkRefInventory = (function () {
+        function NetworkServiceProviderL2NetworkRefInventory() {
+        }
+        return NetworkServiceProviderL2NetworkRefInventory;
+    })();
+    ApiHeader.NetworkServiceProviderL2NetworkRefInventory = NetworkServiceProviderL2NetworkRefInventory;
+
+    var L2NetworkClusterRefInventory = (function () {
+        function L2NetworkClusterRefInventory() {
+        }
+        return L2NetworkClusterRefInventory;
+    })();
+    ApiHeader.L2NetworkClusterRefInventory = L2NetworkClusterRefInventory;
+
+    var AccountResourceRefInventory = (function () {
+        function AccountResourceRefInventory() {
+        }
+        return AccountResourceRefInventory;
+    })();
+    ApiHeader.AccountResourceRefInventory = AccountResourceRefInventory;
+
+    var UserGroupPolicyRefInventory = (function () {
+        function UserGroupPolicyRefInventory() {
+        }
+        return UserGroupPolicyRefInventory;
+    })();
+    ApiHeader.UserGroupPolicyRefInventory = UserGroupPolicyRefInventory;
+
+    var UserPolicyRefInventory = (function () {
+        function UserPolicyRefInventory() {
+        }
+        return UserPolicyRefInventory;
+    })();
+    ApiHeader.UserPolicyRefInventory = UserPolicyRefInventory;
+
+    var UserGroupUserRefInventory = (function () {
+        function UserGroupUserRefInventory() {
+        }
+        return UserGroupUserRefInventory;
+    })();
+    ApiHeader.UserGroupUserRefInventory = UserGroupUserRefInventory;
+
+    var SimulatorHostInventory = (function () {
+        function SimulatorHostInventory() {
+        }
+        return SimulatorHostInventory;
+    })();
+    ApiHeader.SimulatorHostInventory = SimulatorHostInventory;
+
+    var ApplianceVmFirewallRuleInventory = (function () {
+        function ApplianceVmFirewallRuleInventory() {
+        }
+        return ApplianceVmFirewallRuleInventory;
+    })();
+    ApiHeader.ApplianceVmFirewallRuleInventory = ApplianceVmFirewallRuleInventory;
+
+    var KVMHostInventory = (function () {
+        function KVMHostInventory() {
+        }
+        return KVMHostInventory;
+    })();
+    ApiHeader.KVMHostInventory = KVMHostInventory;
+
     var VirtualRouterEipRefInventory = (function () {
         function VirtualRouterEipRefInventory() {
         }
         return VirtualRouterEipRefInventory;
     })();
     ApiHeader.VirtualRouterEipRefInventory = VirtualRouterEipRefInventory;
+
     var VirtualRouterVipInventory = (function () {
         function VirtualRouterVipInventory() {
         }
         return VirtualRouterVipInventory;
     })();
     ApiHeader.VirtualRouterVipInventory = VirtualRouterVipInventory;
+
     var VirtualRouterPortForwardingRuleRefInventory = (function () {
         function VirtualRouterPortForwardingRuleRefInventory() {
         }
         return VirtualRouterPortForwardingRuleRefInventory;
     })();
     ApiHeader.VirtualRouterPortForwardingRuleRefInventory = VirtualRouterPortForwardingRuleRefInventory;
+
     var SecurityGroupL3NetworkRefInventory = (function () {
         function SecurityGroupL3NetworkRefInventory() {
         }
         return SecurityGroupL3NetworkRefInventory;
     })();
     ApiHeader.SecurityGroupL3NetworkRefInventory = SecurityGroupL3NetworkRefInventory;
+
     ApiHeader.GlobalConfigInventoryQueryable = ['name', 'category', 'description', 'defaultValue', 'value'];
+
     ApiHeader.TagResourceTypeGlobalConfigVO = 'GlobalConfigVO';
+
     ApiHeader.HostCapacityInventoryQueryable = ['uuid', 'totalMemory', 'totalCpu', 'availableMemory', 'availableCpu'];
+
     ApiHeader.TagResourceTypeHostCapacityVO = 'HostCapacityVO';
+
     ApiHeader.VmNicInventoryQueryable = ['uuid', 'vmInstanceUuid', 'l3NetworkUuid', 'ip', 'mac', 'netmask', 'gateway', 'metaData', 'deviceId', 'createDate', 'lastOpDate'];
+
     ApiHeader.TagResourceTypeVmNicVO = 'VmNicVO';
+
     ApiHeader.VmInstanceInventoryQueryable = ['uuid', 'name', 'description', 'zoneUuid', 'clusterUuid', 'imageUuid', 'hostUuid', 'lastHostUuid', 'instanceOfferingUuid', 'rootVolumeUuid', 'platform', 'defaultL3NetworkUuid', 'type', 'hypervisorType', 'memorySize', 'cpuNum', 'cpuSpeed', 'allocatorStrategy', 'createDate', 'lastOpDate', 'state', 'vmNics.uuid', 'vmNics.vmInstanceUuid', 'vmNics.l3NetworkUuid', 'vmNics.ip', 'vmNics.mac', 'vmNics.netmask', 'vmNics.gateway', 'vmNics.metaData', 'vmNics.deviceId', 'vmNics.createDate', 'vmNics.lastOpDate', 'allVolumes.uuid', 'allVolumes.name', 'allVolumes.description', 'allVolumes.primaryStorageUuid', 'allVolumes.vmInstanceUuid', 'allVolumes.diskOfferingUuid', 'allVolumes.rootImageUuid', 'allVolumes.installPath', 'allVolumes.type', 'allVolumes.format', 'allVolumes.size', 'allVolumes.deviceId', 'allVolumes.state', 'allVolumes.status', 'allVolumes.createDate', 'allVolumes.lastOpDate'];
+
     ApiHeader.TagResourceTypeVmInstanceVO = 'VmInstanceVO';
+
     ApiHeader.ImageInventoryQueryable = ['uuid', 'name', 'description', 'state', 'status', 'size', 'md5Sum', 'url', 'mediaType', 'guestOsType', 'type', 'platform', 'format', 'system', 'createDate', 'lastOpDate', 'backupStorageRefs.imageUuid', 'backupStorageRefs.backupStorageUuid', 'backupStorageRefs.installPath', 'backupStorageRefs.createDate', 'backupStorageRefs.lastOpDate'];
+
     ApiHeader.TagResourceTypeImageVO = 'ImageVO';
+
     ApiHeader.ImageBackupStorageRefInventoryQueryable = ['imageUuid', 'backupStorageUuid', 'installPath', 'createDate', 'lastOpDate'];
+
     ApiHeader.TagResourceTypeImageBackupStorageRefVO = 'ImageBackupStorageRefVO';
+
     ApiHeader.ConsoleProxyInventoryQueryable = ['uuid', 'vmInstanceUuid', 'agentIp', 'token', 'agentType', 'proxyHostname', 'proxyPort', 'targetHostname', 'targetPort', 'scheme', 'proxyIdentity', 'status', 'createDate', 'lastOpDate'];
+
     ApiHeader.TagResourceTypeConsoleProxyVO = 'ConsoleProxyVO';
+
     ApiHeader.VolumeInventoryQueryable = ['uuid', 'name', 'description', 'primaryStorageUuid', 'vmInstanceUuid', 'diskOfferingUuid', 'rootImageUuid', 'installPath', 'type', 'format', 'size', 'deviceId', 'state', 'status', 'createDate', 'lastOpDate'];
+
     ApiHeader.TagResourceTypeVolumeVO = 'VolumeVO';
+
     ApiHeader.InstanceOfferingInventoryQueryable = ['uuid', 'name', 'description', 'cpuNum', 'cpuSpeed', 'memorySize', 'type', 'allocatorStrategy', 'sortKey', 'createDate', 'lastOpDate', 'state'];
+
     ApiHeader.TagResourceTypeInstanceOfferingVO = 'InstanceOfferingVO';
+
     ApiHeader.DiskOfferingInventoryQueryable = ['uuid', 'name', 'description', 'diskSize', 'sortKey', 'state', 'type', 'createDate', 'lastOpDate', 'allocatorStrategy'];
+
     ApiHeader.TagResourceTypeDiskOfferingVO = 'DiskOfferingVO';
-    ApiHeader.PrimaryStorageInventoryQueryable = ['uuid', 'zoneUuid', 'name', 'url', 'description', 'totalCapacity', 'availableCapacity', 'type', 'state', 'status', 'mountPath', 'createDate', 'lastOpDate', 'attachedClusterUuids'];
+
+    ApiHeader.PrimaryStorageInventoryQueryable = ['uuid', 'zoneUuid', 'name', 'url', 'description', 'totalCapacity', 'availableCapacity', 'totalPhysicalCapacity', 'availablePhysicalCapacity', 'type', 'state', 'status', 'mountPath', 'createDate', 'lastOpDate', 'attachedClusterUuids'];
+
     ApiHeader.TagResourceTypePrimaryStorageVO = 'PrimaryStorageVO';
+
     ApiHeader.PrimaryStorageClusterRefInventoryQueryable = ['id', 'clusterUuid', 'primaryStorageUuid', 'createDate', 'lastOpDate'];
+
     ApiHeader.TagResourceTypePrimaryStorageClusterRefVO = 'PrimaryStorageClusterRefVO';
-    ApiHeader.PrimaryStorageCapacityInventoryQueryable = ['uuid', 'totalCapacity', 'availableCapacity', 'createDate', 'lastOpDate'];
+
+    ApiHeader.PrimaryStorageCapacityInventoryQueryable = ['uuid', 'totalCapacity', 'availableCapacity', 'totalPhysicalCapacity', 'availablePhsicalCapacity', 'createDate', 'lastOpDate'];
+
     ApiHeader.TagResourceTypePrimaryStorageCapacityVO = 'PrimaryStorageCapacityVO';
+
     ApiHeader.VolumeSnapshotInventoryQueryable = ['uuid', 'name', 'description', 'type', 'volumeUuid', 'treeUuid', 'parentUuid', 'primaryStorageUuid', 'primaryStorageInstallPath', 'volumeType', 'format', 'latest', 'size', 'state', 'status', 'createDate', 'lastOpDate', 'backupStorageRefs.volumeSnapshotUuid', 'backupStorageRefs.backupStorageUuid', 'backupStorageRefs.installPath'];
+
     ApiHeader.TagResourceTypeVolumeSnapshotVO = 'VolumeSnapshotVO';
+
     ApiHeader.VolumeSnapshotBackupStorageRefInventoryQueryable = ['volumeSnapshotUuid', 'backupStorageUuid', 'installPath'];
+
     ApiHeader.TagResourceTypeVolumeSnapshotBackupStorageRefVO = 'VolumeSnapshotBackupStorageRefVO';
+
     ApiHeader.VolumeSnapshotTreeInventoryQueryable = ['uuid', 'volumeUuid', 'current', 'createDate', 'lastOpDate'];
+
     ApiHeader.TagResourceTypeVolumeSnapshotTreeVO = 'VolumeSnapshotTreeVO';
+
     ApiHeader.BackupStorageInventoryQueryable = ['uuid', 'name', 'url', 'description', 'totalCapacity', 'availableCapacity', 'type', 'state', 'status', 'createDate', 'lastOpDate', 'attachedZoneUuids'];
+
     ApiHeader.TagResourceTypeBackupStorageVO = 'BackupStorageVO';
+
     ApiHeader.BackupStorageZoneRefInventoryQueryable = ['id', 'backupStorageUuid', 'zoneUuid', 'createDate', 'lastOpDate'];
+
     ApiHeader.TagResourceTypeBackupStorageZoneRefVO = 'BackupStorageZoneRefVO';
+
     ApiHeader.IpRangeInventoryQueryable = ['uuid', 'l3NetworkUuid', 'name', 'description', 'startIp', 'endIp', 'netmask', 'gateway', 'networkCidr', 'createDate', 'lastOpDate'];
+
     ApiHeader.TagResourceTypeIpRangeVO = 'IpRangeVO';
+
     ApiHeader.L3NetworkInventoryQueryable = ['uuid', 'name', 'description', 'type', 'zoneUuid', 'l2NetworkUuid', 'state', 'dnsDomain', 'system', 'createDate', 'lastOpDate', 'dns', 'ipRanges.uuid', 'ipRanges.l3NetworkUuid', 'ipRanges.name', 'ipRanges.description', 'ipRanges.startIp', 'ipRanges.endIp', 'ipRanges.netmask', 'ipRanges.gateway', 'ipRanges.networkCidr', 'ipRanges.createDate', 'ipRanges.lastOpDate', 'networkServices.l3NetworkUuid', 'networkServices.networkServiceProviderUuid', 'networkServices.networkServiceType'];
+
     ApiHeader.TagResourceTypeL3NetworkVO = 'L3NetworkVO';
+
     ApiHeader.IpUseInventoryQueryable = ['uuid', 'usedIpUuid', 'serviceId', 'use', 'details', 'createDate', 'lastOpDate'];
+
     ApiHeader.TagResourceTypeIpUseVO = 'IpUseVO';
+
     ApiHeader.L3NetworkDnsInventoryQueryable = ['l3NetworkUuid', 'dns', 'createDate', 'lastOpDate'];
+
     ApiHeader.TagResourceTypeL3NetworkDnsVO = 'L3NetworkDnsVO';
+
     ApiHeader.NetworkServiceL3NetworkRefInventoryQueryable = ['l3NetworkUuid', 'networkServiceProviderUuid', 'networkServiceType'];
+
     ApiHeader.TagResourceTypeNetworkServiceL3NetworkRefVO = 'NetworkServiceL3NetworkRefVO';
+
     ApiHeader.NetworkServiceTypeInventoryQueryable = ['networkServiceProviderUuid', 'type'];
+
     ApiHeader.TagResourceTypeNetworkServiceTypeVO = 'NetworkServiceTypeVO';
+
     ApiHeader.NetworkServiceProviderInventoryQueryable = ['uuid', 'name', 'description', 'type', 'createDate', 'lastOpDate', 'networkServiceTypes', 'attachedL2NetworkUuids'];
+
     ApiHeader.TagResourceTypeNetworkServiceProviderVO = 'NetworkServiceProviderVO';
+
     ApiHeader.NetworkServiceProviderL2NetworkRefInventoryQueryable = ['networkServiceProviderUuid', 'l2NetworkUuid'];
+
     ApiHeader.TagResourceTypeNetworkServiceProviderL2NetworkRefVO = 'NetworkServiceProviderL2NetworkRefVO';
+
     ApiHeader.L2VlanNetworkInventoryQueryable = ['vlan', 'uuid', 'name', 'description', 'zoneUuid', 'physicalInterface', 'type', 'createDate', 'lastOpDate', 'attachedClusterUuids'];
+
     ApiHeader.TagResourceTypeL2VlanNetworkVO = 'L2VlanNetworkVO';
+
     ApiHeader.L2NetworkClusterRefInventoryQueryable = ['clusterUuid', 'l2NetworkUuid', 'createDate', 'lastOpDate'];
+
     ApiHeader.TagResourceTypeL2NetworkClusterRefVO = 'L2NetworkClusterRefVO';
+
     ApiHeader.L2NetworkInventoryQueryable = ['uuid', 'name', 'description', 'zoneUuid', 'physicalInterface', 'type', 'createDate', 'lastOpDate', 'attachedClusterUuids'];
+
     ApiHeader.TagResourceTypeL2NetworkVO = 'L2NetworkVO';
+
     ApiHeader.UserTagInventoryQueryable = ['uuid', 'resourceUuid', 'resourceType', 'tag', 'type', 'createDate', 'lastOpDate'];
+
     ApiHeader.TagResourceTypeUserTagVO = 'UserTagVO';
+
     ApiHeader.SystemTagInventoryQueryable = ['inherent', 'uuid', 'resourceUuid', 'resourceType', 'tag', 'type', 'createDate', 'lastOpDate'];
+
     ApiHeader.TagResourceTypeSystemTagVO = 'SystemTagVO';
+
     ApiHeader.ManagementNodeInventoryQueryable = ['uuid', 'hostName', 'joinDate', 'heartBeat'];
+
     ApiHeader.TagResourceTypeManagementNodeVO = 'ManagementNodeVO';
+
     ApiHeader.ClusterInventoryQueryable = ['name', 'uuid', 'description', 'state', 'hypervisorType', 'createDate', 'lastOpDate', 'zoneUuid', 'type'];
+
     ApiHeader.TagResourceTypeClusterVO = 'ClusterVO';
-    ApiHeader.UserInventoryQueryable = ['uuid', 'accountUuid', 'name', 'securityKey', 'token', 'createDate', 'lastOpDate', 'groups.uuid', 'groups.accountUuid', 'groups.name', 'groups.description', 'groups.createDate', 'groups.lastOpDate', 'policies.uuid', 'policies.name', 'policies.accountUuid', 'policies.type', 'policies.data', 'policies.createDate', 'policies.lastOpDate', 'policies.uuid', 'policies.name', 'policies.accountUuid', 'policies.type', 'policies.data', 'policies.createDate', 'policies.lastOpDate'];
+
+    ApiHeader.UserInventoryQueryable = ['uuid', 'accountUuid', 'name', 'createDate', 'lastOpDate'];
+
     ApiHeader.TagResourceTypeUserVO = 'UserVO';
-    ApiHeader.UserGroupInventoryQueryable = ['uuid', 'accountUuid', 'name', 'description', 'createDate', 'lastOpDate', 'policies.uuid', 'policies.name', 'policies.accountUuid', 'policies.type', 'policies.data', 'policies.createDate', 'policies.lastOpDate'];
+
+    ApiHeader.UserGroupInventoryQueryable = ['uuid', 'accountUuid', 'name', 'description', 'createDate', 'lastOpDate'];
+
     ApiHeader.TagResourceTypeUserGroupVO = 'UserGroupVO';
-    ApiHeader.PolicyInventoryQueryable = ['uuid', 'name', 'accountUuid', 'type', 'data', 'createDate', 'lastOpDate'];
+
+    ApiHeader.PolicyInventoryQueryable = ['statements.name', 'statements.effect', 'statements.principals', 'statements.actions', 'statements.resources', 'name', 'uuid', 'accountUuid'];
+
     ApiHeader.TagResourceTypePolicyVO = 'PolicyVO';
+
     ApiHeader.AccountResourceRefInventoryQueryable = ['accountUuid', 'ownerAccountUuid', 'resourceUuid', 'resourceType', 'permission', 'isShared', 'createDate', 'lastOpDate'];
+
     ApiHeader.TagResourceTypeAccountResourceRefVO = 'AccountResourceRefVO';
+
+    ApiHeader.UserGroupPolicyRefInventoryQueryable = ['groupUuid', 'policyUuid', 'createDate', 'lastOpDate'];
+
+    ApiHeader.TagResourceTypeUserGroupPolicyRefVO = 'UserGroupPolicyRefVO';
+
     ApiHeader.AccountInventoryQueryable = ['uuid', 'name', 'createDate', 'lastOpDate'];
+
     ApiHeader.TagResourceTypeAccountVO = 'AccountVO';
+
+    ApiHeader.QuotaInventoryQueryable = ['name', 'identityUuid', 'identityType', 'value', 'lastOpDate', 'createDate'];
+
+    ApiHeader.TagResourceTypeQuotaVO = 'QuotaVO';
+
+    ApiHeader.UserPolicyRefInventoryQueryable = ['userUuid', 'policyUuid', 'createDate', 'lastOpDate'];
+
+    ApiHeader.TagResourceTypeUserPolicyRefVO = 'UserPolicyRefVO';
+
+    ApiHeader.UserGroupUserRefInventoryQueryable = ['userUuid', 'groupUuid', 'createDate', 'lastOpDate'];
+
+    ApiHeader.TagResourceTypeUserGroupUserRefVO = 'UserGroupUserRefVO';
+
     ApiHeader.ZoneInventoryQueryable = ['uuid', 'name', 'description', 'state', 'type', 'createDate', 'lastOpDate'];
+
     ApiHeader.TagResourceTypeZoneVO = 'ZoneVO';
+
     ApiHeader.HostInventoryQueryable = ['zoneUuid', 'name', 'uuid', 'clusterUuid', 'description', 'managementIp', 'hypervisorType', 'state', 'status', 'totalCpuCapacity', 'availableCpuCapacity', 'totalMemoryCapacity', 'availableMemoryCapacity', 'createDate', 'lastOpDate'];
+
     ApiHeader.TagResourceTypeHostVO = 'HostVO';
+
     ApiHeader.SimulatorHostInventoryQueryable = ['memoryCapacity', 'cpuCapacity', 'zoneUuid', 'name', 'uuid', 'clusterUuid', 'description', 'managementIp', 'hypervisorType', 'state', 'status', 'totalCpuCapacity', 'availableCpuCapacity', 'totalMemoryCapacity', 'availableMemoryCapacity', 'createDate', 'lastOpDate'];
+
     ApiHeader.TagResourceTypeSimulatorHostVO = 'SimulatorHostVO';
+
     ApiHeader.ApplianceVmFirewallRuleInventoryQueryable = ['applianceVmUuid', 'protocol', 'startPort', 'endPort', 'allowCidr', 'sourceIp', 'destIp', 'l3NetworkUuid', 'createDate', 'lastOpDate'];
+
     ApiHeader.TagResourceTypeApplianceVmFirewallRuleVO = 'ApplianceVmFirewallRuleVO';
+
     ApiHeader.ApplianceVmInventoryQueryable = ['applianceVmType', 'managementNetworkUuid', 'defaultRouteL3NetworkUuid', 'status', 'uuid', 'name', 'description', 'zoneUuid', 'clusterUuid', 'imageUuid', 'hostUuid', 'lastHostUuid', 'instanceOfferingUuid', 'rootVolumeUuid', 'platform', 'defaultL3NetworkUuid', 'type', 'hypervisorType', 'memorySize', 'cpuNum', 'cpuSpeed', 'allocatorStrategy', 'createDate', 'lastOpDate', 'state', 'vmNics.uuid', 'vmNics.vmInstanceUuid', 'vmNics.l3NetworkUuid', 'vmNics.ip', 'vmNics.mac', 'vmNics.netmask', 'vmNics.gateway', 'vmNics.metaData', 'vmNics.deviceId', 'vmNics.createDate', 'vmNics.lastOpDate', 'allVolumes.uuid', 'allVolumes.name', 'allVolumes.description', 'allVolumes.primaryStorageUuid', 'allVolumes.vmInstanceUuid', 'allVolumes.diskOfferingUuid', 'allVolumes.rootImageUuid', 'allVolumes.installPath', 'allVolumes.type', 'allVolumes.format', 'allVolumes.size', 'allVolumes.deviceId', 'allVolumes.state', 'allVolumes.status', 'allVolumes.createDate', 'allVolumes.lastOpDate'];
+
     ApiHeader.TagResourceTypeApplianceVmVO = 'ApplianceVmVO';
-    ApiHeader.IscsiFileSystemBackendPrimaryStorageInventoryQueryable = ['chapUsername', 'chapPassword', 'hostname', 'sshUsername', 'sshPassword', 'filesystemType', 'uuid', 'zoneUuid', 'name', 'url', 'description', 'totalCapacity', 'availableCapacity', 'type', 'state', 'status', 'mountPath', 'createDate', 'lastOpDate', 'attachedClusterUuids'];
+
+    ApiHeader.IscsiFileSystemBackendPrimaryStorageInventoryQueryable = ['chapUsername', 'hostname', 'sshUsername', 'filesystemType', 'uuid', 'zoneUuid', 'name', 'url', 'description', 'totalCapacity', 'availableCapacity', 'totalPhysicalCapacity', 'availablePhysicalCapacity', 'type', 'state', 'status', 'mountPath', 'createDate', 'lastOpDate', 'attachedClusterUuids'];
+
     ApiHeader.TagResourceTypeIscsiFileSystemBackendPrimaryStorageVO = 'IscsiFileSystemBackendPrimaryStorageVO';
+
+    ApiHeader.KVMHostInventoryQueryable = ['username', 'zoneUuid', 'name', 'uuid', 'clusterUuid', 'description', 'managementIp', 'hypervisorType', 'state', 'status', 'totalCpuCapacity', 'availableCpuCapacity', 'totalMemoryCapacity', 'availableMemoryCapacity', 'createDate', 'lastOpDate'];
+
+    ApiHeader.TagResourceTypeKVMHostVO = 'KVMHostVO';
+
     ApiHeader.SftpBackupStorageInventoryQueryable = ['hostname', 'uuid', 'name', 'url', 'description', 'totalCapacity', 'availableCapacity', 'type', 'state', 'status', 'createDate', 'lastOpDate', 'attachedZoneUuids'];
+
     ApiHeader.TagResourceTypeSftpBackupStorageVO = 'SftpBackupStorageVO';
+
     ApiHeader.VirtualRouterOfferingInventoryQueryable = ['managementNetworkUuid', 'publicNetworkUuid', 'zoneUuid', 'isDefault', 'imageUuid', 'uuid', 'name', 'description', 'cpuNum', 'cpuSpeed', 'memorySize', 'type', 'allocatorStrategy', 'sortKey', 'createDate', 'lastOpDate', 'state'];
+
     ApiHeader.TagResourceTypeVirtualRouterOfferingVO = 'VirtualRouterOfferingVO';
+
     ApiHeader.VirtualRouterEipRefInventoryQueryable = ['eipUuid', 'virtualRouterVmUuid'];
+
     ApiHeader.TagResourceTypeVirtualRouterEipRefVO = 'VirtualRouterEipRefVO';
+
     ApiHeader.VirtualRouterVmInventoryQueryable = ['publicNetworkUuid', 'applianceVmType', 'managementNetworkUuid', 'defaultRouteL3NetworkUuid', 'status', 'uuid', 'name', 'description', 'zoneUuid', 'clusterUuid', 'imageUuid', 'hostUuid', 'lastHostUuid', 'instanceOfferingUuid', 'rootVolumeUuid', 'platform', 'defaultL3NetworkUuid', 'type', 'hypervisorType', 'memorySize', 'cpuNum', 'cpuSpeed', 'allocatorStrategy', 'createDate', 'lastOpDate', 'state', 'vmNics.uuid', 'vmNics.vmInstanceUuid', 'vmNics.l3NetworkUuid', 'vmNics.ip', 'vmNics.mac', 'vmNics.netmask', 'vmNics.gateway', 'vmNics.metaData', 'vmNics.deviceId', 'vmNics.createDate', 'vmNics.lastOpDate', 'allVolumes.uuid', 'allVolumes.name', 'allVolumes.description', 'allVolumes.primaryStorageUuid', 'allVolumes.vmInstanceUuid', 'allVolumes.diskOfferingUuid', 'allVolumes.rootImageUuid', 'allVolumes.installPath', 'allVolumes.type', 'allVolumes.format', 'allVolumes.size', 'allVolumes.deviceId', 'allVolumes.state', 'allVolumes.status', 'allVolumes.createDate', 'allVolumes.lastOpDate'];
+
     ApiHeader.TagResourceTypeVirtualRouterVmVO = 'VirtualRouterVmVO';
+
     ApiHeader.VirtualRouterVipInventoryQueryable = ['uuid', 'virtualRouterVmUuid'];
+
     ApiHeader.TagResourceTypeVirtualRouterVipVO = 'VirtualRouterVipVO';
+
     ApiHeader.VirtualRouterPortForwardingRuleRefInventoryQueryable = ['uuid', 'vipUuid', 'virtualRouterVmUuid'];
+
     ApiHeader.TagResourceTypeVirtualRouterPortForwardingRuleRefVO = 'VirtualRouterPortForwardingRuleRefVO';
+
     ApiHeader.PortForwardingRuleInventoryQueryable = ['uuid', 'name', 'description', 'vipIp', 'guestIp', 'vipUuid', 'vipPortStart', 'vipPortEnd', 'privatePortStart', 'privatePortEnd', 'vmNicUuid', 'protocolType', 'state', 'allowedCidr', 'createDate', 'lastOpDate'];
+
     ApiHeader.TagResourceTypePortForwardingRuleVO = 'PortForwardingRuleVO';
+
     ApiHeader.EipInventoryQueryable = ['uuid', 'name', 'description', 'vmNicUuid', 'vipUuid', 'createDate', 'lastOpDate', 'state', 'vipIp', 'guestIp'];
+
     ApiHeader.TagResourceTypeEipVO = 'EipVO';
+
     ApiHeader.VmNicSecurityGroupRefInventoryQueryable = ['vmNicUuid', 'securityGroupUuid', 'vmInstanceUuid', 'createDate', 'lastOpDate'];
+
     ApiHeader.TagResourceTypeVmNicSecurityGroupRefVO = 'VmNicSecurityGroupRefVO';
+
     ApiHeader.SecurityGroupRuleInventoryQueryable = ['uuid', 'securityGroupUuid', 'type', 'startPort', 'endPort', 'protocol', 'state', 'allowedCidr', 'createDate', 'lastOpDate'];
+
     ApiHeader.TagResourceTypeSecurityGroupRuleVO = 'SecurityGroupRuleVO';
+
     ApiHeader.SecurityGroupInventoryQueryable = ['uuid', 'name', 'description', 'state', 'createDate', 'lastOpDate', 'rules.uuid', 'rules.securityGroupUuid', 'rules.type', 'rules.startPort', 'rules.endPort', 'rules.protocol', 'rules.state', 'rules.allowedCidr', 'rules.createDate', 'rules.lastOpDate', 'attachedL3NetworkUuids'];
+
     ApiHeader.TagResourceTypeSecurityGroupVO = 'SecurityGroupVO';
+
     ApiHeader.SecurityGroupL3NetworkRefInventoryQueryable = ['uuid', 'l3NetworkUuid', 'securityGroupUuid', 'createDate', 'lastOpDate'];
+
     ApiHeader.TagResourceTypeSecurityGroupL3NetworkRefVO = 'SecurityGroupL3NetworkRefVO';
+
     ApiHeader.VipInventoryQueryable = ['uuid', 'name', 'description', 'l3NetworkUuid', 'ip', 'state', 'gateway', 'netmask', 'serviceProvider', 'peerL3NetworkUuid', 'useFor', 'createDate', 'lastOpDate'];
+
     ApiHeader.TagResourceTypeVipVO = 'VipVO';
 })(ApiHeader || (ApiHeader = {}));
 /// <reference path="d.ts/angularjs/angular.d.ts" />
@@ -5169,6 +6791,7 @@ var Utils;
         }
         return Receipt;
     })();
+
     var Tag = (function () {
         function Tag(api) {
             this.api = api;
@@ -5184,8 +6807,9 @@ var Utils;
                 }
             });
         };
+
         Tag.prototype.deleteTag = function (uuid, done) {
-            if (done === void 0) { done = null; }
+            if (typeof done === "undefined") { done = null; }
             var msg = new ApiHeader.APIDeleteTagMsg();
             msg.uuid = uuid;
             this.api.asyncApi(msg, function (ret) {
@@ -5194,6 +6818,7 @@ var Utils;
                 }
             });
         };
+
         Tag.prototype.queryTag = function (resourceUuid, done) {
             var msg = new ApiHeader.APIQueryUserTagMsg();
             msg.conditions = [{ name: 'resourceUuid', op: '=', value: resourceUuid }];
@@ -5204,9 +6829,9 @@ var Utils;
         return Tag;
     })();
     Utils.Tag = Tag;
+
     var Api = (function () {
         function Api($http, $rootScope, $location) {
-            //this.debugLogIn();
             var _this = this;
             this.$http = $http;
             this.$rootScope = $rootScope;
@@ -5215,6 +6840,7 @@ var Utils;
             this.beforeCallListeners = [];
             this.afterCallListeners = [];
             this.errorCallListeners = [];
+            //this.debugLogIn();
             $rootScope.$watch(function () {
                 return $rootScope.user;
             }, function () {
@@ -5227,7 +6853,7 @@ var Utils;
         }
         Api.prototype.debugLogIn = function (done) {
             var _this = this;
-            if (done === void 0) { done = null; }
+            if (typeof done === "undefined") { done = null; }
             var msg = new ApiHeader.APILogInByAccountMsg();
             msg.accountName = 'admin';
             msg.password = 'b109f3bbbc244eb82441917ed06d618b9008dd09b3befd1b5e07394c706a8bb980b1d7785e5976ec049b46df5f1326af5a2ea6d103fd07c95385ffab0cacbc86';
@@ -5240,54 +6866,63 @@ var Utils;
                 }
             });
         };
+
         Api.prototype.getHypervisorTypes = function (done) {
             var msg = new ApiHeader.APIGetHypervisorTypesMsg();
             this.syncApi(msg, function (ret) {
                 done(ret.hypervisorTypes);
             });
         };
+
         Api.prototype.getVolumeFormats = function (done) {
             var msg = new ApiHeader.APIGetVolumeFormatMsg();
             this.syncApi(msg, function (ret) {
                 done(ret.formats);
             });
         };
+
         Api.prototype.getPrimaryStorageTypes = function (done) {
             var msg = new ApiHeader.APIGetPrimaryStorageTypesMsg();
             this.syncApi(msg, function (ret) {
                 done(ret.primaryStorageTypes);
             });
         };
+
         Api.prototype.getL2NetworkTypes = function (done) {
             var msg = new ApiHeader.APIGetL2NetworkTypesMsg();
             this.syncApi(msg, function (ret) {
                 done(ret.l2NetworkTypes);
             });
         };
+
         Api.prototype.getL3NetworkTypes = function (done) {
             var msg = new ApiHeader.APIGetL3NetworkTypesMsg();
             this.syncApi(msg, function (ret) {
                 done(ret.l3NetworkTypes);
             });
         };
+
         Api.prototype.getBackupStorageTypes = function (done) {
             var msg = new ApiHeader.APIGetBackupStorageTypesMsg();
             this.syncApi(msg, function (ret) {
                 done(ret.backupStorageTypes);
             });
         };
+
         Api.prototype.getInstanceOfferingAllocatorStrategies = function (done) {
             var msg = new ApiHeader.APIGetHostAllocatorStrategiesMsg();
             this.syncApi(msg, function (ret) {
                 done(ret.hostAllocatorStrategies);
             });
         };
+
         Api.prototype.getDiskOfferingAllocatorStrategies = function (done) {
             var msg = new ApiHeader.APIGetPrimaryStorageAllocatorStrategiesMsg();
             this.syncApi(msg, function (ret) {
                 done(ret.primaryStorageAllocatorStrategies);
             });
         };
+
         Api.prototype.getVmMigrationCandidateHosts = function (vmUuid, done) {
             var msg = new ApiHeader.APIGetVmMigrationCandidateHostsMsg();
             msg.vmInstanceUuid = vmUuid;
@@ -5295,6 +6930,7 @@ var Utils;
                 done(ret.inventories);
             });
         };
+
         Api.prototype.getDataVolumeAttachableVm = function (volUuid, done) {
             var msg = new ApiHeader.APIGetDataVolumeAttachableVmMsg();
             msg.volumeUuid = volUuid;
@@ -5302,6 +6938,7 @@ var Utils;
                 done(ret.inventories);
             });
         };
+
         Api.prototype.getVmAttachableVolume = function (vmUuid, done) {
             var msg = new ApiHeader.APIGetVmAttachableDataVolumeMsg();
             msg.vmInstanceUuid = vmUuid;
@@ -5309,6 +6946,7 @@ var Utils;
                 done(ret.inventories);
             });
         };
+
         Api.prototype.getMemoryCpuCapacity = function (zoneUuids, clusterUuids, hostUuids, done) {
             var msg = new ApiHeader.APIGetCpuMemoryCapacityMsg();
             msg.zoneUuids = zoneUuids;
@@ -5318,6 +6956,7 @@ var Utils;
                 done(ret);
             });
         };
+
         Api.prototype.getMemoryCpuCapacityByAll = function (done) {
             var msg = new ApiHeader.APIGetCpuMemoryCapacityMsg();
             msg.all = true;
@@ -5325,6 +6964,7 @@ var Utils;
                 done(ret);
             });
         };
+
         Api.prototype.getPirmaryStorageCapacityByAll = function (done) {
             var msg = new ApiHeader.APIGetPrimaryStorageCapacityMsg();
             msg.all = true;
@@ -5332,6 +6972,7 @@ var Utils;
                 done(ret);
             });
         };
+
         Api.prototype.getBackupStorageCapacityByAll = function (done) {
             var msg = new ApiHeader.APIGetBackupStorageCapacityMsg();
             msg.all = true;
@@ -5339,6 +6980,7 @@ var Utils;
                 done(ret);
             });
         };
+
         Api.prototype.getIpAddressCapacityByAll = function (done) {
             var msg = new ApiHeader.APIGetIpAddressCapacityMsg();
             msg.all = true;
@@ -5346,9 +6988,11 @@ var Utils;
                 done(ret);
             });
         };
+
         Api.prototype.getSystemTags = function (resourceType, resourceUuid, done) {
             var msg = new ApiHeader.APIQuerySystemTagMsg();
-            msg.conditions = [{
+            msg.conditions = [
+                {
                     name: 'resourceType',
                     op: '=',
                     value: resourceType
@@ -5357,15 +7001,18 @@ var Utils;
                     op: '=',
                     value: resourceUuid
                 }];
+
             this.syncApi(msg, function (ret) {
                 done(ret.inventories);
             });
         };
+
         Api.prototype.fireAfterListener = function (recepit) {
             angular.forEach(this.afterCallListeners, function (item) {
                 item(recepit.request, recepit.rsp);
             });
         };
+
         Api.prototype.poll = function (receipt, callback, error) {
             var _this = this;
             if (receipt.status == Api.STATUS_DONE) {
@@ -5374,16 +7021,15 @@ var Utils;
                 var rsp = Utils.firstItem(receipt.rsp);
                 if (rsp.success) {
                     callback(rsp);
-                }
-                else {
+                } else {
                     if (Utils.notNullnotUndefined(error)) {
                         error(rsp);
                     }
                 }
                 return;
             }
-            this.$http.post(Api.QUERY_PATH, receipt.id)
-                .success(function (re) {
+
+            this.$http.post(Api.QUERY_PATH, receipt.id).success(function (re) {
                 re.request = receipt.request;
                 if (re.status == Api.STATUS_DONE) {
                     console.log(JSON.stringify(re.rsp));
@@ -5391,14 +7037,14 @@ var Utils;
                     var rsp = Utils.firstItem(re.rsp);
                     if (rsp.success) {
                         callback(rsp);
-                    }
-                    else {
+                    } else {
                         if (Utils.notNullnotUndefined(error)) {
                             error(rsp);
                         }
                     }
                     return;
                 }
+
                 //TODO: configurable
                 setTimeout(function () {
                     Utils.safeApply(_this.$rootScope, function () {
@@ -5409,6 +7055,7 @@ var Utils;
                 if (error) {
                     error(reason, status);
                 }
+
                 _this.fireErrorListener({
                     request: receipt.request,
                     data: reason,
@@ -5416,25 +7063,27 @@ var Utils;
                 });
             });
         };
+
         Api.prototype.fireErrorListener = function (reason) {
             angular.forEach(this.errorCallListeners, function (item) {
                 item(reason);
             });
         };
+
         Api.prototype.asyncCall = function (msg, callback, error) {
             var _this = this;
             msg.session = this.session;
             angular.forEach(this.beforeCallListeners, function (item) {
                 item(msg);
             });
-            this.$http.post(Api.ASYNC_CALL_PATH, msg.toApiMap())
-                .success(function (receipt) {
+            this.$http.post(Api.ASYNC_CALL_PATH, msg.toApiMap()).success(function (receipt) {
                 receipt.request = msg;
                 _this.poll(receipt, callback, error);
             }).error(function (reason, status) {
                 if (error) {
                     error(reason, status);
                 }
+
                 _this.fireErrorListener({
                     request: msg,
                     data: reason,
@@ -5442,6 +7091,7 @@ var Utils;
                 });
             });
         };
+
         Api.prototype.syncCall = function (msg, callback, error) {
             var _this = this;
             msg.session = this.session;
@@ -5453,11 +7103,13 @@ var Utils;
                     _this.$location.path('/login');
                     return;
                 }
+
                 callback(Utils.firstItem(rsp));
             }).error(function (reason, status) {
                 if (error) {
                     error(reason, status);
                 }
+
                 _this.fireErrorListener({
                     request: msg,
                     data: reason,
@@ -5465,15 +7117,16 @@ var Utils;
                 });
             });
         };
+
         Api.prototype.syncApi = function (data, callback, error) {
-            if (error === void 0) { error = undefined; }
+            if (typeof error === "undefined") { error = undefined; }
             /*
             if (Utils.notNullnotUndefined(this.session)) {
-                this.syncCall(data, callback, error);
+            this.syncCall(data, callback, error);
             } else {
-                this.debugLogIn(()=> {
-                    this.syncCall(data, callback, error);
-                });
+            this.debugLogIn(()=> {
+            this.syncCall(data, callback, error);
+            });
             }
             */
             if (Utils.notNullnotUndefined(this.$rootScope.sessionUuid)) {
@@ -5481,17 +7134,19 @@ var Utils;
                     uuid: this.$rootScope.sessionUuid
                 };
             }
+
             this.syncCall(data, callback, error);
         };
+
         Api.prototype.asyncApi = function (data, callback, error) {
-            if (error === void 0) { error = undefined; }
+            if (typeof error === "undefined") { error = undefined; }
             /*
             if (Utils.notNullnotUndefined(this.session)) {
-                this.asyncCall(data, callback, error);
+            this.asyncCall(data, callback, error);
             } else {
-                this.debugLogIn(()=> {
-                    this.asyncCall(data, callback, error);
-                });
+            this.debugLogIn(()=> {
+            this.asyncCall(data, callback, error);
+            });
             }
             */
             if (Utils.notNullnotUndefined(this.$rootScope.sessionUuid)) {
@@ -5499,12 +7154,14 @@ var Utils;
                     uuid: this.$rootScope.sessionUuid
                 };
             }
+
             this.asyncCall(data, callback, error);
         };
+
         Api.prototype.installListener = function (before, after, error) {
-            if (before === void 0) { before = null; }
-            if (after === void 0) { after = null; }
-            if (error === void 0) { error = null; }
+            if (typeof before === "undefined") { before = null; }
+            if (typeof after === "undefined") { after = null; }
+            if (typeof error === "undefined") { error = null; }
             if (notNullnotUndefined(before)) {
                 this.beforeCallListeners.push(before);
             }
@@ -5518,11 +7175,13 @@ var Utils;
         Api.ASYNC_CALL_PATH = "/api/async";
         Api.SYNC_CALL_PATH = "/api/sync";
         Api.QUERY_PATH = "/api/query";
+
         Api.STATUS_DONE = 2;
         Api.STATUS_PROCESSING = 1;
         return Api;
     })();
     Utils.Api = Api;
+
     var Chain = (function () {
         function Chain() {
             this.flows = [];
@@ -5531,62 +7190,74 @@ var Utils;
             this.doneHandler = handler;
             return this;
         };
+
         Chain.prototype.error = function (handler) {
             this.errorHandler = handler;
             return this;
         };
+
         Chain.prototype.then = function (flow) {
             this.flows.push(flow);
             return this;
         };
+
         Chain.prototype.next = function () {
             var func = this.flows.shift();
             if (func) {
                 func(this);
-            }
-            else {
+            } else {
                 if (Utils.notNullnotUndefined(this.doneHandler)) {
                     this.doneHandler();
                 }
             }
         };
+
         Chain.prototype.fail = function (reason) {
             if (this.errorHandler) {
                 this.errorHandler(reason);
             }
         };
+
         Chain.prototype.start = function () {
             this.next();
         };
         return Chain;
     })();
     Utils.Chain = Chain;
+
     function periodicalRun(func, interval) {
         var cb = function () {
             if (func()) {
                 return;
             }
+
             setTimeout(cb, interval);
         };
+
         cb();
     }
     Utils.periodicalRun = periodicalRun;
+
     function notNullnotUndefined(arg) {
         return angular.isDefined(arg) && arg != null;
     }
     Utils.notNullnotUndefined = notNullnotUndefined;
+
     function notNullnotUndefinedNotEmptyString(arg) {
         return notNullnotUndefined(arg) && arg != "";
     }
     Utils.notNullnotUndefinedNotEmptyString = notNullnotUndefinedNotEmptyString;
+
     function firstItem(obj) {
         return obj[Object.keys(obj)[0]];
     }
     Utils.firstItem = firstItem;
+
     function isEmptyObject(obj) {
         if (!notNullnotUndefined(obj)) {
             return true;
         }
+
         for (var key in obj) {
             if (obj.hasOwnProperty(key)) {
                 return false;
@@ -5595,109 +7266,121 @@ var Utils;
         return true;
     }
     Utils.isEmptyObject = isEmptyObject;
+
     function arrayRemoveIndex(arr, index) {
         if (index != -1) {
             arr.splice(index, 1);
         }
     }
     Utils.arrayRemoveIndex = arrayRemoveIndex;
+
     function safeApply(scope, func) {
         if (!scope.$$phase) {
             scope.$apply(function () {
                 func();
             });
-        }
-        else {
+        } else {
             func();
         }
     }
     Utils.safeApply = safeApply;
+
     function addCommas(str) {
         return (str + "").replace(/\b(\d+)((\.\d+)*)\b/g, function (a, b, c) {
             return (b.charAt(0) > 0 && !(c || ".").lastIndexOf(".") ? b.replace(/(\d)(?=(\d{3})+$)/g, "$1,") : b) + c;
         });
     }
     Utils.addCommas = addCommas;
+
     function isValidSizeStr(str) {
         if (angular.isNumber(str)) {
             return true;
         }
+
         var cpattern = /^[PpTtGgMmKk]$/;
         var npattern = /^[0-9]$/;
         var last = str.slice(-1);
         if (cpattern.test(last)) {
             var size = str.substring(0, str.length - 1);
             return !isNaN(size);
-        }
-        else if (npattern.test(last)) {
+        } else if (npattern.test(last)) {
             return !isNaN(str);
-        }
-        else {
+        } else {
             return false;
         }
     }
     Utils.isValidSizeStr = isValidSizeStr;
+
     function stringContains(str, tofind) {
         return str.indexOf(tofind) > -1;
     }
     Utils.stringContains = stringContains;
+
     function isIpv4Address(ip) {
         var pattern = /\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b/;
         return pattern.test(ip);
     }
     Utils.isIpv4Address = isIpv4Address;
+
     function isCharacter(c) {
         var pattern = /^[a-z]$/;
         return pattern.test(c);
     }
     Utils.isCharacter = isCharacter;
+
     function isValidPort(port) {
         if (isNaN(port)) {
             return false;
         }
+
         var sport = parseInt(port);
         return sport >= 0 && sport <= 65535;
     }
     Utils.isValidPort = isValidPort;
+
     function isValidCidr(cidr) {
         var pairs = cidr.split("/");
         if (pairs.length != 2) {
             return false;
         }
+
         var ip = pairs[0];
         if (!Utils.isIpv4Address(ip)) {
             return false;
         }
+
         var cidrStr = pairs[1];
         if (isNaN(cidrStr)) {
             return false;
         }
+
         cidr = parseInt(cidrStr);
+
         return cidr >= 0 && cidr <= 32;
     }
     Utils.isValidCidr = isValidCidr;
+
     function shortHashName(prefix) {
         return prefix + '-' + ("0000" + (Math.random() * Math.pow(36, 4) << 0).toString(36)).substr(-4);
     }
     Utils.shortHashName = shortHashName;
+
     function uuid() {
         var dec2hex = [];
         for (var i = 0; i <= 15; i++) {
             dec2hex[i] = i.toString(16);
         }
+
         return function () {
             var uuid = '';
             for (var i = 1; i <= 36; i++) {
                 if (i === 9 || i === 14 || i === 19 || i === 24) {
                     continue;
-                }
-                else if (i === 15) {
+                } else if (i === 15) {
                     uuid += 4;
-                }
-                else if (i === 20) {
+                } else if (i === 20) {
                     uuid += dec2hex[(Math.random() * 4 | 0 + 8)];
-                }
-                else {
+                } else {
                     uuid += dec2hex[(Math.random() * 15 | 0)];
                 }
             }
@@ -5705,23 +7388,24 @@ var Utils;
         }();
     }
     Utils.uuid = uuid;
+
     function sprintf(fmt) {
         var args = [];
-        for (var _i = 1; _i < arguments.length; _i++) {
-            args[_i - 1] = arguments[_i];
+        for (var _i = 0; _i < (arguments.length - 1); _i++) {
+            args[_i] = arguments[_i + 1];
         }
         return fmt.replace(/{(\d+)}/g, function (match, index) {
-            return typeof args[index] != 'undefined'
-                ? args[index]
-                : "";
+            return typeof args[index] != 'undefined' ? args[index] : "";
         });
     }
     Utils.sprintf = sprintf;
+
     var K = 1024;
     var M = K * K;
     var G = M * K;
     var T = G * K;
     var P = T * K;
+
     var sizeMap = {
         'K': K,
         'M': M,
@@ -5729,29 +7413,26 @@ var Utils;
         'T': T,
         'P': P
     };
+
     function parseSize(sizeStr) {
         var quantity = sizeStr.substr(sizeStr.length - 1, 1);
         var size = parseInt(sizeStr);
         if (quantity == 'K' || quantity == 'k') {
             return size * K;
-        }
-        else if (quantity == 'M' || quantity == 'm') {
+        } else if (quantity == 'M' || quantity == 'm') {
             return size * M;
-        }
-        else if (quantity == 'G' || quantity == 'g') {
+        } else if (quantity == 'G' || quantity == 'g') {
             return size * G;
-        }
-        else if (quantity == 'T' || quantity == 't') {
+        } else if (quantity == 'T' || quantity == 't') {
             return size * T;
-        }
-        else if (quantity == 'P' || quantity == 'p') {
+        } else if (quantity == 'P' || quantity == 'p') {
             return size * P;
-        }
-        else {
+        } else {
             return parseInt(sizeStr);
         }
     }
     Utils.parseSize = parseSize;
+
     function sizeRoundToString(size) {
         var suffixes = ['P', 'T', 'G', 'M', 'K'];
         function round() {
@@ -5759,36 +7440,40 @@ var Utils;
             if (!notNullnotUndefined(size)) {
                 return sprintf('{0} Bytes', size);
             }
+
             var q = sizeMap[s];
             var ret = size / q;
             if (ret >= 1) {
                 return sprintf('{0} {1}', ret.toFixed(2), s);
-            }
-            else {
+            } else {
                 return round();
             }
         }
+
         return round();
     }
     Utils.sizeRoundToString = sizeRoundToString;
+
     function toFixed(num, precision) {
         var multiplier = Math.pow(10, precision + 1), wholeNumber = Math.floor(num * multiplier);
         return Math.round(wholeNumber / 10) * 10 / multiplier;
     }
     Utils.toFixed = toFixed;
+
     function toSizeString(input) {
-        try {
+        try  {
             return Utils.sizeRoundToString(parseInt(input));
-        }
-        catch (e) {
+        } catch (e) {
             return input;
         }
     }
     Utils.toSizeString = toSizeString;
+
     function toHZString(input) {
         return input + ' HZ';
     }
     Utils.toHZString = toHZString;
+
     function toPercentageString(input) {
         var per = parseFloat(input) * 100;
         var perStr = per.toString();
@@ -5798,10 +7483,12 @@ var Utils;
         return Utils.sprintf('{0}%', perStr);
     }
     Utils.toPercentageString = toPercentageString;
+
     function commaString(input) {
         return Utils.addCommas(input.toString());
     }
     Utils.commaString = commaString;
+
     var Model = (function () {
         function Model() {
         }
@@ -5811,48 +7498,54 @@ var Utils;
         return Model;
     })();
     Utils.Model = Model;
+
     var OGrid = (function () {
         function OGrid() {
         }
         OGrid.prototype.setFilter = function (filter) {
             this.grid.dataSource.filter(filter);
         };
+
         OGrid.prototype.select = function (item) {
             var selected = null;
             if (Utils.notNullnotUndefined(item)) {
                 selected = item;
-            }
-            else {
+            } else {
                 selected = this.grid.dataSource.data()[0];
             }
+
             if (selected) {
                 var row = this.grid.table.find('tr[data-uid="' + selected.uid + '"]');
                 this.grid.select(row);
             }
         };
+
         OGrid.prototype.refresh = function (data) {
-            if (data === void 0) { data = null; }
+            if (typeof data === "undefined") { data = null; }
             if (Utils.notNullnotUndefined(data)) {
                 this.grid.dataSource.data(data);
-            }
-            else {
+            } else {
                 this.grid.dataSource.read();
                 this.$scope.model.resetCurrent();
             }
         };
+
         OGrid.prototype.add = function (ps) {
             this.grid.dataSource.insert(0, ps);
         };
+
         OGrid.prototype.deleteCurrent = function () {
             var row = this.grid.dataSource.getByUid(this.$scope.model.current.uid);
             this.grid.dataSource.remove(row);
             this.$scope.model.resetCurrent();
         };
+
         OGrid.prototype.init = function ($scope, grid) {
             var _this = this;
             this.$scope = $scope;
             this.grid = grid;
             var model = this.$scope.model;
+
             this.options = {
                 resizable: true,
                 scrollable: true,
@@ -5863,6 +7556,7 @@ var Utils;
                     if (_this.grid.dataSource.totalPages() <= 1) {
                         _this.grid.pager.element.hide();
                     }
+
                     if (Utils.notNullnotUndefined(model.current)) {
                         _this.select(model.current);
                     }
@@ -5887,6 +7581,7 @@ var Utils;
         return OGrid;
     })();
     Utils.OGrid = OGrid;
+
     var WizardButton = (function () {
         function WizardButton(pages, mediator) {
             this.pages = pages;
@@ -5903,24 +7598,28 @@ var Utils;
                     el.removeAttr('data-toggle');
                 }
             });
+
             this.showPage(fpage);
         };
+
         WizardButton.prototype.canPreviousProceed = function () {
             if (this.currentIndex == 0) {
                 return false;
-            }
-            else {
+            } else {
                 var page = this.pages[this.currentIndex];
                 return page.canMoveToPrevious();
             }
         };
+
         WizardButton.prototype.canNextProceed = function () {
             var page = this.pages[this.currentIndex];
             return page.canMoveToNext();
         };
+
         WizardButton.prototype.isLastPage = function () {
             return this.currentIndex == this.pages.length - 1;
         };
+
         WizardButton.prototype.showPage = function (page) {
             page.active();
             page.show();
@@ -5929,18 +7628,21 @@ var Utils;
                 el.attr('data-toggle', 'tab');
             }
         };
+
         WizardButton.prototype.previousClick = function () {
             this.currentIndex--;
             var page = this.pages[this.currentIndex];
             this.mediator.movedToPage(page);
             this.showPage(page);
         };
+
         WizardButton.prototype.nextClick = function () {
             var _this = this;
             if (this.isLastPage()) {
                 this.mediator.finish();
                 return;
             }
+
             this.currentIndex++;
             var page = this.pages[this.currentIndex];
             if (Utils.notNullnotUndefined(page.beforeMoveToNext)) {
@@ -5948,20 +7650,20 @@ var Utils;
                     _this.mediator.movedToPage(page);
                     _this.showPage(page);
                 });
-            }
-            else {
+            } else {
                 this.mediator.movedToPage(page);
                 this.showPage(page);
             }
         };
+
         WizardButton.prototype.nextButtonName = function () {
             if (this.isLastPage()) {
                 return this.mediator.finishButtonName();
-            }
-            else {
+            } else {
                 return 'Next';
             }
         };
+
         WizardButton.prototype.pageClick = function (pageName) {
             for (var i = 0; i < this.pages.length; i++) {
                 var page = this.pages[i];
@@ -5975,9 +7677,12 @@ var Utils;
     })();
     Utils.WizardButton = WizardButton;
 })(Utils || (Utils = {}));
-angular.module("app.service", []).factory('Api', ['$http', '$rootScope', '$location', function ($http, $rootScope, $location) {
+
+angular.module("app.service", []).factory('Api', [
+    '$http', '$rootScope', '$location', function ($http, $rootScope, $location) {
         return new Utils.Api($http, $rootScope, $location);
-    }]).factory('Tag', ['Api', function (api) {
+    }]).factory('Tag', [
+    'Api', function (api) {
         return new Utils.Tag(api);
     }]);
 /// <reference path="d.ts/angularjs/angular.d.ts" />
@@ -5992,6 +7697,7 @@ var MRoot;
         return Events;
     })();
     MRoot.Events = Events;
+
     var main = (function () {
         function main($scope, $rootScope, api, apiDetails, $location, $cookies) {
             var _this = this;
@@ -6009,13 +7715,14 @@ var MRoot;
                         $rootScope.sessionUuid = $cookies.sessionUuid;
                         $rootScope.loginFlag = true;
                         $location.path("/dashboard");
-                    }
-                    else {
+                    } else {
                         $rootScope.loginFlag = false;
                     }
                 });
             }
+
             $rootScope.instanceConsoles = {};
+
             $scope.optionsNotification = {
                 position: {
                     pinned: true,
@@ -6036,6 +7743,7 @@ var MRoot;
                     }
                 ]
             };
+
             $scope.$on(Events.NOTIFICATION, function (e, msg) {
                 var type = msg.type;
                 if (!Utils.notNullnotUndefined(type)) {
@@ -6043,10 +7751,13 @@ var MRoot;
                 }
                 $scope.apiNotification.show(msg, type);
             });
+
             $rootScope.loginFlag = false;
+
             $scope.isLogin = function () {
                 return $rootScope.loginFlag;
             };
+
             $scope.$watch(function () {
                 return $rootScope.loginFlag;
             }, function () {
@@ -6054,12 +7765,15 @@ var MRoot;
                     $location.path("/login");
                 }
             });
+
             $scope.canLogin = function () {
                 return Utils.notNullnotUndefined($scope.username) && Utils.notNullnotUndefined($scope.password);
             };
+
             $scope.getAccountName = function () {
                 return $cookies.accountName;
             };
+
             $scope.logout = function () {
                 var msg = new ApiHeader.APILogOutMsg();
                 msg.sessionUuid = $cookies.sessionUuid;
@@ -6073,6 +7787,7 @@ var MRoot;
                     $scope.logInError = false;
                 });
             };
+
             $scope.logInError = false;
             $scope.login = function () {
                 var msg = new ApiHeader.APILogInByAccountMsg();
@@ -6088,8 +7803,7 @@ var MRoot;
                         $scope.password = null;
                         $location.path("/dashboard");
                         $scope.logInError = false;
-                    }
-                    else {
+                    } else {
                         $scope.logInError = true;
                     }
                 });
@@ -6100,6 +7814,7 @@ var MRoot;
     })();
     MRoot.main = main;
 })(MRoot || (MRoot = {}));
+
 var ApiHeader;
 (function (ApiHeader) {
     var QueryObject = (function () {
@@ -6119,8 +7834,9 @@ var ApiHeader;
     })();
     ApiHeader.QueryObject = QueryObject;
 })(ApiHeader || (ApiHeader = {}));
-angular.module("root", ['app.service', 'kendo.directives', 'ngRoute', 'ngTagsInput', 'ngCookies'])
-    .config(['$routeProvider', function (route) {
+
+angular.module("root", ['app.service', 'kendo.directives', 'ngRoute', 'ngTagsInput', 'ngCookies']).config([
+    '$routeProvider', function (route) {
         route.when('/login', {
             templateUrl: '/static/templates/login/login.html',
             controller: 'MRoot.main'
@@ -6155,7 +7871,7 @@ var Controller;
                             {
                                 text: "Zone",
                                 url: "/#/zone"
-                            },
+                            }
                         ]
                     },
                     {
@@ -6193,9 +7909,9 @@ var Controller;
                                     {
                                         text: "VIP",
                                         url: "#"
-                                    },
+                                    }
                                 ]
-                            },
+                            }
                         ]
                     },
                     {
@@ -6206,28 +7922,28 @@ var Controller;
             });
             /*
             $scope.barOptions = {
-                dataSource : new kendo.data.HierarchicalDataSource({
-                    data:[
-                        {
-                            text: "Compute",
-                            items: [
-                                {text: "Instance"},
-                                {text: "Host"},
-                                {text: "Cluster"},
-                                {text: "Zone"},
-                            ]
-                        },
-                        {
-                            text: "Storage"
-                        },
-                        {
-                            text: "Network"
-                        },
-                        {
-                            text: "Configuration"
-                        }
-                    ]
-                })
+            dataSource : new kendo.data.HierarchicalDataSource({
+            data:[
+            {
+            text: "Compute",
+            items: [
+            {text: "Instance"},
+            {text: "Host"},
+            {text: "Cluster"},
+            {text: "Zone"},
+            ]
+            },
+            {
+            text: "Storage"
+            },
+            {
+            text: "Network"
+            },
+            {
+            text: "Configuration"
+            }
+            ]
+            })
             };
             */
         }
@@ -6252,9 +7968,11 @@ var MNav;
             }, function (msg, reason) {
                 _this.decrease();
             });
+
             $scope.funcIsProcessing = function () {
                 return _this.pendingRequestNum > 0;
             };
+
             $scope.funcPendingRequestNum = function () {
                 return _this.pendingRequestNum;
             };
@@ -6288,12 +8006,15 @@ var MZone;
         Zone.prototype.progressOn = function () {
             this.inProgress = true;
         };
+
         Zone.prototype.progressOff = function () {
             this.inProgress = false;
         };
+
         Zone.prototype.isInProgress = function () {
             return this.inProgress;
         };
+
         Zone.prototype.isEnableShow = function () {
             return this.state == 'Disabled';
         };
@@ -6303,19 +8024,16 @@ var MZone;
         Zone.prototype.stateLabel = function () {
             if (this.state == 'Enabled') {
                 return 'label label-success';
-            }
-            else if (this.state == 'Disabled') {
+            } else if (this.state == 'Disabled') {
                 return 'label label-danger';
-            }
-            else {
+            } else {
                 return 'label label-default';
             }
         };
         Zone.prototype.gridColumnLabel = function () {
             if (this.state == 'Enabled') {
                 return 'z-color-box-green';
-            }
-            else if (this.state == 'Disabled') {
+            } else if (this.state == 'Disabled') {
                 return 'z-color-box-red';
             }
         };
@@ -6331,6 +8049,7 @@ var MZone;
         return Zone;
     })(ApiHeader.ZoneInventory);
     MZone.Zone = Zone;
+
     var ZoneManager = (function () {
         function ZoneManager(api, $rootScope) {
             this.api = api;
@@ -6339,6 +8058,7 @@ var MZone;
         ZoneManager.prototype.setSortBy = function (sortBy) {
             this.sortBy = sortBy;
         };
+
         ZoneManager.prototype.query = function (qobj, callback) {
             var msg = new ApiHeader.APIQueryZoneMsg();
             msg.count = qobj.count === true;
@@ -6360,6 +8080,7 @@ var MZone;
                 callback(zones, ret.total);
             });
         };
+
         ZoneManager.prototype.create = function (zone, done) {
             var _this = this;
             var msg = new ApiHeader.APICreateZoneMsg();
@@ -6375,6 +8096,7 @@ var MZone;
                 done(new kendo.data.ObservableObject(z));
             });
         };
+
         ZoneManager.prototype.disable = function (zone) {
             var _this = this;
             zone.progressOn();
@@ -6390,6 +8112,7 @@ var MZone;
                 });
             });
         };
+
         ZoneManager.prototype.enable = function (zone) {
             var _this = this;
             zone.progressOn();
@@ -6405,6 +8128,7 @@ var MZone;
                 });
             });
         };
+
         ZoneManager.prototype.delete = function (zone, done) {
             var _this = this;
             zone.progressOn();
@@ -6422,6 +8146,7 @@ var MZone;
         return ZoneManager;
     })();
     MZone.ZoneManager = ZoneManager;
+
     var ZoneModel = (function () {
         function ZoneModel() {
             this.current = new Zone();
@@ -6429,12 +8154,14 @@ var MZone;
         ZoneModel.prototype.resetCurrent = function () {
             this.current = null;
         };
+
         ZoneModel.prototype.setCurrent = function ($scope, zone) {
             this.current = zone;
         };
         return ZoneModel;
     })();
     MZone.ZoneModel = ZoneModel;
+
     var CreateZoneModel = (function () {
         function CreateZoneModel() {
             this.name = Utils.shortHashName('zone');
@@ -6445,6 +8172,7 @@ var MZone;
         return CreateZoneModel;
     })();
     MZone.CreateZoneModel = CreateZoneModel;
+
     var Action = (function () {
         function Action($scope, zoneMgr) {
             this.$scope = $scope;
@@ -6453,24 +8181,30 @@ var MZone;
         Action.prototype.enable = function () {
             this.zoneMgr.enable(this.$scope.model.current);
         };
+
         Action.prototype.disable = function () {
             this.zoneMgr.disable(this.$scope.model.current);
         };
+
         Action.prototype.createCluster = function (win) {
             this.$scope.optionsCreateCluster.zone = this.$scope.model.current;
             win.open();
         };
+
         Action.prototype.createL2Network = function () {
             this.$scope.optionsCreateL2Network.zone = this.$scope.model.current;
             this.$scope.winNewL2Network.open();
         };
+
         Action.prototype.addPrimaryStorage = function () {
             this.$scope.winNewPrimaryStorage.open();
         };
+
         Action.prototype.attachBackupStorage = function () {
         };
         return Action;
     })();
+
     var DetailsController = (function () {
         function DetailsController($scope, zoneMgr, api, clusterMgr, $location, $routeParams, tagService, psMgr, current, l2Mgr, bsMgr) {
             var _this = this;
@@ -6487,26 +8221,33 @@ var MZone;
             $scope.model = new ZoneModel();
             $scope.model.current = current;
             $scope.optionsCreateCluster = new MCluster.CreateClusterOptions();
+
             $scope.funcDelete = function (win) {
                 win.open();
             };
+
             $scope.action = new Action($scope, zoneMgr);
+
             $scope.funcRefresh = function () {
                 _this.loadSelf($scope.model.current.uuid);
             };
+
             $scope.funcToolbarShow = function () {
                 return Utils.notNullnotUndefined($scope.model.current);
             };
+
             $scope.funcLoadClusters = function () {
                 if (!Utils.notNullnotUndefined($scope.model.current)) {
                     return;
                 }
+
                 var qobj = new ApiHeader.QueryObject();
                 qobj.addCondition({ name: 'zoneUuid', op: '=', value: $scope.model.current.uuid });
                 _this.clusterMgr.query(qobj, function (clusters) {
                     $scope.optionsClusterGrid.dataSource.data(new kendo.data.ObservableArray(clusters));
                 });
             };
+
             $scope.optionsDeleteZone = {
                 confirm: function () {
                     zoneMgr.delete($scope.model.current, function (ret) {
@@ -6516,12 +8257,14 @@ var MZone;
                 title: 'DELETE ZONE',
                 description: 'Deleting zone will cause all sub resources(e.g Cluster, Host, VM) being deleted and no way to recover'
             };
+
             $scope.optionsCreateL2Network = {
                 zone: null,
                 done: function (l2) {
                     $scope.optionsL2NetworkGrid.dataSource.insert(0, l2);
                 }
             };
+
             $scope.optionsClusterGrid = {
                 pageSize: 20,
                 resizable: true,
@@ -6566,15 +8309,18 @@ var MZone;
                     data: new kendo.data.ObservableArray([])
                 })
             };
+
             $scope.optionsCreatePrimaryStorage = {
                 zone: current,
                 done: function (ps) {
                     $scope.optionsPrimaryStorageGrid.dataSource.insert(0, ps);
                 }
             };
+
             $scope.funcLoadPrimaryStorage = function () {
                 $scope.optionsPrimaryStorageGrid.dataSource.read();
             };
+
             $scope.optionsPrimaryStorageGrid = {
                 pageSize: 20,
                 resizable: true,
@@ -6644,6 +8390,7 @@ var MZone;
                                 });
                                 return;
                             }
+
                             var qobj = new ApiHeader.QueryObject();
                             qobj.limit = options.data.take;
                             qobj.start = options.data.pageSize * (options.data.page - 1);
@@ -6662,6 +8409,7 @@ var MZone;
                     }
                 })
             };
+
             $scope.optionsL2NetworkGrid = {
                 pageSize: 20,
                 resizable: true,
@@ -6715,6 +8463,7 @@ var MZone;
                                 });
                                 return;
                             }
+
                             var qobj = new ApiHeader.QueryObject();
                             qobj.limit = options.data.take;
                             qobj.start = options.data.pageSize * (options.data.page - 1);
@@ -6733,6 +8482,7 @@ var MZone;
                     }
                 })
             };
+
             $scope.optionsTag = {
                 tags: [],
                 createTag: function (item) {
@@ -6751,9 +8501,11 @@ var MZone;
                     return Utils.notNullnotUndefined($scope.model.current);
                 }
             };
+
             this.tagService.queryTag($scope.model.current.uuid, function (tags) {
                 $scope.optionsTag.tags = tags;
             });
+
             $scope.optionsBackupStorageGrid = {
                 pageSize: 20,
                 resizable: true,
@@ -6820,6 +8572,7 @@ var MZone;
                                 op: 'in',
                                 value: [current.uuid].join()
                             });
+
                             bsMgr.query(qobj, function (bss, total) {
                                 options.success({
                                     data: bss,
@@ -6839,11 +8592,13 @@ var MZone;
                 _this.$scope.model.current = zones[0];
             });
         };
-        DetailsController.$inject = ['$scope', 'ZoneManager', 'Api', 'ClusterManager', '$location', '$routeParams', 'Tag',
+        DetailsController.$inject = [
+            '$scope', 'ZoneManager', 'Api', 'ClusterManager', '$location', '$routeParams', 'Tag',
             'PrimaryStorageManager', 'current', 'L2NetworkManager', 'BackupStorageManager'];
         return DetailsController;
     })();
     MZone.DetailsController = DetailsController;
+
     var FilterBy = (function () {
         function FilterBy() {
             this.state = 'All';
@@ -6851,11 +8606,9 @@ var MZone;
         FilterBy.prototype.useState = function () {
             if (this.state == 'All') {
                 this.buttonName = 'state:all';
-            }
-            else if (this.state == 'Enabled') {
+            } else if (this.state == 'Enabled') {
                 this.buttonName = 'state:Enabled';
-            }
-            else if (this.state == 'Disabled') {
+            } else if (this.state == 'Disabled') {
                 this.buttonName = 'state:Disabled';
             }
             return this.state;
@@ -6863,6 +8616,7 @@ var MZone;
         return FilterBy;
     })();
     MZone.FilterBy = FilterBy;
+
     var Controller = (function () {
         function Controller($scope, zoneMgr, api, $location) {
             var _this = this;
@@ -6871,49 +8625,60 @@ var MZone;
             this.api = api;
             this.$location = $location;
             $scope.action = new Action($scope, zoneMgr);
+
             $scope.funcCreateZone = function (win) {
                 $scope.modelCreateZone = new CreateZoneModel();
                 win.center();
                 win.open();
             };
+
             $scope.funcCreateZoneDone = function (win) {
                 zoneMgr.create($scope.modelCreateZone, function (ret) {
                     $scope.model.resetCurrent();
                     $scope.optionsZoneGrid.dataSource.insert(0, ret);
                 });
+
                 win.close();
             };
+
             $scope.funcCreateZoneCancel = function (win) {
                 win.close();
             };
+
             $scope.funcRefresh = function () {
                 var grid = $scope.zoneGrid;
                 grid.dataSource.read();
             };
+
             $scope.funcIsActionShow = function () {
                 return !Utils.isEmptyObject($scope.model.current);
             };
+
             $scope.funcIsActionDisabled = function () {
                 if ($scope.model.current == null) {
                     return true;
                 }
+
                 return $scope.model.current.isInProgress();
             };
+
             $scope.funcShowPopoverSortedBy = function (popover) {
                 popover.toggle();
             };
+
             $scope.filterBy = new FilterBy();
             $scope.filterBy.useState();
+
             $scope.funcShowPopoverFilterBy = function (popover) {
                 popover.toggle();
             };
+
             $scope.funcFilterByConfirm = function (popover) {
                 var grid = $scope.zoneGrid;
                 var state = $scope.filterBy.useState();
                 if (state === 'All') {
                     grid.dataSource.filter(null);
-                }
-                else {
+                } else {
                     grid.dataSource.filter({
                         field: 'state',
                         operator: 'eq',
@@ -6922,17 +8687,21 @@ var MZone;
                 }
                 popover.toggle();
             };
+
             $scope.popoverFilterBy = function (popover) {
                 popover.toggle();
             };
+
             $scope.funcSearch = function (search) {
                 search.open();
             };
+
             $scope.optionsCreateL2Network = {
                 zone: null,
                 done: function (l2) {
                 }
             };
+
             $scope.optionsSearch = {
                 fields: ApiHeader.ZoneInventoryQueryable,
                 name: 'ZONE',
@@ -6958,16 +8727,19 @@ var MZone;
                     });
                 }
             };
+
             $scope.optionsCreatePrimaryStorage = {
                 zone: null,
                 done: function (ps) {
                 }
             };
+
             $scope.$watch(function () {
                 return $scope.model.current;
             }, function () {
                 $scope.optionsCreatePrimaryStorage.zone = $scope.model.current;
             });
+
             $scope.optionsNewZone = {
                 width: "480px",
                 animation: false,
@@ -6975,7 +8747,9 @@ var MZone;
                 draggable: false,
                 resizable: false
             };
+
             $scope.model = new ZoneModel();
+
             $scope.optionsDeleteZone = {
                 confirm: function () {
                     zoneMgr.delete($scope.model.current, function (ret) {
@@ -6987,10 +8761,13 @@ var MZone;
                 title: 'DELETE ZONE',
                 description: 'Deleting zone will cause all sub resources(e.g Cluster, Host, VM) being deleted and no way to recover'
             };
+
             $scope.funcDeleteZone = function (win) {
                 win.open();
             };
+
             $scope.optionsCreateCluster = new MCluster.CreateClusterOptions();
+
             $scope.optionsSortBy = {
                 done: function (ret) {
                     zoneMgr.setSortBy(ret);
@@ -7016,6 +8793,7 @@ var MZone;
                     }
                 ]
             };
+
             $scope.funcZoneGridDoubleClick = function (e) {
                 if (Utils.notNullnotUndefined($scope.model.current)) {
                     var url = Utils.sprintf('/zone/{0}', $scope.model.current.uuid);
@@ -7023,6 +8801,7 @@ var MZone;
                     e.preventDefault();
                 }
             };
+
             $scope.optionsZoneGrid = {
                 change: function (e) {
                     var grid = e.sender;
@@ -7064,13 +8843,14 @@ var MZone;
                     if (grid.dataSource.totalPages() == 1) {
                         grid.pager.element.hide();
                     }
+
                     var selected = null;
                     if ($scope.model.current) {
                         selected = $scope.model.current;
-                    }
-                    else {
+                    } else {
                         selected = grid.dataSource.data()[0];
                     }
+
                     if (selected) {
                         var row = grid.table.find('tr[data-uid="' + selected.uid + '"]');
                         grid.select(row);
@@ -7105,9 +8885,12 @@ var MZone;
     })();
     MZone.Controller = Controller;
 })(MZone || (MZone = {}));
-angular.module('root').factory('ZoneManager', ['Api', '$rootScope', function (api, $rootScope) {
+
+angular.module('root').factory('ZoneManager', [
+    'Api', '$rootScope', function (api, $rootScope) {
         return new MZone.ZoneManager(api, $rootScope);
-    }]).config(['$routeProvider', function (route) {
+    }]).config([
+    '$routeProvider', function (route) {
         route.when('/zone', {
             templateUrl: '/static/templates/zone/zone.html',
             controller: 'MZone.Controller'
@@ -7141,12 +8924,15 @@ var MCluster;
         Cluster.prototype.progressOn = function () {
             this.inProgress = true;
         };
+
         Cluster.prototype.progressOff = function () {
             this.inProgress = false;
         };
+
         Cluster.prototype.isInProgress = function () {
             return this.inProgress;
         };
+
         Cluster.prototype.isEnableShow = function () {
             return this.state == 'Disabled';
         };
@@ -7156,19 +8942,16 @@ var MCluster;
         Cluster.prototype.stateLabel = function () {
             if (this.state == 'Enabled') {
                 return 'label label-success';
-            }
-            else if (this.state == 'Disabled') {
+            } else if (this.state == 'Disabled') {
                 return 'label label-danger';
-            }
-            else {
+            } else {
                 return 'label label-default';
             }
         };
         Cluster.prototype.gridColumnLabel = function () {
             if (this.state == 'Enabled') {
                 return 'z-color-box-green';
-            }
-            else if (this.state == 'Disabled') {
+            } else if (this.state == 'Disabled') {
                 return 'z-color-box-red';
             }
         };
@@ -7185,6 +8968,7 @@ var MCluster;
         return Cluster;
     })(ApiHeader.ClusterInventory);
     MCluster.Cluster = Cluster;
+
     var ClusterManager = (function () {
         function ClusterManager(api, $rootScope) {
             this.api = api;
@@ -7193,9 +8977,11 @@ var MCluster;
         ClusterManager.prototype.setSortBy = function (sortBy) {
             this.sortBy = sortBy;
         };
+
         ClusterManager.prototype.wrap = function (cluster) {
             return new kendo.data.ObservableObject(cluster);
         };
+
         ClusterManager.prototype.create = function (cluster, done) {
             var _this = this;
             var msg = new ApiHeader.APICreateClusterMsg();
@@ -7213,6 +8999,7 @@ var MCluster;
                 });
             });
         };
+
         ClusterManager.prototype.query = function (qobj, callback) {
             var _this = this;
             var msg = new ApiHeader.APIQueryClusterMsg();
@@ -7235,9 +9022,10 @@ var MCluster;
                 callback(clusters, ret.total);
             });
         };
+
         ClusterManager.prototype.detachPrimaryStorage = function (cluster, ps, done) {
             var _this = this;
-            if (done === void 0) { done = null; }
+            if (typeof done === "undefined") { done = null; }
             cluster.progressOn();
             var msg = new ApiHeader.APIDetachPrimaryStorageFromClusterMsg();
             msg.primaryStorageUuid = ps.uuid;
@@ -7253,9 +9041,10 @@ var MCluster;
                 }
             });
         };
+
         ClusterManager.prototype.attachPrimaryStorage = function (cluster, ps, callback) {
             var _this = this;
-            if (callback === void 0) { callback = null; }
+            if (typeof callback === "undefined") { callback = null; }
             cluster.progressOn();
             var msg = new ApiHeader.APIAttachPrimaryStorageToClusterMsg();
             msg.clusterUuid = cluster.uuid;
@@ -7271,9 +9060,10 @@ var MCluster;
                 }
             });
         };
+
         ClusterManager.prototype.attachL2Network = function (cluster, l2, done) {
             var _this = this;
-            if (done === void 0) { done = null; }
+            if (typeof done === "undefined") { done = null; }
             cluster.progressOn();
             var msg = new ApiHeader.APIAttachL2NetworkToClusterMsg();
             msg.clusterUuid = cluster.uuid;
@@ -7289,9 +9079,10 @@ var MCluster;
                 }
             });
         };
+
         ClusterManager.prototype.detachL2Network = function (cluster, l2, done) {
             var _this = this;
-            if (done === void 0) { done = null; }
+            if (typeof done === "undefined") { done = null; }
             cluster.progressOn();
             var msg = new ApiHeader.APIDetachL2NetworkFromClusterMsg();
             msg.clusterUuid = cluster.uuid;
@@ -7307,6 +9098,7 @@ var MCluster;
                 }
             });
         };
+
         ClusterManager.prototype.disable = function (cluster) {
             var _this = this;
             cluster.progressOn();
@@ -7322,6 +9114,7 @@ var MCluster;
                 });
             });
         };
+
         ClusterManager.prototype.enable = function (cluster) {
             var _this = this;
             cluster.progressOn();
@@ -7337,6 +9130,7 @@ var MCluster;
                 });
             });
         };
+
         ClusterManager.prototype.delete = function (cluster, done) {
             var _this = this;
             cluster.progressOn();
@@ -7354,6 +9148,7 @@ var MCluster;
         return ClusterManager;
     })();
     MCluster.ClusterManager = ClusterManager;
+
     var ClusterModel = (function (_super) {
         __extends(ClusterModel, _super);
         function ClusterModel() {
@@ -7363,6 +9158,7 @@ var MCluster;
         return ClusterModel;
     })(Utils.Model);
     MCluster.ClusterModel = ClusterModel;
+
     var OClusterGrid = (function (_super) {
         __extends(OClusterGrid, _super);
         function OClusterGrid($scope, clusterMgr) {
@@ -7398,6 +9194,7 @@ var MCluster;
                     width: '30%'
                 }
             ];
+
             this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
@@ -7412,6 +9209,7 @@ var MCluster;
         }
         return OClusterGrid;
     })(Utils.OGrid);
+
     var Action = (function () {
         function Action($scope, clusterMgr) {
             this.$scope = $scope;
@@ -7420,26 +9218,33 @@ var MCluster;
         Action.prototype.enable = function () {
             this.clusterMgr.enable(this.$scope.model.current);
         };
+
         Action.prototype.disable = function () {
             this.clusterMgr.disable(this.$scope.model.current);
         };
+
         Action.prototype.addHost = function () {
             this.$scope.winNewHost.open();
         };
+
         Action.prototype.attachL2Network = function () {
             this.$scope.winAttachL2Network.open();
         };
+
         Action.prototype.detachL2Network = function () {
             this.$scope.winDetachL2Network.open();
         };
+
         Action.prototype.attachPrimaryStorage = function () {
             this.$scope.winAttachPrimaryStorage.open();
         };
+
         Action.prototype.detachPrimaryStorage = function () {
             this.$scope.winDetachPrimaryStorage.open();
         };
         return Action;
     })();
+
     var FilterBy = (function () {
         function FilterBy($scope, hypervisorTypes) {
             var _this = this;
@@ -7465,11 +9270,13 @@ var MCluster;
                 dataTextField: 'name',
                 dataValueField: 'value'
             };
+
             this.valueList = {
                 dataSource: new kendo.data.DataSource({
                     data: []
                 })
             };
+
             this.field = FilterBy.NONE;
             $scope.$watch(function () {
                 return _this.field;
@@ -7477,11 +9284,9 @@ var MCluster;
                 if (_this.field == FilterBy.NONE) {
                     _this.valueList.dataSource.data([]);
                     _this.value = null;
-                }
-                else if (_this.field == FilterBy.STATE) {
+                } else if (_this.field == FilterBy.STATE) {
                     _this.valueList.dataSource.data(['Enabled', 'Disabled']);
-                }
-                else if (_this.field == FilterBy.HYPERVISOR) {
+                } else if (_this.field == FilterBy.HYPERVISOR) {
                     _this.valueList.dataSource.data(_this.hypervisorTypes);
                 }
             });
@@ -7492,19 +9297,24 @@ var MCluster;
             this.name = !Utils.notNullnotUndefined(this.value) ? null : Utils.sprintf('{0}:{1}', this.field, this.value);
             popover.toggle();
         };
+
         FilterBy.prototype.open = function (popover) {
             popover.toggle();
         };
+
         FilterBy.prototype.isValueListDisabled = function () {
             return !Utils.notNullnotUndefined(this.value);
         };
+
         FilterBy.prototype.getButtonName = function () {
             return this.name;
         };
+
         FilterBy.prototype.toKendoFilter = function () {
             if (!Utils.notNullnotUndefined(this.value)) {
                 return null;
             }
+
             return {
                 field: this.field,
                 operator: 'eq',
@@ -7516,6 +9326,7 @@ var MCluster;
         FilterBy.HYPERVISOR = 'hypervisorType';
         return FilterBy;
     })();
+
     var DetailsController = (function () {
         function DetailsController($scope, clusterMgr, $routeParams, tagService, psMgr, current, l2Mgr, hostMgr) {
             var _this = this;
@@ -7529,16 +9340,21 @@ var MCluster;
             this.hostMgr = hostMgr;
             $scope.model = new ClusterModel();
             $scope.model.current = current;
+
             $scope.funcDelete = function (win) {
                 win.open();
             };
+
             $scope.action = new Action($scope, clusterMgr);
+
             $scope.funcRefresh = function () {
                 _this.loadSelf($scope.model.current.uuid);
             };
+
             $scope.funcToolbarShow = function () {
                 return Utils.notNullnotUndefined($scope.model.current);
             };
+
             $scope.optionsDeleteCluster = {
                 title: 'DELETE CLUSTER',
                 description: 'Deleting cluster will cause all sub resources(e.g Host, VM) being deleted and no way to recover',
@@ -7548,6 +9364,7 @@ var MCluster;
                     });
                 }
             };
+
             $scope.optionsTag = {
                 tags: [],
                 createTag: function (item) {
@@ -7566,15 +9383,18 @@ var MCluster;
                     return Utils.notNullnotUndefined($scope.model.current);
                 }
             };
+
             this.tagService.queryTag($scope.model.current.uuid, function (tags) {
                 $scope.optionsTag.tags = tags;
             });
+
             $scope.optionsAttachL2Network = {
                 cluster: $scope.model.current,
                 done: function (l2) {
                     $scope.optionsL2NetworkGrid.dataSource.insert(0, l2);
                 }
             };
+
             $scope.optionsDetachL2Network = {
                 cluster: $scope.model.current,
                 done: function (l2) {
@@ -7590,12 +9410,14 @@ var MCluster;
                     }
                 }
             };
+
             $scope.optionsAttachPrimaryStorage = {
                 cluster: $scope.model.current,
                 done: function (ps) {
                     $scope.optionsPrimaryStorageGrid.dataSource.insert(0, ps);
                 }
             };
+
             $scope.optionsDetachPrimaryStorage = {
                 cluster: $scope.model.current,
                 done: function (ps) {
@@ -7611,6 +9433,7 @@ var MCluster;
                     }
                 }
             };
+
             $scope.optionsCreateHost = {
                 done: function (info) {
                     hostMgr.create(info, function (ret) {
@@ -7618,6 +9441,7 @@ var MCluster;
                     });
                 }
             };
+
             $scope.optionsHostGrid = {
                 pageSize: 20,
                 resizable: true,
@@ -7666,6 +9490,7 @@ var MCluster;
                                 });
                                 return;
                             }
+
                             var qobj = new ApiHeader.QueryObject();
                             qobj.limit = options.data.take;
                             qobj.start = options.data.pageSize * (options.data.page - 1);
@@ -7684,6 +9509,7 @@ var MCluster;
                     }
                 })
             };
+
             $scope.optionsL2NetworkGrid = {
                 pageSize: 20,
                 resizable: true,
@@ -7737,6 +9563,7 @@ var MCluster;
                                 });
                                 return;
                             }
+
                             var qobj = new ApiHeader.QueryObject();
                             qobj.limit = options.data.take;
                             qobj.start = options.data.pageSize * (options.data.page - 1);
@@ -7755,9 +9582,11 @@ var MCluster;
                     }
                 })
             };
+
             $scope.funcLoadPrimaryStorage = function () {
                 $scope.optionsPrimaryStorageGrid.dataSource.read();
             };
+
             $scope.optionsPrimaryStorageGrid = {
                 pageSize: 20,
                 resizable: true,
@@ -7827,6 +9656,7 @@ var MCluster;
                                 });
                                 return;
                             }
+
                             var qobj = new ApiHeader.QueryObject();
                             qobj.limit = options.data.take;
                             qobj.start = options.data.pageSize * (options.data.page - 1);
@@ -7858,6 +9688,7 @@ var MCluster;
         return DetailsController;
     })();
     MCluster.DetailsController = DetailsController;
+
     var Controller = (function () {
         function Controller($scope, clusterMgr, hypervisorTypes, $location, hostMgr) {
             this.$scope = $scope;
@@ -7900,6 +9731,7 @@ var MCluster;
                     $scope.oClusterGrid.refresh();
                 }
             };
+
             $scope.optionsSearch = {
                 fields: ApiHeader.ClusterInventoryQueryable,
                 name: 'CLUSTER',
@@ -7927,26 +9759,31 @@ var MCluster;
                     });
                 }
             };
+
             $scope.optionsAttachPrimaryStorage = {
                 cluster: $scope.model.current,
                 done: function (ps) {
                 }
             };
+
             $scope.optionsDetachPrimaryStorage = {
                 cluster: $scope.model.current,
                 done: function (ps) {
                 }
             };
+
             $scope.optionsAttachL2Network = {
                 cluster: $scope.model.current,
                 done: function (l2) {
                 }
             };
+
             $scope.optionsDetachL2Network = {
                 cluster: $scope.model.current,
                 done: function (l2) {
                 }
             };
+
             $scope.$watch(function () {
                 return $scope.model.current;
             }, function () {
@@ -7955,6 +9792,7 @@ var MCluster;
                 $scope.optionsAttachL2Network.cluster = $scope.model.current;
                 $scope.optionsDetachL2Network.cluster = $scope.model.current;
             });
+
             $scope.funcClusterGridDoubleClick = function (e) {
                 if (Utils.notNullnotUndefined($scope.model.current)) {
                     var url = Utils.sprintf('/cluster/{0}', $scope.model.current.uuid);
@@ -7962,16 +9800,21 @@ var MCluster;
                     e.preventDefault();
                 }
             };
+
             $scope.filterBy = new FilterBy($scope, this.hypervisorTypes);
+
             $scope.funcSearch = function (win) {
                 win.open();
             };
+
             $scope.funcCreateCluster = function (win) {
                 win.open();
             };
+
             $scope.funcDeleteCluster = function (win) {
                 $scope.deleteCluster.open();
             };
+
             $scope.optionsDeleteCluster = {
                 title: 'DELETE CLUSTER',
                 description: 'Deleting cluster will cause all sub resources(e.g Host, VM) being deleted and no way to recover',
@@ -7981,20 +9824,25 @@ var MCluster;
                     });
                 }
             };
+
             $scope.funcRefresh = function () {
                 $scope.oClusterGrid.refresh();
             };
+
             $scope.funcIsActionShow = function () {
                 return !Utils.isEmptyObject($scope.model.current);
             };
+
             $scope.funcIsActionDisabled = function () {
                 return Utils.notNullnotUndefined($scope.model.current) && $scope.model.current.isInProgress();
             };
+
             $scope.optionsCreateCluster = {
                 done: function (cluster) {
                     $scope.oClusterGrid.add(cluster);
                 }
             };
+
             $scope.optionsCreateHost = {
                 done: function (info) {
                     hostMgr.create(info, function (ret) {
@@ -8006,12 +9854,14 @@ var MCluster;
         return Controller;
     })();
     MCluster.Controller = Controller;
+
     var CreateClusterOptions = (function () {
         function CreateClusterOptions() {
         }
         return CreateClusterOptions;
     })();
     MCluster.CreateClusterOptions = CreateClusterOptions;
+
     var CreateCluster = (function () {
         function CreateCluster(api, zoneMgr, clusterMgr, psMgr, l2Mgr) {
             var _this = this;
@@ -8035,6 +9885,7 @@ var MCluster;
                         _this.options = parentScope[optionName];
                     });
                 }
+
                 var infoPage = $scope.infoPage = {
                     activeState: true,
                     name: null,
@@ -8048,8 +9899,7 @@ var MCluster;
                         return $scope.zoneList.dataSource.data().length > 0;
                     },
                     canMoveToNext: function () {
-                        return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.zoneUuid)
-                            && Utils.notNullnotUndefined(this.hypervisorType);
+                        return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.zoneUuid) && Utils.notNullnotUndefined(this.hypervisorType);
                     },
                     show: function () {
                         this.getAnchorElement().tab('show');
@@ -8074,6 +9924,7 @@ var MCluster;
                         this.activeState = false;
                     }
                 };
+
                 var psPage = $scope.psPage = {
                     activeState: false,
                     canMoveToPrevious: function () {
@@ -8104,6 +9955,7 @@ var MCluster;
                         this.activeState = false;
                     }
                 };
+
                 var l2Page = $scope.l2Page = {
                     activeState: false,
                     hasL2Netwwork: function () {
@@ -8134,6 +9986,7 @@ var MCluster;
                         this.activeState = false;
                     }
                 };
+
                 var mediator = $scope.mediator = {
                     currentPage: infoPage,
                     movedToPage: function (page) {
@@ -8170,36 +10023,43 @@ var MCluster;
                         }).start();
                     }
                 };
+
                 $scope.button = new Utils.WizardButton([
                     infoPage, psPage, l2Page
                 ], mediator);
+
                 $scope.$watch(function () {
                     return $scope.infoPage.zoneUuid;
                 }, function () {
                     if (Utils.notNullnotUndefined($scope.primaryStorageList__)) {
                         $scope.primaryStorageList__.value([]);
                     }
+
                     var zuuid = $scope.infoPage.zoneUuid;
                     if (Utils.notNullnotUndefined(zuuid)) {
                         _this.queryPrimaryStorages(zuuid, function (pss) {
                             $scope.primaryStorageListOptions__.dataSource.data(pss);
                         });
+
                         _this.queryL2Networks(zuuid, function (l2s) {
                             $scope.l2NetworkListOptions__.dataSource.data(l2s);
                         });
                     }
                 });
+
                 $scope.zoneList = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
                     template: "<div style='color: black'><span class='z-label'>Name</span>: #: name #</div><div style='color: black'><span class='z-label'>State:</span>#: state #</div><div style='color: black'><span class='z-label'>UUID:</span> #: uuid #</div>"
                 };
+
                 $scope.hypervisorList = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "type",
                     dataValueField: "type"
                 };
+
                 $scope.winCreateClusterOptions__ = {
                     width: "700px",
                     //height: "518px",
@@ -8208,24 +10068,21 @@ var MCluster;
                     draggable: false,
                     resizable: false
                 };
+
                 $scope.primaryStorageListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">URL:</span><span>#: url #</span></div>'
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>' + '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' + '<div style="color: black"><span class="z-label">URL:</span><span>#: url #</span></div>'
                 };
+
                 $scope.l2NetworkListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Physical Interface:</span><span>#: physicalInterface #</span></div>'
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>' + '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' + '<div style="color: black"><span class="z-label">Physical Interface:</span><span>#: physicalInterface #</span></div>'
                 };
+
                 _this.$scope = $scope;
             };
             this.restrict = 'EA';
@@ -8241,10 +10098,12 @@ var MCluster;
                     value: zoneUuid
                 }
             ];
+
             this.psMgr.query(qobj, function (pss) {
                 done(pss);
             });
         };
+
         CreateCluster.prototype.queryL2Networks = function (zoneUuid, done) {
             var qobj = new ApiHeader.QueryObject();
             qobj.conditions = [
@@ -8254,10 +10113,12 @@ var MCluster;
                     value: zoneUuid
                 }
             ];
+
             this.l2Mgr.query(qobj, function (l2s) {
                 done(l2s);
             });
         };
+
         CreateCluster.prototype.open = function () {
             var _this = this;
             var win = this.$scope.winCreateCluster__;
@@ -8270,8 +10131,7 @@ var MCluster;
                     _this.$scope.zoneList.dataSource.data(new kendo.data.ObservableArray([_this.options.zone]));
                     _this.$scope.infoPage.zoneUuid = _this.options.zone.uuid;
                     chain.next();
-                }
-                else {
+                } else {
                     _this.zoneMgr.query(new ApiHeader.QueryObject(), function (zones, total) {
                         _this.$scope.zoneList.dataSource.data(zones);
                         if (zones.length > 0) {
@@ -8298,12 +10158,14 @@ var MCluster;
         return CreateCluster;
     })();
     MCluster.CreateCluster = CreateCluster;
+
     var AttachL2NetworkOptions = (function () {
         function AttachL2NetworkOptions() {
         }
         return AttachL2NetworkOptions;
     })();
     MCluster.AttachL2NetworkOptions = AttachL2NetworkOptions;
+
     var ClusterAttachL2Network = (function () {
         function ClusterAttachL2Network(l2Mgr, clusterMgr) {
             var _this = this;
@@ -8318,15 +10180,13 @@ var MCluster;
                 parent[$attrs.zClusterAttachL2Network] = _this;
                 _this.options = parent[$attrs.zOptions];
                 _this.$scope = $scope;
+
                 $scope.uuid = null;
                 _this.l2NetworkListOptions = $scope.l2NetworkListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Physical Interface:</span><span>#: physicalInterface #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>' + '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' + '<div style="color: black"><span class="z-label">Physical Interface:</span><span>#: physicalInterface #</span></div>',
                     change: function (e) {
                         var select = e.sender;
                         Utils.safeApply($scope, function () {
@@ -8334,16 +10194,21 @@ var MCluster;
                         });
                     }
                 };
+
                 $scope.hasL2Network = function () {
                     return $scope.l2NetworkListOptions__.dataSource.data().length > 0;
                 };
+
                 $scope.selectItemNum = 0;
+
                 $scope.canProceed = function () {
                     return $scope.selectItemNum > 0;
                 };
+
                 $scope.cancel = function () {
                     $scope.attachL2Network__.close();
                 };
+
                 $scope.done = function () {
                     var l2s = $scope.l2NetworkList__.dataItems();
                     angular.forEach(l2s, function (l2) {
@@ -8353,6 +10218,7 @@ var MCluster;
                             }
                         });
                     });
+
                     $scope.attachL2Network__.close();
                 };
             };
@@ -8375,6 +10241,7 @@ var MCluster;
                         value: _this.options.cluster.uuid
                     }
                 ];
+
                 _this.l2Mgr.query(qobj, function (l2s) {
                     _this.l2NetworkListOptions.dataSource.data(l2s);
                     chain.next();
@@ -8387,12 +10254,14 @@ var MCluster;
         return ClusterAttachL2Network;
     })();
     MCluster.ClusterAttachL2Network = ClusterAttachL2Network;
+
     var DetachL2NetworkOptions = (function () {
         function DetachL2NetworkOptions() {
         }
         return DetachL2NetworkOptions;
     })();
     MCluster.DetachL2NetworkOptions = DetachL2NetworkOptions;
+
     var ClusterDetachL2Network = (function () {
         function ClusterDetachL2Network(l2Mgr, clusterMgr) {
             var _this = this;
@@ -8407,15 +10276,13 @@ var MCluster;
                 parent[$attrs.zClusterDetachL2Network] = _this;
                 _this.options = parent[$attrs.zOptions];
                 _this.$scope = $scope;
+
                 $scope.uuid = null;
                 $scope.l2NetworkListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Physical Interface:</span><span>#: physicalInterface #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>' + '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' + '<div style="color: black"><span class="z-label">Physical Interface:</span><span>#: physicalInterface #</span></div>',
                     change: function (e) {
                         var select = e.sender;
                         Utils.safeApply($scope, function () {
@@ -8423,16 +10290,21 @@ var MCluster;
                         });
                     }
                 };
+
                 $scope.hasL2Network = function () {
                     return $scope.l2NetworkListOptions__.dataSource.data().length > 0;
                 };
+
                 $scope.selectItemNum = 0;
+
                 $scope.canProceed = function () {
                     return $scope.selectItemNum > 0;
                 };
+
                 $scope.cancel = function () {
                     $scope.detachL2Network__.close();
                 };
+
                 $scope.done = function () {
                     var l2s = $scope.l2NetworkList__.dataItems();
                     angular.forEach(l2s, function (l2) {
@@ -8442,8 +10314,10 @@ var MCluster;
                             }
                         });
                     });
+
                     $scope.detachL2Network__.close();
                 };
+
                 $scope.detachL2NetworkOptions__ = {
                     width: '600px'
                 };
@@ -8462,6 +10336,7 @@ var MCluster;
                         value: _this.options.cluster.uuid
                     }
                 ];
+
                 _this.l2Mgr.query(qobj, function (l2s) {
                     _this.$scope.l2NetworkListOptions__.dataSource.data(l2s);
                     chain.next();
@@ -8474,12 +10349,14 @@ var MCluster;
         return ClusterDetachL2Network;
     })();
     MCluster.ClusterDetachL2Network = ClusterDetachL2Network;
+
     var AttachPrimaryStorageOptions = (function () {
         function AttachPrimaryStorageOptions() {
         }
         return AttachPrimaryStorageOptions;
     })();
     MCluster.AttachPrimaryStorageOptions = AttachPrimaryStorageOptions;
+
     var ClusterAttachPrimaryStorage = (function () {
         function ClusterAttachPrimaryStorage(psMgr, clusterMgr) {
             var _this = this;
@@ -8494,15 +10371,13 @@ var MCluster;
                 parent[$attrs.zClusterAttachPrimaryStorage] = _this;
                 _this.options = parent[$attrs.zOptions];
                 _this.$scope = $scope;
+
                 $scope.uuid = null;
                 _this.primaryStorageListOptions = $scope.primaryStorageListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">URL:</span><span>#: url #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>' + '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' + '<div style="color: black"><span class="z-label">URL:</span><span>#: url #</span></div>',
                     change: function (e) {
                         var select = e.sender;
                         Utils.safeApply($scope, function () {
@@ -8510,16 +10385,21 @@ var MCluster;
                         });
                     }
                 };
+
                 $scope.hasPrimaryStorage = function () {
                     return $scope.primaryStorageListOptions__.dataSource.data().length > 0;
                 };
+
                 $scope.selectItemNum = 0;
+
                 $scope.canProceed = function () {
                     return $scope.selectItemNum > 0;
                 };
+
                 $scope.cancel = function () {
                     $scope.attachPrimaryStorage__.close();
                 };
+
                 $scope.done = function () {
                     var pss = $scope.primaryStorageList__.dataItems();
                     angular.forEach(pss, function (ps) {
@@ -8529,6 +10409,7 @@ var MCluster;
                             }
                         });
                     });
+
                     $scope.attachPrimaryStorage__.close();
                 };
             };
@@ -8551,6 +10432,7 @@ var MCluster;
                         value: _this.options.cluster.uuid
                     }
                 ];
+
                 _this.psMgr.query(qobj, function (pss) {
                     _this.primaryStorageListOptions.dataSource.data(pss);
                     chain.next();
@@ -8563,12 +10445,14 @@ var MCluster;
         return ClusterAttachPrimaryStorage;
     })();
     MCluster.ClusterAttachPrimaryStorage = ClusterAttachPrimaryStorage;
+
     var DetachPrimaryStorageOptions = (function () {
         function DetachPrimaryStorageOptions() {
         }
         return DetachPrimaryStorageOptions;
     })();
     MCluster.DetachPrimaryStorageOptions = DetachPrimaryStorageOptions;
+
     var ClusterDetachPrimaryStorage = (function () {
         function ClusterDetachPrimaryStorage(psMgr, clusterMgr) {
             var _this = this;
@@ -8583,15 +10467,13 @@ var MCluster;
                 parent[$attrs.zClusterDetachPrimaryStorage] = _this;
                 _this.options = parent[$attrs.zOptions];
                 _this.$scope = $scope;
+
                 $scope.uuid = null;
                 $scope.primaryStorageListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">URL:</span><span>#: url #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>' + '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' + '<div style="color: black"><span class="z-label">URL:</span><span>#: url #</span></div>',
                     change: function (e) {
                         var select = e.sender;
                         Utils.safeApply($scope, function () {
@@ -8599,16 +10481,21 @@ var MCluster;
                         });
                     }
                 };
+
                 $scope.hasPrimaryStorage = function () {
                     return $scope.primaryStorageListOptions__.dataSource.data().length > 0;
                 };
+
                 $scope.selectItemNum = 0;
+
                 $scope.canProceed = function () {
                     return $scope.selectItemNum > 0;
                 };
+
                 $scope.cancel = function () {
                     $scope.detachPrimaryStorage__.close();
                 };
+
                 $scope.done = function () {
                     var pss = $scope.primaryStorageList__.dataItems();
                     angular.forEach(pss, function (ps) {
@@ -8618,8 +10505,10 @@ var MCluster;
                             }
                         });
                     });
+
                     $scope.detachPrimaryStorage__.close();
                 };
+
                 $scope.detachPrimaryStorageOptions__ = {
                     width: '600px'
                 };
@@ -8638,6 +10527,7 @@ var MCluster;
                         value: _this.options.cluster.uuid
                     }
                 ];
+
                 _this.psMgr.query(qobj, function (pss) {
                     _this.$scope.primaryStorageListOptions__.dataSource.data(pss);
                     chain.next();
@@ -8651,20 +10541,28 @@ var MCluster;
     })();
     MCluster.ClusterDetachPrimaryStorage = ClusterDetachPrimaryStorage;
 })(MCluster || (MCluster = {}));
-angular.module('root').factory('ClusterManager', ['Api', '$rootScope', function (api, $rootScope) {
+
+angular.module('root').factory('ClusterManager', [
+    'Api', '$rootScope', function (api, $rootScope) {
         return new MCluster.ClusterManager(api, $rootScope);
-    }]).directive('zCreateCluster', ['Api', 'ZoneManager', 'ClusterManager', 'PrimaryStorageManager', 'L2NetworkManager',
+    }]).directive('zCreateCluster', [
+    'Api', 'ZoneManager', 'ClusterManager', 'PrimaryStorageManager', 'L2NetworkManager',
     function (api, zoneMgr, clusterMgr, psMgr, l2Mgr) {
         return new MCluster.CreateCluster(api, zoneMgr, clusterMgr, psMgr, l2Mgr);
-    }]).directive('zClusterAttachPrimaryStorage', ['PrimaryStorageManager', 'ClusterManager', function (psMgr, clusterMgr) {
+    }]).directive('zClusterAttachPrimaryStorage', [
+    'PrimaryStorageManager', 'ClusterManager', function (psMgr, clusterMgr) {
         return new MCluster.ClusterAttachPrimaryStorage(psMgr, clusterMgr);
-    }]).directive('zClusterDetachPrimaryStorage', ['PrimaryStorageManager', 'ClusterManager', function (psMgr, clusterMgr) {
+    }]).directive('zClusterDetachPrimaryStorage', [
+    'PrimaryStorageManager', 'ClusterManager', function (psMgr, clusterMgr) {
         return new MCluster.ClusterDetachPrimaryStorage(psMgr, clusterMgr);
-    }]).directive('zClusterDetachL2Network', ['L2NetworkManager', 'ClusterManager', function (l2Mgr, clusterMgr) {
+    }]).directive('zClusterDetachL2Network', [
+    'L2NetworkManager', 'ClusterManager', function (l2Mgr, clusterMgr) {
         return new MCluster.ClusterDetachL2Network(l2Mgr, clusterMgr);
-    }]).directive('zClusterAttachL2Network', ['L2NetworkManager', 'ClusterManager', function (l2Mgr, clusterMgr) {
+    }]).directive('zClusterAttachL2Network', [
+    'L2NetworkManager', 'ClusterManager', function (l2Mgr, clusterMgr) {
         return new MCluster.ClusterAttachL2Network(l2Mgr, clusterMgr);
-    }]).config(['$routeProvider', function (route) {
+    }]).config([
+    '$routeProvider', function (route) {
         route.when('/cluster', {
             templateUrl: '/static/templates/cluster/cluster.html',
             controller: 'MCluster.Controller',
@@ -8706,12 +10604,15 @@ var MPrimaryStorage;
         PrimaryStorage.prototype.progressOn = function () {
             this.inProgress = true;
         };
+
         PrimaryStorage.prototype.progressOff = function () {
             this.inProgress = false;
         };
+
         PrimaryStorage.prototype.isInProgress = function () {
             return this.inProgress;
         };
+
         PrimaryStorage.prototype.isEnableShow = function () {
             return this.state == 'Disabled';
         };
@@ -8721,25 +10622,22 @@ var MPrimaryStorage;
         PrimaryStorage.prototype.stateLabel = function () {
             if (this.state == 'Enabled') {
                 return 'label label-success';
-            }
-            else if (this.state == 'Disabled') {
+            } else if (this.state == 'Disabled') {
                 return 'label label-danger';
-            }
-            else {
+            } else {
                 return 'label label-default';
             }
         };
         PrimaryStorage.prototype.statusLabel = function () {
             if (this.status == 'Connected') {
                 return 'label label-success';
-            }
-            else if (this.status == 'Disconnected') {
+            } else if (this.status == 'Disconnected') {
                 return 'label label-danger';
-            }
-            else {
+            } else {
                 return 'label label-default';
             }
         };
+
         PrimaryStorage.prototype.updateObservableObject = function (inv) {
             // self : ObservableObject
             var self = this;
@@ -8761,6 +10659,7 @@ var MPrimaryStorage;
         return PrimaryStorage;
     })(ApiHeader.PrimaryStorageInventory);
     MPrimaryStorage.PrimaryStorage = PrimaryStorage;
+
     var PrimaryStorageManager = (function () {
         function PrimaryStorageManager(api, $rootScope) {
             this.api = api;
@@ -8769,21 +10668,21 @@ var MPrimaryStorage;
         PrimaryStorageManager.prototype.setSortBy = function (sortBy) {
             this.sortBy = sortBy;
         };
+
         PrimaryStorageManager.prototype.wrap = function (PrimaryStorage) {
             return new kendo.data.ObservableObject(PrimaryStorage);
         };
+
         PrimaryStorageManager.prototype.create = function (ps, done) {
             var _this = this;
             var msg = null;
             if (ps.type == 'NFS') {
                 msg = new ApiHeader.APIAddNfsPrimaryStorageMsg();
                 msg.type = 'NFS';
-            }
-            else if (ps.type == 'SimulatorPrimaryStorage') {
+            } else if (ps.type == 'SimulatorPrimaryStorage') {
                 msg = new ApiHeader.APIAddSimulatorPrimaryStorageMsg();
                 msg.type = 'SimulatorPrimaryStorage';
-            }
-            else if (ps.type == 'IscsiFileSystemBackendPrimaryStorage') {
+            } else if (ps.type == 'IscsiFileSystemBackendPrimaryStorage') {
                 msg = new ApiHeader.APIAddIscsiFileSystemBackendPrimaryStorageMsg();
                 msg.chapPassword = ps.chapPassword;
                 msg.chapUsername = ps.chapUsername;
@@ -8805,6 +10704,7 @@ var MPrimaryStorage;
                 });
             });
         };
+
         PrimaryStorageManager.prototype.query = function (qobj, callback) {
             var _this = this;
             var msg = new ApiHeader.APIQueryPrimaryStorageMsg();
@@ -8827,6 +10727,7 @@ var MPrimaryStorage;
                 callback(pris, ret.total);
             });
         };
+
         PrimaryStorageManager.prototype.disable = function (ps) {
             var _this = this;
             ps.progressOn();
@@ -8842,6 +10743,23 @@ var MPrimaryStorage;
                 });
             });
         };
+
+        PrimaryStorageManager.prototype.reconnect = function (ps) {
+            var _this = this;
+            ps.progressOn();
+            var msg = new ApiHeader.APIReconnectPrimaryStorageMsg();
+            msg.uuid = ps.uuid;
+            ps.status = 'Connecting';
+            this.api.asyncApi(msg, function (ret) {
+                ps.updateObservableObject(ret.inventory);
+                ps.progressOff();
+                _this.$rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
+                    msg: Utils.sprintf('Reconnected Primary Storage: {0}', ps.name),
+                    link: Utils.sprintf('/#/primaryStorage/{0}', ps.uuid)
+                });
+            });
+        };
+
         PrimaryStorageManager.prototype.enable = function (ps) {
             var _this = this;
             ps.progressOn();
@@ -8857,9 +10775,10 @@ var MPrimaryStorage;
                 });
             });
         };
+
         PrimaryStorageManager.prototype.attach = function (ps, cluster, done) {
             var _this = this;
-            if (done === void 0) { done = null; }
+            if (typeof done === "undefined") { done = null; }
             ps.progressOn();
             var msg = new ApiHeader.APIAttachPrimaryStorageToClusterMsg();
             msg.clusterUuid = cluster.uuid;
@@ -8876,9 +10795,10 @@ var MPrimaryStorage;
                 });
             });
         };
+
         PrimaryStorageManager.prototype.detach = function (ps, cluster, done) {
             var _this = this;
-            if (done === void 0) { done = null; }
+            if (typeof done === "undefined") { done = null; }
             ps.progressOn();
             var msg = new ApiHeader.APIDetachPrimaryStorageFromClusterMsg();
             msg.clusterUuid = cluster.uuid;
@@ -8895,6 +10815,7 @@ var MPrimaryStorage;
                 });
             });
         };
+
         PrimaryStorageManager.prototype.delete = function (ps, done) {
             var _this = this;
             ps.progressOn();
@@ -8912,6 +10833,7 @@ var MPrimaryStorage;
         return PrimaryStorageManager;
     })();
     MPrimaryStorage.PrimaryStorageManager = PrimaryStorageManager;
+
     var PrimaryStorageModel = (function (_super) {
         __extends(PrimaryStorageModel, _super);
         function PrimaryStorageModel() {
@@ -8921,6 +10843,7 @@ var MPrimaryStorage;
         return PrimaryStorageModel;
     })(Utils.Model);
     MPrimaryStorage.PrimaryStorageModel = PrimaryStorageModel;
+
     var OPrimaryStorageGrid = (function (_super) {
         __extends(OPrimaryStorageGrid, _super);
         function OPrimaryStorageGrid($scope, psMgr) {
@@ -8979,6 +10902,7 @@ var MPrimaryStorage;
                     width: '20%'
                 }
             ];
+
             this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
@@ -8993,6 +10917,7 @@ var MPrimaryStorage;
         }
         return OPrimaryStorageGrid;
     })(Utils.OGrid);
+
     var Action = (function () {
         function Action($scope, psMgr) {
             this.$scope = $scope;
@@ -9001,23 +10926,34 @@ var MPrimaryStorage;
         Action.prototype.enable = function () {
             this.psMgr.enable(this.$scope.model.current);
         };
+
         Action.prototype.disable = function () {
             this.psMgr.disable(this.$scope.model.current);
         };
+
         Action.prototype.addHost = function () {
         };
+
+        Action.prototype.reconnect = function () {
+            this.psMgr.reconnect(this.$scope.model.current);
+        };
+
         Action.prototype.attachL2Network = function () {
         };
+
         Action.prototype.detachL2Network = function () {
         };
+
         Action.prototype.attachCluster = function () {
             this.$scope.attachCluster.open();
         };
+
         Action.prototype.detachCluster = function () {
             this.$scope.detachCluster.open();
         };
         return Action;
     })();
+
     var FilterBy = (function () {
         function FilterBy($scope, psTypes) {
             var _this = this;
@@ -9043,11 +10979,13 @@ var MPrimaryStorage;
                 dataTextField: 'name',
                 dataValueField: 'value'
             };
+
             this.valueList = {
                 dataSource: new kendo.data.DataSource({
                     data: []
                 })
             };
+
             this.field = FilterBy.NONE;
             $scope.$watch(function () {
                 return _this.field;
@@ -9055,11 +10993,9 @@ var MPrimaryStorage;
                 if (_this.field == FilterBy.NONE) {
                     _this.valueList.dataSource.data([]);
                     _this.value = null;
-                }
-                else if (_this.field == FilterBy.STATE) {
+                } else if (_this.field == FilterBy.STATE) {
                     _this.valueList.dataSource.data(['Enabled', 'Disabled']);
-                }
-                else if (_this.field == FilterBy.TYPE) {
+                } else if (_this.field == FilterBy.TYPE) {
                     _this.valueList.dataSource.data(_this.psTypes);
                 }
             });
@@ -9069,19 +11005,24 @@ var MPrimaryStorage;
             this.name = !Utils.notNullnotUndefined(this.value) ? null : Utils.sprintf('{0}:{1}', this.field, this.value);
             popover.toggle();
         };
+
         FilterBy.prototype.open = function (popover) {
             popover.toggle();
         };
+
         FilterBy.prototype.isValueListDisabled = function () {
             return !Utils.notNullnotUndefined(this.value);
         };
+
         FilterBy.prototype.getButtonName = function () {
             return this.name;
         };
+
         FilterBy.prototype.toKendoFilter = function () {
             if (!Utils.notNullnotUndefined(this.value)) {
                 return null;
             }
+
             return {
                 field: this.field,
                 operator: 'eq',
@@ -9093,6 +11034,7 @@ var MPrimaryStorage;
         FilterBy.TYPE = 'type';
         return FilterBy;
     })();
+
     var DetailsController = (function () {
         function DetailsController($scope, psMgr, $routeParams, tagService, current, clusterMgr) {
             var _this = this;
@@ -9102,28 +11044,31 @@ var MPrimaryStorage;
             this.tagService = tagService;
             $scope.model = new PrimaryStorageModel();
             $scope.model.current = current;
+
             $scope.funcDelete = function (win) {
                 win.open();
             };
+
             $scope.action = new Action($scope, psMgr);
+
             $scope.funcRefresh = function () {
                 _this.loadSelf($scope.model.current.uuid);
             };
+
             $scope.funcToolbarShow = function () {
                 return Utils.notNullnotUndefined($scope.model.current);
             };
+
             $scope.optionsDeletePrimaryStorage = {
                 title: 'DELETE PRIMARY STORAGE',
-                html: '<strong><p>Deleting Primary Storage will cause:</p></strong>' +
-                    '<ul><li><strong>Clusters to which this primary storage has attached will be detached</strong></li>' +
-                    '<li><strong>VMs which has volumes on this primary storage will be deleted</strong></li></ul>' +
-                    '<strong><p>those results are not recoverable</p></strong>',
+                html: '<strong><p>Deleting Primary Storage will cause:</p></strong>' + '<ul><li><strong>Clusters to which this primary storage has attached will be detached</strong></li>' + '<li><strong>VMs which has volumes on this primary storage will be deleted</strong></li></ul>' + '<strong><p>those results are not recoverable</p></strong>',
                 confirm: function () {
                     psMgr.delete($scope.model.current, function (ret) {
                         $scope.model.resetCurrent();
                     });
                 }
             };
+
             $scope.optionsTag = {
                 tags: [],
                 createTag: function (item) {
@@ -9142,15 +11087,18 @@ var MPrimaryStorage;
                     return Utils.notNullnotUndefined($scope.model.current);
                 }
             };
+
             this.tagService.queryTag($scope.model.current.uuid, function (tags) {
                 $scope.optionsTag.tags = tags;
             });
+
             $scope.optionsAttachCluster = {
                 primaryStorage: $scope.model.current,
                 done: function (cluster) {
                     $scope.optionsClusterGrid.dataSource.insert(0, cluster);
                 }
             };
+
             $scope.optionsDetachCluster = {
                 primaryStorage: $scope.model.current,
                 done: function (cluster) {
@@ -9166,9 +11114,11 @@ var MPrimaryStorage;
                     }
                 }
             };
+
             $scope.funcLoadClusters = function () {
                 $scope.optionsClusterGrid.dataSource.read();
             };
+
             $scope.optionsClusterGrid = {
                 pageSize: 20,
                 resizable: true,
@@ -9223,6 +11173,7 @@ var MPrimaryStorage;
                                 });
                                 return;
                             }
+
                             var qobj = new ApiHeader.QueryObject();
                             qobj.limit = options.data.take;
                             qobj.start = options.data.pageSize * (options.data.page - 1);
@@ -9231,6 +11182,7 @@ var MPrimaryStorage;
                                 op: 'in',
                                 value: $scope.model.current.attachedClusterUuids.join()
                             });
+
                             clusterMgr.query(qobj, function (clusters, total) {
                                 options.success({
                                     data: clusters,
@@ -9254,6 +11206,7 @@ var MPrimaryStorage;
         return DetailsController;
     })();
     MPrimaryStorage.DetailsController = DetailsController;
+
     var Controller = (function () {
         function Controller($scope, psMgr, primaryStorageTypes, $location) {
             this.$scope = $scope;
@@ -9303,6 +11256,7 @@ var MPrimaryStorage;
                     $scope.oPrimaryStorageGrid.refresh();
                 }
             };
+
             $scope.optionsSearch = {
                 fields: ApiHeader.PrimaryStorageInventoryQueryable,
                 name: 'PrimaryStorage',
@@ -9330,6 +11284,7 @@ var MPrimaryStorage;
                     });
                 }
             };
+
             $scope.funcGridDoubleClick = function (e) {
                 if (Utils.notNullnotUndefined($scope.model.current)) {
                     var url = Utils.sprintf('/primaryStorage/{0}', $scope.model.current.uuid);
@@ -9337,52 +11292,61 @@ var MPrimaryStorage;
                     e.preventDefault();
                 }
             };
+
             $scope.filterBy = new FilterBy($scope, this.primaryStorageTypes);
+
             $scope.funcSearch = function (win) {
                 win.open();
             };
+
             $scope.funcCreatePrimaryStorage = function (win) {
                 win.open();
             };
+
             $scope.funcDeletePrimaryStorage = function () {
                 $scope.deletePrimaryStorage.open();
             };
+
             $scope.optionsDeletePrimaryStorage = {
                 title: 'DELETE PRIMARY STORAGE',
-                html: '<strong><p>Deleting Primary Storage will cause:</p></strong>' +
-                    '<ul><li><strong>Clusters to which this primary storage has attached will be detached</strong></li>' +
-                    '<li><strong>VMs which has volumes on this primary storage will be deleted</strong></li></ul>' +
-                    '<strong><p>those results are not recoverable</p></strong>',
+                html: '<strong><p>Deleting Primary Storage will cause:</p></strong>' + '<ul><li><strong>Clusters to which this primary storage has attached will be detached</strong></li>' + '<li><strong>VMs which has volumes on this primary storage will be deleted</strong></li></ul>' + '<strong><p>those results are not recoverable</p></strong>',
                 confirm: function () {
                     psMgr.delete($scope.model.current, function (ret) {
                         $scope.oPrimaryStorageGrid.deleteCurrent();
                     });
                 }
             };
+
             $scope.funcRefresh = function () {
                 $scope.oPrimaryStorageGrid.refresh();
             };
+
             $scope.funcIsActionShow = function () {
                 return !Utils.isEmptyObject($scope.model.current);
             };
+
             $scope.funcIsActionDisabled = function () {
                 return Utils.notNullnotUndefined($scope.model.current) && $scope.model.current.isInProgress();
             };
+
             $scope.optionsCreatePrimaryStorage = {
                 done: function (ps) {
                     $scope.oPrimaryStorageGrid.add(ps);
                 }
             };
+
             $scope.optionsAttachCluster = {
                 primaryStorage: $scope.model.current,
                 done: function (cluster) {
                 }
             };
+
             $scope.optionsDetachCluster = {
                 primaryStorage: $scope.model.current,
                 done: function (cluster) {
                 }
             };
+
             $scope.$watch(function () {
                 return $scope.model.current;
             }, function () {
@@ -9394,12 +11358,14 @@ var MPrimaryStorage;
         return Controller;
     })();
     MPrimaryStorage.Controller = Controller;
+
     var CreatePrimaryStorageOptions = (function () {
         function CreatePrimaryStorageOptions() {
         }
         return CreatePrimaryStorageOptions;
     })();
     MPrimaryStorage.CreatePrimaryStorageOptions = CreatePrimaryStorageOptions;
+
     var CreatePrimaryStorage = (function () {
         function CreatePrimaryStorage(api, zoneMgr, psMgr, clusterMgr) {
             var _this = this;
@@ -9422,6 +11388,7 @@ var MPrimaryStorage;
                         _this.options = parentScope[optionName];
                     });
                 }
+
                 var infoPage = $scope.infoPage = {
                     activeState: true,
                     name: null,
@@ -9443,26 +11410,28 @@ var MPrimaryStorage;
                             if (paths.length != 2) {
                                 return false;
                             }
+
                             var abspath = paths[1];
                             if (abspath.indexOf('/') != 0) {
                                 return false;
                             }
+
                             return true;
-                        }
-                        else if (this.type == 'IscsiFileSystemBackendPrimaryStorage' && Utils.notNullnotUndefined(this.url)) {
+                        } else if (this.type == 'IscsiFileSystemBackendPrimaryStorage' || this.type == 'LocalStorage' && Utils.notNullnotUndefined(this.url)) {
                             if (this.url.indexOf('/') != 0) {
                                 return false;
                             }
+
                             return true;
                         }
+
                         return true;
                     },
                     canMoveToPrevious: function () {
                         return false;
                     },
                     canMoveToNext: function () {
-                        return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.zoneUuid)
-                            && Utils.notNullnotUndefined(this.type) && Utils.notNullnotUndefined(this.url) && this.isUrlValid();
+                        return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.zoneUuid) && Utils.notNullnotUndefined(this.type) && Utils.notNullnotUndefined(this.url) && this.isUrlValid();
                     },
                     show: function () {
                         this.getAnchorElement().tab('show');
@@ -9492,6 +11461,7 @@ var MPrimaryStorage;
                         this.hostname = null;
                     }
                 };
+
                 var clusterPage = $scope.clusterPage = {
                     activeState: false,
                     hasCluster: function () {
@@ -9522,6 +11492,7 @@ var MPrimaryStorage;
                         this.activeState = false;
                     }
                 };
+
                 var mediator = $scope.mediator = {
                     currentPage: infoPage,
                     movedToPage: function (page) {
@@ -9549,18 +11520,22 @@ var MPrimaryStorage;
                                 _this.options.done(resultPs);
                             }
                         }).start();
+
                         $scope.winCreatePrimaryStorage__.close();
                     }
                 };
+
                 $scope.button = new Utils.WizardButton([
                     infoPage, clusterPage
                 ], mediator);
+
                 $scope.$watch(function () {
                     return $scope.infoPage.zoneUuid;
                 }, function () {
                     if (Utils.notNullnotUndefined($scope.clusterList__)) {
                         $scope.clusterList__.value([]);
                     }
+
                     var zuuid = $scope.infoPage.zoneUuid;
                     if (Utils.notNullnotUndefined(zuuid)) {
                         _this.queryClusters(zuuid, function (clusters) {
@@ -9568,12 +11543,14 @@ var MPrimaryStorage;
                         });
                     }
                 });
+
                 $scope.zoneList = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
                     template: "<div style='color: black'><span class='z-label'>Name</span>: #: name #</div><div style='color: black'><span class='z-label'>State:</span>#: state #</div><div style='color: black'><span class='z-label'>UUID:</span> #: uuid #</div>"
                 };
+
                 $scope.typeList = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "type",
@@ -9585,6 +11562,7 @@ var MPrimaryStorage;
                         });
                     }
                 };
+
                 $scope.winCreatePrimaryStorageOptions__ = {
                     width: '700px',
                     //height: '620px',
@@ -9593,14 +11571,14 @@ var MPrimaryStorage;
                     draggable: false,
                     resizable: false
                 };
+
                 $scope.clusterListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">HYPERVISOR:</span><span>#: hypervisorType #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">HYPERVISOR:</span><span>#: hypervisorType #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
                 };
+
                 _this.$scope = $scope;
             };
             this.restrict = 'EA';
@@ -9616,10 +11594,12 @@ var MPrimaryStorage;
                     value: zoneUuid
                 }
             ];
+
             this.clusterMgr.query(qobj, function (clusters) {
                 done(clusters);
             });
         };
+
         CreatePrimaryStorage.prototype.open = function () {
             var _this = this;
             var win = this.$scope.winCreatePrimaryStorage__;
@@ -9631,8 +11611,7 @@ var MPrimaryStorage;
                     _this.$scope.zoneList.dataSource.data(new kendo.data.ObservableArray([_this.options.zone]));
                     _this.$scope.infoPage.zoneUuid = _this.options.zone.uuid;
                     chain.next();
-                }
-                else {
+                } else {
                     _this.zoneMgr.query(new ApiHeader.QueryObject(), function (zones, total) {
                         _this.$scope.zoneList.dataSource.data(zones);
                         if (zones.length > 0) {
@@ -9659,6 +11638,7 @@ var MPrimaryStorage;
         return CreatePrimaryStorage;
     })();
     MPrimaryStorage.CreatePrimaryStorage = CreatePrimaryStorage;
+
     var AttachCluster = (function () {
         function AttachCluster(clusterMgr, psMgr) {
             var _this = this;
@@ -9672,12 +11652,12 @@ var MPrimaryStorage;
                 var parent = $scope.$parent;
                 parent[$attrs.zPrimaryStorageAttachCluster] = _this;
                 _this.options = parent[$attrs.zOptions];
+
                 $scope.clusterListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
                     change: function (e) {
                         var select = e.sender;
                         Utils.safeApply($scope, function () {
@@ -9685,16 +11665,21 @@ var MPrimaryStorage;
                         });
                     }
                 };
+
                 $scope.hasCluster = function () {
                     return $scope.clusterListOptions__.dataSource.data().length > 0;
                 };
+
                 $scope.selectItemNum = 0;
+
                 $scope.canProceed = function () {
                     return $scope.selectItemNum > 0;
                 };
+
                 $scope.cancel = function () {
                     $scope.attachCluster__.close();
                 };
+
                 $scope.done = function () {
                     var clusters = $scope.clusterList__.dataItems();
                     angular.forEach(clusters, function (cluster) {
@@ -9704,8 +11689,10 @@ var MPrimaryStorage;
                             }
                         });
                     });
+
                     $scope.attachCluster__.close();
                 };
+
                 _this.$scope = $scope;
             };
         }
@@ -9727,6 +11714,7 @@ var MPrimaryStorage;
                         value: _this.options.primaryStorage.zoneUuid
                     }
                 ];
+
                 _this.clusterMgr.query(qobj, function (clusters) {
                     _this.$scope.clusterListOptions__.dataSource.data(clusters);
                     chain.next();
@@ -9739,12 +11727,14 @@ var MPrimaryStorage;
         return AttachCluster;
     })();
     MPrimaryStorage.AttachCluster = AttachCluster;
+
     var DetachClusterOptions = (function () {
         function DetachClusterOptions() {
         }
         return DetachClusterOptions;
     })();
     MPrimaryStorage.DetachClusterOptions = DetachClusterOptions;
+
     var DetachCluster = (function () {
         function DetachCluster(psMgr, clusterMgr) {
             var _this = this;
@@ -9759,14 +11749,13 @@ var MPrimaryStorage;
                 parent[$attrs.zPrimaryStorageDetachCluster] = _this;
                 _this.options = parent[$attrs.zOptions];
                 _this.$scope = $scope;
+
                 $scope.uuid = null;
                 $scope.clusterListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Hypervisor:</span><span>#: hypervisorType #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>' + '<div style="color: black"><span class="z-label">Hypervisor:</span><span>#: hypervisorType #</span></div>',
                     change: function (e) {
                         var select = e.sender;
                         Utils.safeApply($scope, function () {
@@ -9774,16 +11763,21 @@ var MPrimaryStorage;
                         });
                     }
                 };
+
                 $scope.hasCluster = function () {
                     return $scope.clusterListOptions__.dataSource.data().length > 0;
                 };
+
                 $scope.selectItemNum = 0;
+
                 $scope.canProceed = function () {
                     return $scope.selectItemNum > 0;
                 };
+
                 $scope.cancel = function () {
                     $scope.detachCluster__.close();
                 };
+
                 $scope.done = function () {
                     var clusters = $scope.clusterList__.dataItems();
                     angular.forEach(clusters, function (cluster) {
@@ -9793,8 +11787,10 @@ var MPrimaryStorage;
                             }
                         });
                     });
+
                     $scope.detachCluster__.close();
                 };
+
                 $scope.detachClusterOptions__ = {
                     width: '600px'
                 };
@@ -9813,6 +11809,7 @@ var MPrimaryStorage;
                         value: _this.options.primaryStorage.attachedClusterUuids.join()
                     }
                 ];
+
                 _this.clusterMgr.query(qobj, function (clusters) {
                     _this.$scope.clusterListOptions__.dataSource.data(clusters);
                     chain.next();
@@ -9826,15 +11823,21 @@ var MPrimaryStorage;
     })();
     MPrimaryStorage.DetachCluster = DetachCluster;
 })(MPrimaryStorage || (MPrimaryStorage = {}));
-angular.module('root').factory('PrimaryStorageManager', ['Api', '$rootScope', function (api, $rootScope) {
+
+angular.module('root').factory('PrimaryStorageManager', [
+    'Api', '$rootScope', function (api, $rootScope) {
         return new MPrimaryStorage.PrimaryStorageManager(api, $rootScope);
-    }]).directive('zCreatePrimaryStorage', ['Api', 'ZoneManager', 'PrimaryStorageManager', 'ClusterManager', function (api, zoneMgr, psMgr, clusterMgr) {
+    }]).directive('zCreatePrimaryStorage', [
+    'Api', 'ZoneManager', 'PrimaryStorageManager', 'ClusterManager', function (api, zoneMgr, psMgr, clusterMgr) {
         return new MPrimaryStorage.CreatePrimaryStorage(api, zoneMgr, psMgr, clusterMgr);
-    }]).directive('zPrimaryStorageAttachCluster', ['ClusterManager', 'PrimaryStorageManager', function (clusterMgr, psMgr) {
+    }]).directive('zPrimaryStorageAttachCluster', [
+    'ClusterManager', 'PrimaryStorageManager', function (clusterMgr, psMgr) {
         return new MPrimaryStorage.AttachCluster(clusterMgr, psMgr);
-    }]).directive('zPrimaryStorageDetachCluster', ['PrimaryStorageManager', 'ClusterManager', function (psMgr, clusterMgr) {
+    }]).directive('zPrimaryStorageDetachCluster', [
+    'PrimaryStorageManager', 'ClusterManager', function (psMgr, clusterMgr) {
         return new MPrimaryStorage.DetachCluster(psMgr, clusterMgr);
-    }]).config(['$routeProvider', function (route) {
+    }]).config([
+    '$routeProvider', function (route) {
         route.when('/primaryStorage', {
             templateUrl: '/static/templates/primaryStorage/primaryStorage.html',
             controller: 'MPrimaryStorage.Controller',
@@ -9877,12 +11880,15 @@ var ML2Network;
         L2Network.prototype.progressOn = function () {
             this.inProgress = true;
         };
+
         L2Network.prototype.progressOff = function () {
             this.inProgress = false;
         };
+
         L2Network.prototype.isInProgress = function () {
             return this.inProgress;
         };
+
         L2Network.prototype.updateObservableObject = function (inv) {
             // self : ObservableObject
             var self = this;
@@ -9899,6 +11905,7 @@ var ML2Network;
         return L2Network;
     })(ApiHeader.L2NetworkInventory);
     ML2Network.L2Network = L2Network;
+
     var L2NetworkManager = (function () {
         function L2NetworkManager(api, $rootScope) {
             this.api = api;
@@ -9907,17 +11914,18 @@ var ML2Network;
         L2NetworkManager.prototype.setSortBy = function (sortBy) {
             this.sortBy = sortBy;
         };
+
         L2NetworkManager.prototype.wrap = function (l2) {
             return new kendo.data.ObservableObject(l2);
         };
+
         L2NetworkManager.prototype.create = function (l2, done) {
             var _this = this;
             var msg = null;
             if (l2.type == 'L2NoVlanNetwork') {
                 msg = new ApiHeader.APICreateL2NoVlanNetworkMsg();
                 msg.type = 'L2NoVlanNetwork';
-            }
-            else if (l2.type == 'L2VlanNetwork') {
+            } else if (l2.type == 'L2VlanNetwork') {
                 msg = new ApiHeader.APICreateL2VlanNetworkMsg();
                 msg.type = 'L2VlanNetwork';
                 msg.vlan = l2.vlan;
@@ -9936,6 +11944,7 @@ var ML2Network;
                 });
             });
         };
+
         L2NetworkManager.prototype.query = function (qobj, callback) {
             var _this = this;
             var msg = new ApiHeader.APIQueryL2NetworkMsg();
@@ -9958,9 +11967,10 @@ var ML2Network;
                 callback(pris, ret.total);
             });
         };
+
         L2NetworkManager.prototype.attach = function (l2, cluster, done) {
             var _this = this;
-            if (done === void 0) { done = null; }
+            if (typeof done === "undefined") { done = null; }
             l2.progressOn();
             var msg = new ApiHeader.APIAttachL2NetworkToClusterMsg();
             msg.clusterUuid = cluster.uuid;
@@ -9977,9 +11987,10 @@ var ML2Network;
                 });
             });
         };
+
         L2NetworkManager.prototype.detach = function (l2, cluster, done) {
             var _this = this;
-            if (done === void 0) { done = null; }
+            if (typeof done === "undefined") { done = null; }
             l2.progressOn();
             var msg = new ApiHeader.APIDetachL2NetworkFromClusterMsg();
             msg.clusterUuid = cluster.uuid;
@@ -9996,6 +12007,7 @@ var ML2Network;
                 });
             });
         };
+
         L2NetworkManager.prototype.delete = function (l2, done) {
             var _this = this;
             l2.progressOn();
@@ -10013,6 +12025,7 @@ var ML2Network;
         return L2NetworkManager;
     })();
     ML2Network.L2NetworkManager = L2NetworkManager;
+
     var L2NetworkModel = (function (_super) {
         __extends(L2NetworkModel, _super);
         function L2NetworkModel() {
@@ -10022,6 +12035,7 @@ var ML2Network;
         return L2NetworkModel;
     })(Utils.Model);
     ML2Network.L2NetworkModel = L2NetworkModel;
+
     var OL2NetworkGrid = (function (_super) {
         __extends(OL2NetworkGrid, _super);
         function OL2NetworkGrid($scope, l2Mgr) {
@@ -10056,6 +12070,7 @@ var ML2Network;
                     width: '20%'
                 }
             ];
+
             this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
@@ -10070,6 +12085,7 @@ var ML2Network;
         }
         return OL2NetworkGrid;
     })(Utils.OGrid);
+
     var Action = (function () {
         function Action($scope, l2Mgr) {
             this.$scope = $scope;
@@ -10078,11 +12094,13 @@ var ML2Network;
         Action.prototype.attachCluster = function () {
             this.$scope.attachCluster.open();
         };
+
         Action.prototype.detachCluster = function () {
             this.$scope.detachCluster.open();
         };
         return Action;
     })();
+
     var FilterBy = (function () {
         function FilterBy($scope, l2Types) {
             var _this = this;
@@ -10104,11 +12122,13 @@ var ML2Network;
                 dataTextField: 'name',
                 dataValueField: 'value'
             };
+
             this.valueList = {
                 dataSource: new kendo.data.DataSource({
                     data: []
                 })
             };
+
             this.field = FilterBy.NONE;
             $scope.$watch(function () {
                 return _this.field;
@@ -10116,8 +12136,7 @@ var ML2Network;
                 if (_this.field == FilterBy.NONE) {
                     _this.valueList.dataSource.data([]);
                     _this.value = null;
-                }
-                else if (_this.field == FilterBy.TYPE) {
+                } else if (_this.field == FilterBy.TYPE) {
                     _this.valueList.dataSource.data(_this.l2Types);
                 }
             });
@@ -10127,19 +12146,24 @@ var ML2Network;
             this.name = !Utils.notNullnotUndefined(this.value) ? null : Utils.sprintf('{0}:{1}', this.field, this.value);
             popover.toggle();
         };
+
         FilterBy.prototype.open = function (popover) {
             popover.toggle();
         };
+
         FilterBy.prototype.isValueListDisabled = function () {
             return !Utils.notNullnotUndefined(this.value);
         };
+
         FilterBy.prototype.getButtonName = function () {
             return this.name;
         };
+
         FilterBy.prototype.toKendoFilter = function () {
             if (!Utils.notNullnotUndefined(this.value)) {
                 return null;
             }
+
             return {
                 field: this.field,
                 operator: 'eq',
@@ -10150,6 +12174,7 @@ var ML2Network;
         FilterBy.TYPE = 'type';
         return FilterBy;
     })();
+
     var DetailsController = (function () {
         function DetailsController($scope, l2Mgr, $routeParams, tagService, current, clusterMgr) {
             var _this = this;
@@ -10159,29 +12184,31 @@ var ML2Network;
             this.tagService = tagService;
             $scope.model = new L2NetworkModel();
             $scope.model.current = current;
+
             $scope.funcDelete = function (win) {
                 win.open();
             };
+
             $scope.action = new Action($scope, l2Mgr);
+
             $scope.funcRefresh = function () {
                 _this.loadSelf($scope.model.current.uuid);
             };
+
             $scope.funcToolbarShow = function () {
                 return Utils.notNullnotUndefined($scope.model.current);
             };
+
             $scope.optionsDeleteL2Network = {
                 title: 'DELETE L2 NETWORK',
-                html: '<strong><p>Deleting L2 Network will cause:</p></strong>' +
-                    '<ul><li><strong>Clusters to which this l2Network has attached will be detached</strong></li>' +
-                    '<li><strong>l3Networks on this l2Network will be detached</strong></li>' +
-                    '<li><strong>VMs whose nic on l3Network belonging to this l2Network will be stopped</strong></li></ul>' +
-                    '<strong><p>those results are not recoverable</p></strong>',
+                html: '<strong><p>Deleting L2 Network will cause:</p></strong>' + '<ul><li><strong>Clusters to which this l2Network has attached will be detached</strong></li>' + '<li><strong>l3Networks on this l2Network will be detached</strong></li>' + '<li><strong>VMs whose nic on l3Network belonging to this l2Network will be stopped</strong></li></ul>' + '<strong><p>those results are not recoverable</p></strong>',
                 confirm: function () {
                     l2Mgr.delete($scope.model.current, function (ret) {
                         $scope.model.resetCurrent();
                     });
                 }
             };
+
             $scope.optionsTag = {
                 tags: [],
                 createTag: function (item) {
@@ -10200,15 +12227,18 @@ var ML2Network;
                     return Utils.notNullnotUndefined($scope.model.current);
                 }
             };
+
             this.tagService.queryTag($scope.model.current.uuid, function (tags) {
                 $scope.optionsTag.tags = tags;
             });
+
             $scope.optionsAttachCluster = {
                 l2Network: $scope.model.current,
                 done: function (cluster) {
                     $scope.optionsClusterGrid.dataSource.insert(0, cluster);
                 }
             };
+
             $scope.optionsDetachCluster = {
                 l2Network: $scope.model.current,
                 done: function (cluster) {
@@ -10224,9 +12254,11 @@ var ML2Network;
                     }
                 }
             };
+
             $scope.funcLoadClusters = function () {
                 $scope.optionsClusterGrid.dataSource.read();
             };
+
             $scope.optionsClusterGrid = {
                 pageSize: 20,
                 resizable: true,
@@ -10281,6 +12313,7 @@ var ML2Network;
                                 });
                                 return;
                             }
+
                             var qobj = new ApiHeader.QueryObject();
                             qobj.limit = options.data.take;
                             qobj.start = options.data.pageSize * (options.data.page - 1);
@@ -10289,6 +12322,7 @@ var ML2Network;
                                 op: 'in',
                                 value: $scope.model.current.attachedClusterUuids.join()
                             });
+
                             clusterMgr.query(qobj, function (clusters, total) {
                                 options.success({
                                     data: clusters,
@@ -10312,6 +12346,7 @@ var ML2Network;
         return DetailsController;
     })();
     ML2Network.DetailsController = DetailsController;
+
     var Controller = (function () {
         function Controller($scope, l2Mgr, l2NetworkTypes, $location) {
             this.$scope = $scope;
@@ -10353,6 +12388,7 @@ var ML2Network;
                     $scope.oL2NetworkGrid.refresh();
                 }
             };
+
             $scope.optionsSearch = {
                 fields: ApiHeader.L2NetworkInventoryQueryable,
                 name: 'L2Network',
@@ -10363,8 +12399,7 @@ var ML2Network;
                         getQueryableFields: function (value) {
                             if (value == 'L2VlanNetwork') {
                                 return ApiHeader.L2VlanNetworkInventoryQueryable;
-                            }
-                            else if (value == 'L2NoVlanNetwork') {
+                            } else if (value == 'L2NoVlanNetwork') {
                                 return ApiHeader.L2VlanNetworkInventoryQueryable;
                             }
                         },
@@ -10387,6 +12422,7 @@ var ML2Network;
                     });
                 }
             };
+
             $scope.funcGridDoubleClick = function (e) {
                 if (Utils.notNullnotUndefined($scope.model.current)) {
                     var url = Utils.sprintf('/l2Network/{0}', $scope.model.current.uuid);
@@ -10394,53 +12430,61 @@ var ML2Network;
                     e.preventDefault();
                 }
             };
+
             $scope.filterBy = new FilterBy($scope, this.l2NetworkTypes);
+
             $scope.funcSearch = function (win) {
                 win.open();
             };
+
             $scope.funcCreateL2Network = function (win) {
                 win.open();
             };
+
             $scope.funcDeleteL2Network = function () {
                 $scope.deleteL2Network.open();
             };
+
             $scope.optionsDeleteL2Network = {
                 title: 'DELETE L2 NETWORK',
-                html: '<strong><p>Deleting L2 Network will cause:</p></strong>' +
-                    '<ul><li><strong>Clusters to which this l2Network has attached will be detached</strong></li>' +
-                    '<li><strong>l3Networks on this l2Network will be detached</strong></li>' +
-                    '<li><strong>VMs whose nic on l3Network belonging to this l2Network will be stopped</strong></li></ul>' +
-                    '<strong><p>those results are not recoverable</p></strong>',
+                html: '<strong><p>Deleting L2 Network will cause:</p></strong>' + '<ul><li><strong>Clusters to which this l2Network has attached will be detached</strong></li>' + '<li><strong>l3Networks on this l2Network will be detached</strong></li>' + '<li><strong>VMs whose nic on l3Network belonging to this l2Network will be stopped</strong></li></ul>' + '<strong><p>those results are not recoverable</p></strong>',
                 confirm: function () {
                     l2Mgr.delete($scope.model.current, function (ret) {
                         $scope.oL2NetworkGrid.deleteCurrent();
                     });
                 }
             };
+
             $scope.funcRefresh = function () {
                 $scope.oL2NetworkGrid.refresh();
             };
+
             $scope.funcIsActionShow = function () {
                 return !Utils.isEmptyObject($scope.model.current);
             };
+
             $scope.funcIsActionDisabled = function () {
                 return Utils.notNullnotUndefined($scope.model.current) && $scope.model.current.isInProgress();
             };
+
             $scope.optionsCreateL2Network = {
                 done: function (l2) {
                     $scope.oL2NetworkGrid.add(l2);
                 }
             };
+
             $scope.optionsAttachCluster = {
                 l2Network: $scope.model.current,
                 done: function (cluster) {
                 }
             };
+
             $scope.optionsDetachCluster = {
                 l2Network: $scope.model.current,
                 done: function (cluster) {
                 }
             };
+
             $scope.$watch(function () {
                 return $scope.model.current;
             }, function () {
@@ -10452,22 +12496,24 @@ var ML2Network;
         return Controller;
     })();
     ML2Network.Controller = Controller;
+
     var CreateL2NetworkOptions = (function () {
         function CreateL2NetworkOptions() {
         }
         return CreateL2NetworkOptions;
     })();
     ML2Network.CreateL2NetworkOptions = CreateL2NetworkOptions;
+
     var CreateL2NetworkModel = (function () {
         function CreateL2NetworkModel() {
         }
         CreateL2NetworkModel.prototype.canCreate = function () {
-            return angular.isDefined(this.name) && angular.isDefined(this.type) &&
-                angular.isDefined(this.zoneUuid) && Utils.notNullnotUndefined(this.physicalInterface);
+            return angular.isDefined(this.name) && angular.isDefined(this.type) && angular.isDefined(this.zoneUuid) && Utils.notNullnotUndefined(this.physicalInterface);
         };
         return CreateL2NetworkModel;
     })();
     ML2Network.CreateL2NetworkModel = CreateL2NetworkModel;
+
     var CreateL2Network = (function () {
         function CreateL2Network(api, zoneMgr, l2Mgr, clusterMgr) {
             var _this = this;
@@ -10490,6 +12536,7 @@ var ML2Network;
                         _this.options = parentScope[optionName];
                     });
                 }
+
                 var infoPage = $scope.infoPage = {
                     activeState: true,
                     name: null,
@@ -10506,6 +12553,7 @@ var ML2Network;
                             if (isNaN(this.vlan)) {
                                 return false;
                             }
+
                             var vlan = parseInt(this.vlan);
                             return vlan >= 0 && vlan <= 4095;
                         }
@@ -10516,15 +12564,10 @@ var ML2Network;
                     },
                     canMoveToNext: function () {
                         if (this.type == 'L2NoVlanNetwork') {
-                            return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.zoneUuid)
-                                && Utils.notNullnotUndefined(this.type) && Utils.notNullnotUndefined(this.physicalInterface);
-                        }
-                        else if (this.type == 'L2VlanNetwork') {
-                            return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.zoneUuid)
-                                && Utils.notNullnotUndefined(this.type) && Utils.notNullnotUndefined(this.physicalInterface)
-                                && Utils.notNullnotUndefined(this.vlan) && this.isVlanValid();
-                        }
-                        else {
+                            return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.zoneUuid) && Utils.notNullnotUndefined(this.type) && Utils.notNullnotUndefined(this.physicalInterface);
+                        } else if (this.type == 'L2VlanNetwork') {
+                            return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.zoneUuid) && Utils.notNullnotUndefined(this.type) && Utils.notNullnotUndefined(this.physicalInterface) && Utils.notNullnotUndefined(this.vlan) && this.isVlanValid();
+                        } else {
                             return false;
                         }
                     },
@@ -10555,12 +12598,12 @@ var ML2Network;
                     normalize: function () {
                         if (this.type == 'L2NoVlanNetwork') {
                             this.vlan = null;
-                        }
-                        else {
+                        } else {
                             this.vlan = parseInt(this.vlan);
                         }
                     }
                 };
+
                 var clusterPage = $scope.clusterPage = {
                     activeState: false,
                     canMoveToPrevious: function () {
@@ -10591,6 +12634,7 @@ var ML2Network;
                         return $scope.clusterListOptions__.dataSource.data().length > 0;
                     }
                 };
+
                 var mediator = $scope.mediator = {
                     currentPage: infoPage,
                     movedToPage: function (page) {
@@ -10619,18 +12663,22 @@ var ML2Network;
                                 _this.options.done(resultPs);
                             }
                         }).start();
+
                         $scope.winCreateL2Network__.close();
                     }
                 };
+
                 $scope.button = new Utils.WizardButton([
                     infoPage, clusterPage
                 ], mediator);
+
                 $scope.$watch(function () {
                     return $scope.infoPage.zoneUuid;
                 }, function () {
                     if (Utils.notNullnotUndefined($scope.clusterList__)) {
                         $scope.clusterList__.value([]);
                     }
+
                     var zuuid = $scope.infoPage.zoneUuid;
                     if (Utils.notNullnotUndefined(zuuid)) {
                         _this.queryClusters(zuuid, function (clusters) {
@@ -10638,12 +12686,14 @@ var ML2Network;
                         });
                     }
                 });
+
                 $scope.zoneList = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
                     template: "<div style='color: black'><span class='z-label'>Name</span>: #: name #</div><div style='color: black'><span class='z-label'>State:</span>#: state #</div><div style='color: black'><span class='z-label'>UUID:</span> #: uuid #</div>"
                 };
+
                 $scope.typeList = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "type",
@@ -10655,6 +12705,7 @@ var ML2Network;
                         });
                     }
                 };
+
                 $scope.winCreateL2NetworkOptions__ = {
                     width: '700px',
                     //height: '680px',
@@ -10663,14 +12714,14 @@ var ML2Network;
                     draggable: false,
                     resizable: false
                 };
+
                 $scope.clusterListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">HYPERVISOR:</span><span>#: hypervisorType #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">HYPERVISOR:</span><span>#: hypervisorType #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
                 };
+
                 _this.$scope = $scope;
             };
             this.restrict = 'EA';
@@ -10686,10 +12737,12 @@ var ML2Network;
                     value: zoneUuid
                 }
             ];
+
             this.clusterMgr.query(qobj, function (clusters) {
                 done(clusters);
             });
         };
+
         CreateL2Network.prototype.open = function () {
             var _this = this;
             var win = this.$scope.winCreateL2Network__;
@@ -10701,8 +12754,7 @@ var ML2Network;
                     _this.$scope.zoneList.dataSource.data(new kendo.data.ObservableArray([_this.options.zone]));
                     _this.$scope.infoPage.zoneUuid = _this.options.zone.uuid;
                     chain.next();
-                }
-                else {
+                } else {
                     _this.zoneMgr.query(new ApiHeader.QueryObject(), function (zones, total) {
                         _this.$scope.zoneList.dataSource.data(zones);
                         if (zones && zones.length > 0) {
@@ -10729,6 +12781,7 @@ var ML2Network;
         return CreateL2Network;
     })();
     ML2Network.CreateL2Network = CreateL2Network;
+
     var AttachCluster = (function () {
         function AttachCluster(clusterMgr, l2Mgr) {
             var _this = this;
@@ -10742,13 +12795,12 @@ var ML2Network;
                 var parent = $scope.$parent;
                 parent[$attrs.zL2NetworkAttachCluster] = _this;
                 _this.options = parent[$attrs.zOptions];
+
                 $scope.clusterListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">HYPERVISOR:</span><span>#: hypervisorType #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">HYPERVISOR:</span><span>#: hypervisorType #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
                     change: function (e) {
                         var select = e.sender;
                         Utils.safeApply($scope, function () {
@@ -10756,16 +12808,21 @@ var ML2Network;
                         });
                     }
                 };
+
                 $scope.selectItemNum = 0;
+
                 $scope.hasCluster = function () {
                     return $scope.clusterListOptions__.dataSource.data().length > 0;
                 };
+
                 $scope.canProceed = function () {
                     return $scope.selectItemNum > 0;
                 };
+
                 $scope.cancel = function () {
                     $scope.attachCluster__.close();
                 };
+
                 $scope.done = function () {
                     var clusters = $scope.clusterList__.dataItems();
                     angular.forEach(clusters, function (cluster) {
@@ -10775,8 +12832,10 @@ var ML2Network;
                             }
                         });
                     });
+
                     $scope.attachCluster__.close();
                 };
+
                 _this.$scope = $scope;
             };
         }
@@ -10798,6 +12857,7 @@ var ML2Network;
                         value: _this.options.l2Network.zoneUuid
                     }
                 ];
+
                 _this.clusterMgr.query(qobj, function (clusters) {
                     _this.$scope.clusterListOptions__.dataSource.data(clusters);
                     chain.next();
@@ -10810,12 +12870,14 @@ var ML2Network;
         return AttachCluster;
     })();
     ML2Network.AttachCluster = AttachCluster;
+
     var DetachClusterOptions = (function () {
         function DetachClusterOptions() {
         }
         return DetachClusterOptions;
     })();
     ML2Network.DetachClusterOptions = DetachClusterOptions;
+
     var DetachCluster = (function () {
         function DetachCluster(l2Mgr, clusterMgr) {
             var _this = this;
@@ -10830,14 +12892,13 @@ var ML2Network;
                 parent[$attrs.zL2NetworkDetachCluster] = _this;
                 _this.options = parent[$attrs.zOptions];
                 _this.$scope = $scope;
+
                 $scope.uuid = null;
                 $scope.clusterListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Hypervisor:</span><span>#: hypervisorType #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>' + '<div style="color: black"><span class="z-label">Hypervisor:</span><span>#: hypervisorType #</span></div>',
                     change: function (e) {
                         var select = e.sender;
                         Utils.safeApply($scope, function () {
@@ -10845,16 +12906,21 @@ var ML2Network;
                         });
                     }
                 };
+
                 $scope.selectItemNum = 0;
+
                 $scope.hasCluster = function () {
                     return $scope.clusterListOptions__.dataSource.data().length > 0;
                 };
+
                 $scope.canProceed = function () {
                     return $scope.selectItemNum > 0;
                 };
+
                 $scope.cancel = function () {
                     $scope.detachCluster__.close();
                 };
+
                 $scope.done = function () {
                     var clusters = $scope.clusterList__.dataItems();
                     angular.forEach(clusters, function (cluster) {
@@ -10864,8 +12930,10 @@ var ML2Network;
                             }
                         });
                     });
+
                     $scope.detachCluster__.close();
                 };
+
                 $scope.detachClusterOptions__ = {
                     width: '600px'
                 };
@@ -10884,6 +12952,7 @@ var ML2Network;
                         value: _this.options.l2Network.attachedClusterUuids.join()
                     }
                 ];
+
                 _this.clusterMgr.query(qobj, function (clusters) {
                     _this.$scope.clusterListOptions__.dataSource.data(clusters);
                     chain.next();
@@ -10897,15 +12966,21 @@ var ML2Network;
     })();
     ML2Network.DetachCluster = DetachCluster;
 })(ML2Network || (ML2Network = {}));
-angular.module('root').factory('L2NetworkManager', ['Api', '$rootScope', function (api, $rootScope) {
+
+angular.module('root').factory('L2NetworkManager', [
+    'Api', '$rootScope', function (api, $rootScope) {
         return new ML2Network.L2NetworkManager(api, $rootScope);
-    }]).directive('zCreateL2Network', ['Api', 'ZoneManager', 'L2NetworkManager', 'ClusterManager', function (api, zoneMgr, l2Mgr, clusterMgr) {
+    }]).directive('zCreateL2Network', [
+    'Api', 'ZoneManager', 'L2NetworkManager', 'ClusterManager', function (api, zoneMgr, l2Mgr, clusterMgr) {
         return new ML2Network.CreateL2Network(api, zoneMgr, l2Mgr, clusterMgr);
-    }]).directive('zL2NetworkAttachCluster', ['ClusterManager', 'L2NetworkManager', function (clusterMgr, l2Mgr) {
+    }]).directive('zL2NetworkAttachCluster', [
+    'ClusterManager', 'L2NetworkManager', function (clusterMgr, l2Mgr) {
         return new ML2Network.AttachCluster(clusterMgr, l2Mgr);
-    }]).directive('zL2NetworkDetachCluster', ['L2NetworkManager', 'ClusterManager', function (l2Mgr, clusterMgr) {
+    }]).directive('zL2NetworkDetachCluster', [
+    'L2NetworkManager', 'ClusterManager', function (l2Mgr, clusterMgr) {
         return new ML2Network.DetachCluster(l2Mgr, clusterMgr);
-    }]).config(['$routeProvider', function (route) {
+    }]).config([
+    '$routeProvider', function (route) {
         route.when('/l2Network', {
             templateUrl: '/static/templates/l2Network/l2Network.html',
             controller: 'ML2Network.Controller',
@@ -10948,26 +13023,28 @@ var ML3Network;
         L3Network.prototype.progressOn = function () {
             this.inProgress = true;
         };
+
         L3Network.prototype.progressOff = function () {
             this.inProgress = false;
         };
+
         L3Network.prototype.isInProgress = function () {
             return this.inProgress;
         };
+
         L3Network.prototype.isEnableShow = function () {
             return this.state == 'Disabled' || this.state == 'Maintenance' || this.state == 'PreMaintenance';
         };
+
         L3Network.prototype.isDisableShow = function () {
             return this.state == 'Enabled' || this.state == 'Maintenance' || this.state == 'PreMaintenance';
         };
         L3Network.prototype.stateLabel = function () {
             if (this.state == 'Enabled') {
                 return 'label label-success';
-            }
-            else if (this.state == 'Disabled') {
+            } else if (this.state == 'Disabled') {
                 return 'label label-danger';
-            }
-            else {
+            } else {
                 return 'label label-default';
             }
         };
@@ -10977,6 +13054,7 @@ var ML3Network;
             }
             return null;
         };
+
         L3Network.prototype.updateObservableObject = function (inv) {
             // self : ObservableObject
             var self = this;
@@ -10998,6 +13076,7 @@ var ML3Network;
         return L3Network;
     })(ApiHeader.L3NetworkInventory);
     ML3Network.L3Network = L3Network;
+
     var L3NetworkManager = (function () {
         function L3NetworkManager(api, $rootScope) {
             this.api = api;
@@ -11006,9 +13085,11 @@ var ML3Network;
         L3NetworkManager.prototype.setSortBy = function (sortBy) {
             this.sortBy = sortBy;
         };
+
         L3NetworkManager.prototype.wrap = function (l3) {
             return new kendo.data.ObservableObject(l3);
         };
+
         L3NetworkManager.prototype.disable = function (l3) {
             var _this = this;
             l3.progressOn();
@@ -11024,6 +13105,7 @@ var ML3Network;
                 });
             });
         };
+
         L3NetworkManager.prototype.enable = function (l3) {
             var _this = this;
             l3.progressOn();
@@ -11039,6 +13121,7 @@ var ML3Network;
                 });
             });
         };
+
         L3NetworkManager.prototype.queryNetworkServiceProvider = function (providerUuids, done) {
             var msg = new ApiHeader.APIQueryNetworkServiceProviderMsg();
             if (providerUuids.length != 0) {
@@ -11049,14 +13132,15 @@ var ML3Network;
                         value: providerUuids.join()
                     }
                 ];
-            }
-            else {
+            } else {
                 msg.conditions = [];
             }
+
             this.api.syncApi(msg, function (ret) {
                 done(ret.inventories);
             });
         };
+
         L3NetworkManager.prototype.addDns = function (l3, dns, done) {
             var _this = this;
             var msg = new ApiHeader.APIAddDnsToL3NetworkMsg();
@@ -11070,6 +13154,7 @@ var ML3Network;
                 });
             });
         };
+
         L3NetworkManager.prototype.deleteDns = function (l3, dns, done) {
             var _this = this;
             var msg = new ApiHeader.APIRemoveDnsFromL3NetworkMsg();
@@ -11085,6 +13170,7 @@ var ML3Network;
                 });
             });
         };
+
         L3NetworkManager.prototype.addIpRangeByCidr = function (l3, ipr, done) {
             var _this = this;
             var msg = new ApiHeader.APIAddIpRangeByNetworkCidrMsg();
@@ -11100,6 +13186,7 @@ var ML3Network;
                 });
             });
         };
+
         L3NetworkManager.prototype.addIpRange = function (l3, ipr, done) {
             var _this = this;
             var msg = new ApiHeader.APIAddIpRangeMsg();
@@ -11118,6 +13205,7 @@ var ML3Network;
                 });
             });
         };
+
         L3NetworkManager.prototype.deleteIpRange = function (ipr, done) {
             var _this = this;
             var msg = new ApiHeader.APIDeleteIpRangeMsg();
@@ -11132,6 +13220,7 @@ var ML3Network;
                 }
             });
         };
+
         L3NetworkManager.prototype.attachNetworkService = function (l3, ns, done) {
             var _this = this;
             var msg = new ApiHeader.APIAttachNetworkServiceToL3NetworkMsg();
@@ -11145,6 +13234,7 @@ var ML3Network;
                 });
             });
         };
+
         L3NetworkManager.prototype.create = function (l3, done) {
             var _this = this;
             var msg = null;
@@ -11165,6 +13255,7 @@ var ML3Network;
                 });
             });
         };
+
         L3NetworkManager.prototype.query = function (qobj, callback) {
             var _this = this;
             var msg = new ApiHeader.APIQueryL3NetworkMsg();
@@ -11187,6 +13278,7 @@ var ML3Network;
                 callback(pris, ret.total);
             });
         };
+
         L3NetworkManager.prototype.delete = function (l3, done) {
             var _this = this;
             l3.progressOn();
@@ -11204,6 +13296,7 @@ var ML3Network;
         return L3NetworkManager;
     })();
     ML3Network.L3NetworkManager = L3NetworkManager;
+
     var L3NetworkModel = (function (_super) {
         __extends(L3NetworkModel, _super);
         function L3NetworkModel() {
@@ -11213,6 +13306,7 @@ var ML3Network;
         return L3NetworkModel;
     })(Utils.Model);
     ML3Network.L3NetworkModel = L3NetworkModel;
+
     var OL3NetworkGrid = (function (_super) {
         __extends(OL3NetworkGrid, _super);
         function OL3NetworkGrid($scope, l3Mgr) {
@@ -11254,6 +13348,7 @@ var ML3Network;
                     width: '25%'
                 }
             ];
+
             this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
@@ -11268,6 +13363,7 @@ var ML3Network;
         }
         return OL3NetworkGrid;
     })(Utils.OGrid);
+
     var Action = (function () {
         function Action($scope, l3Mgr) {
             this.$scope = $scope;
@@ -11276,23 +13372,29 @@ var ML3Network;
         Action.prototype.enable = function () {
             this.l3Mgr.enable(this.$scope.model.current);
         };
+
         Action.prototype.disable = function () {
             this.l3Mgr.disable(this.$scope.model.current);
         };
+
         Action.prototype.addIpRange = function () {
             this.$scope.winAddIpRange.open();
         };
+
         Action.prototype.deleteIpRange = function () {
             this.$scope.winDeleteIpRange.open();
         };
+
         Action.prototype.addDns = function () {
             this.$scope.winAddDns.open();
         };
+
         Action.prototype.deleteDns = function () {
             this.$scope.winDeleteDns.open();
         };
         return Action;
     })();
+
     var FilterBy = (function () {
         function FilterBy($scope, l3Types) {
             var _this = this;
@@ -11318,11 +13420,13 @@ var ML3Network;
                 dataTextField: 'name',
                 dataValueField: 'value'
             };
+
             this.valueList = {
                 dataSource: new kendo.data.DataSource({
                     data: []
                 })
             };
+
             this.field = FilterBy.NONE;
             $scope.$watch(function () {
                 return _this.field;
@@ -11330,11 +13434,9 @@ var ML3Network;
                 if (_this.field == FilterBy.NONE) {
                     _this.valueList.dataSource.data([]);
                     _this.value = null;
-                }
-                else if (_this.field == FilterBy.TYPE) {
+                } else if (_this.field == FilterBy.TYPE) {
                     _this.valueList.dataSource.data(_this.l3Types);
-                }
-                else if (_this.field == FilterBy.STATE) {
+                } else if (_this.field == FilterBy.STATE) {
                     _this.valueList.dataSource.data(['Enabled', 'Disabled']);
                 }
             });
@@ -11344,19 +13446,24 @@ var ML3Network;
             this.name = !Utils.notNullnotUndefined(this.value) ? null : Utils.sprintf('{0}:{1}', this.field, this.value);
             popover.toggle();
         };
+
         FilterBy.prototype.open = function (popover) {
             popover.toggle();
         };
+
         FilterBy.prototype.isValueListDisabled = function () {
             return !Utils.notNullnotUndefined(this.value);
         };
+
         FilterBy.prototype.getButtonName = function () {
             return this.name;
         };
+
         FilterBy.prototype.toKendoFilter = function () {
             if (!Utils.notNullnotUndefined(this.value)) {
                 return null;
             }
+
             return {
                 field: this.field,
                 operator: 'eq',
@@ -11368,6 +13475,7 @@ var ML3Network;
         FilterBy.STATE = 'state';
         return FilterBy;
     })();
+
     var DetailsController = (function () {
         function DetailsController($scope, l3Mgr, $routeParams, tagService, current) {
             var _this = this;
@@ -11377,30 +13485,31 @@ var ML3Network;
             this.tagService = tagService;
             $scope.model = new L3NetworkModel();
             $scope.model.current = current;
+
             $scope.funcDelete = function (win) {
                 win.open();
             };
+
             $scope.action = new Action($scope, l3Mgr);
+
             $scope.funcRefresh = function () {
                 _this.loadSelf($scope.model.current.uuid);
             };
+
             $scope.funcToolbarShow = function () {
                 return Utils.notNullnotUndefined($scope.model.current);
             };
+
             $scope.optionsDeleteL3Network = {
                 title: 'DELETE L3 NETWORK',
-                html: '<strong><p>Deleting L2 Network will cause:</p></strong>' +
-                    '<ul><li><strong>Ip ranges on this l3Network will be deleted</strong></li>' +
-                    '<li><strong>DNS on this l3Network will be deleted</strong></li>' +
-                    '<li><strong>Virtual Router on this l3Network will be deleted</strong></li>' +
-                    '<li><strong>VMs whose nic belongs to this l3Network will be stopped</strong></li></ul>' +
-                    '<strong><p>those results are not recoverable</p></strong>',
+                html: '<strong><p>Deleting L2 Network will cause:</p></strong>' + '<ul><li><strong>Ip ranges on this l3Network will be deleted</strong></li>' + '<li><strong>DNS on this l3Network will be deleted</strong></li>' + '<li><strong>Virtual Router on this l3Network will be deleted</strong></li>' + '<li><strong>VMs whose nic belongs to this l3Network will be stopped</strong></li></ul>' + '<strong><p>those results are not recoverable</p></strong>',
                 confirm: function () {
                     l3Mgr.delete($scope.model.current, function (ret) {
                         $scope.model.resetCurrent();
                     });
                 }
             };
+
             $scope.optionsTag = {
                 tags: [],
                 createTag: function (item) {
@@ -11419,9 +13528,11 @@ var ML3Network;
                     return Utils.notNullnotUndefined($scope.model.current);
                 }
             };
+
             this.tagService.queryTag($scope.model.current.uuid, function (tags) {
                 $scope.optionsTag.tags = tags;
             });
+
             $scope.optionsIpRangeGrid = {
                 pageSize: 20,
                 resizable: true,
@@ -11467,7 +13578,9 @@ var ML3Network;
                 },
                 dataSource: new kendo.data.DataSource([])
             };
+
             $scope.optionsIpRangeGrid.dataSource.data(current.ipRanges);
+
             $scope.optionsDnsGrid = {
                 pageSize: 20,
                 resizable: true,
@@ -11488,6 +13601,7 @@ var ML3Network;
                 },
                 dataSource: new kendo.data.DataSource([])
             };
+
             var dns = [];
             angular.forEach(current.dns, function (it) {
                 dns.push({
@@ -11495,6 +13609,7 @@ var ML3Network;
                 });
             });
             $scope.optionsDnsGrid.dataSource.data(dns);
+
             $scope.optionsNetworkServiceGrid = {
                 pageSize: 20,
                 resizable: true,
@@ -11532,15 +13647,18 @@ var ML3Network;
                                 });
                                 return;
                             }
+
                             var providerUuids = [];
                             angular.forEach(current.networkServices, function (nws) {
                                 providerUuids.push(nws.networkServiceProviderUuid);
                             });
+
                             l3Mgr.queryNetworkServiceProvider(providerUuids, function (providers) {
                                 var names = {};
                                 angular.forEach(providers, function (it) {
                                     names[it.uuid] = it;
                                 });
+
                                 var data = [];
                                 angular.forEach(current.networkServices, function (it) {
                                     data.push({
@@ -11548,6 +13666,7 @@ var ML3Network;
                                         provider: names[it.networkServiceProviderUuid].name
                                     });
                                 });
+
                                 options.success({
                                     data: data,
                                     total: data.length
@@ -11557,18 +13676,21 @@ var ML3Network;
                     }
                 })
             };
+
             $scope.optionsAddDns = {
                 l3Network: current,
                 done: function (dns) {
                     $scope.optionsDnsGrid.dataSource.insert(0, { dns: dns });
                 }
             };
+
             $scope.optionsAddIpRange = {
                 l3Network: current,
                 done: function (ipr) {
                     $scope.optionsIpRangeGrid.dataSource.insert(0, ipr);
                 }
             };
+
             $scope.optionsDeleteIpRange = {
                 l3Network: current,
                 done: function (ipr) {
@@ -11584,6 +13706,7 @@ var ML3Network;
                     }
                 }
             };
+
             $scope.optionsDeleteDns = {
                 l3Network: current,
                 done: function (dns) {
@@ -11612,6 +13735,7 @@ var ML3Network;
         return DetailsController;
     })();
     ML3Network.DetailsController = DetailsController;
+
     var Controller = (function () {
         function Controller($scope, l3Mgr, l3NetworkTypes, $location) {
             this.$scope = $scope;
@@ -11653,6 +13777,7 @@ var ML3Network;
                     $scope.oL3NetworkGrid.refresh();
                 }
             };
+
             $scope.optionsSearch = {
                 fields: ApiHeader.L3NetworkInventoryQueryable,
                 name: 'L3Network',
@@ -11676,6 +13801,7 @@ var ML3Network;
                     });
                 }
             };
+
             $scope.funcGridDoubleClick = function (e) {
                 if (Utils.notNullnotUndefined($scope.model.current)) {
                     var url = Utils.sprintf('/l3Network/{0}', $scope.model.current.uuid);
@@ -11683,59 +13809,68 @@ var ML3Network;
                     e.preventDefault();
                 }
             };
+
             $scope.filterBy = new FilterBy($scope, this.l3NetworkTypes);
+
             $scope.funcSearch = function (win) {
                 win.open();
             };
+
             $scope.funcCreateL3Network = function (win) {
                 win.open();
             };
+
             $scope.funcDeleteL3Network = function () {
                 $scope.deleteL3Network.open();
             };
+
             $scope.optionsDeleteL3Network = {
                 title: 'DELETE L3 NETWORK',
-                html: '<strong><p>Deleting L2 Network will cause:</p></strong>' +
-                    '<ul><li><strong>Ip ranges on this l3Network will be deleted</strong></li>' +
-                    '<li><strong>DNS on this l3Network will be deleted</strong></li>' +
-                    '<li><strong>Virtual Router on this l3Network will be deleted</strong></li>' +
-                    '<li><strong>VMs whose nic belongs to this l3Network will be stopped</strong></li></ul>' +
-                    '<strong><p>those results are not recoverable</p></strong>',
+                html: '<strong><p>Deleting L2 Network will cause:</p></strong>' + '<ul><li><strong>Ip ranges on this l3Network will be deleted</strong></li>' + '<li><strong>DNS on this l3Network will be deleted</strong></li>' + '<li><strong>Virtual Router on this l3Network will be deleted</strong></li>' + '<li><strong>VMs whose nic belongs to this l3Network will be stopped</strong></li></ul>' + '<strong><p>those results are not recoverable</p></strong>',
                 confirm: function () {
                     l3Mgr.delete($scope.model.current, function (ret) {
                         $scope.oL3NetworkGrid.deleteCurrent();
                     });
                 }
             };
+
             $scope.funcRefresh = function () {
                 $scope.oL3NetworkGrid.refresh();
             };
+
             $scope.funcIsActionShow = function () {
                 return !Utils.isEmptyObject($scope.model.current);
             };
+
             $scope.funcIsActionDisabled = function () {
                 return Utils.notNullnotUndefined($scope.model.current) && $scope.model.current.isInProgress();
             };
+
             $scope.optionsCreateL3Network = {
                 done: function (l3) {
                     $scope.oL3NetworkGrid.add(l3);
                 }
             };
+
             $scope.optionsAddIpRange = {
                 l3Network: null
             };
+
             $scope.optionsDeleteIpRange = {
                 l3Network: null
             };
+
             $scope.optionsAddDns = {
                 l3Network: null,
                 done: function (dns) {
                     $scope.model.current.dns.push(dns);
                 }
             };
+
             $scope.optionsDeleteDns = {
                 l3Network: null
             };
+
             $scope.$watch(function () {
                 return $scope.model.current;
             }, function () {
@@ -11751,12 +13886,14 @@ var ML3Network;
         return Controller;
     })();
     ML3Network.Controller = Controller;
+
     var AddDnsOptions = (function () {
         function AddDnsOptions() {
         }
         return AddDnsOptions;
     })();
     ML3Network.AddDnsOptions = AddDnsOptions;
+
     var AddDns = (function () {
         function AddDns(l3Mgr) {
             var _this = this;
@@ -11775,15 +13912,19 @@ var ML3Network;
                         _this.options = parentScope[optionName];
                     });
                 }
+
                 $scope.optionsAddDns__ = {
                     width: 500
                 };
+
                 $scope.canProceed = function () {
                     return Utils.notNullnotUndefined($scope.dns);
                 };
+
                 $scope.cancel = function () {
                     $scope.addDns__.close();
                 };
+
                 $scope.done = function () {
                     l3Mgr.addDns(_this.options.l3Network, $scope.dns, function () {
                         if (Utils.notNullnotUndefined(_this.options.done)) {
@@ -11792,14 +13933,17 @@ var ML3Network;
                     });
                     $scope.addDns__.close();
                 };
+
                 $scope.isDnsValid = function () {
                     if (Utils.notNullnotUndefined($scope.dns)) {
                         return Utils.isIpv4Address($scope.dns);
                     }
                     return true;
                 };
+
                 _this.$scope = $scope;
             };
+
             this.restrict = 'EA';
             this.replace = true;
             this.templateUrl = '/static/templates/l3Network/addDns.html';
@@ -11812,12 +13956,14 @@ var ML3Network;
         return AddDns;
     })();
     ML3Network.AddDns = AddDns;
+
     var AddIpRangeOptions = (function () {
         function AddIpRangeOptions() {
         }
         return AddIpRangeOptions;
     })();
     ML3Network.AddIpRangeOptions = AddIpRangeOptions;
+
     var AddIpRange = (function () {
         function AddIpRange(l3Mgr) {
             var _this = this;
@@ -11836,6 +13982,7 @@ var ML3Network;
                         _this.options = parentScope[optionName];
                     });
                 }
+
                 $scope.info = {
                     name: null,
                     description: null,
@@ -11846,12 +13993,15 @@ var ML3Network;
                     method: 'cidr',
                     cidr: null
                 };
+
                 $scope.optionsAddIpRange__ = {
                     width: "500px"
                 };
+
                 $scope.methodOptions__ = {
                     dataSource: new kendo.data.DataSource({
-                        data: [{
+                        data: [
+                            {
                                 name: "Add By CIDR",
                                 field: "cidr"
                             }, {
@@ -11862,26 +14012,26 @@ var ML3Network;
                     dataTextField: "name",
                     dataValueField: "field"
                 };
+
                 $scope.isNetworkCidrValid = function () {
                     if (Utils.notNullnotUndefined($scope.info.cidr)) {
                         return Utils.isValidCidr($scope.info.cidr);
                     }
                     return true;
                 };
+
                 $scope.canProceed = function () {
                     if ($scope.info.method == 'range') {
-                        return Utils.notNullnotUndefined($scope.info.name) && Utils.notNullnotUndefined($scope.info.startIp)
-                            && Utils.notNullnotUndefined($scope.info.endIp) && Utils.notNullnotUndefined($scope.info.netmask)
-                            && Utils.notNullnotUndefined($scope.info.gateway) && $scope.isStartIpValid()
-                            && $scope.isEndIpValid() && $scope.isNetmaskValid() && $scope.isGatewayValid();
-                    }
-                    else {
+                        return Utils.notNullnotUndefined($scope.info.name) && Utils.notNullnotUndefined($scope.info.startIp) && Utils.notNullnotUndefined($scope.info.endIp) && Utils.notNullnotUndefined($scope.info.netmask) && Utils.notNullnotUndefined($scope.info.gateway) && $scope.isStartIpValid() && $scope.isEndIpValid() && $scope.isNetmaskValid() && $scope.isGatewayValid();
+                    } else {
                         return Utils.notNullnotUndefined($scope.info.cidr) && $scope.isNetworkCidrValid();
                     }
                 };
+
                 $scope.cancel = function () {
                     $scope.addIpRange__.close();
                 };
+
                 $scope.done = function () {
                     if ($scope.info.method == 'range') {
                         l3Mgr.addIpRange(_this.options.l3Network, {
@@ -11896,8 +14046,7 @@ var ML3Network;
                                 _this.options.done(ipr);
                             }
                         });
-                    }
-                    else {
+                    } else {
                         l3Mgr.addIpRangeByCidr(_this.options.l3Network, {
                             name: $scope.info.name,
                             description: $scope.info.description,
@@ -11908,34 +14057,33 @@ var ML3Network;
                             }
                         });
                     }
+
                     $scope.addIpRange__.close();
                 };
+
                 $scope.isStartIpValid = function () {
                     if (Utils.notNullnotUndefined($scope.info.startIp)) {
                         return Utils.isIpv4Address($scope.info.startIp);
                     }
                     return true;
-                },
-                    $scope.isEndIpValid = function () {
-                        if (Utils.notNullnotUndefined($scope.info.endIp)) {
-                            return Utils.isIpv4Address($scope.info.endIp);
-                        }
-                        return true;
-                    },
-                    $scope.isNetmaskValid = function () {
-                        if (Utils.notNullnotUndefined($scope.info.netmask)) {
-                            return Utils.isIpv4Address($scope.info.netmask);
-                        }
-                        return true;
-                    },
-                    $scope.isGatewayValid = function () {
-                        if (Utils.notNullnotUndefined($scope.info.gateway)) {
-                            return Utils.isIpv4Address($scope.info.gateway);
-                        }
-                        return true;
-                    },
-                    _this.$scope = $scope;
+                }, $scope.isEndIpValid = function () {
+                    if (Utils.notNullnotUndefined($scope.info.endIp)) {
+                        return Utils.isIpv4Address($scope.info.endIp);
+                    }
+                    return true;
+                }, $scope.isNetmaskValid = function () {
+                    if (Utils.notNullnotUndefined($scope.info.netmask)) {
+                        return Utils.isIpv4Address($scope.info.netmask);
+                    }
+                    return true;
+                }, $scope.isGatewayValid = function () {
+                    if (Utils.notNullnotUndefined($scope.info.gateway)) {
+                        return Utils.isIpv4Address($scope.info.gateway);
+                    }
+                    return true;
+                }, _this.$scope = $scope;
             };
+
             this.restrict = 'EA';
             this.replace = true;
             this.templateUrl = '/static/templates/l3Network/addIpRange.html';
@@ -11956,22 +14104,24 @@ var ML3Network;
         return AddIpRange;
     })();
     ML3Network.AddIpRange = AddIpRange;
+
     var CreateL3NetworkOptions = (function () {
         function CreateL3NetworkOptions() {
         }
         return CreateL3NetworkOptions;
     })();
     ML3Network.CreateL3NetworkOptions = CreateL3NetworkOptions;
+
     var CreateL3NetworkModel = (function () {
         function CreateL3NetworkModel() {
         }
         CreateL3NetworkModel.prototype.canCreate = function () {
-            return angular.isDefined(this.name) && angular.isDefined(this.type) &&
-                angular.isDefined(this.l2NetworkUuid);
+            return angular.isDefined(this.name) && angular.isDefined(this.type) && angular.isDefined(this.l2NetworkUuid);
         };
         return CreateL3NetworkModel;
     })();
     ML3Network.CreateL3NetworkModel = CreateL3NetworkModel;
+
     var CreateL3Network = (function () {
         function CreateL3Network(api, zoneMgr, l3Mgr, l2Mgr) {
             var _this = this;
@@ -11994,6 +14144,7 @@ var ML3Network;
                         _this.options = parentScope[optionName];
                     });
                 }
+
                 var infoPage = $scope.infoPage = {
                     activeState: true,
                     name: null,
@@ -12009,8 +14160,7 @@ var ML3Network;
                         return false;
                     },
                     canMoveToNext: function () {
-                        return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.l2NetworkUuid)
-                            && Utils.notNullnotUndefined(this.type);
+                        return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.l2NetworkUuid) && Utils.notNullnotUndefined(this.type);
                     },
                     show: function () {
                         this.getAnchorElement().tab('show');
@@ -12037,6 +14187,7 @@ var ML3Network;
                         this.dnsDomain = null;
                     }
                 };
+
                 var ipRangePage = $scope.ipRangePage = {
                     activeState: false,
                     startIp: null,
@@ -12119,6 +14270,7 @@ var ML3Network;
                             description: this.description,
                             networkCidr: this.cidr
                         });
+
                         this.startIp = null;
                         this.endIp = null;
                         this.netmask = null;
@@ -12129,12 +14281,8 @@ var ML3Network;
                     },
                     canAdd: function () {
                         if (this.method == 'range') {
-                            return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.startIp)
-                                && Utils.notNullnotUndefined(this.endIp) && Utils.notNullnotUndefined(this.netmask)
-                                && Utils.notNullnotUndefined(this.gateway) && this.isStartIpValid()
-                                && this.isEndIpValid() && this.isNetmaskValid() && this.isGatewayValid();
-                        }
-                        else {
+                            return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.startIp) && Utils.notNullnotUndefined(this.endIp) && Utils.notNullnotUndefined(this.netmask) && Utils.notNullnotUndefined(this.gateway) && this.isStartIpValid() && this.isEndIpValid() && this.isNetmaskValid() && this.isGatewayValid();
+                        } else {
                             return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefinedNotEmptyString(this.cidr) && this.isCidrValid();
                         }
                     },
@@ -12146,6 +14294,7 @@ var ML3Network;
                         $scope.optionsIpRangeGrid__.dataSource.remove(row);
                     }
                 };
+
                 var dnsPage = $scope.dnsPage = {
                     activeState: false,
                     dns: null,
@@ -12184,6 +14333,7 @@ var ML3Network;
                         $scope.optionsDnsGrid__.dataSource.insert(0, {
                             dns: this.dns
                         });
+
                         this.dns = null;
                     },
                     canAdd: function () {
@@ -12197,6 +14347,7 @@ var ML3Network;
                         $scope.optionsDnsGrid__.dataSource.remove(row);
                     }
                 };
+
                 var self = _this;
                 var servicePage = $scope.servicePage = {
                     activeState: false,
@@ -12235,6 +14386,7 @@ var ML3Network;
                                 return;
                             }
                         }
+
                         $scope.optionsNetworkServiceGrid__.dataSource.insert(0, {
                             providerName: pro.name,
                             providerUuid: pro.uuid,
@@ -12252,6 +14404,7 @@ var ML3Network;
                         $scope.optionsNetworkServiceGrid__.dataSource.remove(row);
                     }
                 };
+
                 $scope.$watch(function () {
                     return $scope.servicePage.providerUuid;
                 }, function () {
@@ -12262,6 +14415,7 @@ var ML3Network;
                         }
                     }
                 });
+
                 var mediator = $scope.mediator = {
                     currentPage: infoPage,
                     movedToPage: function (page) {
@@ -12284,23 +14438,25 @@ var ML3Network;
                                 chain.next();
                                 return;
                             }
+
                             var add = function () {
                                 var ipr = iprs.shift();
                                 if (!Utils.notNullnotUndefined(ipr)) {
                                     chain.next();
                                     return;
                                 }
+
                                 if (Utils.notNullnotUndefined(ipr.networkCidr)) {
                                     _this.l3Mgr.addIpRangeByCidr(resultL3, ipr, function () {
                                         add();
                                     });
-                                }
-                                else {
+                                } else {
                                     _this.l3Mgr.addIpRange(resultL3, ipr, function () {
                                         add();
                                     });
                                 }
                             };
+
                             add();
                         }).then(function () {
                             var dns = $scope.optionsDnsGrid__.dataSource.data();
@@ -12308,16 +14464,19 @@ var ML3Network;
                                 chain.next();
                                 return;
                             }
+
                             var add = function () {
                                 var d = dns.shift();
                                 if (!Utils.notNullnotUndefined(d)) {
                                     chain.next();
                                     return;
                                 }
+
                                 _this.l3Mgr.addDns(resultL3, d.dns, function () {
                                     add();
                                 });
                             };
+
                             add();
                         }).then(function () {
                             var nws = $scope.optionsNetworkServiceGrid__.dataSource.data();
@@ -12325,6 +14484,7 @@ var ML3Network;
                                 chain.next();
                                 return;
                             }
+
                             var networkServices = {};
                             angular.forEach(nws, function (n) {
                                 var providerUuid = n.providerUuid;
@@ -12333,8 +14493,10 @@ var ML3Network;
                                     services = [];
                                     networkServices[providerUuid] = services;
                                 }
+
                                 services.push(n.serviceType);
                             });
+
                             _this.l3Mgr.attachNetworkService(resultL3, networkServices, function () {
                                 chain.next();
                             });
@@ -12343,12 +14505,15 @@ var ML3Network;
                                 _this.options.done(resultL3);
                             }
                         }).start();
+
                         $scope.winCreateL3Network__.close();
                     }
                 };
+
                 $scope.button = new Utils.WizardButton([
                     infoPage, ipRangePage, dnsPage, servicePage
                 ], mediator);
+
                 $scope.$watch(function () {
                     return $scope.infoPage.zoneUuid;
                 }, function () {
@@ -12363,9 +14528,11 @@ var ML3Network;
                         });
                     }
                 });
+
                 $scope.methodOptions__ = {
                     dataSource: new kendo.data.DataSource({
-                        data: [{
+                        data: [
+                            {
                                 name: "Add By CIDR",
                                 field: "cidr"
                             }, {
@@ -12376,25 +14543,27 @@ var ML3Network;
                     dataTextField: "name",
                     dataValueField: "field"
                 };
+
                 $scope.optionsL2NetworkList__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
                 };
+
                 $scope.optionsZoneList__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
                     template: "<div style='color: black'><span class='z-label'>Name</span>: #: name #</div><div style='color: black'><span class='z-label'>State:</span>#: state #</div><div style='color: black'><span class='z-label'>UUID:</span> #: uuid #</div>"
                 };
+
                 $scope.optionsL3NetworkTypeList__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "type",
                     dataValueField: "type"
                 };
+
                 $scope.optionsIpRangeGrid__ = {
                     pageSize: 20,
                     resizable: true,
@@ -12435,6 +14604,7 @@ var ML3Network;
                     },
                     dataSource: new kendo.data.DataSource([])
                 };
+
                 $scope.optionsDnsGrid__ = {
                     pageSize: 20,
                     resizable: true,
@@ -12460,14 +14630,17 @@ var ML3Network;
                     },
                     dataSource: new kendo.data.DataSource([])
                 };
+
                 $scope.optionsProviderList__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid"
                 };
+
                 $scope.optionsServiceList__ = {
                     dataSource: new kendo.data.DataSource({ data: [] })
                 };
+
                 $scope.optionsNetworkServiceGrid__ = {
                     pageSize: 20,
                     resizable: true,
@@ -12498,6 +14671,7 @@ var ML3Network;
                     },
                     dataSource: new kendo.data.DataSource([])
                 };
+
                 $scope.winCreateL3NetworkOptions__ = {
                     width: '800px',
                     //height: '680px',
@@ -12506,6 +14680,7 @@ var ML3Network;
                     draggable: false,
                     resizable: false
                 };
+
                 _this.$scope = $scope;
             };
             this.restrict = 'EA';
@@ -12521,10 +14696,12 @@ var ML3Network;
                     value: zoneUuid
                 }
             ];
+
             this.l2Mgr.query(qobj, function (l2s) {
                 done(l2s);
             });
         };
+
         CreateL3Network.prototype.open = function () {
             var _this = this;
             var win = this.$scope.winCreateL3Network__;
@@ -12538,8 +14715,7 @@ var ML3Network;
                     _this.$scope.optionsZoneList__.dataSource.data(new kendo.data.ObservableArray([_this.options.zone]));
                     _this.$scope.infoPage.zoneUuid = _this.options.zone.uuid;
                     chain.next();
-                }
-                else {
+                } else {
                     _this.zoneMgr.query(new ApiHeader.QueryObject(), function (zones, total) {
                         _this.$scope.optionsZoneList__.dataSource.data(zones);
                         if (zones.length > 0) {
@@ -12564,6 +14740,7 @@ var ML3Network;
                     angular.forEach(providers, function (pro) {
                         _this.networkServiceProviders[pro.uuid] = pro;
                     });
+
                     _this.$scope.optionsProviderList__.dataSource.data(providers);
                     var cpro = providers[0];
                     _this.$scope.optionsServiceList__.dataSource.data(cpro.networkServiceTypes);
@@ -12577,12 +14754,14 @@ var ML3Network;
         return CreateL3Network;
     })();
     ML3Network.CreateL3Network = CreateL3Network;
+
     var DeleteIpRangeOptions = (function () {
         function DeleteIpRangeOptions() {
         }
         return DeleteIpRangeOptions;
     })();
     ML3Network.DeleteIpRangeOptions = DeleteIpRangeOptions;
+
     var DeleteIpRange = (function () {
         function DeleteIpRange(l3Mgr) {
             var _this = this;
@@ -12596,16 +14775,13 @@ var ML3Network;
                 parent[$attrs.zDeleteIpRange] = _this;
                 _this.options = parent[$attrs.zOptions];
                 _this.$scope = $scope;
+
                 $scope.uuid = null;
                 $scope.ipRangeListOptions__ = {
                     dataSource: new kendo.data.DataSource([]),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Start IP:</span><span>#: startIp #</span></div>' +
-                        '<div style="color: black"><span class="z-label">End IP:</span><span>#: endIp #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Netmask:</span><span>#: netmask #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Gateway:</span><span>#: gateway #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">Start IP:</span><span>#: startIp #</span></div>' + '<div style="color: black"><span class="z-label">End IP:</span><span>#: endIp #</span></div>' + '<div style="color: black"><span class="z-label">Netmask:</span><span>#: netmask #</span></div>' + '<div style="color: black"><span class="z-label">Gateway:</span><span>#: gateway #</span></div>',
                     change: function (e) {
                         var select = e.sender;
                         Utils.safeApply($scope, function () {
@@ -12613,13 +14789,17 @@ var ML3Network;
                         });
                     }
                 };
+
                 $scope.selectItemNum = 0;
+
                 $scope.canProceed = function () {
                     return $scope.selectItemNum > 0;
                 };
+
                 $scope.cancel = function () {
                     $scope.deleteIpRange__.close();
                 };
+
                 $scope.done = function () {
                     var iprs = $scope.ipRangeList__.dataItems();
                     angular.forEach(iprs, function (ipr) {
@@ -12629,8 +14809,10 @@ var ML3Network;
                             }
                         });
                     });
+
                     $scope.deleteIpRange__.close();
                 };
+
                 $scope.deleteIpRangeOptions__ = {
                     width: '550px'
                 };
@@ -12644,12 +14826,14 @@ var ML3Network;
         return DeleteIpRange;
     })();
     ML3Network.DeleteIpRange = DeleteIpRange;
+
     var DeleteDnsOptions = (function () {
         function DeleteDnsOptions() {
         }
         return DeleteDnsOptions;
     })();
     ML3Network.DeleteDnsOptions = DeleteDnsOptions;
+
     var DeleteDns = (function () {
         function DeleteDns(l3Mgr) {
             var _this = this;
@@ -12663,6 +14847,7 @@ var ML3Network;
                 parent[$attrs.zDeleteDns] = _this;
                 _this.options = parent[$attrs.zOptions];
                 _this.$scope = $scope;
+
                 $scope.uuid = null;
                 $scope.dnsOptions__ = {
                     dataSource: new kendo.data.DataSource([]),
@@ -12675,13 +14860,17 @@ var ML3Network;
                         });
                     }
                 };
+
                 $scope.selectItemNum = 0;
+
                 $scope.canProceed = function () {
                     return $scope.selectItemNum > 0;
                 };
+
                 $scope.cancel = function () {
                     $scope.deleteDns__.close();
                 };
+
                 $scope.done = function () {
                     var dnss = $scope.dnsList__.dataItems();
                     angular.forEach(dnss, function (it) {
@@ -12691,8 +14880,10 @@ var ML3Network;
                             }
                         });
                     });
+
                     $scope.deleteDns__.close();
                 };
+
                 $scope.deleteDnsOptions__ = {
                     width: '550px'
                 };
@@ -12714,19 +14905,27 @@ var ML3Network;
     })();
     ML3Network.DeleteDns = DeleteDns;
 })(ML3Network || (ML3Network = {}));
-angular.module('root').factory('L3NetworkManager', ['Api', '$rootScope', function (api, $rootScope) {
+
+angular.module('root').factory('L3NetworkManager', [
+    'Api', '$rootScope', function (api, $rootScope) {
         return new ML3Network.L3NetworkManager(api, $rootScope);
-    }]).directive('zCreateL3Network', ['Api', 'ZoneManager', 'L3NetworkManager', 'L2NetworkManager', function (api, zoneMgr, l3Mgr, l2Mgr) {
+    }]).directive('zCreateL3Network', [
+    'Api', 'ZoneManager', 'L3NetworkManager', 'L2NetworkManager', function (api, zoneMgr, l3Mgr, l2Mgr) {
         return new ML3Network.CreateL3Network(api, zoneMgr, l3Mgr, l2Mgr);
-    }]).directive('zAddIpRange', ['L3NetworkManager', function (l3Mgr) {
+    }]).directive('zAddIpRange', [
+    'L3NetworkManager', function (l3Mgr) {
         return new ML3Network.AddIpRange(l3Mgr);
-    }]).directive('zDeleteIpRange', ['L3NetworkManager', function (l3Mgr) {
+    }]).directive('zDeleteIpRange', [
+    'L3NetworkManager', function (l3Mgr) {
         return new ML3Network.DeleteIpRange(l3Mgr);
-    }]).directive('zAddDns', ['L3NetworkManager', function (l3Mgr) {
+    }]).directive('zAddDns', [
+    'L3NetworkManager', function (l3Mgr) {
         return new ML3Network.AddDns(l3Mgr);
-    }]).directive('zDeleteDns', ['L3NetworkManager', function (l3Mgr) {
+    }]).directive('zDeleteDns', [
+    'L3NetworkManager', function (l3Mgr) {
         return new ML3Network.DeleteDns(l3Mgr);
-    }]).config(['$routeProvider', function (route) {
+    }]).config([
+    '$routeProvider', function (route) {
         route.when('/l3Network', {
             templateUrl: '/static/templates/l3Network/l3Network.html',
             controller: 'ML3Network.Controller',
@@ -12769,12 +14968,15 @@ var MBackupStorage;
         BackupStorage.prototype.progressOn = function () {
             this.inProgress = true;
         };
+
         BackupStorage.prototype.progressOff = function () {
             this.inProgress = false;
         };
+
         BackupStorage.prototype.isInProgress = function () {
             return this.inProgress;
         };
+
         BackupStorage.prototype.isEnableShow = function () {
             return this.state == 'Disabled';
         };
@@ -12784,25 +14986,22 @@ var MBackupStorage;
         BackupStorage.prototype.stateLabel = function () {
             if (this.state == 'Enabled') {
                 return 'label label-success';
-            }
-            else if (this.state == 'Disabled') {
+            } else if (this.state == 'Disabled') {
                 return 'label label-danger';
-            }
-            else {
+            } else {
                 return 'label label-default';
             }
         };
         BackupStorage.prototype.statusLabel = function () {
             if (this.status == 'Connected') {
                 return 'label label-success';
-            }
-            else if (this.status == 'Disconnected') {
+            } else if (this.status == 'Disconnected') {
                 return 'label label-danger';
-            }
-            else {
+            } else {
                 return 'label label-default';
             }
         };
+
         BackupStorage.prototype.updateObservableObject = function (inv) {
             // self : ObservableObject
             var self = this;
@@ -12822,6 +15021,7 @@ var MBackupStorage;
         return BackupStorage;
     })(ApiHeader.BackupStorageInventory);
     MBackupStorage.BackupStorage = BackupStorage;
+
     var BackupStorageManager = (function () {
         function BackupStorageManager(api, $rootScope) {
             this.api = api;
@@ -12830,9 +15030,11 @@ var MBackupStorage;
         BackupStorageManager.prototype.setSortBy = function (sortBy) {
             this.sortBy = sortBy;
         };
+
         BackupStorageManager.prototype.wrap = function (bs) {
             return new kendo.data.ObservableObject(bs);
         };
+
         BackupStorageManager.prototype.create = function (bs, done) {
             var _this = this;
             var msg = null;
@@ -12842,8 +15044,7 @@ var MBackupStorage;
                 msg.username = bs.username;
                 msg.password = bs.password;
                 msg.type = 'SftpBackupStorage';
-            }
-            else if (bs.type == 'SimulatorBackupStorage') {
+            } else if (bs.type == 'SimulatorBackupStorage') {
                 msg = new ApiHeader.APIAddSimulatorBackupStorageMsg();
                 msg.type = 'SimulatorBackupStorage';
             }
@@ -12863,6 +15064,7 @@ var MBackupStorage;
                 });
             });
         };
+
         BackupStorageManager.prototype.query = function (qobj, callback) {
             var _this = this;
             var msg = new ApiHeader.APIQueryBackupStorageMsg();
@@ -12885,6 +15087,7 @@ var MBackupStorage;
                 callback(pris, ret.total);
             });
         };
+
         BackupStorageManager.prototype.disable = function (bs) {
             var _this = this;
             bs.progressOn();
@@ -12900,6 +15103,7 @@ var MBackupStorage;
                 });
             });
         };
+
         BackupStorageManager.prototype.enable = function (bs) {
             var _this = this;
             bs.progressOn();
@@ -12915,9 +15119,10 @@ var MBackupStorage;
                 });
             });
         };
+
         BackupStorageManager.prototype.attach = function (bs, zone, done) {
             var _this = this;
-            if (done === void 0) { done = null; }
+            if (typeof done === "undefined") { done = null; }
             bs.progressOn();
             var msg = new ApiHeader.APIAttachBackupStorageToZoneMsg();
             msg.zoneUuid = zone.uuid;
@@ -12934,9 +15139,10 @@ var MBackupStorage;
                 });
             });
         };
+
         BackupStorageManager.prototype.detach = function (bs, zone, done) {
             var _this = this;
-            if (done === void 0) { done = null; }
+            if (typeof done === "undefined") { done = null; }
             bs.progressOn();
             var msg = new ApiHeader.APIDetachBackupStorageFromZoneMsg();
             msg.zoneUuid = zone.uuid;
@@ -12953,12 +15159,14 @@ var MBackupStorage;
                 });
             });
         };
+
         BackupStorageManager.prototype.reconnect = function (bs, done) {
             var _this = this;
-            if (done === void 0) { done = null; }
+            if (typeof done === "undefined") { done = null; }
             if (bs.type != 'SftpBackupStorage') {
                 return;
             }
+
             bs.progressOn();
             var msg = new ApiHeader.APIReconnectSftpBackupStorageMsg();
             msg.uuid = bs.uuid;
@@ -12975,6 +15183,7 @@ var MBackupStorage;
                 });
             });
         };
+
         BackupStorageManager.prototype.delete = function (bs, done) {
             var _this = this;
             bs.progressOn();
@@ -12992,6 +15201,7 @@ var MBackupStorage;
         return BackupStorageManager;
     })();
     MBackupStorage.BackupStorageManager = BackupStorageManager;
+
     var BackupStorageModel = (function (_super) {
         __extends(BackupStorageModel, _super);
         function BackupStorageModel() {
@@ -13001,6 +15211,7 @@ var MBackupStorage;
         return BackupStorageModel;
     })(Utils.Model);
     MBackupStorage.BackupStorageModel = BackupStorageModel;
+
     var OBackupStorageGrid = (function (_super) {
         __extends(OBackupStorageGrid, _super);
         function OBackupStorageGrid($scope, bsMgr) {
@@ -13059,6 +15270,7 @@ var MBackupStorage;
                     width: '20%'
                 }
             ];
+
             this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
@@ -13073,6 +15285,7 @@ var MBackupStorage;
         }
         return OBackupStorageGrid;
     })(Utils.OGrid);
+
     var Action = (function () {
         function Action($scope, bsMgr) {
             this.$scope = $scope;
@@ -13081,32 +15294,42 @@ var MBackupStorage;
         Action.prototype.enable = function () {
             this.bsMgr.enable(this.$scope.model.current);
         };
+
         Action.prototype.disable = function () {
             this.bsMgr.disable(this.$scope.model.current);
         };
+
         Action.prototype.reconnect = function () {
             this.bsMgr.reconnect(this.$scope.model.current);
         };
+
         Action.prototype.addHost = function () {
         };
+
         Action.prototype.attachL2Network = function () {
         };
+
         Action.prototype.detachL2Network = function () {
         };
+
         Action.prototype.attachZone = function () {
             this.$scope.attachZone.open();
         };
+
         Action.prototype.detachZone = function () {
             this.$scope.detachZone.open();
         };
+
         Action.prototype.isReconnectShow = function () {
             if (!Utils.notNullnotUndefined(this.$scope.model.current)) {
                 return false;
             }
+
             return this.$scope.model.current.type == 'SftpBackupStorage';
         };
         return Action;
     })();
+
     var FilterBy = (function () {
         function FilterBy($scope, bsTypes) {
             var _this = this;
@@ -13136,11 +15359,13 @@ var MBackupStorage;
                 dataTextField: 'name',
                 dataValueField: 'value'
             };
+
             this.valueList = {
                 dataSource: new kendo.data.DataSource({
                     data: []
                 })
             };
+
             this.field = FilterBy.NONE;
             $scope.$watch(function () {
                 return _this.field;
@@ -13148,14 +15373,11 @@ var MBackupStorage;
                 if (_this.field == FilterBy.NONE) {
                     _this.valueList.dataSource.data([]);
                     _this.value = null;
-                }
-                else if (_this.field == FilterBy.STATE) {
+                } else if (_this.field == FilterBy.STATE) {
                     _this.valueList.dataSource.data(['Enabled', 'Disabled']);
-                }
-                else if (_this.field == FilterBy.STATUS) {
+                } else if (_this.field == FilterBy.STATUS) {
                     _this.valueList.dataSource.data(['Connecting', 'Connected', 'Disconnected']);
-                }
-                else if (_this.field == FilterBy.TYPE) {
+                } else if (_this.field == FilterBy.TYPE) {
                     _this.valueList.dataSource.data(_this.bsTypes);
                 }
             });
@@ -13165,19 +15387,24 @@ var MBackupStorage;
             this.name = !Utils.notNullnotUndefined(this.value) ? null : Utils.sprintf('{0}:{1}', this.field, this.value);
             popover.toggle();
         };
+
         FilterBy.prototype.open = function (popover) {
             popover.toggle();
         };
+
         FilterBy.prototype.isValueListDisabled = function () {
             return !Utils.notNullnotUndefined(this.value);
         };
+
         FilterBy.prototype.getButtonName = function () {
             return this.name;
         };
+
         FilterBy.prototype.toKendoFilter = function () {
             if (!Utils.notNullnotUndefined(this.value)) {
                 return null;
             }
+
             return {
                 field: this.field,
                 operator: 'eq',
@@ -13190,6 +15417,7 @@ var MBackupStorage;
         FilterBy.TYPE = 'type';
         return FilterBy;
     })();
+
     var DetailsController = (function () {
         function DetailsController($scope, bsMgr, $routeParams, tagService, current, zoneMgr) {
             var _this = this;
@@ -13199,27 +15427,31 @@ var MBackupStorage;
             this.tagService = tagService;
             $scope.model = new BackupStorageModel();
             $scope.model.current = current;
+
             $scope.funcDelete = function (win) {
                 win.open();
             };
+
             $scope.action = new Action($scope, bsMgr);
+
             $scope.funcRefresh = function () {
                 _this.loadSelf($scope.model.current.uuid);
             };
+
             $scope.funcToolbarShow = function () {
                 return Utils.notNullnotUndefined($scope.model.current);
             };
+
             $scope.optionsDeleteBackupStorage = {
                 title: 'DELETE BACKUP STORAGE',
-                html: '<strong><p>Deleting Backup Storage will cause:</p></strong>' +
-                    '<ul><li><strong>Zones to which this backup storage has attached will be detached</strong></li>' +
-                    '<strong><p>those results are not recoverable</p></strong>',
+                html: '<strong><p>Deleting Backup Storage will cause:</p></strong>' + '<ul><li><strong>Zones to which this backup storage has attached will be detached</strong></li>' + '<strong><p>those results are not recoverable</p></strong>',
                 confirm: function () {
                     bsMgr.delete($scope.model.current, function (ret) {
                         $scope.model.resetCurrent();
                     });
                 }
             };
+
             $scope.optionsTag = {
                 tags: [],
                 createTag: function (item) {
@@ -13238,15 +15470,18 @@ var MBackupStorage;
                     return Utils.notNullnotUndefined($scope.model.current);
                 }
             };
+
             this.tagService.queryTag($scope.model.current.uuid, function (tags) {
                 $scope.optionsTag.tags = tags;
             });
+
             $scope.optionsAttachZone = {
                 backupStorage: $scope.model.current,
                 done: function (zone) {
                     $scope.optionsZoneGrid.dataSource.insert(0, zone);
                 }
             };
+
             $scope.optionsDetachZone = {
                 backupStorage: $scope.model.current,
                 done: function (zone) {
@@ -13262,9 +15497,11 @@ var MBackupStorage;
                     }
                 }
             };
+
             $scope.funcLoadZones = function () {
                 $scope.optionsZoneGrid.dataSource.read();
             };
+
             $scope.optionsZoneGrid = {
                 pageSize: 20,
                 resizable: true,
@@ -13314,6 +15551,7 @@ var MBackupStorage;
                                 });
                                 return;
                             }
+
                             var qobj = new ApiHeader.QueryObject();
                             qobj.limit = options.data.take;
                             qobj.start = options.data.pageSize * (options.data.page - 1);
@@ -13322,6 +15560,7 @@ var MBackupStorage;
                                 op: 'in',
                                 value: $scope.model.current.attachedZoneUuids.join()
                             });
+
                             zoneMgr.query(qobj, function (zones, total) {
                                 options.success({
                                     data: zones,
@@ -13345,6 +15584,7 @@ var MBackupStorage;
         return DetailsController;
     })();
     MBackupStorage.DetailsController = DetailsController;
+
     var Controller = (function () {
         function Controller($scope, bsMgr, backupStorageTypes, $location) {
             this.$scope = $scope;
@@ -13398,6 +15638,7 @@ var MBackupStorage;
                     $scope.oBackupStorageGrid.refresh();
                 }
             };
+
             $scope.optionsSearch = {
                 fields: ApiHeader.BackupStorageInventoryQueryable,
                 name: 'BackupStorage',
@@ -13429,6 +15670,7 @@ var MBackupStorage;
                     });
                 }
             };
+
             $scope.funcGridDoubleClick = function (e) {
                 if (Utils.notNullnotUndefined($scope.model.current)) {
                     var url = Utils.sprintf('/backupStorage/{0}', $scope.model.current.uuid);
@@ -13436,36 +15678,43 @@ var MBackupStorage;
                     e.preventDefault();
                 }
             };
+
             $scope.filterBy = new FilterBy($scope, this.backupStorageTypes);
+
             $scope.funcSearch = function (win) {
                 win.open();
             };
+
             $scope.funcCreateBackupStorage = function (win) {
                 win.open();
             };
+
             $scope.funcDeleteBackupStorage = function () {
                 $scope.deleteBackupStorage.open();
             };
+
             $scope.optionsDeleteBackupStorage = {
                 title: 'DELETE BACKUP STORAGE',
-                html: '<strong><p>Deleting Backup Storage will cause:</p></strong>' +
-                    '<ul><li><strong>Zones to which this backup storage has attached will be detached</strong></li>' +
-                    '<strong><p>those results are not recoverable</p></strong>',
+                html: '<strong><p>Deleting Backup Storage will cause:</p></strong>' + '<ul><li><strong>Zones to which this backup storage has attached will be detached</strong></li>' + '<strong><p>those results are not recoverable</p></strong>',
                 confirm: function () {
                     bsMgr.delete($scope.model.current, function (ret) {
                         $scope.oBackupStorageGrid.deleteCurrent();
                     });
                 }
             };
+
             $scope.funcRefresh = function () {
                 $scope.oBackupStorageGrid.refresh();
             };
+
             $scope.funcIsActionShow = function () {
                 return !Utils.isEmptyObject($scope.model.current);
             };
+
             $scope.funcIsActionDisabled = function () {
                 return Utils.notNullnotUndefined($scope.model.current) && $scope.model.current.isInProgress();
             };
+
             $scope.optionsCreateBackupStorage = {
                 done: function (data) {
                     var resultBs;
@@ -13491,16 +15740,19 @@ var MBackupStorage;
                     }).start();
                 }
             };
+
             $scope.optionsAttachZone = {
                 backupStorage: $scope.model.current,
                 done: function (zone) {
                 }
             };
+
             $scope.optionsDetachZone = {
                 backupStorage: $scope.model.current,
                 done: function (zone) {
                 }
             };
+
             $scope.$watch(function () {
                 return $scope.model.current;
             }, function () {
@@ -13512,22 +15764,24 @@ var MBackupStorage;
         return Controller;
     })();
     MBackupStorage.Controller = Controller;
+
     var CreateBackupStorageOptions = (function () {
         function CreateBackupStorageOptions() {
         }
         return CreateBackupStorageOptions;
     })();
     MBackupStorage.CreateBackupStorageOptions = CreateBackupStorageOptions;
+
     var CreateBackupStorageModel = (function () {
         function CreateBackupStorageModel() {
         }
         CreateBackupStorageModel.prototype.canCreate = function () {
-            return angular.isDefined(this.name) && angular.isDefined(this.type) &&
-                Utils.notNullnotUndefined(this.url);
+            return angular.isDefined(this.name) && angular.isDefined(this.type) && Utils.notNullnotUndefined(this.url);
         };
         return CreateBackupStorageModel;
     })();
     MBackupStorage.CreateBackupStorageModel = CreateBackupStorageModel;
+
     var CreateBackupStorage = (function () {
         function CreateBackupStorage(api, bsMgr, zoneMgr) {
             var _this = this;
@@ -13549,6 +15803,7 @@ var MBackupStorage;
                         _this.options = parentScope[optionName];
                     });
                 }
+
                 var infoPage = $scope.infoPage = {
                     activeState: true,
                     name: null,
@@ -13569,14 +15824,9 @@ var MBackupStorage;
                     },
                     canMoveToNext: function () {
                         if (this.type == 'SftpBackupStorage') {
-                            return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.type)
-                                && Utils.notNullnotUndefined(this.url) && Utils.notNullnotUndefined(this.hostname)
-                                && Utils.notNullnotUndefined(this.username) && Utils.notNullnotUndefined(this.password)
-                                && this.isUrlValid();
-                        }
-                        else {
-                            return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.type)
-                                && Utils.notNullnotUndefined(this.url);
+                            return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.type) && Utils.notNullnotUndefined(this.url) && Utils.notNullnotUndefined(this.hostname) && Utils.notNullnotUndefined(this.username) && Utils.notNullnotUndefined(this.password) && this.isUrlValid();
+                        } else {
+                            return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.type) && Utils.notNullnotUndefined(this.url);
                         }
                     },
                     show: function () {
@@ -13605,6 +15855,7 @@ var MBackupStorage;
                         this.activeState = false;
                     }
                 };
+
                 var zonePage = $scope.zonePage = {
                     activeState: false,
                     canMoveToPrevious: function () {
@@ -13635,6 +15886,7 @@ var MBackupStorage;
                         return $scope.zoneListOptions__.dataSource.data().length > 0;
                     }
                 };
+
                 var mediator = $scope.mediator = {
                     currentPage: infoPage,
                     movedToPage: function (page) {
@@ -13650,12 +15902,15 @@ var MBackupStorage;
                                 zones: $scope.zoneList__.dataItems()
                             });
                         }
+
                         $scope.winCreateBackupStorage__.close();
                     }
                 };
+
                 $scope.button = new Utils.WizardButton([
                     infoPage, zonePage
                 ], mediator);
+
                 $scope.typeList = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "type",
@@ -13667,6 +15922,7 @@ var MBackupStorage;
                         });
                     }
                 };
+
                 $scope.winCreateBackupStorageOptions__ = {
                     width: '750px',
                     //height: '780px',
@@ -13675,15 +15931,14 @@ var MBackupStorage;
                     draggable: false,
                     resizable: false
                 };
+
                 $scope.zoneListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">URL:</span><span>#: url #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' + '<div style="color: black"><span class="z-label">URL:</span><span>#: url #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
                 };
+
                 _this.$scope = $scope;
             };
             this.restrict = 'EA';
@@ -13710,8 +15965,7 @@ var MBackupStorage;
                 if (Utils.notNullnotUndefined(_this.options.zone)) {
                     _this.$scope.zoneListOptions__.dataSource.data(new kendo.data.ObservableArray([_this.options.zone]));
                     chain.next();
-                }
-                else {
+                } else {
                     _this.zoneMgr.query(new ApiHeader.QueryObject(), function (zones, total) {
                         _this.$scope.zoneListOptions__.dataSource.data(zones);
                         chain.next();
@@ -13725,6 +15979,7 @@ var MBackupStorage;
         return CreateBackupStorage;
     })();
     MBackupStorage.CreateBackupStorage = CreateBackupStorage;
+
     var AttachZone = (function () {
         function AttachZone(zoneMgr, bsMgr) {
             var _this = this;
@@ -13738,12 +15993,12 @@ var MBackupStorage;
                 var parent = $scope.$parent;
                 parent[$attrs.zBackupStorageAttachZone] = _this;
                 _this.options = parent[$attrs.zOptions];
+
                 $scope.zoneListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
                     change: function (e) {
                         var select = e.sender;
                         Utils.safeApply($scope, function () {
@@ -13751,13 +16006,17 @@ var MBackupStorage;
                         });
                     }
                 };
+
                 $scope.selectItemNum = 0;
+
                 $scope.canProceed = function () {
                     return $scope.selectItemNum > 0;
                 };
+
                 $scope.cancel = function () {
                     $scope.attachZone__.close();
                 };
+
                 $scope.done = function () {
                     var zones = $scope.zoneList__.dataItems();
                     angular.forEach(zones, function (zone) {
@@ -13767,8 +16026,10 @@ var MBackupStorage;
                             }
                         });
                     });
+
                     $scope.attachZone__.close();
                 };
+
                 _this.$scope = $scope;
             };
         }
@@ -13785,6 +16046,7 @@ var MBackupStorage;
                         value: _this.options.backupStorage.attachedZoneUuids.join()
                     }
                 ];
+
                 _this.zoneMgr.query(qobj, function (zones) {
                     _this.$scope.zoneListOptions__.dataSource.data(zones);
                     chain.next();
@@ -13797,12 +16059,14 @@ var MBackupStorage;
         return AttachZone;
     })();
     MBackupStorage.AttachZone = AttachZone;
+
     var DetachZoneOptions = (function () {
         function DetachZoneOptions() {
         }
         return DetachZoneOptions;
     })();
     MBackupStorage.DetachZoneOptions = DetachZoneOptions;
+
     var DetachZone = (function () {
         function DetachZone(bsMgr, zoneMgr) {
             var _this = this;
@@ -13817,13 +16081,13 @@ var MBackupStorage;
                 parent[$attrs.zBackupStorageDetachZone] = _this;
                 _this.options = parent[$attrs.zOptions];
                 _this.$scope = $scope;
+
                 $scope.uuid = null;
                 $scope.zoneListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
                     change: function (e) {
                         var select = e.sender;
                         Utils.safeApply($scope, function () {
@@ -13831,13 +16095,17 @@ var MBackupStorage;
                         });
                     }
                 };
+
                 $scope.selectItemNum = 0;
+
                 $scope.canProceed = function () {
                     return $scope.selectItemNum > 0;
                 };
+
                 $scope.cancel = function () {
                     $scope.detachZone__.close();
                 };
+
                 $scope.done = function () {
                     var zones = $scope.zoneList__.dataItems();
                     angular.forEach(zones, function (zone) {
@@ -13847,8 +16115,10 @@ var MBackupStorage;
                             }
                         });
                     });
+
                     $scope.detachZone__.close();
                 };
+
                 $scope.detachZoneOptions__ = {
                     width: '600px'
                 };
@@ -13867,6 +16137,7 @@ var MBackupStorage;
                         value: _this.options.backupStorage.attachedZoneUuids.join()
                     }
                 ];
+
                 _this.zoneMgr.query(qobj, function (zones) {
                     _this.$scope.zoneListOptions__.dataSource.data(zones);
                     chain.next();
@@ -13880,15 +16151,21 @@ var MBackupStorage;
     })();
     MBackupStorage.DetachZone = DetachZone;
 })(MBackupStorage || (MBackupStorage = {}));
-angular.module('root').factory('BackupStorageManager', ['Api', '$rootScope', function (api, $rootScope) {
+
+angular.module('root').factory('BackupStorageManager', [
+    'Api', '$rootScope', function (api, $rootScope) {
         return new MBackupStorage.BackupStorageManager(api, $rootScope);
-    }]).directive('zCreateBackupStorage', ['Api', 'BackupStorageManager', 'ZoneManager', function (api, bsMgr, zoneMgr) {
+    }]).directive('zCreateBackupStorage', [
+    'Api', 'BackupStorageManager', 'ZoneManager', function (api, bsMgr, zoneMgr) {
         return new MBackupStorage.CreateBackupStorage(api, bsMgr, zoneMgr);
-    }]).directive('zBackupStorageAttachZone', ['ZoneManager', 'BackupStorageManager', function (zoneMgr, bsMgr) {
+    }]).directive('zBackupStorageAttachZone', [
+    'ZoneManager', 'BackupStorageManager', function (zoneMgr, bsMgr) {
         return new MBackupStorage.AttachZone(zoneMgr, bsMgr);
-    }]).directive('zBackupStorageDetachZone', ['BackupStorageManager', 'ZoneManager', function (bsMgr, zoneMgr) {
+    }]).directive('zBackupStorageDetachZone', [
+    'BackupStorageManager', 'ZoneManager', function (bsMgr, zoneMgr) {
         return new MBackupStorage.DetachZone(bsMgr, zoneMgr);
-    }]).config(['$routeProvider', function (route) {
+    }]).config([
+    '$routeProvider', function (route) {
         route.when('/backupStorage', {
             templateUrl: '/static/templates/backupStorage/backupStorage.html',
             controller: 'MBackupStorage.Controller',
@@ -13931,40 +16208,42 @@ var MHost;
         Host.prototype.progressOn = function () {
             this.inProgress = true;
         };
+
         Host.prototype.progressOff = function () {
             this.inProgress = false;
         };
+
         Host.prototype.isInProgress = function () {
             return this.inProgress;
         };
+
         Host.prototype.isEnableShow = function () {
             return this.state == 'Disabled' || this.state == 'Maintenance' || this.state == 'PreMaintenance';
         };
+
         Host.prototype.isDisableShow = function () {
             return this.state == 'Enabled' || this.state == 'Maintenance' || this.state == 'PreMaintenance';
         };
         Host.prototype.stateLabel = function () {
             if (this.state == 'Enabled') {
                 return 'label label-success';
-            }
-            else if (this.state == 'Disabled') {
+            } else if (this.state == 'Disabled') {
                 return 'label label-danger';
-            }
-            else {
+            } else {
                 return 'label label-default';
             }
         };
+
         Host.prototype.statusLabel = function () {
             if (this.status == 'Connected') {
                 return 'label label-success';
-            }
-            else if (this.status == 'Disconnected') {
+            } else if (this.status == 'Disconnected') {
                 return 'label label-danger';
-            }
-            else {
+            } else {
                 return 'label label-default';
             }
         };
+
         Host.prototype.updateObservableObject = function (inv) {
             // self : ObservableObject
             var self = this;
@@ -13984,6 +16263,7 @@ var MHost;
         return Host;
     })(ApiHeader.HostInventory);
     MHost.Host = Host;
+
     var HostManager = (function () {
         function HostManager(api, $rootScope) {
             this.api = api;
@@ -13992,9 +16272,11 @@ var MHost;
         HostManager.prototype.setSortBy = function (sortBy) {
             this.sortBy = sortBy;
         };
+
         HostManager.prototype.wrap = function (Host) {
             return new kendo.data.ObservableObject(Host);
         };
+
         HostManager.prototype.create = function (host, done) {
             var _this = this;
             var msg = null;
@@ -14002,8 +16284,7 @@ var MHost;
                 msg = new ApiHeader.APIAddKVMHostMsg();
                 msg.username = host.username;
                 msg.password = host.password;
-            }
-            else if (host.hypervisorType == 'Simulator') {
+            } else if (host.hypervisorType == 'Simulator') {
                 msg = new ApiHeader.APIAddSimulatorHostMsg();
             }
             msg.name = host.name;
@@ -14020,6 +16301,7 @@ var MHost;
                 });
             });
         };
+
         HostManager.prototype.query = function (qobj, callback) {
             var _this = this;
             var msg = new ApiHeader.APIQueryHostMsg();
@@ -14042,6 +16324,7 @@ var MHost;
                 callback(pris, ret.total);
             });
         };
+
         HostManager.prototype.disable = function (host) {
             var _this = this;
             host.progressOn();
@@ -14057,6 +16340,7 @@ var MHost;
                 });
             });
         };
+
         HostManager.prototype.enable = function (host) {
             var _this = this;
             host.progressOn();
@@ -14072,6 +16356,7 @@ var MHost;
                 });
             });
         };
+
         HostManager.prototype.maintain = function (host) {
             var _this = this;
             host.progressOn();
@@ -14089,6 +16374,7 @@ var MHost;
                 host.progressOff();
             });
         };
+
         HostManager.prototype.reconnect = function (host) {
             var _this = this;
             host.progressOn();
@@ -14104,6 +16390,7 @@ var MHost;
                 });
             });
         };
+
         HostManager.prototype.delete = function (host, done) {
             var _this = this;
             host.progressOn();
@@ -14121,6 +16408,7 @@ var MHost;
         return HostManager;
     })();
     MHost.HostManager = HostManager;
+
     var HostModel = (function (_super) {
         __extends(HostModel, _super);
         function HostModel() {
@@ -14130,6 +16418,7 @@ var MHost;
         return HostModel;
     })(Utils.Model);
     MHost.HostModel = HostModel;
+
     var OHostGrid = (function (_super) {
         __extends(OHostGrid, _super);
         function OHostGrid($scope, hostMgr) {
@@ -14176,6 +16465,7 @@ var MHost;
                     width: '20%'
                 }
             ];
+
             this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
@@ -14190,6 +16480,7 @@ var MHost;
         }
         return OHostGrid;
     })(Utils.OGrid);
+
     var Action = (function () {
         function Action($scope, hostMgr) {
             this.$scope = $scope;
@@ -14198,25 +16489,29 @@ var MHost;
         Action.prototype.enable = function () {
             this.hostMgr.enable(this.$scope.model.current);
         };
+
         Action.prototype.disable = function () {
             this.hostMgr.disable(this.$scope.model.current);
         };
+
         Action.prototype.reconnect = function () {
             this.hostMgr.reconnect(this.$scope.model.current);
         };
+
         Action.prototype.maintain = function () {
             this.hostMgr.maintain(this.$scope.model.current);
         };
+
         Action.prototype.isMaintainShow = function () {
             if (Utils.notNullnotUndefined(this.$scope.model.current)) {
                 return this.$scope.model.current.state != 'PreMaintenance' && this.$scope.model.current.state != 'Maintenance';
-            }
-            else {
+            } else {
                 return false;
             }
         };
         return Action;
     })();
+
     var FilterBy = (function () {
         function FilterBy($scope, hypervisorTypes) {
             var _this = this;
@@ -14246,11 +16541,13 @@ var MHost;
                 dataTextField: 'name',
                 dataValueField: 'value'
             };
+
             this.valueList = {
                 dataSource: new kendo.data.DataSource({
                     data: []
                 })
             };
+
             this.field = FilterBy.NONE;
             $scope.$watch(function () {
                 return _this.field;
@@ -14258,14 +16555,11 @@ var MHost;
                 if (_this.field == FilterBy.NONE) {
                     _this.valueList.dataSource.data([]);
                     _this.value = null;
-                }
-                else if (_this.field == FilterBy.STATUS) {
+                } else if (_this.field == FilterBy.STATUS) {
                     _this.valueList.dataSource.data(['Connecting', 'Connected', 'Disconnected']);
-                }
-                else if (_this.field == FilterBy.STATE) {
+                } else if (_this.field == FilterBy.STATE) {
                     _this.valueList.dataSource.data(['Enabled', 'Disabled', 'PreMaintenance', 'Maintenance']);
-                }
-                else if (_this.field == FilterBy.TYPE) {
+                } else if (_this.field == FilterBy.TYPE) {
                     _this.valueList.dataSource.data(_this.hypervisorTypes);
                 }
             });
@@ -14275,19 +16569,24 @@ var MHost;
             this.name = !Utils.notNullnotUndefined(this.value) ? null : Utils.sprintf('{0}:{1}', this.field, this.value);
             popover.toggle();
         };
+
         FilterBy.prototype.open = function (popover) {
             popover.toggle();
         };
+
         FilterBy.prototype.isValueListDisabled = function () {
             return !Utils.notNullnotUndefined(this.value);
         };
+
         FilterBy.prototype.getButtonName = function () {
             return this.name;
         };
+
         FilterBy.prototype.toKendoFilter = function () {
             if (!Utils.notNullnotUndefined(this.value)) {
                 return null;
             }
+
             return {
                 field: this.field,
                 operator: 'eq',
@@ -14300,6 +16599,7 @@ var MHost;
         FilterBy.TYPE = 'hypervisorType';
         return FilterBy;
     })();
+
     var DetailsController = (function () {
         function DetailsController($scope, hostMgr, $routeParams, tagService, current, clusterMgr, api) {
             var _this = this;
@@ -14310,16 +16610,21 @@ var MHost;
             this.api = api;
             $scope.model = new HostModel();
             $scope.model.current = current;
+
             $scope.funcDelete = function (win) {
                 win.open();
             };
+
             $scope.action = new Action($scope, hostMgr);
+
             $scope.funcRefresh = function () {
                 _this.loadSelf($scope.model.current.uuid);
             };
+
             $scope.funcToolbarShow = function () {
                 return Utils.notNullnotUndefined($scope.model.current);
             };
+
             $scope.optionsDeleteHost = {
                 title: 'DELETE HOST',
                 description: "Deleting Host will cause all VMs on this host being stopped",
@@ -14329,6 +16634,7 @@ var MHost;
                     });
                 }
             };
+
             $scope.optionsTag = {
                 tags: [],
                 createTag: function (item) {
@@ -14347,9 +16653,11 @@ var MHost;
                     return Utils.notNullnotUndefined($scope.model.current);
                 }
             };
+
             this.tagService.queryTag($scope.model.current.uuid, function (tags) {
                 $scope.optionsTag.tags = tags;
             });
+
             $scope.systemTags = [];
             this.api.getSystemTags('HostVO', current.uuid, function (tags) {
                 $scope.systemTags = tags;
@@ -14367,6 +16675,7 @@ var MHost;
         return DetailsController;
     })();
     MHost.DetailsController = DetailsController;
+
     var Controller = (function () {
         function Controller($scope, hostMgr, hypervisorTypes, $location) {
             this.$scope = $scope;
@@ -14412,6 +16721,7 @@ var MHost;
                     $scope.oHostGrid.refresh();
                 }
             };
+
             $scope.optionsSearch = {
                 fields: ApiHeader.HostInventoryQueryable,
                 name: 'Host',
@@ -14443,6 +16753,7 @@ var MHost;
                     });
                 }
             };
+
             $scope.funcGridDoubleClick = function (e) {
                 if (Utils.notNullnotUndefined($scope.model.current)) {
                     var url = Utils.sprintf('/host/{0}', $scope.model.current.uuid);
@@ -14450,16 +16761,21 @@ var MHost;
                     e.preventDefault();
                 }
             };
+
             $scope.filterBy = new FilterBy($scope, this.hypervisorTypes);
+
             $scope.funcSearch = function (win) {
                 win.open();
             };
+
             $scope.funcCreateHost = function (win) {
                 win.open();
             };
+
             $scope.funcDeleteHost = function () {
                 $scope.deleteHost.open();
             };
+
             $scope.optionsDeleteHost = {
                 title: 'DELETE HOST',
                 description: "Deleting Host will cause all VMs on this host being stopped",
@@ -14469,15 +16785,19 @@ var MHost;
                     });
                 }
             };
+
             $scope.funcRefresh = function () {
                 $scope.oHostGrid.refresh();
             };
+
             $scope.funcIsActionShow = function () {
                 return !Utils.isEmptyObject($scope.model.current);
             };
+
             $scope.funcIsActionDisabled = function () {
                 return Utils.notNullnotUndefined($scope.model.current) && $scope.model.current.isInProgress();
             };
+
             $scope.optionsCreateHost = {
                 done: function (infoPage) {
                     infoPage.uuid = infoPage.resourceUuid = Utils.uuid();
@@ -14496,29 +16816,28 @@ var MHost;
         return Controller;
     })();
     MHost.Controller = Controller;
+
     var CreateHostOptions = (function () {
         function CreateHostOptions() {
         }
         return CreateHostOptions;
     })();
     MHost.CreateHostOptions = CreateHostOptions;
+
     var CreateHostModel = (function () {
         function CreateHostModel() {
         }
         CreateHostModel.prototype.canCreate = function () {
             if (this.hypervisorType == 'KVM') {
-                return angular.isDefined(this.name) && angular.isDefined(this.description) &&
-                    angular.isDefined(this.clusterUuid) && Utils.notNullnotUndefined(this.managementIp) &&
-                    Utils.notNullnotUndefined(this.username) && Utils.notNullnotUndefined(this.password);
-            }
-            else {
-                return angular.isDefined(this.name) && angular.isDefined(this.description) &&
-                    angular.isDefined(this.clusterUuid) && Utils.notNullnotUndefined(this.managementIp);
+                return angular.isDefined(this.name) && angular.isDefined(this.description) && angular.isDefined(this.clusterUuid) && Utils.notNullnotUndefined(this.managementIp) && Utils.notNullnotUndefined(this.username) && Utils.notNullnotUndefined(this.password);
+            } else {
+                return angular.isDefined(this.name) && angular.isDefined(this.description) && angular.isDefined(this.clusterUuid) && Utils.notNullnotUndefined(this.managementIp);
             }
         };
         return CreateHostModel;
     })();
     MHost.CreateHostModel = CreateHostModel;
+
     var CreateHost = (function () {
         function CreateHost(api, zoneMgr, hostMgr, clusterMgr) {
             var _this = this;
@@ -14541,6 +16860,7 @@ var MHost;
                         _this.options = parentScope[optionName];
                     });
                 }
+
                 var infoPage = $scope.infoPage = {
                     activeState: true,
                     name: null,
@@ -14558,13 +16878,9 @@ var MHost;
                     },
                     canMoveToNext: function () {
                         if (this.hypervisorType == 'KVM') {
-                            return Utils.notNullnotUndefined(this.name)
-                                && Utils.notNullnotUndefined(this.clusterUuid) && Utils.notNullnotUndefined(this.managementIp) &&
-                                Utils.notNullnotUndefined(this.username) && Utils.notNullnotUndefined(this.password);
-                        }
-                        else {
-                            return Utils.notNullnotUndefined(this.name)
-                                && Utils.notNullnotUndefined(this.clusterUuid) && Utils.notNullnotUndefined(this.managementIp);
+                            return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.clusterUuid) && Utils.notNullnotUndefined(this.managementIp) && Utils.notNullnotUndefined(this.username) && Utils.notNullnotUndefined(this.password);
+                        } else {
+                            return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.clusterUuid) && Utils.notNullnotUndefined(this.managementIp);
                         }
                     },
                     show: function () {
@@ -14593,6 +16909,7 @@ var MHost;
                         this.activeState = false;
                     }
                 };
+
                 var mediator = $scope.mediator = {
                     currentPage: infoPage,
                     movedToPage: function (page) {
@@ -14605,12 +16922,15 @@ var MHost;
                         if (Utils.notNullnotUndefined(_this.options.done)) {
                             _this.options.done($scope.infoPage);
                         }
+
                         $scope.winCreateHost__.close();
                     }
                 };
+
                 $scope.button = new Utils.WizardButton([
                     infoPage
                 ], mediator);
+
                 $scope.$watch(function () {
                     return $scope.infoPage.zoneUuid;
                 }, function () {
@@ -14625,12 +16945,14 @@ var MHost;
                         });
                     }
                 });
+
                 $scope.zoneList = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
                     template: "<div style='color: black'><span class='z-label'>Name</span>: #: name #</div><div style='color: black'><span class='z-label'>State:</span>#: state #</div><div style='color: black'><span class='z-label'>UUID:</span> #: uuid #</div>"
                 };
+
                 $scope.winCreateHostOptions__ = {
                     width: '700px',
                     //height: '620px',
@@ -14639,13 +16961,12 @@ var MHost;
                     draggable: false,
                     resizable: false
                 };
+
                 $scope.clusterListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">HYPERVISOR:</span><span>#: hypervisorType #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
+                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">HYPERVISOR:</span><span>#: hypervisorType #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
                     change: function (e) {
                         var list = e.sender;
                         var cluster = list.dataItem();
@@ -14654,6 +16975,7 @@ var MHost;
                         });
                     }
                 };
+
                 _this.$scope = $scope;
             };
             this.restrict = 'EA';
@@ -14669,10 +16991,12 @@ var MHost;
                     value: zoneUuid
                 }
             ];
+
             this.clusterMgr.query(qobj, function (clusters) {
                 done(clusters);
             });
         };
+
         CreateHost.prototype.open = function () {
             var _this = this;
             var win = this.$scope.winCreateHost__;
@@ -14684,8 +17008,7 @@ var MHost;
                     _this.$scope.zoneList.dataSource.data(new kendo.data.ObservableArray([_this.options.zone]));
                     _this.$scope.infoPage.zoneUuid = _this.options.zone.uuid;
                     chain.next();
-                }
-                else {
+                } else {
                     _this.zoneMgr.query(new ApiHeader.QueryObject(), function (zones, total) {
                         _this.$scope.zoneList.dataSource.data(zones);
                         if (zones) {
@@ -14704,8 +17027,7 @@ var MHost;
                         }
                         chain.next();
                     });
-                }
-                else {
+                } else {
                     chain.next();
                 }
             }).done(function () {
@@ -14717,11 +17039,15 @@ var MHost;
     })();
     MHost.CreateHost = CreateHost;
 })(MHost || (MHost = {}));
-angular.module('root').factory('HostManager', ['Api', '$rootScope', function (api, $rootScope) {
+
+angular.module('root').factory('HostManager', [
+    'Api', '$rootScope', function (api, $rootScope) {
         return new MHost.HostManager(api, $rootScope);
-    }]).directive('zCreateHost', ['Api', 'ZoneManager', 'HostManager', 'ClusterManager', function (api, zoneMgr, hostMgr, clusterMgr) {
+    }]).directive('zCreateHost', [
+    'Api', 'ZoneManager', 'HostManager', 'ClusterManager', function (api, zoneMgr, hostMgr, clusterMgr) {
         return new MHost.CreateHost(api, zoneMgr, hostMgr, clusterMgr);
-    }]).config(['$routeProvider', function (route) {
+    }]).config([
+    '$routeProvider', function (route) {
         route.when('/host', {
             templateUrl: '/static/templates/host/host.html',
             controller: 'MHost.Controller',
@@ -14764,37 +17090,40 @@ var MImage;
         Image.prototype.progressOn = function () {
             this.inProgress = true;
         };
+
         Image.prototype.progressOff = function () {
             this.inProgress = false;
         };
+
         Image.prototype.isInProgress = function () {
             return this.inProgress;
         };
+
         Image.prototype.isEnableShow = function () {
             return this.state == 'Disabled' || this.state == 'Maintenance' || this.state == 'PreMaintenance';
         };
+
         Image.prototype.isDisableShow = function () {
             return this.state == 'Enabled' || this.state == 'Maintenance' || this.state == 'PreMaintenance';
         };
         Image.prototype.stateLabel = function () {
             if (this.state == 'Enabled') {
                 return 'label label-success';
-            }
-            else if (this.state == 'Disabled') {
+            } else if (this.state == 'Disabled') {
                 return 'label label-danger';
-            }
-            else {
+            } else {
                 return 'label label-default';
             }
         };
+
         Image.prototype.statusLabel = function () {
             if (this.status == 'Ready') {
                 return 'label label-success';
-            }
-            else {
+            } else {
                 return 'label label-default';
             }
         };
+
         Image.prototype.updateObservableObject = function (inv) {
             // self : ObservableObject
             var self = this;
@@ -14815,6 +17144,7 @@ var MImage;
         return Image;
     })(ApiHeader.ImageInventory);
     MImage.Image = Image;
+
     var ImageManager = (function () {
         function ImageManager(api, $rootScope) {
             this.api = api;
@@ -14823,9 +17153,11 @@ var MImage;
         ImageManager.prototype.setSortBy = function (sortBy) {
             this.sortBy = sortBy;
         };
+
         ImageManager.prototype.wrap = function (Image) {
             return new kendo.data.ObservableObject(Image);
         };
+
         ImageManager.prototype.create = function (image, done) {
             var _this = this;
             var msg = new ApiHeader.APIAddImageMsg();
@@ -14851,6 +17183,7 @@ var MImage;
                 });
             });
         };
+
         ImageManager.prototype.query = function (qobj, callback) {
             var _this = this;
             var msg = new ApiHeader.APIQueryImageMsg();
@@ -14873,6 +17206,7 @@ var MImage;
                 callback(pris, ret.total);
             });
         };
+
         ImageManager.prototype.disable = function (image) {
             var _this = this;
             image.progressOn();
@@ -14888,6 +17222,7 @@ var MImage;
                 });
             });
         };
+
         ImageManager.prototype.enable = function (image) {
             var _this = this;
             image.progressOn();
@@ -14903,6 +17238,7 @@ var MImage;
                 });
             });
         };
+
         ImageManager.prototype.delete = function (image, done) {
             var _this = this;
             image.progressOn();
@@ -14920,6 +17256,7 @@ var MImage;
         return ImageManager;
     })();
     MImage.ImageManager = ImageManager;
+
     var ImageModel = (function (_super) {
         __extends(ImageModel, _super);
         function ImageModel() {
@@ -14929,6 +17266,7 @@ var MImage;
         return ImageModel;
     })(Utils.Model);
     MImage.ImageModel = ImageModel;
+
     var OImageGrid = (function (_super) {
         __extends(OImageGrid, _super);
         function OImageGrid($scope, imageMgr) {
@@ -14981,6 +17319,7 @@ var MImage;
                     width: '20%'
                 }
             ];
+
             this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
@@ -14995,6 +17334,7 @@ var MImage;
         }
         return OImageGrid;
     })(Utils.OGrid);
+
     var Action = (function () {
         function Action($scope, imageMgr) {
             this.$scope = $scope;
@@ -15003,11 +17343,13 @@ var MImage;
         Action.prototype.enable = function () {
             this.imageMgr.enable(this.$scope.model.current);
         };
+
         Action.prototype.disable = function () {
             this.imageMgr.disable(this.$scope.model.current);
         };
         return Action;
     })();
+
     var FilterBy = (function () {
         function FilterBy($scope, hypervisorTypes) {
             var _this = this;
@@ -15035,17 +17377,19 @@ var MImage;
                         {
                             name: 'Format',
                             value: FilterBy.FORMAT
-                        },
+                        }
                     ]
                 }),
                 dataTextField: 'name',
                 dataValueField: 'value'
             };
+
             this.valueList = {
                 dataSource: new kendo.data.DataSource({
                     data: []
                 })
             };
+
             this.field = FilterBy.NONE;
             $scope.$watch(function () {
                 return _this.field;
@@ -15053,17 +17397,13 @@ var MImage;
                 if (_this.field == FilterBy.NONE) {
                     _this.valueList.dataSource.data([]);
                     _this.value = null;
-                }
-                else if (_this.field == FilterBy.STATUS) {
+                } else if (_this.field == FilterBy.STATUS) {
                     _this.valueList.dataSource.data(['Creating', 'Downloading', 'Ready']);
-                }
-                else if (_this.field == FilterBy.STATE) {
+                } else if (_this.field == FilterBy.STATE) {
                     _this.valueList.dataSource.data(['Enabled', 'Disabled']);
-                }
-                else if (_this.field == FilterBy.FORMAT) {
+                } else if (_this.field == FilterBy.FORMAT) {
                     _this.valueList.dataSource.data('qcow2', 'raw', 'simulator');
-                }
-                else if (_this.field == FilterBy.TYPE) {
+                } else if (_this.field == FilterBy.TYPE) {
                     _this.valueList.dataSource.data(['RootVolumeTemplate', 'DataVolumeTemplate', 'ISO']);
                 }
             });
@@ -15073,19 +17413,24 @@ var MImage;
             this.name = !Utils.notNullnotUndefined(this.value) ? null : Utils.sprintf('{0}:{1}', this.field, this.value);
             popover.toggle();
         };
+
         FilterBy.prototype.open = function (popover) {
             popover.toggle();
         };
+
         FilterBy.prototype.isValueListDisabled = function () {
             return !Utils.notNullnotUndefined(this.value);
         };
+
         FilterBy.prototype.getButtonName = function () {
             return this.name;
         };
+
         FilterBy.prototype.toKendoFilter = function () {
             if (!Utils.notNullnotUndefined(this.value)) {
                 return null;
             }
+
             return {
                 field: this.field,
                 operator: 'eq',
@@ -15099,6 +17444,7 @@ var MImage;
         FilterBy.FORMAT = 'format';
         return FilterBy;
     })();
+
     var DetailsController = (function () {
         function DetailsController($scope, imageMgr, $routeParams, tagService, current, bsMgr) {
             var _this = this;
@@ -15108,16 +17454,21 @@ var MImage;
             this.tagService = tagService;
             $scope.model = new ImageModel();
             $scope.model.current = current;
+
             $scope.funcDelete = function (win) {
                 win.open();
             };
+
             $scope.action = new Action($scope, imageMgr);
+
             $scope.funcRefresh = function () {
                 _this.loadSelf($scope.model.current.uuid);
             };
+
             $scope.funcToolbarShow = function () {
                 return Utils.notNullnotUndefined($scope.model.current);
             };
+
             $scope.optionsDeleteImage = {
                 title: 'DELETE IMAGE',
                 width: '350px',
@@ -15131,6 +17482,7 @@ var MImage;
                     });
                 }
             };
+
             $scope.optionsTag = {
                 tags: [],
                 createTag: function (item) {
@@ -15149,9 +17501,11 @@ var MImage;
                     return Utils.notNullnotUndefined($scope.model.current);
                 }
             };
+
             this.tagService.queryTag($scope.model.current.uuid, function (tags) {
                 $scope.optionsTag.tags = tags;
             });
+
             $scope.optionsBackupStorageGrid = {
                 pageSize: 20,
                 resizable: true,
@@ -15191,6 +17545,7 @@ var MImage;
                                 angular.forEach(current.backupStorageRefs, function (it) {
                                     bsUuids.push(it.backupStorageUuid);
                                 });
+
                                 var qobj = new ApiHeader.QueryObject();
                                 qobj.limit = options.data.take;
                                 qobj.start = options.data.pageSize * (options.data.page - 1);
@@ -15211,6 +17566,7 @@ var MImage;
                                             break;
                                         }
                                     }
+
                                     refs.push({
                                         name: bs.name,
                                         bsUuid: bs.uuid,
@@ -15241,6 +17597,7 @@ var MImage;
         return DetailsController;
     })();
     MImage.DetailsController = DetailsController;
+
     var Controller = (function () {
         function Controller($scope, imageMgr, hypervisorTypes, $location) {
             this.$scope = $scope;
@@ -15302,6 +17659,7 @@ var MImage;
                     $scope.oImageGrid.refresh();
                 }
             };
+
             $scope.optionsSearch = {
                 fields: ApiHeader.ImageInventoryQueryable,
                 name: 'Image',
@@ -15341,6 +17699,7 @@ var MImage;
                     });
                 }
             };
+
             $scope.funcGridDoubleClick = function (e) {
                 if (Utils.notNullnotUndefined($scope.model.current)) {
                     var url = Utils.sprintf('/image/{0}', $scope.model.current.uuid);
@@ -15348,16 +17707,21 @@ var MImage;
                     e.preventDefault();
                 }
             };
+
             $scope.filterBy = new FilterBy($scope, this.hypervisorTypes);
+
             $scope.funcSearch = function (win) {
                 win.open();
             };
+
             $scope.funcCreateImage = function (win) {
                 win.open();
             };
+
             $scope.funcDeleteImage = function () {
                 $scope.deleteImage.open();
             };
+
             $scope.optionsDeleteImage = {
                 title: 'DELETE IMAGE',
                 width: '350px',
@@ -15371,15 +17735,19 @@ var MImage;
                     });
                 }
             };
+
             $scope.funcRefresh = function () {
                 $scope.oImageGrid.refresh();
             };
+
             $scope.funcIsActionShow = function () {
                 return !Utils.isEmptyObject($scope.model.current);
             };
+
             $scope.funcIsActionDisabled = function () {
                 return Utils.notNullnotUndefined($scope.model.current) && $scope.model.current.isInProgress();
             };
+
             $scope.optionsCreateImage = {
                 done: function (info) {
                     var img = new Image();
@@ -15397,22 +17765,24 @@ var MImage;
         return Controller;
     })();
     MImage.Controller = Controller;
+
     var CreateImageOptions = (function () {
         function CreateImageOptions() {
         }
         return CreateImageOptions;
     })();
     MImage.CreateImageOptions = CreateImageOptions;
+
     var CreateImageModel = (function () {
         function CreateImageModel() {
         }
         CreateImageModel.prototype.canCreate = function () {
-            return angular.isDefined(this.name) && angular.isDefined(this.hypervisorType) &&
-                angular.isDefined(this.format) && Utils.notNullnotUndefined(this.backupStorageUuid);
+            return angular.isDefined(this.name) && angular.isDefined(this.hypervisorType) && angular.isDefined(this.format) && Utils.notNullnotUndefined(this.backupStorageUuid);
         };
         return CreateImageModel;
     })();
     MImage.CreateImageModel = CreateImageModel;
+
     var CreateImage = (function () {
         function CreateImage(api, bsMgr, imageMgr) {
             var _this = this;
@@ -15434,6 +17804,7 @@ var MImage;
                         _this.options = parentScope[optionName];
                     });
                 }
+
                 var infoPage = $scope.infoPage = {
                     activeState: true,
                     name: null,
@@ -15458,11 +17829,7 @@ var MImage;
                         return false;
                     },
                     canMoveToNext: function () {
-                        return Utils.notNullnotUndefined(this.name)
-                            && Utils.notNullnotUndefined(this.url)
-                            && Utils.notNullnotUndefined(this.platform)
-                            && Utils.notNullnotUndefined(this.mediaType)
-                            && Utils.notNullnotUndefined(this.format) && this.backupStorageUuids.length > 0 && this.isUrlValid();
+                        return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.url) && Utils.notNullnotUndefined(this.platform) && Utils.notNullnotUndefined(this.mediaType) && Utils.notNullnotUndefined(this.format) && this.backupStorageUuids.length > 0 && this.isUrlValid();
                     },
                     show: function () {
                         this.getAnchorElement().tab('show');
@@ -15492,6 +17859,7 @@ var MImage;
                         this.mediaType = null;
                     }
                 };
+
                 var mediator = $scope.mediator = {
                     currentPage: infoPage,
                     movedToPage: function (page) {
@@ -15505,9 +17873,11 @@ var MImage;
                         $scope.winCreateImage__.close();
                     }
                 };
+
                 $scope.button = new Utils.WizardButton([
                     infoPage
                 ], mediator);
+
                 $scope.winCreateImageOptions__ = {
                     width: '700px',
                     //height: '620px',
@@ -15516,12 +17886,15 @@ var MImage;
                     draggable: false,
                     resizable: false
                 };
+
                 $scope.formatOptions__ = {
                     dataSource: new kendo.data.DataSource([])
                 };
+
                 $scope.mediaTypeOptions__ = {
                     dataSource: CreateImage.MEDIA_TYPES
                 };
+
                 $scope.platformOptions__ = {
                     dataSource: new kendo.data.DataSource({
                         data: [
@@ -15532,23 +17905,24 @@ var MImage;
                         ]
                     })
                 };
+
                 $scope.bitsOptions__ = {
                     dataSource: new kendo.data.DataSource({
                         data: CreateImage.BITS
                     })
                 };
+
                 $scope.hypervisorOptions__ = {
                     dataSource: new kendo.data.DataSource({
                         data: []
                     })
                 };
+
                 $scope.backupStorageListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
                     change: function (e) {
                         Utils.safeApply($scope, function () {
                             var sender = e.sender;
@@ -15560,6 +17934,7 @@ var MImage;
                         });
                     }
                 };
+
                 _this.$scope = $scope;
             };
             this.restrict = 'EA';
@@ -15593,6 +17968,7 @@ var MImage;
                 ];
                 _this.bsMgr.query(qobj, function (bss) {
                     _this.$scope.backupStorageListOptions__.dataSource.data(bss);
+
                     chain.next();
                 });
             }).then(function () {
@@ -15618,11 +17994,15 @@ var MImage;
     })();
     MImage.CreateImage = CreateImage;
 })(MImage || (MImage = {}));
-angular.module('root').factory('ImageManager', ['Api', '$rootScope', function (api, $rootScope) {
+
+angular.module('root').factory('ImageManager', [
+    'Api', '$rootScope', function (api, $rootScope) {
         return new MImage.ImageManager(api, $rootScope);
-    }]).directive('zCreateImage', ['Api', 'BackupStorageManager', 'ImageManager', function (api, bsMgr, imageMgr) {
+    }]).directive('zCreateImage', [
+    'Api', 'BackupStorageManager', 'ImageManager', function (api, bsMgr, imageMgr) {
         return new MImage.CreateImage(api, bsMgr, imageMgr);
-    }]).config(['$routeProvider', function (route) {
+    }]).config([
+    '$routeProvider', function (route) {
         route.when('/image', {
             templateUrl: '/static/templates/image/image.html',
             controller: 'MImage.Controller',
@@ -15665,29 +18045,32 @@ var MInstanceOffering;
         InstanceOffering.prototype.progressOn = function () {
             this.inProgress = true;
         };
+
         InstanceOffering.prototype.progressOff = function () {
             this.inProgress = false;
         };
+
         InstanceOffering.prototype.isInProgress = function () {
             return this.inProgress;
         };
+
         InstanceOffering.prototype.isEnableShow = function () {
             return this.state == 'Disabled';
         };
+
         InstanceOffering.prototype.isDisableShow = function () {
             return this.state == 'Enabled';
         };
         InstanceOffering.prototype.stateLabel = function () {
             if (this.state == 'Enabled') {
                 return 'label label-success';
-            }
-            else if (this.state == 'Disabled') {
+            } else if (this.state == 'Disabled') {
                 return 'label label-danger';
-            }
-            else {
+            } else {
                 return 'label label-default';
             }
         };
+
         InstanceOffering.prototype.updateObservableObject = function (inv) {
             // self : ObservableObject
             var self = this;
@@ -15705,6 +18088,7 @@ var MInstanceOffering;
         return InstanceOffering;
     })(ApiHeader.InstanceOfferingInventory);
     MInstanceOffering.InstanceOffering = InstanceOffering;
+
     var InstanceOfferingManager = (function () {
         function InstanceOfferingManager(api, $rootScope) {
             this.api = api;
@@ -15713,9 +18097,11 @@ var MInstanceOffering;
         InstanceOfferingManager.prototype.setSortBy = function (sortBy) {
             this.sortBy = sortBy;
         };
+
         InstanceOfferingManager.prototype.wrap = function (InstanceOffering) {
             return new kendo.data.ObservableObject(InstanceOffering);
         };
+
         InstanceOfferingManager.prototype.create = function (instanceOffering, done) {
             var _this = this;
             var msg = new ApiHeader.APICreateInstanceOfferingMsg();
@@ -15735,6 +18121,7 @@ var MInstanceOffering;
                 });
             });
         };
+
         InstanceOfferingManager.prototype.query = function (qobj, callback) {
             var _this = this;
             var msg = new ApiHeader.APIQueryInstanceOfferingMsg();
@@ -15762,6 +18149,7 @@ var MInstanceOffering;
                 callback(pris, ret.total);
             });
         };
+
         InstanceOfferingManager.prototype.disable = function (instanceOffering) {
             var _this = this;
             instanceOffering.progressOn();
@@ -15777,6 +18165,7 @@ var MInstanceOffering;
                 });
             });
         };
+
         InstanceOfferingManager.prototype.enable = function (instanceOffering) {
             var _this = this;
             instanceOffering.progressOn();
@@ -15792,6 +18181,7 @@ var MInstanceOffering;
                 });
             });
         };
+
         InstanceOfferingManager.prototype.delete = function (instanceOffering, done) {
             var _this = this;
             instanceOffering.progressOn();
@@ -15809,6 +18199,7 @@ var MInstanceOffering;
         return InstanceOfferingManager;
     })();
     MInstanceOffering.InstanceOfferingManager = InstanceOfferingManager;
+
     var InstanceOfferingModel = (function (_super) {
         __extends(InstanceOfferingModel, _super);
         function InstanceOfferingModel() {
@@ -15818,6 +18209,7 @@ var MInstanceOffering;
         return InstanceOfferingModel;
     })(Utils.Model);
     MInstanceOffering.InstanceOfferingModel = InstanceOfferingModel;
+
     var OInstanceOfferingGrid = (function (_super) {
         __extends(OInstanceOfferingGrid, _super);
         function OInstanceOfferingGrid($scope, instanceOfferingMgr) {
@@ -15864,6 +18256,7 @@ var MInstanceOffering;
                     width: '20%'
                 }
             ];
+
             this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
@@ -15878,6 +18271,7 @@ var MInstanceOffering;
         }
         return OInstanceOfferingGrid;
     })(Utils.OGrid);
+
     var Action = (function () {
         function Action($scope, instanceOfferingMgr) {
             this.$scope = $scope;
@@ -15886,11 +18280,13 @@ var MInstanceOffering;
         Action.prototype.enable = function () {
             this.instanceOfferingMgr.enable(this.$scope.model.current);
         };
+
         Action.prototype.disable = function () {
             this.instanceOfferingMgr.disable(this.$scope.model.current);
         };
         return Action;
     })();
+
     var FilterBy = (function () {
         function FilterBy($scope, hypervisorTypes) {
             var _this = this;
@@ -15912,11 +18308,13 @@ var MInstanceOffering;
                 dataTextField: 'name',
                 dataValueField: 'value'
             };
+
             this.valueList = {
                 dataSource: new kendo.data.DataSource({
                     data: []
                 })
             };
+
             this.field = FilterBy.NONE;
             $scope.$watch(function () {
                 return _this.field;
@@ -15924,8 +18322,7 @@ var MInstanceOffering;
                 if (_this.field == FilterBy.NONE) {
                     _this.valueList.dataSource.data([]);
                     _this.value = null;
-                }
-                else if (_this.field == FilterBy.STATE) {
+                } else if (_this.field == FilterBy.STATE) {
                     _this.valueList.dataSource.data(['Enabled', 'Disabled']);
                 }
             });
@@ -15935,19 +18332,24 @@ var MInstanceOffering;
             this.name = !Utils.notNullnotUndefined(this.value) ? null : Utils.sprintf('{0}:{1}', this.field, this.value);
             popover.toggle();
         };
+
         FilterBy.prototype.open = function (popover) {
             popover.toggle();
         };
+
         FilterBy.prototype.isValueListDisabled = function () {
             return !Utils.notNullnotUndefined(this.value);
         };
+
         FilterBy.prototype.getButtonName = function () {
             return this.name;
         };
+
         FilterBy.prototype.toKendoFilter = function () {
             if (!Utils.notNullnotUndefined(this.value)) {
                 return null;
             }
+
             return {
                 field: this.field,
                 operator: 'eq',
@@ -15958,6 +18360,7 @@ var MInstanceOffering;
         FilterBy.STATE = 'state';
         return FilterBy;
     })();
+
     var DetailsController = (function () {
         function DetailsController($scope, instanceOfferingMgr, $routeParams, tagService, current) {
             var _this = this;
@@ -15967,16 +18370,21 @@ var MInstanceOffering;
             this.tagService = tagService;
             $scope.model = new InstanceOfferingModel();
             $scope.model.current = current;
+
             $scope.funcDelete = function (win) {
                 win.open();
             };
+
             $scope.action = new Action($scope, instanceOfferingMgr);
+
             $scope.funcRefresh = function () {
                 _this.loadSelf($scope.model.current.uuid);
             };
+
             $scope.funcToolbarShow = function () {
                 return Utils.notNullnotUndefined($scope.model.current);
             };
+
             $scope.optionsDeleteInstanceOffering = {
                 title: 'DELETE INSTANCE OFFERING',
                 btnType: 'btn-danger',
@@ -15990,6 +18398,7 @@ var MInstanceOffering;
                     });
                 }
             };
+
             $scope.optionsTag = {
                 tags: [],
                 createTag: function (item) {
@@ -16008,6 +18417,7 @@ var MInstanceOffering;
                     return Utils.notNullnotUndefined($scope.model.current);
                 }
             };
+
             this.tagService.queryTag($scope.model.current.uuid, function (tags) {
                 $scope.optionsTag.tags = tags;
             });
@@ -16024,6 +18434,7 @@ var MInstanceOffering;
         return DetailsController;
     })();
     MInstanceOffering.DetailsController = DetailsController;
+
     var Controller = (function () {
         function Controller($scope, instanceOfferingMgr, hypervisorTypes, $location) {
             this.$scope = $scope;
@@ -16073,6 +18484,7 @@ var MInstanceOffering;
                     $scope.oInstanceOfferingGrid.refresh();
                 }
             };
+
             $scope.optionsSearch = {
                 fields: ApiHeader.InstanceOfferingInventoryQueryable,
                 name: 'InstanceOffering',
@@ -16096,6 +18508,7 @@ var MInstanceOffering;
                     });
                 }
             };
+
             $scope.funcGridDoubleClick = function (e) {
                 if (Utils.notNullnotUndefined($scope.model.current)) {
                     var url = Utils.sprintf('/instanceOffering/{0}', $scope.model.current.uuid);
@@ -16103,16 +18516,21 @@ var MInstanceOffering;
                     e.preventDefault();
                 }
             };
+
             $scope.filterBy = new FilterBy($scope, this.hypervisorTypes);
+
             $scope.funcSearch = function (win) {
                 win.open();
             };
+
             $scope.funcCreateInstanceOffering = function (win) {
                 win.open();
             };
+
             $scope.funcDeleteInstanceOffering = function () {
                 $scope.deleteInstanceOffering.open();
             };
+
             $scope.optionsDeleteInstanceOffering = {
                 title: 'DELETE INSTANCE OFFERING',
                 btnType: 'btn-danger',
@@ -16126,15 +18544,19 @@ var MInstanceOffering;
                     });
                 }
             };
+
             $scope.funcRefresh = function () {
                 $scope.oInstanceOfferingGrid.refresh();
             };
+
             $scope.funcIsActionShow = function () {
                 return !Utils.isEmptyObject($scope.model.current);
             };
+
             $scope.funcIsActionDisabled = function () {
                 return Utils.notNullnotUndefined($scope.model.current) && $scope.model.current.isInProgress();
             };
+
             $scope.optionsCreateInstanceOffering = {
                 done: function (instanceOffering) {
                     $scope.oInstanceOfferingGrid.add(instanceOffering);
@@ -16145,22 +18567,24 @@ var MInstanceOffering;
         return Controller;
     })();
     MInstanceOffering.Controller = Controller;
+
     var CreateInstanceOfferingOptions = (function () {
         function CreateInstanceOfferingOptions() {
         }
         return CreateInstanceOfferingOptions;
     })();
     MInstanceOffering.CreateInstanceOfferingOptions = CreateInstanceOfferingOptions;
+
     var CreateInstanceOfferingModel = (function () {
         function CreateInstanceOfferingModel() {
         }
         CreateInstanceOfferingModel.prototype.canCreate = function () {
-            return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.cpuNum) &&
-                Utils.notNullnotUndefined(this.cpuSpeed) && Utils.notNullnotUndefined(this.memorySize);
+            return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.cpuNum) && Utils.notNullnotUndefined(this.cpuSpeed) && Utils.notNullnotUndefined(this.memorySize);
         };
         return CreateInstanceOfferingModel;
     })();
     MInstanceOffering.CreateInstanceOfferingModel = CreateInstanceOfferingModel;
+
     var CreateInstanceOffering = (function () {
         function CreateInstanceOffering(api, instanceOfferingMgr) {
             var _this = this;
@@ -16181,6 +18605,7 @@ var MInstanceOffering;
                         _this.options = parentScope[optionName];
                     });
                 }
+
                 var infoPage = $scope.infoPage = {
                     activeState: true,
                     name: null,
@@ -16193,8 +18618,7 @@ var MInstanceOffering;
                         return false;
                     },
                     canMoveToNext: function () {
-                        return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.memorySize) && Utils.notNullnotUndefined(this.cpuNum)
-                            && Utils.notNullnotUndefined(this.cpuSpeed) && this.isCpuNumValid() && this.isCpuSpeedValid() && this.isMemoryValid();
+                        return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.memorySize) && Utils.notNullnotUndefined(this.cpuNum) && Utils.notNullnotUndefined(this.cpuSpeed) && this.isCpuNumValid() && this.isCpuSpeedValid() && this.isMemoryValid();
                     },
                     show: function () {
                         this.getAnchorElement().tab('show');
@@ -16239,6 +18663,7 @@ var MInstanceOffering;
                         this.activeState = false;
                     }
                 };
+
                 var mediator = $scope.mediator = {
                     currentPage: infoPage,
                     movedToPage: function (page) {
@@ -16254,6 +18679,7 @@ var MInstanceOffering;
                             if (Utils.notNullnotUndefined($scope.infoPage.allocatorStrategy) && $scope.infoPage.allocatorStrategy == "") {
                                 $scope.infoPage.allocatorStrategy = null;
                             }
+
                             $scope.infoPage.memorySize = Utils.parseSize($scope.infoPage.memorySize);
                             instanceOfferingMgr.create(infoPage, function (ret) {
                                 resultInstanceOffering = ret;
@@ -16263,13 +18689,16 @@ var MInstanceOffering;
                             if (Utils.notNullnotUndefined(_this.options.done)) {
                                 _this.options.done(resultInstanceOffering);
                             }
+
                             $scope.winCreateInstanceOffering__.close();
                         }).start();
                     }
                 };
+
                 $scope.button = new Utils.WizardButton([
                     infoPage
                 ], mediator);
+
                 $scope.winCreateInstanceOfferingOptions__ = {
                     width: '700px',
                     //height: '620px',
@@ -16278,9 +18707,11 @@ var MInstanceOffering;
                     draggable: false,
                     resizable: false
                 };
+
                 $scope.allocatorStrategyOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] })
                 };
+
                 _this.$scope = $scope;
             };
             this.restrict = 'EA';
@@ -16302,11 +18733,15 @@ var MInstanceOffering;
     })();
     MInstanceOffering.CreateInstanceOffering = CreateInstanceOffering;
 })(MInstanceOffering || (MInstanceOffering = {}));
-angular.module('root').factory('InstanceOfferingManager', ['Api', '$rootScope', function (api, $rootScope) {
+
+angular.module('root').factory('InstanceOfferingManager', [
+    'Api', '$rootScope', function (api, $rootScope) {
         return new MInstanceOffering.InstanceOfferingManager(api, $rootScope);
-    }]).directive('zCreateInstanceOffering', ['Api', 'InstanceOfferingManager', function (api, instanceOfferingMgr) {
+    }]).directive('zCreateInstanceOffering', [
+    'Api', 'InstanceOfferingManager', function (api, instanceOfferingMgr) {
         return new MInstanceOffering.CreateInstanceOffering(api, instanceOfferingMgr);
-    }]).config(['$routeProvider', function (route) {
+    }]).config([
+    '$routeProvider', function (route) {
         route.when('/instanceOffering', {
             templateUrl: '/static/templates/instanceOffering/instanceOffering.html',
             controller: 'MInstanceOffering.Controller',
@@ -16349,29 +18784,32 @@ var MDiskOffering;
         DiskOffering.prototype.progressOn = function () {
             this.inProgress = true;
         };
+
         DiskOffering.prototype.progressOff = function () {
             this.inProgress = false;
         };
+
         DiskOffering.prototype.isInProgress = function () {
             return this.inProgress;
         };
+
         DiskOffering.prototype.isEnableShow = function () {
             return this.state == 'Disabled';
         };
+
         DiskOffering.prototype.isDisableShow = function () {
             return this.state == 'Enabled';
         };
         DiskOffering.prototype.stateLabel = function () {
             if (this.state == 'Enabled') {
                 return 'label label-success';
-            }
-            else if (this.state == 'Disabled') {
+            } else if (this.state == 'Disabled') {
                 return 'label label-danger';
-            }
-            else {
+            } else {
                 return 'label label-default';
             }
         };
+
         DiskOffering.prototype.updateObservableObject = function (inv) {
             // self : ObservableObject
             var self = this;
@@ -16387,6 +18825,7 @@ var MDiskOffering;
         return DiskOffering;
     })(ApiHeader.DiskOfferingInventory);
     MDiskOffering.DiskOffering = DiskOffering;
+
     var DiskOfferingManager = (function () {
         function DiskOfferingManager(api, $rootScope) {
             this.api = api;
@@ -16395,9 +18834,11 @@ var MDiskOffering;
         DiskOfferingManager.prototype.setSortBy = function (sortBy) {
             this.sortBy = sortBy;
         };
+
         DiskOfferingManager.prototype.wrap = function (DiskOffering) {
             return new kendo.data.ObservableObject(DiskOffering);
         };
+
         DiskOfferingManager.prototype.create = function (diskOffering, done) {
             var _this = this;
             var msg = new ApiHeader.APICreateDiskOfferingMsg();
@@ -16415,6 +18856,7 @@ var MDiskOffering;
                 });
             });
         };
+
         DiskOfferingManager.prototype.query = function (qobj, callback) {
             var _this = this;
             var msg = new ApiHeader.APIQueryDiskOfferingMsg();
@@ -16437,6 +18879,7 @@ var MDiskOffering;
                 callback(pris, ret.total);
             });
         };
+
         DiskOfferingManager.prototype.disable = function (diskOffering) {
             var _this = this;
             diskOffering.progressOn();
@@ -16452,6 +18895,7 @@ var MDiskOffering;
                 });
             });
         };
+
         DiskOfferingManager.prototype.enable = function (diskOffering) {
             var _this = this;
             diskOffering.progressOn();
@@ -16467,6 +18911,7 @@ var MDiskOffering;
                 });
             });
         };
+
         DiskOfferingManager.prototype.delete = function (diskOffering, done) {
             var _this = this;
             diskOffering.progressOn();
@@ -16484,6 +18929,7 @@ var MDiskOffering;
         return DiskOfferingManager;
     })();
     MDiskOffering.DiskOfferingManager = DiskOfferingManager;
+
     var DiskOfferingModel = (function (_super) {
         __extends(DiskOfferingModel, _super);
         function DiskOfferingModel() {
@@ -16493,6 +18939,7 @@ var MDiskOffering;
         return DiskOfferingModel;
     })(Utils.Model);
     MDiskOffering.DiskOfferingModel = DiskOfferingModel;
+
     var ODiskOfferingGrid = (function (_super) {
         __extends(ODiskOfferingGrid, _super);
         function ODiskOfferingGrid($scope, diskOfferingMgr) {
@@ -16529,6 +18976,7 @@ var MDiskOffering;
                     width: '20%'
                 }
             ];
+
             this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
@@ -16543,6 +18991,7 @@ var MDiskOffering;
         }
         return ODiskOfferingGrid;
     })(Utils.OGrid);
+
     var Action = (function () {
         function Action($scope, diskOfferingMgr) {
             this.$scope = $scope;
@@ -16551,11 +19000,13 @@ var MDiskOffering;
         Action.prototype.enable = function () {
             this.diskOfferingMgr.enable(this.$scope.model.current);
         };
+
         Action.prototype.disable = function () {
             this.diskOfferingMgr.disable(this.$scope.model.current);
         };
         return Action;
     })();
+
     var FilterBy = (function () {
         function FilterBy($scope) {
             var _this = this;
@@ -16576,11 +19027,13 @@ var MDiskOffering;
                 dataTextField: 'name',
                 dataValueField: 'value'
             };
+
             this.valueList = {
                 dataSource: new kendo.data.DataSource({
                     data: []
                 })
             };
+
             this.field = FilterBy.NONE;
             $scope.$watch(function () {
                 return _this.field;
@@ -16588,8 +19041,7 @@ var MDiskOffering;
                 if (_this.field == FilterBy.NONE) {
                     _this.valueList.dataSource.data([]);
                     _this.value = null;
-                }
-                else if (_this.field == FilterBy.STATE) {
+                } else if (_this.field == FilterBy.STATE) {
                     _this.valueList.dataSource.data(['Enabled', 'Disabled']);
                 }
             });
@@ -16599,19 +19051,24 @@ var MDiskOffering;
             this.name = !Utils.notNullnotUndefined(this.value) ? null : Utils.sprintf('{0}:{1}', this.field, this.value);
             popover.toggle();
         };
+
         FilterBy.prototype.open = function (popover) {
             popover.toggle();
         };
+
         FilterBy.prototype.isValueListDisabled = function () {
             return !Utils.notNullnotUndefined(this.value);
         };
+
         FilterBy.prototype.getButtonName = function () {
             return this.name;
         };
+
         FilterBy.prototype.toKendoFilter = function () {
             if (!Utils.notNullnotUndefined(this.value)) {
                 return null;
             }
+
             return {
                 field: this.field,
                 operator: 'eq',
@@ -16622,6 +19079,7 @@ var MDiskOffering;
         FilterBy.STATE = 'state';
         return FilterBy;
     })();
+
     var DetailsController = (function () {
         function DetailsController($scope, diskOfferingMgr, $routeParams, tagService, current) {
             var _this = this;
@@ -16631,16 +19089,21 @@ var MDiskOffering;
             this.tagService = tagService;
             $scope.model = new DiskOfferingModel();
             $scope.model.current = current;
+
             $scope.funcDelete = function (win) {
                 win.open();
             };
+
             $scope.action = new Action($scope, diskOfferingMgr);
+
             $scope.funcRefresh = function () {
                 _this.loadSelf($scope.model.current.uuid);
             };
+
             $scope.funcToolbarShow = function () {
                 return Utils.notNullnotUndefined($scope.model.current);
             };
+
             $scope.optionsDeleteDiskOffering = {
                 title: 'DELETE DISK OFFERING',
                 description: function () {
@@ -16654,6 +19117,7 @@ var MDiskOffering;
                     });
                 }
             };
+
             $scope.optionsTag = {
                 tags: [],
                 createTag: function (item) {
@@ -16672,6 +19136,7 @@ var MDiskOffering;
                     return Utils.notNullnotUndefined($scope.model.current);
                 }
             };
+
             this.tagService.queryTag($scope.model.current.uuid, function (tags) {
                 $scope.optionsTag.tags = tags;
             });
@@ -16688,6 +19153,7 @@ var MDiskOffering;
         return DetailsController;
     })();
     MDiskOffering.DetailsController = DetailsController;
+
     var Controller = (function () {
         function Controller($scope, diskOfferingMgr, $location) {
             this.$scope = $scope;
@@ -16728,6 +19194,7 @@ var MDiskOffering;
                     $scope.oDiskOfferingGrid.refresh();
                 }
             };
+
             $scope.optionsSearch = {
                 fields: ApiHeader.DiskOfferingInventoryQueryable,
                 name: 'DiskOffering',
@@ -16751,6 +19218,7 @@ var MDiskOffering;
                     });
                 }
             };
+
             $scope.funcGridDoubleClick = function (e) {
                 if (Utils.notNullnotUndefined($scope.model.current)) {
                     var url = Utils.sprintf('/diskOffering/{0}', $scope.model.current.uuid);
@@ -16758,16 +19226,21 @@ var MDiskOffering;
                     e.preventDefault();
                 }
             };
+
             $scope.filterBy = new FilterBy($scope);
+
             $scope.funcSearch = function (win) {
                 win.open();
             };
+
             $scope.funcCreateDiskOffering = function (win) {
                 win.open();
             };
+
             $scope.funcDeleteDiskOffering = function () {
                 $scope.deleteDiskOffering.open();
             };
+
             $scope.optionsDeleteDiskOffering = {
                 title: 'DELETE DISK OFFERING',
                 description: function () {
@@ -16781,15 +19254,19 @@ var MDiskOffering;
                     });
                 }
             };
+
             $scope.funcRefresh = function () {
                 $scope.oDiskOfferingGrid.refresh();
             };
+
             $scope.funcIsActionShow = function () {
                 return !Utils.isEmptyObject($scope.model.current);
             };
+
             $scope.funcIsActionDisabled = function () {
                 return Utils.notNullnotUndefined($scope.model.current) && $scope.model.current.isInProgress();
             };
+
             $scope.optionsCreateDiskOffering = {
                 done: function (diskOffering) {
                     $scope.oDiskOfferingGrid.add(diskOffering);
@@ -16800,12 +19277,14 @@ var MDiskOffering;
         return Controller;
     })();
     MDiskOffering.Controller = Controller;
+
     var CreateDiskOfferingOptions = (function () {
         function CreateDiskOfferingOptions() {
         }
         return CreateDiskOfferingOptions;
     })();
     MDiskOffering.CreateDiskOfferingOptions = CreateDiskOfferingOptions;
+
     var CreateDiskOfferingModel = (function () {
         function CreateDiskOfferingModel() {
         }
@@ -16815,6 +19294,7 @@ var MDiskOffering;
         return CreateDiskOfferingModel;
     })();
     MDiskOffering.CreateDiskOfferingModel = CreateDiskOfferingModel;
+
     var CreateDiskOffering = (function () {
         function CreateDiskOffering(api, diskOfferingMgr) {
             var _this = this;
@@ -16835,6 +19315,7 @@ var MDiskOffering;
                         _this.options = parentScope[optionName];
                     });
                 }
+
                 var infoPage = $scope.infoPage = {
                     activeState: true,
                     name: null,
@@ -16870,6 +19351,7 @@ var MDiskOffering;
                         this.activeState = false;
                     }
                 };
+
                 var mediator = $scope.mediator = {
                     currentPage: infoPage,
                     movedToPage: function (page) {
@@ -16885,6 +19367,7 @@ var MDiskOffering;
                             if (Utils.notNullnotUndefined($scope.infoPage.allocatorStrategy) && $scope.infoPage.allocatorStrategy == "") {
                                 $scope.infoPage.allocatorStrategy = null;
                             }
+
                             $scope.infoPage.diskSize = Utils.parseSize($scope.infoPage.diskSize);
                             diskOfferingMgr.create(infoPage, function (ret) {
                                 resultDiskOffering = ret;
@@ -16895,12 +19378,15 @@ var MDiskOffering;
                                 _this.options.done(resultDiskOffering);
                             }
                         }).start();
+
                         $scope.winCreateDiskOffering__.close();
                     }
                 };
+
                 $scope.button = new Utils.WizardButton([
                     infoPage
                 ], mediator);
+
                 $scope.winCreateDiskOfferingOptions__ = {
                     width: '700px',
                     animation: false,
@@ -16908,9 +19394,11 @@ var MDiskOffering;
                     draggable: false,
                     resizable: false
                 };
+
                 $scope.allocatorStrategyOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] })
                 };
+
                 _this.$scope = $scope;
             };
             this.restrict = 'EA';
@@ -16932,11 +19420,15 @@ var MDiskOffering;
     })();
     MDiskOffering.CreateDiskOffering = CreateDiskOffering;
 })(MDiskOffering || (MDiskOffering = {}));
-angular.module('root').factory('DiskOfferingManager', ['Api', '$rootScope', function (api, $rootScope) {
+
+angular.module('root').factory('DiskOfferingManager', [
+    'Api', '$rootScope', function (api, $rootScope) {
         return new MDiskOffering.DiskOfferingManager(api, $rootScope);
-    }]).directive('zCreateDiskOffering', ['Api', 'DiskOfferingManager', function (api, diskOfferingMgr) {
+    }]).directive('zCreateDiskOffering', [
+    'Api', 'DiskOfferingManager', function (api, diskOfferingMgr) {
         return new MDiskOffering.CreateDiskOffering(api, diskOfferingMgr);
-    }]).config(['$routeProvider', function (route) {
+    }]).config([
+    '$routeProvider', function (route) {
         route.when('/diskOffering', {
             templateUrl: '/static/templates/diskOffering/diskOffering.html',
             controller: 'MDiskOffering.Controller'
@@ -16967,12 +19459,14 @@ var MApiDetails;
         }
         return Details;
     })();
+
     var Controller = (function () {
         function Controller() {
         }
         return Controller;
     })();
     MApiDetails.Controller = Controller;
+
     var DetailsController = (function () {
         function DetailsController($scope, $rootScope, apiDetails, $routeParams) {
             this.$routeParams = $routeParams;
@@ -16987,12 +19481,15 @@ var MApiDetails;
                     break;
                 }
             }
+
             if (!Utils.notNullnotUndefined(api)) {
                 return;
             }
+
             $scope.isSuccess = function () {
                 return api.success;
             };
+
             $scope.getResultLabel = function () {
                 return api.success ? 'label label-success' : 'label label-danger';
             };
@@ -17001,6 +19498,7 @@ var MApiDetails;
         return DetailsController;
     })();
     MApiDetails.DetailsController = DetailsController;
+
     var ApiDetails = (function () {
         function ApiDetails($rootScope, api, $location) {
             var _this = this;
@@ -17038,6 +19536,7 @@ var MApiDetails;
                     msg: Utils.sprintf('API failure, {0}', d.rsp)
                 });
             });
+
             $rootScope.optionsApiGrid = {
                 dataSource: new kendo.data.DataSource({
                     data: []
@@ -17072,9 +19571,11 @@ var MApiDetails;
                     });
                 }
             };
+
             $rootScope.getApiDetailsNum = function () {
                 return $rootScope.optionsApiGrid.dataSource.data().length;
             };
+
             $rootScope.funcApiDetailsGridDoubleClick = function () {
                 console.log('xxxxxxxxxxxxxxxx ' + JSON.stringify($rootScope.currentApiDetails));
                 if (Utils.notNullnotUndefined($rootScope.currentApiDetails)) {
@@ -17088,7 +19589,9 @@ var MApiDetails;
     })();
     MApiDetails.ApiDetails = ApiDetails;
 })(MApiDetails || (MApiDetails = {}));
-angular.module('root').config(['$routeProvider', function (route) {
+
+angular.module('root').config([
+    '$routeProvider', function (route) {
         route.when('/apiDetails', {
             templateUrl: '/static/templates/apiDetails.html',
             controller: 'MApiDetails.Controller'
@@ -17096,7 +19599,8 @@ angular.module('root').config(['$routeProvider', function (route) {
             templateUrl: '/static/templates/apiDetailsDetails.html',
             controller: 'MApiDetails.DetailsController'
         });
-    }]).factory('ApiDetails', ['$rootScope', 'Api', '$location', function ($rootScope, api, $location) {
+    }]).factory('ApiDetails', [
+    '$rootScope', 'Api', '$location', function ($rootScope, api, $location) {
         return new MApiDetails.ApiDetails($rootScope, api, $location);
     }]);
 /// <reference path="d.ts/angularjs/angular.d.ts" />
@@ -17111,12 +19615,15 @@ var MVmInstance;
         VmNic.prototype.progressOn = function () {
             this.inProgress = true;
         };
+
         VmNic.prototype.progressOff = function () {
             this.inProgress = false;
         };
+
         VmNic.prototype.isInProgress = function () {
             return this.inProgress;
         };
+
         VmNic.prototype.updateObservableObject = function (inv) {
             // self : ObservableObject
             var self = this;
@@ -17135,6 +19642,7 @@ var MVmInstance;
         return VmNic;
     })(ApiHeader.VmNicInventory);
     MVmInstance.VmNic = VmNic;
+
     var VmInstance = (function (_super) {
         __extends(VmInstance, _super);
         function VmInstance() {
@@ -17143,26 +19651,27 @@ var MVmInstance;
         VmInstance.prototype.progressOn = function () {
             this.inProgress = true;
         };
+
         VmInstance.prototype.progressOff = function () {
             this.inProgress = false;
         };
+
         VmInstance.prototype.isInProgress = function () {
             return this.inProgress;
         };
+
         VmInstance.prototype.stateLabel = function () {
             if (this.state == 'Running') {
                 return 'label label-success';
-            }
-            else if (this.state == 'Stopped') {
+            } else if (this.state == 'Stopped') {
                 return 'label label-danger';
-            }
-            else if (this.state == 'Unknown') {
+            } else if (this.state == 'Unknown') {
                 return 'label label-warning';
-            }
-            else {
+            } else {
                 return 'label label-default';
             }
         };
+
         VmInstance.prototype.updateObservableObject = function (inv) {
             // self : ObservableObject
             var self = this;
@@ -17191,6 +19700,7 @@ var MVmInstance;
         return VmInstance;
     })(ApiHeader.VmInstanceInventory);
     MVmInstance.VmInstance = VmInstance;
+
     var VmInstanceManager = (function () {
         function VmInstanceManager(api, $rootScope) {
             this.api = api;
@@ -17199,9 +19709,11 @@ var MVmInstance;
         VmInstanceManager.prototype.setSortBy = function (sortBy) {
             this.sortBy = sortBy;
         };
+
         VmInstanceManager.prototype.wrap = function (obj) {
             return new kendo.data.ObservableObject(obj);
         };
+
         VmInstanceManager.prototype.create = function (vm, done) {
             var _this = this;
             var msg = new ApiHeader.APICreateVmInstanceMsg();
@@ -17234,6 +19746,7 @@ var MVmInstance;
                 });
             });
         };
+
         VmInstanceManager.prototype.getConsole = function (vm, done) {
             var msg = new ApiHeader.APIRequestConsoleAccessMsg();
             msg.vmInstanceUuid = vm.uuid;
@@ -17241,9 +19754,10 @@ var MVmInstance;
                 done(ret.inventory);
             });
         };
+
         VmInstanceManager.prototype.query = function (qobj, callback, allVm) {
             var _this = this;
-            if (allVm === void 0) { allVm = false; }
+            if (typeof allVm === "undefined") { allVm = false; }
             var msg = new ApiHeader.APIQueryVmInstanceMsg();
             msg.count = qobj.count === true;
             msg.start = qobj.start;
@@ -17257,6 +19771,7 @@ var MVmInstance;
                     value: "UserVm"
                 });
             }
+
             if (Utils.notNullnotUndefined(this.sortBy) && this.sortBy.isValid()) {
                 msg.sortBy = this.sortBy.field;
                 msg.sortDirection = this.sortBy.direction;
@@ -17271,6 +19786,7 @@ var MVmInstance;
                 callback(pris, ret.total);
             });
         };
+
         VmInstanceManager.prototype.stop = function (vm) {
             var _this = this;
             vm.progressOn();
@@ -17286,6 +19802,7 @@ var MVmInstance;
                 });
             });
         };
+
         VmInstanceManager.prototype.start = function (vm) {
             var _this = this;
             vm.progressOn();
@@ -17301,6 +19818,7 @@ var MVmInstance;
                 });
             });
         };
+
         VmInstanceManager.prototype.reboot = function (vm) {
             var _this = this;
             vm.progressOn();
@@ -17318,6 +19836,7 @@ var MVmInstance;
                 vm.progressOff();
             });
         };
+
         VmInstanceManager.prototype.delete = function (vm, done) {
             var _this = this;
             vm.progressOn();
@@ -17332,6 +19851,7 @@ var MVmInstance;
                 });
             });
         };
+
         VmInstanceManager.prototype.migrate = function (vm, hostUuid, done) {
             var _this = this;
             vm.progressOn();
@@ -17351,6 +19871,7 @@ var MVmInstance;
                 });
             });
         };
+
         VmInstanceManager.prototype.attachVolume = function (vm, volUuid, done) {
             var _this = this;
             vm.progressOn();
@@ -17368,6 +19889,7 @@ var MVmInstance;
                 });
             });
         };
+
         VmInstanceManager.prototype.detachVolume = function (vm, volUuid, done) {
             var _this = this;
             vm.progressOn();
@@ -17384,6 +19906,7 @@ var MVmInstance;
                 });
             });
         };
+
         VmInstanceManager.prototype.queryVmNic = function (qobj, callback) {
             var _this = this;
             var msg = new ApiHeader.APIQueryVmNicMsg();
@@ -17392,6 +19915,7 @@ var MVmInstance;
             msg.limit = qobj.limit;
             msg.replyWithCount = true;
             msg.conditions = qobj.conditions ? qobj.conditions : [];
+
             if (Utils.notNullnotUndefined(this.sortBy) && this.sortBy.isValid()) {
                 msg.sortBy = this.sortBy.field;
                 msg.sortDirection = this.sortBy.direction;
@@ -17410,6 +19934,7 @@ var MVmInstance;
         return VmInstanceManager;
     })();
     MVmInstance.VmInstanceManager = VmInstanceManager;
+
     var VmInstanceModel = (function (_super) {
         __extends(VmInstanceModel, _super);
         function VmInstanceModel() {
@@ -17419,6 +19944,7 @@ var MVmInstance;
         return VmInstanceModel;
     })(Utils.Model);
     MVmInstance.VmInstanceModel = VmInstanceModel;
+
     var OVmInstanceGrid = (function (_super) {
         __extends(OVmInstanceGrid, _super);
         function OVmInstanceGrid($scope, vmMgr, hostMgr) {
@@ -17463,6 +19989,7 @@ var MVmInstance;
                     width: '20%'
                 }
             ];
+
             this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
@@ -17472,6 +19999,7 @@ var MVmInstance;
                         data: vms,
                         total: total
                     });
+
                     for (var i in vms) {
                         var defaultL3NetworkUuid = vms[i].defaultL3NetworkUuid;
                         for (var j in vms[i].vmNics) {
@@ -17481,6 +20009,7 @@ var MVmInstance;
                             }
                         }
                     }
+
                     var hostUuids = [];
                     for (var j in vms) {
                         var vm = vms[j];
@@ -17488,6 +20017,7 @@ var MVmInstance;
                             hostUuids.push(vm.hostUuid);
                         }
                     }
+
                     if (hostUuids.length > 0) {
                         var qobj = new ApiHeader.QueryObject();
                         qobj.addCondition({ name: 'uuid', op: 'in', value: hostUuids.join() });
@@ -17506,6 +20036,7 @@ var MVmInstance;
         }
         return OVmInstanceGrid;
     })(Utils.OGrid);
+
     var Action = (function () {
         function Action($scope, vmMgr) {
             this.$scope = $scope;
@@ -17514,55 +20045,57 @@ var MVmInstance;
         Action.prototype.start = function () {
             this.vmMgr.start(this.$scope.model.current);
         };
+
         Action.prototype.stop = function () {
             this.vmMgr.stop(this.$scope.model.current);
         };
+
         Action.prototype.reboot = function () {
             this.vmMgr.reboot(this.$scope.model.current);
         };
+
         Action.prototype.migrate = function () {
             this.$scope.migrateVm.open();
         };
+
         Action.prototype.attachVolume = function () {
             this.$scope.attachVolume.open();
         };
+
         Action.prototype.detachVolume = function () {
             this.$scope.detachVolume.open();
         };
+
         Action.prototype.console = function () {
             this.$scope.console();
         };
+
         Action.prototype.isActionShow = function (action) {
             if (!Utils.notNullnotUndefined(this.$scope.model.current) || Utils.isEmptyObject(this.$scope.model.current)) {
                 return false;
             }
+
             if (action == 'start') {
                 return this.$scope.model.current.state == 'Stopped';
-            }
-            else if (action == 'stop') {
+            } else if (action == 'stop') {
                 return this.$scope.model.current.state == 'Running';
-            }
-            else if (action == 'reboot') {
+            } else if (action == 'reboot') {
                 return this.$scope.model.current.state == 'Running';
-            }
-            else if (action == 'migrate') {
+            } else if (action == 'migrate') {
                 return this.$scope.model.current.state == 'Running';
-            }
-            else if (action == 'attachVolume') {
+            } else if (action == 'attachVolume') {
                 return this.$scope.model.current.state == 'Running' || this.$scope.model.current.state == 'Stopped';
-            }
-            else if (action == 'detachVolume' && Utils.notNullnotUndefined(this.$scope.model.current)) {
+            } else if (action == 'detachVolume' && Utils.notNullnotUndefined(this.$scope.model.current)) {
                 return this.$scope.model.current.allVolumes.length > 0;
-            }
-            else if (action == 'console' && Utils.notNullnotUndefined(this.$scope.model.current)) {
+            } else if (action == 'console' && Utils.notNullnotUndefined(this.$scope.model.current)) {
                 return this.$scope.model.current.state == 'Starting' || this.$scope.model.current.state == 'Running' || this.$scope.model.current.state == 'Rebooting' || this.$scope.model.current.state == 'Stopping';
-            }
-            else {
+            } else {
                 return false;
             }
         };
         return Action;
     })();
+
     var FilterBy = (function () {
         function FilterBy($scope, hypervisorTypes) {
             var _this = this;
@@ -17588,11 +20121,13 @@ var MVmInstance;
                 dataTextField: 'name',
                 dataValueField: 'value'
             };
+
             this.valueList = {
                 dataSource: new kendo.data.DataSource({
                     data: []
                 })
             };
+
             this.field = FilterBy.NONE;
             $scope.$watch(function () {
                 return _this.field;
@@ -17600,11 +20135,9 @@ var MVmInstance;
                 if (_this.field == FilterBy.NONE) {
                     _this.valueList.dataSource.data([]);
                     _this.value = null;
-                }
-                else if (_this.field == FilterBy.STATE) {
+                } else if (_this.field == FilterBy.STATE) {
                     _this.valueList.dataSource.data(VmInstance.STATES);
-                }
-                else if (_this.field == FilterBy.TYPE) {
+                } else if (_this.field == FilterBy.TYPE) {
                     _this.valueList.dataSource.data(_this.hypervisorTypes);
                 }
             });
@@ -17614,19 +20147,24 @@ var MVmInstance;
             this.name = !Utils.notNullnotUndefined(this.value) ? null : Utils.sprintf('{0}:{1}', this.field, this.value);
             popover.toggle();
         };
+
         FilterBy.prototype.open = function (popover) {
             popover.toggle();
         };
+
         FilterBy.prototype.isValueListDisabled = function () {
             return !Utils.notNullnotUndefined(this.value);
         };
+
         FilterBy.prototype.getButtonName = function () {
             return this.name;
         };
+
         FilterBy.prototype.toKendoFilter = function () {
             if (!Utils.notNullnotUndefined(this.value)) {
                 return null;
             }
+
             return {
                 field: this.field,
                 operator: 'eq',
@@ -17638,6 +20176,7 @@ var MVmInstance;
         FilterBy.TYPE = 'hypervisorType';
         return FilterBy;
     })();
+
     var DetailsController = (function () {
         function DetailsController($scope, vmMgr, $routeParams, tagService, vm, clusterMgr, $rootScope, $window) {
             var _this = this;
@@ -17649,19 +20188,25 @@ var MVmInstance;
             $scope.model = new VmInstanceModel();
             $scope.model.current = current;
             $scope.hostname = vm.hostname;
+
             $scope.funcDelete = function (win) {
                 win.open();
             };
+
             $scope.action = new Action($scope, vmMgr);
+
             $scope.funcRefresh = function () {
                 _this.loadSelf($scope.model.current.uuid);
             };
+
             $scope.funcToolbarShow = function () {
                 return Utils.notNullnotUndefined($scope.model.current);
             };
+
             $scope.funcDeleteVmInstance = function () {
                 $scope.deleteVmInstance.open();
             };
+
             $scope.optionsDeleteVmInstance = {
                 title: 'DELETE VM INSTANCE',
                 btnType: 'btn-danger',
@@ -17675,12 +20220,14 @@ var MVmInstance;
                     });
                 }
             };
+
             $scope.console = function () {
                 vmMgr.getConsole(current, function (inv) {
                     var windowName = current.name + current.uuid;
                     $window.open(Utils.sprintf('/static/templates/console/vnc_auto.html?host={0}&port={1}&token={2}', inv.hostname, inv.port, inv.token), windowName);
                 });
             };
+
             $scope.optionsTag = {
                 tags: [],
                 createTag: function (item) {
@@ -17699,18 +20246,22 @@ var MVmInstance;
                     return Utils.notNullnotUndefined($scope.model.current);
                 }
             };
+
             this.tagService.queryTag($scope.model.current.uuid, function (tags) {
                 $scope.optionsTag.tags = tags;
             });
+
             $scope.optionsMigrateVm = {
                 vm: current
             };
+
             $scope.optionsAttachVolume = {
                 vm: current,
                 done: function (vol) {
                     $scope.optionsVolumeGrid.dataSource.insert(0, vol);
                 }
             };
+
             $scope.optionsDetachVolume = {
                 vm: current,
                 done: function (vol) {
@@ -17726,6 +20277,7 @@ var MVmInstance;
                     }
                 }
             };
+
             $scope.optionsNicGrid = {
                 pageSize: 20,
                 resizable: true,
@@ -17779,6 +20331,7 @@ var MVmInstance;
                     data: current.vmNics
                 })
             };
+
             $scope.optionsVolumeGrid = {
                 pageSize: 20,
                 resizable: true,
@@ -17840,6 +20393,7 @@ var MVmInstance;
         return DetailsController;
     })();
     MVmInstance.DetailsController = DetailsController;
+
     var Controller = (function () {
         function Controller($scope, vmMgr, hostMgr, hypervisorTypes, $location, $rootScope, $window) {
             this.$scope = $scope;
@@ -17884,6 +20438,7 @@ var MVmInstance;
                     $scope.oVmInstanceGrid.refresh();
                 }
             };
+
             $scope.optionsSearch = {
                 fields: ApiHeader.VmInstanceInventoryQueryable,
                 name: 'VmInstance',
@@ -17911,6 +20466,7 @@ var MVmInstance;
                     });
                 }
             };
+
             $scope.funcGridDoubleClick = function (e) {
                 if (Utils.notNullnotUndefined($scope.model.current)) {
                     var url = Utils.sprintf('/vmInstance/{0}', $scope.model.current.uuid);
@@ -17918,16 +20474,21 @@ var MVmInstance;
                     e.preventDefault();
                 }
             };
+
             $scope.filterBy = new FilterBy($scope, this.hypervisorTypes);
+
             $scope.funcSearch = function (win) {
                 win.open();
             };
+
             $scope.funcCreateVmInstance = function (win) {
                 win.open();
             };
+
             $scope.funcDeleteVmInstance = function () {
                 $scope.deleteVmInstance.open();
             };
+
             $scope.optionsDeleteVmInstance = {
                 title: 'DELETE VM INSTANCE',
                 btnType: 'btn-danger',
@@ -17941,15 +20502,19 @@ var MVmInstance;
                     });
                 }
             };
+
             $scope.funcRefresh = function () {
                 $scope.oVmInstanceGrid.refresh();
             };
+
             $scope.funcIsActionShow = function () {
                 return !Utils.isEmptyObject($scope.model.current);
             };
+
             $scope.funcIsActionDisabled = function () {
                 return Utils.notNullnotUndefined($scope.model.current) && $scope.model.current.isInProgress();
             };
+
             $scope.optionsCreateVmInstance = {
                 done: function (info) {
                     var vm = new VmInstance();
@@ -17963,21 +20528,26 @@ var MVmInstance;
                     });
                 }
             };
+
             $scope.console = function () {
                 vmMgr.getConsole($scope.model.current, function (inv) {
                     var windowName = $scope.model.current.name + $scope.model.current.uuid;
                     $window.open(Utils.sprintf('/static/templates/console/vnc_auto.html?host={0}&port={1}&token={2}', inv.hostname, inv.port, inv.token), windowName);
                 });
             };
+
             $scope.optionsMigrateVm = {
                 vm: null
             };
+
             $scope.optionsAttachVolume = {
                 vm: null
             };
+
             $scope.optionsDetachVolume = {
                 vm: null
             };
+
             $scope.$watch(function () {
                 return $scope.model.current;
             }, function () {
@@ -17992,6 +20562,7 @@ var MVmInstance;
         return Controller;
     })();
     MVmInstance.Controller = Controller;
+
     var MigrateVm = (function () {
         function MigrateVm(api, vmMgr) {
             var _this = this;
@@ -18006,21 +20577,23 @@ var MVmInstance;
                 parent[$attrs.zMigrateVmInstance] = _this;
                 _this.options = parent[$attrs.zOptions];
                 _this.$scope = $scope;
+
                 $scope.hostUuid = null;
                 $scope.hostOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Cluster UUID:</span><span>#: clusterUuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>' + '<div style="color: black"><span class="z-label">Cluster UUID:</span><span>#: clusterUuid #</span></div>'
                 };
+
                 $scope.canProceed = function () {
                     return Utils.notNullnotUndefined($scope.hostUuid);
                 };
+
                 $scope.cancel = function () {
                     $scope.migrateVm__.close();
                 };
+
                 $scope.done = function () {
                     vmMgr.migrate(_this.options.vm, $scope.hostUuid, function () {
                         if (_this.options.done) {
@@ -18029,6 +20602,7 @@ var MVmInstance;
                     });
                     $scope.migrateVm__.close();
                 };
+
                 $scope.migrateVmOptions__ = {
                     width: '600px'
                 };
@@ -18055,12 +20629,14 @@ var MVmInstance;
         return MigrateVm;
     })();
     MVmInstance.MigrateVm = MigrateVm;
+
     var CreateVmInstanceOptions = (function () {
         function CreateVmInstanceOptions() {
         }
         return CreateVmInstanceOptions;
     })();
     MVmInstance.CreateVmInstanceOptions = CreateVmInstanceOptions;
+
     var CreateVmInstance = (function () {
         function CreateVmInstance(api, vmMgr, clusterMgr, hostMgr, zoneMgr, instOfferingMgr, diskOfferingMgr, l3Mgr, imageMgr) {
             var _this = this;
@@ -18088,6 +20664,7 @@ var MVmInstance;
                         _this.options = parentScope[optionName];
                     });
                 }
+
                 var infoPage = $scope.infoPage = {
                     activeState: true,
                     name: null,
@@ -18118,12 +20695,9 @@ var MVmInstance;
                     },
                     canMoveToNext: function () {
                         if (this.imageMediaType == 'RootVolumeTemplate') {
-                            return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.instanceOfferingUuid)
-                                && Utils.notNullnotUndefined(this.imageUuid) && this.hasL3Network();
-                        }
-                        else {
-                            return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.instanceOfferingUuid)
-                                && Utils.notNullnotUndefined(this.imageUuid) && this.hasL3Network() && Utils.notNullnotUndefined(this.rootDiskOfferingUuid);
+                            return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.instanceOfferingUuid) && Utils.notNullnotUndefined(this.imageUuid) && this.hasL3Network();
+                        } else {
+                            return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.instanceOfferingUuid) && Utils.notNullnotUndefined(this.imageUuid) && this.hasL3Network() && Utils.notNullnotUndefined(this.rootDiskOfferingUuid);
                         }
                     },
                     show: function () {
@@ -18140,6 +20714,7 @@ var MVmInstance;
                     },
                     syncL3NetworkDataFromView: function () {
                         var l3NetworkGridRawData = $scope.l3NetworkGrid__.dataSource.data();
+
                         this.l3NetworkUuids = [];
                         this.l3NetworkStaticIps = [];
                         for (var i = 0; i < l3NetworkGridRawData.length; ++i) {
@@ -18155,6 +20730,7 @@ var MVmInstance;
                     addL3Network: function () {
                         if (!this.isStaticIpValid())
                             return;
+
                         var l3NetworkOptionsRawData = $scope.l3NetworkOptions__.dataSource.data();
                         var l3Network = null;
                         for (var i = 0; i < l3NetworkOptionsRawData.length; ++i) {
@@ -18166,6 +20742,7 @@ var MVmInstance;
                         if (Utils.notNullnotUndefined(this.l3NetworkIp)) {
                             l3Network.staticIp = this.l3NetworkIp.trim();
                         }
+
                         var l3NetworkGridRawData = $scope.l3NetworkGrid__.dataSource.data();
                         var updated = false;
                         for (var i = 0; i < l3NetworkGridRawData.length; ++i) {
@@ -18175,11 +20752,15 @@ var MVmInstance;
                                 break;
                             }
                         }
+
                         if (!updated) {
                             $scope.l3NetworkGrid__.dataSource.pushCreate(l3Network);
                         }
+
                         this.syncL3NetworkDataFromView();
+
                         $scope.defaultL3NetworkOptions__.dataSource.data($scope.l3NetworkGrid__.dataSource.data());
+
                         this.l3NetworkIp = "";
                     },
                     delL3Network: function (uid) {
@@ -18214,6 +20795,7 @@ var MVmInstance;
                         this.hostname = null;
                     }
                 };
+
                 $scope.l3NetworkGrid__ = {
                     pageSize: 20,
                     resizable: true,
@@ -18244,6 +20826,7 @@ var MVmInstance;
                     },
                     dataSource: new kendo.data.DataSource([])
                 };
+
                 var locationPage = $scope.locationPage = {
                     activeState: false,
                     zoneUuid: null,
@@ -18277,6 +20860,7 @@ var MVmInstance;
                         this.hostUuid = null;
                     }
                 };
+
                 var mediator = $scope.mediator = {
                     currentPage: infoPage,
                     movedToPage: function (page) {
@@ -18290,12 +20874,15 @@ var MVmInstance;
                         $scope.infoPage.clusterUuid = $scope.locationPage.clusterUuid;
                         $scope.infoPage.zoneUuid = $scope.locationPage.zoneUuid;
                         _this.options.done(infoPage);
+
                         $scope.winCreateVmInstance__.close();
                     }
                 };
+
                 $scope.button = new Utils.WizardButton([
                     infoPage, locationPage
                 ], mediator);
+
                 $scope.$watch(function () {
                     return $scope.locationPage.zoneUuid;
                 }, function () {
@@ -18314,6 +20901,7 @@ var MVmInstance;
                         });
                     }
                 });
+
                 $scope.$watch(function () {
                     return $scope.locationPage.clusterUuid;
                 }, function () {
@@ -18332,17 +20920,20 @@ var MVmInstance;
                         });
                     }
                 });
+
                 $scope.$watch(function () {
                     return $scope.infoPage.imageUuid;
                 }, function () {
                     if (!Utils.notNullnotUndefined($scope.infoPage.imageUuid)) {
                         return;
                     }
+
                     var img = $scope.infoPage.images[$scope.infoPage.imageUuid];
                     if (Utils.notNullnotUndefined(img)) {
                         $scope.infoPage.imageMediaType = img.mediaType;
                     }
                 });
+
                 $scope.zoneOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
@@ -18350,6 +20941,7 @@ var MVmInstance;
                     template: "<div style='color: black'><span class='z-label'>Name</span>: #: name #</div><div style='color: black'><span class='z-label'>State:</span>#: state #</div><div style='color: black'><span class='z-label'>UUID:</span> #: uuid #</div>",
                     optionLabel: ""
                 };
+
                 $scope.winCreateVmInstanceOptions__ = {
                     width: '700px',
                     //height: '620px',
@@ -18358,42 +20950,35 @@ var MVmInstance;
                     draggable: false,
                     resizable: false
                 };
+
                 $scope.clusterOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     optionLabel: "",
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">HYPERVISOR:</span><span>#: hypervisorType #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">HYPERVISOR:</span><span>#: hypervisorType #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
                 };
+
                 $scope.hostOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     optionLabel: "",
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Status:</span><span>#: status #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' + '<div style="color: black"><span class="z-label">Status:</span><span>#: status #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
                 };
+
                 $scope.instanceOfferingOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">CPU Number:</span><span>#: cpuNum #</span></div>' +
-                        '<div style="color: black"><span class="z-label">CPU Speed:</span><span>#: cpuSpeed #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Memory:</span><span>#: memorySize #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">CPU Number:</span><span>#: cpuNum #</span></div>' + '<div style="color: black"><span class="z-label">CPU Speed:</span><span>#: cpuSpeed #</span></div>' + '<div style="color: black"><span class="z-label">Memory:</span><span>#: memorySize #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
                 };
+
                 $scope.diskOfferingOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Disk Size:</span><span>#: diskSize #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
+                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">Disk Size:</span><span>#: diskSize #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
                     change: function (e) {
                         Utils.safeApply($scope, function () {
                             var list = e.sender;
@@ -18404,38 +20989,35 @@ var MVmInstance;
                         });
                     }
                 };
+
                 $scope.rootDiskOfferingOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Disk Size:</span><span>#: diskSize #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">Disk Size:</span><span>#: diskSize #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
                 };
+
                 $scope.l3NetworkOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
                 };
+
                 $scope.defaultL3NetworkOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
                 };
+
                 $scope.imageOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Platform:</span><span>#: platform #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Media Type:</span><span>#= mediaType #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Format:</span><span>#: format #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">Platform:</span><span>#: platform #</span></div>' + '<div style="color: black"><span class="z-label">Media Type:</span><span>#= mediaType #</span></div>' + '<div style="color: black"><span class="z-label">Format:</span><span>#: format #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
                 };
+
                 _this.$scope = $scope;
             };
             this.restrict = 'EA';
@@ -18549,6 +21131,7 @@ var MVmInstance;
         return CreateVmInstance;
     })();
     MVmInstance.CreateVmInstance = CreateVmInstance;
+
     var AttachVolume = (function () {
         function AttachVolume(api, vmMgr) {
             var _this = this;
@@ -18562,14 +21145,12 @@ var MVmInstance;
                 var parent = $scope.$parent;
                 parent[$attrs.zVmAttachVolume] = _this;
                 _this.options = parent[$attrs.zOptions];
+
                 $scope.volumeListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Status:</span><span>#: status #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' + '<div style="color: black"><span class="z-label">Status:</span><span>#: status #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
                     change: function (e) {
                         var select = e.sender;
                         Utils.safeApply($scope, function () {
@@ -18577,9 +21158,11 @@ var MVmInstance;
                         });
                     }
                 };
+
                 $scope.cancel = function () {
                     $scope.attachVolume__.close();
                 };
+
                 $scope.done = function () {
                     var vols = $scope.volumeList__.dataItems();
                     angular.forEach(vols, function (it) {
@@ -18589,12 +21172,16 @@ var MVmInstance;
                             }
                         });
                     });
+
                     $scope.attachVolume__.close();
                 };
+
                 $scope.selectItemNum = 0;
+
                 $scope.canProceed = function () {
                     return $scope.selectItemNum > 0;
                 };
+
                 _this.$scope = $scope;
             };
         }
@@ -18615,6 +21202,7 @@ var MVmInstance;
         return AttachVolume;
     })();
     MVmInstance.AttachVolume = AttachVolume;
+
     var DetachVolume = (function () {
         function DetachVolume(api, vmMgr) {
             var _this = this;
@@ -18628,15 +21216,12 @@ var MVmInstance;
                 var parent = $scope.$parent;
                 parent[$attrs.zVmDetachVolume] = _this;
                 _this.options = parent[$attrs.zOptions];
+
                 $scope.volumeListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Status:</span><span>#: status #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Size:</span><span>#: size #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' + '<div style="color: black"><span class="z-label">Status:</span><span>#: status #</span></div>' + '<div style="color: black"><span class="z-label">Size:</span><span>#: size #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
                     change: function (e) {
                         var select = e.sender;
                         Utils.safeApply($scope, function () {
@@ -18644,9 +21229,11 @@ var MVmInstance;
                         });
                     }
                 };
+
                 $scope.cancel = function () {
                     $scope.detachVolume__.close();
                 };
+
                 $scope.done = function () {
                     var vols = $scope.volumeList__.dataItems();
                     angular.forEach(vols, function (it) {
@@ -18656,12 +21243,16 @@ var MVmInstance;
                             }
                         });
                     });
+
                     $scope.detachVolume__.close();
                 };
+
                 $scope.selectItemNum = 0;
+
                 $scope.canProceed = function () {
                     return $scope.selectItemNum > 0;
                 };
+
                 _this.$scope = $scope;
             };
         }
@@ -18680,19 +21271,26 @@ var MVmInstance;
     })();
     MVmInstance.DetachVolume = DetachVolume;
 })(MVmInstance || (MVmInstance = {}));
-angular.module('root').factory('VmInstanceManager', ['Api', '$rootScope', function (api, $rootScope) {
+
+angular.module('root').factory('VmInstanceManager', [
+    'Api', '$rootScope', function (api, $rootScope) {
         return new MVmInstance.VmInstanceManager(api, $rootScope);
-    }]).directive('zCreateVmInstance', ['Api', 'VmInstanceManager', 'ClusterManager', 'HostManager',
+    }]).directive('zCreateVmInstance', [
+    'Api', 'VmInstanceManager', 'ClusterManager', 'HostManager',
     'ZoneManager', 'InstanceOfferingManager', 'DiskOfferingManager', 'L3NetworkManager', 'ImageManager',
     function (api, vmMgr, clusterMgr, hostMgr, zoneMgr, instOfferingMgr, diskOfferingMgr, l3Mgr, imageMgr) {
         return new MVmInstance.CreateVmInstance(api, vmMgr, clusterMgr, hostMgr, zoneMgr, instOfferingMgr, diskOfferingMgr, l3Mgr, imageMgr);
-    }]).directive('zMigrateVmInstance', ['Api', 'VmInstanceManager', function (api, vmMgr) {
+    }]).directive('zMigrateVmInstance', [
+    'Api', 'VmInstanceManager', function (api, vmMgr) {
         return new MVmInstance.MigrateVm(api, vmMgr);
-    }]).directive('zVmAttachVolume', ['Api', 'VmInstanceManager', function (api, vmMgr) {
+    }]).directive('zVmAttachVolume', [
+    'Api', 'VmInstanceManager', function (api, vmMgr) {
         return new MVmInstance.AttachVolume(api, vmMgr);
-    }]).directive('zVmDetachVolume', ['Api', 'VmInstanceManager', function (api, vmMgr) {
+    }]).directive('zVmDetachVolume', [
+    'Api', 'VmInstanceManager', function (api, vmMgr) {
         return new MVmInstance.DetachVolume(api, vmMgr);
-    }]).config(['$routeProvider', function (route) {
+    }]).config([
+    '$routeProvider', function (route) {
         route.when('/vmInstance', {
             templateUrl: '/static/templates/vm/vm.html',
             controller: 'MVmInstance.Controller',
@@ -18726,7 +21324,8 @@ angular.module('root').factory('VmInstanceManager', ['Api', '$rootScope', functi
                         }, true);
                     }).then(function () {
                         var msg = new ApiHeader.APIQuerySystemTagMsg();
-                        msg.conditions = [{
+                        msg.conditions = [
+                            {
                                 name: 'resourceUuid',
                                 op: '=',
                                 value: $route.current.params.uuid
@@ -18735,17 +21334,20 @@ angular.module('root').factory('VmInstanceManager', ['Api', '$rootScope', functi
                                 op: 'like',
                                 value: 'hostname::%'
                             }];
+
                         Api.syncApi(msg, function (reply) {
                             var invs = reply.inventories;
                             if (invs.length > 0) {
                                 var pair = invs[0].tag.split('::');
                                 ret.hostname = pair[1];
                             }
+
                             chain.next();
                         });
                     }).done(function () {
                         defer.resolve(ret);
                     }).start();
+
                     return defer.promise;
                 }
             }
@@ -18763,32 +21365,37 @@ var MVolume;
         VolumeSnapshot.prototype.progressOn = function () {
             this.inProgress = true;
         };
+
         VolumeSnapshot.prototype.progressOff = function () {
             this.inProgress = false;
         };
+
         VolumeSnapshot.prototype.isInProgress = function () {
             return this.inProgress;
         };
+
         VolumeSnapshot.prototype.isRevertShow = function () {
             return Utils.notNullnotUndefined(this.volumeUuid) && this.status == 'Ready';
         };
+
         VolumeSnapshot.prototype.isBackupShow = function () {
             return Utils.notNullnotUndefined(this.primaryStorageUuid);
         };
+
         VolumeSnapshot.prototype.isDeleteFromBackupStorageShow = function () {
             return this.backupStorageRefs.length > 0;
         };
+
         VolumeSnapshot.prototype.statusLabel = function () {
             if (this.status == 'Ready') {
                 return 'label label-success';
-            }
-            else if (this.status == 'NotInstantiated') {
+            } else if (this.status == 'NotInstantiated') {
                 return 'label label-warning';
-            }
-            else {
+            } else {
                 return 'label label-default';
             }
         };
+
         VolumeSnapshot.prototype.updateObservableObject = function (inv) {
             var self = this;
             self.set('uuid', inv.uuid);
@@ -18810,6 +21417,7 @@ var MVolume;
             self.set('lastOpDate', inv.lastOpDate);
             self.set('backupStorageRefs', inv.backupStorageRefs);
         };
+
         VolumeSnapshot.wrap = function (obj) {
             var sp = new VolumeSnapshot();
             angular.extend(sp, obj);
@@ -18818,6 +21426,7 @@ var MVolume;
         return VolumeSnapshot;
     })(ApiHeader.VolumeSnapshotInventory);
     MVolume.VolumeSnapshot = VolumeSnapshot;
+
     var Volume = (function (_super) {
         __extends(Volume, _super);
         function Volume() {
@@ -18826,58 +21435,66 @@ var MVolume;
         Volume.prototype.progressOn = function () {
             this.inProgress = true;
         };
+
         Volume.prototype.progressOff = function () {
             this.inProgress = false;
         };
+
         Volume.prototype.isInProgress = function () {
             return this.inProgress;
         };
+
         Volume.prototype.isDetachShow = function () {
             return this.type == 'Data' && Utils.notNullnotUndefined(this.vmInstanceUuid);
         };
+
         Volume.prototype.isAttachShow = function () {
             return this.type == 'Data' && this.state == 'Enabled' && this.status != 'Creating' && !this.isDetachShow();
         };
+
         Volume.prototype.isSnapshotShow = function () {
             return this.status == 'Ready';
         };
+
         Volume.prototype.isBackupShow = function () {
             return this.type == 'Data' && this.status == 'Ready';
         };
+
         Volume.prototype.isCreateTemplateShow = function () {
             return this.type == 'Root' && this.status == 'Ready';
         };
+
         Volume.prototype.isDeleteShow = function () {
             return this.type == 'Data';
         };
+
         Volume.prototype.isEnableShow = function () {
             return this.state == 'Disabled';
         };
+
         Volume.prototype.isDisableShow = function () {
             return this.state == 'Enabled';
         };
         Volume.prototype.stateLabel = function () {
             if (this.state == 'Enabled') {
                 return 'label label-success';
-            }
-            else if (this.state == 'Disabled') {
+            } else if (this.state == 'Disabled') {
                 return 'label label-danger';
-            }
-            else {
+            } else {
                 return 'label label-default';
             }
         };
+
         Volume.prototype.statusLabel = function () {
             if (this.status == 'Ready') {
                 return 'label label-success';
-            }
-            else if (this.status == 'NotInstantiated') {
+            } else if (this.status == 'NotInstantiated') {
                 return 'label label-warning';
-            }
-            else {
+            } else {
                 return 'label label-default';
             }
         };
+
         Volume.prototype.updateObservableObject = function (inv) {
             // self : ObservableObject
             var self = this;
@@ -18900,6 +21517,7 @@ var MVolume;
         return Volume;
     })(ApiHeader.VolumeInventory);
     MVolume.Volume = Volume;
+
     var VolumeManager = (function () {
         function VolumeManager(api, $rootScope) {
             this.api = api;
@@ -18908,9 +21526,11 @@ var MVolume;
         VolumeManager.prototype.setSortBy = function (sortBy) {
             this.sortBy = sortBy;
         };
+
         VolumeManager.prototype.wrap = function (Volume) {
             return new kendo.data.ObservableObject(Volume);
         };
+
         VolumeManager.prototype.backup = function (volume, bsUuid, done) {
             var _this = this;
             var msg = new ApiHeader.APIBackupDataVolumeMsg();
@@ -18922,12 +21542,14 @@ var MVolume;
                 if (Utils.notNullnotUndefined(done)) {
                     done();
                 }
+
                 _this.$rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
                     msg: Utils.sprintf('Backup Data Volume: {0}', volume.name),
                     link: Utils.sprintf('/#/volume/{0}', volume.uuid)
                 });
             });
         };
+
         VolumeManager.prototype.create = function (volume, done) {
             var _this = this;
             var msg = new ApiHeader.APICreateDataVolumeMsg();
@@ -18944,6 +21566,7 @@ var MVolume;
                 });
             });
         };
+
         VolumeManager.prototype.query = function (qobj, callback) {
             var _this = this;
             var msg = new ApiHeader.APIQueryVolumeMsg();
@@ -18966,6 +21589,7 @@ var MVolume;
                 callback(pris, ret.total);
             });
         };
+
         VolumeManager.prototype.disable = function (volume) {
             var _this = this;
             volume.progressOn();
@@ -18981,6 +21605,7 @@ var MVolume;
                 });
             });
         };
+
         VolumeManager.prototype.enable = function (volume) {
             var _this = this;
             volume.progressOn();
@@ -18996,6 +21621,7 @@ var MVolume;
                 });
             });
         };
+
         VolumeManager.prototype.attach = function (volume, vmUuid, done) {
             var _this = this;
             volume.progressOn();
@@ -19008,12 +21634,14 @@ var MVolume;
                 if (Utils.notNullnotUndefined(done)) {
                     done();
                 }
+
                 _this.$rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
                     msg: Utils.sprintf('Attached Data Volume: {0}', volume.name),
                     link: Utils.sprintf('/#/volume/{0}', volume.uuid)
                 });
             });
         };
+
         VolumeManager.prototype.detach = function (volume, done) {
             var _this = this;
             volume.progressOn();
@@ -19025,12 +21653,14 @@ var MVolume;
                 if (Utils.notNullnotUndefined(done)) {
                     done();
                 }
+
                 _this.$rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
                     msg: Utils.sprintf('Detached Data Volume: {0}', volume.name),
                     link: Utils.sprintf('/#/volume/{0}', volume.uuid)
                 });
             });
         };
+
         VolumeManager.prototype.delete = function (volume, done) {
             var _this = this;
             volume.progressOn();
@@ -19044,6 +21674,7 @@ var MVolume;
                 });
             });
         };
+
         VolumeManager.prototype.takeSnapshot = function (volume, snapshot, done) {
             var _this = this;
             volume.progressOn();
@@ -19057,12 +21688,14 @@ var MVolume;
                 if (Utils.notNullnotUndefined(done)) {
                     done(sp);
                 }
+
                 _this.$rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
                     msg: Utils.sprintf('Create snapshot from volume: {0}', volume.name),
                     link: Utils.sprintf('/#/volume/{0}', volume.uuid)
                 });
             });
         };
+
         VolumeManager.prototype.createTemplate = function (volume, info, done) {
             var _this = this;
             volume.progressOn();
@@ -19080,12 +21713,14 @@ var MVolume;
                 if (Utils.notNullnotUndefined(done)) {
                     done();
                 }
+
                 _this.$rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
                     msg: Utils.sprintf('Create template from root volume: {0}', volume.name),
                     link: Utils.sprintf('/#/image/{0}', ret.inventory.uuid)
                 });
             });
         };
+
         VolumeManager.prototype.querySnapshotTree = function (qobj, done) {
             var msg = new ApiHeader.APIQueryVolumeSnapshotTreeMsg();
             msg.count = qobj.count === true;
@@ -19101,6 +21736,7 @@ var MVolume;
         return VolumeManager;
     })();
     MVolume.VolumeManager = VolumeManager;
+
     var VolumeModel = (function (_super) {
         __extends(VolumeModel, _super);
         function VolumeModel() {
@@ -19110,6 +21746,7 @@ var MVolume;
         return VolumeModel;
     })(Utils.Model);
     MVolume.VolumeModel = VolumeModel;
+
     var SnapshotManager = (function () {
         function SnapshotManager(api, $rootScope) {
             this.api = api;
@@ -19126,6 +21763,7 @@ var MVolume;
                 done(ret.inventories);
             });
         };
+
         SnapshotManager.prototype.query = function (qobj, callback) {
             var msg = new ApiHeader.APIQueryVolumeSnapshotMsg();
             msg.count = qobj.count === true;
@@ -19141,6 +21779,7 @@ var MVolume;
                 callback(pris, ret.total);
             });
         };
+
         SnapshotManager.prototype.delete = function (sp, done) {
             var msg = new ApiHeader.APIDeleteVolumeSnapshotMsg();
             msg.uuid = sp.uuid;
@@ -19150,6 +21789,7 @@ var MVolume;
                 }
             });
         };
+
         SnapshotManager.prototype.revert = function (sp, done) {
             var _this = this;
             var msg = new ApiHeader.APIRevertVolumeFromSnapshotMsg();
@@ -19158,12 +21798,14 @@ var MVolume;
                 if (Utils.notNullnotUndefined(done)) {
                     done();
                 }
+
                 _this.$rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
                     msg: Utils.sprintf('Reverted volume: {0} to a snapshot', sp.volumeUuid),
                     link: Utils.sprintf('/#/volume/{0}', sp.volumeUuid)
                 });
             });
         };
+
         SnapshotManager.prototype.backup = function (sp, bsUuid, done) {
             var _this = this;
             var msg = new ApiHeader.APIBackupVolumeSnapshotMsg();
@@ -19174,11 +21816,13 @@ var MVolume;
                 if (Utils.notNullnotUndefined(done)) {
                     done();
                 }
+
                 _this.$rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
                     msg: Utils.sprintf('Backup volume snapshot: {0} to a backup storage', sp.uuid)
                 });
             });
         };
+
         SnapshotManager.prototype.deleteFromBackupStorage = function (sp, bsUuid, done) {
             var _this = this;
             var msg = new ApiHeader.APIDeleteVolumeSnapshotFromBackupStorageMsg();
@@ -19189,6 +21833,7 @@ var MVolume;
                 if (Utils.notNullnotUndefined(done)) {
                     done();
                 }
+
                 _this.$rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
                     msg: Utils.sprintf('Deleted volume snapshot: {0} to a backup storage', sp.uuid)
                 });
@@ -19197,6 +21842,7 @@ var MVolume;
         return SnapshotManager;
     })();
     MVolume.SnapshotManager = SnapshotManager;
+
     var OVolumeGrid = (function (_super) {
         __extends(OVolumeGrid, _super);
         function OVolumeGrid($scope, volumeMgr) {
@@ -19244,6 +21890,7 @@ var MVolume;
                     width: '20%'
                 }
             ];
+
             this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
@@ -19258,6 +21905,7 @@ var MVolume;
         }
         return OVolumeGrid;
     })(Utils.OGrid);
+
     var Action = (function () {
         function Action($scope, volumeMgr) {
             this.$scope = $scope;
@@ -19266,26 +21914,33 @@ var MVolume;
         Action.prototype.enable = function () {
             this.volumeMgr.enable(this.$scope.model.current);
         };
+
         Action.prototype.disable = function () {
             this.volumeMgr.disable(this.$scope.model.current);
         };
+
         Action.prototype.attach = function () {
             this.$scope.attachVm.open();
         };
+
         Action.prototype.detach = function () {
             this.$scope.detachVm.open();
         };
+
         Action.prototype.takeSnapshot = function () {
             this.$scope.takeSnapshot.open();
         };
+
         Action.prototype.backup = function () {
             this.$scope.backupDataVolumeWin.open();
         };
+
         Action.prototype.createTemplate = function () {
             this.$scope.createTemplateWin.open();
         };
         return Action;
     })();
+
     var FilterBy = (function () {
         function FilterBy($scope, hypervisorTypes) {
             var _this = this;
@@ -19319,11 +21974,13 @@ var MVolume;
                 dataTextField: 'name',
                 dataValueField: 'value'
             };
+
             this.valueList = {
                 dataSource: new kendo.data.DataSource({
                     data: []
                 })
             };
+
             this.field = FilterBy.NONE;
             $scope.$watch(function () {
                 return _this.field;
@@ -19331,17 +21988,13 @@ var MVolume;
                 if (_this.field == FilterBy.NONE) {
                     _this.valueList.dataSource.data([]);
                     _this.value = null;
-                }
-                else if (_this.field == FilterBy.STATUS) {
+                } else if (_this.field == FilterBy.STATUS) {
                     _this.valueList.dataSource.data(['Creating', 'Ready', 'NotInstantiated']);
-                }
-                else if (_this.field == FilterBy.STATE) {
+                } else if (_this.field == FilterBy.STATE) {
                     _this.valueList.dataSource.data(['Enabled', 'Disabled']);
-                }
-                else if (_this.field == FilterBy.HYPERVISOR) {
+                } else if (_this.field == FilterBy.HYPERVISOR) {
                     _this.valueList.dataSource.data(_this.hypervisorTypes);
-                }
-                else if (_this.field == FilterBy.TYPE) {
+                } else if (_this.field == FilterBy.TYPE) {
                     _this.valueList.dataSource.data(['Root', 'Data']);
                 }
             });
@@ -19351,19 +22004,24 @@ var MVolume;
             this.name = !Utils.notNullnotUndefined(this.value) ? null : Utils.sprintf('{0}:{1}', this.field, this.value);
             popover.toggle();
         };
+
         FilterBy.prototype.open = function (popover) {
             popover.toggle();
         };
+
         FilterBy.prototype.isValueListDisabled = function () {
             return !Utils.notNullnotUndefined(this.value);
         };
+
         FilterBy.prototype.getButtonName = function () {
             return this.name;
         };
+
         FilterBy.prototype.toKendoFilter = function () {
             if (!Utils.notNullnotUndefined(this.value)) {
                 return null;
             }
+
             return {
                 field: this.field,
                 operator: 'eq',
@@ -19377,6 +22035,7 @@ var MVolume;
         FilterBy.HYPERVISOR = 'hypervisorType';
         return FilterBy;
     })();
+
     var SnapshotAction = (function () {
         function SnapshotAction($scope, spMgr) {
             this.$scope = $scope;
@@ -19385,17 +22044,21 @@ var MVolume;
         SnapshotAction.prototype.revert = function () {
             this.$scope.revertSnapshot.open();
         };
+
         SnapshotAction.prototype.delete = function () {
             this.$scope.deleteSnapshotWin.open();
         };
+
         SnapshotAction.prototype.backup = function () {
             this.$scope.backupSnapshotWin.open();
         };
+
         SnapshotAction.prototype.deleteFromBackupStorage = function () {
             this.$scope.deleteSnapshotFromBackupStorageWin.open();
         };
         return SnapshotAction;
     })();
+
     var SnapshotDetailsController = (function () {
         function SnapshotDetailsController($scope, spMgr, $routeParams, tagService, current, vmMgr, bsMgr) {
             var _this = this;
@@ -19406,17 +22069,23 @@ var MVolume;
             this.bsMgr = bsMgr;
             $scope.model = new VolumeModel();
             $scope.model.current = current;
+
             this.marshalBackupStorage(current);
+
             $scope.funcDelete = function (win) {
                 win.open();
             };
+
             $scope.action = new SnapshotAction($scope, spMgr);
+
             $scope.funcRefresh = function () {
                 _this.loadSelf($scope.model.current.uuid);
             };
+
             $scope.funcToolbarShow = function () {
                 return Utils.notNullnotUndefined($scope.model.current);
             };
+
             $scope.optionsDeleteSnapshot = {
                 title: 'DELETE VOLUME SNAPSHOT',
                 description: "All descendants of this snapshot will be deleted as well",
@@ -19426,6 +22095,7 @@ var MVolume;
                     });
                 }
             };
+
             $scope.optionsTag = {
                 tags: [],
                 createTag: function (item) {
@@ -19444,27 +22114,32 @@ var MVolume;
                     return Utils.notNullnotUndefined($scope.model.current);
                 }
             };
+
             this.tagService.queryTag($scope.model.current.uuid, function (tags) {
                 $scope.optionsTag.tags = tags;
             });
+
             $scope.optionsRevertSnapshot = {
                 snapshot: current,
                 done: function () {
                     _this.loadSelf(current.uuid);
                 }
             };
+
             $scope.optionsBackupSnapshot = {
                 snapshot: current,
                 done: function () {
                     _this.loadSelf(current.uuid);
                 }
             };
+
             $scope.optionsDeleteSnapshotFromBackupStorage = {
                 snapshot: current,
                 done: function () {
                     _this.loadSelf(current.uuid);
                 }
             };
+
             $scope.optionsBackupStorageGrid = {
                 pageSize: 20,
                 resizable: true,
@@ -19481,7 +22156,7 @@ var MVolume;
                         field: 'installPath',
                         title: 'INSTALL PATH',
                         width: '80%'
-                    },
+                    }
                 ],
                 dataBound: function (e) {
                     var grid = e.sender;
@@ -19500,21 +22175,25 @@ var MVolume;
                 }
                 return;
             }
+
             var bsUuids = [];
             angular.forEach(sp.backupStorageRefs, function (it) {
                 bsUuids.push(it.backupStorageUuid);
             });
+
             var qobj = new ApiHeader.QueryObject();
             qobj.conditions = [{
                     name: 'uuid',
                     op: 'in',
                     value: bsUuids.join()
                 }];
+
             this.bsMgr.query(qobj, function (bss) {
                 var bsMap = {};
                 angular.forEach(bss, function (it) {
                     bsMap[it.uuid] = it;
                 });
+
                 var bsRef = [];
                 angular.forEach(sp.backupStorageRefs, function (it) {
                     var bs = bsMap[it.backupStorageUuid];
@@ -19524,9 +22203,11 @@ var MVolume;
                         installPath: it.installPath
                     });
                 });
+
                 _this.$scope.optionsBackupStorageGrid.dataSource.data(bsRef);
             });
         };
+
         SnapshotDetailsController.prototype.loadSelf = function (uuid) {
             var _this = this;
             var qobj = new ApiHeader.QueryObject();
@@ -19540,6 +22221,7 @@ var MVolume;
         return SnapshotDetailsController;
     })();
     MVolume.SnapshotDetailsController = SnapshotDetailsController;
+
     var DetailsController = (function () {
         function DetailsController($scope, volumeMgr, $routeParams, tagService, vol, vmMgr, spMgr, bsMgr) {
             var _this = this;
@@ -19552,19 +22234,25 @@ var MVolume;
             $scope.model = new VolumeModel();
             var current = vol.volume;
             $scope.model.current = current;
+
             $scope.funcDelete = function (win) {
                 win.open();
             };
+
             $scope.action = new Action($scope, volumeMgr);
+
             $scope.funcRefresh = function () {
                 _this.loadSelf($scope.model.current.uuid);
             };
+
             $scope.funcToolbarShow = function () {
                 return Utils.notNullnotUndefined($scope.model.current);
             };
+
             $scope.funcDeleteVolume = function () {
                 $scope.deleteVolume.open();
             };
+
             $scope.optionsDeleteVolume = {
                 title: 'DELETE VOLUME',
                 description: function () {
@@ -19577,6 +22265,7 @@ var MVolume;
                     });
                 }
             };
+
             $scope.optionsDeleteSnapshot = {
                 title: 'DELETE VOLUME SNAPSHOT',
                 description: "All descendants of this snapshot will be deleted as well",
@@ -19587,10 +22276,12 @@ var MVolume;
                     });
                 }
             };
+
             $scope.deleteSnapshot = function (sp) {
                 $scope.model.snapshot = sp;
                 $scope.deleteSnapshotWin.open();
             };
+
             $scope.optionsTag = {
                 tags: [],
                 createTag: function (item) {
@@ -19609,69 +22300,71 @@ var MVolume;
                     return Utils.notNullnotUndefined($scope.model.current);
                 }
             };
+
             this.tagService.queryTag($scope.model.current.uuid, function (tags) {
                 $scope.optionsTag.tags = tags;
             });
+
             $scope.optionsAttachVm = {
                 volume: current
             };
+
             $scope.optionsDetachVm = {
                 volume: current
             };
+
             $scope.optionsTakeSnapshot = {
                 volume: current,
                 done: function (sp) {
                     _this.reloadSnapshot(sp.volumeUuid);
                 }
             };
+
             $scope.optionsRevertSnapshot = {
                 snapshot: null,
                 done: function () {
                     _this.loadSelf(current.uuid);
                 }
             };
+
             $scope.revertToSnapshot = function (sp) {
                 $scope.optionsRevertSnapshot.snapshot = sp;
                 $scope.revertSnapshot.open();
             };
+
             $scope.optionsBackupSnapshot = {
                 snapshot: null
             };
+
             $scope.backupSnapshot = function (sp) {
                 $scope.optionsBackupSnapshot.snapshot = sp;
                 $scope.backupSnapshotWin.open();
             };
+
             $scope.optionsDeleteSnapshotFromBackupStorage = {
                 snapshot: null
             };
+
             $scope.deleteSnapshotFromBackupStorage = function (sp) {
                 $scope.optionsDeleteSnapshotFromBackupStorage.snapshot = sp;
                 $scope.deleteSnapshotFromBackupStorageWin.open();
             };
+
             $scope.optionsSnapshotTree = {
-                template: '#: item.text #' +
-                    '<div class="btn-group" ng-show="dataItem.notChain == true">' +
-                    '<button type="button" class="btn btn-xs dropdown-toggle" data-toggle="dropdown">' +
-                    '<span class="caret"></span>' +
-                    '</button>' +
-                    '<ul class="dropdown-menu" role="menu">' +
-                    '<li><a href="/\\#/volumeSnapshot/{{dataItem.inventory.uuid}}">See details</a></li>' +
-                    '<li><a href ng-click="revertToSnapshot(dataItem.inventory)" ng-show="dataItem.inventory.isRevertShow()">Revert volume to this snapshot</a></li>' +
-                    '<li><a href ng-click="backupSnapshot(dataItem.inventory)" ng-show="dataItem.inventory.isBackupShow()">Backup</a></li>' +
-                    '<li><a href ng-click="deleteSnapshotFromBackupStorage(dataItem.inventory)" ng-show="dataItem.inventory.isDeleteFromBackupStorageShow()">Delete From Backup Storage</a></li>' +
-                    '<li><a href style="color:red" ng-click="deleteSnapshot(dataItem.inventory)">Delete</a></li>' +
-                    '</ul>' +
-                    '</div>',
+                template: '#: item.text #' + '<div class="btn-group" ng-show="dataItem.notChain == true">' + '<button type="button" class="btn btn-xs dropdown-toggle" data-toggle="dropdown">' + '<span class="caret"></span>' + '</button>' + '<ul class="dropdown-menu" role="menu">' + '<li><a href="/\\#/volumeSnapshot/{{dataItem.inventory.uuid}}">See details</a></li>' + '<li><a href ng-click="revertToSnapshot(dataItem.inventory)" ng-show="dataItem.inventory.isRevertShow()">Revert volume to this snapshot</a></li>' + '<li><a href ng-click="backupSnapshot(dataItem.inventory)" ng-show="dataItem.inventory.isBackupShow()">Backup</a></li>' + '<li><a href ng-click="deleteSnapshotFromBackupStorage(dataItem.inventory)" ng-show="dataItem.inventory.isDeleteFromBackupStorageShow()">Delete From Backup Storage</a></li>' + '<li><a href style="color:red" ng-click="deleteSnapshot(dataItem.inventory)">Delete</a></li>' + '</ul>' + '</div>',
                 dataSource: new kendo.data.HierarchicalDataSource({
                     data: []
                 })
             };
+
             if (vol.snapshotTree.length > 0) {
                 this.buildSnapshotTree(vol.snapshotTree);
             }
+
             $scope.optionsCreateTemplate = {
                 volume: current
             };
+
             $scope.optionsBackupDataVolume = {
                 volume: current,
                 done: function () {
@@ -19687,6 +22380,7 @@ var MVolume;
                 _this.$scope.model.current = volumes[0];
             });
         };
+
         DetailsController.prototype.reloadSnapshot = function (volUuid) {
             var _this = this;
             var qobj = new ApiHeader.QueryObject();
@@ -19695,6 +22389,7 @@ var MVolume;
                 _this.buildSnapshotTree(trees);
             });
         };
+
         DetailsController.prototype.buildSnapshotTree = function (trees) {
             var treeToItems = function (leaf) {
                 var ret = {};
@@ -19709,6 +22404,7 @@ var MVolume;
                 }
                 return ret;
             };
+
             var strees = [];
             angular.forEach(trees, function (it) {
                 strees.push({
@@ -19718,12 +22414,14 @@ var MVolume;
                     ]
                 });
             });
+
             this.$scope.optionsSnapshotTree.dataSource.data(strees);
         };
         DetailsController.$inject = ['$scope', 'VolumeManager', '$routeParams', 'Tag', 'current', 'VmInstanceManager', 'SnapshotManager', 'BackupStorageManager'];
         return DetailsController;
     })();
     MVolume.DetailsController = DetailsController;
+
     var Controller = (function () {
         function Controller($scope, volumeMgr, hypervisorTypes, $location) {
             this.$scope = $scope;
@@ -19773,6 +22471,7 @@ var MVolume;
                     $scope.oVolumeGrid.refresh();
                 }
             };
+
             $scope.optionsSearch = {
                 fields: ApiHeader.VolumeInventoryQueryable,
                 name: 'Volume',
@@ -19800,6 +22499,7 @@ var MVolume;
                     });
                 }
             };
+
             $scope.funcGridDoubleClick = function (e) {
                 if (Utils.notNullnotUndefined($scope.model.current)) {
                     var url = Utils.sprintf('/volume/{0}', $scope.model.current.uuid);
@@ -19807,16 +22507,21 @@ var MVolume;
                     e.preventDefault();
                 }
             };
+
             $scope.filterBy = new FilterBy($scope, this.hypervisorTypes);
+
             $scope.funcSearch = function (win) {
                 win.open();
             };
+
             $scope.funcCreateVolume = function (win) {
                 win.open();
             };
+
             $scope.funcDeleteVolume = function () {
                 $scope.deleteVolume.open();
             };
+
             $scope.optionsDeleteVolume = {
                 title: 'DELETE DATA VOLUME',
                 description: function () {
@@ -19829,35 +22534,45 @@ var MVolume;
                     });
                 }
             };
+
             $scope.funcRefresh = function () {
                 $scope.oVolumeGrid.refresh();
             };
+
             $scope.funcIsActionShow = function () {
                 return !Utils.isEmptyObject($scope.model.current);
             };
+
             $scope.funcIsActionDisabled = function () {
                 return Utils.notNullnotUndefined($scope.model.current) && $scope.model.current.isInProgress();
             };
+
             $scope.optionsCreateVolume = {
                 done: function (volume) {
                     $scope.oVolumeGrid.add(volume);
                 }
             };
+
             $scope.optionsAttachVm = {
                 volume: null
             };
+
             $scope.optionsDetachVm = {
                 volume: null
             };
+
             $scope.optionsTakeSnapshot = {
                 volume: null
             };
+
             $scope.optionsBackupDataVolume = {
                 volume: null
             };
+
             $scope.optionsCreateTemplate = {
                 volume: null
             };
+
             $scope.$watch(function () {
                 return $scope.model.current;
             }, function () {
@@ -19874,6 +22589,7 @@ var MVolume;
         return Controller;
     })();
     MVolume.Controller = Controller;
+
     var CreateVolume = (function () {
         function CreateVolume(api, diskOfferingMgr, volumeMgr, vmMgr) {
             var _this = this;
@@ -19896,6 +22612,7 @@ var MVolume;
                         _this.options = parentScope[optionName];
                     });
                 }
+
                 var infoPage = $scope.infoPage = {
                     activeState: true,
                     name: null,
@@ -19932,6 +22649,7 @@ var MVolume;
                         this.activeState = false;
                     }
                 };
+
                 var attachPage = $scope.attachPage = {
                     activeState: true,
                     vmInstanceUuid: null,
@@ -19964,6 +22682,7 @@ var MVolume;
                         this.activeState = false;
                     }
                 };
+
                 var mediator = $scope.mediator = {
                     currentPage: infoPage,
                     movedToPage: function (page) {
@@ -19985,8 +22704,7 @@ var MVolume;
                                 volumeMgr.attach(resultVolume, $scope.attachPage.vmInstanceUuid, function () {
                                     chain.next();
                                 });
-                            }
-                            else {
+                            } else {
                                 chain.next();
                             }
                         }).done(function () {
@@ -19994,12 +22712,15 @@ var MVolume;
                                 _this.options.done(resultVolume);
                             }
                         }).start();
+
                         $scope.winCreateVolume__.close();
                     }
                 };
+
                 $scope.button = new Utils.WizardButton([
                     infoPage, attachPage
                 ], mediator);
+
                 $scope.winCreateVolumeOptions__ = {
                     width: '700px',
                     animation: false,
@@ -20007,21 +22728,22 @@ var MVolume;
                     draggable: false,
                     resizable: false
                 };
+
                 $scope.diskOfferingOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">DISK SIZE:</span><span>#: diskSize #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">DISK SIZE:</span><span>#: diskSize #</span></div>'
                 };
+
                 $scope.vmOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
                     optionLabel: "",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Hypervisor:</span><span>#: hypervisorType #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">Hypervisor:</span><span>#: hypervisorType #</span></div>'
                 };
+
                 _this.$scope = $scope;
             };
             this.restrict = 'EA';
@@ -20065,6 +22787,7 @@ var MVolume;
         return CreateVolume;
     })();
     MVolume.CreateVolume = CreateVolume;
+
     var AttachVm = (function () {
         function AttachVm(api, volMgr) {
             var _this = this;
@@ -20078,29 +22801,32 @@ var MVolume;
                 var parent = $scope.$parent;
                 parent[$attrs.zVolumeAttachVm] = _this;
                 _this.options = parent[$attrs.zOptions];
+
                 var onSelect = function (e) {
                     $scope.vmInstanceUuid = e.item.context.children[3].children[1].innerText;
                 };
+
                 $scope.vmInstanceListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
                     select: onSelect,
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Hypervisor:</span><span>#: hypervisorType #</span></div>' +
-                        '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">Hypervisor:</span><span>#: hypervisorType #</span></div>' + '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
                 };
+
                 $scope.hasVm = function () {
                     return $scope.vmInstanceListOptions__.dataSource.data().length > 0;
                 };
+
                 $scope.vmInstanceUuid = null;
                 $scope.canProceed = function () {
                     return Utils.notNullnotUndefined($scope.vmInstanceUuid);
                 };
+
                 $scope.cancel = function () {
                     $scope.attachVmInstance__.close();
                 };
+
                 $scope.done = function () {
                     volMgr.attach(_this.options.volume, $scope.vmInstanceUuid, function () {
                         if (_this.options.done) {
@@ -20109,6 +22835,7 @@ var MVolume;
                     });
                     $scope.attachVmInstance__.close();
                 };
+
                 _this.$scope = $scope;
             };
         }
@@ -20132,6 +22859,7 @@ var MVolume;
         return AttachVm;
     })();
     MVolume.AttachVm = AttachVm;
+
     var DetachVm = (function () {
         function DetachVm(volMgr, vmMgr) {
             var _this = this;
@@ -20145,9 +22873,11 @@ var MVolume;
                 var parent = $scope.$parent;
                 parent[$attrs.zVolumeDetachVm] = _this;
                 _this.options = parent[$attrs.zOptions];
+
                 $scope.cancel = function () {
                     $scope.detachVmInstance__.close();
                 };
+
                 $scope.done = function () {
                     volMgr.detach(_this.options.volume, function () {
                         if (_this.options.done) {
@@ -20156,39 +22886,44 @@ var MVolume;
                     });
                     $scope.detachVmInstance__.close();
                 };
+
                 $scope.optionsDetachVm__ = {
                     width: '500px'
                 };
+
                 $scope.vmStateLabel = function () {
                     if (!Utils.notNullnotUndefined($scope.vm)) {
                         return '';
                     }
+
                     var vm = $scope.vm;
                     if (vm.state == 'Running') {
                         return 'label label-success';
-                    }
-                    else if (vm.state == 'Stopped') {
+                    } else if (vm.state == 'Stopped') {
                         return 'label label-danger';
-                    }
-                    else if (vm.state == 'Unknown') {
+                    } else if (vm.state == 'Unknown') {
                         return 'label label-warning';
-                    }
-                    else {
+                    } else {
                         return 'label label-default';
                     }
                 };
+
                 $scope.isVmInCorrectState = function () {
                     if (!Utils.notNullnotUndefined($scope.vm)) {
                         return true;
                     }
+
                     return $scope.vm.state == 'Running' || $scope.vm.state == 'Stopped';
                 };
+
                 $scope.canProceed = function () {
                     if (!Utils.notNullnotUndefined($scope.vm)) {
                         return false;
                     }
+
                     return $scope.isVmInCorrectState();
                 };
+
                 _this.$scope = $scope;
             };
         }
@@ -20202,6 +22937,7 @@ var MVolume;
                     value: this.options.volume.vmInstanceUuid
                 }
             ];
+
             this.vmMgr.query(qobj, function (vms) {
                 if (vms.length > 0) {
                     _this.$scope.vm = vms[0];
@@ -20213,6 +22949,7 @@ var MVolume;
         return DetachVm;
     })();
     MVolume.DetachVm = DetachVm;
+
     var TakeSnapshot = (function () {
         function TakeSnapshot(volMgr) {
             var _this = this;
@@ -20225,12 +22962,15 @@ var MVolume;
                 var parent = $scope.$parent;
                 parent[$attrs.zVolumeTakeSnapshot] = _this;
                 _this.options = parent[$attrs.zOptions];
+
                 $scope.canProceed = function () {
                     return Utils.notNullnotUndefined($scope.name);
                 };
+
                 $scope.cancel = function () {
                     $scope.takeSnapshot__.close();
                 };
+
                 $scope.done = function () {
                     volMgr.takeSnapshot(_this.options.volume, {
                         name: $scope.name,
@@ -20240,8 +22980,10 @@ var MVolume;
                             _this.options.done(sp);
                         }
                     });
+
                     $scope.takeSnapshot__.close();
                 };
+
                 _this.$scope = $scope;
             };
         }
@@ -20254,6 +22996,7 @@ var MVolume;
         return TakeSnapshot;
     })();
     MVolume.TakeSnapshot = TakeSnapshot;
+
     var RevertSnapshot = (function () {
         function RevertSnapshot(spMgr, volMgr, vmMgr) {
             var _this = this;
@@ -20268,29 +23011,37 @@ var MVolume;
                 var parent = $scope.$parent;
                 parent[$attrs.zVolumeRevertToSnapshot] = _this;
                 _this.options = parent[$attrs.zOptions];
+
                 $scope.cancel = function () {
                     $scope.revertSnapshot__.close();
                 };
+
                 $scope.done = function () {
                     spMgr.revert(_this.options.snapshot, function () {
                         if (_this.options.done) {
                             _this.options.done();
                         }
                     });
+
                     $scope.revertSnapshot__.close();
                 };
+
                 $scope.optionsRevertSnapshot__ = {
                     width: '500px'
                 };
+
                 $scope.isVmInCorrectState = function () {
                     if (!Utils.notNullnotUndefined($scope.vm)) {
                         return true;
                     }
+
                     return $scope.vm.state == 'Stopped';
                 };
+
                 $scope.canProceed = function () {
                     return $scope.isVmInCorrectState();
                 };
+
                 _this.$scope = $scope;
             };
         }
@@ -20307,6 +23058,7 @@ var MVolume;
                         value: _this.options.snapshot.uuid
                     }
                 ];
+
                 _this.vmMgr.query(qobj, function (vms) {
                     if (vms.length > 0) {
                         _this.$scope.vm = vms[0];
@@ -20318,12 +23070,14 @@ var MVolume;
                     chain.next();
                     return;
                 }
+
                 var qobj = new ApiHeader.QueryObject();
                 qobj.conditions = [{
                         name: 'uuid',
                         op: '=',
                         value: _this.options.snapshot.volumeUuid
                     }];
+
                 _this.volMgr.query(qobj, function (vols) {
                     _this.$scope.volume = vols[0];
                     chain.next();
@@ -20336,6 +23090,7 @@ var MVolume;
         return RevertSnapshot;
     })();
     MVolume.RevertSnapshot = RevertSnapshot;
+
     var BackupSnapshot = (function () {
         function BackupSnapshot(spMgr, psMgr, bsMgr) {
             var _this = this;
@@ -20350,25 +23105,27 @@ var MVolume;
                 var parent = $scope.$parent;
                 parent[$attrs.zBackupSnapshot] = _this;
                 _this.options = parent[$attrs.zOptions];
+
                 $scope.backupStorageOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' + '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
                 };
+
                 $scope.hasBackupStorage = function () {
                     return $scope.backupStorageOptions__.dataSource.data().length > 0;
                 };
+
                 $scope.bsUuid = null;
                 $scope.canProceed = function () {
                     return Utils.notNullnotUndefined($scope.bsUuid);
                 };
+
                 $scope.cancel = function () {
                     $scope.backupSnapshot__.close();
                 };
+
                 $scope.done = function () {
                     spMgr.backup(_this.options.snapshot, $scope.bsUuid, function () {
                         if (_this.options.done) {
@@ -20377,9 +23134,11 @@ var MVolume;
                     });
                     $scope.backupSnapshot__.close();
                 };
+
                 $scope.backupSnapshotOptions__ = {
                     width: '500px'
                 };
+
                 _this.$scope = $scope;
             };
         }
@@ -20403,8 +23162,10 @@ var MVolume;
                 angular.forEach(_this.options.snapshot.backupStorageRefs, function (it) {
                     bsUuidsAlreadyOn.push(it.backupStorageUuid);
                 });
+
                 var qobj = new ApiHeader.QueryObject();
-                qobj.conditions = [{
+                qobj.conditions = [
+                    {
                         name: 'uuid',
                         op: 'not in',
                         value: bsUuidsAlreadyOn.join()
@@ -20413,6 +23174,7 @@ var MVolume;
                         op: 'in',
                         value: [ps.zoneUuid].join()
                     }];
+
                 _this.bsMgr.query(qobj, function (bss) {
                     _this.$scope.backupStorageOptions__.dataSource.data(bss);
                     if (bss.length > 0) {
@@ -20428,6 +23190,7 @@ var MVolume;
         return BackupSnapshot;
     })();
     MVolume.BackupSnapshot = BackupSnapshot;
+
     var BackupDataVolume = (function () {
         function BackupDataVolume(volMgr, psMgr, bsMgr) {
             var _this = this;
@@ -20442,25 +23205,27 @@ var MVolume;
                 var parent = $scope.$parent;
                 parent[$attrs.zBackupDataVolume] = _this;
                 _this.options = parent[$attrs.zOptions];
+
                 $scope.backupStorageOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' + '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
                 };
+
                 $scope.hasBackupStorage = function () {
                     return $scope.backupStorageOptions__.dataSource.data().length > 0;
                 };
+
                 $scope.bsUuid = null;
                 $scope.canProceed = function () {
                     return $scope.hasBackupStorage();
                 };
+
                 $scope.cancel = function () {
                     $scope.backupDataVolume__.close();
                 };
+
                 $scope.done = function () {
                     volMgr.backup(_this.options.volume, $scope.bsUuid, function () {
                         if (_this.options.done) {
@@ -20469,9 +23234,11 @@ var MVolume;
                     });
                     $scope.backupDataVolume__.close();
                 };
+
                 $scope.backupDataVolumeOptions__ = {
                     width: '500px'
                 };
+
                 _this.$scope = $scope;
             };
         }
@@ -20497,8 +23264,10 @@ var MVolume;
                 angular.forEach(_this.options.volume.backupStorageRefs, function (it) {
                     bsUuidsAlreadyOn.push(it.backupStorageUuid);
                 });
+
                 var qobj = new ApiHeader.QueryObject();
-                qobj.conditions = [{
+                qobj.conditions = [
+                    {
                         name: 'uuid',
                         op: 'not in',
                         value: bsUuidsAlreadyOn.join()
@@ -20507,6 +23276,7 @@ var MVolume;
                         op: 'in',
                         value: [ps.zoneUuid].join()
                     }];
+
                 _this.bsMgr.query(qobj, function (bss) {
                     _this.$scope.backupStorageOptions__.dataSource.data(bss);
                     if (bss.length > 0) {
@@ -20522,6 +23292,7 @@ var MVolume;
         return BackupDataVolume;
     })();
     MVolume.BackupDataVolume = BackupDataVolume;
+
     var DeleteDataVolumeFromBackupStorage = (function () {
         function DeleteDataVolumeFromBackupStorage(volMgr, psMgr, bsMgr) {
             var _this = this;
@@ -20536,22 +23307,23 @@ var MVolume;
                 var parent = $scope.$parent;
                 parent[$attrs.zDeleteDataVolumeFromBackupStorage] = _this;
                 _this.options = parent[$attrs.zOptions];
+
                 $scope.backupStorageOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' + '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
                 };
+
                 $scope.bsUuid = null;
                 $scope.canProceed = function () {
                     return Utils.notNullnotUndefined($scope.bsUuid);
                 };
+
                 $scope.cancel = function () {
                     $scope.deleteDataVolumeFromBackupStorage__.close();
                 };
+
                 $scope.done = function () {
                     volMgr.backup(_this.options.volume, $scope.bsUuid, function () {
                         if (_this.options.done) {
@@ -20560,9 +23332,11 @@ var MVolume;
                     });
                     $scope.deleteDataVolumeFromBackupStorage__.close();
                 };
+
                 $scope.deleteDataVolumeFromBackupStorageOptions__ = {
                     width: '500px'
                 };
+
                 _this.$scope = $scope;
             };
         }
@@ -20572,17 +23346,20 @@ var MVolume;
             angular.forEach(this.options.volume.backupStorageRefs, function (it) {
                 bsUuidsAlreadyOn.push(it.backupStorageUuid);
             });
+
             var qobj = new ApiHeader.QueryObject();
             qobj.conditions = [{
                     name: 'uuid',
                     op: 'in',
                     value: bsUuidsAlreadyOn.join()
                 }];
+
             this.bsMgr.query(qobj, function (bss) {
                 _this.$scope.backupStorageOptions__.dataSource.data(bss);
                 if (bss.length > 0) {
                     _this.$scope.bsUuid = bss[0].uuid;
                 }
+
                 _this.$scope.deleteDataVolumeFromBackupStorage__.center();
                 _this.$scope.deleteDataVolumeFromBackupStorage__.open();
             });
@@ -20590,6 +23367,7 @@ var MVolume;
         return DeleteDataVolumeFromBackupStorage;
     })();
     MVolume.DeleteDataVolumeFromBackupStorage = DeleteDataVolumeFromBackupStorage;
+
     var CreateTemplateFromRootVolume = (function () {
         function CreateTemplateFromRootVolume(volMgr, bsMgr, psMgr, vmMgr, api) {
             var _this = this;
@@ -20606,18 +23384,18 @@ var MVolume;
                 var parent = $scope.$parent;
                 parent[$attrs.zCreateTemplateFromRootVolume] = _this;
                 _this.options = parent[$attrs.zOptions];
+
                 $scope.backupStorageOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' + '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
                 };
+
                 $scope.hasBackupStorage = function () {
                     return $scope.backupStorageOptions__.dataSource.data().length > 0;
                 };
+
                 $scope.platformOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [
                             'Linux',
@@ -20626,23 +23404,29 @@ var MVolume;
                             'Paravirtualization'
                         ] })
                 };
+
                 $scope.bitsOptions__ = {
                     dataSource: new kendo.data.DataSource({
                         data: [64, 32]
                     })
                 };
+
                 $scope.isVmInCorrectState = function () {
                     if (!Utils.notNullnotUndefined($scope.vm)) {
                         return false;
                     }
+
                     return $scope.vm.state == 'Stopped';
                 };
+
                 $scope.canProceed = function () {
                     return Utils.notNullnotUndefined($scope.bsUuid) && $scope.isVmInCorrectState();
                 };
+
                 $scope.cancel = function () {
                     $scope.createTemplateFromRootVolume__.close();
                 };
+
                 $scope.done = function () {
                     volMgr.createTemplate(_this.options.volume, {
                         backupStorageUuid: $scope.bsUuid,
@@ -20659,9 +23443,11 @@ var MVolume;
                     });
                     $scope.createTemplateFromRootVolume__.close();
                 };
+
                 $scope.createTemplateFromRootVolumeOptions__ = {
                     width: '600px'
                 };
+
                 _this.$scope = $scope;
             };
         }
@@ -20692,12 +23478,14 @@ var MVolume;
                 angular.forEach(_this.options.volume.backupStorageRefs, function (it) {
                     bsUuidsAlreadyOn.push(it.backupStorageUuid);
                 });
+
                 var qobj = new ApiHeader.QueryObject();
                 qobj.conditions = [{
                         name: 'attachedZoneUuids',
                         op: 'in',
                         value: [ps.zoneUuid].join()
                     }];
+
                 _this.bsMgr.query(qobj, function (bss) {
                     _this.$scope.backupStorageOptions__.dataSource.data(bss);
                     if (bss.length > 0) {
@@ -20724,6 +23512,7 @@ var MVolume;
         return CreateTemplateFromRootVolume;
     })();
     MVolume.CreateTemplateFromRootVolume = CreateTemplateFromRootVolume;
+
     var DeleteSnapshotFromBackupStorage = (function () {
         function DeleteSnapshotFromBackupStorage(spMgr, bsMgr) {
             var _this = this;
@@ -20737,22 +23526,23 @@ var MVolume;
                 var parent = $scope.$parent;
                 parent[$attrs.zDeleteSnapshotFromBackupStorage] = _this;
                 _this.options = parent[$attrs.zOptions];
+
                 $scope.backupStorageOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' + '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
                 };
+
                 $scope.bsUuid = null;
                 $scope.canProceed = function () {
                     return Utils.notNullnotUndefined($scope.bsUuid);
                 };
+
                 $scope.cancel = function () {
                     $scope.deleteSnapshotFromBackupStorage__.close();
                 };
+
                 $scope.done = function () {
                     spMgr.deleteFromBackupStorage(_this.options.snapshot, $scope.bsUuid, function () {
                         if (_this.options.done) {
@@ -20761,9 +23551,11 @@ var MVolume;
                     });
                     $scope.deleteSnapshotFromBackupStorage__.close();
                 };
+
                 $scope.deleteSnapshotFromBackupStorageOptions__ = {
                     width: '500px'
                 };
+
                 _this.$scope = $scope;
             };
         }
@@ -20773,17 +23565,20 @@ var MVolume;
             angular.forEach(this.options.snapshot.backupStorageRefs, function (it) {
                 bsUuidsAlreadyOn.push(it.backupStorageUuid);
             });
+
             var qobj = new ApiHeader.QueryObject();
             qobj.conditions = [{
                     name: 'uuid',
                     op: 'in',
                     value: bsUuidsAlreadyOn.join()
                 }];
+
             this.bsMgr.query(qobj, function (bss) {
                 _this.$scope.backupStorageOptions__.dataSource.data(bss);
                 if (bss.length > 0) {
                     _this.$scope.bsUuid = bss[0].uuid;
                 }
+
                 _this.$scope.deleteSnapshotFromBackupStorage__.center();
                 _this.$scope.deleteSnapshotFromBackupStorage__.open();
             });
@@ -20792,29 +23587,42 @@ var MVolume;
     })();
     MVolume.DeleteSnapshotFromBackupStorage = DeleteSnapshotFromBackupStorage;
 })(MVolume || (MVolume = {}));
-angular.module('root').factory('VolumeManager', ['Api', '$rootScope', function (api, $rootScope) {
+
+angular.module('root').factory('VolumeManager', [
+    'Api', '$rootScope', function (api, $rootScope) {
         return new MVolume.VolumeManager(api, $rootScope);
-    }]).factory('SnapshotManager', ['Api', '$rootScope', function (api, $rootScope) {
+    }]).factory('SnapshotManager', [
+    'Api', '$rootScope', function (api, $rootScope) {
         return new MVolume.SnapshotManager(api, $rootScope);
-    }]).directive('zCreateVolume', ['Api', 'DiskOfferingManager', 'VolumeManager', 'VmInstanceManager', function (api, diskOfferingMgr, volumeMgr, vmMgr) {
+    }]).directive('zCreateVolume', [
+    'Api', 'DiskOfferingManager', 'VolumeManager', 'VmInstanceManager', function (api, diskOfferingMgr, volumeMgr, vmMgr) {
         return new MVolume.CreateVolume(api, diskOfferingMgr, volumeMgr, vmMgr);
-    }]).directive('zVolumeAttachVm', ['Api', 'VolumeManager', function (api, volMgr) {
+    }]).directive('zVolumeAttachVm', [
+    'Api', 'VolumeManager', function (api, volMgr) {
         return new MVolume.AttachVm(api, volMgr);
-    }]).directive('zVolumeDetachVm', ['VolumeManager', 'VmInstanceManager', function (volMgr, vmMgr) {
+    }]).directive('zVolumeDetachVm', [
+    'VolumeManager', 'VmInstanceManager', function (volMgr, vmMgr) {
         return new MVolume.DetachVm(volMgr, vmMgr);
-    }]).directive('zVolumeTakeSnapshot', ['VolumeManager', function (volMgr) {
+    }]).directive('zVolumeTakeSnapshot', [
+    'VolumeManager', function (volMgr) {
         return new MVolume.TakeSnapshot(volMgr);
-    }]).directive('zVolumeRevertToSnapshot', ['SnapshotManager', 'VolumeManager', 'VmInstanceManager', function (spMgr, volMgr, vmMgr) {
+    }]).directive('zVolumeRevertToSnapshot', [
+    'SnapshotManager', 'VolumeManager', 'VmInstanceManager', function (spMgr, volMgr, vmMgr) {
         return new MVolume.RevertSnapshot(spMgr, volMgr, vmMgr);
-    }]).directive('zBackupSnapshot', ['SnapshotManager', 'PrimaryStorageManager', 'BackupStorageManager', function (spMgr, psMgr, bsMgr) {
+    }]).directive('zBackupSnapshot', [
+    'SnapshotManager', 'PrimaryStorageManager', 'BackupStorageManager', function (spMgr, psMgr, bsMgr) {
         return new MVolume.BackupSnapshot(spMgr, psMgr, bsMgr);
-    }]).directive('zBackupDataVolume', ['VolumeManager', 'PrimaryStorageManager', 'BackupStorageManager', function (volMgr, psMgr, bsMgr) {
+    }]).directive('zBackupDataVolume', [
+    'VolumeManager', 'PrimaryStorageManager', 'BackupStorageManager', function (volMgr, psMgr, bsMgr) {
         return new MVolume.BackupDataVolume(volMgr, psMgr, bsMgr);
-    }]).directive('zDeleteSnapshotFromBackupStorage', ['SnapshotManager', 'BackupStorageManager', function (spMgr, bsMgr) {
+    }]).directive('zDeleteSnapshotFromBackupStorage', [
+    'SnapshotManager', 'BackupStorageManager', function (spMgr, bsMgr) {
         return new MVolume.DeleteSnapshotFromBackupStorage(spMgr, bsMgr);
-    }]).directive('zCreateTemplateFromRootVolume', ['VolumeManager', 'BackupStorageManager', 'PrimaryStorageManager', 'VmInstanceManager', 'Api', function (volMgr, bsMgr, psMgr, vmMgr, api) {
+    }]).directive('zCreateTemplateFromRootVolume', [
+    'VolumeManager', 'BackupStorageManager', 'PrimaryStorageManager', 'VmInstanceManager', 'Api', function (volMgr, bsMgr, psMgr, vmMgr, api) {
         return new MVolume.CreateTemplateFromRootVolume(volMgr, bsMgr, psMgr, vmMgr, api);
-    }]).config(['$routeProvider', function (route) {
+    }]).config([
+    '$routeProvider', function (route) {
         route.when('/volume', {
             templateUrl: '/static/templates/volume/volume.html',
             controller: 'MVolume.Controller',
@@ -20860,6 +23668,7 @@ angular.module('root').factory('VolumeManager', ['Api', '$rootScope', function (
                     }).done(function () {
                         defer.resolve(ret);
                     }).start();
+
                     return defer.promise;
                 }
             }
@@ -20875,6 +23684,7 @@ angular.module('root').factory('VolumeManager', ['Api', '$rootScope', function (
                     SnapshotManager.query(qobj, function (sps) {
                         defer.resolve(sps[0]);
                     });
+
                     return defer.promise;
                 }
             }
@@ -20892,29 +23702,32 @@ var MSecurityGroup;
         SecurityGroup.prototype.progressOn = function () {
             this.inProgress = true;
         };
+
         SecurityGroup.prototype.progressOff = function () {
             this.inProgress = false;
         };
+
         SecurityGroup.prototype.isInProgress = function () {
             return this.inProgress;
         };
+
         SecurityGroup.prototype.isEnableShow = function () {
             return this.state == 'Disabled';
         };
+
         SecurityGroup.prototype.isDisableShow = function () {
             return this.state == 'Enabled';
         };
         SecurityGroup.prototype.stateLabel = function () {
             if (this.state == 'Enabled') {
                 return 'label label-success';
-            }
-            else if (this.state == 'Disabled') {
+            } else if (this.state == 'Disabled') {
                 return 'label label-danger';
-            }
-            else {
+            } else {
                 return 'label label-default';
             }
         };
+
         SecurityGroup.prototype.updateObservableObject = function (inv) {
             // self : ObservableObject
             var self = this;
@@ -20930,6 +23743,7 @@ var MSecurityGroup;
         return SecurityGroup;
     })(ApiHeader.SecurityGroupInventory);
     MSecurityGroup.SecurityGroup = SecurityGroup;
+
     var SecurityGroupManager = (function () {
         function SecurityGroupManager(api, $rootScope) {
             this.api = api;
@@ -20938,9 +23752,11 @@ var MSecurityGroup;
         SecurityGroupManager.prototype.setSortBy = function (sortBy) {
             this.sortBy = sortBy;
         };
+
         SecurityGroupManager.prototype.wrap = function (sg) {
             return new kendo.data.ObservableObject(sg);
         };
+
         SecurityGroupManager.prototype.disable = function (sg) {
             var _this = this;
             sg.progressOn();
@@ -20956,6 +23772,7 @@ var MSecurityGroup;
                 });
             });
         };
+
         SecurityGroupManager.prototype.enable = function (sg) {
             var _this = this;
             sg.progressOn();
@@ -20971,6 +23788,7 @@ var MSecurityGroup;
                 });
             });
         };
+
         SecurityGroupManager.prototype.attachL3Network = function (sg, l3Uuid, done) {
             var _this = this;
             sg.progressOn();
@@ -20989,6 +23807,7 @@ var MSecurityGroup;
                 });
             });
         };
+
         SecurityGroupManager.prototype.detachL3Network = function (sg, l3Uuid, done) {
             var _this = this;
             sg.progressOn();
@@ -21007,6 +23826,7 @@ var MSecurityGroup;
                 });
             });
         };
+
         SecurityGroupManager.prototype.addRule = function (sg, rules, done) {
             var _this = this;
             sg.progressOn();
@@ -21025,6 +23845,7 @@ var MSecurityGroup;
                 });
             });
         };
+
         SecurityGroupManager.prototype.deleteRule = function (sg, ruleUuids, done) {
             var _this = this;
             sg.progressOn();
@@ -21042,6 +23863,7 @@ var MSecurityGroup;
                 });
             });
         };
+
         SecurityGroupManager.prototype.create = function (sg, done) {
             var _this = this;
             var msg = null;
@@ -21058,6 +23880,7 @@ var MSecurityGroup;
                 });
             });
         };
+
         SecurityGroupManager.prototype.query = function (qobj, callback) {
             var _this = this;
             var msg = new ApiHeader.APIQuerySecurityGroupMsg();
@@ -21080,6 +23903,7 @@ var MSecurityGroup;
                 callback(pris, ret.total);
             });
         };
+
         SecurityGroupManager.prototype.delete = function (sg, done) {
             var _this = this;
             sg.progressOn();
@@ -21093,6 +23917,7 @@ var MSecurityGroup;
                 });
             });
         };
+
         SecurityGroupManager.prototype.getCandidateVmNic = function (sg, done) {
             var msg = new ApiHeader.APIGetCandidateVmNicForSecurityGroupMsg();
             msg.securityGroupUuid = sg.uuid;
@@ -21100,6 +23925,7 @@ var MSecurityGroup;
                 done(ret.inventories);
             });
         };
+
         SecurityGroupManager.prototype.addVmNic = function (sg, nicUuids, done) {
             var _this = this;
             sg.progressOn();
@@ -21116,6 +23942,7 @@ var MSecurityGroup;
                 });
             });
         };
+
         SecurityGroupManager.prototype.removeVmNic = function (sg, nicUuids, done) {
             var _this = this;
             sg.progressOn();
@@ -21127,6 +23954,7 @@ var MSecurityGroup;
                 if (Utils.notNullnotUndefined(done)) {
                     done();
                 }
+
                 _this.$rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
                     msg: Utils.sprintf('Removed vm nics from security group: {0}', sg.name)
                 });
@@ -21136,6 +23964,7 @@ var MSecurityGroup;
         return SecurityGroupManager;
     })();
     MSecurityGroup.SecurityGroupManager = SecurityGroupManager;
+
     var SecurityGroupModel = (function (_super) {
         __extends(SecurityGroupModel, _super);
         function SecurityGroupModel() {
@@ -21145,6 +23974,7 @@ var MSecurityGroup;
         return SecurityGroupModel;
     })(Utils.Model);
     MSecurityGroup.SecurityGroupModel = SecurityGroupModel;
+
     var OSecurityGroupGrid = (function (_super) {
         __extends(OSecurityGroupGrid, _super);
         function OSecurityGroupGrid($scope, sgMgr) {
@@ -21175,6 +24005,7 @@ var MSecurityGroup;
                     width: '25%'
                 }
             ];
+
             this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
@@ -21189,6 +24020,7 @@ var MSecurityGroup;
         }
         return OSecurityGroupGrid;
     })(Utils.OGrid);
+
     var Action = (function () {
         function Action($scope, sgMgr) {
             this.$scope = $scope;
@@ -21197,27 +24029,35 @@ var MSecurityGroup;
         Action.prototype.enable = function () {
             this.sgMgr.enable(this.$scope.model.current);
         };
+
         Action.prototype.disable = function () {
             this.sgMgr.disable(this.$scope.model.current);
         };
+
         Action.prototype.addRule = function () {
             this.$scope.addRule.open();
         };
+
         Action.prototype.deleteRule = function () {
             this.$scope.deleteRule.open();
         };
+
         Action.prototype.attachL3Network = function () {
             this.$scope.attachL3Network.open();
         };
+
         Action.prototype.detachL3Network = function () {
             this.$scope.detachL3Network.open();
         };
+
         Action.prototype.addNic = function () {
             this.$scope.addVmNic.open();
         };
+
         Action.prototype.removeNic = function () {
             this.$scope.removeVmNic.open();
         };
+
         Action.prototype.isDeleteRuleShow = function () {
             if (Utils.notNullnotUndefined(this.$scope.model.current.rules)) {
                 return this.$scope.model.current.rules.length > 0;
@@ -21226,6 +24066,7 @@ var MSecurityGroup;
         };
         return Action;
     })();
+
     var FilterBy = (function () {
         function FilterBy($scope) {
             var _this = this;
@@ -21246,11 +24087,13 @@ var MSecurityGroup;
                 dataTextField: 'name',
                 dataValueField: 'value'
             };
+
             this.valueList = {
                 dataSource: new kendo.data.DataSource({
                     data: []
                 })
             };
+
             this.field = FilterBy.NONE;
             $scope.$watch(function () {
                 return _this.field;
@@ -21258,8 +24101,7 @@ var MSecurityGroup;
                 if (_this.field == FilterBy.NONE) {
                     _this.valueList.dataSource.data([]);
                     _this.value = null;
-                }
-                else if (_this.field == FilterBy.STATE) {
+                } else if (_this.field == FilterBy.STATE) {
                     _this.valueList.dataSource.data(['Enabled', 'Disabled']);
                 }
             });
@@ -21269,19 +24111,24 @@ var MSecurityGroup;
             this.name = !Utils.notNullnotUndefined(this.value) ? null : Utils.sprintf('{0}:{1}', this.field, this.value);
             popover.toggle();
         };
+
         FilterBy.prototype.open = function (popover) {
             popover.toggle();
         };
+
         FilterBy.prototype.isValueListDisabled = function () {
             return !Utils.notNullnotUndefined(this.value);
         };
+
         FilterBy.prototype.getButtonName = function () {
             return this.name;
         };
+
         FilterBy.prototype.toKendoFilter = function () {
             if (!Utils.notNullnotUndefined(this.value)) {
                 return null;
             }
+
             return {
                 field: this.field,
                 operator: 'eq',
@@ -21292,6 +24139,7 @@ var MSecurityGroup;
         FilterBy.STATE = 'state';
         return FilterBy;
     })();
+
     var DetailsController = (function () {
         function DetailsController($scope, sgMgr, $routeParams, tagService, current, l3Mgr, api) {
             var _this = this;
@@ -21303,28 +24151,31 @@ var MSecurityGroup;
             this.api = api;
             $scope.model = new SecurityGroupModel();
             $scope.model.current = current;
+
             $scope.funcDelete = function (win) {
                 win.open();
             };
+
             $scope.action = new Action($scope, sgMgr);
+
             $scope.funcRefresh = function () {
                 _this.loadSelf($scope.model.current.uuid);
             };
+
             $scope.funcToolbarShow = function () {
                 return Utils.notNullnotUndefined($scope.model.current);
             };
+
             $scope.optionsDeleteSecurityGroup = {
                 title: 'DELETE SECURITY GROUP',
-                html: '<strong><p>Deleting security group will cause:</p></strong>' +
-                    '<ul><li><strong>All rules in this security group will be deleted</strong></li>' +
-                    '<li><strong>All l3Networks this security group has attached will be detached</strong></li>' +
-                    '<strong><p>those results are not recoverable</p></strong>',
+                html: '<strong><p>Deleting security group will cause:</p></strong>' + '<ul><li><strong>All rules in this security group will be deleted</strong></li>' + '<li><strong>All l3Networks this security group has attached will be detached</strong></li>' + '<strong><p>those results are not recoverable</p></strong>',
                 confirm: function () {
                     sgMgr.delete($scope.model.current, function (ret) {
                         $scope.model.resetCurrent();
                     });
                 }
             };
+
             $scope.optionsTag = {
                 tags: [],
                 createTag: function (item) {
@@ -21343,9 +24194,11 @@ var MSecurityGroup;
                     return Utils.notNullnotUndefined($scope.model.current);
                 }
             };
+
             this.tagService.queryTag($scope.model.current.uuid, function (tags) {
                 $scope.optionsTag.tags = tags;
             });
+
             $scope.optionsRuleGrid = {
                 pageSize: 20,
                 resizable: true,
@@ -21386,7 +24239,9 @@ var MSecurityGroup;
                 },
                 dataSource: new kendo.data.DataSource([])
             };
+
             $scope.optionsRuleGrid.dataSource.data(current.rules);
+
             $scope.optionsL3NetworkGrid = {
                 pageSize: 20,
                 resizable: true,
@@ -21429,6 +24284,7 @@ var MSecurityGroup;
                 },
                 dataSource: new kendo.data.DataSource([])
             };
+
             if (current.attachedL3NetworkUuids.length > 0) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.conditions = [
@@ -21442,6 +24298,7 @@ var MSecurityGroup;
                     $scope.optionsL3NetworkGrid.dataSource.data(l3s);
                 });
             }
+
             $scope.optionsRulesGrid = {
                 pageSize: 20,
                 resizable: true,
@@ -21484,6 +24341,7 @@ var MSecurityGroup;
                     data: current.rules
                 })
             };
+
             $scope.optionsVmNicGrid = {
                 pageSize: 20,
                 resizable: true,
@@ -21543,12 +24401,14 @@ var MSecurityGroup;
                     }
                 })
             };
+
             $scope.optionsAttachL3Network = {
                 sg: current,
                 done: function (l3) {
                     $scope.optionsL3NetworkGrid.dataSource.insert(0, l3);
                 }
             };
+
             $scope.optionsAddRule = {
                 sg: current,
                 done: function (rules) {
@@ -21557,11 +24417,13 @@ var MSecurityGroup;
                     });
                 }
             };
+
             $scope.optionsDeleteRule = {
                 sg: current,
                 done: function (rules) {
                     var ds = $scope.optionsRulesGrid.dataSource;
                     var cs = ds.data();
+
                     angular.forEach(rules, function (it) {
                         for (var i = 0; i < cs.length; i++) {
                             var tcs = cs[i];
@@ -21574,6 +24436,7 @@ var MSecurityGroup;
                     });
                 }
             };
+
             $scope.optionsDetachL3Network = {
                 sg: current,
                 done: function (l3) {
@@ -21589,12 +24452,14 @@ var MSecurityGroup;
                     }
                 }
             };
+
             $scope.optionsAddVmNic = {
                 sg: current,
                 done: function () {
                     $scope.optionsVmNicGrid.dataSource.read();
                 }
             };
+
             $scope.optionsRemoveVmNic = {
                 sg: current,
                 done: function () {
@@ -21614,6 +24479,7 @@ var MSecurityGroup;
         return DetailsController;
     })();
     MSecurityGroup.DetailsController = DetailsController;
+
     var Controller = (function () {
         function Controller($scope, sgMgr, $location) {
             this.$scope = $scope;
@@ -21650,6 +24516,7 @@ var MSecurityGroup;
                     $scope.oSecurityGroupGrid.refresh();
                 }
             };
+
             $scope.optionsSearch = {
                 fields: ApiHeader.SecurityGroupInventoryQueryable,
                 name: 'SecurityGroup',
@@ -21673,6 +24540,7 @@ var MSecurityGroup;
                     });
                 }
             };
+
             $scope.funcGridDoubleClick = function (e) {
                 if (Utils.notNullnotUndefined($scope.model.current)) {
                     var url = Utils.sprintf('/securityGroup/{0}', $scope.model.current.uuid);
@@ -21680,60 +24548,73 @@ var MSecurityGroup;
                     e.preventDefault();
                 }
             };
+
             $scope.filterBy = new FilterBy($scope);
+
             $scope.funcSearch = function (win) {
                 win.open();
             };
+
             $scope.funcCreateSecurityGroup = function (win) {
                 win.open();
             };
+
             $scope.funcDeleteSecurityGroup = function () {
                 $scope.deleteSecurityGroup.open();
             };
+
             $scope.optionsDeleteSecurityGroup = {
                 title: 'DELETE L3 NETWORK',
-                html: '<strong><p>Deleting security group will cause:</p></strong>' +
-                    '<ul><li><strong>All rules in this security group will be deleted</strong></li>' +
-                    '<li><strong>All l3Networks this security group has attached will be detached</strong></li>' +
-                    '<strong><p>those results are not recoverable</p></strong>',
+                html: '<strong><p>Deleting security group will cause:</p></strong>' + '<ul><li><strong>All rules in this security group will be deleted</strong></li>' + '<li><strong>All l3Networks this security group has attached will be detached</strong></li>' + '<strong><p>those results are not recoverable</p></strong>',
                 confirm: function () {
                     sgMgr.delete($scope.model.current, function (ret) {
                         $scope.oSecurityGroupGrid.deleteCurrent();
                     });
                 }
             };
+
             $scope.funcRefresh = function () {
                 $scope.oSecurityGroupGrid.refresh();
             };
+
             $scope.funcIsActionShow = function () {
                 return !Utils.isEmptyObject($scope.model.current);
             };
+
             $scope.funcIsActionDisabled = function () {
                 return Utils.notNullnotUndefined($scope.model.current) && $scope.model.current.isInProgress();
             };
+
             $scope.optionsCreateSecurityGroup = {
                 done: function (sg) {
                     $scope.oSecurityGroupGrid.add(sg);
                 }
             };
+
             $scope.optionsAddRule = {
                 sg: null
             };
+
             $scope.optionsDeleteRule = {
                 sg: null
             };
+
             $scope.optionsAttachL3Network = {
                 sg: null
             };
+
             $scope.optionsDetachL3Network = {
                 sg: null
             };
+
             $scope.optionsAddVmNic = {
                 sg: null
             };
+
             $scope.optionsRemoveVmNic = {
                 sg: null
             };
+
             $scope.$watch(function () {
                 return $scope.model.current;
             }, function () {
@@ -21751,6 +24632,7 @@ var MSecurityGroup;
         return Controller;
     })();
     MSecurityGroup.Controller = Controller;
+
     var AddRule = (function () {
         function AddRule(sgMgr) {
             var _this = this;
@@ -21762,6 +24644,7 @@ var MSecurityGroup;
                 _this.options = {};
                 var optionName = $attrs.zOptions;
                 _this.options = parentScope[optionName];
+
                 $scope.optionsAddRuleGrid__ = {
                     pageSize: 20,
                     resizable: true,
@@ -21809,6 +24692,7 @@ var MSecurityGroup;
                         data: []
                     })
                 };
+
                 $scope.$watch(function () {
                     return _this.options.sg;
                 }, function () {
@@ -21818,21 +24702,25 @@ var MSecurityGroup;
                         $scope.optionsAddRuleGrid__.dataSource.data(rules);
                     }
                 });
+
                 $scope.optionsAddRule__ = {
                     width: 500
                 };
+
                 $scope.ruleTypeOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [
                             'Ingress', 'Egress'
                         ] })
                 };
                 $scope.type = 'Ingress';
+
                 $scope.ruleProtocolOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [
                             'TCP', 'UDP', 'ICMP'
                         ] })
                 };
                 $scope.protocol = 'TCP';
+
                 function getNewRules() {
                     var allRules = $scope.optionsAddRuleGrid__.dataSource.data();
                     var newRules = [];
@@ -21841,19 +24729,24 @@ var MSecurityGroup;
                             newRules.push(it);
                         }
                     });
+
                     return newRules;
                 }
+
                 $scope.canProceed = function () {
                     return getNewRules().length > 0;
                 };
+
                 $scope.cancel = function () {
                     $scope.addRule__.close();
                 };
+
                 $scope.done = function () {
                     var nrules = getNewRules();
                     angular.forEach(nrules, function (it) {
                         delete it['deleteable'];
                     });
+
                     sgMgr.addRule(_this.options.sg, nrules, function () {
                         if (Utils.notNullnotUndefined(_this.options.done)) {
                             _this.options.done(nrules);
@@ -21861,31 +24754,29 @@ var MSecurityGroup;
                     });
                     $scope.addRule__.close();
                 };
+
                 $scope.isDuplicateRule = function () {
                     var rs = $scope.optionsAddRuleGrid__.dataSource.data();
                     for (var i = 0; i < rs.length; i++) {
                         var r = rs[i];
-                        if ($scope.startPort == r.startPort && $scope.endPort == r.endPort && $scope.protocol == r.protocol
-                            && $scope.type == r.type) {
+                        if ($scope.startPort == r.startPort && $scope.endPort == r.endPort && $scope.protocol == r.protocol && $scope.type == r.type) {
                             if (r.allowedCidr == $scope.allowedCidr) {
                                 return true;
                             }
                         }
                     }
+
                     return false;
                 };
+
                 $scope.canAdd = function () {
-                    if (Utils.notNullnotUndefined($scope.startPort) && Utils.notNullnotUndefined($scope.endPort)
-                        && Utils.notNullnotUndefined($scope.type) && Utils.notNullnotUndefined($scope.protocol)
-                        && $scope.isStartPortValid()
-                        && $scope.isEndPortValid()
-                        && $scope.isCIDRValid()) {
+                    if (Utils.notNullnotUndefined($scope.startPort) && Utils.notNullnotUndefined($scope.endPort) && Utils.notNullnotUndefined($scope.type) && Utils.notNullnotUndefined($scope.protocol) && $scope.isStartPortValid() && $scope.isEndPortValid() && $scope.isCIDRValid()) {
                         return !$scope.isDuplicateRule();
-                    }
-                    else {
+                    } else {
                         return false;
                     }
                 };
+
                 $scope.add = function () {
                     $scope.allowedCidr = $scope.allowedCidr == "" ? null : $scope.allowedCidr;
                     var rule = {
@@ -21897,19 +24788,24 @@ var MSecurityGroup;
                         protocol: $scope.protocol,
                         deleteable: true
                     };
+
                     $scope.optionsAddRuleGrid__.dataSource.insert(0, rule);
                     $scope.startPort = null;
                     $scope.endPort = null;
                     $scope.allowedCidr = null;
                 };
+
                 $scope.isGridShow = function () {
                     return _this.$scope.optionsAddRuleGrid__.dataSource.data().length > 0;
                 };
+
                 _this.$scope = $scope;
+
                 $scope.del = function (uid) {
                     var row = $scope.optionsAddRuleGrid__.dataSource.getByUid(uid);
                     $scope.optionsAddRuleGrid__.dataSource.remove(row);
                 };
+
                 $scope.isStartPortValid = function () {
                     if (Utils.notNullnotUndefined($scope.startPort)) {
                         if ($scope.protocol == 'UDP' || $scope.protocol == 'TCP') {
@@ -21918,6 +24814,7 @@ var MSecurityGroup;
                     }
                     return true;
                 };
+
                 $scope.isEndPortValid = function () {
                     if (Utils.notNullnotUndefined($scope.endPort)) {
                         if ($scope.protocol == 'UDP' || $scope.protocol == 'TCP') {
@@ -21926,6 +24823,7 @@ var MSecurityGroup;
                     }
                     return true;
                 };
+
                 $scope.isCIDRValid = function () {
                     if (Utils.notNullnotUndefined($scope.allowedCidr) && $scope.allowedCidr != "") {
                         return Utils.isValidCidr($scope.allowedCidr);
@@ -21933,6 +24831,7 @@ var MSecurityGroup;
                     return true;
                 };
             };
+
             this.restrict = 'EA';
             this.replace = true;
             this.templateUrl = '/static/templates/securityGroup/addRule.html';
@@ -21947,6 +24846,7 @@ var MSecurityGroup;
         return AddRule;
     })();
     MSecurityGroup.AddRule = AddRule;
+
     var CreateSecurityGroup = (function () {
         function CreateSecurityGroup(api, sgMgr, l3Mgr) {
             var _this = this;
@@ -21968,6 +24868,7 @@ var MSecurityGroup;
                         _this.options = parentScope[optionName];
                     });
                 }
+
                 var infoPage = $scope.infoPage = {
                     activeState: true,
                     name: null,
@@ -21999,6 +24900,7 @@ var MSecurityGroup;
                         this.activeState = false;
                     }
                 };
+
                 var rulePage = $scope.rulePage = {
                     activeState: false,
                     startPort: null,
@@ -22061,18 +24963,13 @@ var MSecurityGroup;
                             protocol: this.protocol,
                             allowedCidr: this.allowedCidr == null ? '0.0.0.0/0' : this.allowedCidr
                         });
+
                         this.startPort = null;
                         this.endPort = null;
                         this.allowedCidr = null;
                     },
                     canAdd: function () {
-                        return Utils.notNullnotUndefined(this.startPort)
-                            && Utils.notNullnotUndefined(this.endPort)
-                            && Utils.notNullnotUndefined(this.type)
-                            && Utils.notNullnotUndefined(this.protocol)
-                            && this.isStartPortValid()
-                            && this.isEndPortValid()
-                            && this.isCIDRValid();
+                        return Utils.notNullnotUndefined(this.startPort) && Utils.notNullnotUndefined(this.endPort) && Utils.notNullnotUndefined(this.type) && Utils.notNullnotUndefined(this.protocol) && this.isStartPortValid() && this.isEndPortValid() && this.isCIDRValid();
                     },
                     isGridShow: function () {
                         return $scope.optionsRuleGrid__.dataSource.data().length > 0;
@@ -22082,6 +24979,7 @@ var MSecurityGroup;
                         $scope.optionsRuleGrid__.dataSource.remove(row);
                     }
                 };
+
                 var l3Page = $scope.l3Page = {
                     activeState: false,
                     canMoveToPrevious: function () {
@@ -22115,6 +25013,7 @@ var MSecurityGroup;
                         return $scope.l3NetworkListOptions__.dataSource.data().length > 0;
                     }
                 };
+
                 var mediator = $scope.mediator = {
                     currentPage: infoPage,
                     movedToPage: function (page) {
@@ -22137,6 +25036,7 @@ var MSecurityGroup;
                                 chain.next();
                                 return;
                             }
+
                             sgMgr.addRule(resultSg, rules, function () {
                                 chain.next();
                             });
@@ -22146,49 +25046,55 @@ var MSecurityGroup;
                                 chain.next();
                                 return;
                             }
+
                             var attach = function () {
                                 var l3 = l3s.shift();
                                 if (!Utils.notNullnotUndefined(l3)) {
                                     chain.next();
                                     return;
                                 }
+
                                 _this.sgMgr.attachL3Network(resultSg, l3.uuid, function () {
                                     attach();
                                 });
                             };
+
                             attach();
                         }).done(function () {
                             if (Utils.notNullnotUndefined(_this.options.done)) {
                                 _this.options.done(resultSg);
                             }
                         }).start();
+
                         $scope.winCreateSecurityGroup__.close();
                     }
                 };
+
                 $scope.button = new Utils.WizardButton([
                     infoPage, rulePage, l3Page
                 ], mediator);
+
                 $scope.l3NetworkListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Zone UUID:</span><span>#: zoneUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' + '<div style="color: black"><span class="z-label">Zone UUID:</span><span>#: zoneUuid #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
                 };
+
                 $scope.ruleTypeOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [
                             'Ingress', 'Egress'
                         ] })
                 };
                 $scope.rulePage.type = 'Ingress';
+
                 $scope.ruleProtocolOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [
                             'TCP', 'UDP', 'ICMP'
                         ] })
                 };
                 $scope.rulePage.protocol = 'TCP';
+
                 $scope.optionsRuleGrid__ = {
                     pageSize: 20,
                     resizable: true,
@@ -22234,6 +25140,7 @@ var MSecurityGroup;
                     },
                     dataSource: new kendo.data.DataSource([])
                 };
+
                 $scope.winCreateSecurityGroupOptions__ = {
                     width: '800px',
                     animation: false,
@@ -22241,6 +25148,7 @@ var MSecurityGroup;
                     draggable: false,
                     resizable: false
                 };
+
                 _this.$scope = $scope;
             };
             this.restrict = 'EA';
@@ -22264,6 +25172,7 @@ var MSecurityGroup;
         return CreateSecurityGroup;
     })();
     MSecurityGroup.CreateSecurityGroup = CreateSecurityGroup;
+
     var DeleteRule = (function () {
         function DeleteRule(sgMgr) {
             var _this = this;
@@ -22277,6 +25186,7 @@ var MSecurityGroup;
                 parent[$attrs.zSecurityGroupDeleteRule] = _this;
                 _this.options = parent[$attrs.zOptions];
                 _this.$scope = $scope;
+
                 $scope.uuid = null;
                 $scope.ruleOptions__ = {
                     pageSize: 20,
@@ -22323,6 +25233,7 @@ var MSecurityGroup;
                     },
                     dataSource: new kendo.data.DataSource([])
                 };
+
                 function getSelectedItems() {
                     var rules = $scope.ruleOptions__.dataSource.data();
                     var ruleToDelete = [];
@@ -22333,28 +25244,35 @@ var MSecurityGroup;
                     });
                     return ruleToDelete;
                 }
+
                 $scope.canProceed = function () {
                     return getSelectedItems().length > 0;
                 };
+
                 $scope.cancel = function () {
                     $scope.deleteRule__.close();
                 };
+
                 $scope.done = function () {
                     var ruleUuids = [];
                     var rules = getSelectedItems();
                     angular.forEach(rules, function (rule) {
                         ruleUuids.push(rule.uuid);
                     });
+
                     sgMgr.deleteRule(_this.options.sg, ruleUuids, function () {
                         if (Utils.notNullnotUndefined(_this.options.done)) {
                             _this.options.done(rules);
                         }
                     });
+
                     $scope.deleteRule__.close();
                 };
+
                 $scope.deleteRuleOptions__ = {
                     width: '550px'
                 };
+
                 $scope.$watch(function () {
                     return _this.options.sg;
                 }, function () {
@@ -22374,6 +25292,7 @@ var MSecurityGroup;
         return DeleteRule;
     })();
     MSecurityGroup.DeleteRule = DeleteRule;
+
     var AddVmNic = (function () {
         function AddVmNic(sgMgr, vmMgr) {
             var _this = this;
@@ -22388,15 +25307,13 @@ var MSecurityGroup;
                 parent[$attrs.zSecurityGroupAddVmNic] = _this;
                 _this.options = parent[$attrs.zOptions];
                 _this.$scope = $scope;
+
                 $scope.uuid = null;
                 $scope.vmNicListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "id",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">VM Name:</span><span>#: vm.name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic IP:</span><span>#: nic.ip #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Device ID:</span><span>#: nic.deviceId #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic UUID:</span><span>#: nic.uuid #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">VM Name:</span><span>#: vm.name #</span></div>' + '<div style="color: black"><span class="z-label">Nic IP:</span><span>#: nic.ip #</span></div>' + '<div style="color: black"><span class="z-label">Nic Device ID:</span><span>#: nic.deviceId #</span></div>' + '<div style="color: black"><span class="z-label">Nic UUID:</span><span>#: nic.uuid #</span></div>',
                     change: function (e) {
                         var select = e.sender;
                         Utils.safeApply($scope, function () {
@@ -22404,29 +25321,37 @@ var MSecurityGroup;
                         });
                     }
                 };
+
                 $scope.hasVmNic = function () {
                     return $scope.vmNicListOptions__.dataSource.data().length > 0;
                 };
+
                 $scope.selectItemNum = 0;
+
                 $scope.canProceed = function () {
                     return $scope.selectItemNum > 0;
                 };
+
                 $scope.cancel = function () {
                     $scope.addVmNic__.close();
                 };
+
                 $scope.done = function () {
                     var nics = $scope.vmNicList__.dataItems();
                     var nicUuids = [];
                     angular.forEach(nics, function (it) {
                         nicUuids.push(it.nic.uuid);
                     });
+
                     sgMgr.addVmNic(_this.options.sg, nicUuids, function () {
                         if (Utils.notNullnotUndefined(_this.options.done)) {
                             _this.options.done();
                         }
                     });
+
                     $scope.addVmNic__.close();
                 };
+
                 $scope.addVmNicOptions__ = {
                     width: '550px'
                 };
@@ -22453,6 +25378,7 @@ var MSecurityGroup;
                 angular.forEach(nics, function (it) {
                     nicUuids.push(it.uuid);
                 });
+
                 var qobj = new ApiHeader.QueryObject();
                 qobj.conditions = [
                     {
@@ -22461,6 +25387,7 @@ var MSecurityGroup;
                         value: nicUuids.join()
                     }
                 ];
+
                 _this.vmMgr.query(qobj, function (vms) {
                     angular.forEach(nics, function (nic) {
                         for (var i = 0; i < vms.length; i++) {
@@ -22473,12 +25400,14 @@ var MSecurityGroup;
                                 }
                             }
                         }
+
                         candidates.push({
                             id: tvm.name + ' - ' + nic.ip,
                             vm: tvm,
                             nic: nic
                         });
                     });
+
                     chain.next();
                 });
             }).done(function () {
@@ -22490,6 +25419,7 @@ var MSecurityGroup;
         return AddVmNic;
     })();
     MSecurityGroup.AddVmNic = AddVmNic;
+
     var RemoveVmNic = (function () {
         function RemoveVmNic(sgMgr, vmMgr, api) {
             var _this = this;
@@ -22505,15 +25435,13 @@ var MSecurityGroup;
                 parent[$attrs.zSecurityGroupRemoveVmNic] = _this;
                 _this.options = parent[$attrs.zOptions];
                 _this.$scope = $scope;
+
                 $scope.uuid = null;
                 $scope.vmNicListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "id",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">VM Name:</span><span>#: vm.name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic IP:</span><span>#: nic.ip #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Device ID:</span><span>#: nic.deviceId #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic UUID:</span><span>#: nic.uuid #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">VM Name:</span><span>#: vm.name #</span></div>' + '<div style="color: black"><span class="z-label">Nic IP:</span><span>#: nic.ip #</span></div>' + '<div style="color: black"><span class="z-label">Nic Device ID:</span><span>#: nic.deviceId #</span></div>' + '<div style="color: black"><span class="z-label">Nic UUID:</span><span>#: nic.uuid #</span></div>',
                     change: function (e) {
                         var select = e.sender;
                         Utils.safeApply($scope, function () {
@@ -22521,29 +25449,37 @@ var MSecurityGroup;
                         });
                     }
                 };
+
                 $scope.hasVmNic = function () {
                     return $scope.vmNicListOptions__.dataSource.data().length > 0;
                 };
+
                 $scope.selectItemNum = 0;
+
                 $scope.canProceed = function () {
                     return $scope.selectItemNum > 0;
                 };
+
                 $scope.cancel = function () {
                     $scope.removeVmNic__.close();
                 };
+
                 $scope.done = function () {
                     var nics = $scope.vmNicList__.dataItems();
                     var nicUuids = [];
                     angular.forEach(nics, function (it) {
                         nicUuids.push(it.nic.uuid);
                     });
+
                     sgMgr.removeVmNic(_this.options.sg, nicUuids, function () {
                         if (Utils.notNullnotUndefined(_this.options.done)) {
                             _this.options.done();
                         }
                     });
+
                     $scope.removeVmNic__.close();
                 };
+
                 $scope.addVmNicOptions__ = {
                     width: '550px'
                 };
@@ -22576,6 +25512,7 @@ var MSecurityGroup;
                 angular.forEach(nics, function (it) {
                     nicUuids.push(it.uuid);
                 });
+
                 var qobj = new ApiHeader.QueryObject();
                 qobj.conditions = [
                     {
@@ -22584,6 +25521,7 @@ var MSecurityGroup;
                         value: nicUuids.join()
                     }
                 ];
+
                 _this.vmMgr.query(qobj, function (vms) {
                     angular.forEach(nics, function (nic) {
                         for (var i = 0; i < vms.length; i++) {
@@ -22596,12 +25534,14 @@ var MSecurityGroup;
                                 }
                             }
                         }
+
                         candidates.push({
                             id: tvm.name + ' - ' + nic.ip,
                             vm: tvm,
                             nic: nic
                         });
                     });
+
                     chain.next();
                 });
             }).done(function () {
@@ -22613,6 +25553,7 @@ var MSecurityGroup;
         return RemoveVmNic;
     })();
     MSecurityGroup.RemoveVmNic = RemoveVmNic;
+
     var AttachL3Network = (function () {
         function AttachL3Network(sgMgr, l3Mgr) {
             var _this = this;
@@ -22627,16 +25568,13 @@ var MSecurityGroup;
                 parent[$attrs.zSecurityGroupAttachL3Network] = _this;
                 _this.options = parent[$attrs.zOptions];
                 _this.$scope = $scope;
+
                 $scope.uuid = null;
                 $scope.l3NetworkListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Zone UUID:</span><span>#: zoneUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">L2 Network UUID:</span><span>#: l2NetworkUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' + '<div style="color: black"><span class="z-label">Zone UUID:</span><span>#: zoneUuid #</span></div>' + '<div style="color: black"><span class="z-label">L2 Network UUID:</span><span>#: l2NetworkUuid #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
                     change: function (e) {
                         var select = e.sender;
                         Utils.safeApply($scope, function () {
@@ -22644,16 +25582,21 @@ var MSecurityGroup;
                         });
                     }
                 };
+
                 $scope.hasL3Network = function () {
                     return $scope.l3NetworkListOptions__.dataSource.data().length > 0;
                 };
+
                 $scope.selectItemNum = 0;
+
                 $scope.canProceed = function () {
                     return $scope.selectItemNum > 0;
                 };
+
                 $scope.cancel = function () {
                     $scope.attachL3Network__.close();
                 };
+
                 $scope.done = function () {
                     var l3s = $scope.l3NetworkList__.dataItems();
                     angular.forEach(l3s, function (it) {
@@ -22663,6 +25606,7 @@ var MSecurityGroup;
                             }
                         });
                     });
+
                     $scope.attachL3Network__.close();
                 };
             };
@@ -22678,8 +25622,9 @@ var MSecurityGroup;
                         name: 'uuid',
                         op: 'not in',
                         value: _this.options.sg.attachedL3NetworkUuids.join()
-                    },
+                    }
                 ];
+
                 _this.l3Mgr.query(qobj, function (l3s) {
                     _this.$scope.l3NetworkListOptions__.dataSource.data(l3s);
                     chain.next();
@@ -22692,6 +25637,7 @@ var MSecurityGroup;
         return AttachL3Network;
     })();
     MSecurityGroup.AttachL3Network = AttachL3Network;
+
     var DetachL3Network = (function () {
         function DetachL3Network(sgMgr, l3Mgr) {
             var _this = this;
@@ -22706,16 +25652,13 @@ var MSecurityGroup;
                 parent[$attrs.zSecurityGroupDetachL3Network] = _this;
                 _this.options = parent[$attrs.zOptions];
                 _this.$scope = $scope;
+
                 $scope.uuid = null;
                 $scope.l3NetworkListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Zone UUID:</span><span>#: zoneUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">L2 Network UUID:</span><span>#: l2NetworkUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' + '<div style="color: black"><span class="z-label">Zone UUID:</span><span>#: zoneUuid #</span></div>' + '<div style="color: black"><span class="z-label">L2 Network UUID:</span><span>#: l2NetworkUuid #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
                     change: function (e) {
                         var select = e.sender;
                         Utils.safeApply($scope, function () {
@@ -22723,16 +25666,21 @@ var MSecurityGroup;
                         });
                     }
                 };
+
                 $scope.hasL3Network = function () {
                     return $scope.l3NetworkListOptions__.dataSource.data().length > 0;
                 };
+
                 $scope.selectItemNum = 0;
+
                 $scope.canProceed = function () {
                     return $scope.selectItemNum > 0;
                 };
+
                 $scope.cancel = function () {
                     $scope.detachL3Network__.close();
                 };
+
                 $scope.done = function () {
                     var l3s = $scope.l3NetworkList__.dataItems();
                     angular.forEach(l3s, function (l3) {
@@ -22742,8 +25690,10 @@ var MSecurityGroup;
                             }
                         });
                     });
+
                     $scope.detachL3Network__.close();
                 };
+
                 $scope.detachL3NetworkOptions__ = {
                     width: '600px'
                 };
@@ -22759,6 +25709,7 @@ var MSecurityGroup;
                     chain.next();
                     return;
                 }
+
                 var qobj = new ApiHeader.QueryObject();
                 qobj.conditions = [
                     {
@@ -22767,6 +25718,7 @@ var MSecurityGroup;
                         value: _this.options.sg.attachedL3NetworkUuids.join()
                     }
                 ];
+
                 _this.l3Mgr.query(qobj, function (l3s) {
                     _this.$scope.l3NetworkListOptions__.dataSource.data(l3s);
                     chain.next();
@@ -22780,23 +25732,33 @@ var MSecurityGroup;
     })();
     MSecurityGroup.DetachL3Network = DetachL3Network;
 })(MSecurityGroup || (MSecurityGroup = {}));
-angular.module('root').factory('SecurityGroupManager', ['Api', '$rootScope', function (api, $rootScope) {
+
+angular.module('root').factory('SecurityGroupManager', [
+    'Api', '$rootScope', function (api, $rootScope) {
         return new MSecurityGroup.SecurityGroupManager(api, $rootScope);
-    }]).directive('zCreateSecurityGroup', ['Api', 'SecurityGroupManager', 'L3NetworkManager', function (api, sgMgr, l3Mgr) {
+    }]).directive('zCreateSecurityGroup', [
+    'Api', 'SecurityGroupManager', 'L3NetworkManager', function (api, sgMgr, l3Mgr) {
         return new MSecurityGroup.CreateSecurityGroup(api, sgMgr, l3Mgr);
-    }]).directive('zSecurityGroupAddRule', ['SecurityGroupManager', function (sgMgr) {
+    }]).directive('zSecurityGroupAddRule', [
+    'SecurityGroupManager', function (sgMgr) {
         return new MSecurityGroup.AddRule(sgMgr);
-    }]).directive('zSecurityGroupDeleteRule', ['SecurityGroupManager', function (sgMgr) {
+    }]).directive('zSecurityGroupDeleteRule', [
+    'SecurityGroupManager', function (sgMgr) {
         return new MSecurityGroup.DeleteRule(sgMgr);
-    }]).directive('zSecurityGroupAttachL3Network', ['SecurityGroupManager', 'L3NetworkManager', function (sgMgr, l3Mgr) {
+    }]).directive('zSecurityGroupAttachL3Network', [
+    'SecurityGroupManager', 'L3NetworkManager', function (sgMgr, l3Mgr) {
         return new MSecurityGroup.AttachL3Network(sgMgr, l3Mgr);
-    }]).directive('zSecurityGroupDetachL3Network', ['SecurityGroupManager', 'L3NetworkManager', function (sgMgr, l3Mgr) {
+    }]).directive('zSecurityGroupDetachL3Network', [
+    'SecurityGroupManager', 'L3NetworkManager', function (sgMgr, l3Mgr) {
         return new MSecurityGroup.DetachL3Network(sgMgr, l3Mgr);
-    }]).directive('zSecurityGroupAddVmNic', ['SecurityGroupManager', 'VmInstanceManager', function (sgMgr, vmMgr) {
+    }]).directive('zSecurityGroupAddVmNic', [
+    'SecurityGroupManager', 'VmInstanceManager', function (sgMgr, vmMgr) {
         return new MSecurityGroup.AddVmNic(sgMgr, vmMgr);
-    }]).directive('zSecurityGroupRemoveVmNic', ['SecurityGroupManager', 'VmInstanceManager', 'Api', function (sgMgr, vmMgr, api) {
+    }]).directive('zSecurityGroupRemoveVmNic', [
+    'SecurityGroupManager', 'VmInstanceManager', 'Api', function (sgMgr, vmMgr, api) {
         return new MSecurityGroup.RemoveVmNic(sgMgr, vmMgr, api);
-    }]).config(['$routeProvider', function (route) {
+    }]).config([
+    '$routeProvider', function (route) {
         route.when('/securityGroup', {
             templateUrl: '/static/templates/securityGroup/securityGroup.html',
             controller: 'MSecurityGroup.Controller'
@@ -22830,29 +25792,32 @@ var MVip;
         Vip.prototype.progressOn = function () {
             this.inProgress = true;
         };
+
         Vip.prototype.progressOff = function () {
             this.inProgress = false;
         };
+
         Vip.prototype.isInProgress = function () {
             return this.inProgress;
         };
+
         Vip.prototype.isEnableShow = function () {
             return this.state == 'Disabled';
         };
+
         Vip.prototype.isDisableShow = function () {
             return this.state == 'Enabled';
         };
         Vip.prototype.stateLabel = function () {
             if (this.state == 'Enabled') {
                 return 'label label-success';
-            }
-            else if (this.state == 'Disabled') {
+            } else if (this.state == 'Disabled') {
                 return 'label label-danger';
-            }
-            else {
+            } else {
                 return 'label label-default';
             }
         };
+
         Vip.prototype.updateObservableObject = function (inv) {
             // self : ObservableObject
             var self = this;
@@ -22873,6 +25838,7 @@ var MVip;
         return Vip;
     })(ApiHeader.VipInventory);
     MVip.Vip = Vip;
+
     var VipManager = (function () {
         function VipManager(api, $rootScope) {
             this.api = api;
@@ -22881,9 +25847,11 @@ var MVip;
         VipManager.prototype.setSortBy = function (sortBy) {
             this.sortBy = sortBy;
         };
+
         VipManager.prototype.wrap = function (Vip) {
             return new kendo.data.ObservableObject(Vip);
         };
+
         VipManager.prototype.create = function (vip, done) {
             var _this = this;
             var msg = new ApiHeader.APICreateVipMsg();
@@ -22902,6 +25870,7 @@ var MVip;
                 });
             });
         };
+
         VipManager.prototype.query = function (qobj, callback) {
             var _this = this;
             var msg = new ApiHeader.APIQueryVipMsg();
@@ -22924,6 +25893,7 @@ var MVip;
                 callback(pris, ret.total);
             });
         };
+
         VipManager.prototype.disable = function (vip) {
             var _this = this;
             vip.progressOn();
@@ -22939,6 +25909,7 @@ var MVip;
                 });
             });
         };
+
         VipManager.prototype.enable = function (vip) {
             var _this = this;
             vip.progressOn();
@@ -22954,6 +25925,7 @@ var MVip;
                 });
             });
         };
+
         VipManager.prototype.delete = function (vip, done) {
             var _this = this;
             vip.progressOn();
@@ -22971,6 +25943,7 @@ var MVip;
         return VipManager;
     })();
     MVip.VipManager = VipManager;
+
     var VipModel = (function (_super) {
         __extends(VipModel, _super);
         function VipModel() {
@@ -22980,6 +25953,7 @@ var MVip;
         return VipModel;
     })(Utils.Model);
     MVip.VipModel = VipModel;
+
     var OVipGrid = (function (_super) {
         __extends(OVipGrid, _super);
         function OVipGrid($scope, vipMgr) {
@@ -23031,6 +26005,7 @@ var MVip;
                     width: '14%'
                 }
             ];
+
             this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
@@ -23045,6 +26020,7 @@ var MVip;
         }
         return OVipGrid;
     })(Utils.OGrid);
+
     var Action = (function () {
         function Action($scope, vipMgr) {
             this.$scope = $scope;
@@ -23053,11 +26029,13 @@ var MVip;
         Action.prototype.enable = function () {
             this.vipMgr.enable(this.$scope.model.current);
         };
+
         Action.prototype.disable = function () {
             this.vipMgr.disable(this.$scope.model.current);
         };
         return Action;
     })();
+
     var FilterBy = (function () {
         function FilterBy($scope) {
             var _this = this;
@@ -23078,11 +26056,13 @@ var MVip;
                 dataTextField: 'name',
                 dataValueField: 'value'
             };
+
             this.valueList = {
                 dataSource: new kendo.data.DataSource({
                     data: []
                 })
             };
+
             this.field = FilterBy.NONE;
             $scope.$watch(function () {
                 return _this.field;
@@ -23090,8 +26070,7 @@ var MVip;
                 if (_this.field == FilterBy.NONE) {
                     _this.valueList.dataSource.data([]);
                     _this.value = null;
-                }
-                else if (_this.field == FilterBy.STATE) {
+                } else if (_this.field == FilterBy.STATE) {
                     _this.valueList.dataSource.data(['Enabled', 'Disabled']);
                 }
             });
@@ -23101,19 +26080,24 @@ var MVip;
             this.name = !Utils.notNullnotUndefined(this.value) ? null : Utils.sprintf('{0}:{1}', this.field, this.value);
             popover.toggle();
         };
+
         FilterBy.prototype.open = function (popover) {
             popover.toggle();
         };
+
         FilterBy.prototype.isValueListDisabled = function () {
             return !Utils.notNullnotUndefined(this.value);
         };
+
         FilterBy.prototype.getButtonName = function () {
             return this.name;
         };
+
         FilterBy.prototype.toKendoFilter = function () {
             if (!Utils.notNullnotUndefined(this.value)) {
                 return null;
             }
+
             return {
                 field: this.field,
                 operator: 'eq',
@@ -23124,6 +26108,7 @@ var MVip;
         FilterBy.STATE = 'state';
         return FilterBy;
     })();
+
     var DetailsController = (function () {
         function DetailsController($scope, vipMgr, $routeParams, tagService, current) {
             var _this = this;
@@ -23133,16 +26118,21 @@ var MVip;
             this.tagService = tagService;
             $scope.model = new VipModel();
             $scope.model.current = current;
+
             $scope.funcDelete = function (win) {
                 win.open();
             };
+
             $scope.action = new Action($scope, vipMgr);
+
             $scope.funcRefresh = function () {
                 _this.loadSelf($scope.model.current.uuid);
             };
+
             $scope.funcToolbarShow = function () {
                 return Utils.notNullnotUndefined($scope.model.current);
             };
+
             $scope.optionsDeleteVip = {
                 title: 'DELETE VIP',
                 description: 'Deleting will delete all network services that this VIP is used for. For example, if the VIP is used for EIP, the EIP will be deleted as well',
@@ -23152,6 +26142,7 @@ var MVip;
                     });
                 }
             };
+
             $scope.optionsTag = {
                 tags: [],
                 createTag: function (item) {
@@ -23170,6 +26161,7 @@ var MVip;
                     return Utils.notNullnotUndefined($scope.model.current);
                 }
             };
+
             this.tagService.queryTag($scope.model.current.uuid, function (tags) {
                 $scope.optionsTag.tags = tags;
             });
@@ -23186,6 +26178,7 @@ var MVip;
         return DetailsController;
     })();
     MVip.DetailsController = DetailsController;
+
     var Controller = (function () {
         function Controller($scope, vipMgr, $location) {
             this.$scope = $scope;
@@ -23242,6 +26235,7 @@ var MVip;
                     $scope.oVipGrid.refresh();
                 }
             };
+
             $scope.optionsSearch = {
                 fields: ApiHeader.VipInventoryQueryable,
                 name: 'Vip',
@@ -23265,6 +26259,7 @@ var MVip;
                     });
                 }
             };
+
             $scope.funcGridDoubleClick = function (e) {
                 if (Utils.notNullnotUndefined($scope.model.current)) {
                     var url = Utils.sprintf('/vip/{0}', $scope.model.current.uuid);
@@ -23272,16 +26267,21 @@ var MVip;
                     e.preventDefault();
                 }
             };
+
             $scope.filterBy = new FilterBy($scope);
+
             $scope.funcSearch = function (win) {
                 win.open();
             };
+
             $scope.funcCreateVip = function (win) {
                 win.open();
             };
+
             $scope.funcDeleteVip = function () {
                 $scope.deleteVip.open();
             };
+
             $scope.optionsDeleteVip = {
                 title: 'DELETE VIP',
                 description: 'Deleting will delete all network services that this VIP is used for. For example, if the VIP is used for EIP, the EIP will be deleted as well',
@@ -23291,15 +26291,19 @@ var MVip;
                     });
                 }
             };
+
             $scope.funcRefresh = function () {
                 $scope.oVipGrid.refresh();
             };
+
             $scope.funcIsActionShow = function () {
                 return !Utils.isEmptyObject($scope.model.current);
             };
+
             $scope.funcIsActionDisabled = function () {
                 return Utils.notNullnotUndefined($scope.model.current) && $scope.model.current.isInProgress();
             };
+
             $scope.optionsCreateVip = {
                 done: function (vip) {
                     $scope.oVipGrid.add(vip);
@@ -23310,12 +26314,14 @@ var MVip;
         return Controller;
     })();
     MVip.Controller = Controller;
+
     var CreateVipOptions = (function () {
         function CreateVipOptions() {
         }
         return CreateVipOptions;
     })();
     MVip.CreateVipOptions = CreateVipOptions;
+
     var CreateVip = (function () {
         function CreateVip(api, vipMgr, zoneMgr, l3Mgr) {
             var _this = this;
@@ -23338,6 +26344,7 @@ var MVip;
                         _this.options = parentScope[optionName];
                     });
                 }
+
                 var infoPage = $scope.infoPage = {
                     activeState: true,
                     name: null,
@@ -23379,6 +26386,7 @@ var MVip;
                         this.activeState = false;
                     }
                 };
+
                 var mediator = $scope.mediator = {
                     currentPage: infoPage,
                     movedToPage: function (page) {
@@ -23401,15 +26409,19 @@ var MVip;
                                 _this.options.done(resultVip);
                             }
                         }).start();
+
                         $scope.winCreateVip__.close();
                     }
                 };
+
                 $scope.hasL3Network = function () {
                     return $scope.l3NetworkListOptions__.dataSource.data().length > 0;
                 };
+
                 $scope.button = new Utils.WizardButton([
                     infoPage
                 ], mediator);
+
                 $scope.winCreateVipOptions__ = {
                     width: '700px',
                     animation: false,
@@ -23417,23 +26429,21 @@ var MVip;
                     draggable: false,
                     resizable: false
                 };
+
                 $scope.zoneOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>'
                 };
+
                 $scope.l3NetworkListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Zone UUID:</span><span>#: zoneUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">L2 Network UUID:</span><span>#: l2NetworkUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' + '<div style="color: black"><span class="z-label">Zone UUID:</span><span>#: zoneUuid #</span></div>' + '<div style="color: black"><span class="z-label">L2 Network UUID:</span><span>#: l2NetworkUuid #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
                 };
+
                 $scope.$watch(function () {
                     return $scope.zoneUuid;
                 }, function () {
@@ -23454,6 +26464,7 @@ var MVip;
                         });
                     }
                 });
+
                 _this.$scope = $scope;
             };
             this.restrict = 'EA';
@@ -23480,11 +26491,15 @@ var MVip;
     })();
     MVip.CreateVip = CreateVip;
 })(MVip || (MVip = {}));
-angular.module('root').factory('VipManager', ['Api', '$rootScope', function (api, $rootScope) {
+
+angular.module('root').factory('VipManager', [
+    'Api', '$rootScope', function (api, $rootScope) {
         return new MVip.VipManager(api, $rootScope);
-    }]).directive('zCreateVip', ['Api', 'VipManager', 'ZoneManager', 'L3NetworkManager', function (api, vipMgr, zoneMgr, l3Mgr) {
+    }]).directive('zCreateVip', [
+    'Api', 'VipManager', 'ZoneManager', 'L3NetworkManager', function (api, vipMgr, zoneMgr, l3Mgr) {
         return new MVip.CreateVip(api, vipMgr, zoneMgr, l3Mgr);
-    }]).config(['$routeProvider', function (route) {
+    }]).config([
+    '$routeProvider', function (route) {
         route.when('/vip', {
             templateUrl: '/static/templates/vip/vip.html',
             controller: 'MVip.Controller'
@@ -23518,35 +26533,41 @@ var MEip;
         Eip.prototype.progressOn = function () {
             this.inProgress = true;
         };
+
         Eip.prototype.progressOff = function () {
             this.inProgress = false;
         };
+
         Eip.prototype.isInProgress = function () {
             return this.inProgress;
         };
+
         Eip.prototype.isEnableShow = function () {
             return this.state == 'Disabled';
         };
+
         Eip.prototype.isDisableShow = function () {
             return this.state == 'Enabled';
         };
+
         Eip.prototype.isAttachShow = function () {
             return !Utils.notNullnotUndefined(this.vmNicUuid);
         };
+
         Eip.prototype.isDetachShow = function () {
             return !this.isAttachShow();
         };
+
         Eip.prototype.stateLabel = function () {
             if (this.state == 'Enabled') {
                 return 'label label-success';
-            }
-            else if (this.state == 'Disabled') {
+            } else if (this.state == 'Disabled') {
                 return 'label label-danger';
-            }
-            else {
+            } else {
                 return 'label label-default';
             }
         };
+
         Eip.prototype.updateObservableObject = function (inv) {
             // self : ObservableObject
             var self = this;
@@ -23559,16 +26580,19 @@ var MEip;
             self.set('createDate', inv.createDate);
             self.set('lastOpDate', inv.lastOpDate);
         };
+
         Eip.prototype.extendVip = function (vip) {
             var self = this;
             this['vipIp'] = vip;
             self.set('vipIp', vip);
         };
+
         Eip.prototype.extendVmNicIp = function (nicIp) {
             var self = this;
             this['vmNicIp'] = nicIp;
             self.set('vmNicIp', nicIp);
         };
+
         Eip.wrap = function (obj) {
             var eip = new Eip();
             angular.extend(eip, obj);
@@ -23577,6 +26601,7 @@ var MEip;
         return Eip;
     })(ApiHeader.EipInventory);
     MEip.Eip = Eip;
+
     var EipManager = (function () {
         function EipManager(api, $rootScope) {
             this.api = api;
@@ -23585,9 +26610,11 @@ var MEip;
         EipManager.prototype.setSortBy = function (sortBy) {
             this.sortBy = sortBy;
         };
+
         EipManager.prototype.wrap = function (Eip) {
             return new kendo.data.ObservableObject(Eip);
         };
+
         EipManager.prototype.create = function (eip, done) {
             var _this = this;
             var msg = new ApiHeader.APICreateEipMsg();
@@ -23605,6 +26632,7 @@ var MEip;
                 });
             });
         };
+
         EipManager.prototype.query = function (qobj, callback) {
             var _this = this;
             var msg = new ApiHeader.APIQueryEipMsg();
@@ -23627,6 +26655,7 @@ var MEip;
                 callback(pris, ret.total);
             });
         };
+
         EipManager.prototype.getAttachableVmNicByEipUuid = function (uuid, done) {
             var msg = new ApiHeader.APIGetEipAttachableVmNicsMsg();
             msg.eipUuid = uuid;
@@ -23634,6 +26663,7 @@ var MEip;
                 done(ret.inventories);
             });
         };
+
         EipManager.prototype.getAttachableVmNicByVipUuid = function (uuid, done) {
             var msg = new ApiHeader.APIGetEipAttachableVmNicsMsg();
             msg.vipUuid = uuid;
@@ -23641,6 +26671,7 @@ var MEip;
                 done(ret.inventories);
             });
         };
+
         EipManager.prototype.attach = function (eip, vmNicUuid, done) {
             var _this = this;
             eip.progressOn();
@@ -23659,6 +26690,7 @@ var MEip;
                 });
             });
         };
+
         EipManager.prototype.detach = function (eip, done) {
             var _this = this;
             eip.progressOn();
@@ -23676,6 +26708,7 @@ var MEip;
                 });
             });
         };
+
         EipManager.prototype.disable = function (eip) {
             var _this = this;
             eip.progressOn();
@@ -23691,6 +26724,7 @@ var MEip;
                 });
             });
         };
+
         EipManager.prototype.enable = function (eip) {
             var _this = this;
             eip.progressOn();
@@ -23706,6 +26740,7 @@ var MEip;
                 });
             });
         };
+
         EipManager.prototype.delete = function (eip, done) {
             var _this = this;
             eip.progressOn();
@@ -23723,6 +26758,7 @@ var MEip;
         return EipManager;
     })();
     MEip.EipManager = EipManager;
+
     var EipModel = (function (_super) {
         __extends(EipModel, _super);
         function EipModel() {
@@ -23732,6 +26768,7 @@ var MEip;
         return EipModel;
     })(Utils.Model);
     MEip.EipModel = EipModel;
+
     var OEipGrid = (function (_super) {
         __extends(OEipGrid, _super);
         function OEipGrid($scope, eipMgr, vmMgr, vipMgr) {
@@ -23762,8 +26799,9 @@ var MEip;
                     field: 'vmNicIp',
                     title: 'VM NIC IP',
                     width: '25%'
-                },
+                }
             ];
+
             this.options.dataSource.transport.read = function (options) {
                 var chain = new Utils.Chain();
                 var eips = [];
@@ -23771,6 +26809,7 @@ var MEip;
                 var vmNics = {};
                 var composedEip = [];
                 var total = null;
+
                 chain.then(function () {
                     var qobj = new ApiHeader.QueryObject();
                     qobj.limit = options.data.take;
@@ -23785,16 +26824,19 @@ var MEip;
                         chain.next();
                         return;
                     }
+
                     var nicUuids = [];
                     angular.forEach(eips, function (it) {
                         if (Utils.notNullnotUndefined(it.vmNicUuid)) {
                             nicUuids.push(it.vmNicUuid);
                         }
                     });
+
                     if (nicUuids.length == 0) {
                         chain.next();
                         return;
                     }
+
                     var qobj = new ApiHeader.QueryObject();
                     qobj.conditions = [
                         {
@@ -23803,6 +26845,7 @@ var MEip;
                             value: nicUuids.join()
                         }
                     ];
+
                     vmMgr.queryVmNic(qobj, function (ns) {
                         angular.forEach(ns, function (it) {
                             vmNics[it.uuid] = it;
@@ -23814,14 +26857,17 @@ var MEip;
                         chain.next();
                         return;
                     }
+
                     var vipUuids = [];
                     angular.forEach(eips, function (it) {
                         vipUuids.push(it.vipUuid);
                     });
+
                     if (vipUuids.length == 0) {
                         chain.next();
                         return;
                     }
+
                     var qobj = new ApiHeader.QueryObject();
                     qobj.conditions = [
                         {
@@ -23830,6 +26876,7 @@ var MEip;
                             value: vipUuids.join()
                         }
                     ];
+
                     vipMgr.query(qobj, function (vs) {
                         angular.forEach(vs, function (it) {
                             vips[it.uuid] = it;
@@ -23841,15 +26888,18 @@ var MEip;
                         chain.next();
                         return;
                     }
+
                     angular.forEach(eips, function (it) {
                         if (Utils.notNullnotUndefined(it.vmNicUuid)) {
                             var nic = vmNics[it.vmNicUuid];
                             it.extendVmNicIp(nic.ip);
                         }
+
                         var vip = vips[it.vipUuid];
                         it.extendVip(vip.ip);
                         composedEip.push(it);
                     });
+
                     chain.next();
                 }).done(function () {
                     options.success({
@@ -23861,6 +26911,7 @@ var MEip;
         }
         return OEipGrid;
     })(Utils.OGrid);
+
     var Action = (function () {
         function Action($scope, eipMgr) {
             this.$scope = $scope;
@@ -23869,17 +26920,21 @@ var MEip;
         Action.prototype.enable = function () {
             this.eipMgr.enable(this.$scope.model.current);
         };
+
         Action.prototype.disable = function () {
             this.eipMgr.disable(this.$scope.model.current);
         };
+
         Action.prototype.attach = function () {
             this.$scope.attachEip.open();
         };
+
         Action.prototype.detach = function () {
             this.$scope.detachEip.open();
         };
         return Action;
     })();
+
     var FilterBy = (function () {
         function FilterBy($scope) {
             var _this = this;
@@ -23900,11 +26955,13 @@ var MEip;
                 dataTextField: 'name',
                 dataValueField: 'value'
             };
+
             this.valueList = {
                 dataSource: new kendo.data.DataSource({
                     data: []
                 })
             };
+
             this.field = FilterBy.NONE;
             $scope.$watch(function () {
                 return _this.field;
@@ -23912,8 +26969,7 @@ var MEip;
                 if (_this.field == FilterBy.NONE) {
                     _this.valueList.dataSource.data([]);
                     _this.value = null;
-                }
-                else if (_this.field == FilterBy.STATE) {
+                } else if (_this.field == FilterBy.STATE) {
                     _this.valueList.dataSource.data(['Enabled', 'Disabled']);
                 }
             });
@@ -23923,19 +26979,24 @@ var MEip;
             this.name = !Utils.notNullnotUndefined(this.value) ? null : Utils.sprintf('{0}:{1}', this.field, this.value);
             popover.toggle();
         };
+
         FilterBy.prototype.open = function (popover) {
             popover.toggle();
         };
+
         FilterBy.prototype.isValueListDisabled = function () {
             return !Utils.notNullnotUndefined(this.value);
         };
+
         FilterBy.prototype.getButtonName = function () {
             return this.name;
         };
+
         FilterBy.prototype.toKendoFilter = function () {
             if (!Utils.notNullnotUndefined(this.value)) {
                 return null;
             }
+
             return {
                 field: this.field,
                 operator: 'eq',
@@ -23946,6 +27007,7 @@ var MEip;
         FilterBy.STATE = 'state';
         return FilterBy;
     })();
+
     var DetailsController = (function () {
         function DetailsController($scope, eipMgr, $routeParams, tagService, current, vmMgr) {
             var _this = this;
@@ -23958,16 +27020,21 @@ var MEip;
             $scope.model.current = current.eip;
             $scope.vip = current.vip;
             $scope.nic = current.nic;
+
             $scope.funcDelete = function (win) {
                 win.open();
             };
+
             $scope.action = new Action($scope, eipMgr);
+
             $scope.funcRefresh = function () {
                 _this.loadSelf($scope.model.current.uuid);
             };
+
             $scope.funcToolbarShow = function () {
                 return Utils.notNullnotUndefined($scope.model.current);
             };
+
             $scope.optionsDeleteEip = {
                 title: 'DELETE EIP',
                 btnType: 'btn-danger',
@@ -23981,6 +27048,7 @@ var MEip;
                     });
                 }
             };
+
             $scope.optionsTag = {
                 tags: [],
                 createTag: function (item) {
@@ -23999,15 +27067,18 @@ var MEip;
                     return Utils.notNullnotUndefined($scope.model.current);
                 }
             };
+
             this.tagService.queryTag($scope.model.current.uuid, function (tags) {
                 $scope.optionsTag.tags = tags;
             });
+
             $scope.optionsDetachEip = {
                 eip: current.eip,
                 done: function () {
                     $scope.nic = null;
                 }
             };
+
             $scope.optionsAttachEip = {
                 eip: current.eip,
                 done: function () {
@@ -24017,6 +27088,7 @@ var MEip;
                             op: '=',
                             value: current.eip.vmNicUuid
                         }];
+
                     vmMgr.queryVmNic(qobj, function (nics) {
                         current.eip.extendVmNicIp(nics[0].ip);
                         $scope.nic = nics[0];
@@ -24036,6 +27108,7 @@ var MEip;
         return DetailsController;
     })();
     MEip.DetailsController = DetailsController;
+
     var Controller = (function () {
         function Controller($scope, eipMgr, $location, vipMgr, vmMgr) {
             this.$scope = $scope;
@@ -24074,6 +27147,7 @@ var MEip;
                     $scope.oEipGrid.refresh();
                 }
             };
+
             $scope.optionsSearch = {
                 fields: ApiHeader.EipInventoryQueryable,
                 name: 'Eip',
@@ -24097,6 +27171,7 @@ var MEip;
                     });
                 }
             };
+
             $scope.funcGridDoubleClick = function (e) {
                 if (Utils.notNullnotUndefined($scope.model.current)) {
                     var url = Utils.sprintf('/eip/{0}', $scope.model.current.uuid);
@@ -24104,16 +27179,21 @@ var MEip;
                     e.preventDefault();
                 }
             };
+
             $scope.filterBy = new FilterBy($scope);
+
             $scope.funcSearch = function (win) {
                 win.open();
             };
+
             $scope.funcCreateEip = function (win) {
                 win.open();
             };
+
             $scope.funcDeleteEip = function () {
                 $scope.deleteEip.open();
             };
+
             $scope.optionsDeleteEip = {
                 title: 'DELETE EIP',
                 btnType: 'btn-danger',
@@ -24127,15 +27207,19 @@ var MEip;
                     });
                 }
             };
+
             $scope.funcRefresh = function () {
                 $scope.oEipGrid.refresh();
             };
+
             $scope.funcIsActionShow = function () {
                 return !Utils.isEmptyObject($scope.model.current);
             };
+
             $scope.funcIsActionDisabled = function () {
                 return Utils.notNullnotUndefined($scope.model.current) && $scope.model.current.isInProgress();
             };
+
             $scope.optionsAttachEip = {
                 eip: null,
                 done: function () {
@@ -24146,17 +27230,20 @@ var MEip;
                             op: '=',
                             value: eip.vmNicUuid
                         }];
+
                     vmMgr.queryVmNic(qobj, function (nics) {
                         eip.extendVmNicIp(nics[0].ip);
                     });
                 }
             };
+
             $scope.optionsDetachEip = {
                 eip: null,
                 done: function () {
                     $scope.optionsDetachEip.eip.extendVmNicIp(null);
                 }
             };
+
             $scope.$watch(function () {
                 return $scope.model.current;
             }, function () {
@@ -24165,6 +27252,7 @@ var MEip;
                     $scope.optionsDetachEip.eip = $scope.model.current;
                 }
             });
+
             $scope.optionsCreateEip = {
                 done: function (eip) {
                     var chain = new Utils.Chain();
@@ -24189,6 +27277,7 @@ var MEip;
                             chain.next();
                             return;
                         }
+
                         var qobj = new ApiHeader.QueryObject();
                         qobj.conditions = [
                             {
@@ -24212,6 +27301,7 @@ var MEip;
         return Controller;
     })();
     MEip.Controller = Controller;
+
     var CreateEip = (function () {
         function CreateEip(api, eipMgr, vipMgr, l3Mgr, vmMgr) {
             var _this = this;
@@ -24236,6 +27326,7 @@ var MEip;
                         _this.options = parentScope[optionName];
                     });
                 }
+
                 var vipPage = $scope.vipPage = {
                     activeState: true,
                     method: null,
@@ -24292,9 +27383,11 @@ var MEip;
                         this.activeState = false;
                     }
                 };
+
                 $scope.vipMethodOptions__ = {
                     dataSource: new kendo.data.DataSource({
-                        data: [{
+                        data: [
+                            {
                                 name: "Create New VIP",
                                 field: CreateEip.CREATE_NEW_VIP
                             }, {
@@ -24305,6 +27398,7 @@ var MEip;
                     dataTextField: "name",
                     dataValueField: "field"
                 };
+
                 var infoPage = $scope.infoPage = {
                     activeState: true,
                     name: null,
@@ -24341,6 +27435,7 @@ var MEip;
                         return $scope.vmListOptions__.dataSource.data().length > 0;
                     }
                 };
+
                 var mediator = $scope.mediator = {
                     currentPage: infoPage,
                     movedToPage: function (page) {
@@ -24356,10 +27451,10 @@ var MEip;
                             var vipUuid = null;
                             if (Utils.notNullnotUndefined($scope.vipPage.vip)) {
                                 vipUuid = $scope.vipPage.vip.uuid;
-                            }
-                            else {
+                            } else {
                                 vipUuid = $scope.vipPage.vipUuid;
                             }
+
                             eipMgr.create({
                                 vipUuid: vipUuid,
                                 vmNicUuid: $scope.infoPage.vmNicUuid == "" ? null : $scope.infoPage.vmNicUuid,
@@ -24377,9 +27472,11 @@ var MEip;
                         $scope.winCreateEip__.close();
                     }
                 };
+
                 $scope.button = new Utils.WizardButton([
                     vipPage, infoPage
                 ], mediator);
+
                 $scope.winCreateEipOptions__ = {
                     width: '700px',
                     animation: false,
@@ -24387,53 +27484,44 @@ var MEip;
                     draggable: false,
                     resizable: false
                 };
+
                 $scope.vipListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">IP:</span><span>#: ip #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Gateway:</span><span>#: gateway #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Netmask:</span><span>#: netmask #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">IP:</span><span>#: ip #</span></div>' + '<div style="color: black"><span class="z-label">Gateway:</span><span>#: gateway #</span></div>' + '<div style="color: black"><span class="z-label">Netmask:</span><span>#: netmask #</span></div>'
                 };
+
                 $scope.l3NetworkListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Zone UUID:</span><span>#: zoneUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">L2 Network UUID:</span><span>#: l2NetworkUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' + '<div style="color: black"><span class="z-label">Zone UUID:</span><span>#: zoneUuid #</span></div>' + '<div style="color: black"><span class="z-label">L2 Network UUID:</span><span>#: l2NetworkUuid #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
                 };
+
                 $scope.vmListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "nicUuid",
-                    template: '<div style="color: black"><span class="z-label">VM Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">VM UUID:</span><span>#: uuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic DeviceId:</span><span>#: nicDeviceId #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Ip:</span><span>#: nicIp #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Netmask:</span><span>#: nicNetmask #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Gateway:</span><span>#: nicGateway #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Mac:</span><span>#: nicMac #</span></div>' +
-                        '<div style="color: black"><span class="z-label">L3 Network UUID:</span><span>#: l3NetworkUuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">VM Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">VM UUID:</span><span>#: uuid #</span></div>' + '<div style="color: black"><span class="z-label">Nic DeviceId:</span><span>#: nicDeviceId #</span></div>' + '<div style="color: black"><span class="z-label">Nic Ip:</span><span>#: nicIp #</span></div>' + '<div style="color: black"><span class="z-label">Nic Netmask:</span><span>#: nicNetmask #</span></div>' + '<div style="color: black"><span class="z-label">Nic Gateway:</span><span>#: nicGateway #</span></div>' + '<div style="color: black"><span class="z-label">Nic Mac:</span><span>#: nicMac #</span></div>' + '<div style="color: black"><span class="z-label">L3 Network UUID:</span><span>#: l3NetworkUuid #</span></div>'
                 };
+
                 $scope.$watch(function () {
                     return [$scope.vipPage.vipUuid, $scope.vipPage.vip];
                 }, function () {
                     var vip = null;
                     if (Utils.notNullnotUndefined($scope.vipPage.vip)) {
                         vip = $scope.vipPage.vip;
-                    }
-                    else if (Utils.notNullnotUndefined($scope.vipPage.vipUuid)) {
+                    } else if (Utils.notNullnotUndefined($scope.vipPage.vipUuid)) {
                         vip = _this.existingVip[$scope.vipPage.vipUuid];
                     }
+
                     if (!Utils.notNullnotUndefined(vip)) {
                         $scope.vipPage.vipUuid = null;
                         $scope.vipPage.vip = null;
                         return;
                     }
+
                     var chain = new Utils.Chain();
                     var vmNics = [];
                     var composedVms = [];
@@ -24448,22 +27536,26 @@ var MEip;
                             $scope.infoPage.vmNicUuid = null;
                             return;
                         }
+
                         var nicUuids = [];
                         angular.forEach(vmNics, function (it) {
                             nicUuids.push(it.uuid);
                         });
+
                         var qobj = new ApiHeader.QueryObject();
                         qobj.conditions = [{
                                 name: 'vmNics.uuid',
                                 op: 'in',
                                 value: nicUuids.join()
                             }];
+
                         _this.vmMgr.query(qobj, function (vms) {
                             angular.forEach(vms, function (it) {
                                 angular.forEach(it.vmNics, function (nic) {
                                     if (nic.l3NetworkUuid == vip.l3NetworkUuid) {
                                         return;
                                     }
+
                                     composedVms.push({
                                         name: it.name,
                                         uuid: it.uuid,
@@ -24477,11 +27569,13 @@ var MEip;
                                     });
                                 });
                             });
+
                             $scope.vmListOptions__.dataSource.data(composedVms);
                             $scope.infoPage.vmNicUuid = null;
                         });
                     }).start();
                 }, true);
+
                 _this.$scope = $scope;
             };
             this.restrict = 'EA';
@@ -24499,7 +27593,8 @@ var MEip;
             this.$scope.vipPage.vipUuid = null;
             chain.then(function () {
                 var qobj = new ApiHeader.QueryObject();
-                qobj.conditions = [{
+                qobj.conditions = [
+                    {
                         name: 'state',
                         op: '=',
                         value: 'Enabled'
@@ -24514,6 +27609,7 @@ var MEip;
                         angular.forEach(ret, function (it) {
                             _this.existingVip[it.uuid] = it;
                         });
+                        //this.$scope.vipPage.vipUuid = ret[0].uuid;
                     }
                     chain.next();
                 });
@@ -24537,6 +27633,7 @@ var MEip;
         return CreateEip;
     })();
     MEip.CreateEip = CreateEip;
+
     var AttachEip = (function () {
         function AttachEip(eipMgr, vmMgr) {
             var _this = this;
@@ -24550,37 +27647,38 @@ var MEip;
                 var parent = $scope.$parent;
                 parent[$attrs.zEipAttachVm] = _this;
                 _this.options = parent[$attrs.zOptions];
+
                 $scope.vmListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "nicUuid",
-                    template: '<div style="color: black"><span class="z-label">VM Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">VM UUID:</span><span>#: uuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic DeviceId:</span><span>#: nicDeviceId #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Ip:</span><span>#: nicIp #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Netmask:</span><span>#: nicNetmask #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Gateway:</span><span>#: nicGateway #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Mac:</span><span>#: nicMac #</span></div>' +
-                        '<div style="color: black"><span class="z-label">L3 Network UUID:</span><span>#: l3NetworkUuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">VM Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">VM UUID:</span><span>#: uuid #</span></div>' + '<div style="color: black"><span class="z-label">Nic DeviceId:</span><span>#: nicDeviceId #</span></div>' + '<div style="color: black"><span class="z-label">Nic Ip:</span><span>#: nicIp #</span></div>' + '<div style="color: black"><span class="z-label">Nic Netmask:</span><span>#: nicNetmask #</span></div>' + '<div style="color: black"><span class="z-label">Nic Gateway:</span><span>#: nicGateway #</span></div>' + '<div style="color: black"><span class="z-label">Nic Mac:</span><span>#: nicMac #</span></div>' + '<div style="color: black"><span class="z-label">L3 Network UUID:</span><span>#: l3NetworkUuid #</span></div>'
                 };
+
                 $scope.hasVm = function () {
                     return $scope.vmListOptions__.dataSource.data().length > 0;
                 };
+
                 $scope.canProceed = function () {
                     return Utils.notNullnotUndefined($scope.vmNicUuid);
                 };
+
                 $scope.cancel = function () {
                     $scope.attachEip__.close();
                 };
+
                 $scope.done = function () {
                     eipMgr.attach(_this.options.eip, $scope.vmNicUuid, function () {
                         if (Utils.notNullnotUndefined(_this.options.done)) {
                             _this.options.done();
                         }
                     });
+
                     $scope.attachEip__.close();
                 };
+
                 _this.$scope = $scope;
+
                 $scope.attachEipOptions__ = {
                     width: '550px'
                 };
@@ -24589,6 +27687,7 @@ var MEip;
         AttachEip.prototype.open = function () {
             var _this = this;
             this.$scope.vmListOptions__.dataSource.data([]);
+
             var chain = new Utils.Chain();
             var vmNics = [];
             var composedVms = [];
@@ -24604,22 +27703,26 @@ var MEip;
                     chain.next();
                     return;
                 }
+
                 var nicUuids = [];
                 angular.forEach(vmNics, function (it) {
                     nicUuids.push(it.uuid);
                 });
+
                 var qobj = new ApiHeader.QueryObject();
                 qobj.conditions = [{
                         name: 'vmNics.uuid',
                         op: 'in',
                         value: nicUuids.join()
                     }];
+
                 _this.vmMgr.query(qobj, function (vms) {
                     angular.forEach(vms, function (it) {
                         angular.forEach(it.vmNics, function (nic) {
                             if (nicUuids.indexOf(nic.uuid) == -1) {
                                 return;
                             }
+
                             composedVms.push({
                                 name: it.name,
                                 uuid: it.uuid,
@@ -24633,6 +27736,7 @@ var MEip;
                             });
                         });
                     });
+
                     _this.$scope.vmListOptions__.dataSource.data(composedVms);
                     if (composedVms.length > 0) {
                         _this.$scope.vmNicUuid = composedVms[0].nicUuid;
@@ -24647,6 +27751,7 @@ var MEip;
         return AttachEip;
     })();
     MEip.AttachEip = AttachEip;
+
     var DetachEip = (function () {
         function DetachEip(eipMgr, vmMgr) {
             var _this = this;
@@ -24660,9 +27765,11 @@ var MEip;
                 var parent = $scope.$parent;
                 parent[$attrs.zEipDetachVm] = _this;
                 _this.options = parent[$attrs.zOptions];
+
                 $scope.cancel = function () {
                     $scope.detachEip__.close();
                 };
+
                 $scope.done = function () {
                     eipMgr.detach(_this.options.eip, function () {
                         if (_this.options.done) {
@@ -24671,39 +27778,44 @@ var MEip;
                     });
                     $scope.detachEip__.close();
                 };
+
                 $scope.optionsDetachEip__ = {
                     width: '500px'
                 };
+
                 $scope.vmStateLabel = function () {
                     if (!Utils.notNullnotUndefined($scope.vm)) {
                         return '';
                     }
+
                     var vm = $scope.vm;
                     if (vm.state == 'Running') {
                         return 'label label-success';
-                    }
-                    else if (vm.state == 'Stopped') {
+                    } else if (vm.state == 'Stopped') {
                         return 'label label-danger';
-                    }
-                    else if (vm.state == 'Unknown') {
+                    } else if (vm.state == 'Unknown') {
                         return 'label label-warning';
-                    }
-                    else {
+                    } else {
                         return 'label label-default';
                     }
                 };
+
                 $scope.isVmInCorrectState = function () {
                     if (!Utils.notNullnotUndefined($scope.vm)) {
                         return true;
                     }
+
                     return $scope.vm.state == 'Running' || $scope.vm.state == 'Stopped';
                 };
+
                 $scope.canProceed = function () {
                     if (!Utils.notNullnotUndefined($scope.vm)) {
                         return false;
                     }
+
                     return $scope.isVmInCorrectState();
                 };
+
                 _this.$scope = $scope;
             };
         }
@@ -24717,10 +27829,12 @@ var MEip;
                     value: this.options.eip.vmNicUuid
                 }
             ];
+
             this.vmMgr.query(qobj, function (vms) {
                 if (vms.length > 0) {
                     var vm = vms[0];
                     _this.$scope.vm = vm;
+
                     angular.forEach(vm.vmNics, function (it) {
                         _this.$scope.vm['nicDeviceId'] = it.deviceId;
                         _this.$scope.vm['nicMac'] = it.mac;
@@ -24737,15 +27851,21 @@ var MEip;
     })();
     MEip.DetachEip = DetachEip;
 })(MEip || (MEip = {}));
-angular.module('root').factory('EipManager', ['Api', '$rootScope', function (api, $rootScope) {
+
+angular.module('root').factory('EipManager', [
+    'Api', '$rootScope', function (api, $rootScope) {
         return new MEip.EipManager(api, $rootScope);
-    }]).directive('zCreateEip', ['Api', 'EipManager', 'VipManager', 'L3NetworkManager', 'VmInstanceManager', function (api, eipMgr, vipMgr, l3Mgr, vmMgr) {
+    }]).directive('zCreateEip', [
+    'Api', 'EipManager', 'VipManager', 'L3NetworkManager', 'VmInstanceManager', function (api, eipMgr, vipMgr, l3Mgr, vmMgr) {
         return new MEip.CreateEip(api, eipMgr, vipMgr, l3Mgr, vmMgr);
-    }]).directive('zEipAttachVm', ['EipManager', 'VmInstanceManager', function (eipMgr, vmMgr) {
+    }]).directive('zEipAttachVm', [
+    'EipManager', 'VmInstanceManager', function (eipMgr, vmMgr) {
         return new MEip.AttachEip(eipMgr, vmMgr);
-    }]).directive('zEipDetachVm', ['EipManager', 'VmInstanceManager', function (eipMgr, vmMgr) {
+    }]).directive('zEipDetachVm', [
+    'EipManager', 'VmInstanceManager', function (eipMgr, vmMgr) {
         return new MEip.DetachEip(eipMgr, vmMgr);
-    }]).config(['$routeProvider', function (route) {
+    }]).config([
+    '$routeProvider', function (route) {
         route.when('/eip', {
             templateUrl: '/static/templates/eip/eip.html',
             controller: 'MEip.Controller'
@@ -24761,6 +27881,7 @@ angular.module('root').factory('EipManager', ['Api', '$rootScope', function (api
                         nic: null,
                         vip: null
                     };
+
                     var chain = new Utils.Chain();
                     chain.then(function () {
                         var qobj = new ApiHeader.QueryObject();
@@ -24774,12 +27895,14 @@ angular.module('root').factory('EipManager', ['Api', '$rootScope', function (api
                             chain.next();
                             return;
                         }
+
                         var qobj = new ApiHeader.QueryObject();
                         qobj.conditions = [{
                                 name: 'uuid',
                                 op: '=',
                                 value: ret.eip.vmNicUuid
                             }];
+
                         VmInstanceManager.queryVmNic(qobj, function (nics) {
                             ret.nic = nics[0];
                             chain.next();
@@ -24791,6 +27914,7 @@ angular.module('root').factory('EipManager', ['Api', '$rootScope', function (api
                                 op: '=',
                                 value: ret.eip.vipUuid
                             }];
+
                         VipManager.query(qobj, function (vips) {
                             ret.vip = vips[0];
                             chain.next();
@@ -24798,6 +27922,7 @@ angular.module('root').factory('EipManager', ['Api', '$rootScope', function (api
                     }).done(function () {
                         defer.resolve(ret);
                     }).start();
+
                     return defer.promise;
                 }
             }
@@ -24815,35 +27940,41 @@ var MPortForwarding;
         PortForwarding.prototype.progressOn = function () {
             this.inProgress = true;
         };
+
         PortForwarding.prototype.progressOff = function () {
             this.inProgress = false;
         };
+
         PortForwarding.prototype.isInProgress = function () {
             return this.inProgress;
         };
+
         PortForwarding.prototype.isEnableShow = function () {
             return this.state == 'Disabled';
         };
+
         PortForwarding.prototype.isDisableShow = function () {
             return this.state == 'Enabled';
         };
+
         PortForwarding.prototype.isAttachShow = function () {
             return !Utils.notNullnotUndefined(this.vmNicUuid);
         };
+
         PortForwarding.prototype.isDetachShow = function () {
             return !this.isAttachShow();
         };
+
         PortForwarding.prototype.stateLabel = function () {
             if (this.state == 'Enabled') {
                 return 'label label-success';
-            }
-            else if (this.state == 'Disabled') {
+            } else if (this.state == 'Disabled') {
                 return 'label label-danger';
-            }
-            else {
+            } else {
                 return 'label label-default';
             }
         };
+
         PortForwarding.prototype.updateObservableObject = function (inv) {
             // self : ObservableObject
             var self = this;
@@ -24862,16 +27993,19 @@ var MPortForwarding;
             self.set('createDate', inv.createDate);
             self.set('lastOpDate', inv.lastOpDate);
         };
+
         PortForwarding.prototype.extendVip = function (vip) {
             var self = this;
             this['vipIp'] = vip;
             self.set('vipIp', vip);
         };
+
         PortForwarding.prototype.extendVmNicIp = function (nicIp) {
             var self = this;
             this['vmNicIp'] = nicIp;
             self.set('vmNicIp', nicIp);
         };
+
         PortForwarding.wrap = function (obj) {
             var pf = new PortForwarding();
             angular.extend(pf, obj);
@@ -24880,6 +28014,7 @@ var MPortForwarding;
         return PortForwarding;
     })(ApiHeader.PortForwardingRuleInventory);
     MPortForwarding.PortForwarding = PortForwarding;
+
     var PortForwardingManager = (function () {
         function PortForwardingManager(api, $rootScope) {
             this.api = api;
@@ -24888,9 +28023,11 @@ var MPortForwarding;
         PortForwardingManager.prototype.setSortBy = function (sortBy) {
             this.sortBy = sortBy;
         };
+
         PortForwardingManager.prototype.wrap = function (PortForwarding) {
             return new kendo.data.ObservableObject(PortForwarding);
         };
+
         PortForwardingManager.prototype.create = function (pf, done) {
             var _this = this;
             var msg = new ApiHeader.APICreatePortForwardingRuleMsg();
@@ -24914,6 +28051,7 @@ var MPortForwarding;
                 });
             });
         };
+
         PortForwardingManager.prototype.query = function (qobj, callback) {
             var _this = this;
             var msg = new ApiHeader.APIQueryPortForwardingRuleMsg();
@@ -24936,6 +28074,7 @@ var MPortForwarding;
                 callback(pris, ret.total);
             });
         };
+
         PortForwardingManager.prototype.getAttachableVmNicByPortForwardingUuid = function (uuid, done) {
             var msg = new ApiHeader.APIGetPortForwardingAttachableVmNicsMsg();
             msg.ruleUuid = uuid;
@@ -24943,6 +28082,7 @@ var MPortForwarding;
                 done(ret.inventories);
             });
         };
+
         PortForwardingManager.prototype.attach = function (pf, vmNicUuid, done) {
             var _this = this;
             pf.progressOn();
@@ -24961,6 +28101,7 @@ var MPortForwarding;
                 });
             });
         };
+
         PortForwardingManager.prototype.detach = function (pf, done) {
             var _this = this;
             pf.progressOn();
@@ -24978,6 +28119,7 @@ var MPortForwarding;
                 });
             });
         };
+
         PortForwardingManager.prototype.disable = function (pf) {
             var _this = this;
             pf.progressOn();
@@ -24993,6 +28135,7 @@ var MPortForwarding;
                 });
             });
         };
+
         PortForwardingManager.prototype.enable = function (pf) {
             var _this = this;
             pf.progressOn();
@@ -25008,6 +28151,7 @@ var MPortForwarding;
                 });
             });
         };
+
         PortForwardingManager.prototype.delete = function (pf, done) {
             var _this = this;
             pf.progressOn();
@@ -25025,6 +28169,7 @@ var MPortForwarding;
         return PortForwardingManager;
     })();
     MPortForwarding.PortForwardingManager = PortForwardingManager;
+
     var PortForwardingModel = (function (_super) {
         __extends(PortForwardingModel, _super);
         function PortForwardingModel() {
@@ -25034,6 +28179,7 @@ var MPortForwarding;
         return PortForwardingModel;
     })(Utils.Model);
     MPortForwarding.PortForwardingModel = PortForwardingModel;
+
     var OPortForwardingGrid = (function (_super) {
         __extends(OPortForwardingGrid, _super);
         function OPortForwardingGrid($scope, pfMgr, vmMgr, vipMgr) {
@@ -25084,8 +28230,9 @@ var MPortForwarding;
                     field: 'vmNicIp',
                     title: 'VM NIC IP',
                     width: '20%'
-                },
+                }
             ];
+
             this.options.dataSource.transport.read = function (options) {
                 var chain = new Utils.Chain();
                 var pfs = [];
@@ -25093,6 +28240,7 @@ var MPortForwarding;
                 var vmNics = {};
                 var composedPortForwarding = [];
                 var total = null;
+
                 chain.then(function () {
                     var qobj = new ApiHeader.QueryObject();
                     qobj.limit = options.data.take;
@@ -25107,16 +28255,19 @@ var MPortForwarding;
                         chain.next();
                         return;
                     }
+
                     var nicUuids = [];
                     angular.forEach(pfs, function (it) {
                         if (Utils.notNullnotUndefined(it.vmNicUuid)) {
                             nicUuids.push(it.vmNicUuid);
                         }
                     });
+
                     if (nicUuids.length == 0) {
                         chain.next();
                         return;
                     }
+
                     var qobj = new ApiHeader.QueryObject();
                     qobj.conditions = [
                         {
@@ -25125,6 +28276,7 @@ var MPortForwarding;
                             value: nicUuids.join()
                         }
                     ];
+
                     vmMgr.queryVmNic(qobj, function (ns) {
                         angular.forEach(ns, function (it) {
                             vmNics[it.uuid] = it;
@@ -25136,14 +28288,17 @@ var MPortForwarding;
                         chain.next();
                         return;
                     }
+
                     var vipUuids = [];
                     angular.forEach(pfs, function (it) {
                         vipUuids.push(it.vipUuid);
                     });
+
                     if (vipUuids.length == 0) {
                         chain.next();
                         return;
                     }
+
                     var qobj = new ApiHeader.QueryObject();
                     qobj.conditions = [
                         {
@@ -25152,6 +28307,7 @@ var MPortForwarding;
                             value: vipUuids.join()
                         }
                     ];
+
                     vipMgr.query(qobj, function (vs) {
                         angular.forEach(vs, function (it) {
                             vips[it.uuid] = it;
@@ -25163,15 +28319,18 @@ var MPortForwarding;
                         chain.next();
                         return;
                     }
+
                     angular.forEach(pfs, function (it) {
                         if (Utils.notNullnotUndefined(it.vmNicUuid)) {
                             var nic = vmNics[it.vmNicUuid];
                             it.extendVmNicIp(nic.ip);
                         }
+
                         var vip = vips[it.vipUuid];
                         it.extendVip(vip.ip);
                         composedPortForwarding.push(it);
                     });
+
                     chain.next();
                 }).done(function () {
                     options.success({
@@ -25183,6 +28342,7 @@ var MPortForwarding;
         }
         return OPortForwardingGrid;
     })(Utils.OGrid);
+
     var Action = (function () {
         function Action($scope, pfMgr) {
             this.$scope = $scope;
@@ -25191,17 +28351,21 @@ var MPortForwarding;
         Action.prototype.enable = function () {
             this.pfMgr.enable(this.$scope.model.current);
         };
+
         Action.prototype.disable = function () {
             this.pfMgr.disable(this.$scope.model.current);
         };
+
         Action.prototype.attach = function () {
             this.$scope.attachPortForwarding.open();
         };
+
         Action.prototype.detach = function () {
             this.$scope.detachPortForwarding.open();
         };
         return Action;
     })();
+
     var FilterBy = (function () {
         function FilterBy($scope) {
             var _this = this;
@@ -25222,11 +28386,13 @@ var MPortForwarding;
                 dataTextField: 'name',
                 dataValueField: 'value'
             };
+
             this.valueList = {
                 dataSource: new kendo.data.DataSource({
                     data: []
                 })
             };
+
             this.field = FilterBy.NONE;
             $scope.$watch(function () {
                 return _this.field;
@@ -25234,8 +28400,7 @@ var MPortForwarding;
                 if (_this.field == FilterBy.NONE) {
                     _this.valueList.dataSource.data([]);
                     _this.value = null;
-                }
-                else if (_this.field == FilterBy.STATE) {
+                } else if (_this.field == FilterBy.STATE) {
                     _this.valueList.dataSource.data(['Enabled', 'Disabled']);
                 }
             });
@@ -25245,19 +28410,24 @@ var MPortForwarding;
             this.name = !Utils.notNullnotUndefined(this.value) ? null : Utils.sprintf('{0}:{1}', this.field, this.value);
             popover.toggle();
         };
+
         FilterBy.prototype.open = function (popover) {
             popover.toggle();
         };
+
         FilterBy.prototype.isValueListDisabled = function () {
             return !Utils.notNullnotUndefined(this.value);
         };
+
         FilterBy.prototype.getButtonName = function () {
             return this.name;
         };
+
         FilterBy.prototype.toKendoFilter = function () {
             if (!Utils.notNullnotUndefined(this.value)) {
                 return null;
             }
+
             return {
                 field: this.field,
                 operator: 'eq',
@@ -25268,6 +28438,7 @@ var MPortForwarding;
         FilterBy.STATE = 'state';
         return FilterBy;
     })();
+
     var DetailsController = (function () {
         function DetailsController($scope, pfMgr, $routeParams, tagService, current, vmMgr) {
             var _this = this;
@@ -25280,16 +28451,21 @@ var MPortForwarding;
             $scope.model.current = current.pf;
             $scope.vip = current.vip;
             $scope.nic = current.nic;
+
             $scope.funcDelete = function (win) {
                 win.open();
             };
+
             $scope.action = new Action($scope, pfMgr);
+
             $scope.funcRefresh = function () {
                 _this.loadSelf($scope.model.current.uuid);
             };
+
             $scope.funcToolbarShow = function () {
                 return Utils.notNullnotUndefined($scope.model.current);
             };
+
             $scope.optionsDeletePortForwarding = {
                 title: 'DELETE PORT FORWARDING RULE',
                 description: function () {
@@ -25303,6 +28479,7 @@ var MPortForwarding;
                     });
                 }
             };
+
             $scope.optionsTag = {
                 tags: [],
                 createTag: function (item) {
@@ -25321,15 +28498,18 @@ var MPortForwarding;
                     return Utils.notNullnotUndefined($scope.model.current);
                 }
             };
+
             this.tagService.queryTag($scope.model.current.uuid, function (tags) {
                 $scope.optionsTag.tags = tags;
             });
+
             $scope.optionsDetachPortForwarding = {
                 pf: current.pf,
                 done: function () {
                     $scope.nic = null;
                 }
             };
+
             $scope.optionsAttachPortForwarding = {
                 pf: current.pf,
                 done: function () {
@@ -25339,6 +28519,7 @@ var MPortForwarding;
                             op: '=',
                             value: current.pf.vmNicUuid
                         }];
+
                     vmMgr.queryVmNic(qobj, function (nics) {
                         current.pf.extendVmNicIp(nics[0].ip);
                         $scope.nic = nics[0];
@@ -25358,6 +28539,7 @@ var MPortForwarding;
         return DetailsController;
     })();
     MPortForwarding.DetailsController = DetailsController;
+
     var Controller = (function () {
         function Controller($scope, pfMgr, $location, vipMgr, vmMgr) {
             this.$scope = $scope;
@@ -25416,6 +28598,7 @@ var MPortForwarding;
                     $scope.oPortForwardingGrid.refresh();
                 }
             };
+
             $scope.optionsSearch = {
                 fields: ApiHeader.PortForwardingRuleInventoryQueryable,
                 name: 'PortForwarding',
@@ -25443,6 +28626,7 @@ var MPortForwarding;
                     });
                 }
             };
+
             $scope.funcGridDoubleClick = function (e) {
                 if (Utils.notNullnotUndefined($scope.model.current)) {
                     var url = Utils.sprintf('/portForwarding/{0}', $scope.model.current.uuid);
@@ -25450,16 +28634,21 @@ var MPortForwarding;
                     e.preventDefault();
                 }
             };
+
             $scope.filterBy = new FilterBy($scope);
+
             $scope.funcSearch = function (win) {
                 win.open();
             };
+
             $scope.funcCreatePortForwarding = function (win) {
                 win.open();
             };
+
             $scope.funcDeletePortForwarding = function () {
                 $scope.deletePortForwarding.open();
             };
+
             $scope.optionsDeletePortForwarding = {
                 title: 'DELETE PORT FORWARDING RULE',
                 description: function () {
@@ -25473,15 +28662,19 @@ var MPortForwarding;
                     });
                 }
             };
+
             $scope.funcRefresh = function () {
                 $scope.oPortForwardingGrid.refresh();
             };
+
             $scope.funcIsActionShow = function () {
                 return !Utils.isEmptyObject($scope.model.current);
             };
+
             $scope.funcIsActionDisabled = function () {
                 return Utils.notNullnotUndefined($scope.model.current) && $scope.model.current.isInProgress();
             };
+
             $scope.optionsAttachPortForwarding = {
                 pf: null,
                 done: function () {
@@ -25492,17 +28685,20 @@ var MPortForwarding;
                             op: '=',
                             value: pf.vmNicUuid
                         }];
+
                     vmMgr.queryVmNic(qobj, function (nics) {
                         pf.extendVmNicIp(nics[0].ip);
                     });
                 }
             };
+
             $scope.optionsDetachPortForwarding = {
                 pf: null,
                 done: function () {
                     $scope.optionsDetachPortForwarding.pf.extendVmNicIp(null);
                 }
             };
+
             $scope.$watch(function () {
                 return $scope.model.current;
             }, function () {
@@ -25511,6 +28707,7 @@ var MPortForwarding;
                     $scope.optionsDetachPortForwarding.pf = $scope.model.current;
                 }
             });
+
             $scope.optionsCreatePortForwarding = {
                 done: function (pf) {
                     var chain = new Utils.Chain();
@@ -25535,6 +28732,7 @@ var MPortForwarding;
                             chain.next();
                             return;
                         }
+
                         var qobj = new ApiHeader.QueryObject();
                         qobj.conditions = [
                             {
@@ -25558,6 +28756,7 @@ var MPortForwarding;
         return Controller;
     })();
     MPortForwarding.Controller = Controller;
+
     var CreatePortForwarding = (function () {
         function CreatePortForwarding(api, pfMgr, vipMgr, l3Mgr, vmMgr) {
             var _this = this;
@@ -25582,6 +28781,7 @@ var MPortForwarding;
                         _this.options = parentScope[optionName];
                     });
                 }
+
                 var vipPage = $scope.vipPage = {
                     activeState: true,
                     method: null,
@@ -25638,9 +28838,11 @@ var MPortForwarding;
                         this.activeState = false;
                     }
                 };
+
                 $scope.vipMethodOptions__ = {
                     dataSource: new kendo.data.DataSource({
-                        data: [{
+                        data: [
+                            {
                                 name: "Create New VIP",
                                 field: CreatePortForwarding.CREATE_NEW_VIP
                             }, {
@@ -25651,6 +28853,7 @@ var MPortForwarding;
                     dataTextField: "name",
                     dataValueField: "field"
                 };
+
                 var infoPage = $scope.infoPage = {
                     activeState: true,
                     name: null,
@@ -25695,9 +28898,7 @@ var MPortForwarding;
                         return true;
                     },
                     canMoveToNext: function () {
-                        return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.vipPortStart) && Utils.notNullnotUndefined(this.vipPortEnd)
-                            && Utils.notNullnotUndefined(this.privatePortStart) && Utils.notNullnotUndefined(this.privatePortEnd) && Utils.notNullnotUndefined(this.protocolType)
-                            && this.isVipStartPortValid() && this.isVipEndPortValid() && this.isGuestStartPortValid() && this.isGuestEndPortValid() && this.isCIDRValid();
+                        return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.vipPortStart) && Utils.notNullnotUndefined(this.vipPortEnd) && Utils.notNullnotUndefined(this.privatePortStart) && Utils.notNullnotUndefined(this.privatePortEnd) && Utils.notNullnotUndefined(this.protocolType) && this.isVipStartPortValid() && this.isVipEndPortValid() && this.isGuestStartPortValid() && this.isGuestEndPortValid() && this.isCIDRValid();
                     },
                     show: function () {
                         this.getAnchorElement().tab('show');
@@ -25726,6 +28927,7 @@ var MPortForwarding;
                         this.activeState = false;
                     }
                 };
+
                 var attachPage = $scope.attachPage = {
                     activeState: true,
                     vmNic: null,
@@ -25759,10 +28961,10 @@ var MPortForwarding;
                         var vipUuid = null;
                         if (Utils.notNullnotUndefined($scope.vipPage.vip)) {
                             vipUuid = $scope.vipPage.vip.uuid;
-                        }
-                        else {
+                        } else {
                             vipUuid = $scope.vipPage.vipUuid;
                         }
+
                         var chain = new Utils.Chain();
                         var vmNics = [];
                         var composedVms = [];
@@ -25794,22 +28996,26 @@ var MPortForwarding;
                                 done();
                                 return;
                             }
+
                             var nicUuids = [];
                             angular.forEach(vmNics, function (it) {
                                 nicUuids.push(it.uuid);
                             });
+
                             var qobj = new ApiHeader.QueryObject();
                             qobj.conditions = [{
                                     name: 'vmNics.uuid',
                                     op: 'in',
                                     value: nicUuids.join()
                                 }];
+
                             vmMgr.query(qobj, function (vms) {
                                 angular.forEach(vms, function (it) {
                                     angular.forEach(it.vmNics, function (nic) {
                                         if (nicUuids.indexOf(nic.uuid) == -1) {
                                             return;
                                         }
+
                                         composedVms.push({
                                             name: it.name,
                                             uuid: it.uuid,
@@ -25823,6 +29029,7 @@ var MPortForwarding;
                                         });
                                     });
                                 });
+
                                 $scope.vmListOptions__.dataSource.data(composedVms);
                                 $scope.attachPage.vmNicUuid = null;
                                 done();
@@ -25835,6 +29042,7 @@ var MPortForwarding;
                         this.pfRule = null;
                     }
                 };
+
                 var mediator = $scope.mediator = {
                     currentPage: infoPage,
                     movedToPage: function (page) {
@@ -25850,16 +29058,18 @@ var MPortForwarding;
                                     _this.options.done($scope.attachPage.pfRule);
                                 }
                             });
-                        }
-                        else {
+                        } else {
                             _this.options.done($scope.attachPage.pfRule);
                         }
+
                         $scope.winCreatePortForwarding__.close();
                     }
                 };
+
                 $scope.button = new Utils.WizardButton([
                     vipPage, infoPage, attachPage
                 ], mediator);
+
                 $scope.winCreatePortForwardingOptions__ = {
                     width: '700px',
                     animation: false,
@@ -25867,43 +29077,34 @@ var MPortForwarding;
                     draggable: false,
                     resizable: false
                 };
+
                 $scope.protocolOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [
                             'TCP', 'UDP'
                         ] })
                 };
+
                 $scope.vipListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">IP:</span><span>#: ip #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Gateway:</span><span>#: gateway #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Netmask:</span><span>#: netmask #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">IP:</span><span>#: ip #</span></div>' + '<div style="color: black"><span class="z-label">Gateway:</span><span>#: gateway #</span></div>' + '<div style="color: black"><span class="z-label">Netmask:</span><span>#: netmask #</span></div>'
                 };
+
                 $scope.l3NetworkListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Zone UUID:</span><span>#: zoneUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">L2 Network UUID:</span><span>#: l2NetworkUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' + '<div style="color: black"><span class="z-label">Zone UUID:</span><span>#: zoneUuid #</span></div>' + '<div style="color: black"><span class="z-label">L2 Network UUID:</span><span>#: l2NetworkUuid #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
                 };
+
                 $scope.vmListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "nicUuid",
-                    template: '<div style="color: black"><span class="z-label">VM Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">VM UUID:</span><span>#: uuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic DeviceId:</span><span>#: nicDeviceId #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Ip:</span><span>#: nicIp #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Netmask:</span><span>#: nicNetmask #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Gateway:</span><span>#: nicGateway #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Mac:</span><span>#: nicMac #</span></div>' +
-                        '<div style="color: black"><span class="z-label">L3 Network UUID:</span><span>#: l3NetworkUuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">VM Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">VM UUID:</span><span>#: uuid #</span></div>' + '<div style="color: black"><span class="z-label">Nic DeviceId:</span><span>#: nicDeviceId #</span></div>' + '<div style="color: black"><span class="z-label">Nic Ip:</span><span>#: nicIp #</span></div>' + '<div style="color: black"><span class="z-label">Nic Netmask:</span><span>#: nicNetmask #</span></div>' + '<div style="color: black"><span class="z-label">Nic Gateway:</span><span>#: nicGateway #</span></div>' + '<div style="color: black"><span class="z-label">Nic Mac:</span><span>#: nicMac #</span></div>' + '<div style="color: black"><span class="z-label">L3 Network UUID:</span><span>#: l3NetworkUuid #</span></div>'
                 };
+
                 _this.$scope = $scope;
             };
             this.restrict = 'EA';
@@ -25923,7 +29124,8 @@ var MPortForwarding;
             this.$scope.infoPage.protocolType = 'TCP';
             chain.then(function () {
                 var qobj = new ApiHeader.QueryObject();
-                qobj.conditions = [{
+                qobj.conditions = [
+                    {
                         name: 'state',
                         op: '=',
                         value: 'Enabled'
@@ -25944,7 +29146,8 @@ var MPortForwarding;
                 });
             }).then(function () {
                 var qobj = new ApiHeader.QueryObject();
-                qobj.conditions = [{
+                qobj.conditions = [
+                    {
                         name: 'state',
                         op: '=',
                         value: 'Enabled'
@@ -25953,6 +29156,7 @@ var MPortForwarding;
                         op: '=',
                         value: 'PortForwarding'
                     }];
+
                 _this.vipMgr.query(qobj, function (ret) {
                     if (ret.length > 0) {
                         angular.forEach(ret, function (it) {
@@ -25983,6 +29187,7 @@ var MPortForwarding;
         return CreatePortForwarding;
     })();
     MPortForwarding.CreatePortForwarding = CreatePortForwarding;
+
     var AttachPortForwarding = (function () {
         function AttachPortForwarding(pfMgr, vmMgr) {
             var _this = this;
@@ -25996,37 +29201,38 @@ var MPortForwarding;
                 var parent = $scope.$parent;
                 parent[$attrs.zPortForwardingAttachVm] = _this;
                 _this.options = parent[$attrs.zOptions];
+
                 $scope.vmListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "nicUuid",
-                    template: '<div style="color: black"><span class="z-label">VM Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">VM UUID:</span><span>#: uuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic DeviceId:</span><span>#: nicDeviceId #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Ip:</span><span>#: nicIp #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Netmask:</span><span>#: nicNetmask #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Gateway:</span><span>#: nicGateway #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Mac:</span><span>#: nicMac #</span></div>' +
-                        '<div style="color: black"><span class="z-label">L3 Network UUID:</span><span>#: l3NetworkUuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">VM Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">VM UUID:</span><span>#: uuid #</span></div>' + '<div style="color: black"><span class="z-label">Nic DeviceId:</span><span>#: nicDeviceId #</span></div>' + '<div style="color: black"><span class="z-label">Nic Ip:</span><span>#: nicIp #</span></div>' + '<div style="color: black"><span class="z-label">Nic Netmask:</span><span>#: nicNetmask #</span></div>' + '<div style="color: black"><span class="z-label">Nic Gateway:</span><span>#: nicGateway #</span></div>' + '<div style="color: black"><span class="z-label">Nic Mac:</span><span>#: nicMac #</span></div>' + '<div style="color: black"><span class="z-label">L3 Network UUID:</span><span>#: l3NetworkUuid #</span></div>'
                 };
+
                 $scope.hasVm = function () {
                     return $scope.vmListOptions__.dataSource.data().length > 0;
                 };
+
                 $scope.canProceed = function () {
                     return Utils.notNullnotUndefined($scope.vmNicUuid);
                 };
+
                 $scope.cancel = function () {
                     $scope.attachPortForwarding__.close();
                 };
+
                 $scope.done = function () {
                     pfMgr.attach(_this.options.pf, $scope.vmNicUuid, function () {
                         if (Utils.notNullnotUndefined(_this.options.done)) {
                             _this.options.done();
                         }
                     });
+
                     $scope.attachPortForwarding__.close();
                 };
+
                 _this.$scope = $scope;
+
                 $scope.attachPortForwardingOptions__ = {
                     width: '550px'
                 };
@@ -26035,6 +29241,7 @@ var MPortForwarding;
         AttachPortForwarding.prototype.open = function () {
             var _this = this;
             this.$scope.vmListOptions__.dataSource.data([]);
+
             var chain = new Utils.Chain();
             var vmNics = [];
             var composedVms = [];
@@ -26050,22 +29257,26 @@ var MPortForwarding;
                     chain.next();
                     return;
                 }
+
                 var nicUuids = [];
                 angular.forEach(vmNics, function (it) {
                     nicUuids.push(it.uuid);
                 });
+
                 var qobj = new ApiHeader.QueryObject();
                 qobj.conditions = [{
                         name: 'vmNics.uuid',
                         op: 'in',
                         value: nicUuids.join()
                     }];
+
                 _this.vmMgr.query(qobj, function (vms) {
                     angular.forEach(vms, function (it) {
                         angular.forEach(it.vmNics, function (nic) {
                             if (nicUuids.indexOf(nic.uuid) == -1) {
                                 return;
                             }
+
                             composedVms.push({
                                 name: it.name,
                                 uuid: it.uuid,
@@ -26079,6 +29290,7 @@ var MPortForwarding;
                             });
                         });
                     });
+
                     _this.$scope.vmListOptions__.dataSource.data(composedVms);
                     if (composedVms.length > 0) {
                         _this.$scope.vmNicUuid = composedVms[0].nicUuid;
@@ -26093,6 +29305,7 @@ var MPortForwarding;
         return AttachPortForwarding;
     })();
     MPortForwarding.AttachPortForwarding = AttachPortForwarding;
+
     var DetachPortForwarding = (function () {
         function DetachPortForwarding(pfMgr, vmMgr) {
             var _this = this;
@@ -26106,9 +29319,11 @@ var MPortForwarding;
                 var parent = $scope.$parent;
                 parent[$attrs.zPortForwardingDetachVm] = _this;
                 _this.options = parent[$attrs.zOptions];
+
                 $scope.cancel = function () {
                     $scope.detachPortForwarding__.close();
                 };
+
                 $scope.done = function () {
                     pfMgr.detach(_this.options.pf, function () {
                         if (_this.options.done) {
@@ -26117,39 +29332,44 @@ var MPortForwarding;
                     });
                     $scope.detachPortForwarding__.close();
                 };
+
                 $scope.optionsDetachPortForwarding__ = {
                     width: '500px'
                 };
+
                 $scope.vmStateLabel = function () {
                     if (!Utils.notNullnotUndefined($scope.vm)) {
                         return '';
                     }
+
                     var vm = $scope.vm;
                     if (vm.state == 'Running') {
                         return 'label label-success';
-                    }
-                    else if (vm.state == 'Stopped') {
+                    } else if (vm.state == 'Stopped') {
                         return 'label label-danger';
-                    }
-                    else if (vm.state == 'Unknown') {
+                    } else if (vm.state == 'Unknown') {
                         return 'label label-warning';
-                    }
-                    else {
+                    } else {
                         return 'label label-default';
                     }
                 };
+
                 $scope.isVmInCorrectState = function () {
                     if (!Utils.notNullnotUndefined($scope.vm)) {
                         return true;
                     }
+
                     return $scope.vm.state == 'Running' || $scope.vm.state == 'Stopped';
                 };
+
                 $scope.canProceed = function () {
                     if (!Utils.notNullnotUndefined($scope.vm)) {
                         return false;
                     }
+
                     return $scope.isVmInCorrectState();
                 };
+
                 _this.$scope = $scope;
             };
         }
@@ -26164,10 +29384,12 @@ var MPortForwarding;
                     value: this.options.pf.vmNicUuid
                 }
             ];
+
             this.vmMgr.query(qobj, function (vms) {
                 if (vms.length > 0) {
                     var vm = vms[0];
                     _this.$scope.vm = vm;
+
                     angular.forEach(vm.vmNics, function (it) {
                         _this.$scope.vm['nicDeviceId'] = it.deviceId;
                         _this.$scope.vm['nicMac'] = it.mac;
@@ -26184,15 +29406,21 @@ var MPortForwarding;
     })();
     MPortForwarding.DetachPortForwarding = DetachPortForwarding;
 })(MPortForwarding || (MPortForwarding = {}));
-angular.module('root').factory('PortForwardingManager', ['Api', '$rootScope', function (api, $rootScope) {
+
+angular.module('root').factory('PortForwardingManager', [
+    'Api', '$rootScope', function (api, $rootScope) {
         return new MPortForwarding.PortForwardingManager(api, $rootScope);
-    }]).directive('zCreatePortForwardingRule', ['Api', 'PortForwardingManager', 'VipManager', 'L3NetworkManager', 'VmInstanceManager', function (api, pfMgr, vipMgr, l3Mgr, vmMgr) {
+    }]).directive('zCreatePortForwardingRule', [
+    'Api', 'PortForwardingManager', 'VipManager', 'L3NetworkManager', 'VmInstanceManager', function (api, pfMgr, vipMgr, l3Mgr, vmMgr) {
         return new MPortForwarding.CreatePortForwarding(api, pfMgr, vipMgr, l3Mgr, vmMgr);
-    }]).directive('zPortForwardingAttachVm', ['PortForwardingManager', 'VmInstanceManager', function (pfMgr, vmMgr) {
+    }]).directive('zPortForwardingAttachVm', [
+    'PortForwardingManager', 'VmInstanceManager', function (pfMgr, vmMgr) {
         return new MPortForwarding.AttachPortForwarding(pfMgr, vmMgr);
-    }]).directive('zPortForwardingDetachVm', ['PortForwardingManager', 'VmInstanceManager', function (pfMgr, vmMgr) {
+    }]).directive('zPortForwardingDetachVm', [
+    'PortForwardingManager', 'VmInstanceManager', function (pfMgr, vmMgr) {
         return new MPortForwarding.DetachPortForwarding(pfMgr, vmMgr);
-    }]).config(['$routeProvider', function (route) {
+    }]).config([
+    '$routeProvider', function (route) {
         route.when('/portForwarding', {
             templateUrl: '/static/templates/portForwarding/portForwarding.html',
             controller: 'MPortForwarding.Controller'
@@ -26208,6 +29436,7 @@ angular.module('root').factory('PortForwardingManager', ['Api', '$rootScope', fu
                         nic: null,
                         vip: null
                     };
+
                     var chain = new Utils.Chain();
                     chain.then(function () {
                         var qobj = new ApiHeader.QueryObject();
@@ -26221,12 +29450,14 @@ angular.module('root').factory('PortForwardingManager', ['Api', '$rootScope', fu
                             chain.next();
                             return;
                         }
+
                         var qobj = new ApiHeader.QueryObject();
                         qobj.conditions = [{
                                 name: 'uuid',
                                 op: '=',
                                 value: ret.pf.vmNicUuid
                             }];
+
                         VmInstanceManager.queryVmNic(qobj, function (nics) {
                             ret.nic = nics[0];
                             chain.next();
@@ -26238,6 +29469,7 @@ angular.module('root').factory('PortForwardingManager', ['Api', '$rootScope', fu
                                 op: '=',
                                 value: ret.pf.vipUuid
                             }];
+
                         VipManager.query(qobj, function (vips) {
                             ret.vip = vips[0];
                             chain.next();
@@ -26245,6 +29477,7 @@ angular.module('root').factory('PortForwardingManager', ['Api', '$rootScope', fu
                     }).done(function () {
                         defer.resolve(ret);
                     }).start();
+
                     return defer.promise;
                 }
             }
@@ -26262,12 +29495,15 @@ var MVirtualRouter;
         VmNic.prototype.progressOn = function () {
             this.inProgress = true;
         };
+
         VmNic.prototype.progressOff = function () {
             this.inProgress = false;
         };
+
         VmNic.prototype.isInProgress = function () {
             return this.inProgress;
         };
+
         VmNic.prototype.updateObservableObject = function (inv) {
             // self : ObservableObject
             var self = this;
@@ -26286,6 +29522,7 @@ var MVirtualRouter;
         return VmNic;
     })(ApiHeader.VmNicInventory);
     MVirtualRouter.VmNic = VmNic;
+
     var VirtualRouter = (function (_super) {
         __extends(VirtualRouter, _super);
         function VirtualRouter() {
@@ -26294,37 +29531,37 @@ var MVirtualRouter;
         VirtualRouter.prototype.progressOn = function () {
             this.inProgress = true;
         };
+
         VirtualRouter.prototype.progressOff = function () {
             this.inProgress = false;
         };
+
         VirtualRouter.prototype.isInProgress = function () {
             return this.inProgress;
         };
+
         VirtualRouter.prototype.stateLabel = function () {
             if (this.state == 'Running') {
                 return 'label label-success';
-            }
-            else if (this.state == 'Stopped') {
+            } else if (this.state == 'Stopped') {
                 return 'label label-danger';
-            }
-            else if (this.state == 'Unknown') {
+            } else if (this.state == 'Unknown') {
                 return 'label label-warning';
-            }
-            else {
+            } else {
                 return 'label label-default';
             }
         };
+
         VirtualRouter.prototype.statusLabel = function () {
             if (this.status == 'Connected') {
                 return 'label label-success';
-            }
-            else if (this.status == 'Disconnected') {
+            } else if (this.status == 'Disconnected') {
                 return 'label label-danger';
-            }
-            else {
+            } else {
                 return 'label label-default';
             }
         };
+
         VirtualRouter.prototype.updateObservableObject = function (inv) {
             // self : ObservableObject
             var self = this;
@@ -26350,6 +29587,7 @@ var MVirtualRouter;
         return VirtualRouter;
     })(ApiHeader.ApplianceVmInventory);
     MVirtualRouter.VirtualRouter = VirtualRouter;
+
     var VirtualRouterManager = (function () {
         function VirtualRouterManager(api, $rootScope) {
             this.api = api;
@@ -26358,9 +29596,11 @@ var MVirtualRouter;
         VirtualRouterManager.prototype.setSortBy = function (sortBy) {
             this.sortBy = sortBy;
         };
+
         VirtualRouterManager.prototype.wrap = function (obj) {
             return new kendo.data.ObservableObject(obj);
         };
+
         VirtualRouterManager.prototype.query = function (qobj, callback) {
             var _this = this;
             var msg = new ApiHeader.APIQueryApplianceVmMsg();
@@ -26388,6 +29628,7 @@ var MVirtualRouter;
                 callback(pris, ret.total);
             });
         };
+
         VirtualRouterManager.prototype.getConsole = function (vm, done) {
             var msg = new ApiHeader.APIRequestConsoleAccessMsg();
             msg.vmInstanceUuid = vm.uuid;
@@ -26395,6 +29636,7 @@ var MVirtualRouter;
                 done(ret.inventory);
             });
         };
+
         VirtualRouterManager.prototype.stop = function (vm) {
             var _this = this;
             vm.progressOn();
@@ -26410,6 +29652,7 @@ var MVirtualRouter;
                 });
             });
         };
+
         VirtualRouterManager.prototype.start = function (vm) {
             var _this = this;
             vm.progressOn();
@@ -26425,6 +29668,7 @@ var MVirtualRouter;
                 });
             });
         };
+
         VirtualRouterManager.prototype.reboot = function (vm) {
             var _this = this;
             vm.progressOn();
@@ -26442,6 +29686,7 @@ var MVirtualRouter;
                 vm.progressOff();
             });
         };
+
         VirtualRouterManager.prototype.delete = function (vm, done) {
             var _this = this;
             vm.progressOn();
@@ -26456,6 +29701,7 @@ var MVirtualRouter;
                 });
             });
         };
+
         VirtualRouterManager.prototype.migrate = function (vm, hostUuid, done) {
             var _this = this;
             vm.progressOn();
@@ -26475,6 +29721,7 @@ var MVirtualRouter;
                 });
             });
         };
+
         VirtualRouterManager.prototype.reconnect = function (vm, done) {
             var _this = this;
             vm.progressOn();
@@ -26497,6 +29744,7 @@ var MVirtualRouter;
         return VirtualRouterManager;
     })();
     MVirtualRouter.VirtualRouterManager = VirtualRouterManager;
+
     var VirtualRouterModel = (function (_super) {
         __extends(VirtualRouterModel, _super);
         function VirtualRouterModel() {
@@ -26506,6 +29754,7 @@ var MVirtualRouter;
         return VirtualRouterModel;
     })(Utils.Model);
     MVirtualRouter.VirtualRouterModel = VirtualRouterModel;
+
     var OVirtualRouterGrid = (function (_super) {
         __extends(OVirtualRouterGrid, _super);
         function OVirtualRouterGrid($scope, vmMgr) {
@@ -26547,6 +29796,7 @@ var MVirtualRouter;
                     width: '20%'
                 }
             ];
+
             this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
@@ -26561,6 +29811,7 @@ var MVirtualRouter;
         }
         return OVirtualRouterGrid;
     })(Utils.OGrid);
+
     var Action = (function () {
         function Action($scope, vmMgr) {
             this.$scope = $scope;
@@ -26569,52 +29820,55 @@ var MVirtualRouter;
         Action.prototype.start = function () {
             this.vmMgr.start(this.$scope.model.current);
         };
+
         Action.prototype.stop = function () {
             this.vmMgr.stop(this.$scope.model.current);
         };
+
         Action.prototype.reboot = function () {
             this.vmMgr.reboot(this.$scope.model.current);
         };
+
         Action.prototype.migrate = function () {
             this.$scope.migrateVm.open();
         };
+
         Action.prototype.delete = function () {
             this.$scope.deleteVirtualRouter.open();
         };
+
         Action.prototype.reconnect = function () {
             this.$scope.reconnectVirtualRouter.open();
         };
+
         Action.prototype.console = function () {
             this.$scope.console();
         };
+
         Action.prototype.isActionShow = function (action) {
             if (!Utils.notNullnotUndefined(this.$scope.model.current) || Utils.isEmptyObject(this.$scope.model.current)) {
                 return false;
             }
+
             if (action == 'start') {
                 return this.$scope.model.current.state == 'Stopped';
-            }
-            else if (action == 'stop') {
+            } else if (action == 'stop') {
                 return this.$scope.model.current.state == 'Running';
-            }
-            else if (action == 'reboot') {
+            } else if (action == 'reboot') {
                 return this.$scope.model.current.state == 'Running';
-            }
-            else if (action == 'migrate') {
+            } else if (action == 'migrate') {
                 return this.$scope.model.current.state == 'Running';
-            }
-            else if (action == 'reconnect') {
+            } else if (action == 'reconnect') {
                 return this.$scope.model.current.state == 'Running';
-            }
-            else if (action == 'console' && Utils.notNullnotUndefined(this.$scope.model.current)) {
+            } else if (action == 'console' && Utils.notNullnotUndefined(this.$scope.model.current)) {
                 return this.$scope.model.current.state == 'Starting' || this.$scope.model.current.state == 'Running' || this.$scope.model.current.state == 'Rebooting' || this.$scope.model.current.state == 'Stopping';
-            }
-            else {
+            } else {
                 return false;
             }
         };
         return Action;
     })();
+
     var FilterBy = (function () {
         function FilterBy($scope, hypervisorTypes) {
             var _this = this;
@@ -26640,11 +29894,13 @@ var MVirtualRouter;
                 dataTextField: 'name',
                 dataValueField: 'value'
             };
+
             this.valueList = {
                 dataSource: new kendo.data.DataSource({
                     data: []
                 })
             };
+
             this.field = FilterBy.NONE;
             $scope.$watch(function () {
                 return _this.field;
@@ -26652,11 +29908,9 @@ var MVirtualRouter;
                 if (_this.field == FilterBy.NONE) {
                     _this.valueList.dataSource.data([]);
                     _this.value = null;
-                }
-                else if (_this.field == FilterBy.STATE) {
+                } else if (_this.field == FilterBy.STATE) {
                     _this.valueList.dataSource.data(VirtualRouter.STATES);
-                }
-                else if (_this.field == FilterBy.TYPE) {
+                } else if (_this.field == FilterBy.TYPE) {
                     _this.valueList.dataSource.data(_this.hypervisorTypes);
                 }
             });
@@ -26666,19 +29920,24 @@ var MVirtualRouter;
             this.name = !Utils.notNullnotUndefined(this.value) ? null : Utils.sprintf('{0}:{1}', this.field, this.value);
             popover.toggle();
         };
+
         FilterBy.prototype.open = function (popover) {
             popover.toggle();
         };
+
         FilterBy.prototype.isValueListDisabled = function () {
             return !Utils.notNullnotUndefined(this.value);
         };
+
         FilterBy.prototype.getButtonName = function () {
             return this.name;
         };
+
         FilterBy.prototype.toKendoFilter = function () {
             if (!Utils.notNullnotUndefined(this.value)) {
                 return null;
             }
+
             return {
                 field: this.field,
                 operator: 'eq',
@@ -26690,6 +29949,7 @@ var MVirtualRouter;
         FilterBy.TYPE = 'hypervisorType';
         return FilterBy;
     })();
+
     var DetailsController = (function () {
         function DetailsController($scope, vmMgr, $routeParams, tagService, current, clusterMgr, $rootScope, $window) {
             var _this = this;
@@ -26701,6 +29961,7 @@ var MVirtualRouter;
             this.$window = $window;
             $scope.model = new VirtualRouterModel();
             $scope.model.current = current;
+
             $scope.console = function () {
                 var current = $scope.model.current;
                 vmMgr.getConsole(current, function (inv) {
@@ -26708,16 +29969,21 @@ var MVirtualRouter;
                     $window.open(Utils.sprintf('/static/templates/console/vnc_auto.html?host={0}&port={1}&token={2}', inv.hostname, inv.port, inv.token), windowName);
                 });
             };
+
             $scope.funcDelete = function (win) {
                 win.open();
             };
+
             $scope.action = new Action($scope, vmMgr);
+
             $scope.funcRefresh = function () {
                 _this.loadSelf($scope.model.current.uuid);
             };
+
             $scope.funcToolbarShow = function () {
                 return Utils.notNullnotUndefined($scope.model.current);
             };
+
             $scope.optionsDeleteVirtualRouter = {
                 title: 'DELETE VIRTUAL ROUTER',
                 confirm: function () {
@@ -26726,6 +29992,7 @@ var MVirtualRouter;
                     });
                 }
             };
+
             $scope.optionsTag = {
                 tags: [],
                 createTag: function (item) {
@@ -26744,12 +30011,15 @@ var MVirtualRouter;
                     return Utils.notNullnotUndefined($scope.model.current);
                 }
             };
+
             this.tagService.queryTag($scope.model.current.uuid, function (tags) {
                 $scope.optionsTag.tags = tags;
             });
+
             $scope.optionsMigrateVm = {
                 vm: current
             };
+
             $scope.optionsNicGrid = {
                 pageSize: 20,
                 resizable: true,
@@ -26803,6 +30073,7 @@ var MVirtualRouter;
                     data: current.vmNics
                 })
             };
+
             $scope.optionsVolumeGrid = {
                 pageSize: 20,
                 resizable: true,
@@ -26851,6 +30122,7 @@ var MVirtualRouter;
                     data: current.allVolumes
                 })
             };
+
             $scope.optionsReconnectVirtualRouter = {
                 title: 'RECONNECT VIRTUAL ROUTER',
                 btnType: 'btn-primary',
@@ -26877,6 +30149,7 @@ var MVirtualRouter;
         return DetailsController;
     })();
     MVirtualRouter.DetailsController = DetailsController;
+
     var Controller = (function () {
         function Controller($scope, vmMgr, hypervisorTypes, $location, $rootScope, $window) {
             this.$scope = $scope;
@@ -26920,6 +30193,7 @@ var MVirtualRouter;
                     $scope.oVirtualRouterGrid.refresh();
                 }
             };
+
             $scope.optionsSearch = {
                 fields: ApiHeader.ApplianceVmInventoryQueryable,
                 name: 'VirtualRouter',
@@ -26947,6 +30221,7 @@ var MVirtualRouter;
                     });
                 }
             };
+
             $scope.funcGridDoubleClick = function (e) {
                 if (Utils.notNullnotUndefined($scope.model.current)) {
                     var url = Utils.sprintf('/virtualRouter/{0}', $scope.model.current.uuid);
@@ -26954,16 +30229,21 @@ var MVirtualRouter;
                     e.preventDefault();
                 }
             };
+
             $scope.filterBy = new FilterBy($scope, this.hypervisorTypes);
+
             $scope.funcSearch = function (win) {
                 win.open();
             };
+
             $scope.funcCreateVirtualRouter = function (win) {
                 win.open();
             };
+
             $scope.funcDeleteVirtualRouter = function () {
                 $scope.deleteVirtualRouter.open();
             };
+
             $scope.optionsDeleteVirtualRouter = {
                 title: 'DELETE VIRTUAL ROUTER',
                 confirm: function () {
@@ -26972,23 +30252,29 @@ var MVirtualRouter;
                     });
                 }
             };
+
             $scope.funcRefresh = function () {
                 $scope.oVirtualRouterGrid.refresh();
             };
+
             $scope.funcIsActionShow = function () {
                 return !Utils.isEmptyObject($scope.model.current);
             };
+
             $scope.funcIsActionDisabled = function () {
                 return Utils.notNullnotUndefined($scope.model.current) && $scope.model.current.isInProgress();
             };
+
             $scope.optionsCreateVirtualRouter = {
                 done: function (vm) {
                     $scope.oVirtualRouterGrid.add(vm);
                 }
             };
+
             $scope.optionsMigrateVm = {
                 vm: null
             };
+
             $scope.$watch(function () {
                 return $scope.model.current;
             }, function () {
@@ -26996,6 +30282,7 @@ var MVirtualRouter;
                     $scope.optionsMigrateVm.vm = $scope.model.current;
                 }
             });
+
             $scope.optionsReconnectVirtualRouter = {
                 title: 'RECONNECT VIRTUAL ROUTER',
                 btnType: 'btn-primary',
@@ -27009,6 +30296,7 @@ var MVirtualRouter;
                     });
                 }
             };
+
             $scope.console = function () {
                 var current = $scope.model.current;
                 vmMgr.getConsole(current, function (inv) {
@@ -27022,9 +30310,12 @@ var MVirtualRouter;
     })();
     MVirtualRouter.Controller = Controller;
 })(MVirtualRouter || (MVirtualRouter = {}));
-angular.module('root').factory('VirtualRouterManager', ['Api', '$rootScope', function (api, $rootScope) {
+
+angular.module('root').factory('VirtualRouterManager', [
+    'Api', '$rootScope', function (api, $rootScope) {
         return new MVirtualRouter.VirtualRouterManager(api, $rootScope);
-    }]).config(['$routeProvider', function (route) {
+    }]).config([
+    '$routeProvider', function (route) {
         route.when('/virtualRouter', {
             templateUrl: '/static/templates/virtualRouter/virtualRouter.html',
             controller: 'MVirtualRouter.Controller',
@@ -27067,35 +30358,39 @@ var MVirtualRouterOffering;
         VirtualRouterOffering.prototype.progressOn = function () {
             this.inProgress = true;
         };
+
         VirtualRouterOffering.prototype.progressOff = function () {
             this.inProgress = false;
         };
+
         VirtualRouterOffering.prototype.isInProgress = function () {
             return this.inProgress;
         };
+
         VirtualRouterOffering.prototype.isEnableShow = function () {
             return this.state == 'Disabled';
         };
+
         VirtualRouterOffering.prototype.isDisableShow = function () {
             return this.state == 'Enabled';
         };
         VirtualRouterOffering.prototype.stateLabel = function () {
             if (this.state == 'Enabled') {
                 return 'label label-success';
-            }
-            else if (this.state == 'Disabled') {
+            } else if (this.state == 'Disabled') {
                 return 'label label-danger';
-            }
-            else {
+            } else {
                 return 'label label-default';
             }
         };
+
         VirtualRouterOffering.prototype.isDefaultLabel = function () {
             if (this.isDefault) {
                 return 'label label-primary';
             }
             return null;
         };
+
         VirtualRouterOffering.prototype.updateObservableObject = function (inv) {
             // self : ObservableObject
             var self = this;
@@ -27118,6 +30413,7 @@ var MVirtualRouterOffering;
         return VirtualRouterOffering;
     })(ApiHeader.VirtualRouterOfferingInventory);
     MVirtualRouterOffering.VirtualRouterOffering = VirtualRouterOffering;
+
     var VirtualRouterOfferingManager = (function () {
         function VirtualRouterOfferingManager(api, $rootScope) {
             this.api = api;
@@ -27126,9 +30422,11 @@ var MVirtualRouterOffering;
         VirtualRouterOfferingManager.prototype.setSortBy = function (sortBy) {
             this.sortBy = sortBy;
         };
+
         VirtualRouterOfferingManager.prototype.wrap = function (VirtualRouterOffering) {
             return new kendo.data.ObservableObject(VirtualRouterOffering);
         };
+
         VirtualRouterOfferingManager.prototype.create = function (virtualRouterOffering, done) {
             var _this = this;
             var msg = new ApiHeader.APICreateVirtualRouterOfferingMsg();
@@ -27153,6 +30451,7 @@ var MVirtualRouterOffering;
                 });
             });
         };
+
         VirtualRouterOfferingManager.prototype.query = function (qobj, callback) {
             var _this = this;
             var msg = new ApiHeader.APIQueryVirtualRouterOfferingMsg();
@@ -27180,6 +30479,7 @@ var MVirtualRouterOffering;
                 callback(pris, ret.total);
             });
         };
+
         VirtualRouterOfferingManager.prototype.disable = function (virtualRouterOffering) {
             var _this = this;
             virtualRouterOffering.progressOn();
@@ -27195,6 +30495,7 @@ var MVirtualRouterOffering;
                 });
             });
         };
+
         VirtualRouterOfferingManager.prototype.enable = function (virtualRouterOffering) {
             var _this = this;
             virtualRouterOffering.progressOn();
@@ -27210,6 +30511,7 @@ var MVirtualRouterOffering;
                 });
             });
         };
+
         VirtualRouterOfferingManager.prototype.delete = function (virtualRouterOffering, done) {
             var _this = this;
             virtualRouterOffering.progressOn();
@@ -27227,6 +30529,7 @@ var MVirtualRouterOffering;
         return VirtualRouterOfferingManager;
     })();
     MVirtualRouterOffering.VirtualRouterOfferingManager = VirtualRouterOfferingManager;
+
     var VirtualRouterOfferingModel = (function (_super) {
         __extends(VirtualRouterOfferingModel, _super);
         function VirtualRouterOfferingModel() {
@@ -27236,6 +30539,7 @@ var MVirtualRouterOffering;
         return VirtualRouterOfferingModel;
     })(Utils.Model);
     MVirtualRouterOffering.VirtualRouterOfferingModel = VirtualRouterOfferingModel;
+
     var OVirtualRouterOfferingGrid = (function (_super) {
         __extends(OVirtualRouterOfferingGrid, _super);
         function OVirtualRouterOfferingGrid($scope, virtualRouterOfferingMgr) {
@@ -27288,6 +30592,7 @@ var MVirtualRouterOffering;
                     width: '20%'
                 }
             ];
+
             this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
@@ -27302,6 +30607,7 @@ var MVirtualRouterOffering;
         }
         return OVirtualRouterOfferingGrid;
     })(Utils.OGrid);
+
     var Action = (function () {
         function Action($scope, virtualRouterOfferingMgr) {
             this.$scope = $scope;
@@ -27310,11 +30616,13 @@ var MVirtualRouterOffering;
         Action.prototype.enable = function () {
             this.virtualRouterOfferingMgr.enable(this.$scope.model.current);
         };
+
         Action.prototype.disable = function () {
             this.virtualRouterOfferingMgr.disable(this.$scope.model.current);
         };
         return Action;
     })();
+
     var FilterBy = (function () {
         function FilterBy($scope, hypervisorTypes) {
             var _this = this;
@@ -27336,11 +30644,13 @@ var MVirtualRouterOffering;
                 dataTextField: 'name',
                 dataValueField: 'value'
             };
+
             this.valueList = {
                 dataSource: new kendo.data.DataSource({
                     data: []
                 })
             };
+
             this.field = FilterBy.NONE;
             $scope.$watch(function () {
                 return _this.field;
@@ -27348,8 +30658,7 @@ var MVirtualRouterOffering;
                 if (_this.field == FilterBy.NONE) {
                     _this.valueList.dataSource.data([]);
                     _this.value = null;
-                }
-                else if (_this.field == FilterBy.STATE) {
+                } else if (_this.field == FilterBy.STATE) {
                     _this.valueList.dataSource.data(['Enabled', 'Disabled']);
                 }
             });
@@ -27359,19 +30668,24 @@ var MVirtualRouterOffering;
             this.name = !Utils.notNullnotUndefined(this.value) ? null : Utils.sprintf('{0}:{1}', this.field, this.value);
             popover.toggle();
         };
+
         FilterBy.prototype.open = function (popover) {
             popover.toggle();
         };
+
         FilterBy.prototype.isValueListDisabled = function () {
             return !Utils.notNullnotUndefined(this.value);
         };
+
         FilterBy.prototype.getButtonName = function () {
             return this.name;
         };
+
         FilterBy.prototype.toKendoFilter = function () {
             if (!Utils.notNullnotUndefined(this.value)) {
                 return null;
             }
+
             return {
                 field: this.field,
                 operator: 'eq',
@@ -27382,6 +30696,7 @@ var MVirtualRouterOffering;
         FilterBy.STATE = 'state';
         return FilterBy;
     })();
+
     var DetailsController = (function () {
         function DetailsController($scope, virtualRouterOfferingMgr, $routeParams, tagService, current) {
             var _this = this;
@@ -27393,16 +30708,21 @@ var MVirtualRouterOffering;
             $scope.model.current = current.offering;
             $scope.mgmtL3 = current.mgmtL3;
             $scope.pubL3 = current.pubL3;
+
             $scope.funcDelete = function (win) {
                 win.open();
             };
+
             $scope.action = new Action($scope, virtualRouterOfferingMgr);
+
             $scope.funcRefresh = function () {
                 _this.loadSelf($scope.model.current.uuid);
             };
+
             $scope.funcToolbarShow = function () {
                 return Utils.notNullnotUndefined($scope.model.current);
             };
+
             $scope.optionsDeleteVirtualRouterOffering = {
                 title: 'DELETE VIRTUAL ROUTER OFFERING',
                 btnType: 'btn-danger',
@@ -27416,6 +30736,7 @@ var MVirtualRouterOffering;
                     });
                 }
             };
+
             $scope.optionsTag = {
                 tags: [],
                 createTag: function (item) {
@@ -27434,6 +30755,7 @@ var MVirtualRouterOffering;
                     return Utils.notNullnotUndefined($scope.model.current);
                 }
             };
+
             this.tagService.queryTag($scope.model.current.uuid, function (tags) {
                 $scope.optionsTag.tags = tags;
             });
@@ -27450,6 +30772,7 @@ var MVirtualRouterOffering;
         return DetailsController;
     })();
     MVirtualRouterOffering.DetailsController = DetailsController;
+
     var Controller = (function () {
         function Controller($scope, virtualRouterOfferingMgr, hypervisorTypes, $location) {
             this.$scope = $scope;
@@ -27499,6 +30822,7 @@ var MVirtualRouterOffering;
                     $scope.oVirtualRouterOfferingGrid.refresh();
                 }
             };
+
             $scope.optionsSearch = {
                 fields: ApiHeader.VirtualRouterOfferingInventoryQueryable,
                 name: 'VirtualRouterOffering',
@@ -27522,6 +30846,7 @@ var MVirtualRouterOffering;
                     });
                 }
             };
+
             $scope.funcGridDoubleClick = function (e) {
                 if (Utils.notNullnotUndefined($scope.model.current)) {
                     var url = Utils.sprintf('/virtualRouterOffering/{0}', $scope.model.current.uuid);
@@ -27529,16 +30854,21 @@ var MVirtualRouterOffering;
                     e.preventDefault();
                 }
             };
+
             $scope.filterBy = new FilterBy($scope, this.hypervisorTypes);
+
             $scope.funcSearch = function (win) {
                 win.open();
             };
+
             $scope.funcCreateVirtualRouterOffering = function (win) {
                 win.open();
             };
+
             $scope.funcDeleteVirtualRouterOffering = function () {
                 $scope.deleteVirtualRouterOffering.open();
             };
+
             $scope.optionsDeleteVirtualRouterOffering = {
                 title: 'DELETE VIRTUAL ROUTER OFFERING',
                 btnType: 'btn-danger',
@@ -27552,15 +30882,19 @@ var MVirtualRouterOffering;
                     });
                 }
             };
+
             $scope.funcRefresh = function () {
                 $scope.oVirtualRouterOfferingGrid.refresh();
             };
+
             $scope.funcIsActionShow = function () {
                 return !Utils.isEmptyObject($scope.model.current);
             };
+
             $scope.funcIsActionDisabled = function () {
                 return Utils.notNullnotUndefined($scope.model.current) && $scope.model.current.isInProgress();
             };
+
             $scope.optionsCreateVirtualRouterOffering = {
                 done: function (virtualRouterOffering) {
                     $scope.oVirtualRouterOfferingGrid.refresh();
@@ -27571,12 +30905,14 @@ var MVirtualRouterOffering;
         return Controller;
     })();
     MVirtualRouterOffering.Controller = Controller;
+
     var CreateVirtualRouterOfferingOptions = (function () {
         function CreateVirtualRouterOfferingOptions() {
         }
         return CreateVirtualRouterOfferingOptions;
     })();
     MVirtualRouterOffering.CreateVirtualRouterOfferingOptions = CreateVirtualRouterOfferingOptions;
+
     var CreateVirtualRouterOffering = (function () {
         function CreateVirtualRouterOffering(api, virtualRouterOfferingMgr, l3Mgr, imgMgr, zoneMgr, bsMgr) {
             var _this = this;
@@ -27601,6 +30937,7 @@ var MVirtualRouterOffering;
                         _this.options = parentScope[optionName];
                     });
                 }
+
                 var infoPage = $scope.infoPage = {
                     activeState: true,
                     name: null,
@@ -27645,10 +30982,7 @@ var MVirtualRouterOffering;
                         return false;
                     },
                     canMoveToNext: function () {
-                        return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.memorySize) && Utils.notNullnotUndefined(this.cpuNum)
-                            && Utils.notNullnotUndefined(this.cpuSpeed) && Utils.notNullnotUndefined(this.zoneUuid) && Utils.notNullnotUndefined(this.managementNetworkUuid)
-                            && Utils.notNullnotUndefined(this.publicNetworkUuid) && Utils.notNullnotUndefined(this.imageUuid)
-                            && this.isCpuNumValid() && this.isCpuSpeedValid() && this.isMemoryValid();
+                        return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.memorySize) && Utils.notNullnotUndefined(this.cpuNum) && Utils.notNullnotUndefined(this.cpuSpeed) && Utils.notNullnotUndefined(this.zoneUuid) && Utils.notNullnotUndefined(this.managementNetworkUuid) && Utils.notNullnotUndefined(this.publicNetworkUuid) && Utils.notNullnotUndefined(this.imageUuid) && this.isCpuNumValid() && this.isCpuSpeedValid() && this.isMemoryValid();
                     },
                     show: function () {
                         this.getAnchorElement().tab('show');
@@ -27680,6 +31014,7 @@ var MVirtualRouterOffering;
                         this.activeState = false;
                     }
                 };
+
                 var mediator = $scope.mediator = {
                     currentPage: infoPage,
                     movedToPage: function (page) {
@@ -27692,6 +31027,7 @@ var MVirtualRouterOffering;
                         if (Utils.notNullnotUndefined($scope.infoPage.allocatorStrategy) && $scope.infoPage.allocatorStrategy == "") {
                             $scope.infoPage.allocatorStrategy = null;
                         }
+
                         $scope.infoPage.memorySize = Utils.parseSize($scope.infoPage.memorySize);
                         virtualRouterOfferingMgr.create(infoPage, function (ret) {
                             if (Utils.notNullnotUndefined(_this.options.done)) {
@@ -27701,9 +31037,11 @@ var MVirtualRouterOffering;
                         $scope.winCreateVirtualRouterOffering__.close();
                     }
                 };
+
                 $scope.button = new Utils.WizardButton([
                     infoPage
                 ], mediator);
+
                 $scope.winCreateVirtualRouterOfferingOptions__ = {
                     width: '700px',
                     animation: false,
@@ -27711,37 +31049,39 @@ var MVirtualRouterOffering;
                     draggable: false,
                     resizable: false
                 };
+
                 $scope.allocatorStrategyOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] })
                 };
+
                 $scope.mgmtL3Options__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
                 };
+
                 $scope.pubL3Options__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
                 };
+
                 $scope.imageOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Format:</span><span>#: format #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">Format:</span><span>#: format #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
                 };
+
                 $scope.zoneOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
                     template: "<div style='color: black'><span class='z-label'>Name</span>: #: name #</div><div style='color: black'><span class='z-label'>State:</span>#: state #</div><div style='color: black'><span class='z-label'>UUID:</span> #: uuid #</div>"
                 };
+
                 $scope.$watch(function () {
                     return $scope.infoPage.zoneUuid;
                 }, function () {
@@ -27749,6 +31089,7 @@ var MVirtualRouterOffering;
                     if (!Utils.notNullnotUndefined(zoneUuid)) {
                         return;
                     }
+
                     var qobj = new ApiHeader.QueryObject();
                     qobj.conditions = [
                         {
@@ -27765,6 +31106,7 @@ var MVirtualRouterOffering;
                             $scope.infoPage.managementNetworkUuid = l3s[0].uuid;
                         }
                     });
+
                     var chain = new Utils.Chain();
                     var bsUuids = [];
                     chain.then(function () {
@@ -27787,6 +31129,7 @@ var MVirtualRouterOffering;
                             chain.next();
                             return;
                         }
+
                         qobj = new ApiHeader.QueryObject();
                         qobj.conditions = [
                             {
@@ -27800,6 +31143,7 @@ var MVirtualRouterOffering;
                                 value: 'Ready'
                             }
                         ];
+
                         imgMgr.query(qobj, function (imgs) {
                             $scope.imageOptions__.dataSource.data(imgs);
                             if (imgs.length > 0) {
@@ -27809,6 +31153,7 @@ var MVirtualRouterOffering;
                         });
                     }).start();
                 });
+
                 _this.$scope = $scope;
             };
             this.restrict = 'EA';
@@ -27845,12 +31190,16 @@ var MVirtualRouterOffering;
     })();
     MVirtualRouterOffering.CreateVirtualRouterOffering = CreateVirtualRouterOffering;
 })(MVirtualRouterOffering || (MVirtualRouterOffering = {}));
-angular.module('root').factory('VirtualRouterOfferingManager', ['Api', '$rootScope', function (api, $rootScope) {
+
+angular.module('root').factory('VirtualRouterOfferingManager', [
+    'Api', '$rootScope', function (api, $rootScope) {
         return new MVirtualRouterOffering.VirtualRouterOfferingManager(api, $rootScope);
-    }]).directive('zCreateVirtualRouterOffering', ['Api', 'VirtualRouterOfferingManager', 'L3NetworkManager', 'ImageManager', 'ZoneManager', 'BackupStorageManager',
+    }]).directive('zCreateVirtualRouterOffering', [
+    'Api', 'VirtualRouterOfferingManager', 'L3NetworkManager', 'ImageManager', 'ZoneManager', 'BackupStorageManager',
     function (api, virtualRouterOfferingMgr, l3Mgr, imgMgr, zoneMgr, bsMgr) {
         return new MVirtualRouterOffering.CreateVirtualRouterOffering(api, virtualRouterOfferingMgr, l3Mgr, imgMgr, zoneMgr, bsMgr);
-    }]).config(['$routeProvider', function (route) {
+    }]).config([
+    '$routeProvider', function (route) {
         route.when('/virtualRouterOffering', {
             templateUrl: '/static/templates/virtualRouterOffering/virtualRouterOffering.html',
             controller: 'MVirtualRouterOffering.Controller',
@@ -27908,6 +31257,7 @@ angular.module('root').factory('VirtualRouterOfferingManager', ['Api', '$rootSco
                     }).done(function () {
                         defer.resolve(ret);
                     }).start();
+
                     return defer.promise;
                 }
             }
@@ -27926,6 +31276,7 @@ var MDashboard;
         return DashboardManager;
     })();
     MDashboard.DashboardManager = DashboardManager;
+
     var Controller = (function () {
         function Controller($scope, api, $location, zoneMgr) {
             this.$scope = $scope;
@@ -27962,6 +31313,7 @@ var MDashboard;
                 available: 0,
                 percent: 0
             });
+
             $scope.capacityGrid = {
                 resizable: true,
                 scrollable: true,
@@ -28001,6 +31353,7 @@ var MDashboard;
                                     cpu.set('total', Utils.toHZString(ret.totalCpu));
                                     cpu.set('available', Utils.toHZString(ret.availableCpu));
                                     cpu.set('percent', Utils.toPercentageString(ret.totalCpu == 0 ? 0 : ret.availableCpu / ret.totalCpu));
+
                                     memory.set('total', Utils.toSizeString(ret.totalMemory));
                                     memory.set('available', Utils.toSizeString(ret.availableMemory));
                                     memory.set('percent', Utils.toPercentageString(ret.totalMemory == 0 ? 0 : ret.availableMemory / ret.totalMemory));
@@ -28028,6 +31381,7 @@ var MDashboard;
                                 });
                                 chain.next();
                             }).start();
+
                             options.success({
                                 data: [
                                     cpu,
@@ -28042,6 +31396,7 @@ var MDashboard;
                     }
                 })
             };
+
             var vm = new kendo.data.ObservableObject({
                 name: 'VM INSTANCE',
                 link: 'vmInstance',
@@ -28127,6 +31482,7 @@ var MDashboard;
                 link: 'virtualRouter',
                 amount: 0
             });
+
             $scope.resourceAmountGrid = {
                 resizable: true,
                 scrollable: true,
@@ -28301,6 +31657,7 @@ var MDashboard;
                                 });
                                 chain.next();
                             }).start();
+
                             options.success({
                                 data: [
                                     vm,
@@ -28333,9 +31690,12 @@ var MDashboard;
     })();
     MDashboard.Controller = Controller;
 })(MDashboard || (MDashboard = {}));
-angular.module('root').factory('DashboardManager', ['Api', '$rootScope', function (api, $rootScope) {
+
+angular.module('root').factory('DashboardManager', [
+    'Api', '$rootScope', function (api, $rootScope) {
         return new MDashboard.DashboardManager(api, $rootScope);
-    }]).config(['$routeProvider', function (route) {
+    }]).config([
+    '$routeProvider', function (route) {
         route.when('/dashboard', {
             templateUrl: '/static/templates/dashboard/dashboard.html',
             controller: 'MDashboard.Controller'
@@ -28353,6 +31713,7 @@ var MGlobalConfig;
         GlobalConfigManager.prototype.setSortBy = function (sortBy) {
             this.sortBy = sortBy;
         };
+
         GlobalConfigManager.prototype.query = function (qobj, callback) {
             var msg = new ApiHeader.APIQueryGlobalConfigMsg();
             msg.count = qobj.count === true;
@@ -28368,6 +31729,7 @@ var MGlobalConfig;
                 callback(ret.inventories, ret.total);
             });
         };
+
         GlobalConfigManager.prototype.update = function (config, done) {
             var msg = new ApiHeader.APIUpdateGlobalConfigMsg();
             msg.name = config.name;
@@ -28383,6 +31745,7 @@ var MGlobalConfig;
         return GlobalConfigManager;
     })();
     MGlobalConfig.GlobalConfigManager = GlobalConfigManager;
+
     var GlobalConfigModel = (function (_super) {
         __extends(GlobalConfigModel, _super);
         function GlobalConfigModel() {
@@ -28392,6 +31755,7 @@ var MGlobalConfig;
         return GlobalConfigModel;
     })(Utils.Model);
     MGlobalConfig.GlobalConfigModel = GlobalConfigModel;
+
     var OGlobalConfigGrid = (function (_super) {
         __extends(OGlobalConfigGrid, _super);
         function OGlobalConfigGrid($scope, globalConfigMgr) {
@@ -28420,6 +31784,7 @@ var MGlobalConfig;
                     width: '20%'
                 }
             ];
+
             this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
@@ -28431,10 +31796,12 @@ var MGlobalConfig;
                     });
                 });
             };
+
             this.options.dataSource.pageSize(30);
         }
         return OGlobalConfigGrid;
     })(Utils.OGrid);
+
     var Action = (function () {
         function Action($scope, globalConfigMgr) {
             this.$scope = $scope;
@@ -28445,6 +31812,7 @@ var MGlobalConfig;
         };
         return Action;
     })();
+
     var FilterBy = (function () {
         function FilterBy($scope, categories) {
             var _this = this;
@@ -28466,19 +31834,20 @@ var MGlobalConfig;
                 dataTextField: 'name',
                 dataValueField: 'value'
             };
+
             this.valueList = {
                 dataSource: new kendo.data.DataSource({
                     data: []
                 })
             };
+
             this.field = FilterBy.NONE;
             $scope.$watch(function () {
                 return _this.field;
             }, function () {
                 if (_this.isFieldNone()) {
                     _this.valueList.dataSource.data([]);
-                }
-                else if (_this.field == FilterBy.CATEGORY) {
+                } else if (_this.field == FilterBy.CATEGORY) {
                     _this.valueList.dataSource.data(_this.categories);
                 }
             });
@@ -28486,24 +31855,30 @@ var MGlobalConfig;
         FilterBy.prototype.isFieldNone = function () {
             return this.field == FilterBy.NONE;
         };
+
         FilterBy.prototype.confirm = function (popover) {
             this.$scope.oGlobalConfigGrid.setFilter(this.toKendoFilter());
             this.name = this.isFieldNone() ? null : Utils.sprintf('{0}:{1}', this.field, this.value);
             popover.toggle();
         };
+
         FilterBy.prototype.open = function (popover) {
             popover.toggle();
         };
+
         FilterBy.prototype.isValueListDisabled = function () {
             return !Utils.notNullnotUndefined(this.value);
         };
+
         FilterBy.prototype.getButtonName = function () {
             return this.name;
         };
+
         FilterBy.prototype.toKendoFilter = function () {
             if (this.isFieldNone()) {
                 return null;
             }
+
             return {
                 field: this.field,
                 operator: 'eq',
@@ -28514,6 +31889,7 @@ var MGlobalConfig;
         FilterBy.CATEGORY = 'category';
         return FilterBy;
     })();
+
     var DetailsController = (function () {
         function DetailsController($scope, gMgr, $routeParams, current) {
             var _this = this;
@@ -28522,13 +31898,17 @@ var MGlobalConfig;
             this.$routeParams = $routeParams;
             $scope.model = new GlobalConfigModel();
             $scope.model.current = current;
+
             $scope.action = new Action($scope, gMgr);
+
             $scope.funcRefresh = function () {
                 _this.loadSelf($scope.model.current);
             };
+
             $scope.funcToolbarShow = function () {
                 return Utils.notNullnotUndefined($scope.model.current);
             };
+
             $scope.editGlobalConfigOptions = {
                 config: current,
                 done: function (inv) {
@@ -28559,6 +31939,7 @@ var MGlobalConfig;
         return DetailsController;
     })();
     MGlobalConfig.DetailsController = DetailsController;
+
     var Controller = (function () {
         function Controller($scope, gMgr, configs, $location) {
             this.$scope = $scope;
@@ -28588,6 +31969,7 @@ var MGlobalConfig;
                     $scope.oGlobalConfigGrid.refresh();
                 }
             };
+
             $scope.optionsSearch = {
                 fields: ApiHeader.GlobalConfigInventoryQueryable,
                 name: 'GlobalConfig',
@@ -28607,6 +31989,7 @@ var MGlobalConfig;
                     });
                 }
             };
+
             $scope.funcGridDoubleClick = function (e) {
                 if (Utils.notNullnotUndefined($scope.model.current)) {
                     var url = Utils.sprintf('/globalConfig/{0}/{1}', $scope.model.current.category, $scope.model.current.name);
@@ -28614,33 +31997,42 @@ var MGlobalConfig;
                     e.preventDefault();
                 }
             };
+
             var categories = {};
             angular.forEach(configs, function (it) {
                 categories[it.category] = it;
             });
+
             var categoryNames = [];
             for (var k in categories) {
                 categoryNames.push(k);
             }
+
             $scope.filterBy = new FilterBy($scope, categoryNames);
+
             $scope.funcSearch = function (win) {
                 win.open();
             };
+
             $scope.funcRefresh = function () {
                 $scope.oGlobalConfigGrid.refresh();
             };
+
             $scope.funcIsActionShow = function () {
                 return !Utils.isEmptyObject($scope.model.current);
             };
+
             $scope.funcIsActionDisabled = function () {
                 return !Utils.notNullnotUndefined($scope.model.current);
             };
+
             $scope.editGlobalConfigOptions = {
                 config: null,
                 done: function () {
                     $scope.oGlobalConfigGrid.refresh();
                 }
             };
+
             $scope.$watch(function () {
                 return $scope.model.current;
             }, function () {
@@ -28653,6 +32045,7 @@ var MGlobalConfig;
         return Controller;
     })();
     MGlobalConfig.Controller = Controller;
+
     var EditGlobalConfig = (function () {
         function EditGlobalConfig(gMgr) {
             var _this = this;
@@ -28665,16 +32058,20 @@ var MGlobalConfig;
                 var parent = $scope.$parent;
                 parent[$attrs.zEditGlobalConfig] = _this;
                 _this.options = parent[$attrs.zOptions];
+
                 $scope.name = null;
                 $scope.category = null;
                 $scope.currentValue = null;
                 $scope.newValue = null;
+
                 $scope.canProceed = function () {
                     return Utils.notNullnotUndefined($scope.newValue) && $scope.newValue != $scope.currentValue;
                 };
+
                 $scope.cancel = function () {
                     $scope.editGlobalConfig__.close();
                 };
+
                 $scope.done = function () {
                     gMgr.update({
                         name: $scope.name,
@@ -28685,9 +32082,12 @@ var MGlobalConfig;
                             _this.options.done(inv);
                         }
                     });
+
                     $scope.editGlobalConfig__.close();
                 };
+
                 _this.$scope = $scope;
+
                 $scope.editGlobalConfigOptions__ = {
                     width: '550px'
                 };
@@ -28698,6 +32098,7 @@ var MGlobalConfig;
             this.$scope.category = this.options.config.category;
             this.$scope.currentValue = this.options.config.value;
             this.$scope.newValue = this.options.config.value;
+
             this.$scope.editGlobalConfig__.center();
             this.$scope.editGlobalConfig__.open();
         };
@@ -28705,11 +32106,15 @@ var MGlobalConfig;
     })();
     MGlobalConfig.EditGlobalConfig = EditGlobalConfig;
 })(MGlobalConfig || (MGlobalConfig = {}));
-angular.module('root').factory('GlobalConfigManager', ['Api', '$rootScope', function (api, $rootScope) {
+
+angular.module('root').factory('GlobalConfigManager', [
+    'Api', '$rootScope', function (api, $rootScope) {
         return new MGlobalConfig.GlobalConfigManager(api, $rootScope);
-    }]).directive('zEditGlobalConfig', ['GlobalConfigManager', function (gMgr) {
+    }]).directive('zEditGlobalConfig', [
+    'GlobalConfigManager', function (gMgr) {
         return new MGlobalConfig.EditGlobalConfig(gMgr);
-    }]).config(['$routeProvider', function (route) {
+    }]).config([
+    '$routeProvider', function (route) {
         route.when('/globalConfig', {
             templateUrl: '/static/templates/globalConfig/globalConfig.html',
             controller: 'MGlobalConfig.Controller',
@@ -28732,7 +32137,8 @@ angular.module('root').factory('GlobalConfigManager', ['Api', '$rootScope', func
                     var qobj = new ApiHeader.QueryObject();
                     var category = $route.current.params.category;
                     var name = $route.current.params.name;
-                    qobj.conditions = [{
+                    qobj.conditions = [
+                        {
                             name: 'category',
                             op: '=',
                             value: category
@@ -28778,6 +32184,7 @@ var Directive;
         return PanelHeaderIn;
     })();
     Directive.PanelHeaderIn = PanelHeaderIn;
+
     var PopoverImpl = (function () {
         function PopoverImpl($scope, $attrs, $element) {
             this.$scope = $scope;
@@ -28787,8 +32194,7 @@ var Directive;
             this.id = '#' + $attrs.id;
             if (Utils.notNullnotUndefined($attrs.zOptions)) {
                 this.options = $scope[$attrs.zOptions];
-            }
-            else {
+            } else {
                 this.options = {
                     html: true,
                     trigger: 'click',
@@ -28796,6 +32202,7 @@ var Directive;
                     container: 'body'
                 };
             }
+
             var contentId = $attrs.zContentId;
             var content = $element.parent().find('#' + contentId);
             content.hide();
@@ -28809,14 +32216,15 @@ var Directive;
         PopoverImpl.prototype.toggle = function () {
             if (!this.isOpen) {
                 this.popover.popover('show');
-            }
-            else {
+            } else {
                 this.popover.popover('hide');
             }
+
             this.isOpen = !this.isOpen;
         };
         return PopoverImpl;
     })();
+
     var Popover = (function () {
         function Popover() {
             this.scope = true;
@@ -28830,6 +32238,7 @@ var Directive;
         return Popover;
     })();
     Directive.Popover = Popover;
+
     var SearchBoxSchema = (function () {
         function SearchBoxSchema() {
         }
@@ -28839,52 +32248,55 @@ var Directive;
         return SearchBoxSchema;
     })();
     Directive.SearchBoxSchema = SearchBoxSchema;
+
     var SearchCondition = (function () {
         function SearchCondition() {
         }
         SearchCondition.prototype.equals = function (obj) {
             return obj.name === this.name && obj.op === this.op && obj.value === this.value;
         };
+
         SearchCondition.prototype.setListValue = function (val) {
             this.type = SearchBoxSchema.VALUE_TYPE_LIST;
             this.listValue = val;
         };
+
         SearchCondition.prototype.setTextValue = function (val) {
             this.type = SearchBoxSchema.VALUE_TYPE_TEXT;
             this.value = val;
         };
+
         SearchCondition.prototype.setDateTimeValue = function (val) {
             this.type = SearchBoxSchema.VALUE_TYPE_TIMESTAMP;
             this.value = val;
         };
+
         SearchCondition.prototype.toQueryCondition = function () {
             var ret = new ApiHeader.QueryCondition();
             ret.name = this.name;
             ret.op = this.op;
             if (this.type == SearchBoxSchema.VALUE_TYPE_TEXT) {
                 ret.value = this.value;
-            }
-            else if (this.type == SearchBoxSchema.VALUE_TYPE_LIST) {
+            } else if (this.type == SearchBoxSchema.VALUE_TYPE_LIST) {
                 ret.value = this.listValue;
-            }
-            else if (this.type == SearchBoxSchema.VALUE_TYPE_TIMESTAMP) {
+            } else if (this.type == SearchBoxSchema.VALUE_TYPE_TIMESTAMP) {
                 ret.value = this.dateTimeValue;
             }
             return ret;
         };
+
         SearchCondition.prototype.hasValue = function () {
             if (this.type == SearchBoxSchema.VALUE_TYPE_TEXT) {
                 return Utils.notNullnotUndefined(this.value);
-            }
-            else if (this.type == SearchBoxSchema.VALUE_TYPE_LIST) {
+            } else if (this.type == SearchBoxSchema.VALUE_TYPE_LIST) {
                 return Utils.notNullnotUndefined(this.listValue);
-            }
-            else if (this.type == SearchBoxSchema.VALUE_TYPE_TIMESTAMP) {
+            } else if (this.type == SearchBoxSchema.VALUE_TYPE_TIMESTAMP) {
                 return Utils.notNullnotUndefined(this.dateTimeValue);
             }
         };
         return SearchCondition;
     })();
+
     var SearchBox = (function () {
         function SearchBox($compile) {
             var _this = this;
@@ -28899,9 +32311,12 @@ var Directive;
                 var parentScope = $scope.$parent;
                 parentScope[instanceName] = _this;
                 var options = parentScope[$attrs.zOptions];
+
                 _this.$scope = $scope;
                 _this.options = options;
+
                 $scope.currentCondition = new SearchCondition();
+
                 $scope.funcValueShow = function (type) {
                     var schema = _this.getSchema();
                     if (!Utils.notNullnotUndefined(schema)) {
@@ -28909,24 +32324,28 @@ var Directive;
                     }
                     return schema.type == type;
                 };
+
                 $scope.valueListOptions__ = {};
+
                 $scope.name = options.name;
+
                 $scope.funcCancel = function () {
                     $scope.winSearch__.close();
                 };
+
                 $scope.funcSearch = function () {
                     var ret = [];
                     var tmp = {};
                     angular.forEach(_this.conditions, function (cond) {
                         if (cond.op != 'in' && cond.op != 'not in') {
                             ret.push(cond);
-                        }
-                        else {
+                        } else {
                             var queue = tmp[cond.name];
                             if (!Utils.notNullnotUndefined(queue)) {
                                 queue = {};
                                 tmp[cond.name] = queue;
                             }
+
                             if (cond.op == 'in') {
                                 var inq = queue['in'];
                                 if (!Utils.notNullnotUndefined(inq)) {
@@ -28934,8 +32353,7 @@ var Directive;
                                     queue['in'] = inq;
                                 }
                                 inq.push(cond.value);
-                            }
-                            else {
+                            } else {
                                 var notinq = queue['not in'];
                                 if (!Utils.notNullnotUndefined(notinq)) {
                                     notinq = [];
@@ -28945,6 +32363,7 @@ var Directive;
                             }
                         }
                     });
+
                     for (var k in tmp) {
                         var queue = tmp[k];
                         var inq = queue['in'];
@@ -28964,24 +32383,28 @@ var Directive;
                             });
                         }
                     }
+
                     if (Utils.notNullnotUndefined(_this.options.done)) {
                         _this.options.done(ret);
                     }
+
                     $scope.winSearch__.close();
                 };
+
                 $scope.funcCanAdd = function () {
                     if ($scope.currentCondition.op != 'is null' && $scope.currentCondition.op != 'is not null') {
-                        return Utils.notNullnotUndefined($scope.currentCondition.name) && Utils.notNullnotUndefined($scope.currentCondition.op)
-                            && $scope.currentCondition.hasValue();
-                    }
-                    else {
+                        return Utils.notNullnotUndefined($scope.currentCondition.name) && Utils.notNullnotUndefined($scope.currentCondition.op) && $scope.currentCondition.hasValue();
+                    } else {
                         return Utils.notNullnotUndefined($scope.currentCondition.name) && Utils.notNullnotUndefined($scope.currentCondition.op);
                     }
                 };
+
                 $scope.funcCanConditionsShow = function () {
                     return !Utils.isEmptyObject(_this.conditions);
                 };
+
                 $scope.duplicateCondition = false;
+
                 $scope.funcAddCondition = function () {
                     $scope.duplicateCondition = false;
                     var cur = $scope.currentCondition;
@@ -28992,24 +32415,29 @@ var Directive;
                             return;
                         }
                     }
+
                     _this.conditions[Utils.uuid()] = $scope.currentCondition.toQueryCondition();
                     _this.newCurrentCondition();
                 };
+
                 $scope.optionsSearch__ = {
                     width: "680px",
                     animation: false,
                     resizable: false
                 };
+
                 $scope.valueTimestampOptions__ = {
                     value: null,
                     format: 'yyyy-MM-dd HH:mm:ss',
                     timeFormat: "HH:mm"
                 };
+
                 $scope.valueListOptions__ = {
                     dataSource: {
                         data: []
                     }
                 };
+
                 var fieldNames = [];
                 fieldNames = fieldNames.concat(options.fields);
                 fieldNames.push(SearchBox.USER_TAG_CONDITION_NAME);
@@ -29022,26 +32450,26 @@ var Directive;
                         var list = e.sender;
                         Utils.safeApply($scope, function () {
                             $scope.currentCondition.name = list.value();
+
                             if ($scope.currentCondition.name === SearchBox.USER_TAG_CONDITION_NAME) {
                                 $scope.optionsOp.setData(SearchBox.TAG_OPS);
-                            }
-                            else {
+                            } else {
                                 $scope.optionsOp.setData(SearchBox.OPS);
                             }
+
                             var schema = _this.getSchema();
                             if (!Utils.notNullnotUndefined(schema) || schema.type == SearchBoxSchema.VALUE_TYPE_TEXT) {
                                 $scope.currentCondition.setTextValue($scope.currentCondition.value);
-                            }
-                            else if (schema.type == SearchBoxSchema.VALUE_TYPE_LIST) {
+                            } else if (schema.type == SearchBoxSchema.VALUE_TYPE_LIST) {
                                 $scope.valueList__.dataSource.data(schema.list);
                                 $scope.currentCondition.setListValue(schema.list[0]);
-                            }
-                            else if (schema.type == SearchBoxSchema.VALUE_TYPE_TIMESTAMP) {
+                            } else if (schema.type == SearchBoxSchema.VALUE_TYPE_TIMESTAMP) {
                                 $scope.currentCondition.setDateTimeValue($scope.currentCondition.dateTimeValue);
                             }
                         });
                     }
                 };
+
                 $scope.optionsOp = {
                     dataSource: new kendo.data.DataSource({
                         data: SearchBox.OPS
@@ -29057,6 +32485,7 @@ var Directive;
                         });
                     }
                 };
+
                 $scope.$watch(function () {
                     return _this.conditions;
                 }, function () {
@@ -29065,24 +32494,29 @@ var Directive;
                         if (c.op != '=') {
                             continue;
                         }
+
                         var schema = _this.options.schema[c.name];
                         if (!Utils.notNullnotUndefined(schema)) {
                             continue;
                         }
+
                         if (!Utils.notNullnotUndefined(schema.getQueryableFields)) {
                             continue;
                         }
+
                         var newFieldNames = [];
                         newFieldNames = newFieldNames.concat(schema.getQueryableFields(c.value));
                         newFieldNames.push(SearchBox.USER_TAG_CONDITION_NAME);
                         $scope.optionsField.dataSource.data(newFieldNames);
                         return;
                     }
+
                     $scope.optionsField.dataSource.data(fieldNames);
                     if (Utils.notNullnotUndefined($scope.fieldCombo__)) {
                         $scope.fieldCombo__.value(fieldNames[0]);
                     }
                 }, true);
+
                 $scope.funcRemoveCondition = function (uuid) {
                     var cond = _this.conditions[uuid];
                     var schema = _this.options.schema[cond.name];
@@ -29090,10 +32524,12 @@ var Directive;
                         delete _this.conditions[uuid];
                         return;
                     }
+
                     for (var k in schema.removeCascade) {
                         if (k != cond.name) {
                             continue;
                         }
+
                         angular.forEach(schema.removeCascade[k], function (cascadeField) {
                             for (var ck in _this.conditions) {
                                 var cv = _this.conditions[ck];
@@ -29105,28 +32541,26 @@ var Directive;
                     }
                     delete _this.conditions[uuid];
                 };
+
                 var conditionTable = $element.find('#conditionTable');
+
                 $scope.$watch(function () {
                     return _this.conditions;
                 }, function () {
                     angular.forEach(conditionTable.children(), function (child) {
                         child.remove();
                     });
+
                     if (Utils.isEmptyObject(_this.conditions)) {
                         return;
                     }
+
                     var header = '<tr><th class="z-label">CONDITIONS</th><th></th></tr>';
                     header = $compile(header)($scope);
                     conditionTable.append(header);
+
                     angular.forEach(_this.conditions, function (cond, uuid) {
-                        var tr = '<tr>'
-                            + '<td>'
-                            + '<span class="z-search-condition">' + cond.name + '</span>'
-                            + '<span class="z-search-condition">' + cond.op + '</span>'
-                            + '<span class="z-search-condition">' + cond.value + '</span>'
-                            + '</td>'
-                            + '<td><button type="button" class="btn btn-xs btn-danger pull-right" ng-click="funcRemoveCondition(\'' + uuid + '\')"><i class="fa fa-minus"></i></button></td>'
-                            + '</tr>';
+                        var tr = '<tr>' + '<td>' + '<span class="z-search-condition">' + cond.name + '</span>' + '<span class="z-search-condition">' + cond.op + '</span>' + '<span class="z-search-condition">' + cond.value + '</span>' + '</td>' + '<td><button type="button" class="btn btn-xs btn-danger pull-right" ng-click="funcRemoveCondition(\'' + uuid + '\')"><i class="fa fa-minus"></i></button></td>' + '</tr>';
                         tr = $compile(tr)($scope);
                         conditionTable.append(tr);
                     });
@@ -29141,19 +32575,17 @@ var Directive;
             if (Utils.notNullnotUndefined(schema)) {
                 if (schema.type == SearchBoxSchema.VALUE_TYPE_LIST) {
                     this.$scope.currentCondition.setListValue(this.$scope.valueList__.value());
-                }
-                else if (schema.type == SearchBoxSchema.VALUE_TYPE_TIMESTAMP) {
+                } else if (schema.type == SearchBoxSchema.VALUE_TYPE_TIMESTAMP) {
                     this.$scope.valueDateTime__.value(null);
                     this.$scope.currentCondition.setDateTimeValue(null);
-                }
-                else {
+                } else {
                     this.$scope.currentCondition.setTextValue(null);
                 }
-            }
-            else {
+            } else {
                 this.$scope.currentCondition.setTextValue(null);
             }
         };
+
         SearchBox.prototype.open = function () {
             this.conditions = {};
             this.newCurrentCondition();
@@ -29162,6 +32594,7 @@ var Directive;
             this.$scope.winSearch__.center();
             this.$scope.winSearch__.open();
         };
+
         SearchBox.prototype.getSchema = function () {
             return this.options.schema[this.$scope.currentCondition.name];
         };
@@ -29171,6 +32604,7 @@ var Directive;
         return SearchBox;
     })();
     Directive.SearchBox = SearchBox;
+
     var GridDoubleClick = (function () {
         function GridDoubleClick() {
             this.scope = false;
@@ -29191,21 +32625,25 @@ var Directive;
         return GridDoubleClick;
     })();
     Directive.GridDoubleClick = GridDoubleClick;
+
     var SortByData = (function () {
         function SortByData() {
         }
         SortByData.prototype.isValid = function () {
             return Utils.notNullnotUndefined(this.field);
         };
+
         SortByData.prototype.toString = function () {
             if (!this.isValid()) {
                 return 'Sort By';
             }
+
             return Utils.sprintf('{0}:{1}', this.field, this.direction);
         };
         return SortByData;
     })();
     Directive.SortByData = SortByData;
+
     var SortBy = (function () {
         function SortBy() {
             this.scope = true;
@@ -29216,6 +32654,7 @@ var Directive;
                 $scope.funcShow = function (popover) {
                     popover.toggle();
                 };
+
                 var parent = $scope.$parent;
                 var options = parent[$attrs.zOptions];
                 var fields = [
@@ -29224,6 +32663,7 @@ var Directive;
                         value: '__null__'
                     }
                 ];
+
                 fields = fields.concat(options.fields);
                 $scope.optionsSortBy__ = {
                     dataSource: new kendo.data.DataSource({
@@ -29232,9 +32672,11 @@ var Directive;
                     dataTextField: 'name',
                     dataValueField: 'value'
                 };
+
                 $scope.field = fields[0].value;
                 $scope.direction = "desc";
                 $scope.buttonName = "Sort By";
+
                 $scope.funcSortByConfirm = function (popover) {
                     popover.toggle();
                     var ret = new SortByData();
@@ -29249,16 +32691,19 @@ var Directive;
         return SortBy;
     })();
     Directive.SortBy = SortBy;
+
     var DeleteConfirmOptions = (function () {
         function DeleteConfirmOptions() {
         }
         return DeleteConfirmOptions;
     })();
     Directive.DeleteConfirmOptions = DeleteConfirmOptions;
+
     var DeleteConfirmImpl = (function () {
         function DeleteConfirmImpl($scope, $attrs, $element) {
             this.$scope = $scope;
             var options = $scope.$parent[$attrs.zOptions];
+
             $scope.optionsDelete__ = {
                 animation: false,
                 modal: true,
@@ -29266,6 +32711,7 @@ var Directive;
                 resizable: false,
                 width: "500px"
             };
+
             $scope.title = options.title;
             $scope.description = options.description;
             if (Utils.notNullnotUndefined(options.html)) {
@@ -29273,10 +32719,12 @@ var Directive;
                 var el = $(options.html);
                 desc.append(el);
             }
+
             $scope.confirm = function () {
                 options.confirm();
                 $scope.winDelete__.close();
             };
+
             $scope.cancel = function () {
                 var c = options.cancel;
                 if (Utils.notNullnotUndefined(c)) {
@@ -29292,6 +32740,7 @@ var Directive;
         };
         return DeleteConfirmImpl;
     })();
+
     var DeleteConfirm = (function () {
         function DeleteConfirm() {
             this.scope = true;
@@ -29305,10 +32754,12 @@ var Directive;
         return DeleteConfirm;
     })();
     Directive.DeleteConfirm = DeleteConfirm;
+
     var ConfirmBoxImpl = (function () {
         function ConfirmBoxImpl($scope, $attrs, $element) {
             this.$scope = $scope;
             var options = this.options = $scope.$parent[$attrs.zOptions];
+
             $scope.optionsConfirmBox__ = {
                 animation: false,
                 modal: true,
@@ -29316,23 +32767,28 @@ var Directive;
                 resizable: false,
                 width: Utils.notNullnotUndefined(options.width) ? options.width : '500px'
             };
+
             $scope.btnType = Utils.notNullnotUndefined(options.btnType) ? options.btnType : 'btn-primary';
             $scope.title = options.title;
+
             if (Utils.notNullnotUndefined(options.html)) {
                 var desc = $element.find('#description');
                 var el = $(options.html);
                 desc.append(el);
             }
+
             $scope.confirm = function () {
                 options.confirm();
                 $scope.confirmBox__.close();
             };
+
             $scope.canProceed = function () {
                 if (Utils.notNullnotUndefined(options.canProceed)) {
                     return options.canProceed();
                 }
                 return true;
             };
+
             $scope.cancel = function () {
                 var c = options.cancel;
                 if (Utils.notNullnotUndefined(c)) {
@@ -29345,11 +32801,13 @@ var Directive;
             if (Utils.notNullnotUndefined(this.options.description)) {
                 this.$scope.description = this.options.description();
             }
+
             this.$scope.confirmBox__.center();
             this.$scope.confirmBox__.open();
         };
         return ConfirmBoxImpl;
     })();
+
     var ConfirmBox = (function () {
         function ConfirmBox() {
             this.scope = true;
@@ -29364,12 +32822,13 @@ var Directive;
     })();
     Directive.ConfirmBox = ConfirmBox;
 })(Directive || (Directive = {}));
-angular.module('root')
-    .directive("zPanelHeaderIn", function () {
+
+angular.module('root').directive("zPanelHeaderIn", function () {
     return new Directive.PanelHeaderIn();
 }).directive('zPopover', function () {
     return new Directive.Popover();
-}).directive('zSearch', ['$compile', function ($compile) {
+}).directive('zSearch', [
+    '$compile', function ($compile) {
         return new Directive.SearchBox($compile);
     }]).directive('zGridDoubleClick', function () {
     return new Directive.GridDoubleClick();
