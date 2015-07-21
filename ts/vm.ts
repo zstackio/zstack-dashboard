@@ -257,6 +257,41 @@ module MVmInstance {
       });
     }
 
+    attachL3Network(vm: VmInstance, l3Uuid: string, done: ()=>void) {
+      vm.progressOn();
+      var msg = new ApiHeader.APIAttachL3NetworkToVmMsg();
+      msg.l3NetworkUuid = l3Uuid;
+      msg.vmInstanceUuid = vm.uuid;
+      this.api.asyncApi(msg, (ret: ApiHeader.APIAttachL3NetworkToVmEvent)=>{
+        vm.updateObservableObject(ret.inventory);
+        vm.progressOff();
+        if (Utils.notNullnotUndefined(done)) {
+          done();
+        }
+        this.$rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
+          msg: Utils.sprintf('Attached a L3 network to the VM: {0}', vm.name),
+          link: Utils.sprintf('/#/vmInstance/{0}', vm.uuid)
+        });
+      });
+    }
+
+    detachL3Network(vm: VmInstance, nicUuid: string, done:()=>void) {
+      vm.progressOn();
+      var msg = new ApiHeader.APIDetachL3NetworkFromVmMsg();
+      msg.vmNicUuid = nicUuid;
+      this.api.asyncApi(msg, (ret: ApiHeader.APIDetachL3NetworkFromVmEvent)=>{
+        vm.updateObservableObject(ret.inventory);
+        vm.progressOff();
+        if (Utils.notNullnotUndefined(done)) {
+          done();
+        }
+        this.$rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
+          msg: Utils.sprintf('Detached a L3 network from the VM: {0}', vm.name),
+          link: Utils.sprintf('/#/vmInstance/{0}', vm.uuid)
+        });
+      });
+    }
+
     attachVolume(vm: VmInstance, volUuid: string, done: (vol: ApiHeader.VolumeInventory)=>void) {
       vm.progressOn();
       var msg = new ApiHeader.APIAttachDataVolumeToVmMsg();
@@ -433,6 +468,14 @@ module MVmInstance {
       this.$scope.detachVolume.open();
     }
 
+    attachL3Network() {
+      this.$scope.attachL3Network.open();
+    }
+
+    detachL3Network() {
+      this.$scope.detachL3Network.open();
+    }
+
     console() {
       this.$scope.console();
     }
@@ -456,6 +499,11 @@ module MVmInstance {
         return this.$scope.model.current.allVolumes.length > 0;
       } else if (action == 'console' && Utils.notNullnotUndefined(this.$scope.model.current)) {
         return this.$scope.model.current.state == 'Starting' || this.$scope.model.current.state == 'Running' || this.$scope.model.current.state == 'Rebooting' || this.$scope.model.current.state == 'Stopping';
+      } else if (action == 'attachL3Network' && Utils.notNullnotUndefined(this.$scope.model.current)) {
+        return this.$scope.model.current.state == 'Running' || this.$scope.model.current.state == 'Stopped';
+      } else if (action == 'detachL3Network'&& Utils.notNullnotUndefined(this.$scope.model.current)) {
+        return (this.$scope.model.current.state == 'Running' || this.$scope.model.current.state == 'Stopped') &&
+            this.$scope.model.current.vmNics.length > 0;
       } else {
         return false;
       }
@@ -557,7 +605,11 @@ module MVmInstance {
       var qobj = new ApiHeader.QueryObject();
       qobj.addCondition({name: 'uuid', op: '=', value: uuid});
       this.vmMgr.query(qobj, (vms : VmInstance[], total:number)=> {
-        this.$scope.model.current = vms[0];
+        Utils.safeApply(this.$scope, ()=>{
+            var c = this.$scope.model.current = vms[0];
+            this.$scope.optionsNicGrid.dataSource.data(c.vmNics);
+            this.$scope.optionsVolumeGrid.dataSource.data(c.allVolumes);
+        });
       });
     }
 
@@ -634,6 +686,20 @@ module MVmInstance {
 
       $scope.optionsMigrateVm = {
         vm: current
+      };
+
+      $scope.optionsAttachL3Network = {
+        vm: current,
+        done: ()=> {
+          $scope.funcRefresh();
+        }
+      };
+
+      $scope.optionsDetachL3Network = {
+        vm: current,
+        done: ()=> {
+          $scope.funcRefresh();
+        }
       };
 
       $scope.optionsAttachVolume = {
@@ -924,6 +990,14 @@ module MVmInstance {
         vm: null
       };
 
+      $scope.optionsAttachL3Network = {
+        vm: null
+      };
+
+      $scope.optionsDetachL3Network = {
+        vm: null
+      };
+
       $scope.$watch(()=>{
         return $scope.model.current;
       },()=>{
@@ -931,6 +1005,8 @@ module MVmInstance {
           $scope.optionsMigrateVm.vm = $scope.model.current;
           $scope.optionsAttachVolume.vm = $scope.model.current;
           $scope.optionsDetachVolume.vm = $scope.model.current;
+          $scope.optionsAttachL3Network.vm = $scope.model.current;
+          $scope.optionsDetachL3Network.vm = $scope.model.current;
         }
       });
     }
@@ -1228,7 +1304,7 @@ module MVmInstance {
             this.l3NetworkStaticIps = [];
             for (var i = 0; i < l3NetworkGridRawData.length; ++i) {
               this.l3NetworkUuids.push(l3NetworkGridRawData[i].uuid);
-              if(Utils.notNullnotUndefined(this.l3NetworkIp) && this.l3NetworkIp != "") { 
+              if(Utils.notNullnotUndefined(this.l3NetworkIp) && this.l3NetworkIp != "") {
                 this.l3NetworkStaticIps.push({
                   uuid: l3NetworkGridRawData[i].uuid,
                   staticIp: l3NetworkGridRawData[i].staticIp
@@ -1248,7 +1324,7 @@ module MVmInstance {
                 break;
               }
             }
-            if(Utils.notNullnotUndefined(this.l3NetworkIp)) { 
+            if(Utils.notNullnotUndefined(this.l3NetworkIp)) {
               l3Network.staticIp = this.l3NetworkIp.trim();
             }
 
@@ -1265,7 +1341,7 @@ module MVmInstance {
             if(!updated) {
               $scope.l3NetworkGrid__.dataSource.pushCreate(l3Network);
             }
-            
+
             this.syncL3NetworkDataFromView();
 
             $scope.defaultL3NetworkOptions__.dataSource.data($scope.l3NetworkGrid__.dataSource.data());
@@ -1571,6 +1647,199 @@ module MVmInstance {
     }
   }
 
+  export class AttachL3Network implements ng.IDirective {
+    link: (scope: ng.IScope,
+           instanceElement: ng.IAugmentedJQuery,
+           instanceAttributes: ng.IAttributes,
+           controller: any,
+           transclude: ng.ITranscludeFunction
+    ) => void;
+    scope : any;
+    controller: any;
+    restrict: string;
+    replace: boolean;
+    templateUrl: any;
+
+    options: any;
+    $scope: any;
+
+
+    open() {
+      this.$scope.l3NetworkList__.value([]);
+      var chain  = new Utils.Chain();
+      chain.then(()=> {
+        this.api.getVmAttachableL3Networks(this.options.vm.uuid, (l3s: ApiHeader.L3NetworkInventory[])=>{
+          this.$scope.l3NetworkListOptions__.dataSource.data(l3s);
+          chain.next();
+        });
+      }).done(()=>{
+        this.$scope.attachL3Network__.center();
+        this.$scope.attachL3Network__.open();
+      }).start();
+    }
+
+    constructor(private api: Utils.Api, private vmMgr: VmInstanceManager) {
+      this.scope = true;
+      this.restrict = 'EA';
+      this.replace = true;
+      this.templateUrl = '/static/templates/vm/attachL3Network.html';
+      this.link = ($scope : any, $element, $attrs : any, $ctrl, $transclude) => {
+        var parent = $scope.$parent;
+        parent[$attrs.zVmAttachL3Network] = this;
+        this.options = parent[$attrs.zOptions];
+
+        $scope.l3NetworkListOptions__ = {
+          dataSource: new kendo.data.DataSource({data: []}),
+          dataTextField: "name",
+          dataValueField: "uuid",
+          itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
+          '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' +
+          '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
+
+          change: (e)=> {
+            var select = e.sender;
+            Utils.safeApply($scope, ()=> {
+              $scope.selectItemNum = select.dataItems().length;
+            });
+          }
+        };
+
+        $scope.cancel = () => {
+          $scope.attachL3Network__.close();
+        };
+
+        $scope.done = () => {
+          var vols = $scope.l3NetworkList__.dataItems();
+          angular.forEach(vols, (it)=>{
+            vmMgr.attachL3Network(this.options.vm, it.uuid, ()=>{
+              if (this.options.done) {
+                this.options.done();
+              }
+            });
+          });
+
+          $scope.attachL3Network__.close();
+        };
+
+        $scope.selectItemNum = 0;
+
+        $scope.canProceed = ()=> {
+          return $scope.selectItemNum > 0;
+        };
+
+        this.$scope = $scope;
+      }
+    }
+  }
+
+  export class DetachL3Network implements ng.IDirective {
+    link: (scope: ng.IScope,
+           instanceElement: ng.IAugmentedJQuery,
+           instanceAttributes: ng.IAttributes,
+           controller: any,
+           transclude: ng.ITranscludeFunction
+    ) => void;
+    scope : any;
+    controller: any;
+    restrict: string;
+    replace: boolean;
+    templateUrl: any;
+
+    options: any;
+    $scope: any;
+
+
+    open() {
+      this.$scope.l3NetworkList__.value([]);
+      var chain  = new Utils.Chain();
+      var l3Uuids = [];
+      chain.then(()=> {
+        angular.forEach(this.options.vm.vmNics, (it)=>{
+          l3Uuids.push(it.l3NetworkUuid);
+        });
+        chain.next();
+      }).then(()=>{
+        var l3Networks = [];
+        var qobj = new ApiHeader.QueryObject();
+        qobj.addCondition({name: "uuid", op:"in", value:l3Uuids.join()});
+        this.l3Mgr.query(qobj, (l3s: ApiHeader.L3NetworkInventory[])=>{
+          angular.forEach(l3s, (l3)=>{
+            angular.forEach(this.options.vm.vmNics, (nic)=>{
+              if (l3.uuid == nic.l3NetworkUuid) {
+                var l3obj = {
+                  l3NetworkName: l3.name,
+                  deviceId: nic.deviceId,
+                  nicUuid: nic.uuid
+                };
+
+                l3Networks.push(l3obj);
+              }
+            });
+          });
+
+          this.$scope.l3NetworkListOptions__.dataSource.data(l3Networks);
+          chain.next();
+        });
+      }).done(()=>{
+        this.$scope.detachL3Network__.center();
+        this.$scope.detachL3Network__.open();
+      }).start();
+    }
+
+    constructor(private api: Utils.Api, private vmMgr: VmInstanceManager, private l3Mgr: ML3Network.L3NetworkManager) {
+      this.scope = true;
+      this.restrict = 'EA';
+      this.replace = true;
+      this.templateUrl = '/static/templates/vm/detachL3Network.html';
+      this.link = ($scope : any, $element, $attrs : any, $ctrl, $transclude) => {
+        var parent = $scope.$parent;
+        parent[$attrs.zVmDetachL3Network] = this;
+        this.options = parent[$attrs.zOptions];
+
+        $scope.l3NetworkListOptions__ = {
+          dataSource: new kendo.data.DataSource({data: []}),
+          dataTextField: "l3NetworkName",
+          dataValueField: "nicUuid",
+          itemTemplate: '<div style="color: black"><span class="z-label">L3 Network:</span><span>#: l3NetworkName #</span></div>' +
+          '<div style="color: black"><span class="z-label">Nic Device ID:</span><span>#: deviceId #</span></div>' +
+          '<div style="color: black"><span class="z-label">Nic UUID:</span><span>#: nicUuid #</span></div>',
+
+          change: (e)=> {
+            var select = e.sender;
+            Utils.safeApply($scope, ()=> {
+              $scope.selectItemNum = select.dataItems().length;
+            });
+          }
+        };
+
+        $scope.cancel = () => {
+          $scope.detachL3Network__.close();
+        };
+
+        $scope.done = () => {
+          var vols = $scope.l3NetworkList__.dataItems();
+          angular.forEach(vols, (it)=>{
+            vmMgr.detachL3Network(this.options.vm, it.nicUuid, ()=>{
+              if (this.options.done) {
+                this.options.done();
+              }
+            });
+          });
+
+          $scope.detachL3Network__.close();
+        };
+
+        $scope.selectItemNum = 0;
+
+        $scope.canProceed = ()=> {
+          return $scope.selectItemNum > 0;
+        };
+
+        this.$scope = $scope;
+      }
+    }
+  }
+
   export class AttachVolume implements ng.IDirective {
     link: (scope: ng.IScope,
            instanceElement: ng.IAugmentedJQuery,
@@ -1589,7 +1858,7 @@ module MVmInstance {
 
 
     open() {
-      this.$scope.volumeListOptions__.dataSource.data([]);
+      this.$scope.volumeList__.value([]);
       var chain  = new Utils.Chain();
       chain.then(()=> {
         this.api.getVmAttachableVolume(this.options.vm.uuid, (vols: ApiHeader.VolumeInventory[])=>{
@@ -1677,6 +1946,7 @@ module MVmInstance {
 
     open() {
       var dvols = [];
+      this.$scope.volumeList__.value(dvols);
       angular.forEach(this.options.vm.allVolumes, (it)=>{
         if (it.type != 'Root') {
           dvols.push(it);
@@ -1756,6 +2026,10 @@ angular.module('root').factory('VmInstanceManager', ['Api', '$rootScope', (api, 
   return new MVmInstance.AttachVolume(api, vmMgr);
 }]).directive('zVmDetachVolume', ['Api', 'VmInstanceManager', (api, vmMgr)=> {
   return new MVmInstance.DetachVolume(api, vmMgr);
+}]).directive('zVmAttachL3Network', ['Api', 'VmInstanceManager', (api, vmMgr)=> {
+  return new MVmInstance.AttachL3Network(api, vmMgr);
+}]).directive('zVmDetachL3Network', ['Api', 'VmInstanceManager', 'L3NetworkManager', (api, vmMgr, l3Mgr)=> {
+  return new MVmInstance.DetachL3Network(api, vmMgr, l3Mgr);
 }]).config(['$routeProvider', function(route) {
   route.when('/vmInstance', {
     templateUrl: '/static/templates/vm/vm.html',

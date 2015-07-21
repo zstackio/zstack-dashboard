@@ -159,6 +159,14 @@ module Utils {
             });
         }
 
+        getVmAttachableL3Networks(vmUuid: string, done: (ret: ApiHeader.L3NetworkInventory[])=>void) {
+          var msg = new ApiHeader.APIGetVmAttachableL3NetworkMsg();
+          msg.vmInstanceUuid = vmUuid;
+          this.syncApi(msg, (ret: ApiHeader.APIGetVmAttachableL3NetworkReply)=>{
+            done(ret.inventories);
+          });
+        }
+
         getVmAttachableVolume(vmUuid: string, done: (ret: ApiHeader.VolumeInventory[])=>void) {
             var msg = new ApiHeader.APIGetVmAttachableDataVolumeMsg();
             msg.vmInstanceUuid = vmUuid;
@@ -316,7 +324,7 @@ module Utils {
             console.log(JSON.stringify(msg));
             this.$http.post(Api.SYNC_CALL_PATH, msg.toApiMap()).success((rsp : any) => {
                 var ret : ApiHeader.APIReply = Utils.firstItem(rsp);
-                if (!ret.success && notNullnotUndefined(ret.error) && ret.error.code == 'ID.1000') {
+                if (!ret.success && notNullnotUndefined(ret.error) && ret.error.code == 'ID.1001') {
                     console.log('authentication error');
                     this.$location.path('/login');
                     return;
