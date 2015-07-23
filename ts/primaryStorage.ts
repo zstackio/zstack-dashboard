@@ -94,6 +94,8 @@ module MPrimaryStorage {
         msg.sshUsername = ps.sshUsername;
         msg.sshPassword = ps.sshPassword;
         msg.hostname = ps.hostname;
+      } else if (ps.type == 'LocalStorage') {
+        msg = new ApiHeader.APIAddLocalPrimaryStorageMsg();
       }
       msg.name = ps.name;
       msg.description = ps.description;
