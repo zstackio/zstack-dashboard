@@ -7106,7 +7106,7 @@ var Utils;
             console.log(JSON.stringify(msg));
             this.$http.post(Api.SYNC_CALL_PATH, msg.toApiMap()).success(function (rsp) {
                 var ret = Utils.firstItem(rsp);
-                if (!ret.success && notNullnotUndefined(ret.error) && ret.error.code == 'ID.1000') {
+                if (!ret.success && notNullnotUndefined(ret.error) && ret.error.code == 'ID.1001') {
                     console.log('authentication error');
                     _this.$location.path('/login');
                     return;
@@ -10697,6 +10697,8 @@ var MPrimaryStorage;
                 msg.sshUsername = ps.sshUsername;
                 msg.sshPassword = ps.sshPassword;
                 msg.hostname = ps.hostname;
+            } else if (ps.type == 'LocalStorage') {
+                msg = new ApiHeader.APIAddLocalPrimaryStorageMsg();
             }
             msg.name = ps.name;
             msg.description = ps.description;
