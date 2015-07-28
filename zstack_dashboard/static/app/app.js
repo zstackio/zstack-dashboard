@@ -19954,6 +19954,24 @@ var MVmInstance;
             });
         };
 
+        VmInstanceManager.prototype.changeInstanceOffering = function (vm, insUuid, done) {
+            var _this = this;
+            vm.progressOn();
+            var msg = new ApiHeader.APIChangeInstanceOfferingMsg();
+            msg.vmInstanceUuid = vm.uuid;
+            msg.instanceOfferingUuid = insUuid;
+            this.api.asyncApi(msg, function (ret) {
+                vm.progressOff();
+                if (Utils.notNullnotUndefined(done)) {
+                    done();
+                }
+                _this.$rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
+                    msg: Utils.sprintf('Changed the instance offering of the VM instance: {0}; you may need to stop/start the VM', vm.name),
+                    link: Utils.sprintf('/#/vmInstance/{0}', vm.uuid)
+                });
+            });
+        };
+
         VmInstanceManager.prototype.queryVmNic = function (qobj, callback) {
             var _this = this;
             var msg = new ApiHeader.APIQueryVmNicMsg();
@@ -20125,6 +20143,10 @@ var MVmInstance;
             this.$scope.console();
         };
 
+        Action.prototype.changeInstanceOffering = function () {
+            this.$scope.changeInstanceOffering.open();
+        };
+
         Action.prototype.isActionShow = function (action) {
             if (!Utils.notNullnotUndefined(this.$scope.model.current) || Utils.isEmptyObject(this.$scope.model.current)) {
                 return false;
@@ -20148,6 +20170,8 @@ var MVmInstance;
                 return this.$scope.model.current.state == 'Running' || this.$scope.model.current.state == 'Stopped';
             } else if (action == 'detachL3Network' && Utils.notNullnotUndefined(this.$scope.model.current)) {
                 return (this.$scope.model.current.state == 'Running' || this.$scope.model.current.state == 'Stopped') && this.$scope.model.current.vmNics.length > 0;
+            } else if (action == 'changeInstanceOffering' && Utils.notNullnotUndefined(this.$scope.model.current)) {
+                return this.$scope.model.current.state == 'Running' || this.$scope.model.current.state == 'Stopped';
             } else {
                 return false;
             }
@@ -20311,6 +20335,10 @@ var MVmInstance;
             });
 
             $scope.optionsMigrateVm = {
+                vm: current
+            };
+
+            $scope.optionsChangeInstanceOffering = {
                 vm: current
             };
 
@@ -20617,6 +20645,10 @@ var MVmInstance;
                 vm: null
             };
 
+            $scope.optionsChangeInstanceOffering = {
+                vm: null
+            };
+
             $scope.optionsAttachVolume = {
                 vm: null
             };
@@ -20638,6 +20670,7 @@ var MVmInstance;
             }, function () {
                 if (Utils.notNullnotUndefined($scope.model.current)) {
                     $scope.optionsMigrateVm.vm = $scope.model.current;
+                    $scope.optionsChangeInstanceOffering.vm = $scope.model.current;
                     $scope.optionsAttachVolume.vm = $scope.model.current;
                     $scope.optionsDetachVolume.vm = $scope.model.current;
                     $scope.optionsAttachL3Network.vm = $scope.model.current;
@@ -20649,6 +20682,74 @@ var MVmInstance;
         return Controller;
     })();
     MVmInstance.Controller = Controller;
+
+    var ChangeInstanceOffering = (function () {
+        function ChangeInstanceOffering(api, vmMgr, insMgr) {
+            var _this = this;
+            this.api = api;
+            this.vmMgr = vmMgr;
+            this.insMgr = insMgr;
+            this.scope = true;
+            this.restrict = 'EA';
+            this.replace = true;
+            this.templateUrl = '/static/templates/vm/changeInstanceOffering.html';
+            this.link = function ($scope, $element, $attrs, $ctrl, $transclude) {
+                var parent = $scope.$parent;
+                parent[$attrs.zChangeInstanceOffering] = _this;
+                _this.options = parent[$attrs.zOptions];
+                _this.$scope = $scope;
+
+                $scope.instanceOfferingUuid = null;
+                $scope.instanceOfferingOptions__ = {
+                    dataSource: new kendo.data.DataSource({ data: [] }),
+                    dataTextField: "name",
+                    dataValueField: "uuid",
+                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' + '<div style="color: black"><span class="z-label">CPU Num:</span><span>#: cpuNum #</span></div>' + '<div style="color: black"><span class="z-label">CPU Speed:</span><span>#: cpuSpeed #</span></div>' + '<div style="color: black"><span class="z-label">Memory:</span><span>#: memorySize #</span></div>' + '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                };
+
+                $scope.canProceed = function () {
+                    return Utils.notNullnotUndefined($scope.instanceOfferingUuid);
+                };
+
+                $scope.cancel = function () {
+                    $scope.changeInstanceOffering__.close();
+                };
+
+                $scope.done = function () {
+                    vmMgr.changeInstanceOffering(_this.options.vm, $scope.instanceOfferingUuid, function () {
+                        if (_this.options.done) {
+                            _this.options.done();
+                        }
+                    });
+
+                    $scope.changeInstanceOffering__.close();
+                };
+            };
+        }
+        ChangeInstanceOffering.prototype.open = function () {
+            var _this = this;
+            this.$scope.instanceOfferingOptions__.dataSource.data([]);
+            this.$scope.instanceOfferingUuid = null;
+            var chain = new Utils.Chain();
+            chain.then(function () {
+                var q = new ApiHeader.QueryObject();
+                q.addCondition({ name: 'state', op: '=', value: 'Enabled' });
+                q.addCondition({ name: 'uuid', op: '!=', value: _this.options.vm.instanceOfferingUuid });
+                _this.insMgr.query(q, function (ins) {
+                    _this.$scope.instanceOfferingOptions__.dataSource.data(ins);
+                    if (ins.length > 0) {
+                        _this.$scope.instanceOfferingUuid = ins[0].uuid;
+                    }
+                    chain.next();
+                });
+            }).done(function () {
+                _this.$scope.changeInstanceOffering__.center();
+                _this.$scope.changeInstanceOffering__.open();
+            }).start();
+        };
+        return ChangeInstanceOffering;
+    })();
+    MVmInstance.ChangeInstanceOffering = ChangeInstanceOffering;
 
     var MigrateVm = (function () {
         function MigrateVm(api, vmMgr) {
@@ -21537,6 +21638,9 @@ angular.module('root').factory('VmInstanceManager', [
     }]).directive('zMigrateVmInstance', [
     'Api', 'VmInstanceManager', function (api, vmMgr) {
         return new MVmInstance.MigrateVm(api, vmMgr);
+    }]).directive('zChangeInstanceOffering', [
+    'Api', 'VmInstanceManager', 'InstanceOfferingManager', function (api, vmMgr, insMgr) {
+        return new MVmInstance.ChangeInstanceOffering(api, vmMgr, insMgr);
     }]).directive('zVmAttachVolume', [
     'Api', 'VmInstanceManager', function (api, vmMgr) {
         return new MVmInstance.AttachVolume(api, vmMgr);

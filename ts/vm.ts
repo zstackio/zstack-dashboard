@@ -325,6 +325,23 @@ module MVmInstance {
       });
     }
 
+    changeInstanceOffering(vm: VmInstance, insUuid: string, done: ()=> void) {
+      vm.progressOn();
+      var msg = new ApiHeader.APIChangeInstanceOfferingMsg();
+      msg.vmInstanceUuid = vm.uuid;
+      msg.instanceOfferingUuid = insUuid;
+      this.api.asyncApi(msg, (ret: ApiHeader.APIChangeInstanceOfferingEvent)=> {
+        vm.progressOff();
+        if (Utils.notNullnotUndefined(done)) {
+          done();
+        }
+        this.$rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
+          msg: Utils.sprintf('Changed the instance offering of the VM instance: {0}; you may need to stop/start the VM', vm.name),
+          link: Utils.sprintf('/#/vmInstance/{0}', vm.uuid)
+        });
+      });
+    }
+
     queryVmNic(qobj : ApiHeader.QueryObject, callback : (nics : VmNic[], total: number) => void) : void {
       var msg = new ApiHeader.APIQueryVmNicMsg();
       msg.count = qobj.count === true;
@@ -480,6 +497,10 @@ module MVmInstance {
       this.$scope.console();
     }
 
+    changeInstanceOffering() {
+      this.$scope.changeInstanceOffering.open();
+    }
+
     isActionShow(action) {
       if (!Utils.notNullnotUndefined(this.$scope.model.current) || Utils.isEmptyObject(this.$scope.model.current)) {
         return false;
@@ -503,7 +524,9 @@ module MVmInstance {
         return this.$scope.model.current.state == 'Running' || this.$scope.model.current.state == 'Stopped';
       } else if (action == 'detachL3Network'&& Utils.notNullnotUndefined(this.$scope.model.current)) {
         return (this.$scope.model.current.state == 'Running' || this.$scope.model.current.state == 'Stopped') &&
-            this.$scope.model.current.vmNics.length > 0;
+          this.$scope.model.current.vmNics.length > 0;
+      } else if (action == 'changeInstanceOffering'  && Utils.notNullnotUndefined(this.$scope.model.current)) {
+        return this.$scope.model.current.state == 'Running' || this.$scope.model.current.state == 'Stopped';
       } else {
         return false;
       }
@@ -685,6 +708,11 @@ module MVmInstance {
       });
 
       $scope.optionsMigrateVm = {
+        vm: current
+      };
+
+
+      $scope.optionsChangeInstanceOffering = {
         vm: current
       };
 
@@ -982,6 +1010,10 @@ module MVmInstance {
         vm: null
       };
 
+      $scope.optionsChangeInstanceOffering = {
+        vm: null
+      };
+
       $scope.optionsAttachVolume = {
         vm: null
       };
@@ -1003,6 +1035,7 @@ module MVmInstance {
       },()=>{
         if (Utils.notNullnotUndefined($scope.model.current)) {
           $scope.optionsMigrateVm.vm = $scope.model.current;
+          $scope.optionsChangeInstanceOffering.vm = $scope.model.current;
           $scope.optionsAttachVolume.vm = $scope.model.current;
           $scope.optionsDetachVolume.vm = $scope.model.current;
           $scope.optionsAttachL3Network.vm = $scope.model.current;
@@ -1011,6 +1044,90 @@ module MVmInstance {
       });
     }
   }
+
+
+  export class ChangeInstanceOffering implements ng.IDirective {
+    link: (scope: ng.IScope,
+           instanceElement: ng.IAugmentedJQuery,
+           instanceAttributes: ng.IAttributes,
+           controller: any,
+           transclude: ng.ITranscludeFunction
+    ) => void;
+    scope : any;
+    controller: any;
+    restrict: string;
+    replace: boolean;
+    templateUrl: string;
+
+    options : any;
+    $scope: any;
+
+    open() {
+      this.$scope.instanceOfferingOptions__.dataSource.data([]);
+      this.$scope.instanceOfferingUuid = null;
+      var chain  = new Utils.Chain();
+      chain.then(()=> {
+        var q = new ApiHeader.QueryObject();
+        q.addCondition({name: 'state', op: '=', value: 'Enabled'});
+        q.addCondition({name: 'uuid', op: '!=', value: this.options.vm.instanceOfferingUuid});
+        this.insMgr.query(q, (ins: MInstanceOffering.InstanceOffering[])=>{
+          this.$scope.instanceOfferingOptions__.dataSource.data(ins);
+          if (ins.length > 0) {
+            this.$scope.instanceOfferingUuid = ins[0].uuid;
+          }
+          chain.next();
+        });
+      }).done(()=>{
+        this.$scope.changeInstanceOffering__.center();
+        this.$scope.changeInstanceOffering__.open();
+      }).start();
+    }
+
+
+    constructor(private api : Utils.Api, private vmMgr: MVmInstance.VmInstanceManager, private insMgr: MInstanceOffering.InstanceOfferingManager) {
+      this.scope = true;
+      this.restrict = 'EA';
+      this.replace = true;
+      this.templateUrl = '/static/templates/vm/changeInstanceOffering.html';
+      this.link = ($scope : any, $element, $attrs : any, $ctrl, $transclude) => {
+        var parent = $scope.$parent;
+        parent[$attrs.zChangeInstanceOffering] = this;
+        this.options = parent[$attrs.zOptions];
+        this.$scope = $scope;
+
+        $scope.instanceOfferingUuid = null;
+        $scope.instanceOfferingOptions__ = {
+          dataSource: new kendo.data.DataSource({data: []}),
+          dataTextField: "name",
+          dataValueField: "uuid",
+          template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
+          '<div style="color: black"><span class="z-label">CPU Num:</span><span>#: cpuNum #</span></div>' +
+          '<div style="color: black"><span class="z-label">CPU Speed:</span><span>#: cpuSpeed #</span></div>' +
+          '<div style="color: black"><span class="z-label">Memory:</span><span>#: memorySize #</span></div>' +
+          '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+        };
+
+        $scope.canProceed = ()=> {
+          return Utils.notNullnotUndefined($scope.instanceOfferingUuid);
+        };
+
+        $scope.cancel = () => {
+          $scope.changeInstanceOffering__.close();
+        };
+
+        $scope.done = () => {
+          vmMgr.changeInstanceOffering(this.options.vm, $scope.instanceOfferingUuid, ()=>{
+            if (this.options.done) {
+            this.options.done();
+            }
+          });
+
+          $scope.changeInstanceOffering__.close();
+        };
+      }
+    }
+  }
+
 
   export class MigrateVm implements ng.IDirective {
     link: (scope: ng.IScope,
@@ -2022,6 +2139,8 @@ angular.module('root').factory('VmInstanceManager', ['Api', '$rootScope', (api, 
     return new MVmInstance.CreateVmInstance(api, vmMgr, clusterMgr, hostMgr, zoneMgr, instOfferingMgr, diskOfferingMgr, l3Mgr, imageMgr);
   }]).directive('zMigrateVmInstance', ['Api', 'VmInstanceManager', (api, vmMgr)=>{
   return new MVmInstance.MigrateVm(api, vmMgr);
+}]).directive('zChangeInstanceOffering', ['Api', 'VmInstanceManager', 'InstanceOfferingManager', (api, vmMgr, insMgr)=>{
+    return new MVmInstance.ChangeInstanceOffering(api, vmMgr, insMgr);
 }]).directive('zVmAttachVolume', ['Api', 'VmInstanceManager', (api, vmMgr)=> {
   return new MVmInstance.AttachVolume(api, vmMgr);
 }]).directive('zVmDetachVolume', ['Api', 'VmInstanceManager', (api, vmMgr)=> {

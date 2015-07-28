@@ -5,6 +5,7 @@
   <div z-vm-detach-volume="detachVolume" z-options="optionsDetachVolume"></div>
   <div z-vm-attach-l3-network="attachL3Network" z-options="optionsAttachL3Network"></div>
   <div z-vm-detach-l3-network="detachL3Network" z-options="optionsDetachL3Network"></div>
+  <div z-change-instance-offering="changeInstanceOffering" z-options="optionsChangeInstanceOffering"></div>
 </div>
 
 <div class="z-pane">
@@ -34,6 +35,7 @@
           <li><a href ng-click="action.detachVolume()" ng-show="action.isActionShow('detachVolume')">Detach Volume</a></li>
           <li><a href ng-click="action.attachL3Network()" ng-show="action.isActionShow('attachL3Network')">Attach L3 Network</a></li>
           <li><a href ng-click="action.detachL3Network()" ng-show="action.isActionShow('detachL3Network')">Detach L3 Network</a></li>
+          <li><a href ng-click="action.changeInstanceOffering()" ng-show="action.isActionShow('changeInstanceOffering')">Change Instance Offering</a></li>
           <li class="divider"></li>
           <li><a href style="color:red" ng-click="funcDeleteVmInstance(deleteVmInstance)">Delete</a></li>
         </ul>
