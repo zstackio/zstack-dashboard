@@ -109,7 +109,7 @@ module MDashboard {
                             }).then(()=>{
                                 api.getIpAddressCapacityByAll((ret: ApiHeader.APIGetIpAddressCapacityReply)=>{
                                     ip.set('total', ret.totalCapacity);
-                                    ip.set('available', Utils.toSizeString(ret.availableCapacity));
+                                    ip.set('available', ret.availableCapacity);
                                     ip.set('percent', Utils.toPercentageString(ret.totalCapacity == 0 ? 0 : ret.availableCapacity / ret.totalCapacity));
                                 });
                                 chain.next();
