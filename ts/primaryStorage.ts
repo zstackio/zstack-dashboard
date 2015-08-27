@@ -96,6 +96,9 @@ module MPrimaryStorage {
         msg.hostname = ps.hostname;
       } else if (ps.type == 'LocalStorage') {
         msg = new ApiHeader.APIAddLocalPrimaryStorageMsg();
+      } else if (ps.type == 'Ceph') {
+        msg = new ApiHeader.APIAddCephPrimaryStorageMsg();
+        msg.monUrls = ps.cephMonUrls;
       }
       msg.name = ps.name;
       msg.description = ps.description;
@@ -795,6 +798,7 @@ module MPrimaryStorage {
       var win = this.$scope.winCreatePrimaryStorage__;
       var chain = new Utils.Chain();
       this.$scope.clusterList__.value([]);
+      this.$scope.cephMonGrid__.dataSource.data([]);
       this.$scope.button.reset();
       chain.then(()=> {
         if (Utils.notNullnotUndefined(this.options.zone)) {
@@ -844,6 +848,35 @@ module MPrimaryStorage {
           });
         }
 
+
+        $scope.cephMonGrid__ = {
+          pageSize: 20,
+          resizable: true,
+          scrollable: true,
+          pageable: true,
+          columns: [
+            {
+              width: '20%',
+              title: '',
+              template: '<button type="button" class="btn btn-xs btn-default" ng-click="infoPage.delCephMon(dataItem.uid)"><i class="fa fa-times"></i></button>'
+            },
+            {
+              field: 'url',
+              title: 'MON URL',
+              width: '80%'
+            }
+          ],
+
+          dataBound: (e)=> {
+            var grid = e.sender;
+            if (grid.dataSource.total() == 0 || grid.dataSource.totalPages() == 1) {
+              grid.pager.element.hide();
+            }
+          },
+
+          dataSource: new kendo.data.DataSource([])
+        };
+
         var infoPage: Utils.WizardPage = $scope.infoPage  = {
           activeState: true,
 
@@ -857,6 +890,24 @@ module MPrimaryStorage {
           hostname: null,
           sshUsername: 'root',
           sshPassword: null,
+          cephMonUrls: [],
+
+          addCephMon(): void {
+            $scope.cephMonGrid__.dataSource.insert(0,
+              {url: this.sshUsername + ":" + this.sshPassword + "@" + this.hostname});
+            this.hostname = null;
+            this.sshPassword = null;
+          },
+
+          canAddMon() : boolean {
+            return Utils.notNullnotUndefined(this.sshUsername) && Utils.notNullnotUndefined(this.hostname)
+              && Utils.notNullnotUndefined(this.sshPassword);
+          },
+
+          delCephMon(uid: string) : void {
+            var row = $scope.cephMonGrid__.dataSource.getByUid(uid);
+            $scope.cephMonGrid__.dataSource.remove(row);
+          },
 
 
           hasZone(): boolean {
@@ -892,8 +943,13 @@ module MPrimaryStorage {
           },
 
           canMoveToNext(): boolean {
-            return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.zoneUuid)
-              && Utils.notNullnotUndefined(this.type) && Utils.notNullnotUndefined(this.url) && this.isUrlValid();
+            if (this.type == 'Ceph') {
+              return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.zoneUuid) &&
+                $scope.cephMonGrid__.dataSource.data().length > 0;
+            } else {
+              return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.zoneUuid)
+                && Utils.notNullnotUndefined(this.type) && Utils.notNullnotUndefined(this.url) && this.isUrlValid();
+            }
           },
 
           show(): void {
@@ -927,6 +983,7 @@ module MPrimaryStorage {
             this.sshPassword = null;
             this.sshUsername = 'root';
             this.hostname = null;
+            this.cephMonUrls = [];
           }
         };
 
@@ -983,6 +1040,10 @@ module MPrimaryStorage {
             var resultPs : PrimaryStorage;
             var chain = new Utils.Chain();
             chain.then(()=> {
+              angular.forEach($scope.cephMonGrid__.dataSource.data(), (it)=>{
+                $scope.infoPage.cephMonUrls.push(it.url);
+              });
+
               psMgr.create(infoPage, (ret : PrimaryStorage)=> {
                 resultPs = ret;
                 chain.next();

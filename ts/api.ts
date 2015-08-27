@@ -1224,6 +1224,18 @@ module ApiHeader {
   }
 
 
+  export class APIGetGlobalPropertyMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.configuration.APIGetGlobalPropertyMsg': this
+      };
+      return msg;
+    }
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
   export class APIChangeInstanceOfferingStateMsg implements APIMessage {
     toApiMap() : any {
       var msg = {
@@ -2680,6 +2692,20 @@ module ApiHeader {
   }
 
 
+  export class APIUpdateSystemTagMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.tag.APIUpdateSystemTagMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    tag : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
   export class APIQueryTagMsg implements APIMessage {
     toApiMap() : any {
       var msg = {
@@ -2922,20 +2948,6 @@ module ApiHeader {
   }
 
 
-  export class APIResetUserPasswordMsg implements APIMessage {
-    toApiMap() : any {
-      var msg = {
-        'org.zstack.header.identity.APIResetUserPasswordMsg': this
-      };
-      return msg;
-    }
-    uuid : string;
-    password : string;
-    session : SessionInventory;
-    timeout : number;
-  }
-
-
   export class APIGetAccountMsg implements APIMessage {
     toApiMap() : any {
       var msg = {
@@ -3038,6 +3050,7 @@ module ApiHeader {
     name : string;
     password : string;
     type : string;
+    description : string;
     resourceUuid : string;
     userTags : Array<string>;
     systemTags : Array<string>;
@@ -3086,6 +3099,7 @@ module ApiHeader {
     }
     name : string;
     password : string;
+    description : string;
     resourceUuid : string;
     userTags : Array<string>;
     systemTags : Array<string>;
@@ -3302,20 +3316,6 @@ module ApiHeader {
   }
 
 
-  export class APIResetAccountPasswordMsg implements APIMessage {
-    toApiMap() : any {
-      var msg = {
-        'org.zstack.header.identity.APIResetAccountPasswordMsg': this
-      };
-      return msg;
-    }
-    uuid : string;
-    password : string;
-    session : SessionInventory;
-    timeout : number;
-  }
-
-
   export class APILogInByAccountMsg implements APIMessage {
     toApiMap() : any {
       var msg = {
@@ -3390,6 +3390,20 @@ module ApiHeader {
   }
 
 
+  export class APIUpdateUserMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.identity.APIUpdateUserMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    password : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
   export class APISearchUserMsg implements APIMessage {
     toApiMap() : any {
       var msg = {
@@ -3403,6 +3417,20 @@ module ApiHeader {
     start : number;
     size : number;
     inventoryUuid : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIUpdateAccountMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.identity.APIUpdateAccountMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    password : string;
     session : SessionInventory;
     timeout : number;
   }
@@ -3456,7 +3484,7 @@ module ApiHeader {
 
   export class Statement {
     name : string;
-    effect : StatementEffect;
+    effect : any;
     principals : Array<string>;
     actions : Array<string>;
     resources : Array<string>;
@@ -3960,6 +3988,147 @@ module ApiHeader {
   }
 
 
+  export class APIQueryCephPrimaryStorageMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.storage.ceph.primary.APIQueryCephPrimaryStorageMsg': this
+      };
+      return msg;
+    }
+    conditions : Array<QueryCondition>;
+    limit : number;
+    start : number;
+    count : boolean;
+    replyWithCount : boolean;
+    sortBy : string;
+    sortDirection : string;
+    fields : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIAddCephPrimaryStorageMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.storage.ceph.primary.APIAddCephPrimaryStorageMsg': this
+      };
+      return msg;
+    }
+    monUrls : Array<string>;
+    rootVolumePoolName : string;
+    dataVolumePoolName : string;
+    imageCachePoolName : string;
+    url : string;
+    name : string;
+    description : string;
+    type : string;
+    zoneUuid : string;
+    resourceUuid : string;
+    userTags : Array<string>;
+    systemTags : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIAddMonToCephPrimaryStorageMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.storage.ceph.primary.APIAddMonToCephPrimaryStorageMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    monUrls : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIRemoveMonFromCephPrimaryStorageMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.storage.ceph.primary.APIRemoveMonFromCephPrimaryStorageMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    monHostnames : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIAddCephBackupStorageMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.storage.ceph.backup.APIAddCephBackupStorageMsg': this
+      };
+      return msg;
+    }
+    monUrls : Array<string>;
+    poolName : string;
+    url : string;
+    name : string;
+    description : string;
+    type : string;
+    resourceUuid : string;
+    userTags : Array<string>;
+    systemTags : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIAddMonToCephBackupStorageMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.storage.ceph.backup.APIAddMonToCephBackupStorageMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    monUrls : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIQueryCephBackupStorageMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.storage.ceph.backup.APIQueryCephBackupStorageMsg': this
+      };
+      return msg;
+    }
+    conditions : Array<QueryCondition>;
+    limit : number;
+    start : number;
+    count : boolean;
+    replyWithCount : boolean;
+    sortBy : string;
+    sortDirection : string;
+    fields : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIRemoveMonFromCephBackupStorageMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.storage.ceph.backup.APIRemoveMonFromCephBackupStorageMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    monHostnames : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
   export class APIUpdateKVMHostMsg implements APIMessage {
     toApiMap() : any {
       var msg = {
@@ -4281,6 +4450,23 @@ module ApiHeader {
   }
 
 
+  export class APIUpdateVirtualRouterOfferingMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.network.service.virtualrouter.APIUpdateVirtualRouterOfferingMsg': this
+      };
+      return msg;
+    }
+    isDefault : boolean;
+    imageUuid : string;
+    uuid : string;
+    name : string;
+    description : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
   export class APIAttachPortForwardingRuleMsg implements APIMessage {
     toApiMap() : any {
       var msg = {
@@ -4542,6 +4728,153 @@ module ApiHeader {
     }
     eipUuid : string;
     vmNicUuid : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIQueryLoadBalancerListenerMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.network.service.lb.APIQueryLoadBalancerListenerMsg': this
+      };
+      return msg;
+    }
+    conditions : Array<QueryCondition>;
+    limit : number;
+    start : number;
+    count : boolean;
+    replyWithCount : boolean;
+    sortBy : string;
+    sortDirection : string;
+    fields : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIDeleteLoadBalancerMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.network.service.lb.APIDeleteLoadBalancerMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    deleteMode : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APICreateLoadBalancerListenerMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.network.service.lb.APICreateLoadBalancerListenerMsg': this
+      };
+      return msg;
+    }
+    loadBalancerUuid : string;
+    name : string;
+    description : string;
+    instancePort : number;
+    loadBalancerPort : number;
+    protocol : string;
+    resourceUuid : string;
+    userTags : Array<string>;
+    systemTags : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIRemoveVmNicFromLoadBalancerMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.network.service.lb.APIRemoveVmNicFromLoadBalancerMsg': this
+      };
+      return msg;
+    }
+    vmNicUuids : Array<string>;
+    listenerUuid : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIAddVmNicToLoadBalancerMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.network.service.lb.APIAddVmNicToLoadBalancerMsg': this
+      };
+      return msg;
+    }
+    vmNicUuids : Array<string>;
+    listenerUuid : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APICreateLoadBalancerMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.network.service.lb.APICreateLoadBalancerMsg': this
+      };
+      return msg;
+    }
+    name : string;
+    description : string;
+    vipUuid : string;
+    resourceUuid : string;
+    userTags : Array<string>;
+    systemTags : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIRefreshLoadBalancerMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.network.service.lb.APIRefreshLoadBalancerMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIDeleteLoadBalancerListenerMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.network.service.lb.APIDeleteLoadBalancerListenerMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIQueryLoadBalancerMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.network.service.lb.APIQueryLoadBalancerMsg': this
+      };
+      return msg;
+    }
+    conditions : Array<QueryCondition>;
+    limit : number;
+    start : number;
+    count : boolean;
+    replyWithCount : boolean;
+    sortBy : string;
+    sortDirection : string;
+    fields : Array<string>;
     session : SessionInventory;
     timeout : number;
   }
@@ -6054,6 +6387,15 @@ module ApiHeader {
   }
 
 
+  export class APIUpdateSystemTagEvent {
+    inventory : SystemTagInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
   export class APIEvent {
     API_EVENT : string;
     success : boolean;
@@ -6121,6 +6463,8 @@ module ApiHeader {
   export class AccountInventory {
     uuid : string;
     name : string;
+    description : string;
+    type : string;
     createDate : string;
     lastOpDate : string;
   }
@@ -6167,14 +6511,6 @@ module ApiHeader {
   }
 
 
-  export class APIResetUserPasswordEvent {
-    API_EVENT : string;
-    success : boolean;
-    error : ErrorCode;
-    BINDING_KEY_PERFIX : string;
-  }
-
-
   export class APIDeletePolicyEvent {
     API_EVENT : string;
     success : boolean;
@@ -6191,6 +6527,14 @@ module ApiHeader {
   }
 
 
+  export class APIUpdateUserEvent {
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
   export class APIDeleteAccountEvent {
     API_EVENT : string;
     success : boolean;
@@ -6199,7 +6543,7 @@ module ApiHeader {
   }
 
 
-  export class APIResetAccountPasswordEvent {
+  export class APIUpdateAccountEvent {
     inventory : AccountInventory;
     API_EVENT : string;
     success : boolean;
@@ -6248,6 +6592,7 @@ module ApiHeader {
     uuid : string;
     accountUuid : string;
     name : string;
+    description : string;
     createDate : string;
     lastOpDate : string;
   }
@@ -6415,6 +6760,104 @@ module ApiHeader {
 
   export class APIUpdateHostEvent {
     inventory : HostInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class CephPrimaryStorageMonInventory {
+    hostname : string;
+    monPort : number;
+    createDate : string;
+    lastOpDate : string;
+    primaryStorageUuid : string;
+  }
+
+
+  export class CephPrimaryStorageInventory {
+    mons : Array<CephPrimaryStorageMonInventory>;
+    fsid : string;
+    rootVolumePoolName : string;
+    dataVolumePoolName : string;
+    imageCachePoolName : string;
+    uuid : string;
+    zoneUuid : string;
+    name : string;
+    url : string;
+    description : string;
+    totalCapacity : number;
+    availableCapacity : number;
+    totalPhysicalCapacity : number;
+    availablePhysicalCapacity : number;
+    type : string;
+    state : string;
+    status : string;
+    mountPath : string;
+    createDate : string;
+    lastOpDate : string;
+    attachedClusterUuids : Array<string>;
+  }
+
+
+  export class APIRemoveMonFromCephPrimaryStorageEvent {
+    inventory : CephPrimaryStorageInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APIAddMonToCephPrimaryStorageEvent {
+    inventory : CephPrimaryStorageInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class CephBackupStorageMonInventory {
+    hostname : string;
+    monPort : number;
+    createDate : string;
+    lastOpDate : string;
+    backupStorageUuid : string;
+  }
+
+
+  export class CephBackupStorageInventory {
+    mons : Array<CephBackupStorageMonInventory>;
+    fsid : string;
+    poolName : string;
+    uuid : string;
+    name : string;
+    url : string;
+    description : string;
+    totalCapacity : number;
+    availableCapacity : number;
+    type : string;
+    state : string;
+    status : string;
+    createDate : string;
+    lastOpDate : string;
+    attachedZoneUuids : Array<string>;
+  }
+
+
+  export class APIRemoveMonFromCephBackupStorageEvent {
+    inventory : CephBackupStorageInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APIAddMonToCephBackupStorageEvent {
+    inventory : CephBackupStorageInventory;
     API_EVENT : string;
     success : boolean;
     error : ErrorCode;
@@ -6630,6 +7073,102 @@ module ApiHeader {
 
 
   export class APIDeleteEipEvent {
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class LoadBalancerListenerVmNicRefInventory {
+    id : number;
+    listenerUuid : string;
+    vmNicUuid : string;
+    status : string;
+    createDate : string;
+    lastOpDate : string;
+  }
+
+
+  export class LoadBalancerListenerInventory {
+    uuid : string;
+    name : string;
+    description : string;
+    loadBalancerUuid : string;
+    instancePort : number;
+    loadBalancerPort : number;
+    protocol : string;
+    createDate : string;
+    lastOpDate : string;
+    vmNicRefs : Array<LoadBalancerListenerVmNicRefInventory>;
+  }
+
+
+  export class LoadBalancerInventory {
+    name : string;
+    uuid : string;
+    description : string;
+    state : string;
+    vipUuid : string;
+    listeners : Array<LoadBalancerListenerInventory>;
+  }
+
+
+  export class APIRefreshLoadBalancerEvent {
+    inventory : LoadBalancerInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APICreateLoadBalancerEvent {
+    inventory : LoadBalancerInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APIRemoveVmNicFromLoadBalancerEvent {
+    inventory : LoadBalancerInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APIAddVmNicToLoadBalancerEvent {
+    inventory : LoadBalancerListenerInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APIDeleteLoadBalancerListenerEvent {
+    inventory : LoadBalancerInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APICreateLoadBalancerListenerEvent {
+    inventory : LoadBalancerListenerInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APIDeleteLoadBalancerEvent {
     API_EVENT : string;
     success : boolean;
     error : ErrorCode;
@@ -7000,6 +7539,13 @@ module ApiHeader {
 
   export class APISearchInstanceOfferingReply {
     content : string;
+    success : boolean;
+    error : ErrorCode;
+  }
+
+
+  export class APIGetGlobalPropertyReply {
+    properties : Array<string>;
     success : boolean;
     error : ErrorCode;
   }
@@ -7876,6 +8422,22 @@ module ApiHeader {
   }
 
 
+  export class APIQueryLoadBalancerListenerReply {
+    inventories : Array<LoadBalancerListenerInventory>;
+    total : number;
+    success : boolean;
+    error : ErrorCode;
+  }
+
+
+  export class APIQueryLoadBalancerReply {
+    inventories : Array<LoadBalancerInventory>;
+    total : number;
+    success : boolean;
+    error : ErrorCode;
+  }
+
+
   export class APIListSecurityGroupReply {
     inventories : Array<SecurityGroupInventory>;
     success : boolean;
@@ -8130,6 +8692,15 @@ module ApiHeader {
   }
 
 
+  export class VirtualRouterLoadBalancerRefInventory {
+    id : number;
+    virtualRouterVmUuid : string;
+    loadBalancerUuid : string;
+    createDate : string;
+    lastOpDate : string;
+  }
+
+
   export class VirtualRouterVipInventory {
     uuid : string;
     virtualRouterVmUuid : string;
@@ -8317,7 +8888,7 @@ module ApiHeader {
 
   export var TagResourceTypeClusterVO = 'ClusterVO';
 
-  export var UserInventoryQueryable = ['uuid', 'accountUuid', 'name', 'createDate', 'lastOpDate'];
+  export var UserInventoryQueryable = ['uuid', 'accountUuid', 'name', 'description', 'createDate', 'lastOpDate'];
 
 
   export var TagResourceTypeUserVO = 'UserVO';
@@ -8342,7 +8913,7 @@ module ApiHeader {
 
   export var TagResourceTypeUserGroupPolicyRefVO = 'UserGroupPolicyRefVO';
 
-  export var AccountInventoryQueryable = ['uuid', 'name', 'createDate', 'lastOpDate'];
+  export var AccountInventoryQueryable = ['uuid', 'name', 'description', 'type', 'createDate', 'lastOpDate'];
 
 
   export var TagResourceTypeAccountVO = 'AccountVO';
@@ -8392,6 +8963,26 @@ module ApiHeader {
 
   export var TagResourceTypeIscsiFileSystemBackendPrimaryStorageVO = 'IscsiFileSystemBackendPrimaryStorageVO';
 
+  export var CephPrimaryStorageInventoryQueryable = ['mons.hostname', 'mons.monPort', 'mons.createDate', 'mons.lastOpDate', 'mons.primaryStorageUuid', 'fsid', 'rootVolumePoolName', 'dataVolumePoolName', 'imageCachePoolName', 'uuid', 'zoneUuid', 'name', 'url', 'description', 'totalCapacity', 'availableCapacity', 'totalPhysicalCapacity', 'availablePhysicalCapacity', 'type', 'state', 'status', 'mountPath', 'createDate', 'lastOpDate', 'attachedClusterUuids'];
+
+
+  export var TagResourceTypeCephPrimaryStorageVO = 'CephPrimaryStorageVO';
+
+  export var CephPrimaryStorageMonInventoryQueryable = ['hostname', 'monPort', 'createDate', 'lastOpDate', 'primaryStorageUuid'];
+
+
+  export var TagResourceTypeCephPrimaryStorageMonVO = 'CephPrimaryStorageMonVO';
+
+  export var CephBackupStorageInventoryQueryable = ['mons.hostname', 'mons.monPort', 'mons.createDate', 'mons.lastOpDate', 'mons.backupStorageUuid', 'fsid', 'poolName', 'uuid', 'name', 'url', 'description', 'totalCapacity', 'availableCapacity', 'type', 'state', 'status', 'createDate', 'lastOpDate', 'attachedZoneUuids'];
+
+
+  export var TagResourceTypeCephBackupStorageVO = 'CephBackupStorageVO';
+
+  export var CephBackupStorageMonInventoryQueryable = ['hostname', 'monPort', 'createDate', 'lastOpDate', 'backupStorageUuid'];
+
+
+  export var TagResourceTypeCephBackupStorageMonVO = 'CephBackupStorageMonVO';
+
   export var KVMHostInventoryQueryable = ['username', 'zoneUuid', 'name', 'uuid', 'clusterUuid', 'description', 'managementIp', 'hypervisorType', 'state', 'status', 'totalCpuCapacity', 'availableCpuCapacity', 'totalMemoryCapacity', 'availableMemoryCapacity', 'createDate', 'lastOpDate'];
 
 
@@ -8417,6 +9008,11 @@ module ApiHeader {
 
   export var TagResourceTypeVirtualRouterVmVO = 'VirtualRouterVmVO';
 
+  export var VirtualRouterLoadBalancerRefInventoryQueryable = ['id', 'virtualRouterVmUuid', 'loadBalancerUuid', 'createDate', 'lastOpDate'];
+
+
+  export var TagResourceTypeVirtualRouterLoadBalancerRefVO = 'VirtualRouterLoadBalancerRefVO';
+
   export var VirtualRouterVipInventoryQueryable = ['uuid', 'virtualRouterVmUuid'];
 
 
@@ -8436,6 +9032,21 @@ module ApiHeader {
 
 
   export var TagResourceTypeEipVO = 'EipVO';
+
+  export var LoadBalancerInventoryQueryable = ['name', 'uuid', 'description', 'state', 'vipUuid', 'listeners.uuid', 'listeners.name', 'listeners.description', 'listeners.loadBalancerUuid', 'listeners.instancePort', 'listeners.loadBalancerPort', 'listeners.protocol', 'listeners.createDate', 'listeners.lastOpDate', 'vmNicRefs.id', 'vmNicRefs.listenerUuid', 'vmNicRefs.vmNicUuid', 'vmNicRefs.status', 'vmNicRefs.createDate', 'vmNicRefs.lastOpDate'];
+
+
+  export var TagResourceTypeLoadBalancerVO = 'LoadBalancerVO';
+
+  export var LoadBalancerListenerVmNicRefInventoryQueryable = ['id', 'listenerUuid', 'vmNicUuid', 'status', 'createDate', 'lastOpDate'];
+
+
+  export var TagResourceTypeLoadBalancerListenerVmNicRefVO = 'LoadBalancerListenerVmNicRefVO';
+
+  export var LoadBalancerListenerInventoryQueryable = ['uuid', 'name', 'description', 'loadBalancerUuid', 'instancePort', 'loadBalancerPort', 'protocol', 'createDate', 'lastOpDate', 'vmNicRefs.id', 'vmNicRefs.listenerUuid', 'vmNicRefs.vmNicUuid', 'vmNicRefs.status', 'vmNicRefs.createDate', 'vmNicRefs.lastOpDate'];
+
+
+  export var TagResourceTypeLoadBalancerListenerVO = 'LoadBalancerListenerVO';
 
   export var VmNicSecurityGroupRefInventoryQueryable = ['vmNicUuid', 'securityGroupUuid', 'vmInstanceUuid', 'createDate', 'lastOpDate'];
 

@@ -1016,6 +1016,19 @@ var ApiHeader;
     })();
     ApiHeader.APIGenerateTestLinkDocumentMsg = APIGenerateTestLinkDocumentMsg;
 
+    var APIGetGlobalPropertyMsg = (function () {
+        function APIGetGlobalPropertyMsg() {
+        }
+        APIGetGlobalPropertyMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.configuration.APIGetGlobalPropertyMsg': this
+            };
+            return msg;
+        };
+        return APIGetGlobalPropertyMsg;
+    })();
+    ApiHeader.APIGetGlobalPropertyMsg = APIGetGlobalPropertyMsg;
+
     var APIChangeInstanceOfferingStateMsg = (function () {
         function APIChangeInstanceOfferingStateMsg() {
         }
@@ -2238,6 +2251,19 @@ var ApiHeader;
     })();
     ApiHeader.APICreateSystemTagMsg = APICreateSystemTagMsg;
 
+    var APIUpdateSystemTagMsg = (function () {
+        function APIUpdateSystemTagMsg() {
+        }
+        APIUpdateSystemTagMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.tag.APIUpdateSystemTagMsg': this
+            };
+            return msg;
+        };
+        return APIUpdateSystemTagMsg;
+    })();
+    ApiHeader.APIUpdateSystemTagMsg = APIUpdateSystemTagMsg;
+
     var APIQueryTagMsg = (function () {
         function APIQueryTagMsg() {
         }
@@ -2432,19 +2458,6 @@ var ApiHeader;
         return APIAttachPolicyToUserMsg;
     })();
     ApiHeader.APIAttachPolicyToUserMsg = APIAttachPolicyToUserMsg;
-
-    var APIResetUserPasswordMsg = (function () {
-        function APIResetUserPasswordMsg() {
-        }
-        APIResetUserPasswordMsg.prototype.toApiMap = function () {
-            var msg = {
-                'org.zstack.header.identity.APIResetUserPasswordMsg': this
-            };
-            return msg;
-        };
-        return APIResetUserPasswordMsg;
-    })();
-    ApiHeader.APIResetUserPasswordMsg = APIResetUserPasswordMsg;
 
     var APIGetAccountMsg = (function () {
         function APIGetAccountMsg() {
@@ -2745,19 +2758,6 @@ var ApiHeader;
     })();
     ApiHeader.APIRevokeResourceSharingMsg = APIRevokeResourceSharingMsg;
 
-    var APIResetAccountPasswordMsg = (function () {
-        function APIResetAccountPasswordMsg() {
-        }
-        APIResetAccountPasswordMsg.prototype.toApiMap = function () {
-            var msg = {
-                'org.zstack.header.identity.APIResetAccountPasswordMsg': this
-            };
-            return msg;
-        };
-        return APIResetAccountPasswordMsg;
-    })();
-    ApiHeader.APIResetAccountPasswordMsg = APIResetAccountPasswordMsg;
-
     var APILogInByAccountMsg = (function () {
         function APILogInByAccountMsg() {
         }
@@ -2823,6 +2823,19 @@ var ApiHeader;
     })();
     ApiHeader.APIDeleteUserMsg = APIDeleteUserMsg;
 
+    var APIUpdateUserMsg = (function () {
+        function APIUpdateUserMsg() {
+        }
+        APIUpdateUserMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.identity.APIUpdateUserMsg': this
+            };
+            return msg;
+        };
+        return APIUpdateUserMsg;
+    })();
+    ApiHeader.APIUpdateUserMsg = APIUpdateUserMsg;
+
     var APISearchUserMsg = (function () {
         function APISearchUserMsg() {
         }
@@ -2835,6 +2848,19 @@ var ApiHeader;
         return APISearchUserMsg;
     })();
     ApiHeader.APISearchUserMsg = APISearchUserMsg;
+
+    var APIUpdateAccountMsg = (function () {
+        function APIUpdateAccountMsg() {
+        }
+        APIUpdateAccountMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.identity.APIUpdateAccountMsg': this
+            };
+            return msg;
+        };
+        return APIUpdateAccountMsg;
+    })();
+    ApiHeader.APIUpdateAccountMsg = APIUpdateAccountMsg;
 
     var APIDeleteUserGroupMsg = (function () {
         function APIDeleteUserGroupMsg() {
@@ -3265,6 +3291,110 @@ var ApiHeader;
     })();
     ApiHeader.APIAddLocalPrimaryStorageMsg = APIAddLocalPrimaryStorageMsg;
 
+    var APIQueryCephPrimaryStorageMsg = (function () {
+        function APIQueryCephPrimaryStorageMsg() {
+        }
+        APIQueryCephPrimaryStorageMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.storage.ceph.primary.APIQueryCephPrimaryStorageMsg': this
+            };
+            return msg;
+        };
+        return APIQueryCephPrimaryStorageMsg;
+    })();
+    ApiHeader.APIQueryCephPrimaryStorageMsg = APIQueryCephPrimaryStorageMsg;
+
+    var APIAddCephPrimaryStorageMsg = (function () {
+        function APIAddCephPrimaryStorageMsg() {
+        }
+        APIAddCephPrimaryStorageMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.storage.ceph.primary.APIAddCephPrimaryStorageMsg': this
+            };
+            return msg;
+        };
+        return APIAddCephPrimaryStorageMsg;
+    })();
+    ApiHeader.APIAddCephPrimaryStorageMsg = APIAddCephPrimaryStorageMsg;
+
+    var APIAddMonToCephPrimaryStorageMsg = (function () {
+        function APIAddMonToCephPrimaryStorageMsg() {
+        }
+        APIAddMonToCephPrimaryStorageMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.storage.ceph.primary.APIAddMonToCephPrimaryStorageMsg': this
+            };
+            return msg;
+        };
+        return APIAddMonToCephPrimaryStorageMsg;
+    })();
+    ApiHeader.APIAddMonToCephPrimaryStorageMsg = APIAddMonToCephPrimaryStorageMsg;
+
+    var APIRemoveMonFromCephPrimaryStorageMsg = (function () {
+        function APIRemoveMonFromCephPrimaryStorageMsg() {
+        }
+        APIRemoveMonFromCephPrimaryStorageMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.storage.ceph.primary.APIRemoveMonFromCephPrimaryStorageMsg': this
+            };
+            return msg;
+        };
+        return APIRemoveMonFromCephPrimaryStorageMsg;
+    })();
+    ApiHeader.APIRemoveMonFromCephPrimaryStorageMsg = APIRemoveMonFromCephPrimaryStorageMsg;
+
+    var APIAddCephBackupStorageMsg = (function () {
+        function APIAddCephBackupStorageMsg() {
+        }
+        APIAddCephBackupStorageMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.storage.ceph.backup.APIAddCephBackupStorageMsg': this
+            };
+            return msg;
+        };
+        return APIAddCephBackupStorageMsg;
+    })();
+    ApiHeader.APIAddCephBackupStorageMsg = APIAddCephBackupStorageMsg;
+
+    var APIAddMonToCephBackupStorageMsg = (function () {
+        function APIAddMonToCephBackupStorageMsg() {
+        }
+        APIAddMonToCephBackupStorageMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.storage.ceph.backup.APIAddMonToCephBackupStorageMsg': this
+            };
+            return msg;
+        };
+        return APIAddMonToCephBackupStorageMsg;
+    })();
+    ApiHeader.APIAddMonToCephBackupStorageMsg = APIAddMonToCephBackupStorageMsg;
+
+    var APIQueryCephBackupStorageMsg = (function () {
+        function APIQueryCephBackupStorageMsg() {
+        }
+        APIQueryCephBackupStorageMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.storage.ceph.backup.APIQueryCephBackupStorageMsg': this
+            };
+            return msg;
+        };
+        return APIQueryCephBackupStorageMsg;
+    })();
+    ApiHeader.APIQueryCephBackupStorageMsg = APIQueryCephBackupStorageMsg;
+
+    var APIRemoveMonFromCephBackupStorageMsg = (function () {
+        function APIRemoveMonFromCephBackupStorageMsg() {
+        }
+        APIRemoveMonFromCephBackupStorageMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.storage.ceph.backup.APIRemoveMonFromCephBackupStorageMsg': this
+            };
+            return msg;
+        };
+        return APIRemoveMonFromCephBackupStorageMsg;
+    })();
+    ApiHeader.APIRemoveMonFromCephBackupStorageMsg = APIRemoveMonFromCephBackupStorageMsg;
+
     var APIUpdateKVMHostMsg = (function () {
         function APIUpdateKVMHostMsg() {
         }
@@ -3486,6 +3616,19 @@ var ApiHeader;
     })();
     ApiHeader.APISearchVirtualRouterOffingMsg = APISearchVirtualRouterOffingMsg;
 
+    var APIUpdateVirtualRouterOfferingMsg = (function () {
+        function APIUpdateVirtualRouterOfferingMsg() {
+        }
+        APIUpdateVirtualRouterOfferingMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.network.service.virtualrouter.APIUpdateVirtualRouterOfferingMsg': this
+            };
+            return msg;
+        };
+        return APIUpdateVirtualRouterOfferingMsg;
+    })();
+    ApiHeader.APIUpdateVirtualRouterOfferingMsg = APIUpdateVirtualRouterOfferingMsg;
+
     var APIAttachPortForwardingRuleMsg = (function () {
         function APIAttachPortForwardingRuleMsg() {
         }
@@ -3706,6 +3849,123 @@ var ApiHeader;
         return APIAttachEipMsg;
     })();
     ApiHeader.APIAttachEipMsg = APIAttachEipMsg;
+
+    var APIQueryLoadBalancerListenerMsg = (function () {
+        function APIQueryLoadBalancerListenerMsg() {
+        }
+        APIQueryLoadBalancerListenerMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.network.service.lb.APIQueryLoadBalancerListenerMsg': this
+            };
+            return msg;
+        };
+        return APIQueryLoadBalancerListenerMsg;
+    })();
+    ApiHeader.APIQueryLoadBalancerListenerMsg = APIQueryLoadBalancerListenerMsg;
+
+    var APIDeleteLoadBalancerMsg = (function () {
+        function APIDeleteLoadBalancerMsg() {
+        }
+        APIDeleteLoadBalancerMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.network.service.lb.APIDeleteLoadBalancerMsg': this
+            };
+            return msg;
+        };
+        return APIDeleteLoadBalancerMsg;
+    })();
+    ApiHeader.APIDeleteLoadBalancerMsg = APIDeleteLoadBalancerMsg;
+
+    var APICreateLoadBalancerListenerMsg = (function () {
+        function APICreateLoadBalancerListenerMsg() {
+        }
+        APICreateLoadBalancerListenerMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.network.service.lb.APICreateLoadBalancerListenerMsg': this
+            };
+            return msg;
+        };
+        return APICreateLoadBalancerListenerMsg;
+    })();
+    ApiHeader.APICreateLoadBalancerListenerMsg = APICreateLoadBalancerListenerMsg;
+
+    var APIRemoveVmNicFromLoadBalancerMsg = (function () {
+        function APIRemoveVmNicFromLoadBalancerMsg() {
+        }
+        APIRemoveVmNicFromLoadBalancerMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.network.service.lb.APIRemoveVmNicFromLoadBalancerMsg': this
+            };
+            return msg;
+        };
+        return APIRemoveVmNicFromLoadBalancerMsg;
+    })();
+    ApiHeader.APIRemoveVmNicFromLoadBalancerMsg = APIRemoveVmNicFromLoadBalancerMsg;
+
+    var APIAddVmNicToLoadBalancerMsg = (function () {
+        function APIAddVmNicToLoadBalancerMsg() {
+        }
+        APIAddVmNicToLoadBalancerMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.network.service.lb.APIAddVmNicToLoadBalancerMsg': this
+            };
+            return msg;
+        };
+        return APIAddVmNicToLoadBalancerMsg;
+    })();
+    ApiHeader.APIAddVmNicToLoadBalancerMsg = APIAddVmNicToLoadBalancerMsg;
+
+    var APICreateLoadBalancerMsg = (function () {
+        function APICreateLoadBalancerMsg() {
+        }
+        APICreateLoadBalancerMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.network.service.lb.APICreateLoadBalancerMsg': this
+            };
+            return msg;
+        };
+        return APICreateLoadBalancerMsg;
+    })();
+    ApiHeader.APICreateLoadBalancerMsg = APICreateLoadBalancerMsg;
+
+    var APIRefreshLoadBalancerMsg = (function () {
+        function APIRefreshLoadBalancerMsg() {
+        }
+        APIRefreshLoadBalancerMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.network.service.lb.APIRefreshLoadBalancerMsg': this
+            };
+            return msg;
+        };
+        return APIRefreshLoadBalancerMsg;
+    })();
+    ApiHeader.APIRefreshLoadBalancerMsg = APIRefreshLoadBalancerMsg;
+
+    var APIDeleteLoadBalancerListenerMsg = (function () {
+        function APIDeleteLoadBalancerListenerMsg() {
+        }
+        APIDeleteLoadBalancerListenerMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.network.service.lb.APIDeleteLoadBalancerListenerMsg': this
+            };
+            return msg;
+        };
+        return APIDeleteLoadBalancerListenerMsg;
+    })();
+    ApiHeader.APIDeleteLoadBalancerListenerMsg = APIDeleteLoadBalancerListenerMsg;
+
+    var APIQueryLoadBalancerMsg = (function () {
+        function APIQueryLoadBalancerMsg() {
+        }
+        APIQueryLoadBalancerMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.network.service.lb.APIQueryLoadBalancerMsg': this
+            };
+            return msg;
+        };
+        return APIQueryLoadBalancerMsg;
+    })();
+    ApiHeader.APIQueryLoadBalancerMsg = APIQueryLoadBalancerMsg;
 
     var APIChangeSecurityGroupStateMsg = (function () {
         function APIChangeSecurityGroupStateMsg() {
@@ -4820,6 +5080,13 @@ var ApiHeader;
     })();
     ApiHeader.APICreateSystemTagEvent = APICreateSystemTagEvent;
 
+    var APIUpdateSystemTagEvent = (function () {
+        function APIUpdateSystemTagEvent() {
+        }
+        return APIUpdateSystemTagEvent;
+    })();
+    ApiHeader.APIUpdateSystemTagEvent = APIUpdateSystemTagEvent;
+
     var APIEvent = (function () {
         function APIEvent() {
         }
@@ -4911,13 +5178,6 @@ var ApiHeader;
     })();
     ApiHeader.APIDetachPolicyFromUserGroupEvent = APIDetachPolicyFromUserGroupEvent;
 
-    var APIResetUserPasswordEvent = (function () {
-        function APIResetUserPasswordEvent() {
-        }
-        return APIResetUserPasswordEvent;
-    })();
-    ApiHeader.APIResetUserPasswordEvent = APIResetUserPasswordEvent;
-
     var APIDeletePolicyEvent = (function () {
         function APIDeletePolicyEvent() {
         }
@@ -4932,6 +5192,13 @@ var ApiHeader;
     })();
     ApiHeader.APIAddUserToGroupEvent = APIAddUserToGroupEvent;
 
+    var APIUpdateUserEvent = (function () {
+        function APIUpdateUserEvent() {
+        }
+        return APIUpdateUserEvent;
+    })();
+    ApiHeader.APIUpdateUserEvent = APIUpdateUserEvent;
+
     var APIDeleteAccountEvent = (function () {
         function APIDeleteAccountEvent() {
         }
@@ -4939,12 +5206,12 @@ var ApiHeader;
     })();
     ApiHeader.APIDeleteAccountEvent = APIDeleteAccountEvent;
 
-    var APIResetAccountPasswordEvent = (function () {
-        function APIResetAccountPasswordEvent() {
+    var APIUpdateAccountEvent = (function () {
+        function APIUpdateAccountEvent() {
         }
-        return APIResetAccountPasswordEvent;
+        return APIUpdateAccountEvent;
     })();
-    ApiHeader.APIResetAccountPasswordEvent = APIResetAccountPasswordEvent;
+    ApiHeader.APIUpdateAccountEvent = APIUpdateAccountEvent;
 
     var QuotaInventory = (function () {
         function QuotaInventory() {
@@ -5107,6 +5374,62 @@ var ApiHeader;
     })();
     ApiHeader.APIUpdateHostEvent = APIUpdateHostEvent;
 
+    var CephPrimaryStorageMonInventory = (function () {
+        function CephPrimaryStorageMonInventory() {
+        }
+        return CephPrimaryStorageMonInventory;
+    })();
+    ApiHeader.CephPrimaryStorageMonInventory = CephPrimaryStorageMonInventory;
+
+    var CephPrimaryStorageInventory = (function () {
+        function CephPrimaryStorageInventory() {
+        }
+        return CephPrimaryStorageInventory;
+    })();
+    ApiHeader.CephPrimaryStorageInventory = CephPrimaryStorageInventory;
+
+    var APIRemoveMonFromCephPrimaryStorageEvent = (function () {
+        function APIRemoveMonFromCephPrimaryStorageEvent() {
+        }
+        return APIRemoveMonFromCephPrimaryStorageEvent;
+    })();
+    ApiHeader.APIRemoveMonFromCephPrimaryStorageEvent = APIRemoveMonFromCephPrimaryStorageEvent;
+
+    var APIAddMonToCephPrimaryStorageEvent = (function () {
+        function APIAddMonToCephPrimaryStorageEvent() {
+        }
+        return APIAddMonToCephPrimaryStorageEvent;
+    })();
+    ApiHeader.APIAddMonToCephPrimaryStorageEvent = APIAddMonToCephPrimaryStorageEvent;
+
+    var CephBackupStorageMonInventory = (function () {
+        function CephBackupStorageMonInventory() {
+        }
+        return CephBackupStorageMonInventory;
+    })();
+    ApiHeader.CephBackupStorageMonInventory = CephBackupStorageMonInventory;
+
+    var CephBackupStorageInventory = (function () {
+        function CephBackupStorageInventory() {
+        }
+        return CephBackupStorageInventory;
+    })();
+    ApiHeader.CephBackupStorageInventory = CephBackupStorageInventory;
+
+    var APIRemoveMonFromCephBackupStorageEvent = (function () {
+        function APIRemoveMonFromCephBackupStorageEvent() {
+        }
+        return APIRemoveMonFromCephBackupStorageEvent;
+    })();
+    ApiHeader.APIRemoveMonFromCephBackupStorageEvent = APIRemoveMonFromCephBackupStorageEvent;
+
+    var APIAddMonToCephBackupStorageEvent = (function () {
+        function APIAddMonToCephBackupStorageEvent() {
+        }
+        return APIAddMonToCephBackupStorageEvent;
+    })();
+    ApiHeader.APIAddMonToCephBackupStorageEvent = APIAddMonToCephBackupStorageEvent;
+
     var SftpBackupStorageInventory = (function () {
         function SftpBackupStorageInventory() {
         }
@@ -5239,6 +5562,76 @@ var ApiHeader;
         return APIDeleteEipEvent;
     })();
     ApiHeader.APIDeleteEipEvent = APIDeleteEipEvent;
+
+    var LoadBalancerListenerVmNicRefInventory = (function () {
+        function LoadBalancerListenerVmNicRefInventory() {
+        }
+        return LoadBalancerListenerVmNicRefInventory;
+    })();
+    ApiHeader.LoadBalancerListenerVmNicRefInventory = LoadBalancerListenerVmNicRefInventory;
+
+    var LoadBalancerListenerInventory = (function () {
+        function LoadBalancerListenerInventory() {
+        }
+        return LoadBalancerListenerInventory;
+    })();
+    ApiHeader.LoadBalancerListenerInventory = LoadBalancerListenerInventory;
+
+    var LoadBalancerInventory = (function () {
+        function LoadBalancerInventory() {
+        }
+        return LoadBalancerInventory;
+    })();
+    ApiHeader.LoadBalancerInventory = LoadBalancerInventory;
+
+    var APIRefreshLoadBalancerEvent = (function () {
+        function APIRefreshLoadBalancerEvent() {
+        }
+        return APIRefreshLoadBalancerEvent;
+    })();
+    ApiHeader.APIRefreshLoadBalancerEvent = APIRefreshLoadBalancerEvent;
+
+    var APICreateLoadBalancerEvent = (function () {
+        function APICreateLoadBalancerEvent() {
+        }
+        return APICreateLoadBalancerEvent;
+    })();
+    ApiHeader.APICreateLoadBalancerEvent = APICreateLoadBalancerEvent;
+
+    var APIRemoveVmNicFromLoadBalancerEvent = (function () {
+        function APIRemoveVmNicFromLoadBalancerEvent() {
+        }
+        return APIRemoveVmNicFromLoadBalancerEvent;
+    })();
+    ApiHeader.APIRemoveVmNicFromLoadBalancerEvent = APIRemoveVmNicFromLoadBalancerEvent;
+
+    var APIAddVmNicToLoadBalancerEvent = (function () {
+        function APIAddVmNicToLoadBalancerEvent() {
+        }
+        return APIAddVmNicToLoadBalancerEvent;
+    })();
+    ApiHeader.APIAddVmNicToLoadBalancerEvent = APIAddVmNicToLoadBalancerEvent;
+
+    var APIDeleteLoadBalancerListenerEvent = (function () {
+        function APIDeleteLoadBalancerListenerEvent() {
+        }
+        return APIDeleteLoadBalancerListenerEvent;
+    })();
+    ApiHeader.APIDeleteLoadBalancerListenerEvent = APIDeleteLoadBalancerListenerEvent;
+
+    var APICreateLoadBalancerListenerEvent = (function () {
+        function APICreateLoadBalancerListenerEvent() {
+        }
+        return APICreateLoadBalancerListenerEvent;
+    })();
+    ApiHeader.APICreateLoadBalancerListenerEvent = APICreateLoadBalancerListenerEvent;
+
+    var APIDeleteLoadBalancerEvent = (function () {
+        function APIDeleteLoadBalancerEvent() {
+        }
+        return APIDeleteLoadBalancerEvent;
+    })();
+    ApiHeader.APIDeleteLoadBalancerEvent = APIDeleteLoadBalancerEvent;
 
     var SecurityGroupRuleInventory = (function () {
         function SecurityGroupRuleInventory() {
@@ -5554,6 +5947,13 @@ var ApiHeader;
         return APISearchInstanceOfferingReply;
     })();
     ApiHeader.APISearchInstanceOfferingReply = APISearchInstanceOfferingReply;
+
+    var APIGetGlobalPropertyReply = (function () {
+        function APIGetGlobalPropertyReply() {
+        }
+        return APIGetGlobalPropertyReply;
+    })();
+    ApiHeader.APIGetGlobalPropertyReply = APIGetGlobalPropertyReply;
 
     var APIListDiskOfferingReply = (function () {
         function APIListDiskOfferingReply() {
@@ -6332,6 +6732,20 @@ var ApiHeader;
     })();
     ApiHeader.APIGetEipAttachableVmNicsReply = APIGetEipAttachableVmNicsReply;
 
+    var APIQueryLoadBalancerListenerReply = (function () {
+        function APIQueryLoadBalancerListenerReply() {
+        }
+        return APIQueryLoadBalancerListenerReply;
+    })();
+    ApiHeader.APIQueryLoadBalancerListenerReply = APIQueryLoadBalancerListenerReply;
+
+    var APIQueryLoadBalancerReply = (function () {
+        function APIQueryLoadBalancerReply() {
+        }
+        return APIQueryLoadBalancerReply;
+    })();
+    ApiHeader.APIQueryLoadBalancerReply = APIQueryLoadBalancerReply;
+
     var APIListSecurityGroupReply = (function () {
         function APIListSecurityGroupReply() {
         }
@@ -6514,6 +6928,13 @@ var ApiHeader;
     })();
     ApiHeader.VirtualRouterEipRefInventory = VirtualRouterEipRefInventory;
 
+    var VirtualRouterLoadBalancerRefInventory = (function () {
+        function VirtualRouterLoadBalancerRefInventory() {
+        }
+        return VirtualRouterLoadBalancerRefInventory;
+    })();
+    ApiHeader.VirtualRouterLoadBalancerRefInventory = VirtualRouterLoadBalancerRefInventory;
+
     var VirtualRouterVipInventory = (function () {
         function VirtualRouterVipInventory() {
         }
@@ -6667,7 +7088,7 @@ var ApiHeader;
 
     ApiHeader.TagResourceTypeClusterVO = 'ClusterVO';
 
-    ApiHeader.UserInventoryQueryable = ['uuid', 'accountUuid', 'name', 'createDate', 'lastOpDate'];
+    ApiHeader.UserInventoryQueryable = ['uuid', 'accountUuid', 'name', 'description', 'createDate', 'lastOpDate'];
 
     ApiHeader.TagResourceTypeUserVO = 'UserVO';
 
@@ -6687,7 +7108,7 @@ var ApiHeader;
 
     ApiHeader.TagResourceTypeUserGroupPolicyRefVO = 'UserGroupPolicyRefVO';
 
-    ApiHeader.AccountInventoryQueryable = ['uuid', 'name', 'createDate', 'lastOpDate'];
+    ApiHeader.AccountInventoryQueryable = ['uuid', 'name', 'description', 'type', 'createDate', 'lastOpDate'];
 
     ApiHeader.TagResourceTypeAccountVO = 'AccountVO';
 
@@ -6727,6 +7148,22 @@ var ApiHeader;
 
     ApiHeader.TagResourceTypeIscsiFileSystemBackendPrimaryStorageVO = 'IscsiFileSystemBackendPrimaryStorageVO';
 
+    ApiHeader.CephPrimaryStorageInventoryQueryable = ['mons.hostname', 'mons.monPort', 'mons.createDate', 'mons.lastOpDate', 'mons.primaryStorageUuid', 'fsid', 'rootVolumePoolName', 'dataVolumePoolName', 'imageCachePoolName', 'uuid', 'zoneUuid', 'name', 'url', 'description', 'totalCapacity', 'availableCapacity', 'totalPhysicalCapacity', 'availablePhysicalCapacity', 'type', 'state', 'status', 'mountPath', 'createDate', 'lastOpDate', 'attachedClusterUuids'];
+
+    ApiHeader.TagResourceTypeCephPrimaryStorageVO = 'CephPrimaryStorageVO';
+
+    ApiHeader.CephPrimaryStorageMonInventoryQueryable = ['hostname', 'monPort', 'createDate', 'lastOpDate', 'primaryStorageUuid'];
+
+    ApiHeader.TagResourceTypeCephPrimaryStorageMonVO = 'CephPrimaryStorageMonVO';
+
+    ApiHeader.CephBackupStorageInventoryQueryable = ['mons.hostname', 'mons.monPort', 'mons.createDate', 'mons.lastOpDate', 'mons.backupStorageUuid', 'fsid', 'poolName', 'uuid', 'name', 'url', 'description', 'totalCapacity', 'availableCapacity', 'type', 'state', 'status', 'createDate', 'lastOpDate', 'attachedZoneUuids'];
+
+    ApiHeader.TagResourceTypeCephBackupStorageVO = 'CephBackupStorageVO';
+
+    ApiHeader.CephBackupStorageMonInventoryQueryable = ['hostname', 'monPort', 'createDate', 'lastOpDate', 'backupStorageUuid'];
+
+    ApiHeader.TagResourceTypeCephBackupStorageMonVO = 'CephBackupStorageMonVO';
+
     ApiHeader.KVMHostInventoryQueryable = ['username', 'zoneUuid', 'name', 'uuid', 'clusterUuid', 'description', 'managementIp', 'hypervisorType', 'state', 'status', 'totalCpuCapacity', 'availableCpuCapacity', 'totalMemoryCapacity', 'availableMemoryCapacity', 'createDate', 'lastOpDate'];
 
     ApiHeader.TagResourceTypeKVMHostVO = 'KVMHostVO';
@@ -6747,6 +7184,10 @@ var ApiHeader;
 
     ApiHeader.TagResourceTypeVirtualRouterVmVO = 'VirtualRouterVmVO';
 
+    ApiHeader.VirtualRouterLoadBalancerRefInventoryQueryable = ['id', 'virtualRouterVmUuid', 'loadBalancerUuid', 'createDate', 'lastOpDate'];
+
+    ApiHeader.TagResourceTypeVirtualRouterLoadBalancerRefVO = 'VirtualRouterLoadBalancerRefVO';
+
     ApiHeader.VirtualRouterVipInventoryQueryable = ['uuid', 'virtualRouterVmUuid'];
 
     ApiHeader.TagResourceTypeVirtualRouterVipVO = 'VirtualRouterVipVO';
@@ -6762,6 +7203,18 @@ var ApiHeader;
     ApiHeader.EipInventoryQueryable = ['uuid', 'name', 'description', 'vmNicUuid', 'vipUuid', 'createDate', 'lastOpDate', 'state', 'vipIp', 'guestIp'];
 
     ApiHeader.TagResourceTypeEipVO = 'EipVO';
+
+    ApiHeader.LoadBalancerInventoryQueryable = ['name', 'uuid', 'description', 'state', 'vipUuid', 'listeners.uuid', 'listeners.name', 'listeners.description', 'listeners.loadBalancerUuid', 'listeners.instancePort', 'listeners.loadBalancerPort', 'listeners.protocol', 'listeners.createDate', 'listeners.lastOpDate', 'vmNicRefs.id', 'vmNicRefs.listenerUuid', 'vmNicRefs.vmNicUuid', 'vmNicRefs.status', 'vmNicRefs.createDate', 'vmNicRefs.lastOpDate'];
+
+    ApiHeader.TagResourceTypeLoadBalancerVO = 'LoadBalancerVO';
+
+    ApiHeader.LoadBalancerListenerVmNicRefInventoryQueryable = ['id', 'listenerUuid', 'vmNicUuid', 'status', 'createDate', 'lastOpDate'];
+
+    ApiHeader.TagResourceTypeLoadBalancerListenerVmNicRefVO = 'LoadBalancerListenerVmNicRefVO';
+
+    ApiHeader.LoadBalancerListenerInventoryQueryable = ['uuid', 'name', 'description', 'loadBalancerUuid', 'instancePort', 'loadBalancerPort', 'protocol', 'createDate', 'lastOpDate', 'vmNicRefs.id', 'vmNicRefs.listenerUuid', 'vmNicRefs.vmNicUuid', 'vmNicRefs.status', 'vmNicRefs.createDate', 'vmNicRefs.lastOpDate'];
+
+    ApiHeader.TagResourceTypeLoadBalancerListenerVO = 'LoadBalancerListenerVO';
 
     ApiHeader.VmNicSecurityGroupRefInventoryQueryable = ['vmNicUuid', 'securityGroupUuid', 'vmInstanceUuid', 'createDate', 'lastOpDate'];
 
@@ -10699,6 +11152,9 @@ var MPrimaryStorage;
                 msg.hostname = ps.hostname;
             } else if (ps.type == 'LocalStorage') {
                 msg = new ApiHeader.APIAddLocalPrimaryStorageMsg();
+            } else if (ps.type == 'Ceph') {
+                msg = new ApiHeader.APIAddCephPrimaryStorageMsg();
+                msg.monUrls = ps.cephMonUrls;
             }
             msg.name = ps.name;
             msg.description = ps.description;
@@ -11399,6 +11855,32 @@ var MPrimaryStorage;
                     });
                 }
 
+                $scope.cephMonGrid__ = {
+                    pageSize: 20,
+                    resizable: true,
+                    scrollable: true,
+                    pageable: true,
+                    columns: [
+                        {
+                            width: '20%',
+                            title: '',
+                            template: '<button type="button" class="btn btn-xs btn-default" ng-click="infoPage.delCephMon(dataItem.uid)"><i class="fa fa-times"></i></button>'
+                        },
+                        {
+                            field: 'url',
+                            title: 'MON URL',
+                            width: '80%'
+                        }
+                    ],
+                    dataBound: function (e) {
+                        var grid = e.sender;
+                        if (grid.dataSource.total() == 0 || grid.dataSource.totalPages() == 1) {
+                            grid.pager.element.hide();
+                        }
+                    },
+                    dataSource: new kendo.data.DataSource([])
+                };
+
                 var infoPage = $scope.infoPage = {
                     activeState: true,
                     name: null,
@@ -11411,6 +11893,19 @@ var MPrimaryStorage;
                     hostname: null,
                     sshUsername: 'root',
                     sshPassword: null,
+                    cephMonUrls: [],
+                    addCephMon: function () {
+                        $scope.cephMonGrid__.dataSource.insert(0, { url: this.sshUsername + ":" + this.sshPassword + "@" + this.hostname });
+                        this.hostname = null;
+                        this.sshPassword = null;
+                    },
+                    canAddMon: function () {
+                        return Utils.notNullnotUndefined(this.sshUsername) && Utils.notNullnotUndefined(this.hostname) && Utils.notNullnotUndefined(this.sshPassword);
+                    },
+                    delCephMon: function (uid) {
+                        var row = $scope.cephMonGrid__.dataSource.getByUid(uid);
+                        $scope.cephMonGrid__.dataSource.remove(row);
+                    },
                     hasZone: function () {
                         return $scope.zoneList.dataSource.data().length > 0;
                     },
@@ -11441,7 +11936,11 @@ var MPrimaryStorage;
                         return false;
                     },
                     canMoveToNext: function () {
-                        return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.zoneUuid) && Utils.notNullnotUndefined(this.type) && Utils.notNullnotUndefined(this.url) && this.isUrlValid();
+                        if (this.type == 'Ceph') {
+                            return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.zoneUuid) && $scope.cephMonGrid__.dataSource.data().length > 0;
+                        } else {
+                            return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.zoneUuid) && Utils.notNullnotUndefined(this.type) && Utils.notNullnotUndefined(this.url) && this.isUrlValid();
+                        }
                     },
                     show: function () {
                         this.getAnchorElement().tab('show');
@@ -11469,6 +11968,7 @@ var MPrimaryStorage;
                         this.sshPassword = null;
                         this.sshUsername = 'root';
                         this.hostname = null;
+                        this.cephMonUrls = [];
                     }
                 };
 
@@ -11515,6 +12015,10 @@ var MPrimaryStorage;
                         var resultPs;
                         var chain = new Utils.Chain();
                         chain.then(function () {
+                            angular.forEach($scope.cephMonGrid__.dataSource.data(), function (it) {
+                                $scope.infoPage.cephMonUrls.push(it.url);
+                            });
+
                             psMgr.create(infoPage, function (ret) {
                                 resultPs = ret;
                                 chain.next();
@@ -11615,6 +12119,7 @@ var MPrimaryStorage;
             var win = this.$scope.winCreatePrimaryStorage__;
             var chain = new Utils.Chain();
             this.$scope.clusterList__.value([]);
+            this.$scope.cephMonGrid__.dataSource.data([]);
             this.$scope.button.reset();
             chain.then(function () {
                 if (Utils.notNullnotUndefined(_this.options.zone)) {
@@ -15057,6 +15562,9 @@ var MBackupStorage;
             } else if (bs.type == 'SimulatorBackupStorage') {
                 msg = new ApiHeader.APIAddSimulatorBackupStorageMsg();
                 msg.type = 'SimulatorBackupStorage';
+            } else if (bs.type == 'Ceph') {
+                msg = new ApiHeader.APIAddCephBackupStorageMsg();
+                msg.monUrls = bs.cephMonUrls;
             }
             if (Utils.notNullnotUndefined(bs.resourceUuid)) {
                 msg.resourceUuid = bs.resourceUuid;
@@ -15814,6 +16322,32 @@ var MBackupStorage;
                     });
                 }
 
+                $scope.cephMonGrid__ = {
+                    pageSize: 20,
+                    resizable: true,
+                    scrollable: true,
+                    pageable: true,
+                    columns: [
+                        {
+                            width: '20%',
+                            title: '',
+                            template: '<button type="button" class="btn btn-xs btn-default" ng-click="infoPage.delCephMon(dataItem.uid)"><i class="fa fa-times"></i></button>'
+                        },
+                        {
+                            field: 'url',
+                            title: 'MON URL',
+                            width: '80%'
+                        }
+                    ],
+                    dataBound: function (e) {
+                        var grid = e.sender;
+                        if (grid.dataSource.total() == 0 || grid.dataSource.totalPages() == 1) {
+                            grid.pager.element.hide();
+                        }
+                    },
+                    dataSource: new kendo.data.DataSource([])
+                };
+
                 var infoPage = $scope.infoPage = {
                     activeState: true,
                     name: null,
@@ -15823,6 +16357,7 @@ var MBackupStorage;
                     hostname: null,
                     username: 'root',
                     password: null,
+                    cephMonUrls: [],
                     isUrlValid: function () {
                         if (this.type == 'SftpBackupStorage' && Utils.notNullnotUndefined(this.url)) {
                             return this.url.indexOf('/') == 0;
@@ -15835,6 +16370,8 @@ var MBackupStorage;
                     canMoveToNext: function () {
                         if (this.type == 'SftpBackupStorage') {
                             return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.type) && Utils.notNullnotUndefined(this.url) && Utils.notNullnotUndefined(this.hostname) && Utils.notNullnotUndefined(this.username) && Utils.notNullnotUndefined(this.password) && this.isUrlValid();
+                        } else if (this.type == 'Ceph') {
+                            return $scope.cephMonGrid__.dataSource.data().length > 0;
                         } else {
                             return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.type) && Utils.notNullnotUndefined(this.url);
                         }
@@ -15854,6 +16391,18 @@ var MBackupStorage;
                     getPageName: function () {
                         return 'createBackupStorageInfo';
                     },
+                    addCephMon: function () {
+                        $scope.cephMonGrid__.dataSource.insert(0, { url: this.username + ":" + this.password + "@" + this.hostname });
+                        this.hostname = null;
+                        this.password = null;
+                    },
+                    canAddMon: function () {
+                        return Utils.notNullnotUndefined(this.username) && Utils.notNullnotUndefined(this.hostname) && Utils.notNullnotUndefined(this.password);
+                    },
+                    delCephMon: function (uid) {
+                        var row = $scope.cephMonGrid__.dataSource.getByUid(uid);
+                        $scope.cephMonGrid__.dataSource.remove(row);
+                    },
                     reset: function () {
                         this.name = Utils.shortHashName("bs");
                         this.description = null;
@@ -15863,6 +16412,7 @@ var MBackupStorage;
                         this.password = null;
                         this.url = null;
                         this.activeState = false;
+                        this.cephMonUrls = [];
                     }
                 };
 
@@ -15907,6 +16457,10 @@ var MBackupStorage;
                     },
                     finish: function () {
                         if (Utils.notNullnotUndefined(_this.options.done)) {
+                            angular.forEach($scope.cephMonGrid__.dataSource.data(), function (it) {
+                                $scope.infoPage.cephMonUrls.push(it.url);
+                            });
+
                             _this.options.done({
                                 info: infoPage,
                                 zones: $scope.zoneList__.dataItems()
@@ -15961,6 +16515,7 @@ var MBackupStorage;
             var chain = new Utils.Chain();
             this.$scope.zoneList__.value([]);
             this.$scope.button.reset();
+            this.$scope.cephMonGrid__.dataSource.data([]);
             chain.then(function () {
                 _this.api.getBackupStorageTypes(function (bsTypes) {
                     var types = [];

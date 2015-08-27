@@ -27,7 +27,7 @@
                             <select id="type" kendo-drop-down-list k-options="typeList" class="z-win-dropdown" ng-model="infoPage.type"></select>
                             <p class="z-hint">(Required) select type of primary storage</p>
                         </div>
-                        <div class="form-group col-sm-21">
+                        <div class="form-group col-sm-21" ng-show="infoPage.type != 'Ceph'">
                             <label for="url" class="z-block-label">URL</label>
                             <input id="url" type="text" ng-model="infoPage.url" class="form-control" placeholder="(Required) Url of primary storage">
                             <p class="z-hint" ng-show="infoPage.type == 'NFS'">(Required) for NFS primary storage, url is 'ip_or_dns_name:absolute_path', for example, '192.168.0.10:/primaryStorage'</p>
@@ -68,6 +68,31 @@
                             <label for="password">CHAP PASSWORD</label>
                             <input type="password" class="form-control" id="chapPassword" placeholder="chap password of iscsi server" ng-model="infoPage.chapPassword">
                             <p class="z-hint">(Optional) CHAP password for ISCSI server</p>
+                          </div>
+                        </div>
+                        <div ng-switch-when="Ceph">
+                          <div class="form-group col-sm-21">
+                            <label for="cephhostname">HOSTNAME</label>
+                            <input type="text" class="form-control" id="cephhostname" placeholder="IP or DNS name of ceph mon server" ng-model="infoPage.hostname">
+                          </div>
+                          <div class="form-group col-sm-21">
+                            <label for="cephusername">SSH USER NAME</label>
+                            <input type="text" class="form-control" id="cephusername" placeholder="ssh user name of ceph mon server" ng-model="infoPage.sshUsername">
+                            <p class="z-hint">The user must have root privilege on the ceph mon server</p>
+                          </div>
+                          <div class="form-group col-sm-21">
+                            <label for="cephpassword">SSH PASSWORD</label>
+                            <input type="password" class="form-control" id="cephpassword" placeholder="ssh password of ceph mon server" ng-model="infoPage.sshPassword">
+                          </div>
+                          <div class="form-group col-sm-24">
+                            <button type="button" class="btn btn-default" ng-click="infoPage.addCephMon()" ng-disabled="!infoPage.canAddMon()">
+                              <i class="fa fa-plus" style="font-size: 1.2em"></i>
+                              <span>Add</span>
+                            </button>
+                            <span class="z-hint">Please add at least one ceph mon server</span>
+                          </div>
+                          <div class="form-group col-sm-24">
+                            <div kendo-grid k-options="cephMonGrid__"></div>
                           </div>
                         </div>
                       </div>
