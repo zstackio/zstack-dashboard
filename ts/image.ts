@@ -800,7 +800,7 @@ module MImage {
 
                     isUrlValid(): boolean {
                         if (Utils.notNullnotUndefined(this.url)) {
-                            return this.url.indexOf('http') == 0 || this.url.indexOf('https') == 0;
+                            return this.url.indexOf('http') == 0 || this.url.indexOf('https') == 0 || this.url.indexOf('file') == 0;
                         }
                         return true;
                     },
