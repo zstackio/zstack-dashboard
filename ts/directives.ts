@@ -610,7 +610,7 @@ module Directive {
 
     class DeleteConfirmImpl {
         open() {
-            this.$scope.ok = null;
+            this.$scope.confirmInput = null;
             this.$scope.winDelete__.center();
             this.$scope.winDelete__.open();
         }
@@ -627,6 +627,7 @@ module Directive {
             };
 
             $scope.title = options.title;
+            $scope.confirmMessage = options.title.toLowerCase();
             $scope.description = options.description;
             if (Utils.notNullnotUndefined(options.html)) {
                 var desc = $element.find('#description');
