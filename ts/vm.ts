@@ -371,6 +371,12 @@ module MVmInstance {
       super();
       this.current = new VmInstance();
     }
+
+    isInstanceSelected(uuid) {
+      if (!this.multiSelection || !Utils.notNullnotUndefined(this.current))
+        return false;
+      return !!this.current.filter(m => m.uuid === uuid).length;
+    }
   }
 
   class OVmInstanceGrid extends Utils.OGrid {
@@ -382,7 +388,8 @@ module MVmInstance {
           field: 'name',
           title: 'NAME',
           width: '20%',
-          template: '<a href="/\\#/vmInstance/{{dataItem.uuid}}">{{dataItem.name}}</a>'
+          template: '<li ng-if="model.isInstanceSelected(dataItem.uuid)" class="fa fa-check"></li>' +
+                    '<a href="/\\#/vmInstance/{{dataItem.uuid}}">{{dataItem.name}}</a>'
         },
         {
           field: 'description',
@@ -503,6 +510,10 @@ module MVmInstance {
 
     isActionShow(action) {
       if (!Utils.notNullnotUndefined(this.$scope.model.current) || Utils.isEmptyObject(this.$scope.model.current)) {
+        return false;
+      }
+
+      if (this.$scope.model.multiSelection) {
         return false;
       }
 
@@ -936,7 +947,7 @@ module MVmInstance {
       };
 
       $scope.funcGridDoubleClick = (e) => {
-        if (Utils.notNullnotUndefined($scope.model.current)) {
+        if (Utils.notNullnotUndefined($scope.model.current) && !$scope.model.multiSelection) {
           var url = Utils.sprintf('/vmInstance/{0}', $scope.model.current.uuid);
           $location.path(url);
           e.preventDefault();
@@ -947,6 +958,11 @@ module MVmInstance {
 
       $scope.funcSearch = (win : any) => {
         win.open();
+      };
+
+      $scope.funcToggleMultiSelection = function() {
+        $scope.model.multiSelection = !$scope.model.multiSelection;
+        $scope.model.resetCurrent();
       };
 
       $scope.funcCreateVmInstance = (win : any) => {
@@ -963,13 +979,26 @@ module MVmInstance {
         width: '350px',
 
         description: ()=> {
+          if ($scope.model.multiSelection)
+            return $scope.model.current.map(m => m.name).join(', ');
           return $scope.model.current.name;
         },
 
         confirm: ()=> {
-          vmMgr.delete($scope.model.current, (ret : any)=> {
-            $scope.oVmInstanceGrid.deleteCurrent();
-          });
+          if ($scope.model.multiSelection) {
+            var count = $scope.model.current.length;
+            var done = function() {
+              if (!--count)
+                $scope.oVmInstanceGrid.deleteCurrent();
+            };
+            $scope.model.current.forEach(m => {
+                vmMgr.delete(m, done);
+            });
+          } else {
+            vmMgr.delete($scope.model.current, (ret: any) => {
+              $scope.oVmInstanceGrid.deleteCurrent();
+            });
+          }
         }
       };
 
@@ -982,20 +1011,35 @@ module MVmInstance {
       };
 
       $scope.funcIsActionDisabled = ()=> {
-        return Utils.notNullnotUndefined($scope.model.current) && $scope.model.current.isInProgress();
+        if (!Utils.notNullnotUndefined($scope.model.current))
+          return false;
+        if ($scope.model.multiSelection) {
+          for (var i = 0; i < $scope.model.current.length; ++i) {
+            if ($scope.model.current[i].isInProgress())
+              return true;
+          }
+        } else {
+          return $scope.model.current.isInProgress();
+        }
       };
 
       $scope.optionsCreateVmInstance = {
+        batchMode: $scope.model.multiSelection,
         done: (info: any) => {
-          var vm = new VmInstance();
-          info.uuid = info.resourceUuid = Utils.uuid();
-          info.state = 'Starting';
-          angular.extend(vm, info);
-          vm = vmMgr.wrap(vm);
-          $scope.oVmInstanceGrid.add(vm);
-          vmMgr.create(info, (ret: VmInstance)=>{
-            $scope.oVmInstanceGrid.refresh();
-          });
+          var name = info.name;
+          for (var i = 0; i < info.vmCount; ++i) {
+            var vm = new VmInstance();
+            info.uuid = info.resourceUuid = Utils.uuid();
+            info.state = 'Starting';
+            if (info.vmCount > 1)
+              info.name = name + "_" + (i + 1);
+            angular.extend(vm, info);
+            vm = vmMgr.wrap(vm);
+            $scope.oVmInstanceGrid.add(vm);
+            vmMgr.create(info, (ret: VmInstance) => {
+              $scope.oVmInstanceGrid.refresh();
+            });
+          }
         }
       };
 
@@ -1033,7 +1077,7 @@ module MVmInstance {
       $scope.$watch(()=>{
         return $scope.model.current;
       },()=>{
-        if (Utils.notNullnotUndefined($scope.model.current)) {
+        if (Utils.notNullnotUndefined($scope.model.current) && !$scope.model.multiSelection) {
           $scope.optionsMigrateVm.vm = $scope.model.current;
           $scope.optionsChangeInstanceOffering.vm = $scope.model.current;
           $scope.optionsAttachVolume.vm = $scope.model.current;
@@ -1041,6 +1085,12 @@ module MVmInstance {
           $scope.optionsAttachL3Network.vm = $scope.model.current;
           $scope.optionsDetachL3Network.vm = $scope.model.current;
         }
+      });
+
+      $scope.$watch(()=>{
+        return $scope.model.multiSelection;
+      },()=>{
+        $scope.optionsCreateVmInstance.batchMode = $scope.model.multiSelection;
       });
     }
   }
@@ -1210,7 +1260,12 @@ module MVmInstance {
   }
 
   export class CreateVmInstanceOptions {
+    batchMode: boolean;
     done : (info:any)=>void;
+
+    constructor() {
+      this.batchMode = false;
+    }
   }
 
 
@@ -1239,6 +1294,7 @@ module MVmInstance {
       this.$scope.diskOfferingOptions__.dataSource.data([]);
       this.$scope.diskOfferingList__.value([]);
       this.$scope.button.reset();
+
       chain.then(()=> {
         var qobj = new ApiHeader.QueryObject();
         qobj.conditions = [
@@ -1351,12 +1407,13 @@ module MVmInstance {
             return parentScope[optionName];
           }, ()=> {
             this.options = parentScope[optionName];
-          });
+          }, true);
         }
 
         var infoPage: Utils.WizardPage = $scope.infoPage  = {
           activeState: true,
 
+          vmCount: 1,
           name: null,
           description: null,
           instanceOfferingUuid: null,
@@ -1487,6 +1544,7 @@ module MVmInstance {
           },
 
           reset() : void {
+            this.vmCount = $scope.isBatchMode() ? 2 : 1;
             this.name = Utils.shortHashName('vm');
             this.description = null;
             this.imageUuid = null;
@@ -1583,11 +1641,11 @@ module MVmInstance {
             $scope.mediator.currentPage = page;
           },
 
-          finishButtonName: (): string =>{
+          finishButtonName: (): string => {
             return "Create";
           },
 
-          finish: ()=> {
+          finish: () => {
             $scope.infoPage.hostUuid = $scope.locationPage.hostUuid;
             $scope.infoPage.clusterUuid = $scope.locationPage.clusterUuid;
             $scope.infoPage.zoneUuid = $scope.locationPage.zoneUuid;
@@ -1600,6 +1658,10 @@ module MVmInstance {
         $scope.button = new Utils.WizardButton([
           infoPage, locationPage
         ], mediator);
+
+        $scope.isBatchMode = () => {
+          return this.options.batchMode;
+        };
 
         $scope.$watch(()=>{
           return $scope.locationPage.zoneUuid;

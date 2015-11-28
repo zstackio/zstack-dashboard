@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-sm-15">
             <div class="tab-content">
-                <div id="createVmInstanceInfo" class="tab-pane active">
+                <div id="createVmInstanceInfo" class="tab-pane">
                     <div class="alert alert-warning col-sm-21" ng-show="!infoPage.hasImage()">
                         No image is eligible to create vm. Eligible images are ones with state 'Enabled' and status 'Ready'.
                     </div>
@@ -12,6 +12,10 @@
 
                     <h4 class="z-win-h4">VM INSTANCE INFO</h4>
                     <form class="form">
+                        <div ng-if="isBatchMode()" class="form-group col-sm-24">
+                            <label for="l3_ip">INSTANCE COUNT</label>
+                            <input class="form-control z-win-input" type="number" id="l3_ip" placeholder="2" min="2" ng-model="infoPage.vmCount">
+                        </div>
                         <div class="form-group col-sm-24">
                             <label for="instOffering">INSTANCE OFFERING</label>
                             <select id="instOffering" kendo-drop-down-list k-options="instanceOfferingOptions__" class="z-win-dropdown" ng-model="infoPage.instanceOfferingUuid"></select>
@@ -30,7 +34,7 @@
                             </div>
                         </div>
                         <div class="form-group col-sm-24">
-                            <label for="name">NAME</label>
+                            <label for="name">{{isBatchMode() ? "PREFIX NAME" : "NAME"}}</label>
                             <input class="form-control z-win-input" type="text" id="name" placeholder="(Required) max length of 255 characters" ng-model="infoPage.name" required data-message="name is required">
                         </div>
                         <div class="form-group col-sm-24">
@@ -43,7 +47,7 @@
                             <label for="l3">L3 NETWORK</label>
                             <select id="l3" kendo-drop-down-list k-options="l3NetworkOptions__" class="z-win-dropdown" ng-model="infoPage.l3NetworkUuid"></select>
                         </div>
-                        <div class="form-group col-sm-24">
+                        <div ng-if="!isBatchMode()" class="form-group col-sm-24">
                             <label for="l3_ip">STATIC IP</label>
                             <input class="form-control z-win-input" type="text" id="l3_ip" placeholder="(Optional)" ng-model="infoPage.l3NetworkIp">
                             <div class="alert alert-danger col-sm-21" ng-show="!infoPage.isStaticIpValid()">
@@ -112,7 +116,7 @@
 
         <div class="col-sm-7 z-wizard-bar">
             <ul class="nav">
-                <li class="active"><a data-target="#createVmInstanceInfo" ng-click="button.pageClick('createVmInstanceInfo')">VM INSTANCE INFO</a></li>
+                <li ng-class="active"><a data-target="#createVmInstanceInfo" ng-click="button.pageClick('createVmInstanceInfo')">VM INSTANCE INFO</a></li>
                 <li ng-class="{disabled: !psPage.isActive()}"><a data-target="#createVmInstanceLocation" ng-click="button.pageClick('createVmInstanceLocation')">LOCATION</a></li>
             </ul>
         </div>

@@ -681,6 +681,12 @@ module Utils {
 
     export class Model {
         current : any;
+        multiSelection : boolean;
+
+        constructor() {
+            this.multiSelection = false;
+        }
+
         resetCurrent() {
             this.current = null;
         }
@@ -704,8 +710,15 @@ module Utils {
             }
 
             if (selected) {
-                var row = this.grid.table.find('tr[data-uid="' + selected.uid + '"]');
-                this.grid.select(row);
+                if (this.$scope.model.mutliSelection) {
+                    selected.forEach(m => {
+                        var row = this.grid.table.find('tr[data-uid="' + m.uid + '"]');
+                        this.grid.select(row);
+                    });
+                } else {
+                    var row = this.grid.table.find('tr[data-uid="' + selected.uid + '"]');
+                    this.grid.select(row);
+                }
             }
         }
 
@@ -723,8 +736,15 @@ module Utils {
         }
 
         deleteCurrent() {
-            var row = this.grid.dataSource.getByUid(this.$scope.model.current.uid);
-            this.grid.dataSource.remove(row);
+            if (this.$scope.model.multiSelection) {
+                this.$scope.model.current.forEach(m => {
+                    var row = this.grid.dataSource.getByUid(m.uid);
+                    this.grid.dataSource.remove(row);
+                });
+            } else {
+                var row = this.grid.dataSource.getByUid(this.$scope.model.current.uid);
+                this.grid.dataSource.remove(row);
+            }
             this.$scope.model.resetCurrent();
         }
 
@@ -752,9 +772,21 @@ module Utils {
 
                 change: (e)=> {
                     var selected = this.grid.select();
-                    Utils.safeApply($scope, ()=>{
-                        model.current = this.grid.dataItem(selected);
-                    });
+                    if (model.multiSelection) {
+                        Utils.safeApply($scope, () => {
+                            if (!model.current)
+                                model.current = [];
+                            var idx = model.current.indexOf(this.grid.dataItem(selected));
+                            if (idx < 0)
+                                model.current.push(this.grid.dataItem(selected));
+                            else
+                                model.current.splice(idx, 1);
+                        });
+                    } else {
+                        Utils.safeApply($scope, () => {
+                            model.current = this.grid.dataItem(selected);
+                        });
+                    }
                 },
 
                 dataSource: new kendo.data.DataSource({
