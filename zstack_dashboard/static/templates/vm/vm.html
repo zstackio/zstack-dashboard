@@ -27,6 +27,10 @@
             <i class="fa fa-filter"></i><span>&nbsp; {{filterBy.getButtonName()}}</span>
         </button>
 
+        <button type="button" class="btn btn-default btn-sm" ng-class="{'btn-success': model.multiSelection == true}" ng-click="funcToggleMultiSelection()">
+            <i class="fa fa-flash" style="margin-right: 5px"></i><span>&nbsp; Batch Mode</span>
+        </button>
+
         <button type="button" class="btn btn-success btn-sm" style="margin-left: 20px" ng-click="funcCreateVmInstance(winNewVmInstance)">
             <i class="fa fa-plus"></i>
             <span>&nbsp; New VmInstance</span>
