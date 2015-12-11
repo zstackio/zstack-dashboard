@@ -1,0 +1,16 @@
+{
+	"dashboard.DASHBOARD": "仪表板",
+	"dashboard.CAPACITY": "能力",
+	"dashboard.HINT": "每个主机的部分处理器/内存将保留给系统使用。",
+	"dashboard.RESOURCE COUNT": "资源数",
+	"dashboard.CPU": "处理器",
+	"dashboard.MEMORY": "内存",
+	"dashboard.PRIMARY STORAGE": "主存储",
+	"dashboard.BACKUP STORAGE": "备份存储",
+	"dashboard.IP ADDRESS": "IP地址",
+	"dashboard.CAPACITY NAME": "能力名称",
+	"dashboard.TOTAL CAPACITY": "总能力",
+	"dashboard.AVAILABLE CAPACITY": "可用能力",
+	"dashboard.AVAILABLE PERCENTAGE": "可以百分比"
+} 
+
