@@ -11,6 +11,8 @@
 	"dashboard.CAPACITY NAME": "CAPACITY NAME",
 	"dashboard.TOTAL CAPACITY": "TOTAL CAPACITY",
 	"dashboard.AVAILABLE CAPACITY": "AVAILABLE CAPACITY",
-	"dashboard.AVAILABLE PERCENTAGE": "AVAILABLE PERCENTAGE"
+	"dashboard.AVAILABLE PERCENTAGE": "AVAILABLE PERCENTAGE",
+	"index.Compute":"Compute",
+	"index.Instance":"Instance",
 } 
 
