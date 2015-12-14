@@ -17,5 +17,8 @@
 	"index.Network Service": "Network Service",
 	"index.Security Group": "Security Group",
 	"index.VIP": "VIP",
+	"index.EIP": "EIP",
+	"index.Port Forwarding": "Port Forwarding",
+	"index.Virtual Router": "Virtual Router",
 } 
 
