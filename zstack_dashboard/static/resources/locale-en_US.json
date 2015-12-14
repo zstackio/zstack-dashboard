@@ -12,7 +12,17 @@
 	"dashboard.TOTAL CAPACITY": "TOTAL CAPACITY",
 	"dashboard.AVAILABLE CAPACITY": "AVAILABLE CAPACITY",
 	"dashboard.AVAILABLE PERCENTAGE": "AVAILABLE PERCENTAGE",
-	"index.Compute":"Compute",
-	"index.Instance":"Instance",
+	"index.Compute": "Compute",
+	"index.Instance": "Instance",
+	"index.Network Service": "Network Service",
+	"index.Security Group": "Security Group",
+	"index.VIP": "VIP",
+	"index.EIP": "EIP",
+	"index.Port Forwarding": "Port Forwarding",
+	"index.Virtual Router": "Virtual Router",
+	"index.Configuration": "Configuration",
+	"index.Instance Offering": "Instance Offering",
+	"index.Disk Offering": "Disk Offering",
+	"index.Virtual Router Offering": "Virtual Router Offering"
 } 
 
