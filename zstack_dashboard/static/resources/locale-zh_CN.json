@@ -11,6 +11,8 @@
 	"dashboard.CAPACITY NAME": "能力名称",
 	"dashboard.TOTAL CAPACITY": "总能力",
 	"dashboard.AVAILABLE CAPACITY": "可用能力",
-	"dashboard.AVAILABLE PERCENTAGE": "可以百分比"
+	"dashboard.AVAILABLE PERCENTAGE": "可以百分比",
+	"index.Compute":"虚拟机",
+	"index.Instance":"实例"
 } 
 
