@@ -12,7 +12,8 @@
 	"dashboard.TOTAL CAPACITY": "TOTAL CAPACITY",
 	"dashboard.AVAILABLE CAPACITY": "AVAILABLE CAPACITY",
 	"dashboard.AVAILABLE PERCENTAGE": "AVAILABLE PERCENTAGE",
-	"index.Compute":"Compute",
-	"index.Instance":"Instance",
+	"index.Compute": "Compute",
+	"index.Instance": "Instance",
+	"index.Network Service": "Network Service"
 } 
 
