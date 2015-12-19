@@ -4,64 +4,64 @@
             <div class="tab-content">
                 <div id="createClusterInfo" class="tab-pane active">
                     <div class="alert alert-warning col-sm-21" ng-show="!infoPage.hasZone()">
-                        No zone has been created. Please go to <a href="/#/zone">zone page</a> to create a new zone.
+                        {{"cluster.createCluster.hasZone()" | translate}} <a href="/#/zone">{{"cluster.createCluster.zone page" | translate}}</a> {{"cluster.createCluster.hasZone2()" | translate}}
                     </div>
 
-                    <h4 class="z-win-h4">CLUSTER INFO</h4>
+                    <h4 class="z-win-h4">{{"cluster.createCluster.CLUSTER INFO" | translate}}</h4>
                     <form class="form">
                         <div class="form-group col-sm-24">
-                            <label for="zone">ZONE</label>
+                            <label for="zone">{{"cluster.createCluster.ZONE" | translate}}</label>
                             <select id="zone" kendo-drop-down-list k-options="zoneList" class="z-win-dropdown" ng-model="infoPage.zoneUuid"></select>
-                            <p class="z-hint">(Required) select zone where the cluster is being created</p>
+                            <p class="z-hint">{{"cluster.createCluster.HINT" | translate}}</p>
                         </div>
                         <div class="form-group col-sm-24">
-                            <label for="name">NAME</label>
+                            <label for="name">{{"cluster.createCluster.NAME" | translate}}</label>
                             <input class="form-control z-win-input" type="text" id="name" placeholder="(Required) max length of 255 characters" ng-model="infoPage.name" required data-message="name is required">
                         </div>
                         <div class="form-group col-sm-24">
-                            <label for="description">DESCRIPTION</label>
+                            <label for="description">{{"cluster.createCluster.DESCRIPTION" | translate}}</label>
                             <textarea  class="form-control z-win-input" rows="5" id="description" placeholder="(Optional) max length of 2048 characters" ng-model="infoPage.description"></textarea>
                         </div>
                         <div class="form-group col-sm-24">
-                            <label for="hypervisor">HYPERVISOR</label>
+                            <label for="hypervisor">{{"cluster.createCluster.HYPERVISOR" | translate}}</label>
                             <select id="hypervisor" kendo-drop-down-list k-options="hypervisorList" class="z-win-dropdown" ng-model="infoPage.hypervisorType"></select>
-                            <p class="z-hint">(Required) select hypervisor type of host which this cluster will contain</p>
+                            <p class="z-hint">{{"cluster.createCluster.HINT2" | translate}}</p>
                         </div>
                     </form>
                 </div>
 
                 <div id="createClusterPrimaryStorage" class="tab-pane">
                     <div class="alert alert-warning col-sm-21" ng-show="!psPage.hasPrimaryStorage()">
-                        No primary storage is eligible to attach. Please click 'Next' button to proceed.
+                        {{"cluster.createCluster.hasPrimaryStorage()" | translate}}
                     </div>
 
-                    <h4 class="z-win-h4">ATTACH PRIMARY STORAGE</h4>
+                    <h4 class="z-win-h4">{{"cluster.createCluster.ATTACH PRIMARY STORAGE" | translate}}</h4>
                     <form class="form">
                         <div class="form-group col-sm-18">
-                            <label for="ps">PRIMARY STORAGE</label>
+                            <label for="ps">{{"cluster.createCluster.PRIMARY STORAGE" | translate}}</label>
                             <select id="ps" kendo-multi-select="primaryStorageList__" k-options="primaryStorageListOptions__" class="z-win-dropdown" k-ng-model="psPage.primaryStorageUuids"></select>
-                            <p class="z-hint">(Optional) select one or more primary storage to attach. Or do it later after creating cluster</p>
+                            <p class="z-hint">{{"cluster.createCluster.HINT3" | translate}}</p>
                         </div>
                     </form>
                 </div>
 
                 <div id="createClusterL2Network" class="tab-pane">
                     <div class="alert alert-warning col-sm-21" ng-show="!l2Page.hasL2Network()">
-                        No L2 network is eligible to attach. Please click 'Create' button to proceed.
+                        {{"cluster.createCluster.hasL2Network()" | translate}}
                     </div>
 
-                    <h4 class="z-win-h4">ATTACH L2 NETWORK</h4>
+                    <h4 class="z-win-h4">{{"cluster.createCluster.ATTACH L2 NETWORK" | translate}}</h4>
                     <form class="form">
                         <div class="form-group col-sm-18">
-                            <label for="l2">L2 NETWORK</label>
+                            <label for="l2">{{"cluster.createCluster.L2 NETWORK" | translate}}</label>
                             <select id="l2" kendo-multi-select="l2NetworkList__" k-options="l2NetworkListOptions__" class="z-win-dropdown"></select>
-                            <p class="z-hint">(Optional) select one or more l2 network to attach. Or do it later after creating cluster</p>
+                            <p class="z-hint">{{"cluster.createCluster.HINT4" | translate}}</p>
                         </div>
                     </form>
                 </div>
 
                 <div class="form-group col-sm-18">
-                    <button type="button" class="btn btn-default" ng-click="button.previousClick()" ng-disabled="!button.canPreviousProceed()">Previous</button>
+                    <button type="button" class="btn btn-default" ng-click="button.previousClick()" ng-disabled="!button.canPreviousProceed()">{{"cluster.createCluster.Previous" | translate}}</button>
                     <button type="button" class="btn btn-primary" ng-disabled="!button.canNextProceed()" ng-click="button.nextClick()">{{button.nextButtonName()}}</button>
                 </div>
             </div>
@@ -69,9 +69,9 @@
 
         <div class="col-sm-7 z-wizard-bar">
             <ul class="nav">
-                <li class="active"><a data-target="#createClusterInfo" ng-click="button.pageClick('createClusterInfo')">CLUSTER INFO</a></li>
-                <li ng-class="{disabled: !psPage.isActive()}"><a data-target="#createClusterPrimaryStorage" ng-click="button.pageClick('createClusterPrimaryStorage')">ATTACH PRIMARY STORAGE</a></li>
-                <li ng-class="{disabled: !l2Page.isActive()}"><a data-target="#createClusterL2Network" ng-click="button.pageClick('createClusterL2Network')">ATTACH L2 NETWORK</a></li>
+                <li class="active"><a data-target="#createClusterInfo" ng-click="button.pageClick('createClusterInfo')">{{"cluster.createCluster.CLUSTER INFO" | translate}}</a></li>
+                <li ng-class="{disabled: !psPage.isActive()}"><a data-target="#createClusterPrimaryStorage" ng-click="button.pageClick('createClusterPrimaryStorage')">{{"cluster.createCluster.ATTACH PRIMARY STORAGE" | translate}}</a></li>
+                <li ng-class="{disabled: !l2Page.isActive()}"><a data-target="#createClusterL2Network" ng-click="button.pageClick('createClusterL2Network')">{{"cluster.createCluster.ATTACH L2 NETWORK" | translate}}</a></li>
             </ul>
         </div>
 
