@@ -187,7 +187,7 @@
         "primaryStorage.createPrimaryStorage.URL": "URL"
         "primaryStorage.createPrimaryStorage.HINT3": "url (必填) 为 NFS 主存储,是 'ip_or_dns_name: absolute_path',例如,'192.168.0.10: /primaryStorage'",
         "primaryStorage.createPrimaryStorage.HINT4": "(必填) 为本地存储,url 是一个绝对路径,例如,' / 卷的。将每个主机上创建该文件夹。",
-        "primaryStorage.createPrimaryStorage.HINT5": "(必填) 为 ISCSI 存储与 BTRFS 后端,url 是一个绝对路径,例如,' / 卷的。将 BTRFS 服务器上创建文件夹.
+        "primaryStorage.createPrimaryStorage.HINT5": "(必填) 为 ISCSI 存储与 BTRFS 后端,url 是一个绝对路径,例如,' / 卷的。将 BTRFS 服务器上创建文件夹",
         "primaryStorage.createPrimaryStorage.ALERT": "没有开发区已形成。请转到 < href ="/ #/ 区"> 区页面 < /a > 以创建一个新。",
         "primaryStorage.createPrimaryStorage.ALERT1": "不是有效的 NFS 安装路径。有效装载路径必须是格式的 ip_or_dns_name: absolute_path,'192.168.0.10: /primaryStorage'",
         "primaryStorage.createPrimaryStorage.ALERT2": "不是绝对路径。该路径必须与开始 '/'",
