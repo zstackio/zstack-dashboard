@@ -102,7 +102,7 @@
         "vm.createVm.HOST": "物理机",
         "vm.createVm.Previous": "上一页",
         "vm.createVm.VM INSTANCE INFO": "VM INSTANCE INFO",
-        "vm.createVm.LOCATION": "位置"
+        "vm.createVm.LOCATION": "位置",
         "vm.changeInstanceOffering.CHANGE INSTANCE OFFERING": "更改云物理机规格",
         "vm.changeInstanceOffering.INSTANCE OFFERING": "云物理机规格",
         "vm.changeInstanceOffering.Cancel": "取消",
@@ -111,7 +111,7 @@
         "vm.attachVolume.DATA Volume": "数据云盘",
         "vm.attachVolume.HINT": "(必需的) 在这里列出可以附加到此虚拟机的候选云盘",
         "vm.attachVolume.Cancel": "取消",
-        "vm.attachVolume.Attach": "附加"
+        "vm.attachVolume.Attach": "附加",
         "vm.attachL3Network.ATTACH L3 NETWORK": "附加L3网络",
         "vm.attachL3Network.L3 NETWORK": "L3 NETWORK",
         "vm.attachL3Network.HINT": "在这里列出的(必选)L3网络是可以附加到此 vm 的候选人",
