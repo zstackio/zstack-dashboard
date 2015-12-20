@@ -7,7 +7,7 @@
 </div>
 
 <div>
-    <h3 class="z-h3">PRIMARY STORAGE</h3>
+    <h3 class="z-h3">{{ "primaryStorage.primaryStorage.PRIMARY STORAGE" | translate }}</h3>
     <div class="btn-group-sm z-btn-bar">
         <button type="button" class="btn btn-default btn-sm" ng-click="funcRefresh()">
             <i class="fa fa-refresh"></i>
@@ -25,20 +25,20 @@
 
         <button type="button" class="btn btn-success btn-sm" style="margin-left: 20px" ng-click="funcCreatePrimaryStorage(winNewPrimaryStorage)">
             <i class="fa fa-plus"></i>
-            <span>&nbsp; New Primary Storage</span>
+            <span>&nbsp; {{ "primaryStorage.primaryStorage.New Primary Storage" | translate }}</span>
         </button>
 
         <div id="primaryStorageFilterContent" style="display: none">
             <form class="form">
                 <div class="form-group">
-                    <label for="fieldList" class="z-block-label">FILTER BY</label>
+                    <label for="fieldList" class="z-block-label">{{ "primaryStorage.primaryStorage.FILTER BY" | translate }}</label>
                     <select id="fieldList" kendo-drop-down-list k-options="filterBy.fieldList" ng-model="filterBy.field"></select>
                 </div>
                 <div class="form-group">
-                    <label class="z-block-label" for="valueList">VALUE</label>
+                    <label class="z-block-label" for="valueList">{{ "primaryStorage.primaryStorage.VALUE" | translate }}</label>
                     <select kendo-drop-down-list id="valueList" ng-disabled="filterBy.isValueListDisabled()" k-options="filterBy.valueList" ng-model="filterBy.value"></select>
                 </div>
-                <button type="button" class="btn btn-sm btn-primary" ng-click="filterBy.confirm(popoverFilterBy)">Confirm</button>
+                <button type="button" class="btn btn-sm btn-primary" ng-click="filterBy.confirm(popoverFilterBy)">{{ "primaryStorage.primaryStorage.Confirm" | translate }}</button>
             </form>
         </div>
 
@@ -47,19 +47,19 @@
                 Action <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu">
-                <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">Enable</a></li>
-                <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">Disable</a></li>
-                <li><a href ng-click="action.attachCluster()">Attach Cluster</a></li>
-                <li><a href ng-click="action.detachCluster()">Detach Cluster</a></li>
-                <li><a href ng-click="action.reconnect()">Reconnect</a></li>
+                <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">{{ "primaryStorage.primaryStorage.Enable" | translate }}</a></li>
+                <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">{{ "primaryStorage.primaryStorage.Disable" | translate }}</a></li>
+                <li><a href ng-click="action.attachCluster()">{{ "primaryStorage.primaryStorage.Attach Cluster" | translate }}</a></li>
+                <li><a href ng-click="action.detachCluster()">{{ "primaryStorage.primaryStorage.Detach Cluster" | translate }}</a></li>
+                <li><a href ng-click="action.reconnect()">{{ "primaryStorage.primaryStorage.Reconnect" | translate }}</a></li>
                 <li class="divider"></li>
-                <li><a href style="color:red" ng-click="funcDeletePrimaryStorage(deletePrimaryStorage)">Delete</a></li>
+                <li><a href style="color:red" ng-click="funcDeletePrimaryStorage(deletePrimaryStorage)">{{ "primaryStorage.primaryStorage.Delete" | translate }}</a></li>
             </ul>
         </div>
     </div>
 
     <div kendo-grid="primaryStorageGrid" k-options="oPrimaryStorageGrid.options" z-grid-double-click="funcGridDoubleClick" class="z-flat-table"></div>
-    <p class="z-hint">Single click column to show action button</p>
-    <p class="z-hint">Double click column to enter details page</p>
-    <p class="z-hint">Total/Available capacity will show up after primary storage attaches to clusters which contain one or more hosts</p>
+    <p class="z-hint">{{ "primaryStorage.primaryStorage.Single click column to show action button" | translate }}</p>
+    <p class="z-hint">{{ "primaryStorage.primaryStorage.Double click column to enter details page" | translate }}</p>
+    <p class="z-hint">{{ "primaryStorage.primaryStorage.Total/Available capacity will show up after primary storage attaches to clusters which contain one or more hosts" | translate }}</p>
 </div>
