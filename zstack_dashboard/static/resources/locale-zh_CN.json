@@ -193,7 +193,7 @@
         "primaryStorage.createPrimaryStorage.ALERT2": "不是绝对路径。该路径必须与启动 '/'",
         "primaryStorage.createPrimaryStorage.ALERT3": "不是绝对路径。该路径必须与启动 '/'",
         "primaryStorage.createPrimaryStorage.HOSTNAME": "物理机名",
-        "primaryStorage.createPrimaryStorage.SSH 用户名": "SSH 用户名"，
+        "primaryStorage.createPrimaryStorage.SSH 用户名": "SSH 用户名",
         "primaryStorage.createPrimaryStorage.HINT6": "用户必须拥有根权限 btrfs 服务器上",
         "primaryStorage.createPrimaryStorage.SSH PASSWORD": "SSH 密码",
         "primaryStorage.createPrimaryStorage.CHAP 用户名": "CHAP 用户名",
@@ -214,7 +214,7 @@
         "primaryStorage.details.Disable": "禁用",
         "primaryStorage.details.Attach Cluster": "附加群集",
         "primaryStorage.details.Detach Cluster": "分离群集",
-        "primaryStorage.details.Reconnect": "重创建连接"
+        "primaryStorage.details.Reconnect": "重创建连接",
         "primaryStorage.details.Delete": "删除",
         "primaryStorage.details.Info": "信息",
         "primaryStorage.details.Cluster": "集群",
@@ -253,10 +253,10 @@
         "cluster.attachL2Network.L2 NETWORK": "L2 NETWORK",
         "cluster.attachL2Network.HINT": "(必填) 选择附加一个或多个L2网络",
         "cluster.attachL2Network.Cancel": "取消",
-        "cluster.attachL2Network.Attach": "附加"
-        "cluster.attachPrimaryStorage.hasPrimaryStorage()": "无主存储已被添加。请转到",
+        "cluster.attachL2Network.Attach": "附加",
+        "cluster.attachPrimaryStorage.hasPrimaryStorage()": "无主存储已被添加,请转到",
         "cluster.attachPrimaryStorage.primary storage": "主存储",
-        "cluster.attachPrimaryStorage.hasPrimaryStorage2()": "要添加一个创建",。
+        "cluster.attachPrimaryStorage.hasPrimaryStorage2()": "要添加一个创建",
         "cluster.attachPrimaryStorage.ATTACH PRIMARY STORAGE": "附加主存储",
         "cluster.attachPrimaryStorage.PRIMARY STORAGE": "主存储",
         "cluster.attachPrimaryStorage.HINT": "(必填) 选择一个或多个主存储的群集的连接",
