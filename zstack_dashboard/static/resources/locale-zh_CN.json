@@ -24,6 +24,7 @@
         "index.Instance Offering": "计算规格",
         "index.Disk Offering": "磁盘规格",
         "index.Virtual Router Offering": "虚拟路由规格",
+        "index.Dashboard": "仪表盘",
         "vm.vm.VM INSTANCE": "VM 云物理机",
         "vm.vm.New VmInstance": "创建云物理机",
         "vm.vm.FILTER": "筛选条件",
