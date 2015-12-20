@@ -288,7 +288,7 @@
         "cluster.createCluster.DESCRIPTION": "描述",
         "cluster.createCluster.HYPERVISOR": "虚拟机监控程序",
         "cluster.createCluster.HINT2": "(必选) 选择虚拟机监控程序将包含此群集的物理机类型",
-        "cluster.createCluster.hasPrimaryStorage()": "无主存储有资格附加。请单击下一步按钮继续,
+        "cluster.createCluster.hasPrimaryStorage()": "无主存储有资格附加,请单击下一步按钮继续",
         "cluster.createCluster.ATTACH 主存储": "附加主存储",
         "cluster.createCluster.PRIMARY 存储": "主存储",
         "cluster.createCluster.HINT3": "(可选) 选择一个或多个附加的主存储。或做后创建群集",
