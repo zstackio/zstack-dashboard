@@ -292,7 +292,7 @@
         "cluster.createCluster.ATTACH 主存储": "附加主存储",
         "cluster.createCluster.PRIMARY 存储": "主存储",
         "cluster.createCluster.HINT3": "(可选) 选择一个或多个附加的主存储。或做后创建群集",
-        "cluster.createCluster.hasL2Network()": "没有 L2 NETWORK有资格附加。请单击创建按钮继续,
+        "cluster.createCluster.hasL2Network()": "没有 L2 NETWORK有资格附加。请单击创建按钮继续",
         "cluster.createCluster.ATTACH L2 NETWORK": "附加 L2 网络",
         "cluster.createCluster.L2 NETWORK": "L2 NETWORK",
         "cluster.createCluster.HINT4": "(可选) 选择一个或多个附加的 l2 NETWORK。或做后创建群集",
