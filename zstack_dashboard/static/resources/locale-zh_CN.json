@@ -1,18 +1,384 @@
 {
-	"dashboard.DASHBOARD": "仪表板",
-	"dashboard.CAPACITY": "能力",
-	"dashboard.HINT": "每个主机的部分处理器/内存将保留给系统使用。",
-	"dashboard.RESOURCE COUNT": "资源数",
-	"dashboard.CPU": "处理器",
-	"dashboard.MEMORY": "内存",
-	"dashboard.PRIMARY STORAGE": "主存储",
-	"dashboard.BACKUP STORAGE": "备份存储",
-	"dashboard.IP ADDRESS": "IP地址",
-	"dashboard.CAPACITY NAME": "能力名称",
-	"dashboard.TOTAL CAPACITY": "总能力",
-	"dashboard.AVAILABLE CAPACITY": "可用能力",
-	"dashboard.AVAILABLE PERCENTAGE": "可以百分比",
-	"index.Compute":"虚拟机",
-	"index.Instance":"实例"
-} 
-
+        "dashboard.DASHBOARD": "仪表盘",
+        "dashboard.CAPACITY": "资源池",
+        "dashboard.HINT": "A part of CPU/Memory will be reserved from each host for system usage. For KVM, the reserved capacity can be changed in global setting, see reservedCpu and reservedMemory",
+        "dashboard.RESOURCE COUNT": "资源统计",
+        "dashboard.CPU": "CPU",
+        "dashboard.MEMORY": "内存",
+        "dashboard.PRIMARY STORAGE": "主存储",
+        "dashboard.BACKUP STORAGE": "备份存储",
+        "dashboard.IP ADDRESS": "IP地址",
+        "dashboard.CAPACITY NAME": "名称",
+        "dashboard.TOTAL CAPACITY": "总量",
+        "dashboard.AVAILABLE CAPACITY": "可用量",
+        "dashboard.AVAILABLE PERCENTAGE": "可用比例",
+        "index.Compute": "计算",
+        "index.Instance": "实例",
+        "index.Network Service": "网络服务",
+        "index.Security Group": "安全组",
+        "index.VIP": "虚拟IP",
+        "index.EIP": "弹性IP",
+        "index.Port Forwarding": "端口转发",
+        "index.Virtual Router": "虚拟路由",
+        "index.Configuration": "配置",
+        "index.Instance Offering": "实例规格",
+        "index.Disk Offering": "磁盘规格",
+        "index.Virtual Router Offering": "虚拟路由规格",
+        "vm.vm.VM 实例":"VM 实例"，
+        "vm.vm.New VmInstance":"新 VmInstance"，
+        "的 vm.vm.FILTER":"筛选依据"，
+        "vm.vm.VALUE":"价值"，
+        "vm.vm.Confirm":"确认"，
+        "vm.vm.Action":"行动"，
+        "vm.vm.Start":"开始"，
+        "vm.vm.Stop":"停止"，
+        "vm.vm.Reboot":"重新启动"，
+        "vm.vm.Migrate":"迁移"，
+        "vm.vm.Console":"控制台"，
+        "vm.vm.Attach 卷":"附加卷"，
+        "vm.vm.Detach 卷":"分离卷"，
+        "vm.vm.Attach L3 网络":"附加 L3 网络"，
+        "vm.vm.Detach L3 网络":"分离 L3 网络"，
+        "vm.vm.Change 实例提供":"变化实例提供"，
+        "vm.vm.Delete":"删除"、
+        "vm.vm.HINT1":"单点击列来显示动作按钮"，
+        "vm.vm.HINT2":"双击列中输入详细信息页面"，
+        "vm.migrateVm.MIGRATE VM 实例":"迁移 VM 实例"，
+        "vm.migrateVm.TARGET 主机":"目标主机"，
+        "vm.migrateVm.HINT":"(必选) 选择目标主机到哪个 vm 应该迁移"，
+        "vm.migrateVm.Cancel":"取消"，
+        "vm.migrateVm.Migrate":"迁移"，
+        "vm.details.VM 实例":"VM 实例"，
+        "vm.details.Action":"行动"，
+        "vm.details.Start":"开始"，
+        "vm.details.Stop":"停止"，
+        "vm.details.Reboot":"重新启动"，
+        "vm.details.Migrate":"迁移"，
+        "vm.details.Console":"控制台"，
+        "vm.details.Change 实例提供":"变化实例 Ofering"，
+        "vm.details.Delete":"删除"、
+        "vm.details.Info":"信息"，
+        "vm.details.Nic":"Nic"，
+        "vm.details.DESCRIPTION":"说明:"，
+        "vm.details.STATE":"状态:"，
+        "vm.details.HYPERVISOR":"虚拟机管理程序:"，
+        "vm.details.UUID":"UUID:"，
+        "vm.details.CPU NUM":"CPU NUM:"，
+        "vm.details.CPU 速度":"CPU 速度:"，
+        "vm.details.MEMORY 大小":"内存大小:"，
+        "vm.details.HOST 名称":"主机名称:"，
+        "vm.details.INSTANCE 提供 UUID":"实例提供 UUID:"，
+        "vm.details.DEFAULT L3 网络 UUID":"默认 L3 网络 UUID:"，
+        "vm.details.IMAGE UUID":"图像 UUID:"，
+        "vm.details.CLUSTER UUID":"群集 UUID:"，
+        "vm.details.ZONE UUID":"区 UUID:"，
+        "vm.details.CREATED 日期":"创建日期:"，
+        "vm.details.LAST 更新日期":"上次更新日期:"，
+        "vm.detachVolume.DETACH 数据卷":"分离数据卷"，
+        "vm.detachL3Network.DETACH L3 网络":"分离 L3 网络"，
+        "vm.detachL3Network.VM NIC":"VM NIC"，
+        "vm.detachL3Network.HINT":"(必选) 选择你想分离的 L3 网络上的 nic"，
+        "vm.detachL3Network.Cancel":"取消"，
+        "vm.detachL3Network.Detach":"分离"，
+        "vm.createVm.VM 实例信息":"VM 实例信息"，
+        "vm.createVm.INSTANCE 提供":"实例提供"，
+        "vm.createVm.IMAGE":"形象"，
+        "卷磁盘提供的 vm.createVm.ROOT":"根卷磁盘提供"，
+        "vm.createVm.NAME":"名称"，
+        "vm.createVm.HOST 名称":"主机名"，
+        "vm.createVm.HINT2":"有只有一个 L3 网络的 Vm，L3 的网络只是默认 L3 网络"，
+        "vm.createVm.L3 网络":"L3 网络"，
+        "vm.createVm.STATIC IP":"静态 IP"，
+        "vm.createVm.isStaticIpValid()":"不有效 IPv4 地址"，
+        "vm.createVm.Add":"添加"，
+        "vm.createVm.HINT3":"请添加至少一个 L3 网络"，
+        "vm.createVm.DEFAULT L3 网络":"默认 L3 网络"，
+        "vm.createVm.HINT4":"(必填) 选择一个默认 L3 网络为虚拟机提供默认路由和 DNS"，
+        "磁盘提供的 vm.createVm.DATA":"数据磁盘提供"，
+        "vm.createVm.DESCRIPTION":"描述"，
+        "vm.createVm.SELECT 位置":"选择位置"，
+        "vm.createVm.ZONE":"区"，
+        "vm.createVm.CLUSTER":"集群"，
+        "vm.createVm.HOST":"主机"，
+        "vm.createVm.Previous":"上一页"，
+        "vm.createVm.VM 实例信息":"VM 实例信息"，
+        "vm.createVm.LOCATION":"位置"
+        "vm.changeInstanceOffering.CHANGE 实例提供":"变化实例提供"，
+        "vm.changeInstanceOffering.INSTANCE 提供":"实例提供"，
+        "vm.changeInstanceOffering.Cancel":"取消"，
+        "vm.changeInstanceOffering.Change":"变化"
+        "vm.attachVolume.ATTACH 数据卷":"附加数据卷"，
+        "vm.attachVolume.DATA 卷":"数据卷"，
+        "vm.attachVolume.HINT":"(必需的) 在这里列出卷可以附加到此 vm 的候选人"，
+        "vm.attachVolume.Cancel":"取消"，
+        "vm.attachVolume.Attach":"附加"
+        "vm.attachL3Network.ATTACH L3 网络":"附加 L3 网络"，
+        "vm.attachL3Network.L3 网络":"L3 网络"，
+        "vm.attachL3Network.HINT":"在这里列出的 (必选) L3 网络是可以附加到此 vm 的候选人"，
+        "vm.attachL3Network.Cancel":"取消"，
+        "vm.attachL3Network.Attach":"附加"
+        "host.createHost.hasCluster()":"已创建无群集。请转到"，
+        "host.createHost.cluster 页":"群集页"，
+        "host.createHost.hasCluster2()":"来创建一个新"，
+        "host.createHost.ADD 主机":"添加主机"，
+        "host.createHost.ZONE":"区"，
+        "host.createHost.HINT":"(必选) 选择区的添加主机的位置"，
+        "host.createHost.CLUSTER":"集群"，
+        "host.createHost.HINT2":"(必选) 选择区的添加主机的位置"，
+        "host.createHost.NAME":"名称"，
+        "host.createHost.DESCRIPTION":"描述"，
+        "host.createHost.HOST IP":"主机 IP"，
+        "host.createHost.USER 名称":"用户名称"，
+        "host.createHost.PASSWORD":"密码"，
+        "host.createHost.HOST 信息":"主机信息"，
+        "host.details.HOST":"主机"，
+        "host.details.Action":"行动"，
+        "host.details.Enable":"启用"，
+        "host.details.Disable":"禁用"，
+        "host.details.Reconnect":"重新连接"
+        "host.details.Enter 维护模式":"进入维护模式"，
+        "host.details.Delete":"删除"、
+        "host.details.Info":"信息"，
+        "host.details.System 标记":"系统标签"，
+        "host.details.DETAILS":"详细信息"，
+        "host.details.DESCRIPTION":"说明:"，
+        "host.details.STATE":"状态:"，
+        "host.details.STATUS":"状态:"，
+        "host.details.HYPERVISOR":"虚拟机管理程序:"，
+        "host.details.HOST IP":"主机 IP:"，
+        "host.details.UUID":"UUID:"，
+        "host.details.CLUSTER UUID":"群集 UUID:"，
+        "host.details.ZONE UUID":"区 UUID:"，
+        "host.details.CREATED 日期":"创建日期:"，
+        "host.details.LAST 更新日期":"上次更新日期:"，
+        "host.host.HOST":"主机"，
+        "host.host.New 主机":"新主机"，
+        "的 host.host.FILTER":"筛选依据"，
+        "host.host.VALUE":"价值"，
+        "host.host.Confirm":"确认"，
+        "host.host.Action":"行动"，
+        "host.host.Enable":"启用"，
+        "host.host.Disable":"禁用"，
+        "host.host.Reconnect":"重新连接"
+        "host.host.Enter 维护模式":"进入维护模式"，
+        "host.host.Delete":"删除"、
+        "host.host.HINT":"单点击列来显示动作按钮"，
+        "host.host.HINT2":"双击列中输入详细信息页面"，
+        "primaryStorage.primaryStorage.PRIMARY 存储":"主存储"，
+        "primaryStorage.primaryStorage.New 主存储":"新主存储"，
+        "的 primaryStorage.primaryStorage.FILTER":"筛选依据"，
+        "primaryStorage.primaryStorage.VALUE":"价值"，
+        "primaryStorage.primaryStorage.Confirm":"确认"，
+        "primaryStorage.primaryStorage.Enable":"启用"，
+        "primaryStorage.primaryStorage.Disable":"禁用"，
+        "primaryStorage.primaryStorage.Attach 群集":"附加群集"，
+        "primaryStorage.primaryStorage.Detach 群集":"分离群集"，
+        "primaryStorage.primaryStorage.Reconnect":"重新连接"
+        "primaryStorage.primaryStorage.Delete":"删除"、
+        "primaryStorage.primaryStorage.Single 单击列来显示动作按钮":"单点击列来显示动作按钮"，
+        "primaryStorage.primaryStorage.Double 单击列中输入详细信息页面":"双击列中输入详细信息页面"，
+        "primaryStorage.primaryStorage.Total/Available 能力之后将显示主存储附加到包含一个或多个主机的集群":"总/可用容量之后将显示主存储附加到包含一个或多个主机的集群"，
+        "primaryStorage.createPrimaryStorage.CREATE 主存储":"创建的主存储"，
+        "primaryStorage.createPrimaryStorage.ZONE":"区"，
+        "primaryStorage.createPrimaryStorage.HINT1":"(必选) 选择区创建主存储的位置"，
+        "primaryStorage.createPrimaryStorage.DESCRIPTION":"描述"，
+        "primaryStorage.createPrimaryStorage.TYPE":"类型"，
+        "primaryStorage.createPrimaryStorage.HINT2":"(必选) 选择类型的主存储"，
+        "primaryStorage.createPrimaryStorage.URL":"URL"
+        "primaryStorage.createPrimaryStorage.HINT3":"url (必填) 为 NFS 主存储，是 'ip_or_dns_name:absolute_path'，例如，'192.168.0.10:/primaryStorage'"，
+        "primaryStorage.createPrimaryStorage.HINT4":"(必填) 为本地存储，url 是一个绝对路径，例如，' / 卷的。将每个主机上创建该文件夹。"，
+        "primaryStorage.createPrimaryStorage.HINT5":"(必填) 为 ISCSI 存储与 BTRFS 后端，url 是一个绝对路径，例如，' / 卷的。将 BTRFS 服务器上创建文件夹.
+        "primaryStorage.createPrimaryStorage.ALERT":"没有开发区已形成。请转到 < href ="/ #/ 区"> 区页面 < /a > 以创建一个新。"，
+        "primaryStorage.createPrimaryStorage.ALERT1":"不是有效的 NFS 安装路径。有效装载路径必须是格式的 ip_or_dns_name:absolute_path，'192.168.0.10:/primaryStorage'"，
+        "primaryStorage.createPrimaryStorage.ALERT2":"不是绝对路径。该路径必须与开始 '/'"，
+        "primaryStorage.createPrimaryStorage.ALERT3":"不是绝对路径。该路径必须与开始 '/'"，
+        "primaryStorage.createPrimaryStorage.HOSTNAME":"主机名"，
+        "primaryStorage.createPrimaryStorage.SSH 用户名":"SSH 用户名"
+        "primaryStorage.createPrimaryStorage.HINT6":"用户必须拥有根权限 btrfs 服务器上"，
+        "primaryStorage.createPrimaryStorage.SSH 密码":"SSH 密码"
+        "primaryStorage.createPrimaryStorage.CHAP 用户名":"CHAP 用户名"，
+        "primaryStorage.createPrimaryStorage.HINT7":"ISCSI 服务器 (可选) CHAP 用户名"，
+        "primaryStorage.createPrimaryStorage.CHAP 密码":"CHAP 密码"，
+        "primaryStorage.createPrimaryStorage.HINT8":"ISCSI 服务器 (可选) CHAP 密码"，
+        "primaryStorage.createPrimaryStorage.HINT9":"用户必须拥有根权限 ceph 星期一服务器上"，
+        "primaryStorage.createPrimaryStorage.HINT10":"请添加至少一个 ceph 星期一服务器"，
+        "primaryStorage.createPrimaryStorage.ALERT4":"无群集有资格附加。请单击添加按钮继续.
+        "primaryStorage.createPrimaryStorage.ATTACH 群集":"附加群集"，
+        "primaryStorage.createPrimaryStorage.CLUSTER":"集群"，
+        "primaryStorage.createPrimaryStorage.HINT11":"(可选) 选择要附加的一个或多个群集。或做后创建主存储"，
+        "primaryStorage.createPrimaryStorage.Previous":"上一页"，
+        "primaryStorage.createPrimaryStorage.PRIMARY 存储信息":"主存储信息"，
+        "primaryStorage.details.PRIMARY 存储":"主存储"，
+        "primaryStorage.details.Action":"行动"，
+        "primaryStorage.details.Enable":"启用"，
+        "primaryStorage.details.Disable":"禁用"，
+        "primaryStorage.details.Attach 群集":"附加群集"，
+        "primaryStorage.details.Detach 群集":"分离群集"，
+        "primaryStorage.details.Reconnect":"重新连接"
+        "primaryStorage.details.Delete":"删除"、
+        "primaryStorage.details.Info":"信息"，
+        "primaryStorage.details.Cluster":"集群"，
+        "primaryStorage.details.DETAILS":"详细信息"，
+        "primaryStorage.details.DESCRIPTION:":"说明:"，
+        "primaryStorage.details.STATE:":"状态:"，
+        "primaryStorage.details.STATUS:":"状态:"，
+        "primaryStorage.details.TYPE:":"类型:"，
+        "primaryStorage.details.URL:":"URL:"，
+        "primaryStorage.details.HOSTNAME":"主机名"，
+        "primaryStorage.details.TOTAL 能力:":"总容量:"，
+        "primaryStorage.details.AVAILABLE 能力:":"可用容量:"，
+        "primaryStorage.details.UUID:":"UUID:"，
+        "primaryStorage.details.ZONE UUID:":"区 UUID:"，
+        "primaryStorage.details.CREATED 日期:":"创建日期:"，
+        "primaryStorage.details.HINT:":"总/可用容量之后将显示主存储附加到包含一个或多个主机的集群"，
+        "primaryStorage.details.HINT1":"这里列出的集群已附加到此主存储"，
+        "primaryStorage.detachCluster.ALERT1":"无群集已附加到此群集。"，
+        "primaryStorage.detachCluster.DETACH 群集":"分离群集"，
+        "primaryStorage.detachCluster.CLUSTER":"集群"，
+        "primaryStorage.detachCluster.HINT1":"(必填) 选择一个或多个群集，附加"，
+        "primaryStorage.detachCluster.FORM":"分离会导致虚拟机在群集中分离而被停止此主存储上有卷"，
+        "primaryStorage.detachCluster.HINT2":"类型确定确认"，
+        "primaryStorage.detachCluster.Cancel":"取消"，
+        "primaryStorage.detachCluster.Detach":"分离"，
+        "primaryStorage.attachCluster.ALERT1":"已创建无群集。请转到 < href ="/ #/ 群集"> 群集页 < /a > 创建一个新。"，
+        "primaryStorage.attachCluster.ATTACH 群集":"附加群集"，
+        "primaryStorage.attachCluster.CLUSTER":"集群"，
+        "primaryStorage.attachCluster.HINT1":"(必填) 选择一个或多个群集，附加"，
+        "primaryStorage.attachCluster.Cancel":"取消"，
+        "primaryStorage.attachCluster.Attach":"附加"
+        "cluster.attachL2Network.hasL2Network()":"没有 L2 网络已创建。请转到"，
+        "cluster.attachL2Network.l2Network 页":"l2Network 页"，
+        "cluster.attachL2Network.hasL2Network2()":"来创建一个新"，
+        "cluster.attachL2Network.ATTACH L2 网络":"附加 L2 网络"，
+        "cluster.attachL2Network.L2 网络":"L2 网络"，
+        "cluster.attachL2Network.HINT":"(必填) 选择一个或多个 l2Network 附加"，
+        "cluster.attachL2Network.Cancel":"取消"，
+        "cluster.attachL2Network.Attach":"附加"
+        "cluster.attachPrimaryStorage.hasPrimaryStorage()":"无主存储已被添加。请转到"，
+        "cluster.attachPrimaryStorage.primary 存储":"主存储"，
+        "cluster.attachPrimaryStorage.hasPrimaryStorage2()":"要添加一个新"，。
+        "cluster.attachPrimaryStorage.ATTACH 主存储":"附加主存储"，
+        "cluster.attachPrimaryStorage.PRIMARY 存储":"主存储"，
+        "cluster.attachPrimaryStorage.HINT":"(必填) 选择一个或多个主存储的群集的连接"，
+        "cluster.attachPrimaryStorage.Cancel":"取消"，
+        "cluster.attachPrimaryStorage.Attach":"附加"
+        "cluster.cluster.CLUSTER":"集群"，
+        "cluster.cluster.New 群集":"新群集"，
+        "的 cluster.cluster.FILTER":"筛选依据"，
+        "cluster.cluster.VALUE":"价值"，
+        "cluster.cluster.Confirm":"确认"，
+        "cluster.cluster.Action":"行动"，
+        "cluster.cluster.Enable":"启用"，
+        "cluster.cluster.Disable":"禁用"，
+        "cluster.cluster.Add 主机":"添加主机"，
+        "cluster.cluster.Attach L2Network":"附加 L2Network"，
+        "cluster.cluster.Detach L2Network":"分离 L2Network"，
+        "cluster.cluster.Attach 主存储":"附加主存储"，
+        "cluster.cluster.Detach 主存储":"分离的主存储"，
+        "cluster.cluster.Delete":"删除"、
+        "cluster.cluster.HINT":"单点击列来显示动作按钮"，
+        "cluster.cluster.HINT2":"双击列中输入详细信息页面"，
+        "cluster.createCluster.hasZone()":"没有开发区已形成。请转到"，
+        "cluster.createCluster.zone 页":"区页"，
+        "cluster.createCluster.hasZone2()":"以创建新的区域"，
+        "cluster.createCluster.CLUSTER 信息":"群集信息"，
+        "cluster.createCluster.ZONE":"区"，
+        "cluster.createCluster.HINT":"(必选) 选择区正在创建群集"，
+        "cluster.createCluster.NAME":"名称"，
+        "cluster.createCluster.DESCRIPTION":"描述"，
+        "cluster.createCluster.HYPERVISOR":"虚拟机监控程序"，
+        "cluster.createCluster.HINT2":"(必选) 选择虚拟机监控程序将包含此群集的主机类型"，
+        "cluster.createCluster.hasPrimaryStorage()":"无主存储有资格附加。请单击下一步按钮继续.
+        "cluster.createCluster.ATTACH 主存储":"附加主存储"，
+        "cluster.createCluster.PRIMARY 存储":"主存储"，
+        "cluster.createCluster.HINT3":"(可选) 选择一个或多个附加的主存储。或做后创建群集"，
+        "cluster.createCluster.hasL2Network()":"没有 L2 网络有资格附加。请单击创建按钮继续.
+        "cluster.createCluster.ATTACH L2 网络":"附加 L2 网络"，
+        "cluster.createCluster.L2 网络":"L2 网络"，
+        "cluster.createCluster.HINT4":"(可选) 选择一个或多个附加的 l2 网络。或做后创建群集"，
+        "cluster.createCluster.Previous":"上一页"，
+        "cluster.detachL2Network.hasL2Network()":"没有 L2 网络已附加到此群集。"，
+        "cluster.detachL2Network.DETACH L2 网络":"分离 L2 网络"，
+        "cluster.detachL2Network.L2 网络":"L2 网络"，
+        "cluster.detachL2Network.HINT":"(必填) 选择一个或多个 l2Network 分离"，
+        "cluster.detachL2Network.strong":"分离将导致 Vm 在 l3Network 对 l2Network 分离被停止这群"，
+        "cluster.detachL2Network.HINT2":"类型确定确认"，
+        "cluster.detachL2Network.Cancel":"取消"，
+        "cluster.detachL2Network.Detach":"分离"，
+        "cluster.detachPrimaryStorage.hasL2Network()":"无主存储已附加到此群集。"，
+        "cluster.detachPrimaryStorage.DETACH 主存储":"分离的主存储"，
+        "cluster.detachPrimaryStorage.PRIMARY 存储":"主存储"，
+        "cluster.detachPrimaryStorage.HINT":"(必填) 选择一个或多个主存储分离"，
+        "cluster.detachPrimaryStorage.strong":"分离会导致虚拟机在群集中分离而被停止此主存储上有卷"，
+        "cluster.detachPrimaryStorage.HINT2":"类型确定确认"，
+        "cluster.detachPrimaryStorage.Cancel":"取消"，
+        "cluster.detachPrimaryStorage.Detach":"分离"，
+        "cluster.details.CLUSTERS":"集群"，
+        "cluster.details.Action":"行动"，
+        "cluster.details.Enable":"启用"，
+        "cluster.details.Disable":"禁用"，
+        "cluster.details.Add 主机":"添加主机"，
+        "cluster.details.Attach L2Network":"附加 L2Network"，
+        "cluster.details.Detach L2Network":"分离 L2Network"，
+        "cluster.details.Attach 主存储":"附加主存储"，
+        "cluster.details.Detach 主存储":"分离的主存储"，
+        "cluster.details.Delete":"删除"、
+        "cluster.details.Info":"信息"，
+        "cluster.details.Host":"主机"，
+        "cluster.details.Primary 存储":"主存储"，
+        "cluster.details.L2 网络":"L2 网络"，
+        "cluster.details.DETAILS":"详细信息"，
+        "cluster.details.DESCRIPTION":"说明:"，
+        "cluster.details.STATE":"状态:"，
+        "cluster.details.HYPERVISOR":"虚拟机管理程序:"，
+        "cluster.details.UUID":"UUID:"，
+        "cluster.details.ZONE UUID":"区 UUID:"，
+        "cluster.details.CREATED 日期":"创建日期:"，
+        "cluster.details.LAST 更新日期":"上次更新日期:"，
+        "cluster.details.CAPACITIES":"能力"，
+        "cluster.details.HINT":"主存储清单在这里已附加到此群集"，
+        "cluster.details.HINT2":"L2 网络清单在这里已附加到此群集"，
+        "zone.details.ZONES":"区"，
+        "zone.details.Action":"行动"，
+        "zone.details.Enable":"启用"，
+        "zone.details.Disable":"禁用"，
+        "zone.details.Create 群集":"创建群集"，
+        "zone.details.Create L2Network":"创建 L2Network"，
+        "zone.details.Add 主存储":"添加主存储"，
+        "zone.details.Attach 备份存储":"附加的备份存储空间"，
+        "zone.details.Delete":"删除"、
+        "zone.details.Info":"信息"，
+        "zone.details.Cluster":"集群"，
+        "zone.details.Primary 存储":"主存储"，
+        "zone.details.L2 网络":"L2 网络"，
+        "zone.details.Backup 存储":"备份存储"，
+        "zone.details.DETAILS":"详细信息"，
+        "zone.details.DESCRIPTION":"说明:"，
+        "zone.details.STATE":"状态:"，
+        "zone.details.UUID":"UUID:"，
+        "zone.details.CREATED 日期":"创建日期:"，
+        "zone.details.LAST 更新日期":"最后更新日期"，
+        "zone.details.CAPACITIES":"能力"，
+        "zone.zone.CREATE 区":"创建区"，
+        "zone.zone.NAME":"名称"，
+        "zone.zone.DESCRIPTION":"描述"，
+        "zone.zone.Cancel":"取消"，
+        "zone.zone.Create":"创建"，
+        "zone.zone.ZONE":"区"，
+        "zone.zone.New 区":"新区域"，
+        "zone.zone.STATE":"国家"
+        "zone.zone.All":"所有人"，
+        "zone.zone.Enabled":"已启用"，
+        "zone.zone.Disabled":"禁用"，
+        "zone.zone.Confirm":"确认"，
+        "zone.zone.Action":"行动"，
+        "zone.zone.Enable":"启用"，
+        "zone.zone.Disable":"禁用"，
+        "zone.zone.Create 群集":"创建群集"，
+        "zone.zone.Create L2Network":"创建 L2Network"，
+        "zone.zone.Add 主存储":"添加主存储"，
+        "zone.zone.Attach 备份存储":"附加的备份存储空间"，
+        "zone.zone.Delete":"删除"、
+        "zone.zone.HINT":"单点击列来显示动作按钮"，
+        "zone.zone.HINT2":"双击列中输入详细信息页面"
+}
