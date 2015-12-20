@@ -1,14 +1,14 @@
 <div kendo-window="detachVolume__" k-visible="false">
     <div>
-        <h4 class="z-win-h4">DETACH DATA VOLUME</h4>
+        <h4 class="z-win-h4">{{"vm.detachVolume.DETACH DATA VOLUME" | translate}}</h4>
         <form class="form">
             <div class="form-group col-sm-18">
-                <label for="ps">DATA VOLUME</label>
+                <label for="ps">{{"vm.detachVolume.DATA VOLUME" | translate}}</label>
                 <select id="ps" kendo-multi-select="volumeList__" k-options="volumeListOptions__" class="z-win-dropdown"></select>
             </div>
             <div class="form-group col-lg-18">
-                <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
-                <button type="button" class="btn btn-danger" ng-disabled="!canProceed()" ng-click="done()">Detach</button>
+                <button type="button" class="btn btn-default" ng-click="cancel()">{{"vm.detachVolume.Cancel" | translate}}</button>
+                <button type="button" class="btn btn-danger" ng-disabled="!canProceed()" ng-click="done()">{{"vm.detachVolume.Detach" | translate}}</button>
             </div>
         </form>
     </div>

@@ -4,41 +4,41 @@
             <div class="tab-content">
                 <div id="createHostInfo" class="tab-pane active">
                     <div class="alert alert-warning col-sm-21" ng-show="!infoPage.hasCluster()">
-                        No cluster has been created. Please go to <a href="/#/cluster">cluster page</a> to create a new one.
+                        {{"host.createHost.hasCluster()" | translate}} <a href="/#/cluster">{{"host.createHost.cluster page" | translate}}</a> {{"host.createHost.hasCluster2()" | translate}}
                     </div>
 
-                    <h4 class="z-win-h4">ADD HOST</h4>
+                    <h4 class="z-win-h4">{{"host.createHost.ADD HOST" | translate}}</h4>
                     <form class="form" id="formCreate">
                         <div class="form-group col-sm-24">
-                            <label for="zone">ZONE</label>
+                            <label for="zone">{{"host.createHost.ZONE" | translate}}</label>
                             <select id="zone" kendo-drop-down-list k-options="zoneList" class="z-win-dropdown" ng-model="infoPage.zoneUuid"></select>
-                            <p class="z-hint">(Required) select zone where the Host is being added</p>
+                            <p class="z-hint">{{"host.createHost.HINT" | translate}}</p>
                         </div>
                         <div class="form-group col-sm-24">
-                            <label for="cluster">CLUSTER</label>
+                            <label for="cluster">{{"host.createHost.CLUSTER" | translate}}</label>
                             <select id="cluster" kendo-drop-down-list k-options="clusterListOptions__" class="z-win-dropdown" ng-model="infoPage.clusterUuid"></select>
-                            <p class="z-hint">(Required) select zone where the Host is being added</p>
+                            <p class="z-hint">{{"host.createHost.HINT2" | translate}}</p>
                         </div>
                         <div class="form-group col-sm-21">
-                            <label for="name">NAME</label>
+                            <label for="name">{{"host.createHost.NAME" | translate}}</label>
                             <input class="form-control" type="text" id="name" placeholder="(Required) max length of 255 characters" ng-model="infoPage.name" required data-message="name is required">
                         </div>
                         <div class="form-group col-sm-21">
-                            <label for="description">DESCRIPTION</label>
+                            <label for="description">{{"host.createHost.DESCRIPTION" | translate}}</label>
                             <textarea  class="form-control" rows="5" id="description" placeholder="(Optional) max length of 2048 characters" ng-model="infoPage.description"></textarea>
                         </div>
                         <div class="form-group col-sm-21">
-                            <label for="ip">HOST IP</label>
+                            <label for="ip">{{"host.createHost.HOST IP" | translate}}</label>
                             <input type="text" class="form-control" id="ip" placeholder="IPv4 address or DNS name" ng-model="infoPage.managementIp">
                         </div>
                         <div ng-switch="infoPage.hypervisorType">
                             <div ng-switch-when="KVM">
                                 <div class="form-group col-sm-21">
-                                    <label for="username">USER NAME</label>
+                                    <label for="username">{{"host.createHost.USER NAME" | translate}}</label>
                                     <input type="text" class="form-control" id="username" placeholder="ssh user name" ng-model="infoPage.username">
                                 </div>
                                 <div class="form-group col-sm-21">
-                                    <label for="password">PASSWORD</label>
+                                    <label for="password">{{"host.createHost.PASSWORD" | translate}}</label>
                                     <input type="password" class="form-control" id="password" placeholder="ssh password" ng-model="infoPage.password">
                                 </div>
                             </div>
@@ -55,7 +55,7 @@
         <div class="col-sm-7">
             <div class="z-wizard-bar">
                 <ul class="nav">
-                    <li class="active"><a data-target="#createHostInfo" ng-click="button.pageClick('createHostInfo')">HOST INFO</a></li>
+                    <li class="active"><a data-target="#createHostInfo" ng-click="button.pageClick('createHostInfo')">{{"host.createHost.HOST INFO" | translate}}</a></li>
                 </ul>
             </div>
         </div>
