@@ -1182,7 +1182,7 @@
         "portForwarding.portForwarding.Action": "行动",
         "portForwarding.portForwarding.Enable": "启用",
         "portForwarding.portForwarding.Disable": "禁用",
-        "portForwarding.portForwarding.Attach": "附加"
+        "portForwarding.portForwarding.Attach": "附加",
         "portForwarding.portForwarding.Detach": "分离",
         "portForwarding.portForwarding.Delete": "删除",
         "portForwarding.portForwarding.HINT1": "单点击列来显示动作按钮",
