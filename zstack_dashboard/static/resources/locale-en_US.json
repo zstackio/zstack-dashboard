@@ -4,7 +4,7 @@
         "dashboard.HINT": "A part of CPU/Memory will be reserved from each host for system usage. For KVM, the reserved capacity can be changed in global setting, see reservedCpu and reservedMemory",
         "dashboard.RESOURCE COUNT": "RESOURCE COUNT",
         "dashboard.CPU": "CPU",
-        "dashboard.MEMORY": "MEMORY"
+        "dashboard.MEMORY": "MEMORY",
         "dashboard.PRIMARY STORAGE": "PRIMARY STORAGE",
         "dashboard.BACKUP STORAGE": "BACKUP STORAGE",
         "dashboard.IP ADDRESS": "IP ADDRESS",
