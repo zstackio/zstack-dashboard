@@ -1,26 +1,26 @@
 <div kendo-window="detachCluster__" k-visible="false" k-options="detachClusterOptions__">
     <div>
         <div class="alert alert-warning col-sm-21" ng-show="!hasCluster()">
-            No cluster has been attached to this L2 network;
+           {{"l2Network.detachCluster.HINT" | translate}}
         </div>
 
-        <h4 class="z-win-h4">DETACH CLUSTER</h4>
+        <h4 class="z-win-h4">{{"l2Network.detachCluster.DETACH CLUSTER" | translate}}</h4>
         <form class="form">
             <div class="form-group col-sm-18">
-                <label for="ps">CLUSTER</label>
+                <label for="ps">{{"l2Network.detachCluster.CLUSTER" | translate}}</label>
                 <select id="ps" kendo-multi-select="clusterList__" k-options="clusterListOptions__" class="z-win-dropdown"></select>
-                <p class="z-hint">(Required) select one or more cluster to attach</p>
+                <p class="z-hint">{{"l2Network.detachCluster.HINT2" | translate}}</p>
             </div>
 
             <div class="form-group col-sm-18" style="color: #000000">
-                <p><strong>Detaching will cause VMs in cluster which have l3Network on this l2Network being stopped</strong></p>
+                <p><strong>{{"l2Network.detachCluster.HINT3" | translate}}</strong></p>
                 <input class="form-control" style="width: 200px" type="text" ng-model="ok">
-                <p class="z-hint">Type 'ok' to confirm</p>
+                <p class="z-hint">{{"l2Network.detachCluster.Type 'ok' to confirm" | translate}}</p>
             </div>
 
             <div class="form-group col-lg-18">
-                <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
-                <button type="button" class="btn btn-danger" ng-disabled="!canProceed() || ok!='ok'" ng-click="done()">Detach</button>
+                <button type="button" class="btn btn-default" ng-click="cancel()">{{"l2Network.detachCluster.Cancel" | translate}}</button>
+                <button type="button" class="btn btn-danger" ng-disabled="!canProceed() || ok!='ok'" ng-click="done()">{{"l2Network.detachCluster.Detach" | translate}}</button>
             </div>
         </form>
     </div>

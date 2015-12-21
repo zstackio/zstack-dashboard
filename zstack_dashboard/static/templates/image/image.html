@@ -5,7 +5,7 @@
 </div>
 
 <div>
-    <h3 class="z-h3">Image</h3>
+    <h3 class="z-h3">{{"image.image.Image" | translate}}</h3>
     <div class="btn-group-sm z-btn-bar">
         <button type="button" class="btn btn-default btn-sm" ng-click="funcRefresh()">
             <i class="fa fa-refresh"></i>
@@ -18,42 +18,42 @@
         <div z-sort-by z-options="optionsSortBy"></div>
 
         <button z-popover="popoverFilterBy" type="button" id="ImageFilter" z-content-id="ImageFilterContent" class="btn btn-default btn-sm" ng-click="filterBy.open(popoverFilterBy)">
-            <i class="fa fa-filter"></i><span>&nbsp; {{filterBy.getButtonName()}}</span>
+            <i class="fa fa-filter"></i><span>&nbsp; {{"image.image.{{filterBy.getButtonName()}}" | translate}}</span>
         </button>
 
         <button type="button" class="btn btn-success btn-sm" style="margin-left: 20px" ng-click="funcCreateImage(winNewImage)">
             <i class="fa fa-plus"></i>
-            <span>&nbsp; New Image</span>
+            <span>&nbsp; {{"image.image.New Image" | translate}}</span>
         </button>
 
         <div id="ImageFilterContent" style="display: none">
             <form class="form">
                 <div class="form-group">
-                    <label for="fieldList" class="z-block-label">FILTER BY</label>
+                    <label for="fieldList" class="z-block-label">{{"image.image.FILTER BY" | translate}}</label>
                     <select id="fieldList" kendo-drop-down-list k-options="filterBy.fieldList" ng-model="filterBy.field"></select>
                 </div>
                 <div class="form-group">
-                    <label class="z-block-label" for="valueList">VALUE</label>
+                    <label class="z-block-label" for="valueList">{{"image.image.VALUE" | translate}}</label>
                     <select kendo-drop-down-list id="valueList" ng-disabled="filterBy.isValueListDisabled()" k-options="filterBy.valueList" ng-model="filterBy.value"></select>
                 </div>
-                <button type="button" class="btn btn-sm btn-primary" ng-click="filterBy.confirm(popoverFilterBy)">Confirm</button>
+                <button type="button" class="btn btn-sm btn-primary" ng-click="filterBy.confirm(popoverFilterBy)">{{"image.image.Confirm" | translate}}</button>
             </form>
         </div>
 
         <div class="btn-group" ng-show="funcIsActionShow()">
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" ng-disabled="funcIsActionDisabled()">
-                Action <span class="caret"></span>
+                {{"image.image.Action" | translate}} <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu">
-                <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">Enable</a></li>
-                <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">Disable</a></li>
+                <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">{{"image.image.Enable" | translate}}</a></li>
+                <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">{{"image.image.Disable" | translate}}</a></li>
                 <li class="divider"></li>
-                <li><a href style="color:red" ng-click="funcDeleteImage(deleteImage)">Delete</a></li>
+                <li><a href style="color:red" ng-click="funcDeleteImage(deleteImage)">{{"image.image.Delete" | translate}}</a></li>
             </ul>
         </div>
     </div>
 
     <div kendo-grid="ImageGrid" k-options="oImageGrid.options" z-grid-double-click="funcGridDoubleClick" class="z-flat-table"></div>
-    <p class="z-hint">Single click column to show action button</p>
-    <p class="z-hint">Double click column to enter details page</p>
+    <p class="z-hint">{{"image.image.HINT" | translate}}</p>
+    <p class="z-hint">{{"image.image.HINT2" | translate}}</p>
 </div>

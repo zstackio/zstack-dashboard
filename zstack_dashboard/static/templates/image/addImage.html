@@ -4,54 +4,54 @@
             <div class="tab-content">
                 <div id="createImageInfo" class="tab-pane active">
                     <div class="alert alert-warning col-sm-21" ng-show="!infoPage.hasBackup()">
-                        No backup storage has been added. Please go to <a href="/#/backupStorage">backup storage page</a> to add a new one.
+                        {{"image.addImage.HINT1" | translate}} <a href="/#/backupStorage">{{"image.addImage.backup storage page" | translate}}</a> {{"image.addImage.HINT2" | translate}}.
                     </div>
 
-                    <h4 class="z-win-h4">ADD IMAGE</h4>
+                    <h4 class="z-win-h4">{{"image.addImage.ADD IMAGE" | translate}}</h4>
                     <form class="form" id="formCreate">
                         <div class="form-group col-sm-24">
-                            <label for="zone">BACKUP STORAGE</label>
+                            <label for="zone">{{"image.addImage.BACKUP STORAGE" | translate}}</label>
                             <select id="zone" kendo-multi-select="backupStorageList__" k-options="backupStorageListOptions__" class="z-win-dropdown"></select>
-                            <p class="z-hint">(Required) select backup storage where the image is being stored</p>
+                            <p class="z-hint">{{"image.addImage.HINT3" | translate}}</p>
                         </div>
                         <div class="form-group col-sm-21">
-                            <label for="name">NAME</label>
+                            <label for="name">{{"image.addImage.NAME" | translate}}</label>
                             <input class="form-control" type="text" id="name" placeholder="(Required) max length of 255 characters" ng-model="infoPage.name" required data-message="name is required">
                         </div>
                         <div class="form-group col-sm-21">
-                            <label for="description">DESCRIPTION</label>
+                            <label for="description">{{"image.addImage.DESCRIPTION" | translate}}</label>
                             <textarea  class="form-control" rows="5" id="description" placeholder="(Optional) max length of 2048 characters" ng-model="infoPage.description"></textarea>
                         </div>
                         <div class="form-group col-sm-24">
-                            <label for="hvType">FORMAT</label>
+                            <label for="hvType">{{"image.addImage.FORMAT" | translate}}</label>
                             <select id="hvType" kendo-drop-down-list="formatList__" k-options="formatOptions__" class="z-win-dropdown" ng-model="infoPage.format"></select>
                         </div>
                         <div class="form-group col-sm-24">
-                            <label for="format">MEDIA TYPE</label>
+                            <label for="format">{{"image.addImage.MEDIA TYPE" | translate}}</label>
                             <select id="format" kendo-drop-down-list="mediaTypeList__" k-options="mediaTypeOptions__" class="z-win-dropdown" ng-model="infoPage.mediaType"></select>
                         </div>
                         <div class="form-group col-sm-24">
-                            <label for="platform">PLATFORM</label>
+                            <label for="platform">{{"image.addImage.PLATFORM" | translate}}</label>
                             <select id="platform" kendo-drop-down-list="platformList__" k-options="platformOptions__" class="z-win-dropdown" ng-model="infoPage.platform"></select>
                         </div>
                         <div class="form-group col-sm-21">
-                            <label for="url">URL</label>
+                            <label for="url">{{"image.addImage.URL" | translate}}</label>
                             <input type="text" class="form-control" id="url" placeholder="http or https link" ng-model="infoPage.url">
                             <div class="alert alert-danger col-sm-21" ng-show="!infoPage.isUrlValid()">
-                                Not a valid URL. Valid URL must start with 'http' or 'https'
+                                {{"image.addImage.HINT4" | translate}}
                             </div>
                         </div>
                         <div class="form-group col-sm-21">
-                            <label for="guestOsType">GUEST OS TYPE</label>
+                            <label for="guestOsType">{{"image.addImage.GUEST OS TYPE" | translate}}</label>
                             <input type="text" class="form-control" id="guestOsType" placeholder="Guest OS type" ng-model="infoPage.guestOsType">
                         </div>
                         <div class="form-group col-sm-18">
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" ng-model="infoPage.system"> <strong>SYSTEM IMAGE</strong>
+                                    <input type="checkbox" ng-model="infoPage.system"> <strong>{{"image.addImage.SYSTEM IMAGE" | translate}}</strong>
                                 </label>
                             </div>
-                            <p class="z-hint">(Optional) if checked, the image will be created as system image. A system image cannot be used to create user vm;it's mainly for creating virtual router</p>
+                            <p class="z-hint">{{"image.addImage.HINT5" | translate}}</p>
                         </div>
                     </form>
                 </div>
@@ -65,7 +65,7 @@
         <div class="col-sm-7">
             <div class="z-wizard-bar">
                 <ul class="nav">
-                    <li class="active"><a data-target="#createImageInfo" ng-click="button.pageClick('createImageInfo')">IMAGE INFO</a></li>
+                    <li class="active"><a data-target="#createImageInfo" ng-click="button.pageClick('createImageInfo')">{{"image.addImage.IMAGE INFO" | translate}}</a></li>
                 </ul>
             </div>
         </div>

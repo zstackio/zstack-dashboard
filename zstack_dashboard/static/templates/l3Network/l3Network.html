@@ -9,7 +9,7 @@
 </div>
 
 <div>
-    <h3 class="z-h3">L3 NETWORK</h3>
+    <h3 class="z-h3">{{"l3Network.l3Network.L3 NETWORK" | translate}}</h3>
     <div class="btn-group-sm z-btn-bar">
         <button type="button" class="btn btn-default btn-sm" ng-click="funcRefresh()">
             <i class="fa fa-refresh"></i>
@@ -27,41 +27,41 @@
 
         <button type="button" class="btn btn-success btn-sm" style="margin-left: 20px" ng-click="funcCreateL3Network(winNewL3Network)">
             <i class="fa fa-plus"></i>
-            <span>&nbsp; New L3 Network</span>
+            <span>&nbsp; {{"l3Network.l3Network.New L3 Network" | translate}}</span>
         </button>
 
         <div id="l3NetworkFilterContent" style="display: none">
             <form class="form">
                 <div class="form-group">
-                    <label for="fieldList" class="z-block-label">FILTER BY</label>
+                    <label for="fieldList" class="z-block-label">{{"l3Network.l3Network.FILTER BY" | translate}}</label>
                     <select id="fieldList" kendo-drop-down-list k-options="filterBy.fieldList" ng-model="filterBy.field"></select>
                 </div>
                 <div class="form-group">
-                    <label class="z-block-label" for="valueList">VALUE</label>
+                    <label class="z-block-label" for="valueList">{{"l3Network.l3Network.NETWORK" | translate}}</label>
                     <select kendo-drop-down-list id="valueList" ng-disabled="filterBy.isValueListDisabled()" k-options="filterBy.valueList" ng-model="filterBy.value"></select>
                 </div>
-                <button type="button" class="btn btn-sm btn-primary" ng-click="filterBy.confirm(popoverFilterBy)">Confirm</button>
+                <button type="button" class="btn btn-sm btn-primary" ng-click="filterBy.confirm(popoverFilterBy)">{{"l3Network.l3Network.Confirm" | translate}}</button>
             </form>
         </div>
 
         <div class="btn-group" ng-show="funcIsActionShow()">
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" ng-disabled="funcIsActionDisabled()">
-                Action <span class="caret"></span>
+                {{"l3Network.l3Network.Action" | translate}} <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu">
-                <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">Enable</a></li>
-                <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">Disable</a></li>
-                <li><a href ng-click="action.addIpRange()">Add Ip Range</a></li>
-                <li><a href ng-click="action.deleteIpRange()">Delete Ip Range</a></li>
-                <li><a href ng-click="action.addDns()">Add DNS</a></li>
-                <li><a href ng-click="action.deleteDns()">Delete DNS</a></li>
+                <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">{{"l3Network.l3Network.Enable" | translate}}</a></li>
+                <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">{{"l3Network.l3Network.Disable" | translate}}</a></li>
+                <li><a href ng-click="action.addIpRange()">{{"l3Network.l3Network.Add Ip Range" | translate}}</a></li>
+                <li><a href ng-click="action.deleteIpRange()">{{"l3Network.l3Network.Delete Ip Range" | translate}}</a></li>
+                <li><a href ng-click="action.addDns()">{{"l3Network.l3Network.Add DNS" | translate}}</a></li>
+                <li><a href ng-click="action.deleteDns()">{{"l3Network.l3Network.Delete DNS" | translate}}</a></li>
                 <li class="divider"></li>
-                <li><a href style="color:red" ng-click="funcDeleteL3Network(deleteL3Network)">Delete</a></li>
+                <li><a href style="color:red" ng-click="funcDeleteL3Network(deleteL3Network)">{{"l3Network.l3Network.Delete" | translate}}</a></li>
             </ul>
         </div>
     </div>
 
     <div kendo-grid="l3NetworkGrid" k-options="oL3NetworkGrid.options" z-grid-double-click="funcGridDoubleClick" class="z-flat-table"></div>
-    <p class="z-hint">Single click column to show action button</p>
-    <p class="z-hint">Double click column to enter details page</p>
+    <p class="z-hint">{{"l3Network.l3Network.HINT" | translate}}</p>
+    <p class="z-hint">{{"l3Network.l3Network.HINT2" | translate}}</p>
 </div>
