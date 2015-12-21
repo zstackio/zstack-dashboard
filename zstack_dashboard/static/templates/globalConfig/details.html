@@ -4,7 +4,7 @@
 
 <div class="z-pane">
     <ol class="breadcrumb">
-        <li><a href="/#/globalConfig">GLOBAL CONFIGURE</a></li>
+        <li><a href="/#/globalConfig">{{ "globalConfig.details.GLOBAL CONFIGURE" | translate }}</a></li>
         <li class="active"><a href>{{model.current.category}} - {{model.current.name}}</a></li>
     </ol>
 
@@ -17,17 +17,17 @@
             </button>
             <div class="btn-group">
                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                    Action <span class="caret"></span>
+                    {{ "globalConfig.details.Action" | translate }} <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href ng-click="action.edit()">Edit</a></li>
+                    <li><a href ng-click="action.edit()">{{ "globalConfig.details.Edit" | translate }}</a></li>
                 </ul>
             </div>
         </div>
     </div>
 
     <ul class="nav nav-pills">
-        <li class="active"><a data-target="#info" data-toggle="pill" href>Info</a></li>
+        <li class="active"><a data-target="#info" data-toggle="pill" href>{{ "globalConfig.details.Info" | translate }}</a></li>
     </ul>
 
 
@@ -37,7 +37,7 @@
                 <div class="panel-heading">
                     <a class="accordion-toggle" data-target="#infoDetails" data-toggle="collapse" href>
                         <i class="z-collapse fa fa-chevron-down"></i>
-                        <span>&nbsp; DETAILS</span>
+                        <span>&nbsp; {{ "globalConfig.details.DETAILS" | translate }}</span>
                     </a>
                 </div>
 
@@ -45,19 +45,19 @@
                     <div class="panel-body">
                         <table class="table z-table-borderless">
                             <tr>
-                                <td><span class="z-label">CATEGORY:</span></td>
+                                <td><span class="z-label">{{ "globalConfig.details.CATEGORY:" | translate }}</span></td>
                                 <td><span class="z-description">{{model.current.category}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">NAME:</span></td>
+                                <td><span class="z-label">{{ "globalConfig.details.NAME:" | translate }}</span></td>
                                 <td><span class="z-description">{{model.current.name}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">DESCRIPTION:</span></td>
+                                <td><span class="z-label">{{ "globalConfig.details.DESCRIPTION:" | translate }}</span></td>
                                 <td><span class="z-description">{{model.current.description}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">VALUE:</span></td>
+                                <td><span class="z-label">{{ "globalConfig.details.VALUE:" | translate }}</span></td>
                                 <td><span class="z-description">{{model.current.value}}</span></td>
                             </tr>
                         </table>
