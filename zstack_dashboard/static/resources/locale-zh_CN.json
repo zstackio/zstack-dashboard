@@ -978,7 +978,7 @@
         "vip.createVip.HINT2": "(可选) 指定要分配从 l3 网络,一个失败的 ip 将报道如果指定的 ip 将不可用。如果省略,ip 将会被自动分配",
         "vip.createVip.HINT3": "不有效 IPv4 地址",
         "vip.createVip.VIP INFO": "VIP 信息",
-        "vip.details.VIP": "VIP"
+        "vip.details.VIP": "VIP",
         "vip.details.Action": "行动",
         "vip.details.Enable": "启用",
         "vip.details.Disable": "禁用",
@@ -1005,7 +1005,7 @@
         "eip.eip.Action": "行动",
         "eip.eip.Enable": "启用",
         "eip.eip.Disable": "禁用",
-        "eip.eip.Attach": "附加"
+        "eip.eip.Attach": "附加",
         "eip.eip.Detach": "分离",
         "eip.eip.Delete": "删除",
         "eip.eip.HINT1": "单点击列来显示动作按钮",
@@ -1056,7 +1056,7 @@
         "eip.details.Action": "行动",
         "eip.details.Enable": "启用",
         "eip.details.Disable": "禁用",
-        "eip.details.Attach": "附加"
+        "eip.details.Attach": "附加",
         "eip.details.Detach": "分离",
         "eip.details.Delete": "删除",
         "eip.details.Info": "信息",
@@ -1064,7 +1064,7 @@
         "eip.details.Vm Nic": "Vm 网卡",
         "eip.details.DETAILS": "详细信息",
         "eip.details.DESCRIPTION": "描述",
-        "eip.details.STATE": "国家"
+        "eip.details.STATE": "国家",
         "eip.details.VIP UUID": "VIP UUID",
         "eip.details.VM NIC UUID": "VM NIC UUID",
         "eip.details.UUID": "UUID",
@@ -1075,7 +1075,7 @@
         "eip.details.STATE": "国家",
         "eip.details.IP": "IP",
         "eip.details.GATEWAY": "网关",
-        "的 eip.details.NETMASK": "子网掩码"
+        "的 eip.details.NETMASK": "子网掩码",
         "eip.details.USE": "使用",
         "eip.details.SERVICE PROVIDER": "服务商",
         "eip.details.L3 NETWORK UUID": "L3 网络 UUID",
@@ -1099,12 +1099,12 @@
         "portForwarding.createPortForwarding.SELECT VIP": "选择 VIP",
         "portForwarding.createPortForwarding.VIP METHOD": "VIP 方法",
         "portForwarding.createPortForwarding.HINT4": "选择使用现有的 VIP 或创建一个新",
-        "portForwarding.createPortForwarding.VIP": "VIP"
+        "portForwarding.createPortForwarding.VIP": "VIP",
         "portForwarding.createPortForwarding.HINT5": "(必选) 选择 VIP 创建端口转发规则",
         "portForwarding.createPortForwarding.L3 NETWORK": "L3 网络",
         "portForwarding.createPortForwarding.HINT6": "(必需) L3 网络正在从中分配此 VIP",
         "portForwarding.createPortForwarding.Creating new VIP": "创建新贵宾",
-        "portForwarding.createPortForwarding.VIP": "VIP"
+        "portForwarding.createPortForwarding.VIP": "VIP",
         "portForwarding.createPortForwarding.Create VIP": "创建 VIP",
         "portForwarding.createPortForwarding.PORT FORWARDING INFO": "端口转发信息",
         "portForwarding.createPortForwarding.NAME": "名称",
@@ -1136,7 +1136,7 @@
         "portForwarding.detachPortForwarding.NIC DEVICE ID": "NIC 设备 ID",
         "portForwarding.detachPortForwarding.NIC MAC": "网卡 MAC",
         "portForwarding.detachPortForwarding.NIC IP": "NIC IP",
-        "portForwarding.detachPortForwarding.NIC NETMASK": "NIC 子网掩码"
+        "portForwarding.detachPortForwarding.NIC NETMASK": "NIC 子网掩码",
         "portForwarding.detachPortForwarding.NIC GATEWAY": "NIC 网关",
         "portForwarding.detachPortForwarding.HINT1": "端口转发可以只分离时虚拟机正在运行或已停止",
         "portForwarding.detachPortForwarding.Cancel": "取消",
@@ -1145,7 +1145,7 @@
         "portForwarding.details.Action": "行动",
         "portForwarding.details.Enable": "启用",
         "portForwarding.details.Disable": "禁用",
-        "portForwarding.details.Attach": "附加"
+        "portForwarding.details.Attach": "附加",
         "portForwarding.details.Detach": "分离",
         "portForwarding.details.Delete": "删除",
         "portForwarding.details.Info": "信息",
@@ -1193,7 +1193,7 @@
         "virtualRouter.details.Stop": "停止",
         "virtualRouter.details.Reboot": "重新启动",
         "virtualRouter.details.Migrate": "迁移",
-        "virtualRouter.details.Reconnect": "重新连接"
+        "virtualRouter.details.Reconnect": "重新连接",
         "virtualRouter.details.Console": "控制台",
         "virtualRouter.details.Delete": "删除",
         "virtualRouter.details.Info": "信息",
@@ -1231,7 +1231,7 @@
         "instanceOffering.addInstanceOffering.NAME": "名称",
         "instanceOffering.addInstanceOffering.DESCRIPTION": "描述",
         "instanceOffering.addInstanceOffering.CPU NUM": "CPU NUM",
-        "instanceOffering.addInstanceOffering.Not a number": "不是数字"
+        "instanceOffering.addInstanceOffering.Not a number": "不是数字",
         "instanceOffering.addInstanceOffering.CPU SPEED": "CPU 速度",
         "instanceOffering.addInstanceOffering.MEMORY": "记忆",
         "instanceOffering.addInstanceOffering.HINT1": "不是有效的内存大小。内存大小可以只是一个数以不 G M K '(or lowercase) 或数字后缀",
@@ -1246,12 +1246,12 @@
         "instanceOffering.details.Info": "信息",
         "instanceOffering.details.DETAILS": "详细信息",
         "instanceOffering.details.DESCRIPTION": "描述",
-        "instanceOffering.details.STATE": "国家"
+        "instanceOffering.details.STATE": "国家",
         "instanceOffering.details.CPU NUMBER": "CPU 数目",
         "instanceOffering.details.CPU SPEED": "CPU 速度",
         "instanceOffering.details.MEMORY": "记忆",
         "instanceOffering.details.ALLOCATOR STRATEGY": "分配策略",
-        "instanceOffering.details.UUID": "UUID"
+        "instanceOffering.details.UUID": "UUID",
         "instanceOffering.details.CREATED DATE": "创建日期",
         "instanceOffering.details.LAST UPDATED DATE": "最后更新日期",
         "instanceOffering.instanceOffering.INSTANCE OFFERING": "实例提供",
@@ -1348,7 +1348,7 @@
         "virtualRouterOffering.addVirtualRouterOffering.NAME": "名称",
         "virtualRouterOffering.addVirtualRouterOffering.DESCRIPTION": "描述",
         "virtualRouterOffering.addVirtualRouterOffering.CPU NUM": "CPU NUM",
-        "virtualRouterOffering.addVirtualRouterOffering.ALERT4": "不是数字"
+        "virtualRouterOffering.addVirtualRouterOffering.ALERT4": "不是数字",
         "virtualRouterOffering.addVirtualRouterOffering.CPU SPEED": "CPU 速度",
         "virtualRouterOffering.addVirtualRouterOffering.MEMORY": "记忆",
         "virtualRouterOffering.addVirtualRouterOffering.ALERT5": "不是有效的内存大小。内存大小可以只是一个数以不 G M K '(or lowercase) 或数字后缀",
@@ -1376,7 +1376,7 @@
         "globalConfig.editGlobalConfig.NEW VALUE:": "新值:",
         "globalConfig.editGlobalConfig.Cancel": "取消",
         "globalConfig.editGlobalConfig.Done": "完成",
-        "globalConfig.globalConfig.GLOBAL CONFIGURE": "全局配置"
+        "globalConfig.globalConfig.GLOBAL CONFIGURE": "全局配置",
         "globalConfig.globalConfig.FILTER BY": "筛选依据",
         "globalConfig.globalConfig.VALUE": "价值",
         "globalConfig.globalConfig.Confirm": "确认",
