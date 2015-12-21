@@ -1,7 +1,7 @@
 {
         "dashboard.DASHBOARD": "仪表盘",
         "dashboard.CAPACITY": "资源池",
-        "dashboard.HINT": "每个主机的部分处理器/内存将保留给系统使用"，
+        "dashboard.HINT": "每个主机的部分处理器/内存将保留给系统使用",
         "dashboard.RESOURCE COUNT": "资源统计",
         "dashboard.CPU": "CPU",
         "dashboard.MEMORY": "内存",
