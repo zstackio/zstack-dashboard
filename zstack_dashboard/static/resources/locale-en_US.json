@@ -930,7 +930,7 @@
         "securityGroup.details.Enable": "Enable",
         "securityGroup.details.Disable": "Disable",
         "securityGroup.details.Add Rule": "Add Rule",
-        "securityGroup.details.Delete Rule": "Delete Rule"
+        "securityGroup.details.Delete Rule": "Delete Rule",
         "securityGroup.details.Add Vm Nic": "Add Vm Nic",
         "securityGroup.details.Remove Vm Nic": "Remove Vm Nic",
         "securityGroup.details.Attach L3Network": "Attach L3Network",
@@ -1177,7 +1177,7 @@
         "portForwarding.portForwarding.PORT FORWARDING": "PORT FORWARDING",
         "portForwarding.portForwarding.New Port Forwarding Rule": "New Port Forwarding Rule",
         "portForwarding.portForwarding.FILTER BY": "FILTER BY",
-        "portForwarding.portForwarding.VALUE": "VALUE"
+        "portForwarding.portForwarding.VALUE": "VALUE",
         "portForwarding.portForwarding.Confirm": "Confirm",
         "portForwarding.portForwarding.Action": "Action",
         "portForwarding.portForwarding.Enable": "Enable",
