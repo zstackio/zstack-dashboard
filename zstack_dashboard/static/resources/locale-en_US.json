@@ -299,7 +299,7 @@
         "zone.zone.Attach Backup Storage": "Attach Backup Storage",
         "zone.zone.Delete": "Delete",
         "zone.zone.HINT": "Single click column to show action button",
-        "zone.zone.HINT2": "Double click column to enter details page"
+        "zone.zone.HINT2": "Double click column to enter details page",
         "image.addImage.HINT1": "No backup storage has been added. Please go to",
         "image.addImage.backup storage page": "backup storage page",
         "image.addImage.HINT2": "to add a new one",
