@@ -321,7 +321,7 @@
         "image.details.Action": "行动",
         "image.details.Enable": "启用",
         "image.details.Disable": "禁用",
-        "image.details.Delete": "删除"、
+        "image.details.Delete": "删除",
         "image.details.Info": "信息",
         "image.details.Backup Storage": "备份存储",
         "image.details.DETAILS": "详细信息",
@@ -345,7 +345,7 @@
         "image.image.Action": "行动",
         "image.image.Enable": "启用",
         "image.image.Disable": "禁用",
-        "image.image.Delete": "删除"、
+        "image.image.Delete": "删除",
         "image.image.HINT": "单点击列来显示动作按钮",
         "image.image.HINT2": "双击列中输入详细信息页面",
         "primaryStorage.primaryStorage.PRIMARY STORAGE": "主存储",
@@ -358,7 +358,7 @@
         "primaryStorage.primaryStorage.Attach Cluster": "附加群集",
         "primaryStorage.primaryStorage.Detach Cluster": "分离群集",
         "primaryStorage.primaryStorage.Reconnect": "重新连接"
-        "primaryStorage.primaryStorage.Delete": "删除"、
+        "primaryStorage.primaryStorage.Delete": "删除",
         "primaryStorage.primaryStorage.HINT1": "单点击列来显示动作按钮",
         "primaryStorage.primaryStorage.HINT2": "双击列中输入详细信息页面",
         "primaryStorage.primaryStorage.HINT3": "总 可用容量之后将显示主存储附加到包含一个或多个主机的集群",
@@ -368,14 +368,14 @@
         "primaryStorage.createPrimaryStorage.DESCRIPTION": "描述",
         "primaryStorage.createPrimaryStorage.TYPE": "类型",
         "primaryStorage.createPrimaryStorage.HINT2": "(必选) 选择类型的主存储",
-        "primaryStorage.createPrimaryStorage.URL": "URL"
+        "primaryStorage.createPrimaryStorage.URL": "URL",
         "primaryStorage.createPrimaryStorage.HINT3": "url (必填) 为 NFS 主存储,是 'ip_or_dns_name:absolute_path',例如,'192.168.0.10: primaryStorage'",
         "primaryStorage.createPrimaryStorage.HINT4": "(必填) 为本地存储,url 是一个绝对路径,例如,'   卷的。将每个主机上创建该文件夹。",
-        "primaryStorage.createPrimaryStorage.HINT5": "(必填) 为 ISCSI 存储与 BTRFS 后端,url 是一个绝对路径,例如,'   卷的。将 BTRFS 服务器上创建文件夹.
+        "primaryStorage.createPrimaryStorage.HINT5": "(必填) 为 ISCSI 存储与 BTRFS 后端,url 是一个绝对路径,例如,'   卷的。将 BTRFS 服务器上创建文件夹",
         "primaryStorage.createPrimaryStorage.ALERT": "没有开发区已形成。请转到",
         "primaryStorage.createPrimaryStorage.ALERT.2": "区页",
         "primaryStorage.createPrimaryStorage.ALERT.3": "来创建一个新",
-        "primaryStorage.createPrimaryStorage.ALERT1": "不是有效的 NFS 安装路径。有效装载路径必须是格式的 ip_or_dns_name:absolute_path,'192.168.0.10: primaryStorage'",
+        "primaryStorage.createPrimaryStorage.ALERT1": "不是有效的 NFS 安装路径。有效装载路径必须是格式的 ip_or_dns_name:absolute_path,'192.168.0.10: primaryStorage",
         "primaryStorage.createPrimaryStorage.ALERT2": "不是绝对路径。该路径必须与开始 ' '",
         "primaryStorage.createPrimaryStorage.ALERT3": "不是绝对路径。该路径必须与开始 ' '",
         "primaryStorage.createPrimaryStorage.HOSTNAME": "主机名",
@@ -388,7 +388,7 @@
         "primaryStorage.createPrimaryStorage.HINT8": "ISCSI 服务器 (可选) CHAP 密码",
         "primaryStorage.createPrimaryStorage.HINT9": "用户必须拥有根权限 ceph 星期一服务器上",
         "primaryStorage.createPrimaryStorage.HINT10": "请添加至少一个 ceph 星期一服务器",
-        "primaryStorage.createPrimaryStorage.ALERT4": "无群集有资格附加。请单击添加按钮继续.
+        "primaryStorage.createPrimaryStorage.ALERT4": "无群集有资格附加。请单击添加按钮继续,
         "primaryStorage.createPrimaryStorage.ATTACH CLUSTER": "附加群集",
         "primaryStorage.createPrimaryStorage.CLUSTER": "集群",
         "primaryStorage.createPrimaryStorage.HINT11": "(可选) 选择要附加的一个或多个群集。或做后创建主存储",
@@ -400,8 +400,8 @@
         "primaryStorage.details.Disable": "禁用",
         "primaryStorage.details.Attach Cluster": "附加群集",
         "primaryStorage.details.Detach Cluster": "分离群集",
-        "primaryStorage.details.Reconnect": "重新连接"
-        "primaryStorage.details.Delete": "删除"、
+        "primaryStorage.details.Reconnect": "重新连接",
+        "primaryStorage.details.Delete": "删除",
         "primaryStorage.details.Info": "信息",
         "primaryStorage.details.Cluster": "集群",
         "primaryStorage.details.DETAILS": "详细信息",
@@ -433,13 +433,13 @@
         "primaryStorage.attachCluster.CLUSTER": "集群",
         "primaryStorage.attachCluster.HINT1": "(必填) 选择一个或多个群集,附加",
         "primaryStorage.attachCluster.Cancel": "取消",
-        "primaryStorage.attachCluster.Attach": "附加"
+        "primaryStorage.attachCluster.Attach": "附加",
         "backupStorage.createBackupStorage.CREATE BACKUP STORAGE": "创建的备份存储空间",
         "backupStorage.createBackupStorage.NAME": "名称",
         "backupStorage.createBackupStorage.DESCRIPTION": "描述",
         "backupStorage.createBackupStorage.TYPE": "类型",
         "backupStorage.createBackupStorage.HINT1": "(必选) 选择类型的备份存储",
-        "backupStorage.createBackupStorage.URL": "URL"
+        "backupStorage.createBackupStorage.URL": "URL",
         "backupStorage.createBackupStorage.HINT2": "(必需) sftp 备份存储,url 是绝对路径,例如,'   backupStorage'",
         "backupStorage.createBackupStorage.ALERT1": "不是有效路径。有效的路径必须是绝对路径入手 ' '",
         "backupStorage.createBackupStorage.HOSTNAME": "主机名",
@@ -449,12 +449,12 @@
         "backupStorage.createBackupStorage.HINT4": "用户必须拥有根权限 ceph 星期一服务器上",
         "backupStorage.createBackupStorage.Add": "添加",
         "backupStorage.createBackupStorage.HINT5": "请添加至少一个 ceph 星期一服务器",
-        "backupStorage.createBackupStorage.ALERT2": "没有区有资格附加。请单击添加按钮继续.
+        "backupStorage.createBackupStorage.ALERT2": "没有区有资格附加。请单击添加按钮继续",
         "backupStorage.createBackupStorage.ATTACH ZONE": "连接区",
         "backupStorage.createBackupStorage.ZONE": "区",
         "backupStorage.createBackupStorage.HINT6": "(可选) 选择要附加的一个或多个区域。或做后添加备份存储",
         "backupStorage.createBackupStorage.Previous": "上一页",
-        "backupStorage.createBackupStorage.BACKUP STORAGE INFO": "备份存储信息"
+        "backupStorage.createBackupStorage.BACKUP STORAGE INFO": "备份存储信息",
         "backupStorage.backupStorage.BACKUP STORAGE": "备份存储",
         "backupStorage.backupStorage.New Backup Storage": "新备份存储",
         "backupStorage.backupStorage.FILTER BY": "筛选依据",
@@ -466,7 +466,7 @@
         "backupStorage.backupStorage.Reconnect": "重新连接"
         "backupStorage.backupStorage.Attach Zone": "连接区",
         "backupStorage.backupStorage.Detach Zone": "分离区",
-        "backupStorage.backupStorage.Delete": "删除"、
+        "backupStorage.backupStorage.Delete": "删除",
         "backupStorage.backupStorage.HINT1": "单点击列来显示动作按钮",
         "backupStorage.backupStorage.HINT2": "双击列中输入详细信息页面",
         "backupStorage.details.BACKUP STORAGE": "备份存储",
@@ -476,7 +476,7 @@
         "backupStorage.details.Reconnect": "重新连接"
         "backupStorage.details.Attach Zone": "连接区",
         "backupStorage.details.Detach Zone": "分离区",
-        "backupStorage.details.Delete": "删除"、
+        "backupStorage.details.Delete": "删除",
         "backupStorage.details.Info": "信息",
         "backupStorage.details.Zone": "区",
         "backupStorage.details.DETAILS": "详细信息",
@@ -539,7 +539,7 @@
         "volume.createTemplateFromVolume.DESCRIPTION": "描述",
         "volume.createTemplateFromVolume.PLATFORM": "平台"
         "volume.createTemplateFromVolume.BITS": "比特",
-        "volume.createTemplateFromVolume.HINT1": "(必需) 的操作系统位、 32 位或 64 位",
+        "volume.createTemplateFromVolume.HINT1": "(必需) 的操作系统位, 32 位或 64 位",
         "volume.createTemplateFromVolume.GUEST OS TYPE": "来宾 OS 类型",
         "volume.createTemplateFromVolume.SYSTEM TEMPLATE": "系统模板"。
         "volume.createTemplateFromVolume.HINT2": "(可选) 如果选中,该模板将创建为系统模板和创建用户 vm 时将不会列出",
@@ -561,14 +561,14 @@
         "volume.deleteSnapshotFromBackupStorage.BACKUP STORAGE": "备份存储",
         "volume.deleteSnapshotFromBackupStorage.HINT1": "删除后,如果没有备份此快照上任何备份的存储,此快照的所有子代将被都删除从备份存储以及",
         "volume.deleteSnapshotFromBackupStorage.Cancel": "取消",
-        "volume.deleteSnapshotFromBackupStorage.Delete": "删除"、
+        "volume.deleteSnapshotFromBackupStorage.Delete": "删除",
         "volume.deleteVolumeFromBackupStorage.ALERT1.1": "没有备份存储已被添加。请转到",
         "volume.deleteVolumeFromBackupStorage.ALERT1.2": "备份存储页",
         "volume.deleteVolumeFromBackupStorage.ALERT1.3": "要添加一个新",。
         "volume.deleteVolumeFromBackupStorage.BACKUP DATA VOLUME": "备份数据卷",
         "volume.deleteVolumeFromBackupStorage.BACKUP STORAGE": "备份存储",
         "volume.deleteVolumeFromBackupStorage.Cancel": "取消",
-        "volume.deleteVolumeFromBackupStorage.Delete": "删除"、
+        "volume.deleteVolumeFromBackupStorage.Delete": "删除",
         "volume.detachVm.DETACH VM INSTANCE": "分离 VM 实例",
         "volume.detachVm.NAME:": "名称:",
         "volume.detachVm.STATE:": "状态:",
@@ -584,7 +584,7 @@
         "volume.details.Detach": "分离",
         "volume.details.Take Snapshot": "拍摄快照"
         "volume.details.Create Template": "创建模板"
-        "volume.details.Delete": "删除"、
+        "volume.details.Delete": "删除",
         "volume.details.Info": "信息",
         "volume.details.Snapshot": "快照",
         "volume.details.DETAILS": "详细信息",
@@ -615,7 +615,7 @@
         "volume.snapshotDetails.snapshots": "快照"
         "volume.snapshotDetails.Revert Volume To This Snapshot": "恢复卷到此快照",
         "volume.snapshotDetails.Delete From Backup Storage": "删除从备份存储",
-        "volume.snapshotDetails.Delete": "删除"、
+        "volume.snapshotDetails.Delete": "删除",
         "volume.snapshotDetails.Info": "信息",
         "volume.snapshotDetails.Backup Storage": "备份存储",
         "volume.snapshotDetails.DETAILS": "详细信息",
@@ -651,7 +651,7 @@
         "volume.volume.Detach": "分离",
         "volume.volume.Create Template": "创建模板"
         "volume.volume.Take Snapshot": "拍摄快照"
-        "volume.volume.Delete": "删除"、
+        "volume.volume.Delete": "删除",
         "volume.volume.HINT1": "单点击列来显示动作按钮",
         "volume.volume.HINT2": "双击列中输入详细信息页面",
         "l2Network.attachCluster.HINT": "无群集已创建或有资格的所有群集已都附加到此 l2 网络。请转到",
@@ -677,7 +677,7 @@
         "l2Network.createL2Network.HINT4": "不是有效的 vlan。有效的 vlan 必须在范围内的 [0,4095]",
         "l2Network.createL2Network.PHYSICAL INTERFACE": "物理接口",
         "l2Network.createL2Network.HINT5": "(必需) 名称的虚拟机监控程序上的网络设备。例如,eth0 KVM 主机上",
-        "l2Network.createL2Network.HINT6": "无群集有资格附加。请单击创建按钮继续.
+        "l2Network.createL2Network.HINT6": "无群集有资格附加。请单击创建按钮继续",
         "l2Network.createL2Network.ATTACH CLUSTER": "附加群集",
         "l2Network.createL2Network.CLUSTER": "集群",
         "l2Network.createL2Network.HINT7": "(可选) 选择要附加的一个或多个群集。或做后创建 l2Network",
@@ -696,7 +696,7 @@
         "l2Network.details.Action": "行动",
         "l2Network.details.Attach Cluster": "附加群集",
         "l2Network.details.Detach Cluster": "分离群集",
-        "l2Network.details.Delete": "删除"、
+        "l2Network.details.Delete": "删除",
         "l2Network.details.Info": "信息",
         "l2Network.details.Cluster": "集群",
         "l2Network.details.DETAILS": "详细信息",
@@ -719,7 +719,7 @@
         "l2Network.l2Network.Disable": "禁用",
         "l2Network.l2Network.Attach Cluster": "附加群集",
         "l2Network.l2Network.Detach Cluster": "分离群集",
-        "l2Network.l2Network.Delete": "删除"、
+        "l2Network.l2Network.Delete": "删除",
         "l2Network.l2Network.HINT": "单点击列来显示动作按钮",
         "l2Network.l2Network.HINT2": "双击列中输入详细信息页面",
         "l3Network.addDns.ADD DNS": "添加 DNS",
@@ -799,7 +799,7 @@
         "l3Network.deleteDns.HINT2": "删除后,用户 vm 可以不使用 dns 来解析 DNS 名称再",
         "l3Network.deleteDns.Type 'ok' to confirm": "类型确定确认",
         "l3Network.deleteDns.Cancel": "取消",
-        "l3Network.deleteDns.Delete": "删除"、
+        "l3Network.deleteDns.Delete": "删除",
         "l3Network.deleteIpRange.DELETE IP RANGE": "删除 IP 范围",
         "l3Network.deleteIpRange.IP RANGE": "IP 范围",
         "l3Network.deleteIpRange.HINT": "(必填) 选择要删除的一个或多个 ip 范围",
@@ -808,14 +808,14 @@
         "l3Network.deleteIpRange.HINT4": "虚拟路由器在此范围内有 ip 将被删除",
         "l3Network.deleteIpRange.Type 'ok' to confirm": "类型确定确认",
         "l3Network.deleteIpRange.Cancel": "取消",
-        "l3Network.deleteIpRange.Delete": "删除"、
+        "l3Network.deleteIpRange.Delete": "删除",
         "l3Network.details.L3 NETWORK": "L3 网络",
         "l3Network.details.Action": "行动",
         "l3Network.details.Add IP Range": "添加 IP 范围",
         "l3Network.details.Delete IP Range": "删除 IP 范围",
         "l3Network.details.Add DNS": "添加 DNS",
         "l3Network.details.Delete DNS": "删除 DNS",
-        "l3Network.details.Delete": "删除"、
+        "l3Network.details.Delete": "删除",
         "l3Network.details.Info": "信息",
         "l3Network.details.IP Range": "IP 范围",
         "l3Network.details.DNS": "DNS",
@@ -843,7 +843,7 @@
         "l3Network.l3Network.Delete Ip Range": "删除 Ip 范围",
         "l3Network.l3Network.Add DNS": "添加 DNS",
         "l3Network.l3Network.Delete DNS": "删除 DNS",
-        "l3Network.l3Network.Delete": "删除"、
+        "l3Network.l3Network.Delete": "删除",
         "l3Network.l3Network.HINT": "单点击列来显示动作按钮",
         "l3Network.l3Network.HINT2": "双击列中输入详细信息页面",
         "securityGroup.securityGroup.SECURITY GROUP": "安全组",
@@ -860,7 +860,7 @@
         "securityGroup.securityGroup.Remove Vm Nic": "删除 Vm 网卡",
         "securityGroup.securityGroup.Attach L3Network": "附加 L3Network",
         "securityGroup.securityGroup.Detach L3Network": "分离 L3Network",
-        "securityGroup.securityGroup.Delete": "删除"、
+        "securityGroup.securityGroup.Delete": "删除",
         "securityGroup.securityGroup.HINT1": "单点击列来显示动作按钮",
         "securityGroup.securityGroup.HINT2": "双击列中输入详细信息页面",
         "securityGroup.addRule.ADD RULE": "添加规则",
@@ -905,7 +905,7 @@
         "securityGroup.createSecurityGroup.HINT4": "不是有效的 CIDR。有效的端口必须是格式的 ip cidr_length",
         "securityGroup.createSecurityGroup.Add": "添加",
         "securityGroup.createSecurityGroup.HINT5": "你可以添加规则现在或做后创建安全组",
-        "securityGroup.createSecurityGroup.HINT6": "没有 L3 网络有资格附加。请单击创建按钮继续.
+        "securityGroup.createSecurityGroup.HINT6": "没有 L3 网络有资格附加。请单击创建按钮继续",
         "securityGroup.createSecurityGroup.ATTACH L3 NETWORK": "附加 L3 网络",
         "securityGroup.createSecurityGroup.L3 NETWORK": "L3 网络",
         "securityGroup.createSecurityGroup.HINT7": "(可选) 选择一个或多个附加的 l3 网络。或做后创建安全组",
@@ -916,7 +916,7 @@
         "securityGroup.deleteRule.DELETE RULE": "删除规则",
         "securityGroup.deleteRule.RULES": "规则",
         "securityGroup.deleteRule.Cancel": "取消",
-        "securityGroup.deleteRule.Delete": "删除"、
+        "securityGroup.deleteRule.Delete": "删除",
         "securityGroup.detachL3Network.HINT1": "没有 L3 网络已附加到该安全组",
         "securityGroup.detachL3Network.DETACH L3 NETWORK": "分离 L3 网络",
         "securityGroup.detachL3Network.L3 NETWORK": "L3 网络",
@@ -935,7 +935,7 @@
         "securityGroup.details.Remove Vm Nic": "删除 Vm 网卡",
         "securityGroup.details.Attach L3Network": "附加 L3Network",
         "securityGroup.details.Detach L3Network": "分离 L3Network",
-        "securityGroup.details.Delete": "删除"、
+        "securityGroup.details.Delete": "删除",
         "securityGroup.details.Info": "信息",
         "securityGroup.details.Rules": "规则",
         "securityGroup.details.L3 Networks": "L3 网络",
@@ -962,7 +962,7 @@
         "vip.vip.Action": "行动",
         "vip.vip.Enable": "启用",
         "vip.vip.Disable": "禁用",
-        "vip.vip.Delete": "删除"、
+        "vip.vip.Delete": "删除",
         "vip.vip.HINT1": "单点击列来显示动作按钮",
         "vip.vip.HINT2": "双击列中输入详细信息页面",
         "vip.createVip.hasL3Network () 1": "没有 L3 网络已创建。请转到",
@@ -982,7 +982,7 @@
         "vip.details.Action": "行动",
         "vip.details.Enable": "启用",
         "vip.details.Disable": "禁用",
-        "vip.details.Delete": "删除"、
+        "vip.details.Delete": "删除",
         "vip.details.Info": "信息",
         "vip.details.DETAILS": "详细信息",
         "vip.details.DESCRIPTION": "描述",
@@ -1007,7 +1007,7 @@
         "eip.eip.Disable": "禁用",
         "eip.eip.Attach": "附加"
         "eip.eip.Detach": "分离",
-        "eip.eip.Delete": "删除"、
+        "eip.eip.Delete": "删除",
         "eip.eip.HINT1": "单点击列来显示动作按钮",
         "eip.eip.HINT2": "双击列中输入详细信息页面",
         "eip.attachEip.hasVm () 1": "没有 vm 实例有资格附加 EIP。请转到",
@@ -1058,7 +1058,7 @@
         "eip.details.Disable": "禁用",
         "eip.details.Attach": "附加"
         "eip.details.Detach": "分离",
-        "eip.details.Delete": "删除"、
+        "eip.details.Delete": "删除",
         "eip.details.Info": "信息",
         "eip.details.VIP": "VIP"
         "eip.details.Vm Nic": "Vm 网卡",
@@ -1147,7 +1147,7 @@
         "portForwarding.details.Disable": "禁用",
         "portForwarding.details.Attach": "附加"
         "portForwarding.details.Detach": "分离",
-        "portForwarding.details.Delete": "删除"、
+        "portForwarding.details.Delete": "删除",
         "portForwarding.details.Info": "信息",
         "portForwarding.details.VIP": "VIP"
         "portForwarding.details.Vm Nic": "Vm 网卡",
@@ -1184,7 +1184,7 @@
         "portForwarding.portForwarding.Disable": "禁用",
         "portForwarding.portForwarding.Attach": "附加"
         "portForwarding.portForwarding.Detach": "分离",
-        "portForwarding.portForwarding.Delete": "删除"、
+        "portForwarding.portForwarding.Delete": "删除",
         "portForwarding.portForwarding.HINT1": "单点击列来显示动作按钮",
         "portForwarding.portForwarding.HINT2": "双击列中输入详细信息页面",
         "virtualRouter.details.VM INSTANCE": "VM 实例",
@@ -1195,7 +1195,7 @@
         "virtualRouter.details.Migrate": "迁移",
         "virtualRouter.details.Reconnect": "重新连接"
         "virtualRouter.details.Console": "控制台",
-        "virtualRouter.details.Delete": "删除"、
+        "virtualRouter.details.Delete": "删除",
         "virtualRouter.details.Info": "信息",
         "virtualRouter.details.Nic": "Nic",
         "virtualRouter.details.Volume": "卷",
@@ -1224,7 +1224,7 @@
         "virtualRouter.virtualRouter.Migrate": "迁移",
         "virtualRouter.virtualRouter.Reconnect": "重新连接"
         "virtualRouter.virtualRouter.Console": "控制台",
-        "virtualRouter.virtualRouter.Delete": "删除"、
+        "virtualRouter.virtualRouter.Delete": "删除",
         "virtualRouter.virtualRouter.HINT1": "单点击列来显示动作按钮",
         "virtualRouter.virtualRouter.HINT2": "双击列中输入详细信息页面",
         "instanceOffering.addInstanceOffering.ADD INSTANCE OFFERING": "添加实例提供",
@@ -1242,7 +1242,7 @@
         "instanceOffering.details.Action": "行动",
         "instanceOffering.details.Enable": "启用",
         "instanceOffering.details.Disable": "禁用",
-        "instanceOffering.details.Delete": "删除"、
+        "instanceOffering.details.Delete": "删除",
         "instanceOffering.details.Info": "信息",
         "instanceOffering.details.DETAILS": "详细信息",
         "instanceOffering.details.DESCRIPTION": "描述",
@@ -1262,7 +1262,7 @@
         "instanceOffering.instanceOffering.Action": "行动",
         "instanceOffering.instanceOffering.Enable": "启用",
         "instanceOffering.instanceOffering.Disable": "禁用",
-        "instanceOffering.instanceOffering.Delete": "删除"、
+        "instanceOffering.instanceOffering.Delete": "删除",
         "instanceOffering.instanceOffering.HINT1": "单点击列来显示动作按钮",
         "instanceOffering.instanceOffering.HINT2": "双击列中输入详细信息页面",
         "diskOffering.addDiskOffering.ADD DISK OFFERING": "添加磁盘提供",
@@ -1276,7 +1276,7 @@
         "diskOffering.details.Action": "行动",
         "diskOffering.details.Enable": "启用",
         "diskOffering.details.Disable": "禁用",
-        "diskOffering.details.Delete": "删除"、
+        "diskOffering.details.Delete": "删除",
         "diskOffering.details.DETAILS": "详细信息",
         "diskOffering.details.DESCRIPTION": "描述",
         "diskOffering.details.STATE": "国家"
@@ -1293,7 +1293,7 @@
         "diskOffering.diskOffering.Action": "行动",
         "diskOffering.diskOffering.Enable": "启用",
         "diskOffering.diskOffering.Disable": "禁用",
-        "diskOffering.diskOffering.Delete": "删除"、
+        "diskOffering.diskOffering.Delete": "删除",
         "diskOffering.diskOffering.HINT1": "单点击列来显示动作按钮",
         "diskOffering.diskOffering.HINT2": "双击列中输入详细信息页面",
         "virtualRouterOffering.virtualRouterOffering.VIRTUAL ROUTER OFFERING": "虚拟路由器提供",
@@ -1303,14 +1303,14 @@
         "virtualRouterOffering.virtualRouterOffering.Confirm": "确认",
         "virtualRouterOffering.virtualRouterOffering.Enable": "启用",
         "virtualRouterOffering.virtualRouterOffering.Disable": "禁用",
-        "virtualRouterOffering.virtualRouterOffering.Delete": "删除"、
+        "virtualRouterOffering.virtualRouterOffering.Delete": "删除",
         "virtualRouterOffering.virtualRouterOffering.HINT1": "单点击列来显示动作按钮",
         "virtualRouterOffering.virtualRouterOffering.HINT2": "双击列中输入详细信息页面",
         "virtualRouterOffering.details.Virtual Router Offering": "虚拟路由器提供",
         "virtualRouterOffering.details.Action": "行动",
         "virtualRouterOffering.details.Enable": "启用",
         "virtualRouterOffering.details.Disable": "禁用",
-        "virtualRouterOffering.details.Delete": "删除"、
+        "virtualRouterOffering.details.Delete": "删除",
         "virtualRouterOffering.details.Info": "信息",
         "virtualRouterOffering.details.Management L3 Network": "管理 L3 网络",
         "virtualRouterOffering.details.Public L3 Network": "公共 L3 网络",
