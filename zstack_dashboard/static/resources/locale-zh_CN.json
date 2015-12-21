@@ -463,7 +463,7 @@
         "backupStorage.backupStorage.Action": "行动",
         "backupStorage.backupStorage.Enable": "启用",
         "backupStorage.backupStorage.Disable": "禁用",
-        "backupStorage.backupStorage.Reconnect": "重新连接"
+        "backupStorage.backupStorage.Reconnect": "重新连接",
         "backupStorage.backupStorage.Attach Zone": "连接区",
         "backupStorage.backupStorage.Detach Zone": "分离区",
         "backupStorage.backupStorage.Delete": "删除",
@@ -473,7 +473,7 @@
         "backupStorage.details.Action": "行动",
         "backupStorage.details.Enable": "启用",
         "backupStorage.details.Disable": "禁用",
-        "backupStorage.details.Reconnect": "重新连接"
+        "backupStorage.details.Reconnect": "重新连接",
         "backupStorage.details.Attach Zone": "连接区",
         "backupStorage.details.Detach Zone": "分离区",
         "backupStorage.details.Delete": "删除",
@@ -661,7 +661,7 @@
         "l2Network.attachCluster.CLUSTER": "集群",
         "l2Network.attachCluster.HINT2": "(必填) 选择一个或多个群集,附加",
         "l2Network.attachCluster.Cancel": "取消",
-        "l2Network.attachCluster.Attach": "附加"
+        "l2Network.attachCluster.Attach": "附加",
         "l2Network.createL2Network.HINT": "没有开发区已形成。请转到",
         "l2Network.createL2Network.zone page": "区页",
         "l2Network.createL2Network.to create a new one.": "来创建一个新",
@@ -730,7 +730,7 @@
         "l3Network.addIpRange.ADD IP RANGE": "添加 IP 范围",
         "l3Network.addIpRange.NAME": "名称",
         "l3Network.addIpRange.DESCRIPTION": "描述",
-        "l3Network.addIpRange.METHOD": "法"
+        "l3Network.addIpRange.METHOD": "法",
         "l3Network.addIpRange.Choose using CIDR or IP range": "使用 CIDR 或 IP 范围的选择",
         "l3Network.addIpRange.START IP": "起始 IP",
         "l3Network.addIpRange.Not a valid IPv4 address": "不有效 IPv4 地址",
@@ -768,7 +768,7 @@
         "l3Network.createL3Network.Not a valid IPv4 address": "不有效 IPv4 地址",
         "l3Network.createL3Network.END IP": "结束 IP",
         "l3Network.createL3Network.Not a valid IPv4 address": "不有效 IPv4 地址",
-        "的 l3Network.createL3Network.NETMASK": "子网掩码"
+        "的 l3Network.createL3Network.NETMASK": "子网掩码",
         "l3Network.createL3Network.Not a valid IPv4 address": "不有效 IPv4 地址",
         "l3Network.createL3Network.GATEWAY": "网关",
         "l3Network.createL3Network.Not a valid IPv4 address": "不有效 IPv4 地址",
@@ -823,10 +823,10 @@
         "l3Network.details.DETAILS": "详细信息",
         "l3Network.details.DESCRIPTION": "描述",
         "l3Network.details.TYPE": "类型",
-        "l3Network.details.DOMAIN NAME": "域名"
+        "l3Network.details.DOMAIN NAME": "域名",
         "l3Network.details.SYSTEM NETWORK": "系统网络",
-        "l3Network.details.STATE": "国家"
-        "l3Network.details.UUID": "UUID"
+        "l3Network.details.STATE": "国家",
+        "l3Network.details.UUID": "UUID",
         "l3Network.details.L2 NETWORK UUID": "L2 网络 UUID",
         "l3Network.details.ZONE UUID": "区 UUID",
         "l3Network.details.CREATED DATE": "创建日期",
@@ -889,13 +889,13 @@
         "securityGroup.attachL3Network.L3 NETWORK": "L3 网络",
         "securityGroup.attachL3Network.HINT3": "(必填) 选择一个或多个 l3Network 附加",
         "securityGroup.attachL3Network.Cancel": "取消",
-        "securityGroup.attachL3Network.Attach": "附加"
+        "securityGroup.attachL3Network.Attach": "附加",
         "securityGroup.createSecurityGroup.SECURITY GROUP INFO": "安全组信息",
         "securityGroup.createSecurityGroup.NAME": "名称",
         "securityGroup.createSecurityGroup.DESCRIPTION": "描述",
         "securityGroup.createSecurityGroup.ADD RULE": "添加规则",
         "securityGroup.createSecurityGroup.TYPE": "类型",
-        "securityGroup.createSecurityGroup.START PORT": "开始的端口"
+        "securityGroup.createSecurityGroup.START PORT": "开始的端口",
         "securityGroup.createSecurityGroup.HINT1": "不是有效的端口。有效的端口必须在范围内的 [1,65535]",
         "securityGroup.createSecurityGroup.END PORT": "结束端口",
         "securityGroup.createSecurityGroup.HINT2": "不是有效的端口。有效的端口必须在范围内的 [1,65535]",
@@ -942,19 +942,19 @@
         "securityGroup.details.VM Nics": "VM Nic",
         "securityGroup.details.DETAILS": "详细信息",
         "securityGroup.details.DESCRIPTION": "描述",
-        "securityGroup.details.STATE": "国家"
-        "securityGroup.details.UUID": "UUID"
+        "securityGroup.details.STATE": "国家",
+        "securityGroup.details.UUID": "UUID",
         "securityGroup.details.CREATED DATE": "创建日期",
         "securityGroup.details.LAST UPDATED DATE": "最后更新日期",
         "securityGroup.details.HINT1": "L3Networks 这里列出已附加到此安全组",
-        "securityGroup.details.HINT2": "这里列出的 Vm nic 已被添加到此安全组,"
-        "securityGroup.removeVmNic.HINT1": "没有 vm 网卡已被添加到此安全组,"
+        "securityGroup.details.HINT2": "这里列出的 Vm nic 已被添加到此安全组",
+        "securityGroup.removeVmNic.HINT1": "没有 vm 网卡已被添加到此安全组",
         "securityGroup.removeVmNic.HINT2": "删除 VM 网卡从安全组--{{securityGroupName}}",
         "securityGroup.removeVmNic.VM NIC": "VM 网卡",
         "securityGroup.removeVmNic.HINT3": "(必填) 选择一个或多个 vm 网卡",
         "securityGroup.removeVmNic.Cancel": "取消",
         "securityGroup.removeVmNic.REMOVE": "删除",
-        "vip.vip.VIP": "VIP"
+        "vip.vip.VIP": "VIP",
         "vip.vip.New VIP": "新贵宾",
         "vip.vip.FILTER BY": "筛选依据",
         "vip.vip.VALUE": "价值",
@@ -986,18 +986,18 @@
         "vip.details.Info": "信息",
         "vip.details.DETAILS": "详细信息",
         "vip.details.DESCRIPTION": "描述",
-        "vip.details.STATE": "国家"
+        "vip.details.STATE": "国家",
         "vip.details.IP": "IP",
         "vip.details.GATEWAY": "网关",
-        "的 vip.details.NETMASK": "子网掩码"
+        "的 vip.details.NETMASK": "子网掩码",
         "vip.details.USE": "使用",
         "vip.details.SERVICE PROVIDER": "服务商",
         "vip.details.L3 NETWORK UUID": "L3 网络 UUID",
         "vip.details.PEER L3 NETWORK UUID": "同行 L3 网络 UUID",
-        "vip.details.UUID": "UUID"
+        "vip.details.UUID": "UUID",
         "vip.details.CREATED DATE": "创建日期",
         "vip.details.LAST UPDATED DATE": "最后更新日期",
-        "eip.eip.EIP": "EIP"
+        "eip.eip.EIP": "EIP",
         "eip.eip.New EIP": "新 EIP",
         "eip.eip.FILTER BY": "筛选依据",
         "eip.eip.VALUE": "价值",
@@ -1017,7 +1017,7 @@
         "eip.attachEip.VM INSTANCE": "VM 实例",
         "eip.attachEip.HINT1": "(必选) 选择 vm 实例绑定 eip。如果 vm 都有多个 nic,每个 nic 将列出作为单独的项目",
         "eip.attachEip.Cancel": "取消",
-        "eip.attachEip.Attach": "附加"
+        "eip.attachEip.Attach": "附加",
         "eip.createEip.hasL3Network () 1": "没有 L3 网络已创建。请转到",
         "eip.createEip.L3 network page": "L3 网络页面",
         "eip.createEip.hasL3Network () 2": "来创建一个新",
@@ -1047,12 +1047,12 @@
         "eip.detachEip.NIC DEVICE ID": "NIC 设备 ID",
         "eip.detachEip.NIC MAC": "网卡 MAC",
         "eip.detachEip.NIC IP": "NIC IP",
-        "eip.detachEip.NIC NETMASK": "NIC 子网掩码"
+        "eip.detachEip.NIC NETMASK": "NIC 子网掩码",
         "eip.detachEip.NIC GATEWAY": "NIC 网关",
         "eip.detachEip.HINT1": "Eip 可以只分离时虚拟机正在运行或已停止",
         "eip.detachEip.Cancel": "取消",
         "eip.detachEip.Detach": "分离",
-        "eip.details.EIP": "EIP"
+        "eip.details.EIP": "EIP",
         "eip.details.Action": "行动",
         "eip.details.Enable": "启用",
         "eip.details.Disable": "禁用",
@@ -1060,19 +1060,19 @@
         "eip.details.Detach": "分离",
         "eip.details.Delete": "删除",
         "eip.details.Info": "信息",
-        "eip.details.VIP": "VIP"
+        "eip.details.VIP": "VIP",
         "eip.details.Vm Nic": "Vm 网卡",
         "eip.details.DETAILS": "详细信息",
         "eip.details.DESCRIPTION": "描述",
         "eip.details.STATE": "国家"
         "eip.details.VIP UUID": "VIP UUID",
         "eip.details.VM NIC UUID": "VM NIC UUID",
-        "eip.details.UUID": "UUID"
+        "eip.details.UUID": "UUID",
         "eip.details.CREATED DATE": "创建日期",
         "eip.details.UPDATED DATE": "最后更新日期",
         "eip.details.NAME": "名称",
         "eip.details.DESCRIPTION": "描述",
-        "eip.details.STATE": "国家"
+        "eip.details.STATE": "国家",
         "eip.details.IP": "IP",
         "eip.details.GATEWAY": "网关",
         "的 eip.details.NETMASK": "子网掩码"
@@ -1081,7 +1081,7 @@
         "eip.details.L3 NETWORK UUID": "L3 网络 UUID",
         "eip.details.PEER L3 NETWORK UUID": "同行 L3 网络 UUID",
         "eip.details.LAST UPDATED DATE": "最后更新日期",
-        "eip.details.MAC": "MAC"
+        "eip.details.MAC": "MAC",
         "eip.details.DEVICE ID": "设备 ID",
         "eip.details.VM INSTANCE UUID": "VM 实例 UUID",
         "portForwarding.attachPortForwarding.hasVm () 1": "没有 vm 实例有资格附加 EIP。请转到",
@@ -1091,11 +1091,11 @@
         "portForwarding.attachPortForwarding.VM INSTANCE": "VM 实例",
         "portForwarding.attachPortForwarding.HINT1": "(必选) 选择 vm 实例绑定 eip。如果 vm 都有多个 nic,每个 nic 将列出作为单独的项目",
         "portForwarding.attachPortForwarding.Cancel": "取消",
-        "portForwarding.attachPortForwarding.Attach": "附加"
+        "portForwarding.attachPortForwarding.Attach": "附加",
         "portForwarding.createPortForwarding.HINT1": "没有 L3 网络已创建。请转到",
         "portForwarding.createPortForwarding.L3 network page": "L3 网络页面",
         "portForwarding.createPortForwarding.HINT2": "来创建一个新",
-        "portForwarding.createPortForwarding.HINT3": "没有贵宾已创建,请更改为创建新的 VIP,以创建一个新的 VIP 方法。
+        "portForwarding.createPortForwarding.HINT3": "没有贵宾已创建,请更改为创建新的 VIP,以创建一个新的 VIP 方法",
         "portForwarding.createPortForwarding.SELECT VIP": "选择 VIP",
         "portForwarding.createPortForwarding.VIP METHOD": "VIP 方法",
         "portForwarding.createPortForwarding.HINT4": "选择使用现有的 VIP 或创建一个新",
