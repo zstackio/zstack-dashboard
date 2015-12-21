@@ -6,7 +6,7 @@
 
 <div class="z-pane">
     <ol class="breadcrumb">
-        <li><a href="/#/l2Network">L2 NETWORK</a></li>
+        <li><a href="/#/l2Network">{{"l2Network.details.L2 NETWORK" | translate}}</a></li>
         <li class="active"><a href>{{model.current.name}}</a></li>
     </ol>
 
@@ -19,21 +19,21 @@
             </button>
             <div class="btn-group">
                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                    Action <span class="caret"></span>
+                    {{"l2Network.details.Action" | translate}} <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href ng-click="action.attachCluster()">Attach Cluster</a></li>
-                    <li><a href ng-click="action.detachCluster()">Detach Cluster</a></li>
+                    <li><a href ng-click="action.attachCluster()">{{"l2Network.details.Attach Cluster" | translate}}</a></li>
+                    <li><a href ng-click="action.detachCluster()">{{"l2Network.details.Detach Cluster" | translate}}</a></li>
                     <li class="divider"></li>
-                    <li><a href style="color:red" ng-click="funcDelete(deleteL2Network)">Delete</a></li>
+                    <li><a href style="color:red" ng-click="funcDelete(deleteL2Network)">{{"l2Network.details.Delete" | translate}}</a></li>
                 </ul>
             </div>
         </div>
     </div>
 
     <ul class="nav nav-pills">
-        <li class="active"><a data-target="#info" data-toggle="pill" href>Info</a></li>
-        <li><a data-target="#cluster" data-toggle="pill" href ng-click="funcLoadClusters()">Cluster</a></li>
+        <li class="active"><a data-target="#info" data-toggle="pill" href>{{"l2Network.details.Info" | translate}}</a></li>
+        <li><a data-target="#cluster" data-toggle="pill" href ng-click="funcLoadClusters()">{{"l2Network.details.Cluster" | translate}}</a></li>
     </ul>
 
 
@@ -47,7 +47,7 @@
                 <div class="panel-heading">
                     <a class="accordion-toggle" data-target="#infoDetails" data-toggle="collapse" href>
                         <i class="z-collapse fa fa-chevron-down"></i>
-                        <span>&nbsp; DETAILS</span>
+                        <span>&nbsp; {{"l2Network.details.DETAILS" | translate}}</span>
                     </a>
                 </div>
 
@@ -55,39 +55,39 @@
                     <div class="panel-body">
                         <table class="table z-table-borderless">
                             <tr>
-                                <td><span class="z-label">DESCRIPTION:</span></td>
+                                <td><span class="z-label">{{"l2Network.details.DESCRIPTION" | translate}}:</span></td>
                                 <td><span class="z-description">{{model.current.description}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">TYPE:</span></td>
+                                <td><span class="z-label">{{"l2Network.details.TYPE" | translate}}:</span></td>
                                 <td><span>{{model.current.type}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">PHYSICAL INTERFACE:</span></td>
+                                <td><span class="z-label">{{"l2Network.details.PHYSICAL INTERFACE" | translate}}:</span></td>
                                 <td><span>{{model.current.physicalInterface}}</span></td>
                             </tr>
                             <tr ng-switch="model.current.type">
                                 <td ng-switch-when="L2VlanNetwork">
-                                    <span class="z-label">VLAN</span>
+                                    <span class="z-label">{{"l2Network.details.VLAN" | translate}}</span>
                                 </td>
                                 <td ng-switch-when="L2VlanNetwork">
                                     <span>{{model.current.vlan}}</span>
                                 </td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">UUID:</span></td>
+                                <td><span class="z-label">{{"l2Network.details.UUID" | translate}}:</span></td>
                                 <td><span>{{model.current.uuid}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">ZONE UUID:</span></td>
+                                <td><span class="z-label">{{"l2Network.details.ZONE UUID" | translate}}:</span></td>
                                 <td><a href="/#/zone/{{model.current.zoneUuid}}">{{model.current.zoneUuid}}</a></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">CREATED DATE:</span></td>
+                                <td><span class="z-label">{{"l2Network.details.CREATED DATE" | translate}}:</span></td>
                                 <td><span>{{model.current.createDate}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">LAST UPDATED DATE:</span></td>
+                                <td><span class="z-label">{{"l2Network.details.LAST UPDATED DATE" | translate}}:</span></td>
                                 <td><span>{{model.current.lastOpDate}}</span></td>
                             </tr>
                         </table>
@@ -99,7 +99,7 @@
 
         <div class="tab-pane" id="cluster">
             <div kendo-grid k-options="optionsClusterGrid" class="z-flat-table"></div>
-            <p class="z-hint">Clusters listing here have attached to this l2Network</p>
+            <p class="z-hint">{{"l2Network.details.HINT" | translate}}</p>
         </div>
     </div>
 </div>
