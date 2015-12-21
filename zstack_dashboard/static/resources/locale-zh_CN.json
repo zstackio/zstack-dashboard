@@ -308,10 +308,10 @@
         "image.addImage.HINT3": "(必选) 选择备份存储的存储图像的位置",
         "image.addImage.NAME": "名称",
         "image.addImage.DESCRIPTION": "描述",
-        "image.addImage.FORMAT": "格式"
+        "image.addImage.FORMAT": "格式",
         "image.addImage.MEDIA TYPE": "媒体类型",
-        "image.addImage.PLATFORM": "平台"
-        "image.addImage.URL": "URL"
+        "image.addImage.PLATFORM": "平台",
+        "image.addImage.URL": "URL",
         "image.addImage.HINT4": "不是一个有效的 URL。有效的 URL 必须以 http 或 https 开头",
         "image.addImage.GUEST OS TYPE": "来宾 OS 类型",
         "image.addImage.SYSTEM IMAGE": "系统映像",
@@ -357,7 +357,7 @@
         "primaryStorage.primaryStorage.Disable": "禁用",
         "primaryStorage.primaryStorage.Attach Cluster": "附加群集",
         "primaryStorage.primaryStorage.Detach Cluster": "分离群集",
-        "primaryStorage.primaryStorage.Reconnect": "重新连接"
+        "primaryStorage.primaryStorage.Reconnect": "重新连接",
         "primaryStorage.primaryStorage.Delete": "删除",
         "primaryStorage.primaryStorage.HINT1": "单点击列来显示动作按钮",
         "primaryStorage.primaryStorage.HINT2": "双击列中输入详细信息页面",
@@ -379,16 +379,16 @@
         "primaryStorage.createPrimaryStorage.ALERT2": "不是绝对路径。该路径必须与开始 ' '",
         "primaryStorage.createPrimaryStorage.ALERT3": "不是绝对路径。该路径必须与开始 ' '",
         "primaryStorage.createPrimaryStorage.HOSTNAME": "主机名",
-        "primaryStorage.createPrimaryStorage.SSH USERNAME": "SSH 用户名"
+        "primaryStorage.createPrimaryStorage.SSH USERNAME": "SSH 用户名",
         "primaryStorage.createPrimaryStorage.HINT6": "用户必须拥有根权限 btrfs 服务器上",
-        "primaryStorage.createPrimaryStorage.SSH PASSWORD": "SSH 密码"
+        "primaryStorage.createPrimaryStorage.SSH PASSWORD": "SSH 密码",
         "primaryStorage.createPrimaryStorage.CHAP USERNAME": "CHAP 用户名",
         "primaryStorage.createPrimaryStorage.HINT7": "ISCSI 服务器 (可选) CHAP 用户名",
         "primaryStorage.createPrimaryStorage.CHAP PASSWORD": "CHAP 密码",
         "primaryStorage.createPrimaryStorage.HINT8": "ISCSI 服务器 (可选) CHAP 密码",
         "primaryStorage.createPrimaryStorage.HINT9": "用户必须拥有根权限 ceph 星期一服务器上",
         "primaryStorage.createPrimaryStorage.HINT10": "请添加至少一个 ceph 星期一服务器",
-        "primaryStorage.createPrimaryStorage.ALERT4": "无群集有资格附加。请单击添加按钮继续,
+        "primaryStorage.createPrimaryStorage.ALERT4": "无群集有资格附加,请单击添加按钮继续",
         "primaryStorage.createPrimaryStorage.ATTACH CLUSTER": "附加群集",
         "primaryStorage.createPrimaryStorage.CLUSTER": "集群",
         "primaryStorage.createPrimaryStorage.HINT11": "(可选) 选择要附加的一个或多个群集。或做后创建主存储",
@@ -564,7 +564,7 @@
         "volume.deleteSnapshotFromBackupStorage.Delete": "删除",
         "volume.deleteVolumeFromBackupStorage.ALERT1.1": "没有备份存储已被添加。请转到",
         "volume.deleteVolumeFromBackupStorage.ALERT1.2": "备份存储页",
-        "volume.deleteVolumeFromBackupStorage.ALERT1.3": "要添加一个新",。
+        "volume.deleteVolumeFromBackupStorage.ALERT1.3": "要添加一个新",
         "volume.deleteVolumeFromBackupStorage.BACKUP DATA VOLUME": "备份数据卷",
         "volume.deleteVolumeFromBackupStorage.BACKUP STORAGE": "备份存储",
         "volume.deleteVolumeFromBackupStorage.Cancel": "取消",
@@ -580,10 +580,10 @@
         "volume.details.Action": "行动",
         "volume.details.Enable": "启用",
         "volume.details.Disable": "禁用",
-        "volume.details.Attach": "附加"
+        "volume.details.Attach": "附加",
         "volume.details.Detach": "分离",
-        "volume.details.Take Snapshot": "拍摄快照"
-        "volume.details.Create Template": "创建模板"
+        "volume.details.Take Snapshot": "拍摄快照",
+        "volume.details.Create Template": "创建模板",
         "volume.details.Delete": "删除",
         "volume.details.Info": "信息",
         "volume.details.Snapshot": "快照",
@@ -610,9 +610,9 @@
         "volume.reverSnapshot.VM THE VOLUME ATTACHED:": "VM 卷附:",
         "volume.reverSnapshot.HINT": "卷可以只被还原到快照时停止的 vm 它重视",
         "volume.reverSnapshot.Cancel": "取消",
-        "volume.reverSnapshot.Revert": "恢复"
+        "volume.reverSnapshot.Revert": "恢复",
         "volume.snapshotDetails.VOLUME": "卷",
-        "volume.snapshotDetails.snapshots": "快照"
+        "volume.snapshotDetails.snapshots": "快照",
         "volume.snapshotDetails.Revert Volume To This Snapshot": "恢复卷到此快照",
         "volume.snapshotDetails.Delete From Backup Storage": "删除从备份存储",
         "volume.snapshotDetails.Delete": "删除",
@@ -647,10 +647,10 @@
         "volume.volume.Action": "行动",
         "volume.volume.Enable": "启用",
         "volume.volume.Disable": "禁用",
-        "volume.volume.Attach": "附加"
+        "volume.volume.Attach": "附加",
         "volume.volume.Detach": "分离",
-        "volume.volume.Create Template": "创建模板"
-        "volume.volume.Take Snapshot": "拍摄快照"
+        "volume.volume.Create Template": "创建模板",
+        "volume.volume.Take Snapshot": "拍摄快照",
         "volume.volume.Delete": "删除",
         "volume.volume.HINT1": "单点击列来显示动作按钮",
         "volume.volume.HINT2": "双击列中输入详细信息页面",
@@ -673,7 +673,7 @@
         "l2Network.createL2Network.DESCRIPTION": "描述",
         "l2Network.createL2Network.TYPE": "类型",
         "l2Network.createL2Network.HINT3": "(必选) 选择类型的 l2Network",
-        "l2Network.createL2Network.VLAN": "VLAN"
+        "l2Network.createL2Network.VLAN": "VLAN",
         "l2Network.createL2Network.HINT4": "不是有效的 vlan。有效的 vlan 必须在范围内的 [0,4095]",
         "l2Network.createL2Network.PHYSICAL INTERFACE": "物理接口",
         "l2Network.createL2Network.HINT5": "(必需) 名称的虚拟机监控程序上的网络设备。例如,eth0 KVM 主机上",
@@ -703,8 +703,8 @@
         "l2Network.details.DESCRIPTION": "描述",
         "l2Network.details.TYPE": "类型",
         "l2Network.details.PHYSICAL INTERFACE": "物理接口",
-        "l2Network.details.VLAN": "VLAN"
-        "l2Network.details.UUID": "UUID"
+        "l2Network.details.VLAN": "VLAN",
+        "l2Network.details.UUID": "UUID",
         "l2Network.details.ZONE UUID": "区 UUID",
         "l2Network.details.CREATED DATE": "创建日期",
         "l2Network.details.LAST UPDATED DATE:": "上次更新日期:",
@@ -731,17 +731,17 @@
         "l3Network.addIpRange.NAME": "名称",
         "l3Network.addIpRange.DESCRIPTION": "描述",
         "l3Network.addIpRange.METHOD": "法"
-        "l3Network.addIpRange.Choose using CIDR or IP range": "使用 CIDR 或 IP 范围的选择"
+        "l3Network.addIpRange.Choose using CIDR or IP range": "使用 CIDR 或 IP 范围的选择",
         "l3Network.addIpRange.START IP": "起始 IP",
         "l3Network.addIpRange.Not a valid IPv4 address": "不有效 IPv4 地址",
         "l3Network.addIpRange.END IP": "结束 IP",
         "l3Network.addIpRange.Not a valid IPv4 address": "不有效 IPv4 地址",
-        "的 l3Network.addIpRange.NETMASK": "子网掩码"
+        "的 l3Network.addIpRange.NETMASK": "子网掩码",
         "l3Network.addIpRange.Not a valid netmask": "不有效子网掩码",
         "l3Network.addIpRange.GATEWAY": "网关",
         "l3Network.addIpRange.Not a valid IPv4 address": "不有效 IPv4 地址",
         "的 l3Network.addIpRange.NETWORK CIDR": "网络 CIDR",
-        "l3Network.addIpRange.HINT": "不是一个有效网络 CIDR。例如,有效的 CIDR 是 10.0.0.0 24.
+        "l3Network.addIpRange.HINT": "不是一个有效网络 CIDR。例如,有效的 CIDR 是 10.0.0.0 24.",
         "l3Network.addIpRange.Cancel": "取消",
         "l3Network.addIpRange.Add": "添加",
         "l3Network.createL3Network.HINT": "没有 L2 网络已创建。请转到",
@@ -754,7 +754,7 @@
         "l3Network.createL3Network.HINT3": "(必选) 选择 l2Network,l3Network 要创建",
         "l3Network.createL3Network.NAME": "名称",
         "l3Network.createL3Network.DESCRIPTION": "描述",
-        "l3Network.createL3Network.DOMAIN NAME": "域名"
+        "l3Network.createL3Network.DOMAIN NAME": "域名",
         "l3Network.createL3Network.TYPE": "类型",
         "l3Network.createL3Network.HINT4": "(必选) 选择类型的 l3Network",
         "l3Network.createL3Network.SYSTEM NETWORK": "系统网络",
@@ -762,8 +762,8 @@
         "l3Network.createL3Network.ADD IP RANGE": "添加 IP 范围",
         "l3Network.createL3Network.NAME": "名称",
         "l3Network.createL3Network.DESCRIPTION": "描述",
-        "l3Network.createL3Network.METHOD": "法"
-        "l3Network.createL3Network.Choose using CIDR or IP range": "使用 CIDR 或 IP 范围的选择"
+        "l3Network.createL3Network.METHOD": "法",
+        "l3Network.createL3Network.Choose using CIDR or IP range": "使用 CIDR 或 IP 范围的选择",
         "l3Network.createL3Network.START IP": "起始 IP",
         "l3Network.createL3Network.Not a valid IPv4 address": "不有效 IPv4 地址",
         "l3Network.createL3Network.END IP": "结束 IP",
@@ -783,7 +783,7 @@
         "l3Network.createL3Network.HINT8": "你可以现在添加 DNS 或做后创建 l3 网络",
         "l3Network.createL3Network.SELECT NETWORK SERVICE": "选择网络服务",
         "l3Network.createL3Network.PROVIDER": "供应商",
-        "l3Network.createL3Network.HINT9": "(必选) 选择网络服务提供商"
+        "l3Network.createL3Network.HINT9": "(必选) 选择网络服务提供商",
         "l3Network.createL3Network.SERVICE": "服务",
         "l3Network.createL3Network.HINT10": "l3Network 要附加 (必选) 选择网络服务",
         "l3Network.createL3Network.Add": "添加",
@@ -1021,18 +1021,18 @@
         "eip.createEip.hasL3Network () 1": "没有 L3 网络已创建。请转到",
         "eip.createEip.L3 network page": "L3 网络页面",
         "eip.createEip.hasL3Network () 2": "来创建一个新",
-        "eip.createEip.HINT1": "没有贵宾已创建,请更改为创建新的 VIP,以创建一个新的 VIP 方法。
+        "eip.createEip.HINT1": "没有贵宾已创建,请更改为创建新的 VIP,以创建一个新的 VIP 方法",
         "eip.createEip.SELECT VIP": "选择 VIP",
         "eip.createEip.VIP METHOD": "VIP 方法",
         "eip.createEip.HINT2": "选择使用现有的 VIP 或创建一个新",
-        "eip.createEip.VIP": "VIP"
+        "eip.createEip.VIP": "VIP",
         "eip.createEip.HINT3": "(必选) 选择 VIP 创建 EIP",
         "eip.createEip.L3 NETWORK": "L3 网络",
         "eip.createEip.HINT4": "(必需) L3 网络正在从中分配此 VIP",
         "eip.createEip.Creating new VIP": "创建新贵宾",
-        "eip.createEip.VIP": "VIP"
+        "eip.createEip.VIP": "VIP",
         "eip.createEip.Create VIP": "创建 VIP",
-        "eip.createEip.HINT5": "没有 vm 实例有资格附加。请填写 NAME 字段,单击创建按钮,继续
+        "eip.createEip.HINT5": "没有 vm 实例有资格附加。请填写 NAME 字段,单击创建按钮,继续",
         "eip.createEip.EIP INFO": "EIP 信息",
         "eip.createEip.VM INSTANCE": "VM 实例",
         "eip.createEip.HINT6": "(可选) 要将绑定 eip 的选择 vm 实例。如果 vm 都有多个 nic,将作为单独的项目列出的每个 nic。或者您也可以在创建后附加到 vm 的 EIP",
@@ -1116,7 +1116,7 @@
         "portForwarding.createPortForwarding.GUEST START PORT": "客人开始端口",
         "portForwarding.createPortForwarding.ALLOWED CIDR": "允许 CIDR",
         "portForwarding.createPortForwarding.HINT8": "不是有效的 CIDR。有效的端口必须是格式的 ip cidr_length,例如,10.0.0.0 8",
-        "portForwarding.createPortForwarding.HINT9": "没有 vm 网卡有资格附加。请单击创建按钮继续.
+        "portForwarding.createPortForwarding.HINT9": "没有 vm 网卡有资格附加。请单击创建按钮继续.",
         "portForwarding.createPortForwarding.ATTACH VM NIC": "附加 VM 网卡",
         "portForwarding.createPortForwarding.VM INSTANCE": "VM 实例",
         "portForwarding.createPortForwarding.HINT10": "(可选) 要将该端口转发规则附加的选择 vm 实例。如果 vm 都有多个 nic,将作为单独的项目列出的每个 nic。或者你可以将一个端口转发规则创建后附加到虚拟机",
@@ -1149,33 +1149,33 @@
         "portForwarding.details.Detach": "分离",
         "portForwarding.details.Delete": "删除",
         "portForwarding.details.Info": "信息",
-        "portForwarding.details.VIP": "VIP"
+        "portForwarding.details.VIP": "VIP",
         "portForwarding.details.Vm Nic": "Vm 网卡",
         "portForwarding.details.DETAILS": "详细信息",
         "portForwarding.details.DESCRIPTION": "描述",
-        "portForwarding.details.STATE": "国家"
+        "portForwarding.details.STATE": "国家",
         "portForwarding.details.VIP START PORT": "VIP 开始端口",
         "portForwarding.details.VIP END PORT": "VIP 结束端口",
         "portForwarding.details.GUEST START PORT": "客人开始端口",
         "portForwarding.details.GUEST END PORT": "客人结束端口",
         "portForwarding.details.ALLOWED CIDR": "允许 CIDR",
         "portForwarding.details.PROTOCOL": "议定书",
-        "portForwarding.details.UUID": "UUID"
+        "portForwarding.details.UUID": "UUID",
         "portForwarding.details.CREATED DATE": "创建日期",
         "portForwarding.details.LAST UPDATED DATE": "最后更新日期",
         "portForwarding.details.NAME": "名称",
         "portForwarding.details.IP": "IP",
         "portForwarding.details.GATEWAY": "网关",
-        "的 portForwarding.details.NETMASK": "子网掩码"
+        "的 portForwarding.details.NETMASK": "子网掩码",
         "portForwarding.details.USE": "使用",
         "portForwarding.details.SERVICE PROVIDER": "服务商",
         "portForwarding.details.L3 NETWORK UUID": "L3 网络 UUID",
         "portForwarding.details.PEER L3 NETWORK UUID": "同行 L3 网络 UUID",
-        "portForwarding.details.MAC": "MAC"
+        "portForwarding.details.MAC": "MAC",
         "portForwarding.details.DEVICE ID": "设备 ID",
         "portForwarding.details.VM INSTANCE UUID": "VM 实例 UUID",
         "portForwarding.portForwarding.PORT FORWARDING": "端口转发",
-        "portForwarding.portForwarding.New Port Forwarding Rule": "新端口转发规则"
+        "portForwarding.portForwarding.New Port Forwarding Rule": "新端口转发规则",
         "portForwarding.portForwarding.FILTER BY": "筛选依据",
         "portForwarding.portForwarding.VALUE": "价值",
         "portForwarding.portForwarding.Confirm": "确认",
@@ -1201,10 +1201,10 @@
         "virtualRouter.details.Volume": "卷",
         "virtualRouter.details.DETAILS": "详细信息",
         "virtualRouter.details.DESCRIPTION": "描述",
-        "virtualRouter.details.STATE": "国家"
+        "virtualRouter.details.STATE": "国家",
         "virtualRouter.details.STATUS": "地位",
         "virtualRouter.details.HYPERVISOR": "虚拟机监控程序",
-        "virtualRouter.details.UUID": "UUID"
+        "virtualRouter.details.UUID": "UUID",
         "virtualRouter.details.INSTANCE OFFERING UUID": "实例提供 UUID",
         "virtualRouter.details.IMAGE UUID": "图像 UUID",
         "virtualRouter.details.HOST UUID": "主机 UUID",
@@ -1222,7 +1222,7 @@
         "virtualRouter.virtualRouter.Stop": "停止",
         "virtualRouter.virtualRouter.Reboot": "重新启动",
         "virtualRouter.virtualRouter.Migrate": "迁移",
-        "virtualRouter.virtualRouter.Reconnect": "重新连接"
+        "virtualRouter.virtualRouter.Reconnect": "重新连接",
         "virtualRouter.virtualRouter.Console": "控制台",
         "virtualRouter.virtualRouter.Delete": "删除",
         "virtualRouter.virtualRouter.HINT1": "单点击列来显示动作按钮",
@@ -1279,10 +1279,10 @@
         "diskOffering.details.Delete": "删除",
         "diskOffering.details.DETAILS": "详细信息",
         "diskOffering.details.DESCRIPTION": "描述",
-        "diskOffering.details.STATE": "国家"
+        "diskOffering.details.STATE": "国家",
         "diskOffering.details.DISK SIZE": "磁盘大小",
         "diskOffering.details.ALLOCATOR STRATEGY": "分配策略",
-        "diskOffering.details.UUID": "UUID"
+        "diskOffering.details.UUID": "UUID",
         "diskOffering.details.CREATED DATE": "创建日期",
         "diskOffering.details.LAST UPDATED DATE": "最后更新日期",
         "diskOffering.diskOffering.DISK OFFERING": "磁盘提供",
@@ -1339,10 +1339,10 @@
         "virtualRouterOffering.addVirtualRouterOffering.ALERT1.1": "没有开发区已形成。请转到",
         "virtualRouterOffering.addVirtualRouterOffering.ALERT1.2": "区页",
         "virtualRouterOffering.addVirtualRouterOffering.ALERT1.3": "来创建一个新",
-        "virtualRouterOffering.addVirtualRouterOffering.ALERT2": "没有 L3 网络已创建的区",。
+        "virtualRouterOffering.addVirtualRouterOffering.ALERT2": "没有 L3 网络已创建的区",
         "virtualRouterOffering.addVirtualRouterOffering.ALERT3.1": "没有图像已被添加。请转到",
         "virtualRouterOffering.addVirtualRouterOffering.ALERT3.2": "图像页",
-        "virtualRouterOffering.addVirtualRouterOffering.ALERT3.3": "要添加一个新",。
+        "virtualRouterOffering.addVirtualRouterOffering.ALERT3.3": "要添加一个新",
         "virtualRouterOffering.addVirtualRouterOffering.CREATE VIRTUAL ROUTER OFFERING": "创建虚拟路由器提供",
         "virtualRouterOffering.addVirtualRouterOffering.ZONE": "区",
         "virtualRouterOffering.addVirtualRouterOffering.NAME": "名称",
@@ -1359,8 +1359,8 @@
         "virtualRouterOffering.addVirtualRouterOffering.HINT1": "(可选) 主机分配器战略",
         "virtualRouterOffering.addVirtualRouterOffering.DEFAULT OFFERING": "默认提供",
         "virtualRouterOffering.addVirtualRouterOffering.HINT2": "(可选) 如果选中,祭将被设置为默认祭。区域可以只具有一个用来创建虚拟的路由器,当有多个产品现有的默认祭",
-        "virtualRouterOffering.addVirtualRouterOffering.VIRTUAL ROUTER OFFERING INFO": "虚拟路由器提供信息"
-        "globalConfig.details.GLOBAL CONFIGURE": "全局配置"
+        "virtualRouterOffering.addVirtualRouterOffering.VIRTUAL ROUTER OFFERING INFO": "虚拟路由器提供信息",
+        "globalConfig.details.GLOBAL CONFIGURE": "全局配置",
         "globalConfig.details.Action": "行动",
         "globalConfig.details.Edit": "编辑",
         "globalConfig.details.Info": "信息",
