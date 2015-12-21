@@ -3,65 +3,65 @@
         <div class="col-sm-15">
             <div class="tab-content">
                 <div id="createBackupStorageInfo" class="tab-pane active">
-                    <h4 class="z-win-h4">CREATE BACKUP STORAGE</h4>
+                    <h4 class="z-win-h4">{{ "backupStorage.createBackupStorage.CREATE BACKUP STORAGE" | translate }}</h4>
                     <form class="form" id="formCreate">
                         <div class="form-group col-sm-21">
-                            <label for="name">NAME</label>
+                            <label for="name">{{ "backupStorage.createBackupStorage.NAME" | translate }}</label>
                             <input class="form-control" type="text" id="name" placeholder="(Required) max length of 255 characters" ng-model="infoPage.name" required data-message="name is required">
                         </div>
                         <div class="form-group col-sm-21">
-                            <label for="description">DESCRIPTION</label>
+                            <label for="description">{{ "backupStorage.createBackupStorage.DESCRIPTION" | translate }}</label>
                             <textarea  class="form-control" rows="5" id="description" placeholder="(Optional) max length of 2048 characters" ng-model="infoPage.description"></textarea>
                         </div>
                         <div class="form-group col-sm-24">
-                            <label for="type">TYPE</label>
+                            <label for="type">{{ "backupStorage.createBackupStorage.DESCRIPTION" | translate }}</label>
                             <select id="type" kendo-drop-down-list k-options="typeList" class="z-win-dropdown" ng-model="infoPage.type"></select>
-                            <p class="z-hint">(Required) select type of backup storage</p>
+                            <p class="z-hint">{{ "backupStorage.createBackupStorage.HINT1" | translate }}</p>
                         </div>
                         <div class="form-group col-sm-21" ng-show="infoPage.type != 'Ceph'">
-                            <label for="url" class="z-block-label">URL</label>
+                            <label for="url" class="z-block-label">{{ "backupStorage.createBackupStorage.URL" | translate }}</label>
                             <input id="url" type="text" ng-model="infoPage.url" class="form-control" placeholder="(Required) Url of backup storage">
-                            <p class="z-hint">(Required) for sftp backup storage, url is absolute directory path, for example, '/backupStorage'</p>
+                            <p class="z-hint">{{ "backupStorage.createBackupStorage.HINT2" | translate }}</p>
                             <div class="alert alert-danger col-sm-21" ng-show="!infoPage.isUrlValid()">
-                                Not a valid path. Valid path must be an absolute path starting with '/'
+                                {{ "backupStorage.createBackupStorage.ALERT1" | translate }}
                             </div>
                         </div>
                         <div ng-switch="infoPage.type">
                             <div ng-switch-when="SftpBackupStorage">
                                 <div class="form-group col-sm-21">
-                                    <label for="hostname">HOSTNAME</label>
+                                    <label for="hostname">{{ "backupStorage.createBackupStorage.HOSTNAME" | translate }}</label>
                                     <input type="text" class="form-control" id="hostname" placeholder="IP or DNS name of sftp server" ng-model="infoPage.hostname">
                                 </div>
                                 <div class="form-group col-sm-21">
-                                    <label for="username">USER NAME</label>
+                                    <label for="username">{{ "backupStorage.createBackupStorage.USER NAME" | translate }}</label>
                                     <input type="text" class="form-control" id="username" placeholder="ssh user name of sftp server" ng-model="infoPage.username">
-                                    <p class="z-hint">The user must have root privilege on sftp server</p>
+                                    <p class="z-hint">{{ "backupStorage.createBackupStorage.HINT3" | translate }}</p>
                                 </div>
                                 <div class="form-group col-sm-21">
-                                    <label for="password">PASSWORD</label>
+                                    <label for="password">{{ "backupStorage.createBackupStorage.PASSWORD" | translate }}</label>
                                     <input type="password" class="form-control" id="password" placeholder="ssh password of sftp server" ng-model="infoPage.password">
                                 </div>
                             </div>
                             <div ng-switch-when="Ceph">
                               <div class="form-group col-sm-21">
-                                <label for="cephhostname">HOSTNAME</label>
+                                <label for="cephhostname">{{ "backupStorage.createBackupStorage.HOSTNAME" | translate }}</label>
                                 <input type="text" class="form-control" id="cephhostname" placeholder="IP or DNS name of ceph mon server" ng-model="infoPage.hostname">
                               </div>
                               <div class="form-group col-sm-21">
-                                <label for="cephusername">USER NAME</label>
+                                <label for="cephusername">{{ "backupStorage.createBackupStorage.USER NAME" | translate }}</label>
                                 <input type="text" class="form-control" id="cephusername" placeholder="ssh user name of ceph mon server" ng-model="infoPage.username">
-                                <p class="z-hint">The user must have root privilege on the ceph mon server</p>
+                                <p class="z-hint">{{ "backupStorage.createBackupStorage.HINT4" | translate }}</p>
                               </div>
                               <div class="form-group col-sm-21">
-                                <label for="cephpassword">PASSWORD</label>
+                                <label for="cephpassword">{{ "backupStorage.createBackupStorage.PASSWORD" | translate }}</label>
                                 <input type="password" class="form-control" id="cephpassword" placeholder="ssh password of ceph mon server" ng-model="infoPage.password">
                               </div>
                               <div class="form-group col-sm-24">
                                 <button type="button" class="btn btn-default" ng-click="infoPage.addCephMon()" ng-disabled="!infoPage.canAddMon()">
                                   <i class="fa fa-plus" style="font-size: 1.2em"></i>
-                                  <span>Add</span>
+                                  <span>{{ "backupStorage.createBackupStorage.Add" | translate }}</span>
                                 </button>
-                                <span class="z-hint">Please add at least one ceph mon server</span>
+                                <span class="z-hint">{{ "backupStorage.createBackupStorage.HINT5" | translate }}</span>
                               </div>
                               <div class="form-group col-sm-24">
                                 <div kendo-grid k-options="cephMonGrid__"></div>
@@ -73,21 +73,21 @@
 
                 <div id="createBackupStorageZone" class="tab-pane">
                     <div class="alert alert-warning col-sm-21" ng-show="!zonePage.hasZone()">
-                        No zone is eligible to attach. Please click 'Add' button to proceed.
+                        {{ "backupStorage.createBackupStorage.ALERT2" | translate }}
                     </div>
 
-                    <h4 class="z-win-h4">ATTACH ZONE</h4>
+                    <h4 class="z-win-h4">{{ "backupStorage.createBackupStorage.ATTACH ZONE" | translate }}</h4>
                     <form class="form">
                         <div class="form-group col-sm-18">
-                            <label for="ps">ZONE</label>
+                            <label for="ps">{{ "backupStorage.createBackupStorage.ZONE" | translate }}</label>
                             <select id="ps" kendo-multi-select="zoneList__" k-options="zoneListOptions__" class="z-win-dropdown"></select>
-                            <p class="z-hint">(Optional) select one or more zone to attach. Or do it later after adding backup storage</p>
+                            <p class="z-hint">{{ "backupStorage.createBackupStorage.HINT6" | translate }}</p>
                         </div>
                     </form>
                 </div>
 
                 <div class="form-group col-sm-21">
-                    <button type="button" class="btn btn-default" ng-click="button.previousClick()" ng-disabled="!button.canPreviousProceed()">Previous</button>
+                    <button type="button" class="btn btn-default" ng-click="button.previousClick()" ng-disabled="!button.canPreviousProceed()">{{ "backupStorage.createBackupStorage.Previous" | translate }}</button>
                     <button type="button" class="btn btn-primary" ng-disabled="!button.canNextProceed()" ng-click="button.nextClick()">{{button.nextButtonName()}}</button>
                 </div>
             </div>
@@ -96,8 +96,8 @@
         <div class="col-sm-7">
             <div class="z-wizard-bar">
                 <ul class="nav">
-                    <li class="active"><a data-target="#createBackupStorageInfo" ng-click="button.pageClick('createBackupStorageInfo')">BACKUP STORAGE INFO</a></li>
-                    <li ng-class="{disabled: !psPage.isActive()}"><a data-target="#createBackupStorageZone" ng-click="button.pageClick('createBackupStorageZone')">ATTACH ZONE</a></li>
+                    <li class="active"><a data-target="#createBackupStorageInfo" ng-click="button.pageClick('createBackupStorageInfo')">{{ "backupStorage.createBackupStorage.BACKUP STORAGE INFO" | translate }}</a></li>
+                    <li ng-class="{disabled: !psPage.isActive()}"><a data-target="#createBackupStorageZone" ng-click="button.pageClick('createBackupStorageZone')">{{ "backupStorage.createBackupStorage.ATTACH ZONE" | translate }}</a></li>
                 </ul>
             </div>
         </div>
