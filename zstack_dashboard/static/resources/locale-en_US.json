@@ -459,6 +459,7 @@
         "primaryStorage.details.CREATED DATE": "CREATED DATE:",
         "primaryStorage.details.HINT": "Total/Available capacity will show up after primary storage attaches to clusters which contain one or more hosts",
         "primaryStorage.details.HINT1": "Clusters listing here have attached to this primary storage",
+        "primaryStorage.details.LAST UPDATED DATE": "LAST UPDATED DATE",
         "primaryStorage.detachCluster.ALERT1": "No cluster has been attached to this cluster.",
         "primaryStorage.detachCluster.DETACH CLUSTER": "DETACH CLUSTER",
         "primaryStorage.detachCluster.CLUSTER": "CLUSTER",
