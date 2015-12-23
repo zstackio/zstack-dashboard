@@ -137,7 +137,7 @@
         "vm.createVm.ZONE": "区域",
         "vm.createVm.CLUSTER": "集群",
         "vm.createVm.HOST": "物理机",
-        "vm.createVm.HINT6": "(选填) Specify location to create the vm. The precedence is host over cluster over zone. If no location is specified, a target host is automatically chosen by using allocator strategy defined in instance offering",
+        "vm.createVm.HINT6": "(选填)指定位置创建虚拟机. 该优先级高为物理机于集群和区域.如果没有指定位置, 通过使用已定义的云主机规格的分配策略,将自动选择目标物理机",
         "vm.createVm.Previous": "上一页",
         "vm.createVm.VM INSTANCE INFO": "云盘信息",
         "vm.createVm.LOCATION": "位置",
