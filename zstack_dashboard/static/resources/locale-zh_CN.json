@@ -459,6 +459,7 @@
         "primaryStorage.details.CREATED DATE": "添加日期:",
         "primaryStorage.details.HINT": "主存储挂载到包含一个或多个物理机的集群之后将显示总/可用容量",
         "primaryStorage.details.HINT1": "这里列出的集群已挂载到此主存储",
+        "primaryStorage.details.LAST UPDATED DATE": "最近更新时间",
         "primaryStorage.detachCluster.ALERT1": "无群集已挂载到此群集,",
         "primaryStorage.detachCluster.DETACH CLUSTER": "卸载群集",
         "primaryStorage.detachCluster.CLUSTER": "集群",
