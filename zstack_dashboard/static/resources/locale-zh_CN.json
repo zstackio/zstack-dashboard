@@ -72,6 +72,8 @@
         "vm.migrateVm.HINT": "(必选) 选择虚拟机应该迁移到哪个目标物理机",
         "vm.migrateVm.Cancel": "取消",
         "vm.migrateVm.Migrate": "迁移",
+        "vm.details.HOST UUID":"物理机UUID",
+        "vm.details.LAST HOST UUID":"最新物理机UUID",
         "vm.details.VM INSTANCE": "云主机",
         "vm.details.Action": "操作",
         "vm.details.Start": "启动",
