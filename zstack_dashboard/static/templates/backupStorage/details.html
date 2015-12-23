@@ -58,23 +58,23 @@
                     <div class="panel-body">
                         <table class="table z-table-borderless">
                             <tr>
-                                <td><span class="z-label">{{ "backupStorage.details.DESCRIPTION:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "backupStorage.details.DESCRIPTION" | translate }}</span></td>
                                 <td><span class="z-description">{{model.current.description}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "backupStorage.details.STATE:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "backupStorage.details.STATE" | translate }}</span></td>
                                 <td><span class="{{model.current.stateLabel()}}">{{model.current.state}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "backupStorage.details.STATUS:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "backupStorage.details.STATUS" | translate }}</span></td>
                                 <td><span class="{{model.current.statusLabel()}}">{{model.current.status}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "backupStorage.details.TYPE:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "backupStorage.details.TYPE" | translate }}</span></td>
                                 <td><span>{{model.current.type}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "backupStorage.details.URL:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "backupStorage.details.URL" | translate }}</span></td>
                                 <td><span>{{model.current.url}}</span></td>
                             </tr>
                             <tr ng-switch="model.current.type">
@@ -86,23 +86,23 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "backupStorage.details.TOTAL CAPACITY:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "backupStorage.details.TOTAL CAPACITY" | translate }}</span></td>
                                 <td><span>{{model.current.totalCapacity | size}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "backupStorage.details.AVAILABLE CAPACITY:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "backupStorage.details.AVAILABLE CAPACITY" | translate }}</span></td>
                                 <td><span>{{model.current.availableCapacity | size}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "backupStorage.details.UUID:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "backupStorage.details.UUID" | translate }}</span></td>
                                 <td><span>{{model.current.uuid}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "backupStorage.details.CREATED DATE:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "backupStorage.details.CREATED DATE" | translate }}</span></td>
                                 <td><span>{{model.current.createDate}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "backupStorage.details.LAST UPDATED DATE:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "backupStorage.details.LAST UPDATED DATE" | translate }}</span></td>
                                 <td><span>{{model.current.lastOpDate}}</span></td>
                             </tr>
                         </table>
