@@ -72,6 +72,8 @@
         "vm.migrateVm.HINT": "(Required) select target host to which vm should migrate",
         "vm.migrateVm.Cancel": "Cancel",
         "vm.migrateVm.Migrate": "Migrate",
+        "vm.details.HOST UUID": "HOST UUID",
+        "vm.details.LAST HOST UUID": "LAST HOST UUID",
         "vm.details.VM INSTANCE": "VM INSTANCE",
         "vm.details.Action": "Action",
         "vm.details.Start": "Start",
