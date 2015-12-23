@@ -54,47 +54,47 @@
                     <div class="panel-body">
                         <table class="table z-table-borderless">
                             <tr>
-                                <td><span class="z-label">{{ "virtualRouterOffering.details.DESCRIPTION:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "virtualRouterOffering.details.DESCRIPTION" | translate }}</span></td>
                                 <td><span class="z-description">{{model.current.description}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "virtualRouterOffering.details.STATE:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "virtualRouterOffering.details.STATE" | translate }}</span></td>
                                 <td><span class="{{model.current.stateLabel()}}">{{model.current.state}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "virtualRouterOffering.details.CPU NUMBER:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "virtualRouterOffering.details.CPU NUMBER" | translate }}</span></td>
                                 <td><span>{{model.current.cpuNum}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "virtualRouterOffering.details.CPU SPEED:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "virtualRouterOffering.details.CPU SPEED" | translate }}</span></td>
                                 <td><span>{{model.current.cpuSpeed}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "virtualRouterOffering.details.MEMORY:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "virtualRouterOffering.details.MEMORY" | translate }}</span></td>
                                 <td><span>{{model.current.memorySize | size}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "virtualRouterOffering.details.IMAGE:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "virtualRouterOffering.details.IMAGE" | translate }}</span></td>
                                 <td><a href="/#/image/{{model.current.imageUuid}}">{{model.current.imageUuid}}</a></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "virtualRouterOffering.details.DEFAULT OFFERING:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "virtualRouterOffering.details.DEFAULT OFFERING" | translate }}</span></td>
                                 <td><span class="{{model.current.isDefaultLabel()}}">{{model.current.isDefault ? "TRUE":""}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "virtualRouterOffering.details.ALLOCATOR STRATEGY:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "virtualRouterOffering.details.ALLOCATOR STRATEGY" | translate }}</span></td>
                                 <td><span>{{model.current.allocatorStrategy}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "virtualRouterOffering.details.UUID:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "virtualRouterOffering.details.UUID" | translate }}</span></td>
                                 <td><span>{{model.current.uuid}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "virtualRouterOffering.details.CREATED DATE:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "virtualRouterOffering.details.CREATED DATE" | translate }}</span></td>
                                 <td><span>{{model.current.createDate}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "virtualRouterOffering.details.LAST UPDATED DATE:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "virtualRouterOffering.details.LAST UPDATED DATE" | translate }}</span></td>
                                 <td><span>{{model.current.lastOpDate}}</span></td>
                             </tr>
                         </table>
@@ -107,43 +107,43 @@
         <div class="tab-pane" id="mgmtL3">
             <table class="table z-table-borderless">
                 <tr>
-                    <td><span class="z-label">{{ "virtualRouterOffering.details.NAME:" | translate }}</span></td>
+                    <td><span class="z-label">{{ "virtualRouterOffering.details.NAME" | translate }}</span></td>
                     <td><span class="z-description">{{mgmtL3.name}}</span></td>
                 </tr>
                 <tr>
-                    <td><span class="z-label">{{ "virtualRouterOffering.details.DESCRIPTION:" | translate }}</span></td>
+                    <td><span class="z-label">{{ "virtualRouterOffering.details.DESCRIPTION" | translate }}</span></td>
                     <td><span class="z-description">{{mgmtL3.description}}</span></td>
                 </tr>
                 <tr>
-                    <td><span class="z-label">{{ "virtualRouterOffering.details.TYPE:" | translate }}</span></td>
+                    <td><span class="z-label">{{ "virtualRouterOffering.details.TYPE" | translate }}</span></td>
                     <td><span>{{mgmtL3.type}}</span></td>
                 </tr>
                 <tr>
-                    <td><span class="z-label">{{ "virtualRouterOffering.details.SYSTEM NETWORK:" | translate }}</span></td>
+                    <td><span class="z-label">{{ "virtualRouterOffering.details.SYSTEM NETWORK" | translate }}</span></td>
                     <td><span>{{mgmtL3.system ? "TRUE":""}}</span></td>
                 </tr>
                 <tr>
-                    <td><span class="z-label">{{ "virtualRouterOffering.details.STATE:" | translate }}</span></td>
+                    <td><span class="z-label">{{ "virtualRouterOffering.details.STATE" | translate }}</span></td>
                     <td><span>{{mgmtL3.state}}</span></td>
                 </tr>
                 <tr>
-                    <td><span class="z-label">{{ "virtualRouterOffering.details.UUID:" | translate }}</span></td>
+                    <td><span class="z-label">{{ "virtualRouterOffering.details.UUID" | translate }}</span></td>
                     <td><span>{{mgmtL3.uuid}}</span></td>
                 </tr>
                 <tr>
-                    <td><span class="z-label">{{ "virtualRouterOffering.details.L2 NETWORK UUID:" | translate }}</span></td>
+                    <td><span class="z-label">{{ "virtualRouterOffering.details.L2 NETWORK UUID" | translate }}</span></td>
                     <td><a href="/#/l2Network/{{mgmtL3.l2NetworkUuid}}">{{mgmtL3.l2NetworkUuid}}</a></td>
                 </tr>
                 <tr>
-                    <td><span class="z-label">{{ "virtualRouterOffering.details.ZONE UUID:" | translate }}</span></td>
+                    <td><span class="z-label">{{ "virtualRouterOffering.details.ZONE UUID" | translate }}</span></td>
                     <td><a href="/#/zone/{{mgmtL3.zoneUuid}}">{{mgmtL3.zoneUuid}}</a></td>
                 </tr>
                 <tr>
-                    <td><span class="z-label">{{ "virtualRouterOffering.details.CREATED DATE:" | translate }}</span></td>
+                    <td><span class="z-label">{{ "virtualRouterOffering.details.CREATED DATE" | translate }}</span></td>
                     <td><span>{{mgmtL3.createDate}}</span></td>
                 </tr>
                 <tr>
-                    <td><span class="z-label">{{ "virtualRouterOffering.details.LAST UPDATED DATE:" | translate }}</span></td>
+                    <td><span class="z-label">{{ "virtualRouterOffering.details.LAST UPDATED DATE" | translate }}</span></td>
                     <td><span>{{mgmtL3.lastOpDate}}</span></td>
                 </tr>
             </table>
@@ -152,43 +152,43 @@
         <div class="tab-pane" id="pubL3">
             <table class="table z-table-borderless">
                 <tr>
-                    <td><span class="z-label">{{ "virtualRouterOffering.details.NAME:" | translate }}</span></td>
+                    <td><span class="z-label">{{ "virtualRouterOffering.details.NAME" | translate }}</span></td>
                     <td><span class="z-description">{{pubL3.name}}</span></td>
                 </tr>
                 <tr>
-                    <td><span class="z-label">{{ "virtualRouterOffering.details.DESCRIPTION:" | translate }}</span></td>
+                    <td><span class="z-label">{{ "virtualRouterOffering.details.DESCRIPTION" | translate }}</span></td>
                     <td><span class="z-description">{{pubL3.description}}</span></td>
                 </tr>
                 <tr>
-                    <td><span class="z-label">{{ "virtualRouterOffering.details.TYPE:" | translate }}</span></td>
+                    <td><span class="z-label">{{ "virtualRouterOffering.details.TYPE" | translate }}</span></td>
                     <td><span>{{pubL3.type}}</span></td>
                 </tr>
                 <tr>
-                    <td><span class="z-label">{{ "virtualRouterOffering.details.SYSTEM NETWORK:" | translate }}</span></td>
+                    <td><span class="z-label">{{ "virtualRouterOffering.details.SYSTEM NETWORK" | translate }}</span></td>
                     <td><span>{{pubL3.system ? "TRUE":""}}</span></td>
                 </tr>
                 <tr>
-                    <td><span class="z-label">{{ "virtualRouterOffering.details.STATE:" | translate }}</span></td>
+                    <td><span class="z-label">{{ "virtualRouterOffering.details.STATE" | translate }}</span></td>
                     <td><span>{{pubL3.state}}</span></td>
                 </tr>
                 <tr>
-                    <td><span class="z-label">{{ "virtualRouterOffering.details.UUID:" | translate }}</span></td>
+                    <td><span class="z-label">{{ "virtualRouterOffering.details.UUID" | translate }}</span></td>
                     <td><span>{{pubL3.uuid}}</span></td>
                 </tr>
                 <tr>
-                    <td><span class="z-label">{{ "virtualRouterOffering.details.L2 NETWORK UUID:" | translate }}</span></td>
+                    <td><span class="z-label">{{ "virtualRouterOffering.details.L2 NETWORK UUID" | translate }}</span></td>
                     <td><a href="/#/l2Network/{{pubL3.l2NetworkUuid}}">{{pubL3.l2NetworkUuid}}</a></td>
                 </tr>
                 <tr>
-                    <td><span class="z-label">{{ "virtualRouterOffering.details.ZONE UUID:" | translate }}</span></td>
+                    <td><span class="z-label">{{ "virtualRouterOffering.details.ZONE UUID" | translate }}</span></td>
                     <td><a href="/#/zone/{{pubL3.zoneUuid}}">{{pubL3.zoneUuid}}</a></td>
                 </tr>
                 <tr>
-                    <td><span class="z-label">{{ "virtualRouterOffering.details.CREATED DATE:" | translate }}</span></td>
+                    <td><span class="z-label">{{ "virtualRouterOffering.details.CREATED DATE" | translate }}</span></td>
                     <td><span>{{pubL3.createDate}}</span></td>
                 </tr>
                 <tr>
-                    <td><span class="z-label">{{ "virtualRouterOffering.details.LAST UPDATED DATE:" | translate }}</span></td>
+                    <td><span class="z-label">{{ "virtualRouterOffering.details.LAST UPDATED DATE" | translate }}</span></td>
                     <td><span>{{pubL3.lastOpDate}}</span></td>
                 </tr>
             </table>
