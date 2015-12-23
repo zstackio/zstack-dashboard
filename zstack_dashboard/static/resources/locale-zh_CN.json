@@ -310,7 +310,7 @@
         "zone.details.Info": "信息",
         "zone.details.Cluster": "集群",
         "zone.details.Primary Storage": "主存储",
-        "zone.details.L2 NETWORK": "L2 网络",
+        "zone.details.L2 Network": "L2 网络",
         "zone.details.Backup Storage": "备份存储",
         "zone.details.DETAILS": "详细信息",
         "zone.details.DESCRIPTION": "描述: ",
