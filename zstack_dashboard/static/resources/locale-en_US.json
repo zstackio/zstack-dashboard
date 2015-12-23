@@ -32,7 +32,7 @@
         "index.Storage": "Storage",
         "index.Primary Storage": "Primary Storage",
         "index.Backup Storage": "Backup Storage",
-        "index.Volume": "Backup StorageVolume",
+        "index.Volume": "Volume",
         "index.Network": "Network",
         "index.L2 Network": "L2 Network",
         "index.L3 Network": "L3 Network",
