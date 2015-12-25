@@ -371,12 +371,6 @@ module MVmInstance {
       super();
       this.current = new VmInstance();
     }
-
-    isInstanceSelected(uuid) {
-      if (!this.multiSelection || !Utils.notNullnotUndefined(this.current))
-        return false;
-      return !!this.current.filter(m => m.uuid === uuid).length;
-    }
   }
 
   class OVmInstanceGrid extends Utils.OGrid {
@@ -386,37 +380,36 @@ module MVmInstance {
       this.options.columns = [
         {
           field: 'name',
-          title: 'NAME',
+          title: '{{"vm.ts.NAME" | translate}}',
           width: '20%',
-          template: '<li ng-if="model.isInstanceSelected(dataItem.uuid)" class="fa fa-check"></li>' +
-                    '<a href="/\\#/vmInstance/{{dataItem.uuid}}">{{dataItem.name}}</a>'
+          template: '<a href="/\\#/vmInstance/{{dataItem.uuid}}">{{dataItem.name}}</a>'
         },
         {
           field: 'description',
-          title: 'DESCRIPTION',
+          title: '{{"vm.ts.DESCRIPTION" | translate}}',
           width: '20%'
         },
         {
           field: 'defaultIp',
-          title: 'DEFAULT IP',
+          title: '{{"vm.ts.DEFAULT IP" | translate}}',
           width: '20%',
           template: '{{dataItem.defaultIp}}'
         },
         {
           field: 'hostIp',
-          title: 'HOST IP',
+          title: '{{"vm.ts.HOST IP" | translate}}',
           width: '20%',
           template: '<a href="/\\#/host/{{dataItem.hostUuid}}">{{dataItem.managementIp}}</a>'
         },
         {
           field: 'state',
-          title: 'STATE',
+          title: '{{"vm.ts.STATE" | translate}}',
           width: '20%',
           template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
         },
         {
           field: 'uuid',
-          title: 'UUID',
+          title: '{{"vm.ts.UUID" | translate}}',
           width: '20%'
         }
       ];
@@ -513,10 +506,6 @@ module MVmInstance {
         return false;
       }
 
-      if (this.$scope.model.multiSelection) {
-        return false;
-      }
-
       if (action == 'start') {
         return this.$scope.model.current.state == 'Stopped';
       } else if (action == 'stop') {
@@ -563,15 +552,15 @@ module MVmInstance {
         dataSource: new kendo.data.DataSource({
           data: [
             {
-              name: 'None',
+              name: '{{"vm.ts.None" | translate}}',
               value: FilterBy.NONE
             },
             {
-              name: 'State',
+              name: '{{"vm.ts.State" | translate}}',
               value: FilterBy.STATE
             },
             {
-              name: 'HypervisorType',
+              name: '{{"vm.ts.HypervisorType" | translate}}',
               value: FilterBy.TYPE
             }
           ]
@@ -772,39 +761,39 @@ module MVmInstance {
         columns: [
           {
             field: 'deviceId',
-            title: 'DEVICE ID',
+            title: '{{"vm.ts.DEVICE ID" | translate}}',
             width: '4%'
           },
           {
             field: 'l3NetworkUuid',
-            title: 'L3 Network',
+            title: '{{"vm.ts.L3 Network" | translate}}',
             width: '20%',
             template: '<a href="/\\#/l3Network/{{dataItem.l3NetworkUuid}}">{{dataItem.l3NetworkUuid}}</a>'
           },
           {
             field: 'ip',
-            title: 'IP',
+            title: '{{"vm.ts.IP" | translate}}',
             width: '14%'
           },
           {
             field: 'netmask',
-            title: 'NETMASK',
+            title: '{{"vm.ts.NETMASK" | translate}}',
             width: '14%'
           },
           {
             field: 'gateway',
-            title: 'GATEWAY',
+            title: '{{"vm.ts.GATEWAY" | translate}}',
             width: '14%'
           },
           {
             field: 'mac',
-            title: 'MAC',
+            title: '{{"vm.ts.MAC" | translate}}',
             width: '14%'
 
           },
           {
             field: 'uuid',
-            title: 'UUID',
+            title: '{{"vm.ts.UUID" | translate}}',
             width: '20%'
           }
         ],
@@ -829,34 +818,34 @@ module MVmInstance {
         columns: [
           {
             field: 'deviceId',
-            title: 'DEVICE ID',
+            title: '{{"vm.ts.DEVICE ID" | translate}}',
             width: '10%',
             template: '<a href="/\\#/volume/{{dataItem.uuid}}">{{dataItem.deviceId}}</a>'
           },
           {
             field: 'name',
-            title: 'NAME',
+            title: '{{"vm.ts.NAME" | translate}}',
             width: '18%'
 
           },
           {
             field: 'type',
-            title: 'TYPE',
+            title: '{{"vm.ts.TYPE" | translate}}',
             width: '18%'
           },
           {
             field: 'state',
-            title: 'STATE',
+            title: '{{"vm.ts.STATE" | translate}}',
             width: '18%'
           },
           {
             field: 'status',
-            title: 'STATUS',
+            title: '{{"vm.ts.STATUS" | translate}}',
             width: '18%'
           },
           {
             field: 'uuid',
-            title: 'UUID',
+            title: '{{"vm.ts.UUID" | translate}}',
             width: '18%'
           }
         ],
@@ -876,37 +865,37 @@ module MVmInstance {
   }
 
   export class Controller {
-    static $inject = ['$scope', 'VmInstanceManager', 'HostManager', 'hypervisorTypes', '$location', '$rootScope', '$window'];
+    static $inject = ['$scope', 'VmInstanceManager', 'HostManager', 'hypervisorTypes', '$location', '$rootScope', '$window','Translator','$translate'];
 
     constructor(private $scope : any, private vmMgr : VmInstanceManager, private hostMgr : MHost.HostManager, private hypervisorTypes: string[],
-                private $location : ng.ILocationService, private $rootScope : any, private $window) {
+                private $location : ng.ILocationService, private $rootScope : any, private $window, private Translator: Utils.Translator, private $translate: any) {
       $scope.model = new VmInstanceModel();
       $scope.oVmInstanceGrid = new OVmInstanceGrid($scope, vmMgr, hostMgr);
       $scope.action = new Action($scope, vmMgr);
       $scope.optionsSortBy = {
         fields: [
           {
-            name: 'Name',
+            name: '{{"vm.ts.Name" | translate}}',
             value: 'name'
           },
           {
-            name: 'Description',
+            name: '{{"vm.ts.Description" | translate}}',
             value: 'Description'
           },
           {
-            name: 'State',
+            name: '{{"vm.ts.State" | translate}}',
             value: 'state'
           },
           {
-            name: 'Hypervisor',
+            name: '{{"vm.ts.Hypervisor" | translate}}',
             value: 'hypervisorType'
           },
           {
-            name: 'Created Date',
+            name: '{{"vm.ts.Created Date" | translate}}',
             value: 'createDate'
           },
           {
-            name: 'Last Updated Date',
+            name: '{{"vm.ts.Last Updated Date" | translate}}',
             value: 'lastOpDate'
           }
         ],
@@ -947,7 +936,7 @@ module MVmInstance {
       };
 
       $scope.funcGridDoubleClick = (e) => {
-        if (Utils.notNullnotUndefined($scope.model.current) && !$scope.model.multiSelection) {
+        if (Utils.notNullnotUndefined($scope.model.current)) {
           var url = Utils.sprintf('/vmInstance/{0}', $scope.model.current.uuid);
           $location.path(url);
           e.preventDefault();
@@ -958,11 +947,6 @@ module MVmInstance {
 
       $scope.funcSearch = (win : any) => {
         win.open();
-      };
-
-      $scope.funcToggleMultiSelection = function() {
-        $scope.model.multiSelection = !$scope.model.multiSelection;
-        $scope.model.resetCurrent();
       };
 
       $scope.funcCreateVmInstance = (win : any) => {
@@ -979,26 +963,13 @@ module MVmInstance {
         width: '350px',
 
         description: ()=> {
-          if ($scope.model.multiSelection)
-            return $scope.model.current.map(m => m.name).join(', ');
           return $scope.model.current.name;
         },
 
         confirm: ()=> {
-          if ($scope.model.multiSelection) {
-            var count = $scope.model.current.length;
-            var done = function() {
-              if (!--count)
-                $scope.oVmInstanceGrid.deleteCurrent();
-            };
-            $scope.model.current.forEach(m => {
-                vmMgr.delete(m, done);
-            });
-          } else {
-            vmMgr.delete($scope.model.current, (ret: any) => {
-              $scope.oVmInstanceGrid.deleteCurrent();
-            });
-          }
+          vmMgr.delete($scope.model.current, (ret : any)=> {
+            $scope.oVmInstanceGrid.deleteCurrent();
+          });
         }
       };
 
@@ -1011,35 +982,20 @@ module MVmInstance {
       };
 
       $scope.funcIsActionDisabled = ()=> {
-        if (!Utils.notNullnotUndefined($scope.model.current))
-          return false;
-        if ($scope.model.multiSelection) {
-          for (var i = 0; i < $scope.model.current.length; ++i) {
-            if ($scope.model.current[i].isInProgress())
-              return true;
-          }
-        } else {
-          return $scope.model.current.isInProgress();
-        }
+        return Utils.notNullnotUndefined($scope.model.current) && $scope.model.current.isInProgress();
       };
 
       $scope.optionsCreateVmInstance = {
-        batchMode: $scope.model.multiSelection,
         done: (info: any) => {
-          var name = info.name;
-          for (var i = 0; i < info.vmCount; ++i) {
-            var vm = new VmInstance();
-            info.uuid = info.resourceUuid = Utils.uuid();
-            info.state = 'Starting';
-            if (info.vmCount > 1)
-              info.name = name + "_" + (i + 1);
-            angular.extend(vm, info);
-            vm = vmMgr.wrap(vm);
-            $scope.oVmInstanceGrid.add(vm);
-            vmMgr.create(info, (ret: VmInstance) => {
-              $scope.oVmInstanceGrid.refresh();
-            });
-          }
+          var vm = new VmInstance();
+          info.uuid = info.resourceUuid = Utils.uuid();
+          info.state = 'Starting';
+          angular.extend(vm, info);
+          vm = vmMgr.wrap(vm);
+          $scope.oVmInstanceGrid.add(vm);
+          vmMgr.create(info, (ret: VmInstance)=>{
+            $scope.oVmInstanceGrid.refresh();
+          });
         }
       };
 
@@ -1077,7 +1033,7 @@ module MVmInstance {
       $scope.$watch(()=>{
         return $scope.model.current;
       },()=>{
-        if (Utils.notNullnotUndefined($scope.model.current) && !$scope.model.multiSelection) {
+        if (Utils.notNullnotUndefined($scope.model.current)) {
           $scope.optionsMigrateVm.vm = $scope.model.current;
           $scope.optionsChangeInstanceOffering.vm = $scope.model.current;
           $scope.optionsAttachVolume.vm = $scope.model.current;
@@ -1085,12 +1041,6 @@ module MVmInstance {
           $scope.optionsAttachL3Network.vm = $scope.model.current;
           $scope.optionsDetachL3Network.vm = $scope.model.current;
         }
-      });
-
-      $scope.$watch(()=>{
-        return $scope.model.multiSelection;
-      },()=>{
-        $scope.optionsCreateVmInstance.batchMode = $scope.model.multiSelection;
       });
     }
   }
@@ -1150,11 +1100,11 @@ module MVmInstance {
           dataSource: new kendo.data.DataSource({data: []}),
           dataTextField: "name",
           dataValueField: "uuid",
-          template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-          '<div style="color: black"><span class="z-label">CPU Num:</span><span>#: cpuNum #</span></div>' +
-          '<div style="color: black"><span class="z-label">CPU Speed:</span><span>#: cpuSpeed #</span></div>' +
-          '<div style="color: black"><span class="z-label">Memory:</span><span>#: memorySize #</span></div>' +
-          '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+          template: '<div style="color: black"><span class="z-label">{{"vm.ts.Name" | translate}}</span><span>#: name #</span></div>' +
+          '<div style="color: black"><span class="z-label">{{"vm.ts.CPU Number" | translate}}</span><span>#: cpuNum #</span></div>' +
+          '<div style="color: black"><span class="z-label">{{"vm.ts.CPU Speed" | translate}}</span><span>#: cpuSpeed #</span></div>' +
+          '<div style="color: black"><span class="z-label">{{"vm.ts.Memory" | translate}}</span><span>#: memorySize #</span></div>' +
+          '<div style="color: black"><span class="z-label">{{"vm.ts.UUID" | translate}}</span><span>#: uuid #</span></div>'
         };
 
         $scope.canProceed = ()=> {
@@ -1230,9 +1180,9 @@ module MVmInstance {
           dataSource: new kendo.data.DataSource({data: []}),
           dataTextField: "name",
           dataValueField: "uuid",
-          template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-          '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>' +
-          '<div style="color: black"><span class="z-label">Cluster UUID:</span><span>#: clusterUuid #</span></div>'
+          template: '<div style="color: black"><span class="z-label">{{"vm.ts.Name" | translate}}</span><span>#: name #</span></div>' +
+          '<div style="color: black"><span class="z-label">{{"vm.ts.UUID" | translate}}</span><span>#: uuid #</span></div>' +
+          '<div style="color: black"><span class="z-label">{{"vm.ts.Cluster UUID" | translate}}</span><span>#: clusterUuid #</span></div>'
         };
 
         $scope.canProceed = ()=> {
@@ -1260,12 +1210,7 @@ module MVmInstance {
   }
 
   export class CreateVmInstanceOptions {
-    batchMode: boolean;
     done : (info:any)=>void;
-
-    constructor() {
-      this.batchMode = false;
-    }
   }
 
 
@@ -1294,7 +1239,6 @@ module MVmInstance {
       this.$scope.diskOfferingOptions__.dataSource.data([]);
       this.$scope.diskOfferingList__.value([]);
       this.$scope.button.reset();
-
       chain.then(()=> {
         var qobj = new ApiHeader.QueryObject();
         qobj.conditions = [
@@ -1407,13 +1351,12 @@ module MVmInstance {
             return parentScope[optionName];
           }, ()=> {
             this.options = parentScope[optionName];
-          }, true);
+          });
         }
 
         var infoPage: Utils.WizardPage = $scope.infoPage  = {
           activeState: true,
 
-          vmCount: 1,
           name: null,
           description: null,
           instanceOfferingUuid: null,
@@ -1544,7 +1487,6 @@ module MVmInstance {
           },
 
           reset() : void {
-            this.vmCount = $scope.isBatchMode() ? 2 : 1;
             this.name = Utils.shortHashName('vm');
             this.description = null;
             this.imageUuid = null;
@@ -1573,12 +1515,12 @@ module MVmInstance {
                 },
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"vm.ts.NAME" | translate}}',
                     width: '44%'
                 },
                 {
                     field: 'staticIp',
-                    title: 'STATIC IP',
+                    title: '{{"vm.ts.STATIC IP" | translate}}',
                     width: '44%'
                 }
             ],
@@ -1641,11 +1583,11 @@ module MVmInstance {
             $scope.mediator.currentPage = page;
           },
 
-          finishButtonName: (): string => {
+          finishButtonName: (): string =>{
             return "Create";
           },
 
-          finish: () => {
+          finish: ()=> {
             $scope.infoPage.hostUuid = $scope.locationPage.hostUuid;
             $scope.infoPage.clusterUuid = $scope.locationPage.clusterUuid;
             $scope.infoPage.zoneUuid = $scope.locationPage.zoneUuid;
@@ -1658,10 +1600,6 @@ module MVmInstance {
         $scope.button = new Utils.WizardButton([
           infoPage, locationPage
         ], mediator);
-
-        $scope.isBatchMode = () => {
-          return this.options.batchMode;
-        };
 
         $scope.$watch(()=>{
           return $scope.locationPage.zoneUuid;
@@ -1718,7 +1656,7 @@ module MVmInstance {
           dataSource: new kendo.data.DataSource({data: []}),
           dataTextField: "name",
           dataValueField: "uuid",
-          template: "<div style='color: black'><span class='z-label'>Name</span>: #: name #</div><div style='color: black'><span class='z-label'>State:</span>#: state #</div><div style='color: black'><span class='z-label'>UUID:</span> #: uuid #</div>",
+          template: '<div style="color: black"><span class="z-label">{{"vm.ts.Name" | translate}}</span>: #: name #</div>'+'<div style="color: black"><span class="z-label">{{"vm.ts.State" | translate}}</span>#: state #</div>'+'<div style="color: black"><span class="z-label">{{"vm.ts.UUID" | translate}}</span> #: uuid #</div>',
           optionLabel: ""
         };
 
@@ -1736,9 +1674,9 @@ module MVmInstance {
           optionLabel: "",
           dataTextField: "name",
           dataValueField: "uuid",
-          template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-          '<div style="color: black"><span class="z-label">HYPERVISOR:</span><span>#: hypervisorType #</span></div>' +
-          '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+          template: '<div style="color: black"><span class="z-label">{{"vm.ts.NAME" | translate}}</span><span>#: name #</span></div>' +
+          '<div style="color: black"><span class="z-label">{{"vm.ts.HYPERVISOR" | translate}}</span><span>#: hypervisorType #</span></div>' +
+          '<div style="color: black"><span class="z-label">{{"vm.ts.UUID" | translate}}</span><span>#: uuid #</span></div>'
         };
 
         $scope.hostOptions__ = {
@@ -1746,30 +1684,30 @@ module MVmInstance {
           optionLabel: "",
           dataTextField: "name",
           dataValueField: "uuid",
-          template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-          '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' +
-          '<div style="color: black"><span class="z-label">Status:</span><span>#: status #</span></div>' +
-          '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+          template: '<div style="color: black"><span class="z-label">{{"vm.ts.Name" | translate}}</span><span>#: name #</span></div>' +
+          '<div style="color: black"><span class="z-label">{{"vm.ts.State" | translate}}</span><span>#: state #</span></div>' +
+          '<div style="color: black"><span class="z-label">{{"vm.ts.Status" | translate}}</span><span>#: status #</span></div>' +
+          '<div style="color: black"><span class="z-label">{{"vm.ts.UUID" | translate}}</span><span>#: uuid #</span></div>'
         };
 
         $scope.instanceOfferingOptions__ = {
           dataSource: new kendo.data.DataSource({data: []}),
           dataTextField: "name",
           dataValueField: "uuid",
-          template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-          '<div style="color: black"><span class="z-label">CPU Number:</span><span>#: cpuNum #</span></div>' +
-          '<div style="color: black"><span class="z-label">CPU Speed:</span><span>#: cpuSpeed #</span></div>' +
-          '<div style="color: black"><span class="z-label">Memory:</span><span>#: memorySize #</span></div>' +
-          '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+          template: '<div style="color: black"><span class="z-label">{{"vm.ts.Name" | translate}}</span><span>#: name #</span></div>' +
+          '<div style="color: black"><span class="z-label">{{"vm.ts.CPU Number" | translate}}</span><span>#: cpuNum #</span></div>' +
+          '<div style="color: black"><span class="z-label">{{"vm.ts.CPU Speed" | translate}}</span><span>#: cpuSpeed #</span></div>' +
+          '<div style="color: black"><span class="z-label">{{"vm.ts.Memory" | translate}}</span><span>#: memorySize #</span></div>' +
+          '<div style="color: black"><span class="z-label">{{"vm.ts.UUID" | translate}}</span><span>#: uuid #</span></div>'
         };
 
         $scope.diskOfferingOptions__ = {
           dataSource: new kendo.data.DataSource({data: []}),
           dataTextField: "name",
           dataValueField: "uuid",
-          template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-          '<div style="color: black"><span class="z-label">Disk Size:</span><span>#: diskSize #</span></div>' +
-          '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
+          template: '<div style="color: black"><span class="z-label">{{"vm.ts.Name" | translate}}</span><span>#: name #</span></div>' +
+          '<div style="color: black"><span class="z-label">{{"vm.ts.Disk Size" | translate}}</span><span>#: diskSize #</span></div>' +
+          '<div style="color: black"><span class="z-label">{{"vm.ts.UUID" | translate}}</span><span>#: uuid #</span></div>',
 
           change: (e)=> {
             Utils.safeApply($scope, ()=>{
@@ -1786,36 +1724,36 @@ module MVmInstance {
           dataSource: new kendo.data.DataSource({data: []}),
           dataTextField: "name",
           dataValueField: "uuid",
-          template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-          '<div style="color: black"><span class="z-label">Disk Size:</span><span>#: diskSize #</span></div>' +
-          '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
+          template: '<div style="color: black"><span class="z-label">{{"vm.ts.Name" | translate}}</span><span>#: name #</span></div>' +
+          '<div style="color: black"><span class="z-label">{{"vm.ts.Disk Size" | translate}}</span><span>#: diskSize #</span></div>' +
+          '<div style="color: black"><span class="z-label">{{"vm.ts.UUID" | translate}}</span><span>#: uuid #</span></div>',
         };
 
         $scope.l3NetworkOptions__ = {
           dataSource: new kendo.data.DataSource({data: []}),
           dataTextField: "name",
           dataValueField: "uuid",
-          template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-          '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+          template: '<div style="color: black"><span class="z-label">{{"vm.ts.Name" | translate}}</span><span>#: name #</span></div>' +
+          '<div style="color: black"><span class="z-label">{{"vm.ts.UUID" | translate}}</span><span>#: uuid #</span></div>'
         };
 
         $scope.defaultL3NetworkOptions__ = {
           dataSource: new kendo.data.DataSource({data: []}),
           dataTextField: "name",
           dataValueField: "uuid",
-          template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-          '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+          template: '<div style="color: black"><span class="z-label">{{"vm.ts.Name" | translate}}</span><span>#: name #</span></div>' +
+          '<div style="color: black"><span class="z-label">{{"vm.ts.UUID" | translate}}</span><span>#: uuid #</span></div>'
         };
 
         $scope.imageOptions__ = {
           dataSource: new kendo.data.DataSource({data: []}),
           dataTextField: "name",
           dataValueField: "uuid",
-          template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-          '<div style="color: black"><span class="z-label">Platform:</span><span>#: platform #</span></div>' +
-          '<div style="color: black"><span class="z-label">Media Type:</span><span>#= mediaType #</span></div>' +
-          '<div style="color: black"><span class="z-label">Format:</span><span>#: format #</span></div>' +
-          '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+          template: '<div style="color: black"><span class="z-label">{{"vm.ts.Name" | translate}}</span><span>#: name #</span></div>' +
+          '<div style="color: black"><span class="z-label">{{"vm.ts.Platform" | translate}}</span><span>#: platform #</span></div>' +
+          '<div style="color: black"><span class="z-label">{{"vm.ts.Media Type" | translate}}</span><span>#= mediaType #</span></div>' +
+          '<div style="color: black"><span class="z-label">{{"vm.ts.Format" | translate}}</span><span>#: format #</span></div>' +
+          '<div style="color: black"><span class="z-label">{{"vm.ts.UUID" | translate}}</span><span>#: uuid #</span></div>'
         };
 
         this.$scope = $scope;

@@ -233,29 +233,29 @@ module MCluster {
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"cluster.ts.NAME" | translate}}',
                     width: '15%',
                     template: '<a href="/\\#/cluster/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'description',
-                    title: 'DESCRIPTION',
+                    title: '{{"cluster.ts.DESCRIPTION" | translate}}',
                     width: '25%'
                 },
                 {
                     field: 'hypervisorType',
-                    title: 'HYPERVISOR',
+                    title: '{{"cluster.ts.HYPERVISOR" | translate}}',
                     width: '15%'
                 },
                 {
                     field: 'state',
-                    title: 'STATE',
+                    title: '{{"cluster.ts.STATE" | translate}}',
                     width: '15%',
                     template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                 },
                 {
                     field: 'uuid',
-                    title: 'UUID',
+                    title: '{{"cluster.ts.UUID" | translate}}',
                     width: '30%'
                 }
             ];
@@ -323,15 +323,15 @@ module MCluster {
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"cluster.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'State',
+                            name: '{{"cluster.ts.State" | translate}}',
                             value: FilterBy.STATE
                         },
                         {
-                            name: 'Hypervisor',
+                            name: '{{"cluster.ts.Hypervisor" | translate}}',
                             value: FilterBy.HYPERVISOR
                         }
                     ]
@@ -520,23 +520,23 @@ module MCluster {
                 columns: [
                     {
                         field: 'name',
-                        title: 'NAME',
+                        title: '{{"cluster.ts.NAME" | translate}}',
                         width: '25%',
                         template: '<a href="/\\#/host/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                     },
                     {
                         field: 'description',
-                        title: 'DESCRIPTION',
+                        title: '{{"cluster.ts.DESCRIPTION" | translate}}',
                         width: '25%'
                     },
                     {
                         field: 'managementIp',
-                        title: 'MANAGEMENT IP',
+                        title: '{{"cluster.ts.MANAGEMENT IP" | translate}}',
                         width: '25%'
                     },
                     {
                         field: 'uuid',
-                        title: 'UUID',
+                        title: '{{"cluster.ts.UUID" | translate}}',
                         width: '25%'
                     }
                 ],
@@ -591,28 +591,28 @@ module MCluster {
                 columns: [
                     {
                         field: 'name',
-                        title: 'NAME',
+                        title: '{{"cluster.ts.NAME" | translate}}',
                         width: '10%',
                         template: '<a href="/\\#/l2Network/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                     },
                     {
                         field: 'description',
-                        title: 'DESCRIPTION',
+                        title: '{{"cluster.ts.DESCRIPTION" | translate}}',
                         width: '25%'
                     },
                     {
                         field: 'physicalInterface',
-                        title: 'PHYSICAL INTERFACE',
+                        title: '{{"cluster.ts.PHYSICAL INTERFACE" | translate}}',
                         width: '25%'
                     },
                     {
                         field: 'type',
-                        title: 'TYPE',
+                        title: '{{"cluster.ts.TYPE" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'uuid',
-                        title: 'UUID',
+                        title: '{{"cluster.ts.UUID" | translate}}',
                         width: '20%'
                     }
                 ],
@@ -671,44 +671,44 @@ module MCluster {
                 columns: [
                     {
                         field: 'name',
-                        title: 'NAME',
+                        title: '{{"cluster.ts.NAME" | translate}}',
                         width: '10%',
                         template: '<a href="/\\#/primaryStorage/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                     },
                     {
                         field: 'description',
-                        title: 'DESCRIPTION',
+                        title: '{{"cluster.ts.DESCRIPTION" | translate}}',
                         width: '15%'
                     },
                     {
                         field: 'url',
-                        title: 'URL',
+                        title: '{{"cluster.ts.URL" | translate}}',
                         width: '16%'
                     },
                     {
                         field: 'totalCapacity',
-                        title: 'TOTAL CAPACITY',
+                        title: '{{"cluster.ts.TOTAL CAPACITY" | translate}}',
                         width: '8%'
                     },
                     {
                         field: 'availableCapacity',
-                        title: 'AVAILABLE CAPACITY',
+                        title: '{{"cluster.ts.AVAILABLE CAPACITY" | translate}}',
                         width: '8%'
                     },
                     {
                         field: 'type',
-                        title: 'TYPE',
+                        title: '{{"cluster.ts.TYPE" | translate}}',
                         width: '10%'
                     },
                     {
                         field: 'state',
-                        title: 'STATE',
+                        title: '{{"cluster.ts.STATE" | translate}}',
                         width: '15%',
                         template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                     },
                     {
                         field: 'uuid',
-                        title: 'UUID',
+                        title: '{{"cluster.ts.UUID" | translate}}',
                         width: '20%'
                     }
                 ],
@@ -768,27 +768,27 @@ module MCluster {
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"cluster.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"cluster.ts.Description" | translate}}',
                         value: 'Description'
                     },
                     {
-                        name: 'State',
+                        name: '{{"cluster.ts.State" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Hypervisor',
+                        name: '{{"cluster.ts.Hypervisor" | translate}}',
                         value: 'hypervisorType'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"cluster.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"cluster.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
@@ -1219,7 +1219,7 @@ module MCluster {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: "<div style='color: black'><span class='z-label'>Name</span>: #: name #</div><div style='color: black'><span class='z-label'>State:</span>#: state #</div><div style='color: black'><span class='z-label'>UUID:</span> #: uuid #</div>"
+                    template: '<div style="color: black"><span class="z-label">{{"cluster.ts.Name" | translate}}</span>: #: name #</div>'+'<div style="color: black"><span class="z-label">{{"cluster.ts.State" | translate}}</span>#: state #</div>'+'<div style="color: black"><span class="z-label">{{"cluster.ts.UUID" | translate}}</span> #: uuid #</div>'
                 };
 
                 $scope.hypervisorList = {
