@@ -18,7 +18,7 @@
         <div z-sort-by z-options="optionsSortBy"></div>
 
         <button z-popover="popoverFilterBy" type="button" id="ImageFilter" z-content-id="ImageFilterContent" class="btn btn-default btn-sm" ng-click="filterBy.open(popoverFilterBy)">
-            <i class="fa fa-filter"></i><span>&nbsp; {{"image.image.{{filterBy.getButtonName()}}" | translate}}</span>
+            <i class="fa fa-filter"></i><span>&nbsp; {{filterBy.getButtonName()}}</span>
         </button>
 
         <button type="button" class="btn btn-success btn-sm" style="margin-left: 20px" ng-click="funcCreateImage(winNewImage)">
