@@ -243,24 +243,24 @@ module MEip {
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"eip.ts.NAME" | translate}}',
                     width: '25%',
                     template: '<a href="/\\#/eip/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'state',
-                    title: 'STATE',
+                    title: '{{"eip.ts.STATE" | translate}}',
                     width: '25%',
                     template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                 },
                 {
                     field: 'vipIp',
-                    title: 'VIP IP',
+                    title: '{{"eip.ts.VIP IP" | translate}}',
                     width: '25%'
                 },
                 {
                     field: 'vmNicIp',
-                    title: 'VM NIC IP',
+                    title: '{{"eip.ts.VM NIC IP" | translate}}',
                     width: '25%'
                 },
             ];
@@ -410,11 +410,11 @@ module MEip {
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"eip.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'State',
+                            name: '{{"eip.ts.STATE" | translate}}',
                             value: FilterBy.STATE
                         }
                     ]
@@ -506,7 +506,7 @@ module MEip {
             };
 
             $scope.optionsDeleteEip = {
-                title: 'DELETE EIP',
+                title: '{{"eip.ts.DELETE EIP" | translate}}',
                 btnType: 'btn-danger',
                 width: '350px',
                 description: ()=>{
@@ -579,23 +579,23 @@ module MEip {
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"eip.ts.NAME" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"eip.ts.Description" | translate}}',
                         value: 'description'
                     },
                     {
-                        name: 'State',
+                        name: '{{"eip.ts.STATE" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"eip.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"eip.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
@@ -654,7 +654,7 @@ module MEip {
             };
 
             $scope.optionsDeleteEip = {
-                title: 'DELETE EIP',
+                title: '{{"eip.ts.DELETE EIP" | translate}}',
                 btnType: 'btn-danger',
                 width: '350px',
                 description: ()=>{
@@ -915,10 +915,10 @@ module MEip {
                 $scope.vipMethodOptions__ = {
                     dataSource: new kendo.data.DataSource({
                         data: [{
-                            name: "Create New VIP",
+                            name: "{{"eip.ts.Create New VIP" | translate}}",
                             field: CreateEip.CREATE_NEW_VIP
                         },{
-                            name: "Use Existing VIP",
+                            name: "{{"eip.ts.Use Existing VIP" | translate}}",
                             field: CreateEip.USE_EXISTING_VIP
                         }]
                     }),
@@ -1028,35 +1028,35 @@ module MEip {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">IP:</span><span>#: ip #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Gateway:</span><span>#: gateway #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Netmask:</span><span>#: netmask #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"eip.ts.NAME" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.IP" | translate}}:</span><span>#: ip #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.Gateway" | translate}}:</span><span>#: gateway #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.Netmask" | translate}}:</span><span>#: netmask #</span></div>'
                 };
 
                 $scope.l3NetworkListOptions__ = {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Zone UUID:</span><span>#: zoneUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">L2 Network UUID:</span><span>#: l2NetworkUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"eip.ts.NAME" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.Type" | translate}}:</span><span>#: type #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.Zone UUID" | translate}}:</span><span>#: zoneUuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.L2 Network UUID" | translate}}:</span><span>#: l2NetworkUuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>'
                 };
 
                 $scope.vmListOptions__ = {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "nicUuid",
-                    template: '<div style="color: black"><span class="z-label">VM Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">VM UUID:</span><span>#: uuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic DeviceId:</span><span>#: nicDeviceId #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Ip:</span><span>#: nicIp #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Netmask:</span><span>#: nicNetmask #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Gateway:</span><span>#: nicGateway #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Mac:</span><span>#: nicMac #</span></div>' +
-                        '<div style="color: black"><span class="z-label">L3 Network UUID:</span><span>#: l3NetworkUuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"eip.ts.VM Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.VM UUID" | translate}}:</span><span>#: uuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.Nic DeviceId" | translate}}:</span><span>#: nicDeviceId #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.Nic Ip" | translate}}:</span><span>#: nicIp #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.Nic Netmask" | translate}}:</span><span>#: nicNetmask #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.Nic Gateway" | translate}}:</span><span>#: nicGateway #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.Nic Mac" | translate}}:</span><span>#: nicMac #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.L3 Network UUID" | translate}}:</span><span>#: l3NetworkUuid #</span></div>'
                 };
 
                 $scope.$watch(()=>{
@@ -1232,14 +1232,14 @@ module MEip {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "nicUuid",
-                    template: '<div style="color: black"><span class="z-label">VM Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">VM UUID:</span><span>#: uuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic DeviceId:</span><span>#: nicDeviceId #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Ip:</span><span>#: nicIp #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Netmask:</span><span>#: nicNetmask #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Gateway:</span><span>#: nicGateway #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Mac:</span><span>#: nicMac #</span></div>' +
-                        '<div style="color: black"><span class="z-label">L3 Network UUID:</span><span>#: l3NetworkUuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"eip.ts.VM Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.VM UUID" | translate}}:</span><span>#: uuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.Nic DeviceId" | translate}}:</span><span>#: nicDeviceId #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.Nic Ip" | translate}}:</span><span>#: nicIp #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.Nic Netmask" | translate}}:</span><span>#: nicNetmask #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.Nic Gateway" | translate}}:</span><span>#: nicGateway #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.Nic Mac" | translate}}:</span><span>#: nicMac #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.L3 Network UUID" | translate}}:</span><span>#: l3NetworkUuid #</span></div>'
                 };
 
                 $scope.hasVm = () => {

@@ -171,41 +171,41 @@ module MInstanceOffering {
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"instanceOffering.ts.NAME" | translate}}',
                     width: '10%',
                     template: '<a href="/\\#/instanceOffering/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'description',
-                    title: 'DESCRIPTION',
+                    title: '{{"instanceOffering.ts.DESCRIPTION" | translate}}',
                     width: '20%'
                 },
                 {
                     field: 'cpuNum',
-                    title: 'CPU NUMBER',
+                    title: '{{"instanceOffering.ts.CPU NUMBER" | translate}}',
                     width: '10%'
                 },
                 {
                     field: 'cpuSpeed',
-                    title: 'CPU SPEED',
+                    title: '{{"instanceOffering.ts.CPU SPEED" | translate}}',
                     width: '10%'
                 },
                 {
                     field: 'memorySize',
-                    title: 'MEMORY',
+                    title: '{{"instanceOffering.ts.MEMORY" | translate}}',
                     width: '15%',
                     template: '<span>{{dataItem.memorySize | size}}</span>'
                 },
                 {
                     field: 'state',
-                    title: 'STATE',
+                    title: '{{"instanceOffering.ts.STATE" | translate}}',
                     width: '15%',
                     template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                 },
 
                 {
                     field: 'uuid',
-                    title: 'UUID',
+                    title: '{{"instanceOffering.ts.UUID" | translate}}',
                     width: '20%'
                 }
             ];
@@ -252,11 +252,11 @@ module MInstanceOffering {
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"instanceOffering.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'State',
+                            name: '{{"instanceOffering.ts.State" | translate}}',
                             value: FilterBy.STATE
                         }
                     ]
@@ -346,7 +346,7 @@ module MInstanceOffering {
             };
 
             $scope.optionsDeleteInstanceOffering = {
-                title: 'DELETE INSTANCE OFFERING',
+                title: '{{"instanceOffering.ts.DELETE INSTANCE OFFERING" | translate}}',
                 btnType: 'btn-danger',
                 width: '350px',
                 description: ()=>{
@@ -395,35 +395,35 @@ module MInstanceOffering {
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"instanceOffering.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"instanceOffering.ts.Description" | translate}}',
                         value: 'description'
                     },
                     {
-                        name: 'CPU Number',
+                        name: '{{"instanceOffering.ts.CPU Number" | translate}}',
                         value: 'cpuNum'
                     },
                     {
-                        name: 'CPU Speed',
+                        name: '{{"instanceOffering.ts.CPU Speed" | translate}}',
                         value: 'cpuSpeed'
                     },
                     {
-                        name: 'Memory',
+                        name: '{{"instanceOffering.ts.Memory" | translate}}',
                         value: 'memorySize'
                     },
                     {
-                        name: 'State',
+                        name: '{{"instanceOffering.ts.State" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"instanceOffering.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"instanceOffering.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
@@ -482,7 +482,7 @@ module MInstanceOffering {
             };
 
             $scope.optionsDeleteInstanceOffering = {
-                title: 'DELETE INSTANCE OFFERING',
+                title: '{{"instanceOffering.ts.DELETE INSTANCE OFFERING" | translate}}',
                 btnType: 'btn-danger',
                 width: '350px',
                 description: ()=>{

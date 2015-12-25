@@ -274,24 +274,24 @@ module MSecurityGroup {
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"securityGroup.ts.NAME" | translate}}',
                     width: '25%',
                     template: '<a href="/\\#/securityGroup/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'description',
-                    title: 'DESCRIPTION',
+                    title: '{{"securityGroup.ts.DESCRIPTION" | translate}}',
                     width: '25%'
                 },
                 {
                     field: 'state',
-                    title: 'STATE',
+                    title: '{{"securityGroup.ts.STATE" | translate}}',
                     width: '25%',
                     template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                 },
                 {
                     field: 'uuid',
-                    title: 'UUID',
+                    title: '{{"securityGroup.ts.UUID" | translate}}',
                     width: '25%'
                 }
             ];
@@ -369,11 +369,11 @@ module MSecurityGroup {
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"securityGroup.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'State',
+                            name: '{{"securityGroup.ts.STATE" | translate}}',
                             value: FilterBy.STATE
                         }
                     ]
@@ -463,11 +463,11 @@ module MSecurityGroup {
             };
 
             $scope.optionsDeleteSecurityGroup = {
-                title: 'DELETE SECURITY GROUP',
-                html: '<strong><p>Deleting security group will cause:</p></strong>' +
-                    '<ul><li><strong>All rules in this security group will be deleted</strong></li>' +
-                    '<li><strong>All l3Networks this security group has attached will be detached</strong></li>' +
-                    '<strong><p>those results are not recoverable</p></strong>',
+                title: '{{"securityGroup.ts.DELETE SECURITY GROUP" | translate}}',
+                html: '<strong><p>{{"securityGroup.ts.HINT1" | translate}}:</p></strong>' +
+                    '<ul><li><strong>{{"securityGroup.ts.HINT2" | translate}}</strong></li>' +
+                    '<li><strong>{{"securityGroup.ts.HINT3" | translate}}</strong></li>' +
+                    '<strong><p>{{"securityGroup.ts.HINT4" | translate}}</p></strong>',
 
                 confirm: ()=> {
                     sgMgr.delete($scope.model.current, (ret : any)=> {
@@ -506,29 +506,29 @@ module MSecurityGroup {
                 pageable: true,
                 columns: [
                     {
-                        field: 'type',
-                        title: 'TYPE',
+                        field: ' ',
+                        title: '{{"securityGroup.ts.TYPE" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'startPort',
-                        title: 'PORT START',
+                        title: '{{"securityGroup.ts.PORT START" | translate}}',
                         width: '20%'
 
                     },
                     {
                         field: 'endPort',
-                        title: 'PORT END',
+                        title: '{{"securityGroup.ts.PORT END" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'protocol',
-                        title: 'PROTOCOL',
+                        title: '{{"securityGroup.ts.PROTOCOL" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'allowedCidr',
-                        title: 'ALLOWED CIDR',
+                        title: '{{"securityGroup.ts.ALLOWED CIDR" | translate}}',
                         width: '20%'
                     }
                 ],
@@ -553,29 +553,29 @@ module MSecurityGroup {
                 columns: [
                     {
                         field: 'name',
-                        title: 'NAME',
+                        title: '{{"securityGroup.ts.NAME" | translate}}',
                         width: '20%',
                         template: '<a href="/\\#/l3Network/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                     },
                     {
                         field: 'description',
-                        title: 'DESCRIPTION',
+                        title: '{{"securityGroup.ts.DESCRIPTION" | translate}}',
                         width: '25%'
                     },
                     {
                         field: 'state',
-                        title: 'STATE',
+                        title: '{{"securityGroup.ts.STATE" | translate}}',
                         width: '10%',
                         template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                     },
                     {
                         field: 'type',
-                        title: 'TYPE',
+                        title: '{{"securityGroup.ts.TYPE" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'uuid',
-                        title: 'UUID',
+                        title: '{{"securityGroup.ts.UUID" | translate}}',
                         width: '25%'
                     }
                 ],
@@ -613,27 +613,27 @@ module MSecurityGroup {
                 columns: [
                     {
                         field: 'type',
-                        title: 'TYPE',
+                        title: '{{"securityGroup.ts.TYPE" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'startPort',
-                        title: 'PORT START',
+                        title: '{{"securityGroup.ts.PORT START" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'endPort',
-                        title: 'PORT END',
+                        title: '{{"securityGroup.ts.PORT END" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'protocol',
-                        title: 'PROTOCOL',
+                        title: '{{"securityGroup.ts.PROTOCOL" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'allowedCidr',
-                        title: 'ALLOWED CIDR',
+                        title: '{{"securityGroup.ts.ALLOWED CIDR" | translate}}',
                         width: '20%'
                     }
                 ],
@@ -658,23 +658,23 @@ module MSecurityGroup {
                 columns: [
                     {
                         field: 'ip',
-                        title: 'IP',
+                        title: '{{"securityGroup.ts.IP" | translate}}',
                         width: '25%'
                     },
                     {
                         field: 'deviceId',
-                        title: 'DEBICE ID',
+                        title: '{{"securityGroup.ts.DEBICE ID" | translate}}',
                         width: '25%'
                     },
                     {
                         field: 'uuid',
-                        title: 'UUID',
+                        title: '{{"securityGroup.ts.UUID" | translate}}',
                         width: '25%',
                         template: '{{dataItem.uuid}}'
                     },
                     {
                         field: 'vmInstanceUuid',
-                        title: 'VM',
+                        title: '{{"securityGroup.ts.VM" | translate}}',
                         width: '25%',
                         template: '<a href="/\\#/vmInstance/{{dataItem.vmInstanceUuid}}">{{dataItem.vmInstanceUuid}}</a>'
                     }
@@ -790,23 +790,23 @@ module MSecurityGroup {
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"securityGroup.ts.NAME" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"securityGroup.ts.DESCRIPTION" | translate}}',
                         value: 'description'
                     },
                     {
-                        name: 'State',
+                        name: '{{"securityGroup.ts.STATE" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"securityGroup.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"securityGroup.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
@@ -865,11 +865,11 @@ module MSecurityGroup {
             };
 
             $scope.optionsDeleteSecurityGroup = {
-                title: 'DELETE L3 NETWORK',
-                html: '<strong><p>Deleting security group will cause:</p></strong>' +
-                    '<ul><li><strong>All rules in this security group will be deleted</strong></li>' +
-                    '<li><strong>All l3Networks this security group has attached will be detached</strong></li>' +
-                    '<strong><p>those results are not recoverable</p></strong>',
+                title: '{{"securityGroup.ts.DELETE L3 NETWORK" | translate}}',
+                html: '<strong><p>{{"securityGroup.ts.HINT5" | translate}}:</p></strong>' +
+                    '<ul><li><strong>{{"securityGroup.ts.HINT6" | translate}}</strong></li>' +
+                    '<li><strong>{{"securityGroup.ts.HINT7" | translate}}</strong></li>' +
+                    '<strong><p>{{"securityGroup.ts.HINT8" | translate}}</p></strong>',
 
                 confirm: ()=> {
                     sgMgr.delete($scope.model.current, (ret : any)=> {
@@ -972,29 +972,29 @@ module MSecurityGroup {
                     columns: [
                         {
                             field: 'startPort',
-                            title: 'START',
+                            title: '{{"securityGroup.ts.START" | translate}}',
                             width: '13%'
                         },
                         {
                             field: 'endPort',
-                            title: 'END',
+                            title: '{{"securityGroup.ts.END" | translate}}',
                             width: '13%'
                         },
                         {
                             field: 'type',
-                            title: 'TYPE',
+                            title: '{{"securityGroup.ts.TYPE" | translate}}',
                             width: '16%'
 
                         },
                         {
                             field: 'protocol',
-                            title: 'PROTOCOL',
+                            title: '{{"securityGroup.ts.PROTOCOL" | translate}}',
                             width: '16%'
 
                         },
                         {
                             field: 'allowedCidr',
-                            title: 'ALLOWED CIDR',
+                            title: '{{"securityGroup.ts.ALLOWED CIDR" | translate}}',
                             width: '22%'
                         },
                         {
@@ -1463,10 +1463,10 @@ module MSecurityGroup {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Zone UUID:</span><span>#: zoneUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    itemTemplate: '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.TYPE" | translate}}:</span><span>#: type #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Zone UUID" | translate}}:</span><span>#: zoneUuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>'
                 };
 
                 $scope.ruleTypeOptions__ = {
@@ -1491,29 +1491,29 @@ module MSecurityGroup {
                     columns: [
                         {
                             field: 'startPort',
-                            title: 'START',
+                            title: '{{"securityGroup.ts.START" | translate}}',
                             width: '16%'
                         },
                         {
                             field: 'endPort',
-                            title: 'END',
+                            title: '{{"securityGroup.ts.END" | translate}}',
                             width: '16%'
                         },
                         {
                             field: 'type',
-                            title: 'TYPE',
+                            title: '{{"securityGroup.ts.TYPE" | translate}}',
                             width: '16%'
 
                         },
                         {
                             field: 'protocol',
-                            title: 'PROTOCOL',
+                            title: '{{"securityGroup.ts.PROTOCOL" | translate}}',
                             width: '16%'
 
                         },
                         {
                             field: 'allowedCidr',
-                            title: 'ALLOWED CIDR',
+                            title: '{{"securityGroup.ts.ALLOWED CIDR" | translate}}',
                             width: '16%'
                         },
                         {
@@ -1596,29 +1596,29 @@ module MSecurityGroup {
                         },
                         {
                             field: 'startPort',
-                            title: 'START',
+                            title: '{{"securityGroup.ts.START" | translate}}',
                             width: '16%'
                         },
                         {
                             field: 'endPort',
-                            title: 'END',
+                            title: '{{"securityGroup.ts.END" | translate}}',
                             width: '16%'
                         },
                         {
                             field: 'type',
-                            title: 'TYPE',
+                            title: '{{"securityGroup.ts.TYPE" | translate}}',
                             width: '16%'
 
                         },
                         {
                             field: 'protocol',
-                            title: 'PROTOCOL',
+                            title: '{{"securityGroup.ts.PROTOCOL" | translate}}',
                             width: '16%'
 
                         },
                         {
                             field: 'allowedCidr',
-                            title: 'ALLOWED CIDR',
+                            title: '{{"securityGroup.ts.ALLOWED CIDR" | translate}}',
                             width: '16%'
                         }
                     ],
@@ -1776,10 +1776,10 @@ module MSecurityGroup {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "id",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">VM Name:</span><span>#: vm.name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic IP:</span><span>#: nic.ip #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Device ID:</span><span>#: nic.deviceId #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic UUID:</span><span>#: nic.uuid #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">{{"securityGroup.ts.VM Name" | translate}}:</span><span>#: vm.name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Nic IP" | translate}}:</span><span>#: nic.ip #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Nic Device ID" | translate}}:</span><span>#: nic.deviceId #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Nic UUID" | translate}}:</span><span>#: nic.uuid #</span></div>',
 
                     change: (e)=> {
                         var select = e.sender;
@@ -1924,10 +1924,10 @@ module MSecurityGroup {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "id",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">VM Name:</span><span>#: vm.name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic IP:</span><span>#: nic.ip #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Device ID:</span><span>#: nic.deviceId #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic UUID:</span><span>#: nic.uuid #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">{{"securityGroup.ts.VM Name" | translate}}:</span><span>#: vm.name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Nic IP" | translate}}:</span><span>#: nic.ip #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Nic Device ID" | translate}}:</span><span>#: nic.deviceId #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Nic UUID" | translate}}:</span><span>#: nic.uuid #</span></div>',
 
                     change: (e)=> {
                         var select = e.sender;
@@ -2031,11 +2031,11 @@ module MSecurityGroup {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Zone UUID:</span><span>#: zoneUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">L2 Network UUID:</span><span>#: l2NetworkUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.TYPE" | translate}}:</span><span>#: type #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Zone UUID" | translate}}:</span><span>#: zoneUuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.L2 Network UUID" | translate}}:</span><span>#: l2NetworkUuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>',
 
                     change: (e)=> {
                         var select = e.sender;
@@ -2139,11 +2139,11 @@ module MSecurityGroup {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Zone UUID:</span><span>#: zoneUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">L2 Network UUID:</span><span>#: l2NetworkUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.TYPE" | translate}}:</span><span>#: type #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Zone UUID" | translate}}:</span><span>#: zoneUuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.L2 Network UUID" | translate}}:</span><span>#: l2NetworkUuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>',
 
                     change: (e)=> {
                         var select = e.sender;

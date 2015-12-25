@@ -183,46 +183,46 @@ module MImage {
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"image.ts.NAME" | translate}}',
                     width: '10%',
                     template: '<a href="/\\#/image/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'mediaType',
-                    title: 'MEIDA TYPE',
+                    title: '{{"image.ts.MEIDA TYPE" | translate}}',
                     width: '15%'
                 },
                 {
                     field: 'state',
-                    title: 'STATE',
+                    title: '{{"image.ts.STATE" | translate}}',
                     width: '10%',
                     template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                 },
                 {
                     field: 'status',
-                    title: 'STATUS',
+                    title: '{{"image.ts.STATUS" | translate}}',
                     width: '10%',
                     template: '<span class="{{dataItem.statusLabel()}}">{{dataItem.status}}</span>'
                 },
                 {
                     field: 'guestOsType',
-                    title: 'GUEST OS',
+                    title: '{{"image.ts.GUEST OS" | translate}}',
                     width: '15%'
                 },
                 {
                     field: 'size',
-                    title: 'SIZE',
+                    title: '{{"image.ts.SIZE" | translate}}',
                     width: '10%',
                     template: '<span>{{dataItem.size | size}}</span>'
                 },
                 {
                     field: 'format',
-                    title: 'FORMAT',
+                    title: '{{"image.ts.FORMAT" | translate}}',
                     width: '10%'
                 },
                 {
                     field: 'uuid',
-                    title: 'UUID',
+                    title: '{{"image.ts.UUID" | translate}}',
                     width: '20%'
                 }
             ];
@@ -272,23 +272,23 @@ module MImage {
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"image.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'State',
+                            name: '{{"image.ts.State" | translate}}',
                             value: FilterBy.STATE
                         },
                         {
-                            name: 'Status',
+                            name: '{{"image.ts.Status" | translate}}',
                             value: FilterBy.STATUS
                         },
                         {
-                            name: 'MediaType',
+                            name: '{{"image.ts.MediaType" | translate}}',
                             value: FilterBy.TYPE
                         },
                         {
-                            name: 'Format',
+                            name: '{{"image.ts.Format" | translate}}',
                             value: FilterBy.FORMAT
                         },
 
@@ -385,7 +385,7 @@ module MImage {
             };
 
             $scope.optionsDeleteImage = {
-                title: 'DELETE IMAGE',
+                title: '{{"image.ts.DELETE IMAGE" | translate}}',
                 width: '350px',
                 btnType: 'btn-danger',
 
@@ -432,13 +432,13 @@ module MImage {
                 columns: [
                     {
                         field: 'name',
-                        title: 'BACKUP STORAGE NAME',
+                        title: '{{"image.ts.BACKUP STORAGE NAME" | translate}}',
                         width: '20%',
                         template: '<a href="/\\#/backupStorage/{{dataItem.bsUuid}}">{{dataItem.name}}</a>'
                     },
                     {
                         field: 'installPath',
-                        title: 'INSTALL PATH',
+                        title: '{{"image.ts.INSTALL PATH" | translate}}',
                         width: '80%'
                     }
                 ],
@@ -518,47 +518,47 @@ module MImage {
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"image.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"image.ts.Description" | translate}}',
                         value: 'Description'
                     },
                     {
-                        name: 'State',
+                        name: '{{"image.ts.State" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Status',
+                        name: '{{"image.ts.Status" | translate}}',
                         value: 'status'
                     },
                     {
-                        name: 'Hypervisor',
+                        name: '{{"image.ts.Hypervisor" | translate}}',
                         value: 'hypervisorType'
                     },
                     {
-                        name: 'Bits',
+                        name: '{{"image.ts.Bits" | translate}}',
                         value: 'bits'
                     },
                     {
-                        name: 'Format',
+                        name: '{{"image.ts.Format" | translate}}',
                         value: 'format'
                     },
                     {
-                        name: 'Size',
+                        name: '{{"image.ts.Size" | translate}}',
                         value: 'size'
                     },
                     {
-                        name: 'Guest OS Type',
+                        name: '{{"image.ts.Guest OS Type" | translate}}',
                         value: 'guestOsType'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"image.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"image.ts.Created None" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
@@ -633,7 +633,7 @@ module MImage {
             };
 
             $scope.optionsDeleteImage = {
-                title: 'DELETE IMAGE',
+                title: '{{"image.ts.DELETE IMAGE" | translate}}',
                 width: '350px',
                 btnType: 'btn-danger',
 
