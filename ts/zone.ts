@@ -264,30 +264,30 @@ module MZone {
                 columns: [
                     {
                         field: 'name',
-                        title: 'NAME',
+                        title: '{{"zone.ts.NAME" | translate}}',
                         width: '20%',
                         template: '<a href="/\\#/cluster/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                     },
                     {
                         field: 'description',
-                        title: 'DESCRIPTION',
+                        title: '{{"zone.ts.DESCRIPTION" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'state',
-                        title: 'STATE',
+                        title: '{{"zone.ts.STATE" | translate}}',
                         width: '20%',
                         template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
 
                     },
                     {
                         field: 'hypervisorType',
-                        title: 'HYPERVISOR',
+                        title: '{{"zone.ts.HYPERVISOR" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'uuid',
-                        title: 'UUID',
+                        title: '{{"zone.ts.UUID" | translate}}',
                         width: '20%'
                     }
                 ],
@@ -323,44 +323,44 @@ module MZone {
                 columns: [
                     {
                         field: 'name',
-                        title: 'NAME',
+                        title: '{{"zone.ts.NAME" | translate}}',
                         width: '10%',
                         template: '<a href="/\\#/primaryStorage/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                     },
                     {
                         field: 'description',
-                        title: 'DESCRIPTION',
+                        title: '{{"zone.ts.DESCRIPTION" | translate}}',
                         width: '15%'
                     },
                     {
                         field: 'url',
-                        title: 'URL',
+                        title: '{{"zone.ts.URL" | translate}}',
                         width: '16%'
                     },
                     {
                         field: 'totalCapacity',
-                        title: 'TOTAL CAPACITY',
+                        title: '{{"zone.ts.TOTAL CAPACITY" | translate}}',
                         width: '8%'
                     },
                     {
                         field: 'availableCapacity',
-                        title: 'AVAILABLE CAPACITY',
+                        title: '{{"zone.ts.AVAILABLE CAPACITY" | translate}}',
                         width: '8%'
                     },
                     {
                         field: 'type',
-                        title: 'TYPE',
+                        title: '{{"zone.ts.TYPE" | translate}}',
                         width: '10%'
                     },
                     {
                         field: 'state',
-                        title: 'STATE',
+                        title: '{{"zone.ts.STATE" | translate}}',
                         width: '15%',
                         template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                     },
                     {
                         field: 'uuid',
-                        title: 'UUID',
+                        title: '{{"zone.ts.UUID" | translate}}',
                         width: '20%'
                     }
                 ],
@@ -415,28 +415,28 @@ module MZone {
                 columns: [
                     {
                         field: 'name',
-                        title: 'NAME',
+                        title: '{{"zone.ts.NAME" | translate}}',
                         width: '10%',
                         template: '<a href="/\\#/l2Network/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                     },
                     {
                         field: 'description',
-                        title: 'DESCRIPTION',
+                        title: '{{"zone.ts.DESCRIPTION" | translate}}',
                         width: '25%'
                     },
                     {
                         field: 'physicalInterface',
-                        title: 'PHYSICAL INTERFACE',
+                        title: '{{"zone.ts.PHYSICAL INTERFACE" | translate}}',
                         width: '25%'
                     },
                     {
                         field: 'type',
-                        title: 'TYPE',
+                        title: '{{"zone.ts.TYPE" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'uuid',
-                        title: 'UUID',
+                        title: '{{"zone.ts.UUID" | translate}}',
                         width: '20%'
                     }
                 ],
@@ -514,40 +514,40 @@ module MZone {
                 columns: [
                     {
                         field: 'name',
-                        title: 'NAME',
+                        title: '{{"zone.ts.NAME" | translate}}',
                         width: '10%',
                         template: '<a href="/\\#/backupStorage/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                     },
                     {
                         field: 'totalCapacity',
-                        title: 'TOTAL CAPACITY',
+                        title: '{{"zone.ts.TOTAL CAPACITY" | translate}}',
                         width: '10%'
                     },
                     {
                         field: 'availableCapacity',
-                        title: 'AVAILABLE CAPACITY',
+                        title: '{{"zone.ts.AVAILABLE CAPACITY" | translate}}',
                         width: '10%'
                     },
                     {
                         field: 'type',
-                        title: 'TYPE',
+                        title: '{{"zone.ts.TYPE" | translate}}',
                         width: '10%'
                     },
                     {
                         field: 'state',
-                        title: 'STATE',
+                        title: '{{"zone.ts.STATE" | translate}}',
                         width: '20%',
                         template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                     },
                     {
                         field: 'status',
-                        title: 'STATUS',
+                        title: '{{"zone.ts.STATUS" | translate}}',
                         width: '20%',
                         template: '<span class="{{dataItem.statusLabel()}}">{{dataItem.status}}</span>'
                     },
                     {
                         field: 'uuid',
-                        title: 'UUID',
+                        title: '{{"zone.ts.UUID" | translate}}',
                         width: '20%'
                     }
                 ],
@@ -763,15 +763,15 @@ module MZone {
                 },
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"zone.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'State',
+                        name: '{{"zone.ts.State" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"zone.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
@@ -801,24 +801,24 @@ module MZone {
                 columns: [
                     {
                         field: 'name',
-                        title: 'NAME',
+                        title: '{{"zone.ts.NAME" | translate}}',
                         width: '20%',
                         template: '<span><div class="{{dataItem.gridColumnLabel()}}"></div><i class="fa fa-spinner fa-spin" ng-show="dataItem.isInProgress()"></i><a href="/\\#/zone/{{dataItem.uuid}}"><span>#: name #</span></a></span>'
                     },
                     {
                         field: 'description',
-                        title: 'DESCRIPTION',
+                        title: '{{"zone.ts.DESCRIPTION" | translate}}',
                         width: '30%'
                     },
                     {
                         field: 'state',
-                        title: 'STATE',
+                        title: '{{"zone.ts.STATE" | translate}}',
                         width: '20%',
                         template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                     },
                     {
                         field: 'uuid',
-                        title: 'UUID',
+                        title: '{{"zone.ts.UUID" | translate}}',
                         width: '30%'
                     }
                 ],
