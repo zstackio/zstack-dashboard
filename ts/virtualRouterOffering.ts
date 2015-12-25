@@ -188,28 +188,28 @@ module MVirtualRouterOffering {
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"virtualRouterOffering.ts.NAME" | translate}}',
                     width: '10%',
                     template: '<a href="/\\#/virtualRouterOffering/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'description',
-                    title: 'DESCRIPTION',
+                    title: '{{"virtualRouterOffering.ts.DESCRIPTION" | translate}}',
                     width: '15%'
                 },
                 {
                     field: 'cpuNum',
-                    title: 'CPU NUMBER',
+                    title: '{{"virtualRouterOffering.ts.CPU NUMBER" | translate}}',
                     width: '10%'
                 },
                 {
                     field: 'cpuSpeed',
-                    title: 'CPU SPEED',
+                    title: '{{"virtualRouterOffering.ts.CPU SPEED" | translate}}',
                     width: '10%'
                 },
                 {
                     field: 'memorySize',
-                    title: 'MEMORY',
+                    title: '{{"virtualRouterOffering.ts.MEMORY" | translate}}',
                     width: '15%',
                     template: '<span>{{dataItem.memorySize | size}}</span>'
                 },
@@ -274,11 +274,11 @@ module MVirtualRouterOffering {
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"virtualRouterOffering.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'State',
+                            name: '{{"virtualRouterOffering.ts.State" | translate}}',
                             value: FilterBy.STATE
                         }
                     ]
@@ -419,35 +419,35 @@ module MVirtualRouterOffering {
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"virtualRouterOffering.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"virtualRouterOffering.ts.Description" | translate}}',
                         value: 'description'
                     },
                     {
-                        name: 'CPU Number',
+                        name: '{{"virtualRouterOffering.ts.CPU Number" | translate}}',
                         value: 'cpuNum'
                     },
                     {
-                        name: 'CPU Speed',
+                        name: '{{"virtualRouterOffering.ts.CPU Speed" | translate}}',
                         value: 'cpuSpeed'
                     },
                     {
-                        name: 'Memory',
+                        name: '{{"virtualRouterOffering.ts.Memory" | translate}}',
                         value: 'memorySize'
                     },
                     {
-                        name: 'State',
+                        name: '{{"virtualRouterOffering.ts.State" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"virtualRouterOffering.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"virtualRouterOffering.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
@@ -745,32 +745,32 @@ module MVirtualRouterOffering {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"virtualRouterOffering.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"virtualRouterOffering.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>'
                 };
 
                 $scope.pubL3Options__ = {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"virtualRouterOffering.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"virtualRouterOffering.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>'
                 };
 
                 $scope.imageOptions__ = {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Format:</span><span>#: format #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"virtualRouterOffering.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"virtualRouterOffering.ts.Format" | translate}}:</span><span>#: format #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"virtualRouterOffering.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>'
                 };
 
                 $scope.zoneOptions__ = {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: "<div style='color: black'><span class='z-label'>Name</span>: #: name #</div><div style='color: black'><span class='z-label'>State:</span>#: state #</div><div style='color: black'><span class='z-label'>UUID:</span> #: uuid #</div>"
+                    template: "<div style='color: black'><span class='z-label'>{{"virtualRouterOffering.ts.Name" | translate}}</span>: #: name #</div><div style='color: black'><span class='z-label'>{{"virtualRouterOffering.ts.Name" | translate}}:</span>#: state #</div><div style='color: black'><span class='z-label'>{{"virtualRouterOffering.ts.UUID" | translate}}:</span> #: uuid #</div>"
                 };
 
                 $scope.$watch(()=>{

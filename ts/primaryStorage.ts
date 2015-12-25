@@ -246,13 +246,13 @@ module MPrimaryStorage {
       this.options.columns = [
         {
           field: 'name',
-          title: 'NAME',
+          title: '{{"primaryStorage.ts.NAME" | translate}}',
           width: '10%',
           template: '<a href="/\\#/primaryStorage/{{dataItem.uuid}}">{{dataItem.name}}</a>'
         },
         {
           field: 'description',
-          title: 'DESCRIPTION',
+          title: '{{"primaryStorage.ts.DESCRIPTION" | translate}}',
           width: '10%'
         },
         {
@@ -262,36 +262,36 @@ module MPrimaryStorage {
         },
         {
           field: 'totalCapacity',
-          title: 'TOTAL CAPACITY',
+          title: '{{"primaryStorage.ts.TOTAL CAPACITY" | translate}}',
           width: '8%',
           template: '<span>{{dataItem.totalCapacity | size}}</span>'
         },
         {
           field: 'availableCapacity',
-          title: 'AVAILABLE CAPACITY',
+          title: '{{"primaryStorage.ts.AVAILABLE CAPACITY" | translate}}',
           width: '8%',
           template: '<span>{{dataItem.availableCapacity | size}}</span>'
         },
         {
           field: 'type',
-          title: 'TYPE',
+          title: '{{"primaryStorage.ts.TYPE" | translate}}',
           width: '10%'
         },
         {
           field: 'state',
-          title: 'STATE',
+          title: '{{"primaryStorage.ts.STATE" | translate}}',
           width: '10%',
           template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
         },
         {
           field: 'status',
-          title: 'STATE',
+          title: '{{"primaryStorage.ts.STATUS" | translate}}',
           width: '10%',
           template: '<span class="{{dataItem.statusLabel()}}">{{dataItem.status}}</span>'
         },
         {
           field: 'uuid',
-          title: 'UUID',
+          title: '{{"primaryStorage.ts.UUID" | translate}}',
           width: '20%'
         }
       ];
@@ -363,15 +363,15 @@ module MPrimaryStorage {
         dataSource: new kendo.data.DataSource({
           data: [
             {
-              name: 'None',
+              name: '{{"primaryStorage.ts.None" | translate}}',
               value: FilterBy.NONE
             },
             {
-              name: 'State',
+              name: '{{"primaryStorage.ts.State" | translate}}',
               value: FilterBy.STATE
             },
             {
-              name: 'Type',
+              name: '{{"primaryStorage.ts.Type" | translate}}',
               value: FilterBy.TYPE
             }
           ]
@@ -533,30 +533,30 @@ module MPrimaryStorage {
         columns: [
           {
             field: 'name',
-            title: 'NAME',
+            title: '{{"primaryStorage.ts.NAME" | translate}}',
             width: '20%',
             template: '<a href="/\\#/cluster/{{dataItem.uuid}}">{{dataItem.name}}</a>'
           },
           {
             field: 'description',
-            title: 'DESCRIPTION',
+            title: '{{"primaryStorage.ts.DESCRIPTION" | translate}}',
             width: '20%'
           },
           {
             field: 'state',
-            title: 'STATE',
+            title: '{{"primaryStorage.ts.STATE" | translate}}',
             width: '20%',
             template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
 
           },
           {
             field: 'hypervisorType',
-            title: 'HYPERVISOR',
+            title: '{{"primaryStorage.ts.HYPERVISOR" | translate}}',
             width: '20%'
           },
           {
             field: 'uuid',
-            title: 'UUID',
+            title: '{{"primaryStorage.ts.UUID" | translate}}',
             width: '20%'
           }
         ],
@@ -616,35 +616,35 @@ module MPrimaryStorage {
       $scope.optionsSortBy = {
         fields: [
           {
-            name: 'Name',
+            name: '{{"primaryStorage.ts.Name" | translate}}',
             value: 'name'
           },
           {
-            name: 'Description',
+            name: '{{"primaryStorage.ts.Description" | translate}}',
             value: 'Description'
           },
           {
-            name: 'State',
+            name: '{{"primaryStorage.ts.State" | translate}}',
             value: 'state'
           },
           {
-            name: 'Total Capacity',
+            name: '{{"primaryStorage.ts.Total Capacity" | translate}}',
             value: 'totalCapacity'
           },
           {
-            name: 'Available Capacity',
+            name: '{{"primaryStorage.ts.Available Capacity" | translate}}',
             value: 'availableCapacity'
           },
           {
-            name: 'Type',
+            name: '{{"primaryStorage.ts.Type" | translate}}',
             value: 'type'
           },
           {
-            name: 'Created Date',
+            name: '{{"primaryStorage.ts.Created Date" | translate}}',
             value: 'createDate'
           },
           {
-            name: 'Last Updated Date',
+            name: '{{"primaryStorage.ts.Last Updated Date" | translate}}',
             value: 'lastOpDate'
           }
         ],
@@ -862,7 +862,7 @@ module MPrimaryStorage {
             },
             {
               field: 'url',
-              title: 'MON URL',
+              title: '{{"primaryStorage.ts.MON URL" | translate}}',
               width: '80%'
             }
           ],
@@ -1087,7 +1087,7 @@ module MPrimaryStorage {
           dataSource: new kendo.data.DataSource({data: []}),
           dataTextField: "name",
           dataValueField: "uuid",
-          template: "<div style='color: black'><span class='z-label'>Name</span>: #: name #</div><div style='color: black'><span class='z-label'>State:</span>#: state #</div><div style='color: black'><span class='z-label'>UUID:</span> #: uuid #</div>"
+          template: "<div style='color: black'><span class='z-label'>{{"primaryStorage.ts.Name" | translate}}</span>: #: name #</div><div style='color: black'><span class='z-label'>State:</span>#: state #</div><div style='color: black'><span class='z-label'>UUID:</span> #: uuid #</div>"
         };
 
         $scope.typeList = {
@@ -1115,7 +1115,7 @@ module MPrimaryStorage {
           dataSource: new kendo.data.DataSource({data: []}),
           dataTextField: "name",
           dataValueField: "uuid",
-          itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
+          itemTemplate: '<div style="color: black"><span class="z-label">{{"primaryStorage.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
           '<div style="color: black"><span class="z-label">HYPERVISOR:</span><span>#: hypervisorType #</span></div>' +
           '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
         };
@@ -1186,7 +1186,7 @@ module MPrimaryStorage {
           dataSource: new kendo.data.DataSource({data: []}),
           dataTextField: "name",
           dataValueField: "uuid",
-          itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
+          itemTemplate: '<div style="color: black"><span class="z-label">{{"primaryStorage.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
           '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
 
           change: (e)=> {
@@ -1291,7 +1291,7 @@ module MPrimaryStorage {
           dataSource: new kendo.data.DataSource({data: []}),
           dataTextField: "name",
           dataValueField: "uuid",
-          itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
+          itemTemplate: '<div style="color: black"><span class="z-label">{{"primaryStorage.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
           '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>' +
           '<div style="color: black"><span class="z-label">Hypervisor:</span><span>#: hypervisorType #</span></div>',
 
