@@ -915,10 +915,10 @@ module MEip {
                 $scope.vipMethodOptions__ = {
                     dataSource: new kendo.data.DataSource({
                         data: [{
-                            name: "{{"eip.ts.Create New VIP" | translate}}",
+                            name: '{{"eip.ts.Create New VIP" | translate}}',
                             field: CreateEip.CREATE_NEW_VIP
                         },{
-                            name: "{{"eip.ts.Use Existing VIP" | translate}}",
+                            name: '{{"eip.ts.Use Existing VIP" | translate}}',
                             field: CreateEip.USE_EXISTING_VIP
                         }]
                     }),

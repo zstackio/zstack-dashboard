@@ -215,19 +215,19 @@ module MVirtualRouterOffering {
                 },
                 {
                     field: 'state',
-                    title: 'STATE',
+                    title: '{{"virtualRouterOffering.ts.STATE" | translate}}',
                     width: '10%',
                     template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                 },
                 {
                     field: 'isDefault',
-                    title: 'DEFAULT OFFERING',
+                    title: '{{"virtualRouterOffering.ts.DEFAULT OFFERING" | translate}}',
                     width: '10%',
                     template: '<span class="{{dataItem.isDefaultLabel()}}">{{dataItem.isDefault ? "TRUE" : "" }}</span>'
                 },
                 {
                     field: 'uuid',
-                    title: 'UUID',
+                    title: '{{"virtualRouterOffering.ts.UUID" | translate}}',
                     width: '20%'
                 }
             ];
@@ -770,7 +770,7 @@ module MVirtualRouterOffering {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: "<div style='color: black'><span class='z-label'>{{"virtualRouterOffering.ts.Name" | translate}}</span>: #: name #</div><div style='color: black'><span class='z-label'>{{"virtualRouterOffering.ts.Name" | translate}}:</span>#: state #</div><div style='color: black'><span class='z-label'>{{"virtualRouterOffering.ts.UUID" | translate}}:</span> #: uuid #</div>"
+                    template: '<div style="color: black"><span class="z-label">{{"virtualRouterOffering.ts.Name" | translate}}</span>: #: name #</div>'+'<div style="color: black"><span class="z-label">{{"virtualRouterOffering.ts.Name" | translate}}:</span>#: state #</div>'+'<div style="color: black"><span class="z-label">{{"virtualRouterOffering.ts.UUID" | translate}}:</span> #: uuid #</div>'
                 };
 
                 $scope.$watch(()=>{

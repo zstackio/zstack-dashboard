@@ -818,7 +818,7 @@ module MVolume {
                     },
                     {
                         field: 'installPath',
-                        title: '{{"volume.ts.INSTALL PATH" | translate}}'',
+                        title: '{{"volume.ts.INSTALL PATH" | translate}}',
                         width: '80%'
                     },
                 ],
