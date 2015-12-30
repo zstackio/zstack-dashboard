@@ -10,7 +10,7 @@
 </div>
 
 <div>
-    <h3 class="z-h3">VOLUME</h3>
+    <h3 class="z-h3">{{ "volume.volume.VOLUME" | translate }}</h3>
     <div class="btn-group-sm z-btn-bar">
         <button type="button" class="btn btn-default btn-sm" ng-click="funcRefresh()">
             <i class="fa fa-refresh"></i>
@@ -28,41 +28,41 @@
 
         <button type="button" class="btn btn-success btn-sm" style="margin-left: 20px" ng-click="funcCreateVolume(winNewVolume)">
             <i class="fa fa-plus"></i>
-            <span>&nbsp; New Volume</span>
+            <span>&nbsp; {{ "volume.volume.New Volume" | translate }}</span>
         </button>
 
         <div id="volumeFilterContent" style="display: none">
             <form class="form">
                 <div class="form-group">
-                    <label for="fieldList" class="z-block-label">FILTER BY</label>
+                    <label for="fieldList" class="z-block-label">{{ "volume.volume.FILTER BY" | translate }}</label>
                     <select id="fieldList" kendo-drop-down-list k-options="filterBy.fieldList" ng-model="filterBy.field"></select>
                 </div>
                 <div class="form-group">
-                    <label class="z-block-label" for="valueList">VALUE</label>
+                    <label class="z-block-label" for="valueList">{{ "volume.volume.VALUE" | translate }}</label>
                     <select kendo-drop-down-list id="valueList" ng-disabled="filterBy.isValueListDisabled()" k-options="filterBy.valueList" ng-model="filterBy.value"></select>
                 </div>
-                <button type="button" class="btn btn-sm btn-primary" ng-click="filterBy.confirm(popoverFilterBy)">Confirm</button>
+                <button type="button" class="btn btn-sm btn-primary" ng-click="filterBy.confirm(popoverFilterBy)">{{ "volume.volume.Confirm" | translate }}</button>
             </form>
         </div>
 
         <div class="btn-group" ng-show="funcIsActionShow()">
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" ng-disabled="funcIsActionDisabled()">
-                Action <span class="caret"></span>
+                {{ "volume.volume.Action" | translate }} <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu">
-                <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">Enable</a></li>
-                <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">Disable</a></li>
-                <li><a href ng-click="action.attach()" ng-show="model.current.isAttachShow()">Attach</a></li>
-                <li><a href ng-click="action.detach()" ng-show="model.current.isDetachShow()">Detach</a></li>
-                <li><a href ng-click="action.createTemplate()" ng-show="model.current.isCreateTemplateShow()">Create Template</a></li>
-                <li><a href ng-click="action.takeSnapshot()" ng-show="model.current.isSnapshotShow()">Take Snapshot</a></li>
+                <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">{{ "volume.volume.Enable" | translate }}</a></li>
+                <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">{{ "volume.volume.Disable" | translate }}</a></li>
+                <li><a href ng-click="action.attach()" ng-show="model.current.isAttachShow()">{{ "volume.volume.Attach" | translate }}</a></li>
+                <li><a href ng-click="action.detach()" ng-show="model.current.isDetachShow()">{{ "volume.volume.Detach" | translate }}</a></li>
+                <li><a href ng-click="action.createTemplate()" ng-show="model.current.isCreateTemplateShow()">{{ "volume.volume.Create Template" | translate }}</a></li>
+                <li><a href ng-click="action.takeSnapshot()" ng-show="model.current.isSnapshotShow()">{{ "volume.volume.Take Snapshot" | translate }}</a></li>
                 <li class="divider"></li>
-                <li><a href style="color:red" ng-click="funcDeleteVolume(deleteVolume)" ng-show="model.current.isDeleteShow()">Delete</a></li>
+                <li><a href style="color:red" ng-click="funcDeleteVolume(deleteVolume)" ng-show="model.current.isDeleteShow()">{{ "volume.volume.Delete" | translate }}</a></li>
             </ul>
         </div>
     </div>
 
     <div kendo-grid="volumeGrid" k-options="oVolumeGrid.options" z-grid-double-click="funcGridDoubleClick" class="z-flat-table"></div>
-    <p class="z-hint">Single click column to show action button</p>
-    <p class="z-hint">Double click column to enter details page</p>
+    <p class="z-hint">{{ "volume.volume.HINT1" | translate }}</p>
+    <p class="z-hint">{{ "volume.volume.HINT2" | translate }}</p>
 </div>

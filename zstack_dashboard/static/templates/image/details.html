@@ -4,7 +4,7 @@
 
 <div class="z-pane">
     <ol class="breadcrumb">
-        <li><a href="/#/image">Image</a></li>
+        <li><a href="/#/image">{{"image.details.Image" | translate}}</a></li>
         <li class="active"><a href>{{model.current.name}}</a></li>
     </ol>
 
@@ -17,21 +17,21 @@
             </button>
             <div class="btn-group">
                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                    Action <span class="caret"></span>
+                    {{"image.details.Action" | translate}} <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">Enable</a></li>
-                    <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">Disable</a></li>
+                    <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">{{"image.details.Enable" | translate}}</a></li>
+                    <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">{{"image.details.Disable" | translate}}</a></li>
                     <li class="divider"></li>
-                    <li><a href style="color:red" ng-click="funcDelete(deleteImage)">Delete</a></li>
+                    <li><a href style="color:red" ng-click="funcDelete(deleteImage)">{{"image.details.Delete" | translate}}</a></li>
                 </ul>
             </div>
         </div>
     </div>
 
     <ul class="nav nav-pills">
-        <li class="active"><a data-target="#info" data-toggle="pill" href>Info</a></li>
-        <li><a data-target="#backupStorage" data-toggle="pill" href>Backup Storage</a></li>
+        <li class="active"><a data-target="#info" data-toggle="pill" href>{{"image.details.Info" | translate}}</a></li>
+        <li><a data-target="#backupStorage" data-toggle="pill" href>{{"image.details.Backup Storage" | translate}}</a></li>
     </ul>
 
 
@@ -45,7 +45,7 @@
                 <div class="panel-heading">
                     <a class="accordion-toggle" data-target="#infoDetails" data-toggle="collapse" href>
                         <i class="z-collapse fa fa-chevron-down"></i>
-                        <span>&nbsp; DETAILS</span>
+                        <span>&nbsp; {{"image.details.DETAILS" | translate}}</span>
                     </a>
                 </div>
 
@@ -53,47 +53,47 @@
                     <div class="panel-body">
                         <table class="table z-table-borderless">
                             <tr>
-                                <td><span class="z-label">DESCRIPTION:</span></td>
+                                <td><span class="z-label">{{"image.details.DESCRIPTION" | translate}}</span></td>
                                 <td><span class="z-description">{{model.current.description}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">STATE:</span></td>
+                                <td><span class="z-label">{{"image.details.STATE" | translate}}</span></td>
                                 <td><span class="{{model.current.stateLabel()}}">{{model.current.state}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">STATUS:</span></td>
-                                <td><span class="{{model.current.statusLabel()}}">{{model.current.status}}</span></td>
+                                <td><span class="z-label">{{"image.details.STATUS" | translate}}</span></td>
+                                <td><span class="{{model.current.statusLabel()}}">{{model.current.status}}"</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">URL:</span></td>
-                                <td><span>{{model.current.url}}</span></td>
+                                <td><span class="z-label">{{"image.details.URL" | translate}}</span></td>
+                                <td><span>{{model.current.url}}"</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">SIZE:</span></td>
-                                <td><span>{{model.current.size | size}}</span></td>
+                                <td><span class="z-label">{{"image.details.SIZE" | translate}}</span></td>
+                                <td><span>{{model.current.size | size}}"</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">FORMAT:</span></td>
+                                <td><span class="z-label">{{"image.details.FORMAT" | translate}}</span></td>
                                 <td><span>{{model.current.format}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">MEDIA TYPE:</span></td>
+                                <td><span class="z-label">{{"image.details.MEDIA TYPE" | translate}}</span></td>
                                 <td><span>{{model.current.mediaType}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">GUEST OS TYPE:</span></td>
+                                <td><span class="z-label">{{"image.details.GUEST OS TYPE" | translate}}</span></td>
                                 <td><span>{{model.current.guestOsType}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">UUID:</span></td>
+                                <td><span class="z-label">{{"image.details.UUID" | translate}}</span></td>
                                 <td><span>{{model.current.uuid}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">CREATED DATE:</span></td>
+                                <td><span class="z-label">{{"image.details.CREATED DATE" | translate}}</span></td>
                                 <td><span>{{model.current.createDate}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">LAST UPDATED DATE:</span></td>
+                                <td><span class="z-label">{{"image.details.LAST UPDATED DATE" | translate}}</span></td>
                                 <td><span>{{model.current.lastOpDate}}</span></td>
                             </tr>
                         </table>
@@ -106,7 +106,7 @@
 
         <div class="tab-pane" id="backupStorage">
             <div kendo-grid k-options="optionsBackupStorageGrid" class="z-flat-table"></div>
-            <p class="z-hint">Backup storage that contain this image</p>
+            <p class="z-hint">{{"image.details.HINT" | translate}}</p>
         </div>
     </div>
 </div>

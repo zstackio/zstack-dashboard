@@ -58,22 +58,22 @@ module MGlobalConfig {
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"globalConfig.ts.NAME" | translate}}',
                     width: '20%'
                 },
                 {
                     field: 'category',
-                    title: 'CATEGORY',
+                    title: '{{"globalConfig.ts.CATEGORY" | translate}}',
                     width: '20%'
                 },
                 {
                     field: 'description',
-                    title: 'DESCRIPTION',
+                    title: '{{"globalConfig.ts.DESCRIPTION" | translate}}',
                     width: '40%'
                 },
                 {
                     field: 'value',
-                    title: 'VALUE',
+                    title: '{{"globalConfig.ts.VALUE" | translate}}',
                     width: '20%'
                 }
             ];
@@ -118,11 +118,11 @@ module MGlobalConfig {
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"globalConfig.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'Category',
+                            name: '{{"globalConfig.ts.Category" | translate}}',
                             value: FilterBy.CATEGORY
                         }
                     ]
@@ -240,15 +240,15 @@ module MGlobalConfig {
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"globalConfig.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Category',
+                        name: '{{"globalConfig.ts.Category" | translate}}',
                         value: 'category'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"globalConfig.ts.Description" | translate}}',
                         value: 'description'
                     }
                 ],

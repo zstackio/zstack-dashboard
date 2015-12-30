@@ -11,7 +11,7 @@
 </div>
 
 <div>
-    <h3 class="z-h3">SECURITY GROUP</h3>
+    <h3 class="z-h3">{{"securityGroup.securityGroup.SECURITY GROUP" | translate}}</h3>
     <div class="btn-group-sm z-btn-bar">
         <button type="button" class="btn btn-default btn-sm" ng-click="funcRefresh()">
             <i class="fa fa-refresh"></i>
@@ -29,43 +29,43 @@
 
         <button type="button" class="btn btn-success btn-sm" style="margin-left: 20px" ng-click="funcCreateSecurityGroup(winNewSecurityGroup)">
             <i class="fa fa-plus"></i>
-            <span>&nbsp; New Security Group</span>
+            <span>&nbsp; {{"securityGroup.securityGroup.New Security Group" | translate}}</span>
         </button>
 
         <div id="hostFilterContent" style="display: none">
             <form class="form">
                 <div class="form-group">
-                    <label for="fieldList" class="z-block-label">FILTER BY</label>
+                    <label for="fieldList" class="z-block-label">{{"securityGroup.securityGroup.FILTER BY" | translate}}</label>
                     <select id="fieldList" kendo-drop-down-list k-options="filterBy.fieldList" ng-model="filterBy.field"></select>
                 </div>
                 <div class="form-group">
-                    <label class="z-block-label" for="valueList">VALUE</label>
+                    <label class="z-block-label" for="valueList">{{"securityGroup.securityGroup.VALUE" | translate}}</label>
                     <select kendo-drop-down-list id="valueList" ng-disabled="filterBy.isValueListDisabled()" k-options="filterBy.valueList" ng-model="filterBy.value"></select>
                 </div>
-                <button type="button" class="btn btn-sm btn-primary" ng-click="filterBy.confirm(popoverFilterBy)">Confirm</button>
+                <button type="button" class="btn btn-sm btn-primary" ng-click="filterBy.confirm(popoverFilterBy)">{{"securityGroup.securityGroup.Confirm" | translate}}</button>
             </form>
         </div>
 
         <div class="btn-group" ng-show="funcIsActionShow()">
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" ng-disabled="funcIsActionDisabled()">
-                Action <span class="caret"></span>
+                {{"securityGroup.securityGroup.Action" | translate}} <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu">
-                <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">Enable</a></li>
-                <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">Disable</a></li>
-                <li><a href ng-click="action.addRule()">Add Rule</a></li>
-                <li><a href ng-click="action.deleteRule()" ng-show="action.isDeleteRuleShow()">Delete Rule</a></li>
-                <li><a href ng-click="action.addNic()">Add Vm Nic</a></li>
-                <li><a href ng-click="action.removeNic()">Remove Vm Nic</a></li>
-                <li><a href ng-click="action.attachL3Network()">Attach L3Network</a></li>
-                <li><a href ng-click="action.detachL3Network()">Detach L3Network</a></li>
+                <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">{{"securityGroup.securityGroup.Enable" | translate}}</a></li>
+                <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">{{"securityGroup.securityGroup.Disable" | translate}}</a></li>
+                <li><a href ng-click="action.addRule()">{{"securityGroup.securityGroup.Add Rule" | translate}}</a></li>
+                <li><a href ng-click="action.deleteRule()" ng-show="action.isDeleteRuleShow()">{{"securityGroup.securityGroup.Delete Rule" | translate}}</a></li>
+                <li><a href ng-click="action.addNic()">{{"securityGroup.securityGroup.Add Vm Nic" | translate}}</a></li>
+                <li><a href ng-click="action.removeNic()">{{"securityGroup.securityGroup.Remove Vm Nic" | translate}}</a></li>
+                <li><a href ng-click="action.attachL3Network()">{{"securityGroup.securityGroup.Attach L3Network" | translate}}</a></li>
+                <li><a href ng-click="action.detachL3Network()">{{"securityGroup.securityGroup.Detach L3Network" | translate}}</a></li>
                 <li class="divider"></li>
-                <li><a href style="color:red" ng-click="funcDeleteSecurityGroup(deleteSecurityGroup)">Delete</a></li>
+                <li><a href style="color:red" ng-click="funcDeleteSecurityGroup(deleteSecurityGroup)">{{"securityGroup.securityGroup.Delete" | translate}}</a></li>
             </ul>
         </div>
     </div>
 
     <div kendo-grid="securityGroupGrid" k-options="oSecurityGroupGrid.options" z-grid-double-click="funcGridDoubleClick" class="z-flat-table"></div>
-    <p class="z-hint">Single click column to show action button</p>
-    <p class="z-hint">Double click column to enter details page</p>
+    <p class="z-hint">{{"securityGroup.securityGroup.HINT1" | translate}}</p>
+    <p class="z-hint">{{"securityGroup.securityGroup.HINT2" | translate}}</p>
 </div>

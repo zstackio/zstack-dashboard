@@ -6,7 +6,7 @@
 
 <div class="z-pane">
     <ol class="breadcrumb">
-        <li><a href="/#/vmInstance">VM INSTANCE</a></li>
+        <li><a href="/#/vmInstance">{{"virtualRouter.details.VM INSTANCE" | translate}}</a></li>
         <li class="active"><a href>{{model.current.name}}</a></li>
     </ol>
 
@@ -19,26 +19,26 @@
             </button>
             <div class="btn-group">
                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                    Action <span class="caret"></span>
+                    {{"virtualRouter.details.Action" | translate}} <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href ng-click="action.start()" ng-show="action.isActionShow('start')">Start</a></li>
-                    <li><a href ng-click="action.stop()" ng-show="action.isActionShow('stop')">Stop</a></li>
-                    <li><a href ng-click="action.reboot()" ng-show="action.isActionShow('reboot')">Reboot</a></li>
-                    <li><a href ng-click="action.migrate()" ng-show="action.isActionShow('migrate')">Migrate</a></li>
-                    <li><a href ng-click="action.reconnect()" ng-show="action.isActionShow('reconnect')">Reconnect</a></li>
-                    <li><a href ng-click="action.console()" ng-show="action.isActionShow('console')">Console</a></li>
+                    <li><a href ng-click="action.start()" ng-show="action.isActionShow('start')">{{"virtualRouter.details.Start" | translate}}</a></li>
+                    <li><a href ng-click="action.stop()" ng-show="action.isActionShow('stop')">{{"virtualRouter.details.Stop" | translate}}</a></li>
+                    <li><a href ng-click="action.reboot()" ng-show="action.isActionShow('reboot')">{{"virtualRouter.details.Reboot" | translate}}</a></li>
+                    <li><a href ng-click="action.migrate()" ng-show="action.isActionShow('migrate')">{{"virtualRouter.details.Migrate" | translate}}</a></li>
+                    <li><a href ng-click="action.reconnect()" ng-show="action.isActionShow('reconnect')">{{"virtualRouter.details.Reconnect" | translate}}</a></li>
+                    <li><a href ng-click="action.console()" ng-show="action.isActionShow('console')">{{"virtualRouter.details.Console" | translate}}</a></li>
                     <li class="divider"></li>
-                    <li><a href style="color:red" ng-click="action.delete()">Delete</a></li>
+                    <li><a href style="color:red" ng-click="action.delete()">{{"virtualRouter.details.Delete" | translate}}</a></li>
                 </ul>
             </div>
         </div>
     </div>
 
     <ul class="nav nav-pills">
-        <li class="active"><a data-target="#info" data-toggle="pill" href>Info</a></li>
-        <li><a data-target="#nic" data-toggle="pill" href>Nic</a></li>
-        <li><a data-target="#volume" data-toggle="pill" href>Volume</a></li>
+        <li class="active"><a data-target="#info" data-toggle="pill" href>{{"virtualRouter.details.Info" | translate}}</a></li>
+        <li><a data-target="#nic" data-toggle="pill" href>{{"virtualRouter.details.Nic" | translate}}</a></li>
+        <li><a data-target="#volume" data-toggle="pill" href>{{"virtualRouter.details.Volume" | translate}}</a></li>
     </ul>
 
     <div class="tab-content">
@@ -51,7 +51,7 @@
                 <div class="panel-heading">
                     <a class="accordion-toggle" data-target="#infoDetails" data-toggle="collapse" href>
                         <i class="z-collapse fa fa-chevron-down"></i>
-                        <span>&nbsp; DETAILS</span>
+                        <span>&nbsp; {{"virtualRouter.details.DETAILS" | translate}}</span>
                     </a>
                 </div>
 
@@ -59,55 +59,55 @@
                     <div class="panel-body">
                         <table class="table z-table-borderless">
                             <tr>
-                                <td><span class="z-label">DESCRIPTION:</span></td>
+                                <td><span class="z-label">{{"virtualRouter.details.DESCRIPTION" | translate}}:</span></td>
                                 <td><span class="z-description">{{model.current.description}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">STATE:</span></td>
+                                <td><span class="z-label">{{"virtualRouter.details.STATE" | translate}}:</span></td>
                                 <td><span class="{{model.current.stateLabel()}}">{{model.current.state}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">STATUS:</span></td>
+                                <td><span class="z-label">{{"virtualRouter.details.STATUS" | translate}}:</span></td>
                                 <td><span class="{{model.current.statusLabel()}}">{{model.current.status}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">HYPERVISOR:</span></td>
+                                <td><span class="z-label">{{"virtualRouter.details.HYPERVISOR" | translate}}:</span></td>
                                 <td><span>{{model.current.hypervisorType}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">UUID:</span></td>
+                                <td><span class="z-label">{{"virtualRouter.details.UUID" | translate}}:</span></td>
                                 <td><span>{{model.current.uuid}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">INSTANCE OFFERING UUID:</span></td>
+                                <td><span class="z-label">{{"virtualRouter.details.INSTANCE OFFERING UUID" | translate}}:</span></td>
                                 <td><a href="/#/instanceOffering/{{model.current.instanceOfferingUuid}}">{{model.current.instanceOfferingUuid}}</a></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">IMAGE UUID:</span></td>
+                                <td><span class="z-label">{{"virtualRouter.details.IMAGE UUID" | translate}}:</span></td>
                                 <td><a href="/#/image/{{model.current.imageUuid}}">{{model.current.imageUuid}}</a></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">HOST UUID:</span></td>
+                                <td><span class="z-label">{{"virtualRouter.details.HOST UUID" | translate}}:</span></td>
                                 <td><a href="/#/host/{{model.current.hostUuid}}">{{model.current.hostUuid}}</a></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">LAST HOST UUID:</span></td>
+                                <td><span class="z-label">{{"virtualRouter.details.LAST HOST UUID" | translate}}:</span></td>
                                 <td><a href="/#/host/{{model.current.lastHostUuid}}">{{model.current.lastHostUuid}}</a></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">CLUSTER UUID:</span></td>
+                                <td><span class="z-label">{{"virtualRouter.details.CLUSTER UUID" | translate}}:</span></td>
                                 <td><a href="/#/cluster/{{model.current.clusterUuid}}">{{model.current.clusterUuid}}</a></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">ZONE UUID:</span></td>
+                                <td><span class="z-label">{{"virtualRouter.details.ZONE UUID" | translate}}:</span></td>
                                 <td><a href="/#/zone/{{model.current.zoneUuid}}">{{model.current.zoneUuid}}</a></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">CREATED DATE:</span></td>
+                                <td><span class="z-label">{{"virtualRouter.details.CREATED DATE" | translate}}:</span></td>
                                 <td><span>{{model.current.createDate}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">LAST UPDATED DATE:</span></td>
+                                <td><span class="z-label">{{"virtualRouter.details.LAST UPDATED DATE" | translate}}:</span></td>
                                 <td><span>{{model.current.lastOpDate}}</span></td>
                             </tr>
                         </table>

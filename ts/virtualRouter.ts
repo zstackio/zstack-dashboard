@@ -260,35 +260,35 @@ module MVirtualRouter {
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"virtualRouter.ts.NAME" | translate}}',
                     width: '20%',
                     template: '<a href="/\\#/vmInstance/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'description',
-                    title: 'DESCRIPTION',
+                    title: '{{"virtualRouter.ts.DESCRIPTION" | translate}}',
                     width: '20%'
                 },
                 {
                     field: 'hypervisorType',
-                    title: 'HYPERVISOR',
+                    title: '{{"virtualRouter.ts.HYPERVISOR" | translate}}',
                     width: '20%'
                 },
                 {
                     field: 'state',
-                    title: 'STATE',
+                    title: '{{"virtualRouter.ts.STATE" | translate}}',
                     width: '10%',
                     template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                 },
                 {
                     field: 'status',
-                    title: 'STATUS',
+                    title: '{{"virtualRouter.ts.STATUS" | translate}}',
                     width: '10%',
                     template: '<span class="{{dataItem.statusLabel()}}">{{dataItem.status}}</span>'
                 },
                 {
                     field: 'uuid',
-                    title: 'UUID',
+                    title: '{{"virtualRouter.ts.UUID" | translate}}',
                     width: '20%'
                 }
             ];
@@ -378,15 +378,15 @@ module MVirtualRouter {
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"virtualRouter.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'State',
+                            name: '{{"virtualRouter.ts.State" | translate}}',
                             value: FilterBy.STATE
                         },
                         {
-                            name: 'HypervisorType',
+                            name: '{{"virtualRouter.ts.HypervisorType" | translate}}',
                             value: FilterBy.TYPE
                         }
                     ]
@@ -530,39 +530,39 @@ module MVirtualRouter {
                 columns: [
                     {
                         field: 'deviceId',
-                        title: 'DEVICE ID',
+                        title: '{{"virtualRouter.ts.DEVICE ID" | translate}}',
                         width: '4%'
                     },
                     {
                         field: 'l3NetworkUuid',
-                        title: 'L3 Network',
+                        title: '{{"virtualRouter.ts.L3 Network" | translate}}',
                         width: '20%',
                         template: '<a href="/\\#/l3Network/{{dataItem.l3NetworkUuid}}">{{dataItem.l3NetworkUuid}}</a>'
                     },
                     {
                         field: 'ip',
-                        title: 'IP',
+                        title: '{{"virtualRouter.ts.IP" | translate}}',
                         width: '14%'
                     },
                     {
                         field: 'netmask',
-                        title: 'NETMASK',
+                        title: '{{"virtualRouter.ts.NETMASK" | translate}}',
                         width: '14%'
                     },
                     {
                         field: 'gateway',
-                        title: 'GATEWAY',
+                        title: '{{"virtualRouter.ts.GATEWAY" | translate}}',
                         width: '14%'
                     },
                     {
                         field: 'mac',
-                        title: 'MAC',
+                        title: '{{"virtualRouter.ts.MAC" | translate}}',
                         width: '14%'
 
                     },
                     {
                         field: 'uuid',
-                        title: 'UUID',
+                        title: '{{"virtualRouter.ts.UUID" | translate}}',
                         width: '20%'
                     }
                 ],
@@ -587,34 +587,34 @@ module MVirtualRouter {
                 columns: [
                     {
                         field: 'deviceId',
-                        title: 'DEVICE ID',
+                        title: '{{"virtualRouter.ts.DEVICE ID" | translate}}',
                         width: '10%',
                         template: '<a href="/\\#/volume/{{dataItem.uuid}}">{{dataItem.deviceId}}</a>'
                     },
                     {
                         field: 'name',
-                        title: 'NAME',
+                        title: '{{"virtualRouter.ts.NAME" | translate}}',
                         width: '18%'
 
                     },
                     {
                         field: 'type',
-                        title: 'TYPE',
+                        title: '{{"virtualRouter.ts.TYPE" | translate}}',
                         width: '18%'
                     },
                     {
                         field: 'state',
-                        title: 'STATE',
+                        title: '{{"virtualRouter.ts.STATE" | translate}}',
                         width: '18%'
                     },
                     {
                         field: 'status',
-                        title: 'STATUS',
+                        title: '{{"virtualRouter.ts.STATUS" | translate}}',
                         width: '18%'
                     },
                     {
                         field: 'uuid',
-                        title: 'UUID',
+                        title: '{{"virtualRouter.ts.UUID" | translate}}',
                         width: '18%'
                     }
                 ],
@@ -632,7 +632,7 @@ module MVirtualRouter {
             };
 
             $scope.optionsReconnectVirtualRouter = {
-                title: 'RECONNECT VIRTUAL ROUTER',
+                title: '{{"virtualRouter.ts.RECONNECT VIRTUAL ROUTER" | translate}}',
                 btnType: 'btn-primary',
                 width: '350px',
 
@@ -661,27 +661,27 @@ module MVirtualRouter {
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"virtualRouter.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"virtualRouter.ts.Description" | translate}}',
                         value: 'Description'
                     },
                     {
-                        name: 'State',
+                        name: '{{"virtualRouter.ts.State" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Hypervisor',
+                        name: '{{"virtualRouter.ts.Hypervisor" | translate}}',
                         value: 'hypervisorType'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"virtualRouter.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"virtualRouter.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],

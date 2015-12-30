@@ -215,40 +215,40 @@ module MHost {
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"host.ts.NAME" | translate}}',
                     width: '10%',
                     template: '<a href="/\\#/host/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'description',
-                    title: 'DESCRIPTION',
+                    title: '{{"host.ts.DESCRIPTION" | translate}}',
                     width: '20%'
                 },
                 {
                     field: 'managementIp',
-                    title: 'MANAGEMENT IP',
+                    title: '{{"host.ts.MANAGEMENT IP" | translate}}',
                     width: '15%'
                 },
                 {
                     field: 'hypervisorType',
-                    title: 'HYPERVISOR',
+                    title: '{{"host.ts.HYPERVISOR" | translate}}',
                     width: '15%'
                 },
                 {
                     field: 'state',
-                    title: 'STATE',
+                    title: '{{"host.ts.STATE" | translate}}',
                     width: '10%',
                     template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                 },
                 {
                     field: 'status',
-                    title: 'STATUS',
+                    title: '{{"host.ts.STATUS" | translate}}',
                     width: '10%',
                     template: '<span class="{{dataItem.statusLabel()}}">{{dataItem.status}}</span>'
                 },
                 {
                     field: 'uuid',
-                    title: 'UUID',
+                    title: '{{"host.ts.UUID" | translate}}',
                     width: '20%'
                 }
             ];
@@ -313,19 +313,19 @@ module MHost {
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"host.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'State',
+                            name: '{{"host.ts.State" | translate}}',
                             value: FilterBy.STATE
                         },
                         {
-                            name: 'Status',
+                            name: '{{"host.ts.Status" | translate}}',
                             value: FilterBy.STATUS
                         },
                         {
-                            name: 'HypervisorType',
+                            name: '{{"host.ts.HypervisorType" | translate}}',
                             value: FilterBy.TYPE
                         }
                     ]
@@ -469,31 +469,31 @@ module MHost {
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"host.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"host.ts.Description" | translate}}',
                         value: 'description'
                     },
                     {
-                        name: 'State',
+                        name: '{{"host.ts.State" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Status',
+                        name: '{{"host.ts.Status" | translate}}',
                         value: 'status'
                     },
                     {
-                        name: 'Hypervisor',
+                        name: '{{"host.ts.Hypervisor" | translate}}',
                         value: 'hypervisorType'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"host.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"host.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
@@ -817,7 +817,7 @@ module MHost {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: "<div style='color: black'><span class='z-label'>Name</span>: #: name #</div><div style='color: black'><span class='z-label'>State:</span>#: state #</div><div style='color: black'><span class='z-label'>UUID:</span> #: uuid #</div>"
+                    template: '<div style="color: black"><span class="z-label">{{"host.ts.Name" | translate}}</span>: #: name #</div>'+'<div style="color: black"><span class="z-label">{{"host.ts.State" | translate}}</span>#: state #</div>'+'<div style="color: black"><span class="z-label">{{"host.ts.UUID" | translate}}</span> #: uuid #</div>'
                 };
 
                 $scope.winCreateHostOptions__ = {
@@ -833,9 +833,9 @@ module MHost {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">HYPERVISOR:</span><span>#: hypervisorType #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
+                    template: '<div style="color: black"><span class="z-label">{{"host.ts.Name" | translate}}</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"host.ts.HYPERVISOR" | translate}}</span><span>#: hypervisorType #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"host.ts.UUID" | translate}}</span><span>#: uuid #</span></div>',
 
                     change: (e)=>{
                         var list = e.sender;

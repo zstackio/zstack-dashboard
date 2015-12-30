@@ -11,7 +11,7 @@
 
 <div class="z-pane">
     <ol class="breadcrumb">
-        <li><a href="/#/securityGroup">SECURITY GROUP</a></li>
+        <li><a href="/#/securityGroup">{{"securityGroup.details.SECURITY GROUP" | translate}}</a></li>
         <li class="active"><a href>{{model.current.name}}</a></li>
     </ol>
 
@@ -24,29 +24,29 @@
             </button>
             <div class="btn-group">
                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" ng-disabled="funcIsActionDisabled()">
-                    Action <span class="caret"></span>
+                    {{"securityGroup.details.Action" | translate}} <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">Enable</a></li>
-                    <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">Disable</a></li>
-                    <li><a href ng-click="action.addRule()">Add Rule</a></li>
-                    <li><a href ng-click="action.deleteRule()" ng-show="action.isDeleteRuleShow()">Delete Rule</a></li>
-                    <li><a href ng-click="action.addNic()">Add Vm Nic</a></li>
-                    <li><a href ng-click="action.removeNic()">Remove Vm Nic</a></li>
-                    <li><a href ng-click="action.attachL3Network()">Attach L3Network</a></li>
-                    <li><a href ng-click="action.detachL3Network()">Detach L3Network</a></li>
+                    <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">{{"securityGroup.details.Enable" | translate}}</a></li>
+                    <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">{{"securityGroup.details.Disable" | translate}}</a></li>
+                    <li><a href ng-click="action.addRule()">{{"securityGroup.details.Add Rule" | translate}}</a></li>
+                    <li><a href ng-click="action.deleteRule()" ng-show="action.isDeleteRuleShow()">{{"securityGroup.details.Delete Rule" | translate}}</a></li>
+                    <li><a href ng-click="action.addNic()">{{"securityGroup.details.Add Vm Nic" | translate}}</a></li>
+                    <li><a href ng-click="action.removeNic()">{{"securityGroup.details.Remove Vm Nic" | translate}}</a></li>
+                    <li><a href ng-click="action.attachL3Network()">{{"securityGroup.details.Attach L3Network" | translate}}</a></li>
+                    <li><a href ng-click="action.detachL3Network()">{{"securityGroup.details.Detach L3Network" | translate}}</a></li>
                     <li class="divider"></li>
-                    <li><a href style="color:red" ng-click="funcDelete(deleteSecurityGroup)">Delete</a></li>
+                    <li><a href style="color:red" ng-click="funcDelete(deleteSecurityGroup)">{{"securityGroup.details.Delete" | translate}}</a></li>
                 </ul>
             </div>
         </div>
     </div>
 
     <ul class="nav nav-pills">
-        <li class="active"><a data-target="#info" data-toggle="pill" href>Info</a></li>
-        <li><a data-target="#rule" data-toggle="pill" href>Rules</a></li>
-        <li><a data-target="#l3Network" data-toggle="pill" href>L3 Networks</a></li>
-        <li><a data-target="#vmNic" data-toggle="pill" href>VM Nics</a></li>
+        <li class="active"><a data-target="#info" data-toggle="pill" href>{{"securityGroup.details.Info" | translate}}</a></li>
+        <li><a data-target="#rule" data-toggle="pill" href>{{"securityGroup.details.Rules" | translate}}</a></li>
+        <li><a data-target="#l3Network" data-toggle="pill" href>{{"securityGroup.details.L3 Networks" | translate}}</a></li>
+        <li><a data-target="#vmNic" data-toggle="pill" href>{{"securityGroup.details.VM Nics" | translate}}</a></li>
     </ul>
 
 
@@ -54,13 +54,13 @@
         <div class="tab-pane active" id="info">
             <tags-input ng-model="optionsTag.tags" display-property="tag" min-length="1"
                         on-tag-added="optionsTag.createTag($tag)" on-tag-removed="optionsTag.deleteTag($tag)"
-                        add-on-comma="false" replace-spaces-with-dashes="false" ng-show="optionsTag.isShow()"></tags-input>
-
+                        add-on-comma="false" replace-spaces-with-dashes="false" ng-show="optionsTag.isShow()">
+			</tags-input>
             <div class="panel panel-default" z-panel-header-in>
                 <div class="panel-heading">
                     <a class="accordion-toggle" data-target="#infoDetails" data-toggle="collapse" href>
                         <i class="z-collapse fa fa-chevron-down"></i>
-                        <span>&nbsp; DETAILS</span>
+                        <span>&nbsp; {{"securityGroup.details.DETAILS" | translate}}</span>
                     </a>
                 </div>
 
@@ -68,23 +68,23 @@
                     <div class="panel-body">
                         <table class="table z-table-borderless">
                             <tr>
-                                <td><span class="z-label">DESCRIPTION:</span></td>
+                                <td><span class="z-label">{{"securityGroup.details.DESCRIPTION" | translate}}:</span></td>
                                 <td><span class="z-description">{{model.current.description}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">STATE:</span></td>
+                                <td><span class="z-label">{{"securityGroup.details.STATE" | translate}}:</span></td>
                                 <td><span class="{{model.current.stateLabel()}}">{{model.current.state}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">UUID:</span></td>
+                                <td><span class="z-label">{{"securityGroup.details.UUID" | translate}}:</span></td>
                                 <td><span>{{model.current.uuid}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">CREATED DATE:</span></td>
+                                <td><span class="z-label">{{"securityGroup.details.CREATED DATE" | translate}}:</span></td>
                                 <td><span>{{model.current.createDate}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">LAST UPDATED DATE:</span></td>
+                                <td><span class="z-label">{{"securityGroup.details.LAST UPDATED DATE" | translate}}:</span></td>
                                 <td><span>{{model.current.lastOpDate}}</span></td>
                             </tr>
                         </table>
@@ -100,12 +100,12 @@
 
         <div class="tab-pane" id="l3Network">
             <div kendo-grid k-options="optionsL3NetworkGrid" class="z-flat-table"></div>
-            <p class="z-hint">L3Networks listing here have attached to this security group</p>
+            <p class="z-hint">{{"securityGroup.details.HINT1" | translate}}</p>
         </div>
 
         <div class="tab-pane" id="vmNic">
             <div kendo-grid k-options="optionsVmNicGrid" class="z-flat-table"></div>
-            <p class="z-hint">Vm nics listing here have been added to this security group</p>
+            <p class="z-hint">{{"securityGroup.details.HINT2" | translate}}</p>
         </div>
     </div>
 </div>

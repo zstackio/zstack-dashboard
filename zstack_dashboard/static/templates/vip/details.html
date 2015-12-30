@@ -4,7 +4,7 @@
 
 <div class="z-pane">
     <ol class="breadcrumb">
-        <li><a href="/#/vip">VIP</a></li>
+        <li><a href="/#/vip">{{"vip.details.VIP" | translate}}</a></li>
         <li class="active"><a href>{{model.current.name}}</a></li>
     </ol>
 
@@ -17,20 +17,20 @@
             </button>
             <div class="btn-group">
                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                    Action <span class="caret"></span>
+                    {{"vip.details.Action" | translate}} <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">Enable</a></li>
-                    <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">Disable</a></li>
+                    <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">{{"vip.details.Enable" | translate}}</a></li>
+                    <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">{{"vip.details.Disable" | translate}}</a></li>
                     <li class="divider"></li>
-                    <li><a href style="color:red" ng-click="funcDelete(deleteVip)">Delete</a></li>
+                    <li><a href style="color:red" ng-click="funcDelete(deleteVip)">{{"vip.details.Delete" | translate}}</a></li>
                 </ul>
             </div>
         </div>
     </div>
 
     <ul class="nav nav-pills">
-        <li class="active"><a data-target="#info" data-toggle="pill" href>Info</a></li>
+        <li class="active"><a data-target="#info" data-toggle="pill" href>{{"vip.details.Info" | translate}}</a></li>
     </ul>
 
 
@@ -44,7 +44,7 @@
                 <div class="panel-heading">
                     <a class="accordion-toggle" data-target="#infoDetails" data-toggle="collapse" href>
                         <i class="z-collapse fa fa-chevron-down"></i>
-                        <span>&nbsp; DETAILS</span>
+                        <span>&nbsp; {{"vip.details.DETAILS" | translate}}</span>
                     </a>
                 </div>
 
@@ -52,51 +52,51 @@
                     <div class="panel-body">
                         <table class="table z-table-borderless">
                             <tr>
-                                <td><span class="z-label">DESCRIPTION:</span></td>
+                                <td><span class="z-label">{{"vip.details.DESCRIPTION" | translate}}:</span></td>
                                 <td><span class="z-description">{{model.current.description}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">STATE:</span></td>
+                                <td><span class="z-label">{{"vip.details.STATE" | translate}}:</span></td>
                                 <td><span class="{{model.current.stateLabel()}}">{{model.current.state}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">IP:</span></td>
+                                <td><span class="z-label">{{"vip.details.IP" | translate}}:</span></td>
                                 <td><span>{{model.current.ip}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">GATEWAY:</span></td>
+                                <td><span class="z-label">{{"vip.details.GATEWAY" | translate}}:</span></td>
                                 <td><span>{{model.current.gateway}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">NETMASK:</span></td>
+                                <td><span class="z-label">{{"vip.details.NETMASK" | translate}}:</span></td>
                                 <td><span>{{model.current.netmask}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">USE:</span></td>
+                                <td><span class="z-label">{{"vip.details.USE" | translate}}:</span></td>
                                 <td><span>{{model.current.useFor}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">SERVICE PROVIDER:</span></td>
+                                <td><span class="z-label">{{"vip.details.SERVICE PROVIDER" | translate}}:</span></td>
                                 <td><span>{{model.current.serviceProvider}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">L3 NETWORK UUID:</span></td>
+                                <td><span class="z-label">{{"vip.details.L3 NETWORK UUID" | translate}}:</span></td>
                                 <td><a href="/#/l3Network/{{model.current.l3NetworkUuid}}">{{model.current.l3NetworkUuid}}</a></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">PEER L3 NETWORK UUID:</span></td>
+                                <td><span class="z-label">{{"vip.details.PEER L3 NETWORK UUID" | translate}}:</span></td>
                                 <td><a href="/#/l3Network/{{model.current.peerL3NetworkUuid}}">{{model.current.peerL3NetworkUuid}}</a></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">UUID:</span></td>
+                                <td><span class="z-label">{{"vip.details.UUID" | translate}}:</span></td>
                                 <td><span>{{model.current.uuid}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">CREATED DATE:</span></td>
+                                <td><span class="z-label">{{"vip.details.CREATED DATE" | translate}}:</span></td>
                                 <td><span>{{model.current.createDate}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">LAST UPDATED DATE:</span></td>
+                                <td><span class="z-label">{{"vip.details.LAST UPDATED DATE" | translate}}:</span></td>
                                 <td><span>{{model.current.lastOpDate}}</span></td>
                             </tr>
                         </table>

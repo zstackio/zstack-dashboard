@@ -247,52 +247,52 @@ module MBackupStorage {
       this.options.columns = [
         {
           field: 'name',
-          title: 'NAME',
+          title: '{{"backupStorage.ts.NAME" | translate}}',
           width: '10%',
           template: '<a href="/\\#/backupStorage/{{dataItem.uuid}}">{{dataItem.name}}</a>'
         },
         {
           field: 'description',
-          title: 'DESCRIPTION',
+          title: '{{"backupStorage.ts.DESCRIPTION" | translate}}',
           width: '10%'
         },
         {
           field: 'url',
-          title: 'URL',
+          title: '{{"backupStorage.ts.URL" | translate}}',
           width: '16%'
         },
         {
           field: 'totalCapacity',
-          title: 'TOTAL CAPACITY',
+          title: '{{"backupStorage.ts.TOTAL CAPACITY" | translate}}',
           width: '8%',
           template: '<span>{{dataItem.totalCapacity | size}}</span>'
         },
         {
           field: 'availableCapacity',
-          title: 'AVAILABLE CAPACITY',
+          title: '{{"backupStorage.ts.AVAILABLE CAPACITY" | translate}}',
           width: '8%',
           template: '<span>{{dataItem.availableCapacity | size}}</span>'
         },
         {
           field: 'type',
-          title: 'TYPE',
+          title: '{{"backupStorage.ts.TYPE" | translate}}',
           width: '10%'
         },
         {
           field: 'state',
-          title: 'STATE',
+          title: '{{"backupStorage.ts.STATE" | translate}}',
           width: '10%',
           template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
         },
         {
           field: 'status',
-          title: 'STATUS',
+          title: '{{"backupStorage.ts.STATUS" | translate}}',
           width: '10%',
           template: '<span class="{{dataItem.statusLabel()}}">{{dataItem.status}}</span>'
         },
         {
           field: 'uuid',
-          title: 'UUID',
+          title: '{{"backupStorage.ts.UUID" | translate}}',
           width: '20%'
         }
       ];
@@ -373,19 +373,19 @@ module MBackupStorage {
         dataSource: new kendo.data.DataSource({
           data: [
             {
-              name: 'None',
+              name: '{{"backupStorage.ts.None" | translate}}',
               value: FilterBy.NONE
             },
             {
-              name: 'State',
+              name: '{{"backupStorage.ts.State" | translate}}',
               value: FilterBy.STATE
             },
             {
-              name: 'Status',
+              name: '{{"backupStorage.ts.Status" | translate}}',
               value: FilterBy.STATUS
             },
             {
-              name: 'Type',
+              name: '{{"backupStorage.ts.Type" | translate}}',
               value: FilterBy.TYPE
             }
           ]
@@ -548,25 +548,25 @@ module MBackupStorage {
         columns: [
           {
             field: 'name',
-            title: 'NAME',
+            title: '{{"backupStorage.ts.NAME" | translate}}',
             width: '25%',
             template: '<a href="/\\#/zone/{{dataItem.uuid}}">{{dataItem.name}}</a>'
           },
           {
             field: 'description',
-            title: 'DESCRIPTION',
+            title: '{{"backupStorage.ts.DESCRIPTION" | translate}}',
             width: '30%'
           },
           {
             field: 'state',
-            title: 'STATE',
+            title: '{{"backupStorage.ts.STATE" | translate}}',
             width: '20%',
             template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
 
           },
           {
             field: 'uuid',
-            title: 'UUID',
+            title: '{{"backupStorage.ts.UUID" | translate}}',
             width: '25%'
           }
         ],
@@ -626,39 +626,39 @@ module MBackupStorage {
       $scope.optionsSortBy = {
         fields: [
           {
-            name: 'Name',
+            name: '{{"backupStorage.ts.Name" | translate}}',
             value: 'name'
           },
           {
-            name: 'Description',
+            name: '{{"backupStorage.ts.Description" | translate}}',
             value: 'Description'
           },
           {
-            name: 'State',
+            name: '{{"backupStorage.ts.State" | translate}}',
             value: 'state'
           },
           {
-            name: 'Status',
+            name: '{{"backupStorage.ts.Status" | translate}}',
             value: 'status'
           },
           {
-            name: 'Total Capacity',
+            name: '{{"backupStorage.ts.Total Capacity" | translate}}',
             value: 'totalCapacity'
           },
           {
-            name: 'Available Capacity',
+            name: '{{"backupStorage.ts.Available Capacity" | translate}}',
             value: 'availableCapacity'
           },
           {
-            name: 'Type',
+            name: '{{"backupStorage.ts.Type" | translate}}',
             value: 'type'
           },
           {
-            name: 'Created Date',
+            name: '{{"backupStorage.ts.Created Date" | translate}}',
             value: 'createDate'
           },
           {
-            name: 'Last Updated Date',
+            name: '{{"backupStorage.ts.Last Updated Date" | translate}}',
             value: 'lastOpDate'
           }
         ],
@@ -893,7 +893,7 @@ module MBackupStorage {
             },
             {
               field: 'url',
-              title: 'MON URL',
+              title: '{{"backupStorage.ts.MON URL" | translate}}',
               width: '80%'
             }
           ],
@@ -1089,7 +1089,7 @@ module MBackupStorage {
           dataSource: new kendo.data.DataSource({data: []}),
           dataTextField: "name",
           dataValueField: "uuid",
-          itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
+          itemTemplate: '<div style="color: black"><span class="z-label">{{"backupStorage.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
           '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
           '<div style="color: black"><span class="z-label">URL:</span><span>#: url #</span></div>' +
           '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
@@ -1156,7 +1156,7 @@ module MBackupStorage {
           dataSource: new kendo.data.DataSource({data: []}),
           dataTextField: "name",
           dataValueField: "uuid",
-          itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
+          itemTemplate: '<div style="color: black"><span class="z-label">{{"backupStorage.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
           '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
 
           change: (e)=> {
@@ -1257,7 +1257,7 @@ module MBackupStorage {
           dataSource: new kendo.data.DataSource({data: []}),
           dataTextField: "name",
           dataValueField: "uuid",
-          itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
+          itemTemplate: '<div style="color: black"><span class="z-label">{{"backupStorage.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
           '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
 
           change: (e)=> {

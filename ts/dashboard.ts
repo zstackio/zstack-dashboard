@@ -11,66 +11,66 @@ module MDashboard {
     }
 
     export class Controller {
-        static $inject = ['$scope', 'Api', '$location', 'ZoneManager'];
+        static $inject = ['$scope', 'Api', '$location', 'ZoneManager', 'Translator', '$translate'];
 
-        constructor(private $scope : any, private api : Utils.Api, private $location : ng.ILocationService, private zoneMgr: MZone.ZoneManager) {
-            var cpu = new kendo.data.ObservableObject({
-                name: 'CPU',
-                total: 0,
-                available: 0,
-                percent: 0
-            });
-            var memory =  new kendo.data.ObservableObject({
-                name: 'MEMORY',
-                total: 0,
-                available: 0,
-                percent: 0
-            });
-            var priCap = new kendo.data.ObservableObject({
-                name: 'PRIMARY STORAGE',
-                total: 0,
-                available: 0,
-                percent: 0
-            });
-            var backupCap = new kendo.data.ObservableObject({
-                name: 'BACKUP STORAGE',
-                total: 0,
-                available: 0,
-                percent: 0
-            });
-            var ip = new kendo.data.ObservableObject({
-                name: 'IP ADDRESS',
-                total: 0,
-                available: 0,
-                percent: 0
-            });
-
-            $scope.capacityGrid = {
-                resizable: true,
-                scrollable: true,
-                pageable: false,
-                columns: [
-                    {
-                        field: 'name',
-                        title: 'CAPACITY NAME',
-                        width: '25%'
-                    },
-                    {
-                        field: 'total',
-                        title: 'TOTAL CAPACITY',
-                        width: '25%'
-                    },
-                    {
-                        field: 'available',
-                        title: 'AVAILABLE CAPACITY',
-                        width: '25%'
-                    },
-                    {
-                        field: 'percent',
-                        title: 'AVAILABLE PERCENTAGE',
-                        width: '25%'
-                    }
-                ],
+        constructor(private $scope: any, private api: Utils.Api, private $location: ng.ILocationService, private zoneMgr: MZone.ZoneManager, private Translator: Utils.Translator, private $translate: any) {
+             var cpu = new kendo.data.ObservableObject({
+                 total: 0,
+                 available: 0,
+                 percent: 0
+             });
+             Translator.addProperty(cpu, 'name', 'dashboard.CPU');
+             var memory =  new kendo.data.ObservableObject({
+                 total: 0,
+                 available: 0,
+                 percent: 0
+             });
+             Translator.addProperty(memory, 'name', 'dashboard.MEMORY');
+             var priCap = new kendo.data.ObservableObject({
+                 total: 0,
+                 available: 0,
+                 percent: 0
+             });
+             Translator.addProperty(priCap, 'name', 'dashboard.PRIMARY STORAGE');
+             var backupCap = new kendo.data.ObservableObject({
+                 total: 0,
+                 available: 0,
+                 percent: 0
+             });
+             Translator.addProperty(backupCap, 'name', 'dashboard.BACKUP STORAGE');
+             var ip = new kendo.data.ObservableObject({
+                 total: 0,
+                 available: 0,
+                 percent: 0
+             });
+             Translator.addProperty(ip, 'name', 'dashboard.IP ADDRESS');
+ 
+             $scope.capacityGrid = {
+                 resizable: true,
+                 scrollable: true,
+                 pageable: false,
+                 columns: [
+                     {
+                         field: 'name',
+                         title: '{{ "dashboard.CAPACITY NAME" | translate }}',
+                         width: '25%'
+                     },
+                     {
+                         field: 'total',
+                         title: '{{ "dashboard.TOTAL CAPACITY" | translate }}',
+                         width: '25%'
+                     },
+                     {
+                         field: 'available',
+                         title: '{{ "dashboard.AVAILABLE CAPACITY" | translate }}',
+                         width: '25%'
+                     },
+                     {
+                         field: 'percent',
+                         title: '{{ "dashboard.AVAILABLE PERCENTAGE" | translate }}',
+                         width: '25%'
+                     }
+                 ],
 
                 dataSource: new kendo.data.DataSource({
                     schema: {
