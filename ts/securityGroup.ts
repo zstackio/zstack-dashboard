@@ -463,11 +463,11 @@ module MSecurityGroup {
             };
 
             $scope.optionsDeleteSecurityGroup = {
-                title: '{{"securityGroup.ts.DELETE SECURITY GROUP" | translate}}',
-                html: '<strong><p>{{"securityGroup.ts.HINT1" | translate}}:</p></strong>' +
-                    '<ul><li><strong>{{"securityGroup.ts.HINT2" | translate}}</strong></li>' +
-                    '<li><strong>{{"securityGroup.ts.HINT3" | translate}}</strong></li>' +
-                    '<strong><p>{{"securityGroup.ts.HINT4" | translate}}</p></strong>',
+                title: 'DELETE SECURITY GROUP',
+                html: '<strong><p>Deleting security group will cause:</p></strong>' +
+                    '<ul><li><strong>All rules in this security group will be deleted</strong></li>' +
+                    '<li><strong>All l3Networks this security group has attached will be detached</strong></li>' +
+                    '<strong><p>those results are not recoverable</p></strong>',
 
                 confirm: ()=> {
                     sgMgr.delete($scope.model.current, (ret : any)=> {
@@ -865,11 +865,11 @@ module MSecurityGroup {
             };
 
             $scope.optionsDeleteSecurityGroup = {
-                title: '{{"securityGroup.ts.DELETE L3 NETWORK" | translate}}',
-                html: '<strong><p>{{"securityGroup.ts.HINT5" | translate}}:</p></strong>' +
-                    '<ul><li><strong>{{"securityGroup.ts.HINT6" | translate}}</strong></li>' +
-                    '<li><strong>{{"securityGroup.ts.HINT7" | translate}}</strong></li>' +
-                    '<strong><p>{{"securityGroup.ts.HINT8" | translate}}</p></strong>',
+                title: 'DELETE L3 NETWORK',
+                html: '<strong><p>Deleting security group will cause:</p></strong>' +
+                    '<ul><li><strong>All rules in this security group will be deleted</strong></li>' +
+                    '<li><strong>All l3Networks this security group has attached will be detached</strong></li>' +
+                    '<strong><p>those results are not recoverable</p></strong>',
 
                 confirm: ()=> {
                     sgMgr.delete($scope.model.current, (ret : any)=> {

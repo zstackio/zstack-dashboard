@@ -901,7 +901,7 @@ module ML2Network {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: "<div style='color: black'><span class='z-label'>Name</span>: #: name #</div><div style='color: black'><span class='z-label'>State:</span>#: state #</div><div style='color: black'><span class='z-label'>UUID:</span> #: uuid #</div>"
+                    template: '<div style="color: black"><span class="z-label">{{"l2Network.ts.Name" | translate}}</span>: #: name #</div>'+'<div style="color: black"><span class="z-label">{{"l2Network.ts.State" | translate}}:</span>#: state #</div>'+'<div style="color: black"><span class="z-label">{{"l2Network.ts.UUID" | translate}}:</span> #: uuid #</div>'
                 };
 
                 $scope.typeList = {

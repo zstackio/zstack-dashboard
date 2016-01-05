@@ -346,7 +346,7 @@ module MInstanceOffering {
             };
 
             $scope.optionsDeleteInstanceOffering = {
-                title: '{{"instanceOffering.ts.DELETE INSTANCE OFFERING" | translate}}',
+                title: 'DELETE INSTANCE OFFERING',
                 btnType: 'btn-danger',
                 width: '350px',
                 description: ()=>{
@@ -482,7 +482,7 @@ module MInstanceOffering {
             };
 
             $scope.optionsDeleteInstanceOffering = {
-                title: '{{"instanceOffering.ts.DELETE INSTANCE OFFERING" | translate}}',
+                title: 'DELETE INSTANCE OFFERING',
                 btnType: 'btn-danger',
                 width: '350px',
                 description: ()=>{
