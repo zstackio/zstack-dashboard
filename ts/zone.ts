@@ -775,7 +775,7 @@ module MZone {
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"zone.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ]

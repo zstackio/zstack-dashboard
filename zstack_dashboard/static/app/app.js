@@ -8308,7 +8308,7 @@ var MZone;
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"zone.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ]
@@ -12014,7 +12014,7 @@ var ML2Network;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: "<div style='color: black'><span class='z-label'>Name</span>: #: name #</div><div style='color: black'><span class='z-label'>State:</span>#: state #</div><div style='color: black'><span class='z-label'>UUID:</span> #: uuid #</div>"
+                    template: '<div style="color: black"><span class="z-label">{{"l2Network.ts.Name" | translate}}</span>: #: name #</div>' + '<div style="color: black"><span class="z-label">{{"l2Network.ts.State" | translate}}:</span>#: state #</div>' + '<div style="color: black"><span class="z-label">{{"l2Network.ts.UUID" | translate}}:</span> #: uuid #</div>'
                 };
                 $scope.typeList = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
@@ -13752,15 +13752,15 @@ var ML3Network;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"l3Network.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"l3Network.ts.Type" | translate}}:</span><span>#: type #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"l3Network.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>'
                 };
                 $scope.optionsZoneList__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: "<div style='color: black'><span class='z-label'>Name</span>: #: name #</div><div style='color: black'><span class='z-label'>State:</span>#: state #</div><div style='color: black'><span class='z-label'>UUID:</span> #: uuid #</div>"
+                    template: '<div style="color: black"><span class="z-label">{{"l3Network.ts.Name" | translate}}</span>: #: name #</div>' + '<div style="color: black"><span class="z-label">{{"l3Network.ts.State" | translate}}:</span>#: state #</div>' + '<div style="color: black"><span class="z-label">{{"l3Network.ts.UUID" | translate}}:</span> #: uuid #</div>'
                 };
                 $scope.optionsL3NetworkTypeList__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
@@ -16716,7 +16716,7 @@ var MImage;
                         value: 'createDate'
                     },
                     {
-                        name: '{{"image.ts.Created None" | translate}}',
+                        name: '{{"image.ts.None" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
@@ -17401,7 +17401,7 @@ var MInstanceOffering;
                 return Utils.notNullnotUndefined($scope.model.current);
             };
             $scope.optionsDeleteInstanceOffering = {
-                title: '{{"instanceOffering.ts.DELETE INSTANCE OFFERING" | translate}}',
+                title: 'DELETE INSTANCE OFFERING',
                 btnType: 'btn-danger',
                 width: '350px',
                 description: function () {
@@ -17537,7 +17537,7 @@ var MInstanceOffering;
                 $scope.deleteInstanceOffering.open();
             };
             $scope.optionsDeleteInstanceOffering = {
-                title: '{{"instanceOffering.ts.DELETE INSTANCE OFFERING" | translate}}',
+                title: 'DELETE INSTANCE OFFERING',
                 btnType: 'btn-danger',
                 width: '350px',
                 description: function () {
@@ -18065,7 +18065,7 @@ var MDiskOffering;
                 return Utils.notNullnotUndefined($scope.model.current);
             };
             $scope.optionsDeleteDiskOffering = {
-                title: '{{"diskOffering.ts.DELETE DISK OFFERING" | translate}}',
+                title: 'DELETE DISK OFFERING',
                 description: function () {
                     return current.name;
                 },
@@ -18192,7 +18192,7 @@ var MDiskOffering;
                 $scope.deleteDiskOffering.open();
             };
             $scope.optionsDeleteDiskOffering = {
-                title: '{{"diskOffering.ts.DELETE DISK OFFERING" | translate}}',
+                title: 'DELETE DISK OFFERING',
                 description: function () {
                     return $scope.model.current.name;
                 },
@@ -23066,11 +23066,11 @@ var MSecurityGroup;
                 return Utils.notNullnotUndefined($scope.model.current);
             };
             $scope.optionsDeleteSecurityGroup = {
-                title: '{{"securityGroup.ts.DELETE SECURITY GROUP" | translate}}',
-                html: '<strong><p>{{"securityGroup.ts.HINT1" | translate}}:</p></strong>' +
-                    '<ul><li><strong>{{"securityGroup.ts.HINT2" | translate}}</strong></li>' +
-                    '<li><strong>{{"securityGroup.ts.HINT3" | translate}}</strong></li>' +
-                    '<strong><p>{{"securityGroup.ts.HINT4" | translate}}</p></strong>',
+                title: 'DELETE SECURITY GROUP',
+                html: '<strong><p>Deleting security group will cause:</p></strong>' +
+                    '<ul><li><strong>All rules in this security group will be deleted</strong></li>' +
+                    '<li><strong>All l3Networks this security group has attached will be detached</strong></li>' +
+                    '<strong><p>those results are not recoverable</p></strong>',
                 confirm: function () {
                     sgMgr.delete($scope.model.current, function (ret) {
                         $scope.model.resetCurrent();
@@ -23443,11 +23443,11 @@ var MSecurityGroup;
                 $scope.deleteSecurityGroup.open();
             };
             $scope.optionsDeleteSecurityGroup = {
-                title: '{{"securityGroup.ts.DELETE L3 NETWORK" | translate}}',
-                html: '<strong><p>{{"securityGroup.ts.HINT5" | translate}}:</p></strong>' +
-                    '<ul><li><strong>{{"securityGroup.ts.HINT6" | translate}}</strong></li>' +
-                    '<li><strong>{{"securityGroup.ts.HINT7" | translate}}</strong></li>' +
-                    '<strong><p>{{"securityGroup.ts.HINT8" | translate}}</p></strong>',
+                title: 'DELETE L3 NETWORK',
+                html: '<strong><p>Deleting security group will cause:</p></strong>' +
+                    '<ul><li><strong>All rules in this security group will be deleted</strong></li>' +
+                    '<li><strong>All l3Networks this security group has attached will be detached</strong></li>' +
+                    '<strong><p>those results are not recoverable</p></strong>',
                 confirm: function () {
                     sgMgr.delete($scope.model.current, function (ret) {
                         $scope.oSecurityGroupGrid.deleteCurrent();
@@ -24896,8 +24896,8 @@ var MVip;
                 return Utils.notNullnotUndefined($scope.model.current);
             };
             $scope.optionsDeleteVip = {
-                title: '{{"vip.ts.DELETE VIP" | translate}}',
-                description: '{{"vip.ts.HINT1" | translate}}',
+                title: 'DELETE VIP',
+                description: 'Deleting will delete all network services that this VIP is used for. For example, if the VIP is used for EIP, the EIP will be deleted as well',
                 confirm: function () {
                     vipMgr.delete($scope.model.current, function (ret) {
                         $scope.model.resetCurrent();
@@ -25035,8 +25035,8 @@ var MVip;
                 $scope.deleteVip.open();
             };
             $scope.optionsDeleteVip = {
-                title: '{{"vip.ts.DELETE VIP" | translate}}',
-                description: '{{"vip.ts.HINT1" | translate}}',
+                title: 'DELETE VIP',
+                description: 'Deleting will delete all network services that this VIP is used for. For example, if the VIP is used for EIP, the EIP will be deleted as well',
                 confirm: function () {
                     vipMgr.delete($scope.model.current, function (ret) {
                         $scope.oVipGrid.deleteCurrent();
@@ -25721,7 +25721,7 @@ var MEip;
                 return Utils.notNullnotUndefined($scope.model.current);
             };
             $scope.optionsDeleteEip = {
-                title: '{{"eip.ts.DELETE EIP" | translate}}',
+                title: 'DELETE EIP',
                 btnType: 'btn-danger',
                 width: '350px',
                 description: function () {
@@ -25867,7 +25867,7 @@ var MEip;
                 $scope.deleteEip.open();
             };
             $scope.optionsDeleteEip = {
-                title: '{{"eip.ts.DELETE EIP" | translate}}',
+                title: 'DELETE EIP',
                 btnType: 'btn-danger',
                 width: '350px',
                 description: function () {
@@ -27043,7 +27043,7 @@ var MPortForwarding;
                 return Utils.notNullnotUndefined($scope.model.current);
             };
             $scope.optionsDeletePortForwarding = {
-                title: '{{"portForwarding.ts.DELETE PORT FORWARDING RULE" | translate}}',
+                title: 'DELETE PORT FORWARDING RULE',
                 description: function () {
                     return current.name;
                 },
@@ -29888,13 +29888,13 @@ var MDashboard;
                 columns: [
                     {
                         field: 'name',
-                        title: 'RESOURCE NAME',
+                        title: '{{"dashboard.ts.RESOURCE NAME" | translate}}',
                         template: '<a href="/\\#/{{dataItem.link}}">{{dataItem.name}}</a>',
                         width: '50%'
                     },
                     {
                         field: 'amount',
-                        title: 'COUNT',
+                        title: '{{"dashboard.ts.COUNT" | translate}}',
                         width: '50%'
                     }
                 ],

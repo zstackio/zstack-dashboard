@@ -327,7 +327,7 @@ module MDiskOffering {
             };
 
             $scope.optionsDeleteDiskOffering = {
-                title: '{{"diskOffering.ts.DELETE DISK OFFERING" | translate}}',
+                title: 'DELETE DISK OFFERING',
                 description: ()=>{
                     return current.name;
                 },
@@ -456,7 +456,7 @@ module MDiskOffering {
             };
 
             $scope.optionsDeleteDiskOffering = {
-                title: '{{"diskOffering.ts.DELETE DISK OFFERING" | translate}}',
+                title: 'DELETE DISK OFFERING',
                 description: ()=>{
                     return $scope.model.current.name;
                 },

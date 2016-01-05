@@ -506,7 +506,7 @@ module MEip {
             };
 
             $scope.optionsDeleteEip = {
-                title: '{{"eip.ts.DELETE EIP" | translate}}',
+                title: 'DELETE EIP',
                 btnType: 'btn-danger',
                 width: '350px',
                 description: ()=>{
@@ -654,7 +654,7 @@ module MEip {
             };
 
             $scope.optionsDeleteEip = {
-                title: '{{"eip.ts.DELETE EIP" | translate}}',
+                title: 'DELETE EIP',
                 btnType: 'btn-danger',
                 width: '350px',
                 description: ()=>{

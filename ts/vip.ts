@@ -347,8 +347,8 @@ module MVip {
             };
 
             $scope.optionsDeleteVip = {
-                title: '{{"vip.ts.DELETE VIP" | translate}}',
-                description: '{{"vip.ts.HINT1" | translate}}',
+                title: 'DELETE VIP',
+                description: 'Deleting will delete all network services that this VIP is used for. For example, if the VIP is used for EIP, the EIP will be deleted as well',
                 confirm: ()=> {
                     vipMgr.delete($scope.model.current, (ret : any)=> {
                         $scope.model.resetCurrent();
@@ -487,8 +487,8 @@ module MVip {
             };
 
             $scope.optionsDeleteVip = {
-                title: '{{"vip.ts.DELETE VIP" | translate}}',
-                description: '{{"vip.ts.HINT1" | translate}}',
+                title: 'DELETE VIP',
+                description: 'Deleting will delete all network services that this VIP is used for. For example, if the VIP is used for EIP, the EIP will be deleted as well',
 
                 confirm: ()=> {
                     vipMgr.delete($scope.model.current, (ret : any)=> {
