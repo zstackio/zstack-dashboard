@@ -215,7 +215,6 @@ module MDashboard {
                 link: 'virtualRouter',
                 amount: 0
             });
-
             $scope.resourceAmountGrid = {
                 resizable: true,
                 scrollable: true,
@@ -223,13 +222,13 @@ module MDashboard {
                 columns: [
                     {
                         field: 'name',
-                        title: 'RESOURCE NAME',
+                        title: '{{"dashboard.ts.RESOURCE NAME" | translate}}',
                         template: '<a href="/\\#/{{dataItem.link}}">{{dataItem.name}}</a>',
                         width: '50%'
                     },
                     {
                         field: 'amount',
-                        title: 'COUNT',
+                        title: '{{"dashboard.ts.COUNT" | translate}}',
                         width: '50%'
                     }
                 ],

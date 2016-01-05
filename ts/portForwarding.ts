@@ -530,7 +530,7 @@ module MPortForwarding {
             };
 
             $scope.optionsDeletePortForwarding = {
-                title: '{{"portForwarding.ts.DELETE PORT FORWARDING RULE" | translate}}',
+                title: 'DELETE PORT FORWARDING RULE',
                 description: ()=>{
                     return current.name;
                 },

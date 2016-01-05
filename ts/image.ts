@@ -558,7 +558,7 @@ module MImage {
                         value: 'createDate'
                     },
                     {
-                        name: '{{"image.ts.Created None" | translate}}',
+                        name: '{{"image.ts.None" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
