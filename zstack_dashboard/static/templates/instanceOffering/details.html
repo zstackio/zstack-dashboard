@@ -21,7 +21,7 @@
                 </button>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">{{"instanceOffering.details.Enable" | translate}}</a></li>
-                    <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">{{"instanceOffering.details.Disable" | translate}}</a></li>
+                    <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">Disable{{"instanceOffering.details.Disable" | translate}}</a></li>
                     <li class="divider"></li>
                     <li><a href style="color:red" ng-click="funcDelete(deleteInstanceOffering)">{{"instanceOffering.details.Delete" | translate}}</a></li>
                 </ul>

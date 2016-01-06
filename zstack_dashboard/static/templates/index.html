@@ -23,6 +23,7 @@
 <script type="text/javascript">
     var ua = window.navigator.userAgent;
     var msie = ua.indexOf("MSIE ");
+
     if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))
         alert('ZStack Dashboard might not work well in IE.\nPlease use Chrome or Firefox to use ZStack Dashboard.');
 </script>
@@ -32,14 +33,14 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">{{"index.Modal title" | translate}}</h4>
+        <h4 class="modal-title">Modal title</h4>
       </div>
       <div class="modal-body">
         <p>One fine body&hellip;</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">{{"index.Close" | translate}}</button>
-        <button type="button" class="btn btn-primary">{{"index.Save changes" | translate}} </button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -47,20 +48,20 @@
 
 <script id="successNotification" type="text/x-kendo-template">
     <div class="z-success">
-        <h4><i class="fa fa-check-circle"></i> {{"index.SUCCESS" | translate}}</h4>
+        <h4><i class="fa fa-check-circle"></i>  SUCCESS</h4>
         <p>#= msg #</p>
         # if (data.link) { #
-        <a href="#: link #">{{"index.See result" | translate}}</a>
+        <a href="#: link #">See result</a>
         #}#
     </div>
 </script>
 
 <script id="errorNotification" type="text/x-kendo-template">
     <div class="z-success">
-        <h4><i class="fa fa-check-circle"></i> {{"index.FAILURE" | translate}}</h4>
+        <h4><i class="fa fa-check-circle"></i>  FAILURE</h4>
         <p>#= msg #</p>
         # if (data.link) { #
-        <a href="#: link #"> {{"index.See result" | translate}}</a>
+        <a href="#: link #">See result</a>
         #}#
     </div>
 </script>
@@ -79,17 +80,17 @@
         <ul class="nav navbar-nav">
             <li>
                 <a href="/#/apiDetails">
-                    {{"index.API Details" | translate}}
+                    API Details
                     <span class="badge badge-info">{{getApiDetailsNum()}}</span>
                 </a>
             </li>
         </ul>
 
-        <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown" >
+        <ul class="nav navbar-nav navbar-right" ng-show="isLogin()">
+            <li class="dropdown">
                 <a href class="dropdown-toggle" data-toggle="dropdown">
 				 <i class="fa fa-lg fa-language"></i>
-                    {{"index.Language" | translate}}
+                    Language
                     <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
@@ -97,13 +98,13 @@
                     <li><a href ng-click="changeLanguage('Chinese')">中文</a></li>
                 </ul>
             </li>
-            <li class="dropdown" ng-show="isLogin()"> 
+            <li class="dropdown">
                 <a href class="dropdown-toggle" data-toggle="dropdown">
                     <i class="fa fa-lg fa-user"></i>
                     {{getAccountName()}}
                     <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li><a href ng-click="logout()">{{"index.Sign Out" | translate}}</a></li>
+                    <li><a href ng-click="logout()">Sign Out</a></li>
                 </ul>
             </li>
         </ul>
@@ -118,7 +119,7 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-target="#image" href="/#/dashboard">
-                             {{"index.Dashboard" | translate}}
+                                Dashboard
                             </a>
                         </h4>
                     </div>
@@ -126,7 +127,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title" data-toggle="collapse" data-target="#compute">
-                            {{"index.Compute" | translate}}
+                            Compute
                         </h4>
                     </div>
                     <div id="compute" class="panel-collapse collapse in">
@@ -134,20 +135,20 @@
                             <div class="list-group">
                                 <a href="/#/vmInstance" class="list-group-item">
                                     <i class="fa fa-fw fa-sm fa-windows"></i>
-                                    <span class="menu-name">{{"index.Instance" | translate}}</span>&nbsp;
+                                    <span class="menu-name"> Instance</span>&nbsp;
                                 </a>
 
                                 <a href="/#/host" class="list-group-item">
                                     <i class="fa fa-fw fa-sm fa-laptop"></i>
-                                    <span class="menu-name"> {{"index.Host" | translate}}</span>&nbsp;
+                                    <span class="menu-name"> Host</span>&nbsp;
                                 </a>
                                 <a href="/#/cluster" class="list-group-item">
                                     <i class="fa fa-fw fa-sm fa-th"></i>
-                                    <span class="menu-name"> {{"index.Cluster" | translate}}</span>&nbsp;
+                                    <span class="menu-name"> Cluster</span>&nbsp;
                                 </a>
                                 <a href="/#/zone" class="list-group-item">
                                     <i class="fa fa-fw fa-sm fa-cloud"></i>
-                                    <span class="menu-name"> {{"index.Zone" | translate}}</span>&nbsp;
+                                    <span class="menu-name"> Zone</span>&nbsp;
                                 </a>
                             </div>
                         </div>
@@ -157,7 +158,7 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-target="#image" href="/#/image">
-                                {{"index.Image" | translate}}
+                                Image
                             </a>
                         </h4>
                     </div>
@@ -165,7 +166,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title" data-toggle="collapse" data-target="#storage">
-                                {{"index.Storage" | translate}}
+                                Storage
                         </h4>
                     </div>
                     <div id="storage" class="panel-collapse collapse in">
@@ -173,16 +174,16 @@
                             <div class="list-group">
                                 <a href="/#/primaryStorage" class="list-group-item">
                                     <i class="fa fa-fw fa-sm fa-hdd-o"></i>
-                                    <span class="menu-name"> {{"index.Primary Storage" | translate}}</span>&nbsp;
+                                    <span class="menu-name"> Primary Storage</span>&nbsp;
                                 </a>
 
                                 <a href="/#/backupStorage" class="list-group-item">
                                     <i class="fa fa-fw fa-sm fa-save"></i>
-                                    <span class="menu-name"> {{"index.Backup Storage" | translate}}</span>&nbsp;
+                                    <span class="menu-name"> Backup Storage</span>&nbsp;
                                 </a>
                                 <a href="/#/volume" class="list-group-item">
                                     <i class="fa fa-fw fa-sm fa-inbox"></i>
-                                    <span class="menu-name"> {{"index.Volume" | translate}}</span>&nbsp;
+                                    <span class="menu-name"> Volume</span>&nbsp;
                                 </a>
                             </div>
                         </div>
@@ -191,7 +192,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title" data-toggle="collapse" data-target="#network">
-                            {{"index.Network" | translate}}
+                            Network
                         </h4>
                     </div>
                     <div id="network" class="panel-collapse collapse in">
@@ -199,12 +200,12 @@
                             <div class="list-group">
                                 <a href="/#/l2Network" class="list-group-item">
                                     <i class="fa fa-fw fa-sm fa-download"></i>
-                                    <span class="menu-name"> {{"index.L2 Network" | translate}}</span>&nbsp;
+                                    <span class="menu-name"> L2 Network</span>&nbsp;
                                 </a>
 
                                 <a href="/#/l3Network" class="list-group-item">
                                     <i class="fa fa-fw fa-sm fa-sort-amount-asc"></i>
-                                    <span class="menu-name"> {{"index.L3 Network" | translate}}</span>&nbsp;
+                                    <span class="menu-name"> L3 Network</span>&nbsp;
                                 </a>
                             </div>
                         </div>
@@ -269,7 +270,7 @@
 
                                 <a href="/#/globalConfig" class="list-group-item">
                                     <i class="fa fa-fw fa-sm fa-download"></i>
-                                    <span class="menu-name"> {{"index.Global Configure" | translate}}</span>&nbsp;
+                                    <span class="menu-name"> Global Configure</span>&nbsp;
                                 </a>
                             </div>
                         </div>

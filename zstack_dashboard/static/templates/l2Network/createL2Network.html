@@ -63,7 +63,7 @@
 
 
                 <div class="form-group col-sm-21">
-                    <button type="button" class="btn btn-default" ng-click="button.previousClick()" ng-disabled="!button.canPreviousProceed()">{{"l2Network.createL2Network.Previous" | translate}}</button>
+                    <button type="button" class="btn btn-default" ng-click="button.previousClick()" ng-disabled="!button.canPreviousProceed()">{{"l2Network.createL2Network.CLUSTERPrevious" | translate}}</button>
                     <button type="button" class="btn btn-primary" ng-disabled="!button.canNextProceed()" ng-click="button.nextClick()">{{button.nextButtonName()}}</button>
                 </div>
             </div>
@@ -72,8 +72,8 @@
         <div class="col-sm-7">
             <div class="z-wizard-bar">
                 <ul class="nav">
-                    <li class="active"><a data-target="#createL2NetworkInfo" ng-click="button.pageClick('createL2NetworkInfo')">{{"l2Network.createL2Network.L2 NETWORK INFO" | translate}}</a></li>
-                    <li ng-class="{disabled: !psPage.isActive()}"><a data-target="#createL2NetworkCluster" ng-click="button.pageClick('createL2NetworkCluster')">{{"l2Network.createL2Network.ATTACH CLUSTER" | translate}}</a></li>
+                    <li class="active"><a data-target="#createL2NetworkInfo" ng-click="button.pageClick('createL2NetworkInfo')">{{"l2Network.createL2Network.CLUSTERL2 NETWORK INFO" | translate}}</a></li>
+                    <li ng-class="{disabled: !psPage.isActive()}"><a data-target="#createL2NetworkCluster" ng-click="button.pageClick('createL2NetworkCluster')">{{"l2Network.createL2Network.CLUSTERATTACH CLUSTER" | translate}}</a></li>
                 </ul>
             </div>
         </div>
