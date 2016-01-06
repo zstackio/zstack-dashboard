@@ -16542,7 +16542,7 @@ var MImage;
                 return Utils.notNullnotUndefined($scope.model.current);
             };
             $scope.optionsDeleteImage = {
-                title: '{{"image.ts.DELETE IMAGE" | translate}}',
+                title: 'DELETE IMAGE',
                 width: '350px',
                 btnType: 'btn-danger',
                 description: function () {
@@ -16782,7 +16782,7 @@ var MImage;
                 $scope.deleteImage.open();
             };
             $scope.optionsDeleteImage = {
-                title: '{{"image.ts.DELETE IMAGE" | translate}}',
+                title: 'DELETE IMAGE',
                 width: '350px',
                 btnType: 'btn-danger',
                 description: function () {
