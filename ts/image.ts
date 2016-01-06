@@ -385,7 +385,7 @@ module MImage {
             };
 
             $scope.optionsDeleteImage = {
-                title: '{{"image.ts.DELETE IMAGE" | translate}}',
+                title: 'DELETE IMAGE',
                 width: '350px',
                 btnType: 'btn-danger',
 
@@ -633,7 +633,7 @@ module MImage {
             };
 
             $scope.optionsDeleteImage = {
-                title: '{{"image.ts.DELETE IMAGE" | translate}}',
+                title: 'DELETE IMAGE',
                 width: '350px',
                 btnType: 'btn-danger',
 
