@@ -44,7 +44,7 @@
 
         <div class="btn-group" ng-show="funcIsActionShow()">
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" ng-disabled="funcIsActionDisabled()">
-                Action <span class="caret"></span>
+                {{ "primaryStorage.primaryStorage.Action" | translate }} <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu">
                 <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">{{ "primaryStorage.primaryStorage.Enable" | translate }}</a></li>
