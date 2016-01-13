@@ -168,45 +168,45 @@ module MVip {
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"vip.ts.NAME" | translate}}',
                     width: '10%',
                     template: '<a href="/\\#/vip/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'state',
-                    title: 'STATE',
+                    title: '{{"vip.ts.STATE" | translate}}',
                     width: '6%',
                     template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                 },
                 {
                     field: 'ip',
-                    title: 'IP',
+                    title: '{{"vip.ts.IP" | translate}}',
                     width: '14%'
                 },
                 {
                     field: 'netmask',
-                    title: 'NETMASK',
+                    title: '{{"vip.ts.NETMASK" | translate}}',
                     width: '14%'
                 },
                 {
                     field: 'gateway',
-                    title: 'GATEWAY',
+                    title: '{{"vip.ts.GATEWAY" | translate}}',
                     width: '14%'
                 },
                 {
                     field: 'l3NetworkUuid',
-                    title: 'L3 NETWORK UUID',
+                    title: '{{"vip.ts.L3 NETWORK UUID" | translate}}',
                     width: '%14',
                     template: '<a href="/\\#/l3Network/{{dataItem.l3NetworkUuid}}">{{dataItem.l3NetworkUuid}}</a>'
                 },
                 {
                     field: 'useFor',
-                    title: 'USE',
+                    title: '{{"vip.ts.USE" | translate}}',
                     width: '14%'
                 },
                 {
                     field: 'serviceProvider',
-                    title: 'SERVICE PROVIDER',
+                    title: '{{"vip.ts.SERVICE PROVIDER" | translate}}',
                     width: '14%'
                 }
             ];
@@ -253,11 +253,11 @@ module MVip {
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"vip.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'State',
+                            name: '{{"vip.ts.State" | translate}}',
                             value: FilterBy.STATE
                         }
                     ]
@@ -392,43 +392,43 @@ module MVip {
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"vip.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"vip.ts.Description" | translate}}',
                         value: 'description'
                     },
                     {
-                        name: 'IP',
+                        name: '{{"vip.ts.IP" | translate}}',
                         value: 'ip'
                     },
                     {
-                        name: 'Netmask',
+                        name: '{{"vip.ts.NETMASK" | translate}}',
                         value: 'netmask'
                     },
                     {
-                        name: 'Gateway',
+                        name: '{{"vip.ts.GATEWAY" | translate}}',
                         value: 'gateway'
                     },
                     {
-                        name: 'State',
+                        name: '{{"vip.ts.State" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Use',
+                        name: '{{"vip.ts.USE" | translate}}',
                         value: 'useFor'
                     },
                     {
-                        name: 'Service Provider',
+                        name: '{{"vip.ts.SERVICE PROVIDER" | translate}}',
                         value: 'serviceProvider'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"vip.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"vip.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
@@ -672,19 +672,19 @@ module MVip {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"vip.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vip.ts.State" | translate}}:</span><span>#: state #</span></div>'
                 };
 
                 $scope.l3NetworkListOptions__ = {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Zone UUID:</span><span>#: zoneUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">L2 Network UUID:</span><span>#: l2NetworkUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"vip.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vip.ts.Type" | translate}}:</span><span>#: type #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vip.ts.Zone UUID" | translate}}:</span><span>#: zoneUuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vip.ts.L2 Network UUID" | translate}}:</span><span>#: l2NetworkUuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vip.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>'
                 };
 
                 $scope.$watch(()=>{

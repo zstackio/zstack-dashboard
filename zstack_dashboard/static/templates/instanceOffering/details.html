@@ -4,7 +4,7 @@
 
 <div class="z-pane">
     <ol class="breadcrumb">
-        <li><a href="/#/instanceOffering">Instance Offering</a></li>
+        <li><a href="/#/instanceOffering">{{"instanceOffering.details.Instance Offering" | translate}}</a></li>
         <li class="active"><a href>{{model.current.name}}</a></li>
     </ol>
 
@@ -17,20 +17,20 @@
             </button>
             <div class="btn-group">
                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                    Action <span class="caret"></span>
+                    {{"instanceOffering.details.Action" | translate}} <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">Enable</a></li>
-                    <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">Disable</a></li>
+                    <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">{{"instanceOffering.details.Enable" | translate}}</a></li>
+                    <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">{{"instanceOffering.details.Disable" | translate}}</a></li>
                     <li class="divider"></li>
-                    <li><a href style="color:red" ng-click="funcDelete(deleteInstanceOffering)">Delete</a></li>
+                    <li><a href style="color:red" ng-click="funcDelete(deleteInstanceOffering)">{{"instanceOffering.details.Delete" | translate}}</a></li>
                 </ul>
             </div>
         </div>
     </div>
 
     <ul class="nav nav-pills">
-        <li class="active"><a data-target="#info" data-toggle="pill" href>Info</a></li>
+        <li class="active"><a data-target="#info" data-toggle="pill" href>{{"instanceOffering.details.Info" | translate}}</a></li>
     </ul>
 
 
@@ -44,7 +44,7 @@
                 <div class="panel-heading">
                     <a class="accordion-toggle" data-target="#infoDetails" data-toggle="collapse" href>
                         <i class="z-collapse fa fa-chevron-down"></i>
-                        <span>&nbsp; DETAILS</span>
+                        <span>&nbsp; {{"instanceOffering.details.DETAILS" | translate}}</span>
                     </a>
                 </div>
 
@@ -52,39 +52,39 @@
                     <div class="panel-body">
                         <table class="table z-table-borderless">
                             <tr>
-                                <td><span class="z-label">DESCRIPTION:</span></td>
+                                <td><span class="z-label">{{"instanceOffering.details.DESCRIPTION" | translate}}:</span></td>
                                 <td><span class="z-description">{{model.current.description}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">STATE:</span></td>
+                                <td><span class="z-label">{{"instanceOffering.details.STATE" | translate}}:</span></td>
                                 <td><span class="{{model.current.stateLabel()}}">{{model.current.state}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">CPU NUMBER:</span></td>
+                                <td><span class="z-label">{{"instanceOffering.details.CPU NUMBER" | translate}}:</span></td>
                                 <td><span>{{model.current.cpuNum}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">CPU SPEED:</span></td>
+                                <td><span class="z-label">{{"instanceOffering.details.CPU SPEED" | translate}}:</span></td>
                                 <td><span>{{model.current.cpuSpeed}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">MEMORY:</span></td>
+                                <td><span class="z-label">{{"instanceOffering.details.MEMORY" | translate}}:</span></td>
                                 <td><span>{{model.current.memorySize | size}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">ALLOCATOR STRATEGY:</span></td>
+                                <td><span class="z-label">{{"instanceOffering.details.ALLOCATOR STRATEGY" | translate}}:</span></td>
                                 <td><span>{{model.current.allocatorStrategy}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">UUID:</span></td>
+                                <td><span class="z-label">{{"instanceOffering.details.UUID" | translate}}:</span></td>
                                 <td><span>{{model.current.uuid}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">CREATED DATE:</span></td>
+                                <td><span class="z-label">{{"instanceOffering.details.CREATED DATE" | translate}}:</span></td>
                                 <td><span>{{model.current.createDate}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">LAST UPDATED DATE:</span></td>
+                                <td><span class="z-label">{{"instanceOffering.details.LAST UPDATED DATE" | translate}}:</span></td>
                                 <td><span>{{model.current.lastOpDate}}</span></td>
                             </tr>
                         </table>

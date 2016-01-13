@@ -679,6 +679,17 @@ module Utils {
         return Utils.addCommas(input.toString());
     }
 
+    export class Translator {
+        addProperty(object, key, resourceId) {
+            Object.defineProperty(object, key, {
+                get: () => this.$filter('translate')(resourceId)
+            });
+        }
+
+        constructor(private $filter: ng.IFilterService) {
+        }
+    }
+
     export class Model {
         current : any;
         multiSelection : boolean;
@@ -920,4 +931,6 @@ angular.module("app.service", []).factory('Api', ['$http', '$rootScope', '$locat
     return new Utils.Api($http, $rootScope, $location);
 }]).factory('Tag', ['Api', (api : Utils.Api) => {
     return new Utils.Tag(api);
+}]).factory('Translator', ['$filter', ($filter: ng.IFilterService) => {
+    return new Utils.Translator($filter);
 }]);

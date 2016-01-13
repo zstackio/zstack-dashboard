@@ -2,10 +2,11 @@
 </div>
 
 <div>
-    <h3 class="z-h3">DASHBOARD</h3>
-    <h4>CAPACITY</h4>
+    <h3 class="z-h3">{{"dashboard.DASHBOARD" | translate}}</h3>  
+    <h4>{{"dashboard.CAPACITY" | translate}}</h4>  
     <div kendo-grid k-options="capacityGrid" class="z-flat-table"></div>
-    <p class="z-hint">A part of CPU/Memory will be reserved from each host for system usage. For KVM, the reserved capacity can be changed in global setting, see reservedCpu and reservedMemory</p>
-    <h4>RESOURCE COUNT</h4>
+        <p class="z-hint">{{"dashboard.HINT" | translate}}</p>  
+        <h4>{{"dashboard.RESOURCE COUNT" | translate}}</h4>  
+
     <div kendo-grid k-options="resourceAmountGrid" class="z-flat-table"></div>
 </div>

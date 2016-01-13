@@ -9,7 +9,7 @@
 
 <div class="z-pane">
     <ol class="breadcrumb">
-        <li><a href="/#/cluster">CLUSTERS</a></li>
+        <li><a href="/#/cluster">{{"cluster.details.CLUSTERS" | translate}}</a></li>
         <li class="active"><a href>{{model.current.name}}</a></li>
     </ol>
 
@@ -22,28 +22,28 @@
             </button>
             <div class="btn-group">
                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                    Action <span class="caret"></span>
+                    {{"cluster.details.Action" | translate}} <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">Enable</a></li>
-                    <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">Disable</a></li>
-                    <li><a href ng-click="action.addHost()">Add Host</a></li>
-                    <li><a href ng-click="action.attachL2Network()">Attach L2Network</a></li>
-                    <li><a href ng-click="action.detachL2Network()">Detach L2Network</a></li>
-                    <li><a href ng-click="action.attachPrimaryStorage()">Attach Primary Storage</a></li>
-                    <li><a href ng-click="action.detachPrimaryStorage()">Detach Primary Storage</a></li>
+                    <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">{{"cluster.details.Enable" | translate}}</a></li>
+                    <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">{{"cluster.details.Disable" | translate}}</a></li>
+                    <li><a href ng-click="action.addHost()">{{"cluster.details.Add Host" | translate}}</a></li>
+                    <li><a href ng-click="action.attachL2Network()">{{"cluster.details.Attach L2Network" | translate}}</a></li>
+                    <li><a href ng-click="action.detachL2Network()">{{"cluster.details.Detach L2Network" | translate}}</a></li>
+                    <li><a href ng-click="action.attachPrimaryStorage()">{{"cluster.details.Attach Primary Storage" | translate}}</a></li>
+                    <li><a href ng-click="action.detachPrimaryStorage()">{{"cluster.details.Detach Primary Storage" | translate}}</a></li>
                     <li class="divider"></li>
-                    <li><a href style="color:red" ng-click="funcDelete(deleteCluster)">Delete</a></li>
+                    <li><a href style="color:red" ng-click="funcDelete(deleteCluster)">{{"cluster.details.Delete" | translate}}</a></li>
                 </ul>
             </div>
         </div>
     </div>
 
     <ul class="nav nav-pills">
-        <li class="active"><a data-target="#info" data-toggle="pill" href>Info</a></li>
-        <li><a data-target="#host" data-toggle="pill" href ng-click="funcLoadHosts()">Host</a></li>
-        <li><a data-target="#primaryStorage" data-toggle="pill" href ng-click="funcLoadPrimaryStorage()">Primary Storage</a></li>
-        <li><a data-target="#l2Network" data-toggle="pill" href>L2 Network</a></li>
+        <li class="active"><a data-target="#info" data-toggle="pill" href>{{"cluster.details.Info" | translate}}</a></li>
+        <li><a data-target="#host" data-toggle="pill" href ng-click="funcLoadHosts()">{{"cluster.details.Host" | translate}}</a></li>
+        <li><a data-target="#primaryStorage" data-toggle="pill" href ng-click="funcLoadPrimaryStorage()">{{"cluster.details.Primary Storage" | translate}}</a></li>
+        <li><a data-target="#l2Network" data-toggle="pill" href>{{"cluster.details.L2 Network" | translate}}</a></li>
     </ul>
 
 
@@ -57,7 +57,7 @@
                 <div class="panel-heading">
                     <a class="accordion-toggle" data-target="#infoDetails" data-toggle="collapse" href>
                         <i class="z-collapse fa fa-chevron-down"></i>
-                        <span>&nbsp; DETAILS</span>
+                        <span>&nbsp; {{"cluster.details.DETAILS" | translate}}</span>
                     </a>
                 </div>
 
@@ -65,31 +65,31 @@
                     <div class="panel-body">
                         <table class="table z-table-borderless">
                             <tr>
-                                <td><span class="z-label">DESCRIPTION:</span></td>
+                                <td><span class="z-label">{{"cluster.details.DESCRIPTION" | translate}}</span></td>
                                 <td><span class="z-description">{{model.current.description}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">STATE:</span></td>
+                                <td><span class="z-label">{{"cluster.details.STATE" | translate}}</span></td>
                                 <td><span class="{{model.current.stateLabel()}}">{{model.current.state}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">HYPERVISOR:</span></td>
+                                <td><span class="z-label">{{"cluster.details.HYPERVISOR" | translate}}</span></td>
                                 <td><span>{{model.current.hypervisorType}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">UUID:</span></td>
+                                <td><span class="z-label">{{"cluster.details.UUID" | translate}}</span></td>
                                 <td><span>{{model.current.uuid}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">ZONE UUID:</span></td>
+                                <td><span class="z-label">{{"cluster.details.ZONE UUID" | translate}}</span></td>
                                 <td><a href="/#/zone/{{model.current.zoneUuid}}">{{model.current.zoneUuid}}</a></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">CREATED DATE:</span></td>
+                                <td><span class="z-label">{{"cluster.details.CREATED DATE" | translate}}</span></td>
                                 <td><span>{{model.current.createDate}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">LAST UPDATED DATE:</span></td>
+                                <td><span class="z-label">{{"cluster.details.LAST UPDATED DATE" | translate}}</span></td>
                                 <td><span>{{model.current.lastOpDate}}</span></td>
                             </tr>
                         </table>
@@ -102,7 +102,7 @@
                 <div class="panel-heading">
                     <a class="accordion-toggle" data-target="#infoCapacities" data-toggle="collapse" href>
                         <i class="z-collapse fa fa-chevron-down"></i>
-                        <span>&nbsp; CAPACITIES</span>
+                        <span>&nbsp; {{"cluster.details.CAPACITIES" | translate}}</span>
                     </a>
                 </div>
 
@@ -119,12 +119,12 @@
 
         <div class="tab-pane" id="primaryStorage">
             <div kendo-grid k-options="optionsPrimaryStorageGrid" class="z-flat-table"></div>
-            <p class="z-hint">Primary Storage listing here have attached to this cluster</p>
+            <p class="z-hint">{{"cluster.details.HINT" | translate}}</p>
         </div>
 
         <div class="tab-pane" id="l2Network">
             <div kendo-grid k-options="optionsL2NetworkGrid" class="z-flat-table"></div>
-            <p class="z-hint">L2 Network listing here have attached to this cluster</p>
+            <p class="z-hint">{{"cluster.details.HINT2" | translate}}</p>
         </div>
     </div>
 </div>

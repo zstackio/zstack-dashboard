@@ -4,84 +4,84 @@
             <div class="tab-content">
                 <div id="createPrimaryStorageInfo" class="tab-pane active">
                     <div class="alert alert-warning col-sm-21" ng-show="!infoPage.hasZone()">
-                        No zone has been created. Please go to <a href="/#/zone">zone page</a> to create a new one.
+                        {{ "primaryStorage.createPrimaryStorage.ALERT" | translate }}<a href="/#/zone">{{ "primaryStorage.createPrimaryStorage.ALERT.2" | translate }}</a>{{ "primaryStorage.createPrimaryStorage.ALERT.3" | translate }}
                     </div>
 
-                    <h4 class="z-win-h4">CREATE PRIMARY STORAGE</h4>
+                    <h4 class="z-win-h4">{{ "primaryStorage.createPrimaryStorage.CREATE PRIMARY STORAGE" | translate }}</h4>
                     <form class="form" id="formCreate">
                         <div class="form-group col-sm-24">
-                            <label for="zone">ZONE</label>
+                            <label for="zone">{{ "primaryStorage.createPrimaryStorage.ZONE" | translate }}</label>
                             <select id="zone" kendo-drop-down-list k-options="zoneList" class="z-win-dropdown" ng-model="infoPage.zoneUuid"></select>
-                            <p class="z-hint">(Required) select zone where the Primary Storage is being created</p>
+                            <p class="z-hint">{{ "primaryStorage.createPrimaryStorage.HINT1" | translate }}</p>
                         </div>
                         <div class="form-group col-sm-21">
-                            <label for="name">NAME</label>
+                            <label for="name">{{ "primaryStorage.createPrimaryStorage.NAME" | translate }}</label>
                             <input class="form-control" type="text" id="name" placeholder="(Required) max length of 255 characters" ng-model="infoPage.name" required data-message="name is required">
                         </div>
                         <div class="form-group col-sm-21">
-                            <label for="description">DESCRIPTION</label>
+                            <label for="description">{{ "primaryStorage.createPrimaryStorage.DESCRIPTION" | translate }}</label>
                             <textarea  class="form-control" rows="5" id="description" placeholder="(Optional) max length of 2048 characters" ng-model="infoPage.description"></textarea>
                         </div>
                         <div class="form-group col-sm-24">
-                            <label for="type">TYPE</label>
+                            <label for="type">{{ "primaryStorage.createPrimaryStorage.TYPE" | translate }}</label>
                             <select id="type" kendo-drop-down-list k-options="typeList" class="z-win-dropdown" ng-model="infoPage.type"></select>
-                            <p class="z-hint">(Required) select type of primary storage</p>
+                            <p class="z-hint">{{ "primaryStorage.createPrimaryStorage.HINT2" | translate }}</p>
                         </div>
                         <div class="form-group col-sm-21" ng-show="infoPage.type != 'Ceph'">
-                            <label for="url" class="z-block-label">URL</label>
+                            <label for="url" class="z-block-label">{{ "primaryStorage.createPrimaryStorage.URL" | translate }}</label>
                             <input id="url" type="text" ng-model="infoPage.url" class="form-control" placeholder="(Required) Url of primary storage">
-                            <p class="z-hint" ng-show="infoPage.type == 'NFS'">(Required) for NFS primary storage, url is 'ip_or_dns_name:absolute_path', for example, '192.168.0.10:/primaryStorage'</p>
-                            <p class="z-hint" ng-show="infoPage.type == 'LocalStorage'">(Required) for local storage, url is an absolute path, for example, '/volumes'. The folder will be created on every host.</p>
-                            <p class="z-hint" ng-show="infoPage.type == 'IscsiFileSystemBackendPrimaryStorage'">(Required) for ISCSI storage with BTRFS backend, url is an absolute path, for example, '/volumes'. The folder will be created on the BTRFS server.</p>
+                            <p class="z-hint" ng-show="infoPage.type == 'NFS'">{{ "primaryStorage.createPrimaryStorage.HINT3" | translate }}</p>
+                            <p class="z-hint" ng-show="infoPage.type == 'LocalStorage'">{{ "primaryStorage.createPrimaryStorage.HINT4" | translate }}</p>
+                            <p class="z-hint" ng-show="infoPage.type == 'IscsiFileSystemBackendPrimaryStorage'">{{ "primaryStorage.createPrimaryStorage.HINT5" | translate }}</p>
                             <div class="alert alert-danger col-sm-21" ng-show="!infoPage.isUrlValid() && infoPage.type == 'NFS'">
-                                Not a valid NFS mount path. Valid mount path must be in format of ip_or_dns_name:absolute_path, '192.168.0.10:/primaryStorage'
+                                {{ "primaryStorage.createPrimaryStorage.ALERT1" | translate }}
                             </div>
                           <div class="alert alert-danger col-sm-21" ng-show="!infoPage.isUrlValid() && infoPage.type == 'LocalStorage'">
-                            Not an absolute path. The path must be start with '/'
+                                {{ "primaryStorage.createPrimaryStorage.ALERT2" | translate }}
                           </div>
                           <div class="alert alert-danger col-sm-21" ng-show="!infoPage.isUrlValid() && infoPage.type == 'IscsiFileSystemBackendPrimaryStorage'">
-                            Not an absolute path. The path must be start with '/'
+                                {{ "primaryStorage.createPrimaryStorage.ALERT3" | translate }}
                           </div>
                         </div>
 
                       <div ng-switch="infoPage.type">
                         <div ng-switch-when="IscsiFileSystemBackendPrimaryStorage">
                           <div class="form-group col-sm-21">
-                            <label for="hostname">HOSTNAME</label>
+                            <label for="hostname">{{ "primaryStorage.createPrimaryStorage.HOSTNAME" | translate }}</label>
                             <input type="text" class="form-control" id="hostname" placeholder="IP or DNS name of btrfs server" ng-model="infoPage.hostname">
                           </div>
                           <div class="form-group col-sm-21">
-                            <label for="username">SSH USERNAME</label>
+                            <label for="username">{{ "primaryStorage.createPrimaryStorage.SSH USERNAME" | translate }}</label>
                             <input type="text" class="form-control" id="username" placeholder="ssh user name of btrfs server" ng-model="infoPage.sshUsername">
-                            <p class="z-hint">The user must have root privilege on btrfs server</p>
+                            <p class="z-hint">{{ "primaryStorage.createPrimaryStorage.HINT6" | translate }}</p>
                           </div>
                           <div class="form-group col-sm-21">
-                            <label for="password">SSH PASSWORD</label>
+                            <label for="password">{{ "primaryStorage.createPrimaryStorage.SSH PASSWORD" | translate }}</label>
                             <input type="password" class="form-control" id="password" placeholder="ssh password of btrfs server" ng-model="infoPage.sshPassword">
                           </div>
                           <div class="form-group col-sm-21">
-                            <label for="username">CHAP USERNAME</label>
+                            <label for="username">{{ "primaryStorage.createPrimaryStorage.CHAP USERNAME" | translate }}</label>
                             <input type="text" class="form-control" id="chapUsername" placeholder="chap username for iscsi server" ng-model="infoPage.chapUsername">
-                            <p class="z-hint">(Optional) CHAP username for ISCSI server</p>
+                            <p class="z-hint">{{ "primaryStorage.createPrimaryStorage.HINT7" | translate }}</p>
                           </div>
                           <div class="form-group col-sm-21">
-                            <label for="password">CHAP PASSWORD</label>
+                            <label for="password">{{ "primaryStorage.createPrimaryStorage.CHAP PASSWORD" | translate }}</label>
                             <input type="password" class="form-control" id="chapPassword" placeholder="chap password of iscsi server" ng-model="infoPage.chapPassword">
-                            <p class="z-hint">(Optional) CHAP password for ISCSI server</p>
+                            <p class="z-hint">{{ "primaryStorage.createPrimaryStorage.HINT8" | translate }}</p>
                           </div>
                         </div>
                         <div ng-switch-when="Ceph">
                           <div class="form-group col-sm-21">
-                            <label for="cephhostname">HOSTNAME</label>
+                            <label for="cephhostname">{{ "primaryStorage.createPrimaryStorage.HOSTNAME" | translate }}</label>
                             <input type="text" class="form-control" id="cephhostname" placeholder="IP or DNS name of ceph mon server" ng-model="infoPage.hostname">
                           </div>
                           <div class="form-group col-sm-21">
-                            <label for="cephusername">SSH USER NAME</label>
+                            <label for="cephusername">{{ "primaryStorage.createPrimaryStorage.SSH USERNAME" | translate }}</label>
                             <input type="text" class="form-control" id="cephusername" placeholder="ssh user name of ceph mon server" ng-model="infoPage.sshUsername">
-                            <p class="z-hint">The user must have root privilege on the ceph mon server</p>
+                            <p class="z-hint">{{ "primaryStorage.createPrimaryStorage.HINT9" | translate }}</p>
                           </div>
                           <div class="form-group col-sm-21">
-                            <label for="cephpassword">SSH PASSWORD</label>
+                            <label for="cephpassword">{{ "primaryStorage.createPrimaryStorage.SSH PASSWORD" | translate }}</label>
                             <input type="password" class="form-control" id="cephpassword" placeholder="ssh password of ceph mon server" ng-model="infoPage.sshPassword">
                           </div>
                           <div class="form-group col-sm-24">
@@ -89,7 +89,7 @@
                               <i class="fa fa-plus" style="font-size: 1.2em"></i>
                               <span>Add</span>
                             </button>
-                            <span class="z-hint">Please add at least one ceph mon server</span>
+                            <span class="z-hint">{{ "primaryStorage.createPrimaryStorage.HINT10" | translate }}</span>
                           </div>
                           <div class="form-group col-sm-24">
                             <div kendo-grid k-options="cephMonGrid__"></div>
@@ -101,21 +101,21 @@
 
                 <div id="createPrimaryStorageCluster" class="tab-pane">
                     <div class="alert alert-warning col-sm-21" ng-show="!clusterPage.hasCluster()">
-                        No cluster is eligible to attach. Please click 'Add' button to proceed.
+                        {{ "primaryStorage.createPrimaryStorage.ALERT4" | translate }}
                     </div>
 
-                    <h4 class="z-win-h4">ATTACH CLUSTER</h4>
+                    <h4 class="z-win-h4">{{ "primaryStorage.createPrimaryStorage.ATTACH CLUSTER" | translate }}</h4>
                     <form class="form">
                         <div class="form-group col-sm-18">
-                            <label for="ps">CLUSTER</label>
+                            <label for="ps">{{ "primaryStorage.createPrimaryStorage.CLUSTER" | translate }}</label>
                             <select id="ps" kendo-multi-select="clusterList__" k-options="clusterListOptions__" class="z-win-dropdown"></select>
-                            <p class="z-hint">(Optional) select one or more cluster to attach. Or do it later after creating primary storage</p>
+                            <p class="z-hint">{{ "primaryStorage.createPrimaryStorage.HINT11" | translate }}</p>
                         </div>
                     </form>
                 </div>
 
                 <div class="form-group col-sm-21">
-                    <button type="button" class="btn btn-default" ng-click="button.previousClick()" ng-disabled="!button.canPreviousProceed()">Previous</button>
+                    <button type="button" class="btn btn-default" ng-click="button.previousClick()" ng-disabled="!button.canPreviousProceed()">{{ "primaryStorage.createPrimaryStorage.Previous" | translate }}</button>
                     <button type="button" class="btn btn-primary" ng-disabled="!button.canNextProceed()" ng-click="button.nextClick()">{{button.nextButtonName()}}</button>
                 </div>
             </div>
@@ -124,8 +124,8 @@
         <div class="col-sm-7">
             <div class="z-wizard-bar">
                 <ul class="nav">
-                    <li class="active"><a data-target="#createPrimaryStorageInfo" ng-click="button.pageClick('createPrimaryStorageInfo')">PRIMARY STORAGE INFO</a></li>
-                    <li ng-class="{disabled: !psPage.isActive()}"><a data-target="#createPrimaryStorageCluster" ng-click="button.pageClick('createPrimaryStorageCluster')">ATTACH CLUSTER</a></li>
+                    <li class="active"><a data-target="#createPrimaryStorageInfo" ng-click="button.pageClick('createPrimaryStorageInfo')">{{ "primaryStorage.createPrimaryStorage.PRIMARY STORAGE INFO" | translate }}</a></li>
+                    <li ng-class="{disabled: !psPage.isActive()}"><a data-target="#createPrimaryStorageCluster" ng-click="button.pageClick('createPrimaryStorageCluster')">{{ "primaryStorage.createPrimaryStorage.ATTACH CLUSTER" | translate }}</a></li>
                 </ul>
             </div>
         </div>

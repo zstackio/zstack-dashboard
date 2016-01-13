@@ -7028,8 +7028,22 @@ var Utils;
         return Utils.addCommas(input.toString());
     }
     Utils.commaString = commaString;
+    var Translator = (function () {
+        function Translator($filter) {
+            this.$filter = $filter;
+        }
+        Translator.prototype.addProperty = function (object, key, resourceId) {
+            var _this = this;
+            Object.defineProperty(object, key, {
+                get: function () { return _this.$filter('translate')(resourceId); }
+            });
+        };
+        return Translator;
+    })();
+    Utils.Translator = Translator;
     var Model = (function () {
         function Model() {
+            this.multiSelection = false;
         }
         Model.prototype.resetCurrent = function () {
             this.current = null;
@@ -7044,6 +7058,7 @@ var Utils;
             this.grid.dataSource.filter(filter);
         };
         OGrid.prototype.select = function (item) {
+            var _this = this;
             var selected = null;
             if (Utils.notNullnotUndefined(item)) {
                 selected = item;
@@ -7052,8 +7067,16 @@ var Utils;
                 selected = this.grid.dataSource.data()[0];
             }
             if (selected) {
-                var row = this.grid.table.find('tr[data-uid="' + selected.uid + '"]');
-                this.grid.select(row);
+                if (this.$scope.model.mutliSelection) {
+                    selected.forEach(function (m) {
+                        var row = _this.grid.table.find('tr[data-uid="' + m.uid + '"]');
+                        _this.grid.select(row);
+                    });
+                }
+                else {
+                    var row = this.grid.table.find('tr[data-uid="' + selected.uid + '"]');
+                    this.grid.select(row);
+                }
             }
         };
         OGrid.prototype.refresh = function (data) {
@@ -7070,8 +7093,17 @@ var Utils;
             this.grid.dataSource.insert(0, ps);
         };
         OGrid.prototype.deleteCurrent = function () {
-            var row = this.grid.dataSource.getByUid(this.$scope.model.current.uid);
-            this.grid.dataSource.remove(row);
+            var _this = this;
+            if (this.$scope.model.multiSelection) {
+                this.$scope.model.current.forEach(function (m) {
+                    var row = _this.grid.dataSource.getByUid(m.uid);
+                    _this.grid.dataSource.remove(row);
+                });
+            }
+            else {
+                var row = this.grid.dataSource.getByUid(this.$scope.model.current.uid);
+                this.grid.dataSource.remove(row);
+            }
             this.$scope.model.resetCurrent();
         };
         OGrid.prototype.init = function ($scope, grid) {
@@ -7095,9 +7127,22 @@ var Utils;
                 },
                 change: function (e) {
                     var selected = _this.grid.select();
-                    Utils.safeApply($scope, function () {
-                        model.current = _this.grid.dataItem(selected);
-                    });
+                    if (model.multiSelection) {
+                        Utils.safeApply($scope, function () {
+                            if (!model.current)
+                                model.current = [];
+                            var idx = model.current.indexOf(_this.grid.dataItem(selected));
+                            if (idx < 0)
+                                model.current.push(_this.grid.dataItem(selected));
+                            else
+                                model.current.splice(idx, 1);
+                        });
+                    }
+                    else {
+                        Utils.safeApply($scope, function () {
+                            model.current = _this.grid.dataItem(selected);
+                        });
+                    }
                 },
                 dataSource: new kendo.data.DataSource({
                     serverPaging: true,
@@ -7205,6 +7250,8 @@ angular.module("app.service", []).factory('Api', ['$http', '$rootScope', '$locat
         return new Utils.Api($http, $rootScope, $location);
     }]).factory('Tag', ['Api', function (api) {
         return new Utils.Tag(api);
+    }]).factory('Translator', ['$filter', function ($filter) {
+        return new Utils.Translator($filter);
     }]);
 /// <reference path="d.ts/angularjs/angular.d.ts" />
 /// <reference path="d.ts/kendo.all.d.ts" />
@@ -7219,7 +7266,7 @@ var MRoot;
     })();
     MRoot.Events = Events;
     var main = (function () {
-        function main($scope, $rootScope, api, apiDetails, $location, $cookies) {
+        function main($scope, $rootScope, api, apiDetails, $location, $cookies, $translate) {
             var _this = this;
             this.$scope = $scope;
             this.$rootScope = $rootScope;
@@ -7227,6 +7274,7 @@ var MRoot;
             this.apiDetails = apiDetails;
             this.$location = $location;
             this.$cookies = $cookies;
+            this.$translate = $translate;
             if (Utils.notNullnotUndefined($cookies.sessionUuid)) {
                 var msg = new ApiHeader.APIValidateSessionMsg();
                 msg.sessionUuid = $cookies.sessionUuid;
@@ -7320,8 +7368,18 @@ var MRoot;
                     }
                 });
             };
+            $scope.changeLanguage = function (language) {
+                switch (language) {
+                    case 'Chinese':
+                        $translate.use('zh_CN');
+                        break;
+                    case 'English':
+                        $translate.use('en_US');
+                        break;
+                }
+            };
         }
-        main.$inject = ['$scope', '$rootScope', 'Api', 'ApiDetails', '$location', '$cookies'];
+        main.$inject = ['$scope', '$rootScope', 'Api', 'ApiDetails', '$location', '$cookies', '$translate'];
         return main;
     })();
     MRoot.main = main;
@@ -7345,7 +7403,7 @@ var ApiHeader;
     })();
     ApiHeader.QueryObject = QueryObject;
 })(ApiHeader || (ApiHeader = {}));
-angular.module("root", ['app.service', 'kendo.directives', 'ngRoute', 'ngTagsInput', 'ngCookies'])
+angular.module("root", ['app.service', 'kendo.directives', 'ngRoute', 'ngTagsInput', 'ngCookies', 'pascalprecht.translate'])
     .config(['$routeProvider', function (route) {
         route.when('/login', {
             templateUrl: '/static/templates/login/login.html',
@@ -7353,7 +7411,21 @@ angular.module("root", ['app.service', 'kendo.directives', 'ngRoute', 'ngTagsInp
         }).otherwise({
             redirectTo: '/dashboard'
         });
-    }]);
+    }])
+    .constant('LOCALES', {
+    'locales': {
+        'zh_CN': '中文',
+        'en_US': 'English'
+    },
+    'preferredLocale': 'en_US'
+})
+    .config(function ($translateProvider) {
+    $translateProvider.useStaticFilesLoader({
+        prefix: '/static/resources/locale-',
+        suffix: '.json' // suffix, currently- extension of the translations  
+    });
+    $translateProvider.preferredLanguage('en_US'); // is applied on first load  
+});
 /// <reference path="d.ts/angularjs/angular.d.ts" />
 /// <reference path="d.ts/kendo.all.d.ts" />
 var Controller;
@@ -7498,11 +7570,10 @@ var MNav;
 })(MNav || (MNav = {}));
 /// <reference path="d.ts/angularjs/angular.d.ts" />
 /// <reference path="d.ts/kendo.all.d.ts" />
-var __extends = this.__extends || function (d, b) {
+var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var MZone;
 (function (MZone) {
@@ -7756,29 +7827,29 @@ var MZone;
                 columns: [
                     {
                         field: 'name',
-                        title: 'NAME',
+                        title: '{{"zone.ts.NAME" | translate}}',
                         width: '20%',
                         template: '<a href="/\\#/cluster/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                     },
                     {
                         field: 'description',
-                        title: 'DESCRIPTION',
+                        title: '{{"zone.ts.DESCRIPTION" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'state',
-                        title: 'STATE',
+                        title: '{{"zone.ts.STATE" | translate}}',
                         width: '20%',
                         template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                     },
                     {
                         field: 'hypervisorType',
-                        title: 'HYPERVISOR',
+                        title: '{{"zone.ts.HYPERVISOR" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'uuid',
-                        title: 'UUID',
+                        title: '{{"zone.ts.UUID" | translate}}',
                         width: '20%'
                     }
                 ],
@@ -7809,44 +7880,44 @@ var MZone;
                 columns: [
                     {
                         field: 'name',
-                        title: 'NAME',
+                        title: '{{"zone.ts.NAME" | translate}}',
                         width: '10%',
                         template: '<a href="/\\#/primaryStorage/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                     },
                     {
                         field: 'description',
-                        title: 'DESCRIPTION',
+                        title: '{{"zone.ts.DESCRIPTION" | translate}}',
                         width: '15%'
                     },
                     {
                         field: 'url',
-                        title: 'URL',
+                        title: '{{"zone.ts.URL" | translate}}',
                         width: '16%'
                     },
                     {
                         field: 'totalCapacity',
-                        title: 'TOTAL CAPACITY',
+                        title: '{{"zone.ts.TOTAL CAPACITY" | translate}}',
                         width: '8%'
                     },
                     {
                         field: 'availableCapacity',
-                        title: 'AVAILABLE CAPACITY',
+                        title: '{{"zone.ts.AVAILABLE CAPACITY" | translate}}',
                         width: '8%'
                     },
                     {
                         field: 'type',
-                        title: 'TYPE',
+                        title: '{{"zone.ts.TYPE" | translate}}',
                         width: '10%'
                     },
                     {
                         field: 'state',
-                        title: 'STATE',
+                        title: '{{"zone.ts.STATE" | translate}}',
                         width: '15%',
                         template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                     },
                     {
                         field: 'uuid',
-                        title: 'UUID',
+                        title: '{{"zone.ts.UUID" | translate}}',
                         width: '20%'
                     }
                 ],
@@ -7896,28 +7967,28 @@ var MZone;
                 columns: [
                     {
                         field: 'name',
-                        title: 'NAME',
+                        title: '{{"zone.ts.NAME" | translate}}',
                         width: '10%',
                         template: '<a href="/\\#/l2Network/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                     },
                     {
                         field: 'description',
-                        title: 'DESCRIPTION',
+                        title: '{{"zone.ts.DESCRIPTION" | translate}}',
                         width: '25%'
                     },
                     {
                         field: 'physicalInterface',
-                        title: 'PHYSICAL INTERFACE',
+                        title: '{{"zone.ts.PHYSICAL INTERFACE" | translate}}',
                         width: '25%'
                     },
                     {
                         field: 'type',
-                        title: 'TYPE',
+                        title: '{{"zone.ts.TYPE" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'uuid',
-                        title: 'UUID',
+                        title: '{{"zone.ts.UUID" | translate}}',
                         width: '20%'
                     }
                 ],
@@ -7988,40 +8059,40 @@ var MZone;
                 columns: [
                     {
                         field: 'name',
-                        title: 'NAME',
+                        title: '{{"zone.ts.NAME" | translate}}',
                         width: '10%',
                         template: '<a href="/\\#/backupStorage/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                     },
                     {
                         field: 'totalCapacity',
-                        title: 'TOTAL CAPACITY',
+                        title: '{{"zone.ts.TOTAL CAPACITY" | translate}}',
                         width: '10%'
                     },
                     {
                         field: 'availableCapacity',
-                        title: 'AVAILABLE CAPACITY',
+                        title: '{{"zone.ts.AVAILABLE CAPACITY" | translate}}',
                         width: '10%'
                     },
                     {
                         field: 'type',
-                        title: 'TYPE',
+                        title: '{{"zone.ts.TYPE" | translate}}',
                         width: '10%'
                     },
                     {
                         field: 'state',
-                        title: 'STATE',
+                        title: '{{"zone.ts.STATE" | translate}}',
                         width: '20%',
                         template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                     },
                     {
                         field: 'status',
-                        title: 'STATUS',
+                        title: '{{"zone.ts.STATUS" | translate}}',
                         width: '20%',
                         template: '<span class="{{dataItem.statusLabel()}}">{{dataItem.status}}</span>'
                     },
                     {
                         field: 'uuid',
-                        title: 'UUID',
+                        title: '{{"zone.ts.UUID" | translate}}',
                         width: '20%'
                     }
                 ],
@@ -8225,19 +8296,19 @@ var MZone;
                 },
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"zone.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'State',
+                        name: '{{"zone.ts.State" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"zone.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"zone.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ]
@@ -8260,24 +8331,24 @@ var MZone;
                 columns: [
                     {
                         field: 'name',
-                        title: 'NAME',
+                        title: '{{"zone.ts.NAME" | translate}}',
                         width: '20%',
                         template: '<span><div class="{{dataItem.gridColumnLabel()}}"></div><i class="fa fa-spinner fa-spin" ng-show="dataItem.isInProgress()"></i><a href="/\\#/zone/{{dataItem.uuid}}"><span>#: name #</span></a></span>'
                     },
                     {
                         field: 'description',
-                        title: 'DESCRIPTION',
+                        title: '{{"zone.ts.DESCRIPTION" | translate}}',
                         width: '30%'
                     },
                     {
                         field: 'state',
-                        title: 'STATE',
+                        title: '{{"zone.ts.STATE" | translate}}',
                         width: '20%',
                         template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                     },
                     {
                         field: 'uuid',
-                        title: 'UUID',
+                        title: '{{"zone.ts.UUID" | translate}}',
                         width: '30%'
                     }
                 ],
@@ -8598,29 +8669,29 @@ var MCluster;
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"cluster.ts.NAME" | translate}}',
                     width: '15%',
                     template: '<a href="/\\#/cluster/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'description',
-                    title: 'DESCRIPTION',
+                    title: '{{"cluster.ts.DESCRIPTION" | translate}}',
                     width: '25%'
                 },
                 {
                     field: 'hypervisorType',
-                    title: 'HYPERVISOR',
+                    title: '{{"cluster.ts.HYPERVISOR" | translate}}',
                     width: '15%'
                 },
                 {
                     field: 'state',
-                    title: 'STATE',
+                    title: '{{"cluster.ts.STATE" | translate}}',
                     width: '15%',
                     template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                 },
                 {
                     field: 'uuid',
-                    title: 'UUID',
+                    title: '{{"cluster.ts.UUID" | translate}}',
                     width: '30%'
                 }
             ];
@@ -8675,15 +8746,15 @@ var MCluster;
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"cluster.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'State',
+                            name: '{{"cluster.ts.State" | translate}}',
                             value: FilterBy.STATE
                         },
                         {
-                            name: 'Hypervisor',
+                            name: '{{"cluster.ts.Hypervisor" | translate}}',
                             value: FilterBy.HYPERVISOR
                         }
                     ]
@@ -8852,23 +8923,23 @@ var MCluster;
                 columns: [
                     {
                         field: 'name',
-                        title: 'NAME',
+                        title: '{{"cluster.ts.NAME" | translate}}',
                         width: '25%',
                         template: '<a href="/\\#/host/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                     },
                     {
                         field: 'description',
-                        title: 'DESCRIPTION',
+                        title: '{{"cluster.ts.DESCRIPTION" | translate}}',
                         width: '25%'
                     },
                     {
                         field: 'managementIp',
-                        title: 'MANAGEMENT IP',
+                        title: '{{"cluster.ts.MANAGEMENT IP" | translate}}',
                         width: '25%'
                     },
                     {
                         field: 'uuid',
-                        title: 'UUID',
+                        title: '{{"cluster.ts.UUID" | translate}}',
                         width: '25%'
                     }
                 ],
@@ -8918,28 +8989,28 @@ var MCluster;
                 columns: [
                     {
                         field: 'name',
-                        title: 'NAME',
+                        title: '{{"cluster.ts.NAME" | translate}}',
                         width: '10%',
                         template: '<a href="/\\#/l2Network/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                     },
                     {
                         field: 'description',
-                        title: 'DESCRIPTION',
+                        title: '{{"cluster.ts.DESCRIPTION" | translate}}',
                         width: '25%'
                     },
                     {
                         field: 'physicalInterface',
-                        title: 'PHYSICAL INTERFACE',
+                        title: '{{"cluster.ts.PHYSICAL INTERFACE" | translate}}',
                         width: '25%'
                     },
                     {
                         field: 'type',
-                        title: 'TYPE',
+                        title: '{{"cluster.ts.TYPE" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'uuid',
-                        title: 'UUID',
+                        title: '{{"cluster.ts.UUID" | translate}}',
                         width: '20%'
                     }
                 ],
@@ -8992,44 +9063,44 @@ var MCluster;
                 columns: [
                     {
                         field: 'name',
-                        title: 'NAME',
+                        title: '{{"cluster.ts.NAME" | translate}}',
                         width: '10%',
                         template: '<a href="/\\#/primaryStorage/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                     },
                     {
                         field: 'description',
-                        title: 'DESCRIPTION',
+                        title: '{{"cluster.ts.DESCRIPTION" | translate}}',
                         width: '15%'
                     },
                     {
                         field: 'url',
-                        title: 'URL',
+                        title: '{{"cluster.ts.URL" | translate}}',
                         width: '16%'
                     },
                     {
                         field: 'totalCapacity',
-                        title: 'TOTAL CAPACITY',
+                        title: '{{"cluster.ts.TOTAL CAPACITY" | translate}}',
                         width: '8%'
                     },
                     {
                         field: 'availableCapacity',
-                        title: 'AVAILABLE CAPACITY',
+                        title: '{{"cluster.ts.AVAILABLE CAPACITY" | translate}}',
                         width: '8%'
                     },
                     {
                         field: 'type',
-                        title: 'TYPE',
+                        title: '{{"cluster.ts.TYPE" | translate}}',
                         width: '10%'
                     },
                     {
                         field: 'state',
-                        title: 'STATE',
+                        title: '{{"cluster.ts.STATE" | translate}}',
                         width: '15%',
                         template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                     },
                     {
                         field: 'uuid',
-                        title: 'UUID',
+                        title: '{{"cluster.ts.UUID" | translate}}',
                         width: '20%'
                     }
                 ],
@@ -9097,27 +9168,27 @@ var MCluster;
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"cluster.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"cluster.ts.Description" | translate}}',
                         value: 'Description'
                     },
                     {
-                        name: 'State',
+                        name: '{{"cluster.ts.State" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Hypervisor',
+                        name: '{{"cluster.ts.Hypervisor" | translate}}',
                         value: 'hypervisorType'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"cluster.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"cluster.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
@@ -9419,7 +9490,7 @@ var MCluster;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: "<div style='color: black'><span class='z-label'>Name</span>: #: name #</div><div style='color: black'><span class='z-label'>State:</span>#: state #</div><div style='color: black'><span class='z-label'>UUID:</span> #: uuid #</div>"
+                    template: '<div style="color: black"><span class="z-label">{{"cluster.ts.Name" | translate}}</span>: #: name #</div>' + '<div style="color: black"><span class="z-label">{{"cluster.ts.State" | translate}}</span>#: state #</div>' + '<div style="color: black"><span class="z-label">{{"cluster.ts.UUID" | translate}}</span> #: uuid #</div>'
                 };
                 $scope.hypervisorList = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
@@ -10178,13 +10249,13 @@ var MPrimaryStorage;
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"primaryStorage.ts.NAME" | translate}}',
                     width: '10%',
                     template: '<a href="/\\#/primaryStorage/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'description',
-                    title: 'DESCRIPTION',
+                    title: '{{"primaryStorage.ts.DESCRIPTION" | translate}}',
                     width: '10%'
                 },
                 {
@@ -10194,36 +10265,36 @@ var MPrimaryStorage;
                 },
                 {
                     field: 'totalCapacity',
-                    title: 'TOTAL CAPACITY',
+                    title: '{{"primaryStorage.ts.TOTAL CAPACITY" | translate}}',
                     width: '8%',
                     template: '<span>{{dataItem.totalCapacity | size}}</span>'
                 },
                 {
                     field: 'availableCapacity',
-                    title: 'AVAILABLE CAPACITY',
+                    title: '{{"primaryStorage.ts.AVAILABLE CAPACITY" | translate}}',
                     width: '8%',
                     template: '<span>{{dataItem.availableCapacity | size}}</span>'
                 },
                 {
                     field: 'type',
-                    title: 'TYPE',
+                    title: '{{"primaryStorage.ts.TYPE" | translate}}',
                     width: '10%'
                 },
                 {
                     field: 'state',
-                    title: 'STATE',
+                    title: '{{"primaryStorage.ts.STATE" | translate}}',
                     width: '10%',
                     template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                 },
                 {
                     field: 'status',
-                    title: 'STATE',
+                    title: '{{"primaryStorage.ts.STATUS" | translate}}',
                     width: '10%',
                     template: '<span class="{{dataItem.statusLabel()}}">{{dataItem.status}}</span>'
                 },
                 {
                     field: 'uuid',
-                    title: 'UUID',
+                    title: '{{"primaryStorage.ts.UUID" | translate}}',
                     width: '20%'
                 }
             ];
@@ -10278,15 +10349,15 @@ var MPrimaryStorage;
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"primaryStorage.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'State',
+                            name: '{{"primaryStorage.ts.State" | translate}}',
                             value: FilterBy.STATE
                         },
                         {
-                            name: 'Type',
+                            name: '{{"primaryStorage.ts.Type" | translate}}',
                             value: FilterBy.TYPE
                         }
                     ]
@@ -10428,29 +10499,29 @@ var MPrimaryStorage;
                 columns: [
                     {
                         field: 'name',
-                        title: 'NAME',
+                        title: '{{"primaryStorage.ts.NAME" | translate}}',
                         width: '20%',
                         template: '<a href="/\\#/cluster/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                     },
                     {
                         field: 'description',
-                        title: 'DESCRIPTION',
+                        title: '{{"primaryStorage.ts.DESCRIPTION" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'state',
-                        title: 'STATE',
+                        title: '{{"primaryStorage.ts.STATE" | translate}}',
                         width: '20%',
                         template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                     },
                     {
                         field: 'hypervisorType',
-                        title: 'HYPERVISOR',
+                        title: '{{"primaryStorage.ts.HYPERVISOR" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'uuid',
-                        title: 'UUID',
+                        title: '{{"primaryStorage.ts.UUID" | translate}}',
                         width: '20%'
                     }
                 ],
@@ -10517,35 +10588,35 @@ var MPrimaryStorage;
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"primaryStorage.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"primaryStorage.ts.Description" | translate}}',
                         value: 'Description'
                     },
                     {
-                        name: 'State',
+                        name: '{{"primaryStorage.ts.State" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Total Capacity',
+                        name: '{{"primaryStorage.ts.Total Capacity" | translate}}',
                         value: 'totalCapacity'
                     },
                     {
-                        name: 'Available Capacity',
+                        name: '{{"primaryStorage.ts.Available Capacity" | translate}}',
                         value: 'availableCapacity'
                     },
                     {
-                        name: 'Type',
+                        name: '{{"primaryStorage.ts.Type" | translate}}',
                         value: 'type'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"primaryStorage.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"primaryStorage.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
@@ -10686,7 +10757,7 @@ var MPrimaryStorage;
                         },
                         {
                             field: 'url',
-                            title: 'MON URL',
+                            title: '{{"primaryStorage.ts.MON URL" | translate}}',
                             width: '80%'
                         }
                     ],
@@ -10872,7 +10943,7 @@ var MPrimaryStorage;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: "<div style='color: black'><span class='z-label'>Name</span>: #: name #</div><div style='color: black'><span class='z-label'>State:</span>#: state #</div><div style='color: black'><span class='z-label'>UUID:</span> #: uuid #</div>"
+                    template: '<div style="color: black"><span class="z-label">{{"primaryStorage.ts.Name" | translate}}</span>: #: name #</div>' + '<div style="color: black"><span class="z-label">State:</span>#: state #</div>' + '<div style="color: black"><span class="z-label">UUID:</span> #: uuid #</div>'
                 };
                 $scope.typeList = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
@@ -10897,7 +10968,7 @@ var MPrimaryStorage;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
+                    itemTemplate: '<div style="color: black"><span class="z-label">{{"primaryStorage.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
                         '<div style="color: black"><span class="z-label">HYPERVISOR:</span><span>#: hypervisorType #</span></div>' +
                         '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
                 };
@@ -10977,7 +11048,7 @@ var MPrimaryStorage;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
+                    itemTemplate: '<div style="color: black"><span class="z-label">{{"primaryStorage.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
                         '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
                     change: function (e) {
                         var select = e.sender;
@@ -11065,7 +11136,7 @@ var MPrimaryStorage;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
+                    itemTemplate: '<div style="color: black"><span class="z-label">{{"primaryStorage.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
                         '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>' +
                         '<div style="color: black"><span class="z-label">Hypervisor:</span><span>#: hypervisorType #</span></div>',
                     change: function (e) {
@@ -11332,28 +11403,28 @@ var ML2Network;
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"l2Network.ts.NAME" | translate}}',
                     width: '10%',
                     template: '<a href="/\\#/l2Network/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'description',
-                    title: 'DESCRIPTION',
+                    title: '{{"l2Network.ts.DESCRIPTION" | translate}}',
                     width: '25%'
                 },
                 {
                     field: 'physicalInterface',
-                    title: 'PHYSICAL INTERFACE',
+                    title: '{{"l2Network.ts.PHYSICAL INTERFACE" | translate}}',
                     width: '25%'
                 },
                 {
                     field: 'type',
-                    title: 'TYPE',
+                    title: '{{"l2Network.ts.TYPE" | translate}}',
                     width: '20%'
                 },
                 {
                     field: 'uuid',
-                    title: 'UUID',
+                    title: '{{"l2Network.ts.UUID" | translate}}',
                     width: '20%'
                 }
             ];
@@ -11393,11 +11464,11 @@ var ML2Network;
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"l2Network.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'Type',
+                            name: '{{"l2Network.ts.Type" | translate}}',
                             value: FilterBy.TYPE
                         }
                     ]
@@ -11536,29 +11607,29 @@ var ML2Network;
                 columns: [
                     {
                         field: 'name',
-                        title: 'NAME',
+                        title: '{{"l2Network.ts.NAME" | translate}}',
                         width: '20%',
                         template: '<a href="/\\#/cluster/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                     },
                     {
                         field: 'description',
-                        title: 'DESCRIPTION',
+                        title: '{{"l2Network.ts.DESCRIPTION" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'state',
-                        title: 'STATE',
+                        title: '{{"l2Network.ts.STATE" | translate}}',
                         width: '20%',
                         template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                     },
                     {
                         field: 'hypervisorType',
-                        title: 'HYPERVISOR',
+                        title: '{{"l2Network.ts.HYPERVISOR" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'uuid',
-                        title: 'UUID',
+                        title: '{{"l2Network.ts.UUID" | translate}}',
                         width: '20%'
                     }
                 ],
@@ -11625,27 +11696,27 @@ var ML2Network;
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"l2Network.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"l2Network.ts.Description" | translate}}',
                         value: 'Description'
                     },
                     {
-                        name: 'Physical Interface',
+                        name: '{{"l2Network.ts.Physical Interface" | translate}}',
                         value: 'physicalInterface'
                     },
                     {
-                        name: 'Type',
+                        name: '{{"l2Network.ts.Type" | translate}}',
                         value: 'type'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"l2Network.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"l2Network.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
@@ -11943,7 +12014,7 @@ var ML2Network;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: "<div style='color: black'><span class='z-label'>Name</span>: #: name #</div><div style='color: black'><span class='z-label'>State:</span>#: state #</div><div style='color: black'><span class='z-label'>UUID:</span> #: uuid #</div>"
+                    template: '<div style="color: black"><span class="z-label">{{"l2Network.ts.Name" | translate}}</span>: #: name #</div>' + '<div style="color: black"><span class="z-label">{{"l2Network.ts.State" | translate}}:</span>#: state #</div>' + '<div style="color: black"><span class="z-label">{{"l2Network.ts.UUID" | translate}}:</span> #: uuid #</div>'
                 };
                 $scope.typeList = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
@@ -12523,35 +12594,35 @@ var ML3Network;
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"l3Network.ts.NAME" | translate}}',
                     width: '15%',
                     template: '<a href="/\\#/l3Network/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'description',
-                    title: 'DESCRIPTION',
+                    title: '{{"l3Network.ts.DESCRIPTION" | translate}}',
                     width: '20%'
                 },
                 {
                     field: 'state',
-                    title: 'STATE',
+                    title: '{{"l3Network.ts.STATE" | translate}}',
                     width: '10%',
                     template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                 },
                 {
                     field: 'type',
-                    title: 'TYPE',
+                    title: '{{"l3Network.ts.TYPE" | translate}}',
                     width: '15%'
                 },
                 {
                     field: 'system',
-                    title: 'SYSTEM NETWORK',
+                    title: '{{"l3Network.ts.SYSTEM NETWORK" | translate}}',
                     width: '15%',
                     template: '<span class="{{dataItem.systemLabel()}}">{{dataItem.system ? "TRUE" : "" }}</span>'
                 },
                 {
                     field: 'uuid',
-                    title: 'UUID',
+                    title: '{{"l3Network.ts.UUID" | translate}}',
                     width: '25%'
                 }
             ];
@@ -12603,15 +12674,15 @@ var ML3Network;
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"l3Network.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'Type',
+                            name: '{{"l3Network.ts.Type" | translate}}',
                             value: FilterBy.TYPE
                         },
                         {
-                            name: 'State',
+                            name: '{{"l3Network.ts.State" | translate}}',
                             value: FilterBy.STATE
                         }
                     ]
@@ -12731,32 +12802,32 @@ var ML3Network;
                 columns: [
                     {
                         field: 'name',
-                        title: 'NAME',
+                        title: '{{"l3Network.ts.NAME" | translate}}',
                         width: '10%'
                     },
                     {
                         field: 'startIp',
-                        title: 'START IP',
+                        title: '{{"l3Network.ts.START IP" | translate}}',
                         width: '18%'
                     },
                     {
                         field: 'endIp',
-                        title: 'END IP',
+                        title: '{{"l3Network.ts.END IP" | translate}}',
                         width: '18%'
                     },
                     {
                         field: 'netmask',
-                        title: 'NETMASK',
+                        title: '{{"l3Network.ts.NETMASK" | translate}}',
                         width: '18%'
                     },
                     {
                         field: 'gateway',
-                        title: 'GATEWAY',
+                        title: '{{"l3Network.ts.GATEWAY" | translate}}',
                         width: '18%'
                     },
                     {
                         field: 'networkCidr',
-                        title: 'NETWORK CIDR',
+                        title: '{{"l3Network.ts.NETWORK CIDR" | translate}}',
                         width: '18%'
                     }
                 ],
@@ -12777,7 +12848,7 @@ var ML3Network;
                 columns: [
                     {
                         field: 'dns',
-                        title: 'DNS',
+                        title: '{{"l3Network.ts.UUID" | translate}}DNS',
                         width: '100%'
                     }
                 ],
@@ -12804,12 +12875,12 @@ var ML3Network;
                 columns: [
                     {
                         field: 'service',
-                        title: 'SERVICE',
+                        title: '{{"l3Network.ts.SERVICE" | translate}}',
                         width: '50%'
                     },
                     {
                         field: 'provider',
-                        title: 'PROVIDER',
+                        title: '{{"l3Network.ts.PROVIDER" | translate}}',
                         width: '50%'
                     }
                 ],
@@ -12925,27 +12996,27 @@ var ML3Network;
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"l3Network.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"l3Network.ts.Description" | translate}}',
                         value: 'description'
                     },
                     {
-                        name: 'State',
+                        name: '{{"l3Network.ts.State" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Type',
+                        name: '{{"l3Network.ts.Type" | translate}}',
                         value: 'type'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"l3Network.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"l3Network.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
@@ -13681,15 +13752,15 @@ var ML3Network;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"l3Network.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"l3Network.ts.Type" | translate}}:</span><span>#: type #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"l3Network.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>'
                 };
                 $scope.optionsZoneList__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: "<div style='color: black'><span class='z-label'>Name</span>: #: name #</div><div style='color: black'><span class='z-label'>State:</span>#: state #</div><div style='color: black'><span class='z-label'>UUID:</span> #: uuid #</div>"
+                    template: '<div style="color: black"><span class="z-label">{{"l3Network.ts.Name" | translate}}</span>: #: name #</div>' + '<div style="color: black"><span class="z-label">{{"l3Network.ts.State" | translate}}:</span>#: state #</div>' + '<div style="color: black"><span class="z-label">{{"l3Network.ts.UUID" | translate}}:</span> #: uuid #</div>'
                 };
                 $scope.optionsL3NetworkTypeList__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
@@ -13709,22 +13780,22 @@ var ML3Network;
                         },
                         {
                             field: 'networkCidr',
-                            title: 'CIDR',
+                            title: '{{"l3Network.ts.CIDR" | translate}}',
                             width: '22%'
                         },
                         {
                             field: 'startIp',
-                            title: 'START IP',
+                            title: '{{"l3Network.ts.START IP" | translate}}',
                             width: '22%'
                         },
                         {
                             field: 'endIp',
-                            title: 'END IP',
+                            title: '{{"l3Network.ts.END IP" | translate}}',
                             width: '22%'
                         },
                         {
                             field: 'gateway',
-                            title: 'GATEWAY',
+                            title: '{{"l3Network.ts.GATEWAY" | translate}}',
                             width: '22%'
                         }
                     ],
@@ -13744,7 +13815,7 @@ var ML3Network;
                     columns: [
                         {
                             field: 'dns',
-                            title: 'DNS',
+                            title: '{{"l3Network.ts.DNS" | translate}}',
                             width: '80%'
                         },
                         {
@@ -13777,12 +13848,12 @@ var ML3Network;
                     columns: [
                         {
                             field: 'providerName',
-                            title: 'PROVIDER',
+                            title: '{{"l3Network.ts.PROVIDER" | translate}}',
                             width: '40%'
                         },
                         {
                             field: 'serviceType',
-                            title: 'SERVICE',
+                            title: '{{"l3Network.ts.SERVICE" | translate}}',
                             width: '40%'
                         },
                         {
@@ -14315,52 +14386,52 @@ var MBackupStorage;
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"backupStorage.ts.NAME" | translate}}',
                     width: '10%',
                     template: '<a href="/\\#/backupStorage/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'description',
-                    title: 'DESCRIPTION',
+                    title: '{{"backupStorage.ts.DESCRIPTION" | translate}}',
                     width: '10%'
                 },
                 {
                     field: 'url',
-                    title: 'URL',
+                    title: '{{"backupStorage.ts.URL" | translate}}',
                     width: '16%'
                 },
                 {
                     field: 'totalCapacity',
-                    title: 'TOTAL CAPACITY',
+                    title: '{{"backupStorage.ts.TOTAL CAPACITY" | translate}}',
                     width: '8%',
                     template: '<span>{{dataItem.totalCapacity | size}}</span>'
                 },
                 {
                     field: 'availableCapacity',
-                    title: 'AVAILABLE CAPACITY',
+                    title: '{{"backupStorage.ts.AVAILABLE CAPACITY" | translate}}',
                     width: '8%',
                     template: '<span>{{dataItem.availableCapacity | size}}</span>'
                 },
                 {
                     field: 'type',
-                    title: 'TYPE',
+                    title: '{{"backupStorage.ts.TYPE" | translate}}',
                     width: '10%'
                 },
                 {
                     field: 'state',
-                    title: 'STATE',
+                    title: '{{"backupStorage.ts.STATE" | translate}}',
                     width: '10%',
                     template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                 },
                 {
                     field: 'status',
-                    title: 'STATUS',
+                    title: '{{"backupStorage.ts.STATUS" | translate}}',
                     width: '10%',
                     template: '<span class="{{dataItem.statusLabel()}}">{{dataItem.status}}</span>'
                 },
                 {
                     field: 'uuid',
-                    title: 'UUID',
+                    title: '{{"backupStorage.ts.UUID" | translate}}',
                     width: '20%'
                 }
             ];
@@ -14421,19 +14492,19 @@ var MBackupStorage;
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"backupStorage.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'State',
+                            name: '{{"backupStorage.ts.State" | translate}}',
                             value: FilterBy.STATE
                         },
                         {
-                            name: 'Status',
+                            name: '{{"backupStorage.ts.Status" | translate}}',
                             value: FilterBy.STATUS
                         },
                         {
-                            name: 'Type',
+                            name: '{{"backupStorage.ts.Type" | translate}}',
                             value: FilterBy.TYPE
                         }
                     ]
@@ -14578,24 +14649,24 @@ var MBackupStorage;
                 columns: [
                     {
                         field: 'name',
-                        title: 'NAME',
+                        title: '{{"backupStorage.ts.NAME" | translate}}',
                         width: '25%',
                         template: '<a href="/\\#/zone/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                     },
                     {
                         field: 'description',
-                        title: 'DESCRIPTION',
+                        title: '{{"backupStorage.ts.DESCRIPTION" | translate}}',
                         width: '30%'
                     },
                     {
                         field: 'state',
-                        title: 'STATE',
+                        title: '{{"backupStorage.ts.STATE" | translate}}',
                         width: '20%',
                         template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                     },
                     {
                         field: 'uuid',
-                        title: 'UUID',
+                        title: '{{"backupStorage.ts.UUID" | translate}}',
                         width: '25%'
                     }
                 ],
@@ -14662,39 +14733,39 @@ var MBackupStorage;
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"backupStorage.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"backupStorage.ts.Description" | translate}}',
                         value: 'Description'
                     },
                     {
-                        name: 'State',
+                        name: '{{"backupStorage.ts.State" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Status',
+                        name: '{{"backupStorage.ts.Status" | translate}}',
                         value: 'status'
                     },
                     {
-                        name: 'Total Capacity',
+                        name: '{{"backupStorage.ts.Total Capacity" | translate}}',
                         value: 'totalCapacity'
                     },
                     {
-                        name: 'Available Capacity',
+                        name: '{{"backupStorage.ts.Available Capacity" | translate}}',
                         value: 'availableCapacity'
                     },
                     {
-                        name: 'Type',
+                        name: '{{"backupStorage.ts.Type" | translate}}',
                         value: 'type'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"backupStorage.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"backupStorage.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
@@ -14867,7 +14938,7 @@ var MBackupStorage;
                         },
                         {
                             field: 'url',
-                            title: 'MON URL',
+                            title: '{{"backupStorage.ts.MON URL" | translate}}',
                             width: '80%'
                         }
                     ],
@@ -15030,7 +15101,7 @@ var MBackupStorage;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
+                    itemTemplate: '<div style="color: black"><span class="z-label">{{"backupStorage.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
                         '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
                         '<div style="color: black"><span class="z-label">URL:</span><span>#: url #</span></div>' +
                         '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
@@ -15094,7 +15165,7 @@ var MBackupStorage;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
+                    itemTemplate: '<div style="color: black"><span class="z-label">{{"backupStorage.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
                         '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
                     change: function (e) {
                         var select = e.sender;
@@ -15174,7 +15245,7 @@ var MBackupStorage;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
+                    itemTemplate: '<div style="color: black"><span class="z-label">{{"backupStorage.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
                         '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
                     change: function (e) {
                         var select = e.sender;
@@ -15491,40 +15562,40 @@ var MHost;
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"host.ts.NAME" | translate}}',
                     width: '10%',
                     template: '<a href="/\\#/host/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'description',
-                    title: 'DESCRIPTION',
+                    title: '{{"host.ts.DESCRIPTION" | translate}}',
                     width: '20%'
                 },
                 {
                     field: 'managementIp',
-                    title: 'MANAGEMENT IP',
+                    title: '{{"host.ts.MANAGEMENT IP" | translate}}',
                     width: '15%'
                 },
                 {
                     field: 'hypervisorType',
-                    title: 'HYPERVISOR',
+                    title: '{{"host.ts.HYPERVISOR" | translate}}',
                     width: '15%'
                 },
                 {
                     field: 'state',
-                    title: 'STATE',
+                    title: '{{"host.ts.STATE" | translate}}',
                     width: '10%',
                     template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                 },
                 {
                     field: 'status',
-                    title: 'STATUS',
+                    title: '{{"host.ts.STATUS" | translate}}',
                     width: '10%',
                     template: '<span class="{{dataItem.statusLabel()}}">{{dataItem.status}}</span>'
                 },
                 {
                     field: 'uuid',
-                    title: 'UUID',
+                    title: '{{"host.ts.UUID" | translate}}',
                     width: '20%'
                 }
             ];
@@ -15578,19 +15649,19 @@ var MHost;
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"host.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'State',
+                            name: '{{"host.ts.State" | translate}}',
                             value: FilterBy.STATE
                         },
                         {
-                            name: 'Status',
+                            name: '{{"host.ts.Status" | translate}}',
                             value: FilterBy.STATUS
                         },
                         {
-                            name: 'HypervisorType',
+                            name: '{{"host.ts.HypervisorType" | translate}}',
                             value: FilterBy.TYPE
                         }
                     ]
@@ -15731,31 +15802,31 @@ var MHost;
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"host.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"host.ts.Description" | translate}}',
                         value: 'description'
                     },
                     {
-                        name: 'State',
+                        name: '{{"host.ts.State" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Status',
+                        name: '{{"host.ts.Status" | translate}}',
                         value: 'status'
                     },
                     {
-                        name: 'Hypervisor',
+                        name: '{{"host.ts.Hypervisor" | translate}}',
                         value: 'hypervisorType'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"host.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"host.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
@@ -15981,7 +16052,7 @@ var MHost;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: "<div style='color: black'><span class='z-label'>Name</span>: #: name #</div><div style='color: black'><span class='z-label'>State:</span>#: state #</div><div style='color: black'><span class='z-label'>UUID:</span> #: uuid #</div>"
+                    template: '<div style="color: black"><span class="z-label">{{"host.ts.Name" | translate}}</span>: #: name #</div>' + '<div style="color: black"><span class="z-label">{{"host.ts.State" | translate}}</span>#: state #</div>' + '<div style="color: black"><span class="z-label">{{"host.ts.UUID" | translate}}</span> #: uuid #</div>'
                 };
                 $scope.winCreateHostOptions__ = {
                     width: '700px',
@@ -15995,9 +16066,9 @@ var MHost;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">HYPERVISOR:</span><span>#: hypervisorType #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
+                    template: '<div style="color: black"><span class="z-label">{{"host.ts.Name" | translate}}</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"host.ts.HYPERVISOR" | translate}}</span><span>#: hypervisorType #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"host.ts.UUID" | translate}}</span><span>#: uuid #</span></div>',
                     change: function (e) {
                         var list = e.sender;
                         var cluster = list.dataItem();
@@ -16290,46 +16361,46 @@ var MImage;
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"image.ts.NAME" | translate}}',
                     width: '10%',
                     template: '<a href="/\\#/image/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'mediaType',
-                    title: 'MEIDA TYPE',
+                    title: '{{"image.ts.MEIDA TYPE" | translate}}',
                     width: '15%'
                 },
                 {
                     field: 'state',
-                    title: 'STATE',
+                    title: '{{"image.ts.STATE" | translate}}',
                     width: '10%',
                     template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                 },
                 {
                     field: 'status',
-                    title: 'STATUS',
+                    title: '{{"image.ts.STATUS" | translate}}',
                     width: '10%',
                     template: '<span class="{{dataItem.statusLabel()}}">{{dataItem.status}}</span>'
                 },
                 {
                     field: 'guestOsType',
-                    title: 'GUEST OS',
+                    title: '{{"image.ts.GUEST OS" | translate}}',
                     width: '15%'
                 },
                 {
                     field: 'size',
-                    title: 'SIZE',
+                    title: '{{"image.ts.SIZE" | translate}}',
                     width: '10%',
                     template: '<span>{{dataItem.size | size}}</span>'
                 },
                 {
                     field: 'format',
-                    title: 'FORMAT',
+                    title: '{{"image.ts.FORMAT" | translate}}',
                     width: '10%'
                 },
                 {
                     field: 'uuid',
-                    title: 'UUID',
+                    title: '{{"image.ts.UUID" | translate}}',
                     width: '20%'
                 }
             ];
@@ -16369,23 +16440,23 @@ var MImage;
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"image.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'State',
+                            name: '{{"image.ts.State" | translate}}',
                             value: FilterBy.STATE
                         },
                         {
-                            name: 'Status',
+                            name: '{{"image.ts.Status" | translate}}',
                             value: FilterBy.STATUS
                         },
                         {
-                            name: 'MediaType',
+                            name: '{{"image.ts.MediaType" | translate}}',
                             value: FilterBy.TYPE
                         },
                         {
-                            name: 'Format',
+                            name: '{{"image.ts.Format" | translate}}',
                             value: FilterBy.FORMAT
                         },
                     ]
@@ -16512,13 +16583,13 @@ var MImage;
                 columns: [
                     {
                         field: 'name',
-                        title: 'BACKUP STORAGE NAME',
+                        title: '{{"image.ts.BACKUP STORAGE NAME" | translate}}',
                         width: '20%',
                         template: '<a href="/\\#/backupStorage/{{dataItem.bsUuid}}">{{dataItem.name}}</a>'
                     },
                     {
                         field: 'installPath',
-                        title: 'INSTALL PATH',
+                        title: '{{"image.ts.INSTALL PATH" | translate}}',
                         width: '80%'
                     }
                 ],
@@ -16605,47 +16676,47 @@ var MImage;
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"image.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"image.ts.Description" | translate}}',
                         value: 'Description'
                     },
                     {
-                        name: 'State',
+                        name: '{{"image.ts.State" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Status',
+                        name: '{{"image.ts.Status" | translate}}',
                         value: 'status'
                     },
                     {
-                        name: 'Hypervisor',
+                        name: '{{"image.ts.Hypervisor" | translate}}',
                         value: 'hypervisorType'
                     },
                     {
-                        name: 'Bits',
+                        name: '{{"image.ts.Bits" | translate}}',
                         value: 'bits'
                     },
                     {
-                        name: 'Format',
+                        name: '{{"image.ts.Format" | translate}}',
                         value: 'format'
                     },
                     {
-                        name: 'Size',
+                        name: '{{"image.ts.Size" | translate}}',
                         value: 'size'
                     },
                     {
-                        name: 'Guest OS Type',
+                        name: '{{"image.ts.Guest OS Type" | translate}}',
                         value: 'guestOsType'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"image.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"image.ts.None" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
@@ -17179,40 +17250,40 @@ var MInstanceOffering;
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"instanceOffering.ts.NAME" | translate}}',
                     width: '10%',
                     template: '<a href="/\\#/instanceOffering/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'description',
-                    title: 'DESCRIPTION',
+                    title: '{{"instanceOffering.ts.DESCRIPTION" | translate}}',
                     width: '20%'
                 },
                 {
                     field: 'cpuNum',
-                    title: 'CPU NUMBER',
+                    title: '{{"instanceOffering.ts.CPU NUMBER" | translate}}',
                     width: '10%'
                 },
                 {
                     field: 'cpuSpeed',
-                    title: 'CPU SPEED',
+                    title: '{{"instanceOffering.ts.CPU SPEED" | translate}}',
                     width: '10%'
                 },
                 {
                     field: 'memorySize',
-                    title: 'MEMORY',
+                    title: '{{"instanceOffering.ts.MEMORY" | translate}}',
                     width: '15%',
                     template: '<span>{{dataItem.memorySize | size}}</span>'
                 },
                 {
                     field: 'state',
-                    title: 'STATE',
+                    title: '{{"instanceOffering.ts.STATE" | translate}}',
                     width: '15%',
                     template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                 },
                 {
                     field: 'uuid',
-                    title: 'UUID',
+                    title: '{{"instanceOffering.ts.UUID" | translate}}',
                     width: '20%'
                 }
             ];
@@ -17252,11 +17323,11 @@ var MInstanceOffering;
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"instanceOffering.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'State',
+                            name: '{{"instanceOffering.ts.State" | translate}}',
                             value: FilterBy.STATE
                         }
                     ]
@@ -17388,35 +17459,35 @@ var MInstanceOffering;
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"instanceOffering.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"instanceOffering.ts.Description" | translate}}',
                         value: 'description'
                     },
                     {
-                        name: 'CPU Number',
+                        name: '{{"instanceOffering.ts.CPU Number" | translate}}',
                         value: 'cpuNum'
                     },
                     {
-                        name: 'CPU Speed',
+                        name: '{{"instanceOffering.ts.CPU Speed" | translate}}',
                         value: 'cpuSpeed'
                     },
                     {
-                        name: 'Memory',
+                        name: '{{"instanceOffering.ts.Memory" | translate}}',
                         value: 'memorySize'
                     },
                     {
-                        name: 'State',
+                        name: '{{"instanceOffering.ts.State" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"instanceOffering.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"instanceOffering.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
@@ -17854,30 +17925,30 @@ var MDiskOffering;
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"diskOffering.ts.NAME" | translate}}',
                     width: '20%',
                     template: '<a href="/\\#/diskOffering/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'description',
-                    title: 'DESCRIPTION',
+                    title: '{{"diskOffering.ts.DESCRIPTION" | translate}}',
                     width: '20%'
                 },
                 {
                     field: 'diskSize',
-                    title: 'DISK SIZE',
+                    title: '{{"diskOffering.ts.DISK SIZE" | translate}}',
                     width: '20%',
                     template: '<span>{{dataItem.diskSize | size}}</span>'
                 },
                 {
                     field: 'state',
-                    title: 'STATE',
+                    title: '{{"diskOffering.ts.STATE" | translate}}',
                     width: '20%',
                     template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                 },
                 {
                     field: 'uuid',
-                    title: 'UUID',
+                    title: '{{"diskOffering.ts.UUID" | translate}}',
                     width: '20%'
                 }
             ];
@@ -17916,11 +17987,11 @@ var MDiskOffering;
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"diskOffering.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'State',
+                            name: '{{"diskOffering.ts.State" | translate}}',
                             value: FilterBy.STATE
                         }
                     ]
@@ -18051,27 +18122,27 @@ var MDiskOffering;
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"diskOffering.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"diskOffering.ts.Description" | translate}}',
                         value: 'description'
                     },
                     {
-                        name: 'Disk Size',
+                        name: '{{"diskOffering.ts.Disk Size" | translate}}',
                         value: 'diskSize'
                     },
                     {
-                        name: 'State',
+                        name: '{{"diskOffering.ts.State" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"diskOffering.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"diskOffering.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
@@ -18834,36 +18905,36 @@ var MVmInstance;
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"vm.ts.NAME" | translate}}',
                     width: '20%',
                     template: '<a href="/\\#/vmInstance/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'description',
-                    title: 'DESCRIPTION',
+                    title: '{{"vm.ts.DESCRIPTION" | translate}}',
                     width: '20%'
                 },
                 {
                     field: 'defaultIp',
-                    title: 'DEFAULT IP',
+                    title: '{{"vm.ts.DEFAULT IP" | translate}}',
                     width: '20%',
                     template: '{{dataItem.defaultIp}}'
                 },
                 {
                     field: 'hostIp',
-                    title: 'HOST IP',
+                    title: '{{"vm.ts.HOST IP" | translate}}',
                     width: '20%',
                     template: '<a href="/\\#/host/{{dataItem.hostUuid}}">{{dataItem.managementIp}}</a>'
                 },
                 {
                     field: 'state',
-                    title: 'STATE',
+                    title: '{{"vm.ts.STATE" | translate}}',
                     width: '20%',
                     template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                 },
                 {
                     field: 'uuid',
-                    title: 'UUID',
+                    title: '{{"vm.ts.UUID" | translate}}',
                     width: '20%'
                 }
             ];
@@ -18995,15 +19066,15 @@ var MVmInstance;
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"vm.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'State',
+                            name: '{{"vm.ts.State" | translate}}',
                             value: FilterBy.STATE
                         },
                         {
-                            name: 'HypervisorType',
+                            name: '{{"vm.ts.HypervisorType" | translate}}',
                             value: FilterBy.TYPE
                         }
                     ]
@@ -19172,38 +19243,38 @@ var MVmInstance;
                 columns: [
                     {
                         field: 'deviceId',
-                        title: 'DEVICE ID',
+                        title: '{{"vm.ts.DEVICE ID" | translate}}',
                         width: '4%'
                     },
                     {
                         field: 'l3NetworkUuid',
-                        title: 'L3 Network',
+                        title: '{{"vm.ts.L3 Network" | translate}}',
                         width: '20%',
                         template: '<a href="/\\#/l3Network/{{dataItem.l3NetworkUuid}}">{{dataItem.l3NetworkUuid}}</a>'
                     },
                     {
                         field: 'ip',
-                        title: 'IP',
+                        title: '{{"vm.ts.IP" | translate}}',
                         width: '14%'
                     },
                     {
                         field: 'netmask',
-                        title: 'NETMASK',
+                        title: '{{"vm.ts.NETMASK" | translate}}',
                         width: '14%'
                     },
                     {
                         field: 'gateway',
-                        title: 'GATEWAY',
+                        title: '{{"vm.ts.GATEWAY" | translate}}',
                         width: '14%'
                     },
                     {
                         field: 'mac',
-                        title: 'MAC',
+                        title: '{{"vm.ts.MAC" | translate}}',
                         width: '14%'
                     },
                     {
                         field: 'uuid',
-                        title: 'UUID',
+                        title: '{{"vm.ts.UUID" | translate}}',
                         width: '20%'
                     }
                 ],
@@ -19225,33 +19296,33 @@ var MVmInstance;
                 columns: [
                     {
                         field: 'deviceId',
-                        title: 'DEVICE ID',
+                        title: '{{"vm.ts.DEVICE ID" | translate}}',
                         width: '10%',
                         template: '<a href="/\\#/volume/{{dataItem.uuid}}">{{dataItem.deviceId}}</a>'
                     },
                     {
                         field: 'name',
-                        title: 'NAME',
+                        title: '{{"vm.ts.NAME" | translate}}',
                         width: '18%'
                     },
                     {
                         field: 'type',
-                        title: 'TYPE',
+                        title: '{{"vm.ts.TYPE" | translate}}',
                         width: '18%'
                     },
                     {
                         field: 'state',
-                        title: 'STATE',
+                        title: '{{"vm.ts.STATE" | translate}}',
                         width: '18%'
                     },
                     {
                         field: 'status',
-                        title: 'STATUS',
+                        title: '{{"vm.ts.STATUS" | translate}}',
                         width: '18%'
                     },
                     {
                         field: 'uuid',
-                        title: 'UUID',
+                        title: '{{"vm.ts.UUID" | translate}}',
                         width: '18%'
                     }
                 ],
@@ -19283,7 +19354,7 @@ var MVmInstance;
     })();
     MVmInstance.DetailsController = DetailsController;
     var Controller = (function () {
-        function Controller($scope, vmMgr, hostMgr, hypervisorTypes, $location, $rootScope, $window) {
+        function Controller($scope, vmMgr, hostMgr, hypervisorTypes, $location, $rootScope, $window, Translator, $translate) {
             this.$scope = $scope;
             this.vmMgr = vmMgr;
             this.hostMgr = hostMgr;
@@ -19291,33 +19362,35 @@ var MVmInstance;
             this.$location = $location;
             this.$rootScope = $rootScope;
             this.$window = $window;
+            this.Translator = Translator;
+            this.$translate = $translate;
             $scope.model = new VmInstanceModel();
             $scope.oVmInstanceGrid = new OVmInstanceGrid($scope, vmMgr, hostMgr);
             $scope.action = new Action($scope, vmMgr);
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"vm.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"vm.ts.Description" | translate}}',
                         value: 'Description'
                     },
                     {
-                        name: 'State',
+                        name: '{{"vm.ts.State" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Hypervisor',
+                        name: '{{"vm.ts.Hypervisor" | translate}}',
                         value: 'hypervisorType'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"vm.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"vm.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
@@ -19442,7 +19515,7 @@ var MVmInstance;
                 }
             });
         }
-        Controller.$inject = ['$scope', 'VmInstanceManager', 'HostManager', 'hypervisorTypes', '$location', '$rootScope', '$window'];
+        Controller.$inject = ['$scope', 'VmInstanceManager', 'HostManager', 'hypervisorTypes', '$location', '$rootScope', '$window', 'Translator', '$translate'];
         return Controller;
     })();
     MVmInstance.Controller = Controller;
@@ -19466,11 +19539,11 @@ var MVmInstance;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">CPU Num:</span><span>#: cpuNum #</span></div>' +
-                        '<div style="color: black"><span class="z-label">CPU Speed:</span><span>#: cpuSpeed #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Memory:</span><span>#: memorySize #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"vm.ts.Name" | translate}}</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vm.ts.CPU Number" | translate}}</span><span>#: cpuNum #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vm.ts.CPU Speed" | translate}}</span><span>#: cpuSpeed #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vm.ts.Memory" | translate}}</span><span>#: memorySize #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vm.ts.UUID" | translate}}</span><span>#: uuid #</span></div>'
                 };
                 $scope.canProceed = function () {
                     return Utils.notNullnotUndefined($scope.instanceOfferingUuid);
@@ -19531,9 +19604,9 @@ var MVmInstance;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Cluster UUID:</span><span>#: clusterUuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"vm.ts.Name" | translate}}</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vm.ts.UUID" | translate}}</span><span>#: uuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vm.ts.Cluster UUID" | translate}}</span><span>#: clusterUuid #</span></div>'
                 };
                 $scope.canProceed = function () {
                     return Utils.notNullnotUndefined($scope.hostUuid);
@@ -19747,12 +19820,12 @@ var MVmInstance;
                         },
                         {
                             field: 'name',
-                            title: 'NAME',
+                            title: '{{"vm.ts.NAME" | translate}}',
                             width: '44%'
                         },
                         {
                             field: 'staticIp',
-                            title: 'STATIC IP',
+                            title: '{{"vm.ts.STATIC IP" | translate}}',
                             width: '44%'
                         }
                     ],
@@ -19867,7 +19940,7 @@ var MVmInstance;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: "<div style='color: black'><span class='z-label'>Name</span>: #: name #</div><div style='color: black'><span class='z-label'>State:</span>#: state #</div><div style='color: black'><span class='z-label'>UUID:</span> #: uuid #</div>",
+                    template: '<div style="color: black"><span class="z-label">{{"vm.ts.Name" | translate}}</span>: #: name #</div>' + '<div style="color: black"><span class="z-label">{{"vm.ts.State" | translate}}</span>#: state #</div>' + '<div style="color: black"><span class="z-label">{{"vm.ts.UUID" | translate}}</span> #: uuid #</div>',
                     optionLabel: ""
                 };
                 $scope.winCreateVmInstanceOptions__ = {
@@ -19883,37 +19956,37 @@ var MVmInstance;
                     optionLabel: "",
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">HYPERVISOR:</span><span>#: hypervisorType #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"vm.ts.NAME" | translate}}</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vm.ts.HYPERVISOR" | translate}}</span><span>#: hypervisorType #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vm.ts.UUID" | translate}}</span><span>#: uuid #</span></div>'
                 };
                 $scope.hostOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     optionLabel: "",
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Status:</span><span>#: status #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"vm.ts.Name" | translate}}</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vm.ts.State" | translate}}</span><span>#: state #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vm.ts.Status" | translate}}</span><span>#: status #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vm.ts.UUID" | translate}}</span><span>#: uuid #</span></div>'
                 };
                 $scope.instanceOfferingOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">CPU Number:</span><span>#: cpuNum #</span></div>' +
-                        '<div style="color: black"><span class="z-label">CPU Speed:</span><span>#: cpuSpeed #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Memory:</span><span>#: memorySize #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"vm.ts.Name" | translate}}</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vm.ts.CPU Number" | translate}}</span><span>#: cpuNum #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vm.ts.CPU Speed" | translate}}</span><span>#: cpuSpeed #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vm.ts.Memory" | translate}}</span><span>#: memorySize #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vm.ts.UUID" | translate}}</span><span>#: uuid #</span></div>'
                 };
                 $scope.diskOfferingOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Disk Size:</span><span>#: diskSize #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
+                    template: '<div style="color: black"><span class="z-label">{{"vm.ts.Name" | translate}}</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vm.ts.Disk Size" | translate}}</span><span>#: diskSize #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vm.ts.UUID" | translate}}</span><span>#: uuid #</span></div>',
                     change: function (e) {
                         Utils.safeApply($scope, function () {
                             var list = e.sender;
@@ -19928,33 +20001,33 @@ var MVmInstance;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Disk Size:</span><span>#: diskSize #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"vm.ts.Name" | translate}}</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vm.ts.Disk Size" | translate}}</span><span>#: diskSize #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vm.ts.UUID" | translate}}</span><span>#: uuid #</span></div>'
                 };
                 $scope.l3NetworkOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"vm.ts.Name" | translate}}</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vm.ts.UUID" | translate}}</span><span>#: uuid #</span></div>'
                 };
                 $scope.defaultL3NetworkOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"vm.ts.Name" | translate}}</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vm.ts.UUID" | translate}}</span><span>#: uuid #</span></div>'
                 };
                 $scope.imageOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Platform:</span><span>#: platform #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Media Type:</span><span>#= mediaType #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Format:</span><span>#: format #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"vm.ts.Name" | translate}}</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vm.ts.Platform" | translate}}</span><span>#: platform #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vm.ts.Media Type" | translate}}</span><span>#= mediaType #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vm.ts.Format" | translate}}</span><span>#: format #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vm.ts.UUID" | translate}}</span><span>#: uuid #</span></div>'
                 };
                 _this.$scope = $scope;
             };
@@ -20885,29 +20958,29 @@ var MVolume;
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"volume.ts.NAME" | translate}}',
                     width: '10%',
                     template: '<a href="/\\#/volume/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'hypervisorType',
-                    title: 'HYPERVISOR',
+                    title: '{{"volume.ts.HYPERVISOR" | translate}}',
                     width: '10%'
                 },
                 {
                     field: 'type',
-                    title: 'TYPE',
+                    title: '{{"volume.ts.TYPE" | translate}}',
                     width: '10%'
                 },
                 {
                     field: 'state',
-                    title: 'STATE',
+                    title: '{{"volume.ts.STATE" | translate}}',
                     width: '15%',
                     template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                 },
                 {
                     field: 'status',
-                    title: 'STATUS',
+                    title: '{{"volume.ts.STATUS" | translate}}',
                     width: '15%',
                     template: '<span class="{{dataItem.statusLabel()}}">{{dataItem.status}}</span>'
                 },
@@ -20974,23 +21047,23 @@ var MVolume;
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"volume.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'State',
+                            name: '{{"volume.ts.State" | translate}}',
                             value: FilterBy.STATE
                         },
                         {
-                            name: 'Status',
+                            name: '{{"volume.ts.Status" | translate}}',
                             value: FilterBy.STATUS
                         },
                         {
-                            name: 'Type',
+                            name: '{{"volume.ts.Type" | translate}}',
                             value: FilterBy.TYPE
                         },
                         {
-                            name: 'HypervisorType',
+                            name: '{{"volume.ts.HypervisorType" | translate}}',
                             value: FilterBy.TYPE
                         }
                     ]
@@ -21152,13 +21225,13 @@ var MVolume;
                 columns: [
                     {
                         field: 'name',
-                        title: 'BACKUP STORAGE NAME',
+                        title: '{{"volume.ts.BACKUP STORAGE NAME" | translate}}',
                         width: '20%',
                         template: '<a href="/\\#/backupStorage/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                     },
                     {
                         field: 'installPath',
-                        title: 'INSTALL PATH',
+                        title: '{{"volume.ts.INSTALL PATH" | translate}}',
                         width: '80%'
                     },
                 ],
@@ -21415,35 +21488,35 @@ var MVolume;
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"volume.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"volume.ts.Description" | translate}}',
                         value: 'description'
                     },
                     {
-                        name: 'State',
+                        name: '{{"volume.ts.State" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Status',
+                        name: '{{"volume.ts.Status" | translate}}',
                         value: 'status'
                     },
                     {
-                        name: 'Type',
+                        name: '{{"volume.ts.Type" | translate}}',
                         value: 'type'
                     },
                     {
-                        name: 'Format',
+                        name: '{{"volume.ts.Format" | translate}}',
                         value: 'format'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"volume.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"volume.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
@@ -21690,16 +21763,16 @@ var MVolume;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">DISK SIZE:</span><span>#: diskSize #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"volume.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.DISK SIZE" | translate}}:</span><span>#: diskSize #</span></div>'
                 };
                 $scope.vmOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
                     optionLabel: "",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Hypervisor:</span><span>#: hypervisorType #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"volume.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.Hypervisor" | translate}}:</span><span>#: hypervisorType #</span></div>'
                 };
                 _this.$scope = $scope;
             };
@@ -21765,10 +21838,10 @@ var MVolume;
                     dataTextField: "name",
                     dataValueField: "uuid",
                     select: onSelect,
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Hypervisor:</span><span>#: hypervisorType #</span></div>' +
-                        '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"volume.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.Hypervisor" | translate}}:</span><span>#: hypervisorType #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.State" | translate}}:</span><span>#: state #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>'
                 };
                 $scope.hasVm = function () {
                     return $scope.vmInstanceListOptions__.dataSource.data().length > 0;
@@ -22033,10 +22106,10 @@ var MVolume;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"volume.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.Type" | translate}}:</span><span>#: type #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.State" | translate}}:</span><span>#: state #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>'
                 };
                 $scope.hasBackupStorage = function () {
                     return $scope.backupStorageOptions__.dataSource.data().length > 0;
@@ -22125,10 +22198,10 @@ var MVolume;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"volume.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.Type" | translate}}:</span><span>#: type #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.State" | translate}}:</span><span>#: state #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>'
                 };
                 $scope.hasBackupStorage = function () {
                     return $scope.backupStorageOptions__.dataSource.data().length > 0;
@@ -22219,10 +22292,10 @@ var MVolume;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"volume.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.Type" | translate}}:</span><span>#: type #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.State" | translate}}:</span><span>#: state #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>'
                 };
                 $scope.bsUuid = null;
                 $scope.canProceed = function () {
@@ -22289,10 +22362,10 @@ var MVolume;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"volume.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.Type" | translate}}:</span><span>#: type #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.State" | translate}}:</span><span>#: state #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>'
                 };
                 $scope.hasBackupStorage = function () {
                     return $scope.backupStorageOptions__.dataSource.data().length > 0;
@@ -22420,10 +22493,10 @@ var MVolume;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"volume.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.Type" | translate}}:</span><span>#: type #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.State" | translate}}:</span><span>#: state #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>'
                 };
                 $scope.bsUuid = null;
                 $scope.canProceed = function () {
@@ -22833,24 +22906,24 @@ var MSecurityGroup;
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"securityGroup.ts.NAME" | translate}}',
                     width: '25%',
                     template: '<a href="/\\#/securityGroup/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'description',
-                    title: 'DESCRIPTION',
+                    title: '{{"securityGroup.ts.DESCRIPTION" | translate}}',
                     width: '25%'
                 },
                 {
                     field: 'state',
-                    title: 'STATE',
+                    title: '{{"securityGroup.ts.STATE" | translate}}',
                     width: '25%',
                     template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                 },
                 {
                     field: 'uuid',
-                    title: 'UUID',
+                    title: '{{"securityGroup.ts.UUID" | translate}}',
                     width: '25%'
                 }
             ];
@@ -22913,11 +22986,11 @@ var MSecurityGroup;
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"securityGroup.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'State',
+                            name: '{{"securityGroup.ts.STATE" | translate}}',
                             value: FilterBy.STATE
                         }
                     ]
@@ -23032,28 +23105,28 @@ var MSecurityGroup;
                 pageable: true,
                 columns: [
                     {
-                        field: 'type',
-                        title: 'TYPE',
+                        field: ' ',
+                        title: '{{"securityGroup.ts.TYPE" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'startPort',
-                        title: 'PORT START',
+                        title: '{{"securityGroup.ts.PORT START" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'endPort',
-                        title: 'PORT END',
+                        title: '{{"securityGroup.ts.PORT END" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'protocol',
-                        title: 'PROTOCOL',
+                        title: '{{"securityGroup.ts.PROTOCOL" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'allowedCidr',
-                        title: 'ALLOWED CIDR',
+                        title: '{{"securityGroup.ts.ALLOWED CIDR" | translate}}',
                         width: '20%'
                     }
                 ],
@@ -23074,29 +23147,29 @@ var MSecurityGroup;
                 columns: [
                     {
                         field: 'name',
-                        title: 'NAME',
+                        title: '{{"securityGroup.ts.NAME" | translate}}',
                         width: '20%',
                         template: '<a href="/\\#/l3Network/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                     },
                     {
                         field: 'description',
-                        title: 'DESCRIPTION',
+                        title: '{{"securityGroup.ts.DESCRIPTION" | translate}}',
                         width: '25%'
                     },
                     {
                         field: 'state',
-                        title: 'STATE',
+                        title: '{{"securityGroup.ts.STATE" | translate}}',
                         width: '10%',
                         template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                     },
                     {
                         field: 'type',
-                        title: 'TYPE',
+                        title: '{{"securityGroup.ts.TYPE" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'uuid',
-                        title: 'UUID',
+                        title: '{{"securityGroup.ts.UUID" | translate}}',
                         width: '25%'
                     }
                 ],
@@ -23129,27 +23202,27 @@ var MSecurityGroup;
                 columns: [
                     {
                         field: 'type',
-                        title: 'TYPE',
+                        title: '{{"securityGroup.ts.TYPE" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'startPort',
-                        title: 'PORT START',
+                        title: '{{"securityGroup.ts.PORT START" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'endPort',
-                        title: 'PORT END',
+                        title: '{{"securityGroup.ts.PORT END" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'protocol',
-                        title: 'PROTOCOL',
+                        title: '{{"securityGroup.ts.PROTOCOL" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'allowedCidr',
-                        title: 'ALLOWED CIDR',
+                        title: '{{"securityGroup.ts.ALLOWED CIDR" | translate}}',
                         width: '20%'
                     }
                 ],
@@ -23171,23 +23244,23 @@ var MSecurityGroup;
                 columns: [
                     {
                         field: 'ip',
-                        title: 'IP',
+                        title: '{{"securityGroup.ts.IP" | translate}}',
                         width: '25%'
                     },
                     {
                         field: 'deviceId',
-                        title: 'DEBICE ID',
+                        title: '{{"securityGroup.ts.DEBICE ID" | translate}}',
                         width: '25%'
                     },
                     {
                         field: 'uuid',
-                        title: 'UUID',
+                        title: '{{"securityGroup.ts.UUID" | translate}}',
                         width: '25%',
                         template: '{{dataItem.uuid}}'
                     },
                     {
                         field: 'vmInstanceUuid',
-                        title: 'VM',
+                        title: '{{"securityGroup.ts.VM" | translate}}',
                         width: '25%',
                         template: '<a href="/\\#/vmInstance/{{dataItem.vmInstanceUuid}}">{{dataItem.vmInstanceUuid}}</a>'
                     }
@@ -23304,23 +23377,23 @@ var MSecurityGroup;
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"securityGroup.ts.NAME" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"securityGroup.ts.DESCRIPTION" | translate}}',
                         value: 'description'
                     },
                     {
-                        name: 'State',
+                        name: '{{"securityGroup.ts.STATE" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"securityGroup.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"securityGroup.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
@@ -23449,27 +23522,27 @@ var MSecurityGroup;
                     columns: [
                         {
                             field: 'startPort',
-                            title: 'START',
+                            title: '{{"securityGroup.ts.START" | translate}}',
                             width: '13%'
                         },
                         {
                             field: 'endPort',
-                            title: 'END',
+                            title: '{{"securityGroup.ts.END" | translate}}',
                             width: '13%'
                         },
                         {
                             field: 'type',
-                            title: 'TYPE',
+                            title: '{{"securityGroup.ts.TYPE" | translate}}',
                             width: '16%'
                         },
                         {
                             field: 'protocol',
-                            title: 'PROTOCOL',
+                            title: '{{"securityGroup.ts.PROTOCOL" | translate}}',
                             width: '16%'
                         },
                         {
                             field: 'allowedCidr',
-                            title: 'ALLOWED CIDR',
+                            title: '{{"securityGroup.ts.ALLOWED CIDR" | translate}}',
                             width: '22%'
                         },
                         {
@@ -23851,10 +23924,10 @@ var MSecurityGroup;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Zone UUID:</span><span>#: zoneUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    itemTemplate: '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.TYPE" | translate}}:</span><span>#: type #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Zone UUID" | translate}}:</span><span>#: zoneUuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>'
                 };
                 $scope.ruleTypeOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [
@@ -23876,27 +23949,27 @@ var MSecurityGroup;
                     columns: [
                         {
                             field: 'startPort',
-                            title: 'START',
+                            title: '{{"securityGroup.ts.START" | translate}}',
                             width: '16%'
                         },
                         {
                             field: 'endPort',
-                            title: 'END',
+                            title: '{{"securityGroup.ts.END" | translate}}',
                             width: '16%'
                         },
                         {
                             field: 'type',
-                            title: 'TYPE',
+                            title: '{{"securityGroup.ts.TYPE" | translate}}',
                             width: '16%'
                         },
                         {
                             field: 'protocol',
-                            title: 'PROTOCOL',
+                            title: '{{"securityGroup.ts.PROTOCOL" | translate}}',
                             width: '16%'
                         },
                         {
                             field: 'allowedCidr',
-                            title: 'ALLOWED CIDR',
+                            title: '{{"securityGroup.ts.ALLOWED CIDR" | translate}}',
                             width: '16%'
                         },
                         {
@@ -23970,27 +24043,27 @@ var MSecurityGroup;
                         },
                         {
                             field: 'startPort',
-                            title: 'START',
+                            title: '{{"securityGroup.ts.START" | translate}}',
                             width: '16%'
                         },
                         {
                             field: 'endPort',
-                            title: 'END',
+                            title: '{{"securityGroup.ts.END" | translate}}',
                             width: '16%'
                         },
                         {
                             field: 'type',
-                            title: 'TYPE',
+                            title: '{{"securityGroup.ts.TYPE" | translate}}',
                             width: '16%'
                         },
                         {
                             field: 'protocol',
-                            title: 'PROTOCOL',
+                            title: '{{"securityGroup.ts.PROTOCOL" | translate}}',
                             width: '16%'
                         },
                         {
                             field: 'allowedCidr',
-                            title: 'ALLOWED CIDR',
+                            title: '{{"securityGroup.ts.ALLOWED CIDR" | translate}}',
                             width: '16%'
                         }
                     ],
@@ -24072,10 +24145,10 @@ var MSecurityGroup;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "id",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">VM Name:</span><span>#: vm.name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic IP:</span><span>#: nic.ip #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Device ID:</span><span>#: nic.deviceId #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic UUID:</span><span>#: nic.uuid #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">{{"securityGroup.ts.VM Name" | translate}}:</span><span>#: vm.name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Nic IP" | translate}}:</span><span>#: nic.ip #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Nic Device ID" | translate}}:</span><span>#: nic.deviceId #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Nic UUID" | translate}}:</span><span>#: nic.uuid #</span></div>',
                     change: function (e) {
                         var select = e.sender;
                         Utils.safeApply($scope, function () {
@@ -24189,10 +24262,10 @@ var MSecurityGroup;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "id",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">VM Name:</span><span>#: vm.name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic IP:</span><span>#: nic.ip #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Device ID:</span><span>#: nic.deviceId #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic UUID:</span><span>#: nic.uuid #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">{{"securityGroup.ts.VM Name" | translate}}:</span><span>#: vm.name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Nic IP" | translate}}:</span><span>#: nic.ip #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Nic Device ID" | translate}}:</span><span>#: nic.deviceId #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Nic UUID" | translate}}:</span><span>#: nic.uuid #</span></div>',
                     change: function (e) {
                         var select = e.sender;
                         Utils.safeApply($scope, function () {
@@ -24311,11 +24384,11 @@ var MSecurityGroup;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Zone UUID:</span><span>#: zoneUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">L2 Network UUID:</span><span>#: l2NetworkUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.TYPE" | translate}}:</span><span>#: type #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Zone UUID" | translate}}:</span><span>#: zoneUuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.L2 Network UUID" | translate}}:</span><span>#: l2NetworkUuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>',
                     change: function (e) {
                         var select = e.sender;
                         Utils.safeApply($scope, function () {
@@ -24390,11 +24463,11 @@ var MSecurityGroup;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Zone UUID:</span><span>#: zoneUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">L2 Network UUID:</span><span>#: l2NetworkUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.TYPE" | translate}}:</span><span>#: type #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Zone UUID" | translate}}:</span><span>#: zoneUuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.L2 Network UUID" | translate}}:</span><span>#: l2NetworkUuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>',
                     change: function (e) {
                         var select = e.sender;
                         Utils.safeApply($scope, function () {
@@ -24668,45 +24741,45 @@ var MVip;
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"vip.ts.NAME" | translate}}',
                     width: '10%',
                     template: '<a href="/\\#/vip/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'state',
-                    title: 'STATE',
+                    title: '{{"vip.ts.STATE" | translate}}',
                     width: '6%',
                     template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                 },
                 {
                     field: 'ip',
-                    title: 'IP',
+                    title: '{{"vip.ts.IP" | translate}}',
                     width: '14%'
                 },
                 {
                     field: 'netmask',
-                    title: 'NETMASK',
+                    title: '{{"vip.ts.NETMASK" | translate}}',
                     width: '14%'
                 },
                 {
                     field: 'gateway',
-                    title: 'GATEWAY',
+                    title: '{{"vip.ts.GATEWAY" | translate}}',
                     width: '14%'
                 },
                 {
                     field: 'l3NetworkUuid',
-                    title: 'L3 NETWORK UUID',
+                    title: '{{"vip.ts.L3 NETWORK UUID" | translate}}',
                     width: '%14',
                     template: '<a href="/\\#/l3Network/{{dataItem.l3NetworkUuid}}">{{dataItem.l3NetworkUuid}}</a>'
                 },
                 {
                     field: 'useFor',
-                    title: 'USE',
+                    title: '{{"vip.ts.USE" | translate}}',
                     width: '14%'
                 },
                 {
                     field: 'serviceProvider',
-                    title: 'SERVICE PROVIDER',
+                    title: '{{"vip.ts.SERVICE PROVIDER" | translate}}',
                     width: '14%'
                 }
             ];
@@ -24745,11 +24818,11 @@ var MVip;
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"vip.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'State',
+                            name: '{{"vip.ts.State" | translate}}',
                             value: FilterBy.STATE
                         }
                     ]
@@ -24876,43 +24949,43 @@ var MVip;
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"vip.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"vip.ts.Description" | translate}}',
                         value: 'description'
                     },
                     {
-                        name: 'IP',
+                        name: '{{"vip.ts.IP" | translate}}',
                         value: 'ip'
                     },
                     {
-                        name: 'Netmask',
+                        name: '{{"vip.ts.NETMASK" | translate}}',
                         value: 'netmask'
                     },
                     {
-                        name: 'Gateway',
+                        name: '{{"vip.ts.GATEWAY" | translate}}',
                         value: 'gateway'
                     },
                     {
-                        name: 'State',
+                        name: '{{"vip.ts.State" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Use',
+                        name: '{{"vip.ts.USE" | translate}}',
                         value: 'useFor'
                     },
                     {
-                        name: 'Service Provider',
+                        name: '{{"vip.ts.SERVICE PROVIDER" | translate}}',
                         value: 'serviceProvider'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"vip.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"vip.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
@@ -25100,18 +25173,18 @@ var MVip;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"vip.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vip.ts.State" | translate}}:</span><span>#: state #</span></div>'
                 };
                 $scope.l3NetworkListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Zone UUID:</span><span>#: zoneUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">L2 Network UUID:</span><span>#: l2NetworkUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"vip.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vip.ts.Type" | translate}}:</span><span>#: type #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vip.ts.Zone UUID" | translate}}:</span><span>#: zoneUuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vip.ts.L2 Network UUID" | translate}}:</span><span>#: l2NetworkUuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"vip.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>'
                 };
                 $scope.$watch(function () {
                     return $scope.zoneUuid;
@@ -25422,24 +25495,24 @@ var MEip;
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"eip.ts.NAME" | translate}}',
                     width: '25%',
                     template: '<a href="/\\#/eip/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'state',
-                    title: 'STATE',
+                    title: '{{"eip.ts.STATE" | translate}}',
                     width: '25%',
                     template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                 },
                 {
                     field: 'vipIp',
-                    title: 'VIP IP',
+                    title: '{{"eip.ts.VIP IP" | translate}}',
                     width: '25%'
                 },
                 {
                     field: 'vmNicIp',
-                    title: 'VM NIC IP',
+                    title: '{{"eip.ts.VM NIC IP" | translate}}',
                     width: '25%'
                 },
             ];
@@ -25567,11 +25640,11 @@ var MEip;
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"eip.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'State',
+                            name: '{{"eip.ts.STATE" | translate}}',
                             value: FilterBy.STATE
                         }
                     ]
@@ -25728,23 +25801,23 @@ var MEip;
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"eip.ts.NAME" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"eip.ts.Description" | translate}}',
                         value: 'description'
                     },
                     {
-                        name: 'State',
+                        name: '{{"eip.ts.STATE" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"eip.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"eip.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
@@ -25974,10 +26047,10 @@ var MEip;
                 $scope.vipMethodOptions__ = {
                     dataSource: new kendo.data.DataSource({
                         data: [{
-                                name: "Create New VIP",
+                                name: '{{"eip.ts.Create New VIP" | translate}}',
                                 field: CreateEip.CREATE_NEW_VIP
                             }, {
-                                name: "Use Existing VIP",
+                                name: '{{"eip.ts.Use Existing VIP" | translate}}',
                                 field: CreateEip.USE_EXISTING_VIP
                             }]
                     }),
@@ -26070,33 +26143,33 @@ var MEip;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">IP:</span><span>#: ip #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Gateway:</span><span>#: gateway #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Netmask:</span><span>#: netmask #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"eip.ts.NAME" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.IP" | translate}}:</span><span>#: ip #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.Gateway" | translate}}:</span><span>#: gateway #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.Netmask" | translate}}:</span><span>#: netmask #</span></div>'
                 };
                 $scope.l3NetworkListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Zone UUID:</span><span>#: zoneUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">L2 Network UUID:</span><span>#: l2NetworkUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"eip.ts.NAME" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.Type" | translate}}:</span><span>#: type #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.Zone UUID" | translate}}:</span><span>#: zoneUuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.L2 Network UUID" | translate}}:</span><span>#: l2NetworkUuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>'
                 };
                 $scope.vmListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "nicUuid",
-                    template: '<div style="color: black"><span class="z-label">VM Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">VM UUID:</span><span>#: uuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic DeviceId:</span><span>#: nicDeviceId #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Ip:</span><span>#: nicIp #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Netmask:</span><span>#: nicNetmask #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Gateway:</span><span>#: nicGateway #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Mac:</span><span>#: nicMac #</span></div>' +
-                        '<div style="color: black"><span class="z-label">L3 Network UUID:</span><span>#: l3NetworkUuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"eip.ts.VM Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.VM UUID" | translate}}:</span><span>#: uuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.Nic DeviceId" | translate}}:</span><span>#: nicDeviceId #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.Nic Ip" | translate}}:</span><span>#: nicIp #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.Nic Netmask" | translate}}:</span><span>#: nicNetmask #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.Nic Gateway" | translate}}:</span><span>#: nicGateway #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.Nic Mac" | translate}}:</span><span>#: nicMac #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.L3 Network UUID" | translate}}:</span><span>#: l3NetworkUuid #</span></div>'
                 };
                 $scope.$watch(function () {
                     return [$scope.vipPage.vipUuid, $scope.vipPage.vip];
@@ -26233,14 +26306,14 @@ var MEip;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "nicUuid",
-                    template: '<div style="color: black"><span class="z-label">VM Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">VM UUID:</span><span>#: uuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic DeviceId:</span><span>#: nicDeviceId #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Ip:</span><span>#: nicIp #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Netmask:</span><span>#: nicNetmask #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Gateway:</span><span>#: nicGateway #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Mac:</span><span>#: nicMac #</span></div>' +
-                        '<div style="color: black"><span class="z-label">L3 Network UUID:</span><span>#: l3NetworkUuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"eip.ts.VM Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.VM UUID" | translate}}:</span><span>#: uuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.Nic DeviceId" | translate}}:</span><span>#: nicDeviceId #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.Nic Ip" | translate}}:</span><span>#: nicIp #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.Nic Netmask" | translate}}:</span><span>#: nicNetmask #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.Nic Gateway" | translate}}:</span><span>#: nicGateway #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.Nic Mac" | translate}}:</span><span>#: nicMac #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"eip.ts.L3 Network UUID" | translate}}:</span><span>#: l3NetworkUuid #</span></div>'
                 };
                 $scope.hasVm = function () {
                     return $scope.vmListOptions__.dataSource.data().length > 0;
@@ -26724,44 +26797,44 @@ var MPortForwarding;
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"portForwarding.ts.NAME" | translate}}',
                     width: '10%',
                     template: '<a href="/\\#/pf/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'state',
-                    title: 'STATE',
+                    title: '{{"portForwarding.ts.STATE" | translate}}',
                     width: '10%',
                     template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                 },
                 {
                     field: 'vipPortStart',
-                    title: 'VIP PORT START',
+                    title: '{{"portForwarding.ts.VIP PORT START" | translate}}',
                     width: '10%'
                 },
                 {
                     field: 'vipPortEnd',
-                    title: 'VIP PORT END',
+                    title: '{{"portForwarding.ts.VIP PORT END" | translate}}',
                     width: '10%'
                 },
                 {
                     field: 'privatePortStart',
-                    title: 'GUEST PORT START',
+                    title: '{{"portForwarding.ts.GUEST PORT START" | translate}}',
                     width: '10%'
                 },
                 {
                     field: 'privatePortEnd',
-                    title: 'GUEST PORT END',
+                    title: '{{"portForwarding.ts.GUEST PORT END" | translate}}',
                     width: '10%'
                 },
                 {
                     field: 'vipIp',
-                    title: 'VIP IP',
+                    title: '{{"portForwarding.ts.VIP IP" | translate}}',
                     width: '20%'
                 },
                 {
                     field: 'vmNicIp',
-                    title: 'VM NIC IP',
+                    title: '{{"portForwarding.ts.VM NIC IP" | translate}}',
                     width: '20%'
                 },
             ];
@@ -26889,11 +26962,11 @@ var MPortForwarding;
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"portForwarding.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'State',
+                            name: '{{"portForwarding.ts.State" | translate}}',
                             value: FilterBy.STATE
                         }
                     ]
@@ -27050,43 +27123,43 @@ var MPortForwarding;
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"portForwarding.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"portForwarding.ts.Description" | translate}}',
                         value: 'description'
                     },
                     {
-                        name: 'VIP Port Start',
+                        name: '{{"portForwarding.ts.VIP Port Start" | translate}}',
                         value: 'vipPortStart'
                     },
                     {
-                        name: 'VIP Port End',
+                        name: '{{"portForwarding.ts.VIP Port End" | translate}}',
                         value: 'vipPortEnd'
                     },
                     {
-                        name: 'Private Port Start',
+                        name: '{{"portForwarding.ts.Private Port Start" | translate}}',
                         value: 'privatePortStart'
                     },
                     {
-                        name: 'Private Port End',
+                        name: '{{"portForwarding.ts.Private Port End" | translate}}',
                         value: 'privatePortEnd'
                     },
                     {
-                        name: 'Protocol',
+                        name: '{{"portForwarding.ts.Protocol" | translate}}',
                         value: 'protocolType'
                     },
                     {
-                        name: 'State',
+                        name: '{{"portForwarding.ts.State" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"portForwarding.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"portForwarding.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
@@ -27320,10 +27393,10 @@ var MPortForwarding;
                 $scope.vipMethodOptions__ = {
                     dataSource: new kendo.data.DataSource({
                         data: [{
-                                name: "Create New VIP",
+                                name: '{{"portForwarding.ts.Create New VIP" | translate}}',
                                 field: CreatePortForwarding.CREATE_NEW_VIP
                             }, {
-                                name: "Use Existing VIP",
+                                name: '{{"portForwarding.ts.Use Existing VIP" | translate}}',
                                 field: CreatePortForwarding.USE_EXISTING_VIP
                             }]
                     }),
@@ -27555,33 +27628,33 @@ var MPortForwarding;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">IP:</span><span>#: ip #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Gateway:</span><span>#: gateway #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Netmask:</span><span>#: netmask #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.IP" | translate}}:</span><span>#: ip #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Gateway" | translate}}:</span><span>#: gateway #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Netmask" | translate}}:</span><span>#: netmask #</span></div>'
                 };
                 $scope.l3NetworkListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Zone UUID:</span><span>#: zoneUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">L2 Network UUID:</span><span>#: l2NetworkUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Type" | translate}}:</span><span>#: type #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Zone UUID" | translate}}:</span><span>#: zoneUuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.L2 Network UUID" | translate}}:</span><span>#: l2NetworkUuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>'
                 };
                 $scope.vmListOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "nicUuid",
-                    template: '<div style="color: black"><span class="z-label">VM Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">VM UUID:</span><span>#: uuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic DeviceId:</span><span>#: nicDeviceId #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Ip:</span><span>#: nicIp #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Netmask:</span><span>#: nicNetmask #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Gateway:</span><span>#: nicGateway #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Mac:</span><span>#: nicMac #</span></div>' +
-                        '<div style="color: black"><span class="z-label">L3 Network UUID:</span><span>#: l3NetworkUuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"portForwarding.ts.VM Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.VM UUID" | translate}}:</span><span>#: uuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Nic DeviceId" | translate}}:</span><span>#: nicDeviceId #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Nic Ip" | translate}}:</span><span>#: nicIp #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Nic Netmask" | translate}}:</span><span>#: nicNetmask #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Nic Gateway" | translate}}:</span><span>#: nicGateway #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Nic Mac" | translate}}:</span><span>#: nicMac #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.L3 Network UUID" | translate}}:</span><span>#: l3NetworkUuid #</span></div>'
                 };
                 _this.$scope = $scope;
             };
@@ -27679,14 +27752,14 @@ var MPortForwarding;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "nicUuid",
-                    template: '<div style="color: black"><span class="z-label">VM Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">VM UUID:</span><span>#: uuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic DeviceId:</span><span>#: nicDeviceId #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Ip:</span><span>#: nicIp #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Netmask:</span><span>#: nicNetmask #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Gateway:</span><span>#: nicGateway #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Mac:</span><span>#: nicMac #</span></div>' +
-                        '<div style="color: black"><span class="z-label">L3 Network UUID:</span><span>#: l3NetworkUuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"portForwarding.ts.VM Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.VM UUID" | translate}}:</span><span>#: uuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Nic DeviceId" | translate}}:</span><span>#: nicDeviceId #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Nic Ip" | translate}}:</span><span>#: nicIp #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Nic Netmask" | translate}}:</span><span>#: nicNetmask #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Nic Gateway" | translate}}:</span><span>#: nicGateway #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Nic Mac" | translate}}:</span><span>#: nicMac #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{{{"portForwarding.ts.L3 Network UUID" | translate}}:</span><span>#: l3NetworkUuid #</span></div>'
                 };
                 $scope.hasVm = function () {
                     return $scope.vmListOptions__.dataSource.data().length > 0;
@@ -28194,35 +28267,35 @@ var MVirtualRouter;
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"virtualRouter.ts.NAME" | translate}}',
                     width: '20%',
                     template: '<a href="/\\#/vmInstance/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'description',
-                    title: 'DESCRIPTION',
+                    title: '{{"virtualRouter.ts.DESCRIPTION" | translate}}',
                     width: '20%'
                 },
                 {
                     field: 'hypervisorType',
-                    title: 'HYPERVISOR',
+                    title: '{{"virtualRouter.ts.HYPERVISOR" | translate}}',
                     width: '20%'
                 },
                 {
                     field: 'state',
-                    title: 'STATE',
+                    title: '{{"virtualRouter.ts.STATE" | translate}}',
                     width: '10%',
                     template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                 },
                 {
                     field: 'status',
-                    title: 'STATUS',
+                    title: '{{"virtualRouter.ts.STATUS" | translate}}',
                     width: '10%',
                     template: '<span class="{{dataItem.statusLabel()}}">{{dataItem.status}}</span>'
                 },
                 {
                     field: 'uuid',
-                    title: 'UUID',
+                    title: '{{"virtualRouter.ts.UUID" | translate}}',
                     width: '20%'
                 }
             ];
@@ -28303,15 +28376,15 @@ var MVirtualRouter;
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"virtualRouter.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'State',
+                            name: '{{"virtualRouter.ts.State" | translate}}',
                             value: FilterBy.STATE
                         },
                         {
-                            name: 'HypervisorType',
+                            name: '{{"virtualRouter.ts.HypervisorType" | translate}}',
                             value: FilterBy.TYPE
                         }
                     ]
@@ -28437,38 +28510,38 @@ var MVirtualRouter;
                 columns: [
                     {
                         field: 'deviceId',
-                        title: 'DEVICE ID',
+                        title: '{{"virtualRouter.ts.DEVICE ID" | translate}}',
                         width: '4%'
                     },
                     {
                         field: 'l3NetworkUuid',
-                        title: 'L3 Network',
+                        title: '{{"virtualRouter.ts.L3 Network" | translate}}',
                         width: '20%',
                         template: '<a href="/\\#/l3Network/{{dataItem.l3NetworkUuid}}">{{dataItem.l3NetworkUuid}}</a>'
                     },
                     {
                         field: 'ip',
-                        title: 'IP',
+                        title: '{{"virtualRouter.ts.IP" | translate}}',
                         width: '14%'
                     },
                     {
                         field: 'netmask',
-                        title: 'NETMASK',
+                        title: '{{"virtualRouter.ts.NETMASK" | translate}}',
                         width: '14%'
                     },
                     {
                         field: 'gateway',
-                        title: 'GATEWAY',
+                        title: '{{"virtualRouter.ts.GATEWAY" | translate}}',
                         width: '14%'
                     },
                     {
                         field: 'mac',
-                        title: 'MAC',
+                        title: '{{"virtualRouter.ts.MAC" | translate}}',
                         width: '14%'
                     },
                     {
                         field: 'uuid',
-                        title: 'UUID',
+                        title: '{{"virtualRouter.ts.UUID" | translate}}',
                         width: '20%'
                     }
                 ],
@@ -28490,33 +28563,33 @@ var MVirtualRouter;
                 columns: [
                     {
                         field: 'deviceId',
-                        title: 'DEVICE ID',
+                        title: '{{"virtualRouter.ts.DEVICE ID" | translate}}',
                         width: '10%',
                         template: '<a href="/\\#/volume/{{dataItem.uuid}}">{{dataItem.deviceId}}</a>'
                     },
                     {
                         field: 'name',
-                        title: 'NAME',
+                        title: '{{"virtualRouter.ts.NAME" | translate}}',
                         width: '18%'
                     },
                     {
                         field: 'type',
-                        title: 'TYPE',
+                        title: '{{"virtualRouter.ts.TYPE" | translate}}',
                         width: '18%'
                     },
                     {
                         field: 'state',
-                        title: 'STATE',
+                        title: '{{"virtualRouter.ts.STATE" | translate}}',
                         width: '18%'
                     },
                     {
                         field: 'status',
-                        title: 'STATUS',
+                        title: '{{"virtualRouter.ts.STATUS" | translate}}',
                         width: '18%'
                     },
                     {
                         field: 'uuid',
-                        title: 'UUID',
+                        title: '{{"virtualRouter.ts.UUID" | translate}}',
                         width: '18%'
                     }
                 ],
@@ -28531,7 +28604,7 @@ var MVirtualRouter;
                 })
             };
             $scope.optionsReconnectVirtualRouter = {
-                title: 'RECONNECT VIRTUAL ROUTER',
+                title: '{{"virtualRouter.ts.RECONNECT VIRTUAL ROUTER" | translate}}',
                 btnType: 'btn-primary',
                 width: '350px',
                 description: function () {
@@ -28570,27 +28643,27 @@ var MVirtualRouter;
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"virtualRouter.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"virtualRouter.ts.Description" | translate}}',
                         value: 'Description'
                     },
                     {
-                        name: 'State',
+                        name: '{{"virtualRouter.ts.State" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Hypervisor',
+                        name: '{{"virtualRouter.ts.Hypervisor" | translate}}',
                         value: 'hypervisorType'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"virtualRouter.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"virtualRouter.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
@@ -28924,46 +28997,46 @@ var MVirtualRouterOffering;
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"virtualRouterOffering.ts.NAME" | translate}}',
                     width: '10%',
                     template: '<a href="/\\#/virtualRouterOffering/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'description',
-                    title: 'DESCRIPTION',
+                    title: '{{"virtualRouterOffering.ts.DESCRIPTION" | translate}}',
                     width: '15%'
                 },
                 {
                     field: 'cpuNum',
-                    title: 'CPU NUMBER',
+                    title: '{{"virtualRouterOffering.ts.CPU NUMBER" | translate}}',
                     width: '10%'
                 },
                 {
                     field: 'cpuSpeed',
-                    title: 'CPU SPEED',
+                    title: '{{"virtualRouterOffering.ts.CPU SPEED" | translate}}',
                     width: '10%'
                 },
                 {
                     field: 'memorySize',
-                    title: 'MEMORY',
+                    title: '{{"virtualRouterOffering.ts.MEMORY" | translate}}',
                     width: '15%',
                     template: '<span>{{dataItem.memorySize | size}}</span>'
                 },
                 {
                     field: 'state',
-                    title: 'STATE',
+                    title: '{{"virtualRouterOffering.ts.STATE" | translate}}',
                     width: '10%',
                     template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                 },
                 {
                     field: 'isDefault',
-                    title: 'DEFAULT OFFERING',
+                    title: '{{"virtualRouterOffering.ts.DEFAULT OFFERING" | translate}}',
                     width: '10%',
                     template: '<span class="{{dataItem.isDefaultLabel()}}">{{dataItem.isDefault ? "TRUE" : "" }}</span>'
                 },
                 {
                     field: 'uuid',
-                    title: 'UUID',
+                    title: '{{"virtualRouterOffering.ts.UUID" | translate}}',
                     width: '20%'
                 }
             ];
@@ -29003,11 +29076,11 @@ var MVirtualRouterOffering;
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"virtualRouterOffering.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'State',
+                            name: '{{"virtualRouterOffering.ts.State" | translate}}',
                             value: FilterBy.STATE
                         }
                     ]
@@ -29141,35 +29214,35 @@ var MVirtualRouterOffering;
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"virtualRouterOffering.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"virtualRouterOffering.ts.Description" | translate}}',
                         value: 'description'
                     },
                     {
-                        name: 'CPU Number',
+                        name: '{{"virtualRouterOffering.ts.CPU Number" | translate}}',
                         value: 'cpuNum'
                     },
                     {
-                        name: 'CPU Speed',
+                        name: '{{"virtualRouterOffering.ts.CPU Speed" | translate}}',
                         value: 'cpuSpeed'
                     },
                     {
-                        name: 'Memory',
+                        name: '{{"virtualRouterOffering.ts.Memory" | translate}}',
                         value: 'memorySize'
                     },
                     {
-                        name: 'State',
+                        name: '{{"virtualRouterOffering.ts.State" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"virtualRouterOffering.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"virtualRouterOffering.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
@@ -29397,29 +29470,29 @@ var MVirtualRouterOffering;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"virtualRouterOffering.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"virtualRouterOffering.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>'
                 };
                 $scope.pubL3Options__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"virtualRouterOffering.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"virtualRouterOffering.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>'
                 };
                 $scope.imageOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Format:</span><span>#: format #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"virtualRouterOffering.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"virtualRouterOffering.ts.Format" | translate}}:</span><span>#: format #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"virtualRouterOffering.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>'
                 };
                 $scope.zoneOptions__ = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: "<div style='color: black'><span class='z-label'>Name</span>: #: name #</div><div style='color: black'><span class='z-label'>State:</span>#: state #</div><div style='color: black'><span class='z-label'>UUID:</span> #: uuid #</div>"
+                    template: '<div style="color: black"><span class="z-label">{{"virtualRouterOffering.ts.Name" | translate}}</span>: #: name #</div>' + '<div style="color: black"><span class="z-label">{{"virtualRouterOffering.ts.Name" | translate}}:</span>#: state #</div>' + '<div style="color: black"><span class="z-label">{{"virtualRouterOffering.ts.UUID" | translate}}:</span> #: uuid #</div>'
                 };
                 $scope.$watch(function () {
                     return $scope.infoPage.zoneUuid;
@@ -29606,41 +29679,43 @@ var MDashboard;
     })();
     MDashboard.DashboardManager = DashboardManager;
     var Controller = (function () {
-        function Controller($scope, api, $location, zoneMgr) {
+        function Controller($scope, api, $location, zoneMgr, Translator, $translate) {
             this.$scope = $scope;
             this.api = api;
             this.$location = $location;
             this.zoneMgr = zoneMgr;
+            this.Translator = Translator;
+            this.$translate = $translate;
             var cpu = new kendo.data.ObservableObject({
-                name: 'CPU',
                 total: 0,
                 available: 0,
                 percent: 0
             });
+            Translator.addProperty(cpu, 'name', 'dashboard.CPU');
             var memory = new kendo.data.ObservableObject({
-                name: 'MEMORY',
                 total: 0,
                 available: 0,
                 percent: 0
             });
+            Translator.addProperty(memory, 'name', 'dashboard.MEMORY');
             var priCap = new kendo.data.ObservableObject({
-                name: 'PRIMARY STORAGE',
                 total: 0,
                 available: 0,
                 percent: 0
             });
+            Translator.addProperty(priCap, 'name', 'dashboard.PRIMARY STORAGE');
             var backupCap = new kendo.data.ObservableObject({
-                name: 'BACKUP STORAGE',
                 total: 0,
                 available: 0,
                 percent: 0
             });
+            Translator.addProperty(backupCap, 'name', 'dashboard.BACKUP STORAGE');
             var ip = new kendo.data.ObservableObject({
-                name: 'IP ADDRESS',
                 total: 0,
                 available: 0,
                 percent: 0
             });
+            Translator.addProperty(ip, 'name', 'dashboard.IP ADDRESS');
             $scope.capacityGrid = {
                 resizable: true,
                 scrollable: true,
@@ -29648,22 +29723,22 @@ var MDashboard;
                 columns: [
                     {
                         field: 'name',
-                        title: 'CAPACITY NAME',
+                        title: '{{ "dashboard.CAPACITY NAME" | translate }}',
                         width: '25%'
                     },
                     {
                         field: 'total',
-                        title: 'TOTAL CAPACITY',
+                        title: '{{ "dashboard.TOTAL CAPACITY" | translate }}',
                         width: '25%'
                     },
                     {
                         field: 'available',
-                        title: 'AVAILABLE CAPACITY',
+                        title: '{{ "dashboard.AVAILABLE CAPACITY" | translate }}',
                         width: '25%'
                     },
                     {
                         field: 'percent',
-                        title: 'AVAILABLE PERCENTAGE',
+                        title: '{{ "dashboard.AVAILABLE PERCENTAGE" | translate }}',
                         width: '25%'
                     }
                 ],
@@ -29813,13 +29888,13 @@ var MDashboard;
                 columns: [
                     {
                         field: 'name',
-                        title: 'RESOURCE NAME',
+                        title: '{{"dashboard.ts.RESOURCE NAME" | translate}}',
                         template: '<a href="/\\#/{{dataItem.link}}">{{dataItem.name}}</a>',
                         width: '50%'
                     },
                     {
                         field: 'amount',
-                        title: 'COUNT',
+                        title: '{{"dashboard.ts.COUNT" | translate}}',
                         width: '50%'
                     }
                 ],
@@ -30007,7 +30082,7 @@ var MDashboard;
                 })
             };
         }
-        Controller.$inject = ['$scope', 'Api', '$location', 'ZoneManager'];
+        Controller.$inject = ['$scope', 'Api', '$location', 'ZoneManager', 'Translator', '$translate'];
         return Controller;
     })();
     MDashboard.Controller = Controller;
@@ -30080,22 +30155,22 @@ var MGlobalConfig;
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"globalConfig.ts.NAME" | translate}}',
                     width: '20%'
                 },
                 {
                     field: 'category',
-                    title: 'CATEGORY',
+                    title: '{{"globalConfig.ts.CATEGORY" | translate}}',
                     width: '20%'
                 },
                 {
                     field: 'description',
-                    title: 'DESCRIPTION',
+                    title: '{{"globalConfig.ts.DESCRIPTION" | translate}}',
                     width: '40%'
                 },
                 {
                     field: 'value',
-                    title: 'VALUE',
+                    title: '{{"globalConfig.ts.VALUE" | translate}}',
                     width: '20%'
                 }
             ];
@@ -30133,11 +30208,11 @@ var MGlobalConfig;
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"globalConfig.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'Category',
+                            name: '{{"globalConfig.ts.Category" | translate}}',
                             value: FilterBy.CATEGORY
                         }
                     ]
@@ -30250,15 +30325,15 @@ var MGlobalConfig;
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"globalConfig.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Category',
+                        name: '{{"globalConfig.ts.Category" | translate}}',
                         value: 'category'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"globalConfig.ts.Description" | translate}}',
                         value: 'description'
                     }
                 ],

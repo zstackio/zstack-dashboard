@@ -160,28 +160,28 @@ module ML2Network {
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"l2Network.ts.NAME" | translate}}',
                     width: '10%',
                     template: '<a href="/\\#/l2Network/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'description',
-                    title: 'DESCRIPTION',
+                    title: '{{"l2Network.ts.DESCRIPTION" | translate}}',
                     width: '25%'
                 },
                 {
                     field: 'physicalInterface',
-                    title: 'PHYSICAL INTERFACE',
+                    title: '{{"l2Network.ts.PHYSICAL INTERFACE" | translate}}',
                     width: '25%'
                 },
                 {
                     field: 'type',
-                    title: 'TYPE',
+                    title: '{{"l2Network.ts.TYPE" | translate}}',
                     width: '20%'
                 },
                 {
                     field: 'uuid',
-                    title: 'UUID',
+                    title: '{{"l2Network.ts.UUID" | translate}}',
                     width: '20%'
                 }
             ];
@@ -228,11 +228,11 @@ module ML2Network {
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"l2Network.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'Type',
+                            name: '{{"l2Network.ts.Type" | translate}}',
                             value: FilterBy.TYPE
                         }
                     ]
@@ -393,30 +393,30 @@ module ML2Network {
                 columns: [
                     {
                         field: 'name',
-                        title: 'NAME',
+                        title: '{{"l2Network.ts.NAME" | translate}}',
                         width: '20%',
                         template: '<a href="/\\#/cluster/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                     },
                     {
                         field: 'description',
-                        title: 'DESCRIPTION',
+                        title: '{{"l2Network.ts.DESCRIPTION" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'state',
-                        title: 'STATE',
+                        title: '{{"l2Network.ts.STATE" | translate}}',
                         width: '20%',
                         template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
 
                     },
                     {
                         field: 'hypervisorType',
-                        title: 'HYPERVISOR',
+                        title: '{{"l2Network.ts.HYPERVISOR" | translate}}',
                         width: '20%'
                     },
                     {
                         field: 'uuid',
-                        title: 'UUID',
+                        title: '{{"l2Network.ts.UUID" | translate}}',
                         width: '20%'
                     }
                 ],
@@ -476,27 +476,27 @@ module ML2Network {
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"l2Network.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"l2Network.ts.Description" | translate}}',
                         value: 'Description'
                     },
                     {
-                        name: 'Physical Interface',
+                        name: '{{"l2Network.ts.Physical Interface" | translate}}',
                         value: 'physicalInterface'
                     },
                     {
-                        name: 'Type',
+                        name: '{{"l2Network.ts.Type" | translate}}',
                         value: 'type'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"l2Network.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"l2Network.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
@@ -901,7 +901,7 @@ module ML2Network {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: "<div style='color: black'><span class='z-label'>Name</span>: #: name #</div><div style='color: black'><span class='z-label'>State:</span>#: state #</div><div style='color: black'><span class='z-label'>UUID:</span> #: uuid #</div>"
+                    template: '<div style="color: black"><span class="z-label">{{"l2Network.ts.Name" | translate}}</span>: #: name #</div>'+'<div style="color: black"><span class="z-label">{{"l2Network.ts.State" | translate}}:</span>#: state #</div>'+'<div style="color: black"><span class="z-label">{{"l2Network.ts.UUID" | translate}}:</span> #: uuid #</div>'
                 };
 
                 $scope.typeList = {

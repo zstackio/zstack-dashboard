@@ -3,64 +3,64 @@
         <div class="col-sm-15">
             <div class="tab-content">
                 <div id="createSecurityGroupInfo" class="tab-pane active">
-                    <h4 class="z-win-h4">SECURITY GROUP INFO</h4>
+                    <h4 class="z-win-h4">{{"securityGroup.createSecurityGroup.SECURITY GROUP INFO" | translate }}</h4>
                     <form class="form">
                         <div class="form-group col-sm-24">
-                            <label for="name">NAME</label>
+                            <label for="name">{{"securityGroup.createSecurityGroup.NAME" | translate}}</label>
                             <input class="form-control z-win-input" type="text" id="name" placeholder="(Required) max length of 255 characters" ng-model="infoPage.name" required data-message="name is required">
                         </div>
                         <div class="form-group col-sm-24">
-                            <label for="description">DESCRIPTION</label>
+                            <label for="description">{{"securityGroup.createSecurityGroup.DESCRIPTION" | translate}}</label>
                             <textarea  class="form-control z-win-input" rows="5" id="description" placeholder="(Optional) max length of 2048 characters" ng-model="infoPage.description"></textarea>
                         </div>
                     </form>
                 </div>
 
                 <div id="createSecurityGroupRule" class="tab-pane">
-                    <h4 class="z-win-h4">ADD RULE</h4>
+                    <h4 class="z-win-h4">{{"securityGroup.createSecurityGroup.ADD RULE" | translate}}</h4>
                     <form class="form">
                         <div class="form-group col-sm-18">
-                            <label for="type">TYPE</label>
+                            <label for="type">{{"securityGroup.createSecurityGroup.TYPE" | translate}}</label>
                             <select id="type" kendo-drop-down-list k-options="ruleTypeOptions__" class="z-win-dropdown" ng-model="rulePage.type"></select>
                         </div>
                         <div class="form-group col-sm-18">
-                            <label for="sport">START PORT</label>
+                            <label for="sport">{{"securityGroup.createSecurityGroup.START PORT" | translate}}</label>
                             <input class="form-control" type="text" id="sport" placeholder="(Required) Port range start" ng-model="rulePage.startPort">
                             <div class="alert alert-danger col-sm-21" ng-show="!rulePage.isStartPortValid()">
-                                Not a valid port. Valid port must be in range of [1, 65535]
+                                {{"securityGroup.createSecurityGroup.HINT1" | translate}}
                             </div>
                         </div>
                         <div class="form-group col-sm-18">
-                            <label for="eport">END PORT</label>
+                            <label for="eport">{{"securityGroup.createSecurityGroup.END PORT" | translate}}</label>
                             <input class="form-control" type="text" id="eport" placeholder="(Required) Port range end" ng-model="rulePage.endPort">
                             <div class="alert alert-danger col-sm-21" ng-show="!rulePage.isEndPortValid()">
-                                Not a valid port. Valid port must be in range of [1, 65535]
+                                {{"securityGroup.createSecurityGroup.HINT2" | translate}}
                             </div>
                         </div>
                         <div class="form-group col-sm-18">
-                            <label for="protocol">PROTOCOL</label>
+                            <label for="protocol">{{"securityGroup.createSecurityGroup.PROTOCOL" | translate}}</label>
                             <select id="protocol" kendo-drop-down-list k-options="ruleProtocolOptions__" class="z-win-dropdown" ng-model="rulePage.protocol"></select>
                         </div>
                         <div class="form-group col-sm-18">
-                            <label for="allowedCidr">ALLOWED CIDR</label>
+                            <label for="allowedCidr">{{"securityGroup.createSecurityGroup.ALLOWED CIDR" | translate}}</label>
                             <input class="form-control" type="text" id="allowedCidr" placeholder="(Optional) CIDR must be in format of, for example, 10.0.0.0/8" ng-model="rulePage.allowedCidr">
-                            <p class="z-hint">(Optional)CIDR must be in format of, for example, 10.0.0.0/8</p>
+                            <p class="z-hint">{{"securityGroup.createSecurityGroup.HINT3" | translate}}</p>
                             <div class="alert alert-danger col-sm-21" ng-show="!rulePage.isCIDRValid()">
-                                Not a valid CIDR. Valid port must be in format of ip/cidr_length
+                                {{"securityGroup.createSecurityGroup.HINT4" | translate}}
                             </div>
                         </div>
 
                         <div class="form-group col-sm-6">
                             <button type="button" class="btn btn-default" ng-click="rulePage.add()" ng-disabled="!rulePage.canAdd()">
                                 <i class="fa fa-plus" style="font-size: 1.2em"></i>
-                                <span>Add</span>
+                                <span>{{"securityGroup.createSecurityGroup.Add" | translate}}</span>
                             </button>
                         </div>
                     </form>
 
                     <div ng-switch="rulePage.isGridShow()">
                         <div ng-switch-when="false" class="col-sm-21">
-                            <p class="z-hint">You can add rule now or do it later after creating security group</p>
+                            <p class="z-hint">{{"securityGroup.createSecurityGroup.HINT5" | translate}}</p>
                         </div>
                         <div ng-switch-when="true" class="col-sm-21">
                             <div kendo-grid k-options="optionsRuleGrid__"></div>
@@ -70,21 +70,21 @@
 
                 <div id="createSecurityGroupRuleL3Network" class="tab-pane">
                     <div class="alert alert-warning col-sm-21" ng-show="!l3Page.hasL3Network()">
-                        No L3 network is eligible to attach. Please click 'Create' button to proceed.
+                        {{"securityGroup.createSecurityGroup.HINT6" | translate}}
                     </div>
 
-                    <h4 class="z-win-h4">ATTACH L3 NETWORK</h4>
+                    <h4 class="z-win-h4">{{"securityGroup.createSecurityGroup.ATTACH L3 NETWORK" | translate}}</h4>
                     <form class="form">
                         <div class="form-group col-sm-18">
-                            <label for="l3">L3 NETWORK</label>
+                            <label for="l3">{{"securityGroup.createSecurityGroup.L3 NETWORK" | translate}}</label>
                             <select id="l3" kendo-multi-select="l3NetworkList__" k-options="l3NetworkListOptions__" class="z-win-dropdown"></select>
-                            <p class="z-hint">(Optional) select one or more l3 network to attach. Or do it later after creating security group</p>
+                            <p class="z-hint">{{"securityGroup.createSecurityGroup.HINT7" | translate}}</p>
                         </div>
                     </form>
                 </div>
 
                 <div class="form-group col-sm-18" style="margin-top: 10px">
-                    <button type="button" class="btn btn-default" ng-click="button.previousClick()" ng-disabled="!button.canPreviousProceed()">Previous</button>
+                    <button type="button" class="btn btn-default" ng-click="button.previousClick()" ng-disabled="!button.canPreviousProceed()">{{"securityGroup.createSecurityGroup.Previous" | translate}}</button>
                     <button type="button" class="btn btn-primary" ng-disabled="!button.canNextProceed()" ng-click="button.nextClick()">{{button.nextButtonName()}}</button>
                 </div>
             </div>
@@ -92,9 +92,9 @@
 
         <div class="col-sm-7 z-wizard-bar">
             <ul class="nav">
-                <li class="active"><a data-target="#createSecurityGroupInfo" ng-click="button.pageClick('createSecurityGroupInfo')">SECURITY GROUP INFO</a></li>
-                <li ng-class="{disabled: !rulePage.isActive()}"><a data-target="#createSecurityGroupRule" ng-click="button.pageClick('createSecurityGroupRule')">ADD RULE</a></li>
-                <li ng-class="{disabled: !l3Page.isActive()}"><a data-target="#createSecurityGroupRuleL3Network" ng-click="button.pageClick('createSecurityGroupRuleL3Network')">ATTACH L3 NETWORK</a></li>
+                <li class="active"><a data-target="#createSecurityGroupInfo" ng-click="button.pageClick('createSecurityGroupInfo')">{{"securityGroup.createSecurityGroup.SECURITY GROUP INFO" | translate}}</a></li>
+                <li ng-class="{disabled: !rulePage.isActive()}"><a data-target="#createSecurityGroupRule" ng-click="button.pageClick('createSecurityGroupRule')">{{"securityGroup.createSecurityGroup.ADD RULE" | translate}}</a></li>
+                <li ng-class="{disabled: !l3Page.isActive()}"><a data-target="#createSecurityGroupRuleL3Network" ng-click="button.pageClick('createSecurityGroupRuleL3Network')">{{"securityGroup.createSecurityGroup.ATTACH L3 NETWORK" | translate}}</a></li>
             </ul>
         </div>
 

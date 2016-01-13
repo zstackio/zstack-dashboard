@@ -285,35 +285,35 @@ module ML3Network {
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"l3Network.ts.NAME" | translate}}',
                     width: '15%',
                     template: '<a href="/\\#/l3Network/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'description',
-                    title: 'DESCRIPTION',
+                    title: '{{"l3Network.ts.DESCRIPTION" | translate}}',
                     width: '20%'
                 },
                 {
                     field: 'state',
-                    title: 'STATE',
+                    title: '{{"l3Network.ts.STATE" | translate}}',
                     width: '10%',
                     template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                 },
                 {
                     field: 'type',
-                    title: 'TYPE',
+                    title: '{{"l3Network.ts.TYPE" | translate}}',
                     width: '15%'
                 },
                 {
                     field: 'system',
-                    title: 'SYSTEM NETWORK',
+                    title: '{{"l3Network.ts.SYSTEM NETWORK" | translate}}',
                     width: '15%',
                     template: '<span class="{{dataItem.systemLabel()}}">{{dataItem.system ? "TRUE" : "" }}</span>'
                 },
                 {
                     field: 'uuid',
-                    title: 'UUID',
+                    title: '{{"l3Network.ts.UUID" | translate}}',
                     width: '25%'
                 }
             ];
@@ -377,15 +377,15 @@ module ML3Network {
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"l3Network.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'Type',
+                            name: '{{"l3Network.ts.Type" | translate}}',
                             value: FilterBy.TYPE
                         },
                         {
-                            name: 'State',
+                            name: '{{"l3Network.ts.State" | translate}}',
                             value: FilterBy.STATE
                         }
                     ]
@@ -522,33 +522,33 @@ module ML3Network {
                 columns: [
                     {
                         field: 'name',
-                        title: 'NAME',
+                        title: '{{"l3Network.ts.NAME" | translate}}',
                         width: '10%'
                     },
                     {
                         field: 'startIp',
-                        title: 'START IP',
+                        title: '{{"l3Network.ts.START IP" | translate}}',
                         width: '18%'
 
                     },
                     {
                         field: 'endIp',
-                        title: 'END IP',
+                        title: '{{"l3Network.ts.END IP" | translate}}',
                         width: '18%'
                     },
                     {
                         field: 'netmask',
-                        title: 'NETMASK',
+                        title: '{{"l3Network.ts.NETMASK" | translate}}',
                         width: '18%'
                     },
                     {
                         field: 'gateway',
-                        title: 'GATEWAY',
+                        title: '{{"l3Network.ts.GATEWAY" | translate}}',
                         width: '18%'
                     },
                     {
                         field: 'networkCidr',
-                        title: 'NETWORK CIDR',
+                        title: '{{"l3Network.ts.NETWORK CIDR" | translate}}',
                         width: '18%'
                     }
                 ],
@@ -573,7 +573,7 @@ module ML3Network {
                 columns: [
                     {
                         field: 'dns',
-                        title: 'DNS',
+                        title: '{{"l3Network.ts.UUID" | translate}}DNS',
                         width: '100%'
                     }
                 ],
@@ -604,12 +604,12 @@ module ML3Network {
                 columns: [
                     {
                         field: 'service',
-                        title: 'SERVICE',
+                        title: '{{"l3Network.ts.SERVICE" | translate}}',
                         width: '50%'
                     },
                     {
                         field: 'provider',
-                        title: 'PROVIDER',
+                        title: '{{"l3Network.ts.PROVIDER" | translate}}',
                         width: '50%'
                     }
                 ],
@@ -724,27 +724,27 @@ module ML3Network {
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"l3Network.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"l3Network.ts.Description" | translate}}',
                         value: 'description'
                     },
                     {
-                        name: 'State',
+                        name: '{{"l3Network.ts.State" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Type',
+                        name: '{{"l3Network.ts.Type" | translate}}',
                         value: 'type'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"l3Network.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"l3Network.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
@@ -1680,16 +1680,16 @@ module ML3Network {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"l3Network.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"l3Network.ts.Type" | translate}}:</span><span>#: type #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"l3Network.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>'
                 };
 
                 $scope.optionsZoneList__ = {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: "<div style='color: black'><span class='z-label'>Name</span>: #: name #</div><div style='color: black'><span class='z-label'>State:</span>#: state #</div><div style='color: black'><span class='z-label'>UUID:</span> #: uuid #</div>"
+                    template: '<div style="color: black"><span class="z-label">{{"l3Network.ts.Name" | translate}}</span>: #: name #</div>'+'<div style="color: black"><span class="z-label">{{"l3Network.ts.State" | translate}}:</span>#: state #</div>'+'<div style="color: black"><span class="z-label">{{"l3Network.ts.UUID" | translate}}:</span> #: uuid #</div>'
                 };
 
                 $scope.optionsL3NetworkTypeList__ = {
@@ -1711,22 +1711,22 @@ module ML3Network {
                         },
                         {
                             field: 'networkCidr',
-                            title: 'CIDR',
+                            title: '{{"l3Network.ts.CIDR" | translate}}',
                             width: '22%'
                         },
                         {
                             field: 'startIp',
-                            title: 'START IP',
+                            title: '{{"l3Network.ts.START IP" | translate}}',
                             width: '22%'
                         },
                         {
                             field: 'endIp',
-                            title: 'END IP',
+                            title: '{{"l3Network.ts.END IP" | translate}}',
                             width: '22%'
                         },
                         {
                             field: 'gateway',
-                            title: 'GATEWAY',
+                            title: '{{"l3Network.ts.GATEWAY" | translate}}',
                             width: '22%'
                         }
                     ],
@@ -1749,7 +1749,7 @@ module ML3Network {
                     columns: [
                         {
                             field: 'dns',
-                            title: 'DNS',
+                            title: '{{"l3Network.ts.DNS" | translate}}',
                             width: '80%'
                         },
                         {
@@ -1787,12 +1787,12 @@ module ML3Network {
                     columns: [
                         {
                             field: 'providerName',
-                            title: 'PROVIDER',
+                            title: '{{"l3Network.ts.PROVIDER" | translate}}',
                             width: '40%'
                         },
                         {
                             field: 'serviceType',
-                            title: 'SERVICE',
+                            title: '{{"l3Network.ts.SERVICE" | translate}}',
                             width: '40%'
                         },
                         {

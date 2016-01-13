@@ -1,19 +1,21 @@
 <div kendo-window="attachL3Network__" k-visible="false" k-options="attachL3NetworkOptions__">
     <div>
         <div class="alert alert-warning col-sm-21" ng-show="!hasL3Network()">
-            No L3 network has been created. Please go to <a href="/#/l3Network">L3 network page</a> to create a new one.
+            {{"securityGroup.attachL3Network.HINT1" | translate}} 
+            <a href="/#/l3Network">{{"securityGroup.attachL3Network.L3 network page" | translate}}</a> 
+            {{"securityGroup.attachL3Network.HINT2" | translate}}
         </div>
 
-        <h4 class="z-win-h4">ATTACH L3 NETWORK</h4>
+        <h4 class="z-win-h4">{{"securityGroup.attachL3Network.ATTACH L3 NETWORK" | translate}}</h4>
         <form class="form">
             <div class="form-group col-sm-18">
-                <label for="ps">L3 NETWORK</label>
+                <label for="ps">{{"securityGroup.attachL3Network.L3 NETWORK" | translate}}</label>
                 <select id="ps" kendo-multi-select="l3NetworkList__" k-options="l3NetworkListOptions__" class="z-win-dropdown"></select>
-                <p class="z-hint">(Required) select one or more l3Network to attach</p>
+                <p class="z-hint">{{"securityGroup.attachL3Network.HINT3" | translate}}</p>
             </div>
             <div class="form-group col-lg-18">
-                <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
-                <button type="button" class="btn btn-primary" ng-disabled="!canProceed()" ng-click="done()">Attach</button>
+                <button type="button" class="btn btn-default" ng-click="cancel()">{{"securityGroup.attachL3Network.Cancel" | translate}}</button>
+                <button type="button" class="btn btn-primary" ng-disabled="!canProceed()" ng-click="done()">{{"securityGroup.attachL3Network.Attach" | translate}}</button>
             </div>
         </form>
     </div>

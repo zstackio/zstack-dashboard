@@ -11,7 +11,7 @@
 </div>
 
 <div>
-    <h3 class="z-h3">VM INSTANCE</h3>
+    <h3 class="z-h3">{{"vm.vm.VM INSTANCE" | translate}}</h3>
     <div class="btn-group-sm z-btn-bar">
         <button type="button" class="btn btn-default btn-sm" ng-click="funcRefresh()">
             <i class="fa fa-refresh"></i>
@@ -27,51 +27,47 @@
             <i class="fa fa-filter"></i><span>&nbsp; {{filterBy.getButtonName()}}</span>
         </button>
 
-        <button type="button" class="btn btn-default btn-sm" ng-class="{'btn-success': model.multiSelection == true}" ng-click="funcToggleMultiSelection()">
-            <i class="fa fa-flash" style="margin-right: 5px"></i><span>&nbsp; Batch Mode</span>
-        </button>
-
         <button type="button" class="btn btn-success btn-sm" style="margin-left: 20px" ng-click="funcCreateVmInstance(winNewVmInstance)">
             <i class="fa fa-plus"></i>
-            <span>&nbsp; New VmInstance</span>
+            <span>&nbsp; {{"vm.vm.New VmInstance" | translate}}</span>
         </button>
 
         <div id="vmInstanceFilterContent" style="display: none">
             <form class="form">
                 <div class="form-group">
-                    <label for="fieldList" class="z-block-label">FILTER BY</label>
+                    <label for="fieldList" class="z-block-label">{{"vm.vm.FILTER BY" | translate}}</label>
                     <select id="fieldList" kendo-drop-down-list k-options="filterBy.fieldList" ng-model="filterBy.field"></select>
                 </div>
                 <div class="form-group">
-                    <label class="z-block-label" for="valueList">VALUE</label>
+                    <label class="z-block-label" for="valueList">{{"vm.vm.VALUE" | translate}}</label>
                     <select kendo-drop-down-list id="valueList" ng-disabled="filterBy.isValueListDisabled()" k-options="filterBy.valueList" ng-model="filterBy.value"></select>
                 </div>
-                <button type="button" class="btn btn-sm btn-primary" ng-click="filterBy.confirm(popoverFilterBy)">Confirm</button>
+                <button type="button" class="btn btn-sm btn-primary" ng-click="filterBy.confirm(popoverFilterBy)">{{"vm.vm.Confirm" | translate}}</button>
             </form>
         </div>
 
         <div class="btn-group" ng-show="funcIsActionShow()">
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" ng-disabled="funcIsActionDisabled()">
-                Action <span class="caret"></span>
+                {{"vm.vm.Action" | translate}} <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu">
-                <li><a href ng-click="action.start()" ng-show="action.isActionShow('start')">Start</a></li>
-                <li><a href ng-click="action.stop()" ng-show="action.isActionShow('stop')">Stop</a></li>
-                <li><a href ng-click="action.reboot()" ng-show="action.isActionShow('reboot')">Reboot</a></li>
-                <li><a href ng-click="action.migrate()" ng-show="action.isActionShow('migrate')">Migrate</a></li>
-                <li><a href ng-click="action.console()" ng-show="action.isActionShow('console')">Console</a></li>
-                <li><a href ng-click="action.attachVolume()" ng-show="action.isActionShow('attachVolume')">Attach Volume</a></li>
-                <li><a href ng-click="action.detachVolume()" ng-show="action.isActionShow('detachVolume')">Detach Volume</a></li>
-                <li><a href ng-click="action.attachL3Network()" ng-show="action.isActionShow('attachL3Network')">Attach L3 Network</a></li>
-                <li><a href ng-click="action.detachL3Network()" ng-show="action.isActionShow('detachL3Network')">Detach L3 Network</a></li>
-                <li><a href ng-click="action.changeInstanceOffering()" ng-show="action.isActionShow('changeInstanceOffering')">Change Instance Offering</a></li>
+                <li><a href ng-click="action.start()" ng-show="action.isActionShow('start')">{{"vm.vm.Start" | translate}}</a></li>
+                <li><a href ng-click="action.stop()" ng-show="action.isActionShow('stop')">{{"vm.vm.Stop" | translate}}</a></li>
+                <li><a href ng-click="action.reboot()" ng-show="action.isActionShow('reboot')">{{"vm.vm.Reboot" | translate}}</a></li>
+                <li><a href ng-click="action.migrate()" ng-show="action.isActionShow('migrate')">{{"vm.vm.Migrate" | translate}}</a></li>
+                <li><a href ng-click="action.console()" ng-show="action.isActionShow('console')">{{"vm.vm.Console" | translate}}</a></li>
+                <li><a href ng-click="action.attachVolume()" ng-show="action.isActionShow('attachVolume')">{{"vm.vm.Attach Volume" | translate}}</a></li>
+                <li><a href ng-click="action.detachVolume()" ng-show="action.isActionShow('detachVolume')">{{"vm.vm.Detach Volume" | translate}}</a></li>
+                <li><a href ng-click="action.attachL3Network()" ng-show="action.isActionShow('attachL3Network')">{{"vm.vm.Attach L3 Network" | translate}}</a></li>
+                <li><a href ng-click="action.detachL3Network()" ng-show="action.isActionShow('detachL3Network')">{{"vm.vm.Detach L3 Network" | translate}}</a></li>
+                <li><a href ng-click="action.changeInstanceOffering()" ng-show="action.isActionShow('changeInstanceOffering')">{{"vm.vm.Change Instance Offering" | translate}}</a></li>
                 <li class="divider"></li>
-                <li><a href style="color:red" ng-click="funcDeleteVmInstance(deleteVmInstance)">Delete</a></li>
+                <li><a href style="color:red" ng-click="funcDeleteVmInstance(deleteVmInstance)">{{"vm.vm.Delete" | translate}}</a></li>
             </ul>
         </div>
     </div>
 
     <div kendo-grid="vmInstanceGrid" k-options="oVmInstanceGrid.options" z-grid-double-click="funcGridDoubleClick" class="z-flat-table"></div>
-    <p class="z-hint">Single click column to show action button</p>
-    <p class="z-hint">Double click column to enter details page</p>
+    <p class="z-hint">{{"vm.vm.HINT1" | translate}}</p>
+    <p class="z-hint">{{"vm.vm.HINT2" | translate}}</p>
 </div>

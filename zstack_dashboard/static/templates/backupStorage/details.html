@@ -6,7 +6,7 @@
 
 <div class="z-pane">
     <ol class="breadcrumb">
-        <li><a href="/#/backupStorage">BACKUP STORAGE</a></li>
+        <li><a href="/#/backupStorage">{{ "backupStorage.details.BACKUP STORAGE" | translate }}</a></li>
         <li class="active"><a href>{{model.current.name}}</a></li>
     </ol>
 
@@ -19,24 +19,24 @@
             </button>
             <div class="btn-group">
                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                    Action <span class="caret"></span>
+                    {{ "backupStorage.details.Action" | translate }} <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">Enable</a></li>
-                    <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">Disable</a></li>
-                    <li><a href ng-show="action.isReconnectShow()" ng-click="action.reconnect()">Reconnect</a></li>
-                    <li><a href ng-click="action.attachZone()">Attach Zone</a></li>
-                    <li><a href ng-click="action.detachZone()">Detach Zone</a></li>
+                    <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">{{ "backupStorage.details.Enable" | translate }}</a></li>
+                    <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">{{ "backupStorage.details.Disable" | translate }}</a></li>
+                    <li><a href ng-show="action.isReconnectShow()" ng-click="action.reconnect()">{{ "backupStorage.details.Reconnect" | translate }}</a></li>
+                    <li><a href ng-click="action.attachZone()">{{ "backupStorage.details.Attach Zone" | translate }}</a></li>
+                    <li><a href ng-click="action.detachZone()">{{ "backupStorage.details.Detach Zone" | translate }}</a></li>
                     <li class="divider"></li>
-                    <li><a href style="color:red" ng-click="funcDelete(deleteBackupStorage)">Delete</a></li>
+                    <li><a href style="color:red" ng-click="funcDelete(deleteBackupStorage)">{{ "backupStorage.details.Delete" | translate }}</a></li>
                 </ul>
             </div>
         </div>
     </div>
 
     <ul class="nav nav-pills">
-        <li class="active"><a data-target="#info" data-toggle="pill" href>Info</a></li>
-        <li><a data-target="#cluster" data-toggle="pill" href>Zone</a></li>
+        <li class="active"><a data-target="#info" data-toggle="pill" href>{{ "backupStorage.details.Info" | translate }}</a></li>
+        <li><a data-target="#cluster" data-toggle="pill" href>{{ "backupStorage.details.Zone" | translate }}</a></li>
     </ul>
 
 
@@ -50,7 +50,7 @@
                 <div class="panel-heading">
                     <a class="accordion-toggle" data-target="#infoDetails" data-toggle="collapse" href>
                         <i class="z-collapse fa fa-chevron-down"></i>
-                        <span>&nbsp; DETAILS</span>
+                        <span>&nbsp; {{ "backupStorage.details.DETAILS" | translate }}</span>
                     </a>
                 </div>
 
@@ -58,51 +58,51 @@
                     <div class="panel-body">
                         <table class="table z-table-borderless">
                             <tr>
-                                <td><span class="z-label">DESCRIPTION:</span></td>
+                                <td><span class="z-label">{{ "backupStorage.details.DESCRIPTION" | translate }}</span></td>
                                 <td><span class="z-description">{{model.current.description}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">STATE:</span></td>
+                                <td><span class="z-label">{{ "backupStorage.details.STATE" | translate }}</span></td>
                                 <td><span class="{{model.current.stateLabel()}}">{{model.current.state}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">STATUS:</span></td>
+                                <td><span class="z-label">{{ "backupStorage.details.STATUS" | translate }}</span></td>
                                 <td><span class="{{model.current.statusLabel()}}">{{model.current.status}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">TYPE:</span></td>
+                                <td><span class="z-label">{{ "backupStorage.details.TYPE" | translate }}</span></td>
                                 <td><span>{{model.current.type}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">URL:</span></td>
+                                <td><span class="z-label">{{ "backupStorage.details.URL" | translate }}</span></td>
                                 <td><span>{{model.current.url}}</span></td>
                             </tr>
                             <tr ng-switch="model.current.type">
                                 <td ng-switch-when="SftpBackupStorage">
-                                    <span class="z-label">HOSTNAME</span>
+                                    <span class="z-label">{{ "backupStorage.details.HOSTNAME" | translate }}</span>
                                 </td>
                                 <td ng-switch-when="SftpBackupStorage">
                                     <span>{{model.current.hostname}}</span>
                                 </td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">TOTAL CAPACITY:</span></td>
+                                <td><span class="z-label">{{ "backupStorage.details.TOTAL CAPACITY" | translate }}</span></td>
                                 <td><span>{{model.current.totalCapacity | size}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">AVAILABLE CAPACITY:</span></td>
+                                <td><span class="z-label">{{ "backupStorage.details.AVAILABLE CAPACITY" | translate }}</span></td>
                                 <td><span>{{model.current.availableCapacity | size}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">UUID:</span></td>
+                                <td><span class="z-label">{{ "backupStorage.details.UUID" | translate }}</span></td>
                                 <td><span>{{model.current.uuid}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">CREATED DATE:</span></td>
+                                <td><span class="z-label">{{ "backupStorage.details.CREATED DATE" | translate }}</span></td>
                                 <td><span>{{model.current.createDate}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">LAST UPDATED DATE:</span></td>
+                                <td><span class="z-label">{{ "backupStorage.details.LAST UPDATED DATE" | translate }}</span></td>
                                 <td><span>{{model.current.lastOpDate}}</span></td>
                             </tr>
                         </table>
@@ -114,7 +114,7 @@
 
         <div class="tab-pane" id="cluster">
             <div kendo-grid k-options="optionsZoneGrid" class="z-flat-table"></div>
-            <p class="z-hint">Zones listing here have attached to this backup storage</p>
+            <p class="z-hint">{{ "backupStorage.details.HINT" | translate }}</p>
         </div>
     </div>
 </div>

@@ -4,34 +4,34 @@
             <div class="tab-content">
                 <div id="createVipInfo" class="tab-pane active">
                     <div class="alert alert-warning col-sm-21" ng-show="!hasL3Network()">
-                        No L3 network has been created. Please go to <a href="/#/l3Network">L3 network page</a> to create a new one.
+                        {{"vip.createVip.hasL3Network1()" | translate}}<a href="/#/l3Network">{{"vip.createVip.L3 network page" | translate}}</a> {{"vip.createVip.hasL3Network2()" | translate}}.
                     </div>
 
-                    <h4 class="z-win-h4">ACQUIRE VIP</h4>
+                    <h4 class="z-win-h4">{{"vip.createVip.ACQUIRE VIP" | translate}}</h4>
                     <form class="form" id="formCreate">
                         <div class="form-group col-sm-24">
-                            <label for="zone">ZONE</label>
+                            <label for="zone">{{"vip.createVip.ZONE" | translate}}</label>
                             <select id="zone" kendo-drop-down-list k-options="zoneOptions__" class="z-win-dropdown" ng-model="zoneUuid"></select>
                         </div>
                         <div class="form-group col-sm-24">
-                            <label for="l3nw">L3 NETWORK</label>
+                            <label for="l3nw">{{"vip.createVip.L3 NETWORK" | translate}}</label>
                             <select id="l3nw" kendo-drop-down-list k-options="l3NetworkListOptions__" class="z-win-dropdown" ng-model="infoPage.l3NetworkUuid"></select>
-                            <p class="z-hint">(Required) L3 network from which this VIP is being allocated</p>
+                            <p class="z-hint">{{"vip.createVip.HINT1" | translate}}</p>
                         </div>
                         <div class="form-group col-sm-21">
-                            <label for="name">NAME</label>
+                            <label for="name">{{"vip.createVip.NAME" | translate}}</label>
                             <input class="form-control" type="text" id="name" placeholder="(Required) max length of 255 characters" ng-model="infoPage.name" required data-message="name is required">
                         </div>
                         <div class="form-group col-sm-21">
-                            <label for="description">DESCRIPTION</label>
+                            <label for="description">{{"vip.createVip.DESCRIPTION" | translate}}</label>
                             <textarea  class="form-control" rows="5" id="description" placeholder="(Optional) max length of 2048 characters" ng-model="infoPage.description"></textarea>
                         </div>
                         <div class="form-group col-sm-21">
-                            <label for="rip">REQUIRED IP</label>
+                            <label for="rip">{{"vip.createVip.REQUIRED IP" | translate}}</label>
                             <input type="text" class="form-control" id="rip" placeholder="IPv4 address" ng-model="infoPage.requiredIp">
-                            <p class="z-hint">(Optional) Specify the ip you want to allocate from the l3 network, a failure will be reported if specified ip is not available. If omitted, an ip will be automatically allocated</p>
+                            <p class="z-hint">{{"vip.createVip.HINT2" | translate}}</p>
                             <div class="alert alert-danger col-sm-21" ng-show="!infoPage.isVipValid()">
-                                Not a valid IPv4 address
+                                {{"vip.createVip.HINT3" | translate}}
                             </div>
                         </div>
                     </form>
@@ -46,7 +46,7 @@
         <div class="col-sm-7">
             <div class="z-wizard-bar">
                 <ul class="nav">
-                    <li class="active"><a data-target="#createVipInfo" ng-click="button.pageClick('createVipInfo')">VIP INFO</a></li>
+                    <li class="active"><a data-target="#createVipInfo" ng-click="button.pageClick('createVipInfo')">{{"vip.createVip.VIP INFO" | translate}}</a></li>
                 </ul>
             </div>
         </div>

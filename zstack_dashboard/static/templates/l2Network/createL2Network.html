@@ -4,66 +4,66 @@
             <div class="tab-content">
                 <div id="createL2NetworkInfo" class="tab-pane active">
                     <div class="alert alert-warning col-sm-21" ng-show="!infoPage.hasZone()">
-                        No zone has been created. Please go to <a href="/#/zone">zone page</a> to create a new one.
+                        {{"l2Network.createL2Network.HINT" | translate}} <a href="/#/zone">{{"l2Network.createL2Network.zone page" | translate}}</a> {{"l2Network.createL2Network.to create a new one." | translate}}
                     </div>
 
-                    <h4 class="z-win-h4">CREATE L2 NETWORK</h4>
+                    <h4 class="z-win-h4">{{"l2Network.createL2Network.CREATE L2 NETWORK" | translate}}</h4>
                     <form class="form" id="formCreate">
                         <div class="form-group col-sm-24">
-                            <label for="zone">ZONE</label>
+                            <label for="zone">{{"l2Network.createL2Network.ZONE" | translate}}</label>
                             <select id="zone" kendo-drop-down-list k-options="zoneList" class="z-win-dropdown" ng-model="infoPage.zoneUuid"></select>
-                            <p class="z-hint">(Required) select zone where the L2 is being created</p>
+                            <p class="z-hint">{{"l2Network.createL2Network.HINT2" | translate}}</p>
                         </div>
                         <div class="form-group col-sm-21">
-                            <label for="name">NAME</label>
+                            <label for="name">{{"l2Network.createL2Network.NAME" | translate}}</label>
                             <input class="form-control" type="text" id="name" placeholder="(Required) max length of 255 characters" ng-model="infoPage.name" required data-message="name is required">
                         </div>
                         <div class="form-group col-sm-21">
-                            <label for="description">DESCRIPTION</label>
+                            <label for="description">{{"l2Network.createL2Network.DESCRIPTION" | translate}}</label>
                             <textarea  class="form-control" rows="5" id="description" placeholder="(Optional) max length of 2048 characters" ng-model="infoPage.description"></textarea>
                         </div>
                         <div class="form-group col-sm-24">
-                            <label for="type">TYPE</label>
+                            <label for="type">{{"l2Network.createL2Network.TYPE" | translate}}</label>
                             <select id="type" kendo-drop-down-list k-options="typeList" class="z-win-dropdown" ng-model="infoPage.type"></select>
-                            <p class="z-hint">(Required) select type of l2Network</p>
+                            <p class="z-hint">{{"l2Network.createL2Network.HINT3" | translate}}</p>
                         </div>
                         <div ng-switch="infoPage.type">
                             <div ng-switch-when="L2VlanNetwork">
                                 <div class="form-group col-sm-21">
-                                    <label for="vlan">VLAN</label>
+                                    <label for="vlan">{{"l2Network.createL2Network.VLAN" | translate}}</label>
                                     <input type="text" class="form-control" id="vlan" placeholder="VLAN ID(e.g 10)" ng-model="infoPage.vlan">
                                 </div>
                                 <div class="alert alert-danger col-sm-21" ng-show="!infoPage.isVlanValid()">
-                                    Not a valid vlan. Valid vlan must be in range of [0, 4095]
+                                    {{"l2Network.createL2Network.HINT4" | translate}}
                                 </div>
                             </div>
                         </div>
                         <div class="form-group col-sm-21">
-                            <label for="url" class="z-block-label">PHYSICAL INTERFACE</label>
+                            <label for="url" class="z-block-label">{{"l2Network.createL2Network.PHYSICAL INTERFACE" | translate}}</label>
                             <input id="url" type="text" ng-model="infoPage.physicalInterface" class="form-control" placeholder="(Required) network device name on hypervisor">
-                            <p class="z-hint">(Required) name of network device on hypervisor. For example, 'eth0' on KVM host</p>
+                            <p class="z-hint">{{"l2Network.createL2Network.HINT5" | translate}}</p>
                         </div>
                     </form>
                 </div>
 
                 <div id="createL2NetworkCluster" class="tab-pane">
                     <div class="alert alert-warning col-sm-21" ng-show="!clusterPage.hasCluster()">
-                        No cluster is eligible to attach. Please click 'Create' button to proceed.
+                        {{"l2Network.createL2Network.HINT6" | translate}}
                     </div>
 
-                    <h4 class="z-win-h4">ATTACH CLUSTER</h4>
+                    <h4 class="z-win-h4">{{"l2Network.createL2Network.ATTACH CLUSTER" | translate}}</h4>
                     <form class="form">
                         <div class="form-group col-sm-18">
-                            <label for="ps">CLUSTER</label>
+                            <label for="ps">{{"l2Network.createL2Network.CLUSTER" | translate}}</label>
                             <select id="ps" kendo-multi-select="clusterList__" k-options="clusterListOptions__" class="z-win-dropdown"></select>
-                            <p class="z-hint">(Optional) select one or more cluster to attach. Or do it later after creating l2Network</p>
+                            <p class="z-hint">{{"l2Network.createL2Network.HINT7" | translate}}</p>
                         </div>
                     </form>
                 </div>
 
 
                 <div class="form-group col-sm-21">
-                    <button type="button" class="btn btn-default" ng-click="button.previousClick()" ng-disabled="!button.canPreviousProceed()">Previous</button>
+                    <button type="button" class="btn btn-default" ng-click="button.previousClick()" ng-disabled="!button.canPreviousProceed()">{{"l2Network.createL2Network.Previous" | translate}}</button>
                     <button type="button" class="btn btn-primary" ng-disabled="!button.canNextProceed()" ng-click="button.nextClick()">{{button.nextButtonName()}}</button>
                 </div>
             </div>
@@ -72,8 +72,8 @@
         <div class="col-sm-7">
             <div class="z-wizard-bar">
                 <ul class="nav">
-                    <li class="active"><a data-target="#createL2NetworkInfo" ng-click="button.pageClick('createL2NetworkInfo')">L2 NETWORK INFO</a></li>
-                    <li ng-class="{disabled: !psPage.isActive()}"><a data-target="#createL2NetworkCluster" ng-click="button.pageClick('createL2NetworkCluster')">ATTACH CLUSTER</a></li>
+                    <li class="active"><a data-target="#createL2NetworkInfo" ng-click="button.pageClick('createL2NetworkInfo')">{{"l2Network.createL2Network.L2 NETWORK INFO" | translate}}</a></li>
+                    <li ng-class="{disabled: !psPage.isActive()}"><a data-target="#createL2NetworkCluster" ng-click="button.pageClick('createL2NetworkCluster')">{{"l2Network.createL2Network.ATTACH CLUSTER" | translate}}</a></li>
                 </ul>
             </div>
         </div>

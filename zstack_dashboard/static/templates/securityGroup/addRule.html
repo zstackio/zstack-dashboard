@@ -1,42 +1,42 @@
 <div kendo-window="addRule__" k-options="optionsAddRule__" k-visible="false">
     <div>
-        <h4 class="z-win-h4">ADD RULE</h4>
+        <h4 class="z-win-h4">{{"securityGroup.addRule.ADD RULE" | translate }}</h4>
         <form class="form">
             <div class="form-group col-sm-18">
-                <label for="type">TYPE</label>
+                <label for="type">{{"securityGroup.addRule.TYPE" | translate }}</label>
                 <select id="type" kendo-drop-down-list k-options="ruleTypeOptions__" class="z-win-dropdown" ng-model="type"></select>
             </div>
             <div class="form-group col-sm-18">
-                <label for="sport">PORT START</label>
+                <label for="sport">{{"securityGroup.addRule.PORT START" | translate }}</label>
                 <input class="form-control" id="sport" placeholder="(Optional) start port, 1~65535" ng-model="startPort">
                 <div class="alert alert-danger col-sm-21" ng-show="!isStartPortValid()">
-                    Not a valid port. Valid port must be in range of [1, 65535]
+                    {{"securityGroup.addRule.HINT1" | translate }}
                 </div>
             </div>
             <div class="form-group col-sm-18">
-                <label for="eport">PORT END</label>
+                <label for="eport">{{"securityGroup.addRule.PORT END" | translate}}</label>
                 <input class="form-control" type="text" id="eport" placeholder="(Required) end port, 1 ~ 65535" ng-model="endPort">
                 <div class="alert alert-danger col-sm-21" ng-show="!isEndPortValid()">
-                    Not a valid port. Valid port must be in range of [1, 65535]
+                    {{"securityGroup.addRule.HINT2" | translate}}
                 </div>
             </div>
             <div class="form-group col-sm-18">
-                <label for="protocol">PROTOCOL</label>
+                <label for="protocol">{{"securityGroup.addRule.PROTOCOL" | translate}}</label>
                 <select id="protocol" kendo-drop-down-list k-options="ruleProtocolOptions__" class="z-win-dropdown" ng-model="protocol"></select>
             </div>
             <div class="form-group col-sm-18">
-                <label for="allowedCidr">ALLOWED CIDR</label>
+                <label for="allowedCidr">{{"securityGroup.addRule.ALLOWED CIDR" | translate}}</label>
                 <input class="form-control" type="text" id="allowedCidr" placeholder="(Optional) CIDR must be in format of, for example, 10.0.0.0/8" ng-model="allowedCidr">
-                <p class="z-hint">(Optional) CIDR must be in format of, for example, 10.0.0.0/8</p>
+                <p class="z-hint">{{"securityGroup.addRule.HINT3" | translate}}</p>
                 <div class="alert alert-danger col-sm-21" ng-show="!isCIDRValid()">
-                    Not a valid CIDR. Valid port must be in format of ip/cidr_length
+                    {{"securityGroup.addRule.HINT4" | translate}}
                 </div>
             </div>
 
             <div class="form-group col-sm-6">
                 <button type="button" class="btn btn-default" ng-click="add()" ng-disabled="!canAdd()">
                     <i class="fa fa-plus" style="font-size: 1.2em"></i>
-                    <span>Add</span>
+                    <span>{{"securityGroup.addRule.Add" | translate}}</span>
                 </button>
             </div>
 
@@ -45,8 +45,8 @@
             </div>
 
             <div class="form-group col-lg-18" style="margin-top: 10px">
-                <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
-                <button type="button" class="btn btn-primary" ng-disabled="!canProceed()" ng-click="done()">Done</button>
+                <button type="button" class="btn btn-default" ng-click="cancel()">{{"securityGroup.addRule.Cancel" | translate}}</button>
+                <button type="button" class="btn btn-primary" ng-disabled="!canProceed()" ng-click="done()">{{"securityGroup.addRule.Done" | translate}}</button>
             </div>
         </form>
     </div>

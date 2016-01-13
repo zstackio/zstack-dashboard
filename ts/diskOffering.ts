@@ -162,31 +162,31 @@ module MDiskOffering {
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"diskOffering.ts.NAME" | translate}}',
                     width: '20%',
                     template: '<a href="/\\#/diskOffering/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'description',
-                    title: 'DESCRIPTION',
+                    title: '{{"diskOffering.ts.DESCRIPTION" | translate}}',
                     width: '20%'
                 },
                 {
                     field: 'diskSize',
-                    title: 'DISK SIZE',
+                    title: '{{"diskOffering.ts.DISK SIZE" | translate}}',
                     width: '20%',
                     template: '<span>{{dataItem.diskSize | size}}</span>'
                 },
                 {
                     field: 'state',
-                    title: 'STATE',
+                    title: '{{"diskOffering.ts.STATE" | translate}}',
                     width: '20%',
                     template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                 },
 
                 {
                     field: 'uuid',
-                    title: 'UUID',
+                    title: '{{"diskOffering.ts.UUID" | translate}}',
                     width: '20%'
                 }
             ];
@@ -233,11 +233,11 @@ module MDiskOffering {
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"diskOffering.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'State',
+                            name: '{{"diskOffering.ts.State" | translate}}',
                             value: FilterBy.STATE
                         }
                     ]
@@ -377,27 +377,27 @@ module MDiskOffering {
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"diskOffering.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"diskOffering.ts.Description" | translate}}',
                         value: 'description'
                     },
                     {
-                        name: 'Disk Size',
+                        name: '{{"diskOffering.ts.Disk Size" | translate}}',
                         value: 'diskSize'
                     },
                     {
-                        name: 'State',
+                        name: '{{"diskOffering.ts.State" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"diskOffering.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"diskOffering.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],

@@ -247,44 +247,44 @@ module MPortForwarding {
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"portForwarding.ts.NAME" | translate}}',
                     width: '10%',
                     template: '<a href="/\\#/pf/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'state',
-                    title: 'STATE',
+                    title: '{{"portForwarding.ts.STATE" | translate}}',
                     width: '10%',
                     template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                 },
                 {
                     field: 'vipPortStart',
-                    title: 'VIP PORT START',
+                    title: '{{"portForwarding.ts.VIP PORT START" | translate}}',
                     width: '10%'
                 },
                 {
                     field: 'vipPortEnd',
-                    title: 'VIP PORT END',
+                    title: '{{"portForwarding.ts.VIP PORT END" | translate}}',
                     width: '10%'
                 },
                 {
                     field: 'privatePortStart',
-                    title: 'GUEST PORT START',
+                    title: '{{"portForwarding.ts.GUEST PORT START" | translate}}',
                     width: '10%'
                 },
                 {
                     field: 'privatePortEnd',
-                    title: 'GUEST PORT END',
+                    title: '{{"portForwarding.ts.GUEST PORT END" | translate}}',
                     width: '10%'
                 },
                 {
                     field: 'vipIp',
-                    title: 'VIP IP',
+                    title: '{{"portForwarding.ts.VIP IP" | translate}}',
                     width: '20%'
                 },
                 {
                     field: 'vmNicIp',
-                    title: 'VM NIC IP',
+                    title: '{{"portForwarding.ts.VM NIC IP" | translate}}',
                     width: '20%'
                 },
             ];
@@ -434,11 +434,11 @@ module MPortForwarding {
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"portForwarding.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'State',
+                            name: '{{"portForwarding.ts.State" | translate}}',
                             value: FilterBy.STATE
                         }
                     ]
@@ -603,43 +603,43 @@ module MPortForwarding {
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"portForwarding.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"portForwarding.ts.Description" | translate}}',
                         value: 'description'
                     },
                     {
-                        name: 'VIP Port Start',
+                        name: '{{"portForwarding.ts.VIP Port Start" | translate}}',
                         value: 'vipPortStart'
                     },
                     {
-                        name: 'VIP Port End',
+                        name: '{{"portForwarding.ts.VIP Port End" | translate}}',
                         value: 'vipPortEnd'
                     },
                     {
-                        name: 'Private Port Start',
+                        name: '{{"portForwarding.ts.Private Port Start" | translate}}',
                         value: 'privatePortStart'
                     },
                     {
-                        name: 'Private Port End',
+                        name: '{{"portForwarding.ts.Private Port End" | translate}}',
                         value: 'privatePortEnd'
                     },
                     {
-                        name: 'Protocol',
+                        name: '{{"portForwarding.ts.Protocol" | translate}}',
                         value: 'protocolType'
                     },
                     {
-                        name: 'State',
+                        name: '{{"portForwarding.ts.State" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"portForwarding.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"portForwarding.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
@@ -987,10 +987,10 @@ module MPortForwarding {
                 $scope.vipMethodOptions__ = {
                     dataSource: new kendo.data.DataSource({
                         data: [{
-                            name: "Create New VIP",
+                            name: '{{"portForwarding.ts.Create New VIP" | translate}}',
                             field: CreatePortForwarding.CREATE_NEW_VIP
                         },{
-                            name: "Use Existing VIP",
+                            name: '{{"portForwarding.ts.Use Existing VIP" | translate}}',
                             field: CreatePortForwarding.USE_EXISTING_VIP
                         }]
                     }),
@@ -1261,35 +1261,35 @@ module MPortForwarding {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">IP:</span><span>#: ip #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Gateway:</span><span>#: gateway #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Netmask:</span><span>#: netmask #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.IP" | translate}}:</span><span>#: ip #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Gateway" | translate}}:</span><span>#: gateway #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Netmask" | translate}}:</span><span>#: netmask #</span></div>'
                 };
 
                 $scope.l3NetworkListOptions__ = {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Zone UUID:</span><span>#: zoneUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">L2 Network UUID:</span><span>#: l2NetworkUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Type" | translate}}:</span><span>#: type #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Zone UUID" | translate}}:</span><span>#: zoneUuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.L2 Network UUID" | translate}}:</span><span>#: l2NetworkUuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>'
                 };
 
                 $scope.vmListOptions__ = {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "nicUuid",
-                    template: '<div style="color: black"><span class="z-label">VM Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">VM UUID:</span><span>#: uuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic DeviceId:</span><span>#: nicDeviceId #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Ip:</span><span>#: nicIp #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Netmask:</span><span>#: nicNetmask #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Gateway:</span><span>#: nicGateway #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Mac:</span><span>#: nicMac #</span></div>' +
-                        '<div style="color: black"><span class="z-label">L3 Network UUID:</span><span>#: l3NetworkUuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"portForwarding.ts.VM Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.VM UUID" | translate}}:</span><span>#: uuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Nic DeviceId" | translate}}:</span><span>#: nicDeviceId #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Nic Ip" | translate}}:</span><span>#: nicIp #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Nic Netmask" | translate}}:</span><span>#: nicNetmask #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Nic Gateway" | translate}}:</span><span>#: nicGateway #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Nic Mac" | translate}}:</span><span>#: nicMac #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.L3 Network UUID" | translate}}:</span><span>#: l3NetworkUuid #</span></div>'
                 };
 
                 this.$scope = $scope;
@@ -1395,14 +1395,14 @@ module MPortForwarding {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "nicUuid",
-                    template: '<div style="color: black"><span class="z-label">VM Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">VM UUID:</span><span>#: uuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic DeviceId:</span><span>#: nicDeviceId #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Ip:</span><span>#: nicIp #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Netmask:</span><span>#: nicNetmask #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Gateway:</span><span>#: nicGateway #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Nic Mac:</span><span>#: nicMac #</span></div>' +
-                        '<div style="color: black"><span class="z-label">L3 Network UUID:</span><span>#: l3NetworkUuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"portForwarding.ts.VM Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.VM UUID" | translate}}:</span><span>#: uuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Nic DeviceId" | translate}}:</span><span>#: nicDeviceId #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Nic Ip" | translate}}:</span><span>#: nicIp #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Nic Netmask" | translate}}:</span><span>#: nicNetmask #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Nic Gateway" | translate}}:</span><span>#: nicGateway #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Nic Mac" | translate}}:</span><span>#: nicMac #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{{{"portForwarding.ts.L3 Network UUID" | translate}}:</span><span>#: l3NetworkUuid #</span></div>'
                 };
 
                 $scope.hasVm = () => {

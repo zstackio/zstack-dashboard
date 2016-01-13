@@ -3,24 +3,24 @@
         <div class="col-sm-15">
             <div class="tab-content">
                 <div id="createDiskOfferingInfo" class="tab-pane active">
-                    <h4 class="z-win-h4">ADD DISK OFFERING</h4>
+                    <h4 class="z-win-h4">{{"diskOffering.addDiskOffering.ADD DISK OFFERING" | translate}}</h4>
                     <form class="form" id="formCreate">
                         <div class="form-group col-sm-21">
-                            <label for="name">NAME</label>
+                            <label for="name">{{"diskOffering.addDiskOffering.NAME" | translate}}</label>
                             <input class="form-control" type="text" id="name" placeholder="(Required) max length of 255 characters" ng-model="infoPage.name" required data-message="name is required">
                         </div>
                         <div class="form-group col-sm-21">
-                            <label for="description">DESCRIPTION</label>
+                            <label for="description">{{"diskOffering.addDiskOffering.DESCRIPTION" | translate}}</label>
                             <textarea  class="form-control" rows="5" id="description" placeholder="(Optional) max length of 2048 characters" ng-model="infoPage.description"></textarea>
                         </div>
                         <div class="form-group col-sm-21">
-                            <label for="disk">DISK SIZE</label>
+                            <label for="disk">{{"diskOffering.addDiskOffering.DISK SIZE" | translate}}</label>
                             <input type="text" class="form-control" id="disk" placeholder="can be suffixed with T/G/M/K, default is bytes, e.g 1T" ng-model="infoPage.diskSize">
                         </div>
                         <div class="form-group col-sm-24">
-                            <label for="allocator">ALLOCATOR STRATEGY</label>
+                            <label for="allocator">{{"diskOffering.addDiskOffering.ALLOCATOR STRATEGY" | translate}}</label>
                             <select id="allocator" kendo-drop-down-list k-options="allocatorStrategyOptions__" class="z-win-dropdown" ng-model="infoPage.allocatorStrategy"></select>
-                            <p class="z-hint">(Optional) Primary storage allocator strategy</p>
+                            <p class="z-hint">{{"diskOffering.addDiskOffering.HINT1" | translate}}</p>
                         </div>
                     </form>
                 </div>
@@ -34,7 +34,7 @@
         <div class="col-sm-7">
             <div class="z-wizard-bar">
                 <ul class="nav">
-                    <li class="active"><a data-target="#createDiskOfferingInfo" ng-click="button.pageClick('createDiskOfferingInfo')">DISK OFFERING INFO</a></li>
+                    <li class="active"><a data-target="#createDiskOfferingInfo" ng-click="button.pageClick('createDiskOfferingInfo')">{{"diskOffering.addDiskOffering.DISK OFFERING INFO" | translate}}</a></li>
                 </ul>
             </div>
         </div>

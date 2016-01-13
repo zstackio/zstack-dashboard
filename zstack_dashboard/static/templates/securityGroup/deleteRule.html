@@ -1,15 +1,15 @@
 <div kendo-window="deleteRule__" k-visible="false" k-options="deleteRuleOptions__">
     <div>
-        <h4 class="z-win-h4">DELETE RULE</h4>
+        <h4 class="z-win-h4">{{"securityGroup.deleteRule.DELETE RULE" | translate}}</h4>
         <form class="form">
             <div class="form-group col-sm-21">
-                <label for="rule">RULES</label>
+                <label for="rule">{{"securityGroup.deleteRule.RULES" | translate}}</label>
                 <div id="rule" kendo-grid k-options="ruleOptions__"></div>
             </div>
 
             <div class="form-group col-lg-18">
-                <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
-                <button type="button" class="btn btn-danger" ng-disabled="!canProceed()" ng-click="done()">Delete</button>
+                <button type="button" class="btn btn-default" ng-click="cancel()">{{"securityGroup.deleteRule.Cancel" | translate}}</button>
+                <button type="button" class="btn btn-danger" ng-disabled="!canProceed()" ng-click="done()">{{"securityGroup.deleteRule.Delete" | translate}}</button>
             </div>
         </form>
     </div>

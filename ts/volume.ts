@@ -470,29 +470,29 @@ module MVolume {
             this.options.columns = [
                 {
                     field: 'name',
-                    title: 'NAME',
+                    title: '{{"volume.ts.NAME" | translate}}',
                     width: '10%',
                     template: '<a href="/\\#/volume/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'hypervisorType',
-                    title: 'HYPERVISOR',
+                    title: '{{"volume.ts.HYPERVISOR" | translate}}',
                     width: '10%'
                 },
                 {
                     field: 'type',
-                    title: 'TYPE',
+                    title: '{{"volume.ts.TYPE" | translate}}',
                     width: '10%'
                 },
                 {
                     field: 'state',
-                    title: 'STATE',
+                    title: '{{"volume.ts.STATE" | translate}}',
                     width: '15%',
                     template: '<span class="{{dataItem.stateLabel()}}">{{dataItem.state}}</span>'
                 },
                 {
                     field: 'status',
-                    title: 'STATUS',
+                    title: '{{"volume.ts.STATUS" | translate}}',
                     width: '15%',
                     template: '<span class="{{dataItem.statusLabel()}}">{{dataItem.status}}</span>'
                 },
@@ -574,23 +574,23 @@ module MVolume {
                 dataSource: new kendo.data.DataSource({
                     data: [
                         {
-                            name: 'None',
+                            name: '{{"volume.ts.None" | translate}}',
                             value: FilterBy.NONE
                         },
                         {
-                            name: 'State',
+                            name: '{{"volume.ts.State" | translate}}',
                             value: FilterBy.STATE
                         },
                         {
-                            name: 'Status',
+                            name: '{{"volume.ts.Status" | translate}}',
                             value: FilterBy.STATUS
                         },
                         {
-                            name: 'Type',
+                            name: '{{"volume.ts.Type" | translate}}',
                             value: FilterBy.TYPE
                         },
                         {
-                            name: 'HypervisorType',
+                            name: '{{"volume.ts.HypervisorType" | translate}}',
                             value: FilterBy.TYPE
                         }
                     ]
@@ -812,13 +812,13 @@ module MVolume {
                 columns: [
                     {
                         field: 'name',
-                        title: 'BACKUP STORAGE NAME',
+                        title: '{{"volume.ts.BACKUP STORAGE NAME" | translate}}',
                         width: '20%',
                         template: '<a href="/\\#/backupStorage/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                     },
                     {
                         field: 'installPath',
-                        title: 'INSTALL PATH',
+                        title: '{{"volume.ts.INSTALL PATH" | translate}}',
                         width: '80%'
                     },
                 ],
@@ -1054,35 +1054,35 @@ module MVolume {
             $scope.optionsSortBy = {
                 fields: [
                     {
-                        name: 'Name',
+                        name: '{{"volume.ts.Name" | translate}}',
                         value: 'name'
                     },
                     {
-                        name: 'Description',
+                        name: '{{"volume.ts.Description" | translate}}',
                         value: 'description'
                     },
                     {
-                        name: 'State',
+                        name: '{{"volume.ts.State" | translate}}',
                         value: 'state'
                     },
                     {
-                        name: 'Status',
+                        name: '{{"volume.ts.Status" | translate}}',
                         value: 'status'
                     },
                     {
-                        name: 'Type',
+                        name: '{{"volume.ts.Type" | translate}}',
                         value: 'type'
                     },
                     {
-                        name: 'Format',
+                        name: '{{"volume.ts.Format" | translate}}',
                         value: 'format'
                     },
                     {
-                        name: 'Created Date',
+                        name: '{{"volume.ts.Created Date" | translate}}',
                         value: 'createDate'
                     },
                     {
-                        name: 'Last Updated Date',
+                        name: '{{"volume.ts.Last Updated Date" | translate}}',
                         value: 'lastOpDate'
                     }
                 ],
@@ -1421,8 +1421,8 @@ module MVolume {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">DISK SIZE:</span><span>#: diskSize #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"volume.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.DISK SIZE" | translate}}:</span><span>#: diskSize #</span></div>'
                 };
 
                 $scope.vmOptions__ = {
@@ -1430,8 +1430,8 @@ module MVolume {
                     dataTextField: "name",
                     dataValueField: "uuid",
                     optionLabel: "",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Hypervisor:</span><span>#: hypervisorType #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"volume.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.Hypervisor" | translate}}:</span><span>#: hypervisorType #</span></div>'
                 };
 
                 this.$scope = $scope;
@@ -1494,10 +1494,10 @@ module MVolume {
                     dataTextField: "name",
                     dataValueField: "uuid",
                     select: onSelect,
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Hypervisor:</span><span>#: hypervisorType #</span></div>' +
-                        '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"volume.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.Hypervisor" | translate}}:</span><span>#: hypervisorType #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.State" | translate}}:</span><span>#: state #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>'
                 };
 
                 $scope.hasVm = () => {
@@ -1867,10 +1867,10 @@ module MVolume {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"volume.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.Type" | translate}}:</span><span>#: type #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.State" | translate}}:</span><span>#: state #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>'
                 };
 
                 $scope.hasBackupStorage = () => {
@@ -1982,10 +1982,10 @@ module MVolume {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"volume.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.Type" | translate}}:</span><span>#: type #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.State" | translate}}:</span><span>#: state #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>'
                 };
 
                 $scope.hasBackupStorage = () => {
@@ -2075,10 +2075,10 @@ module MVolume {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"volume.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.Type" | translate}}:</span><span>#: type #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.State" | translate}}:</span><span>#: state #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>'
                 };
 
                 $scope.bsUuid = null;
@@ -2200,10 +2200,10 @@ module MVolume {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"volume.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.Type" | translate}}:</span><span>#: type #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.State" | translate}}:</span><span>#: state #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>'
                 };
 
                 $scope.hasBackupStorage = () => {
@@ -2324,10 +2324,10 @@ module MVolume {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">State:</span><span>#: state #</span></div>' +
-                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
+                    template: '<div style="color: black"><span class="z-label">{{"volume.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.Type" | translate}}:</span><span>#: type #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.State" | translate}}:</span><span>#: state #</span></div>' +
+                        '<div style="color: black"><span class="z-label">{{"volume.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>'
                 };
 
                 $scope.bsUuid = null;

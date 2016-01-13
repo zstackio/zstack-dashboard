@@ -8,10 +8,10 @@ module MRoot {
     }
 
     export class main {
-        static $inject = ['$scope', '$rootScope', 'Api', 'ApiDetails', '$location', '$cookies'];
+        static $inject = ['$scope', '$rootScope', 'Api', 'ApiDetails', '$location', '$cookies', '$translate']; 
 
         constructor(private $scope : any, private $rootScope : any, private api : Utils.Api,
-                    private apiDetails: MApiDetails.ApiDetails, private $location: ng.ILocationService, private $cookies: any) {
+                     private apiDetails: MApiDetails.ApiDetails, private $location: ng.ILocationService, private $cookies: any, private $translate: any) {
 
             if (Utils.notNullnotUndefined($cookies.sessionUuid)) {
                 var msg = new ApiHeader.APIValidateSessionMsg();
@@ -114,6 +114,17 @@ module MRoot {
                     }
                 });
             };
+            $scope.changeLanguage = (language) => {  
+                 switch(language) {  
+                    case 'Chinese':  
+                        $translate.use('zh_CN');  
+                        break;  
+                   case 'English':  
+                        $translate.use('en_US');  
+                        break;  
+                }  
+           }  
+
         }
     }
 }
@@ -135,7 +146,7 @@ module ApiHeader {
 }
 
 
-angular.module("root", ['app.service','kendo.directives', 'ngRoute', 'ngTagsInput', 'ngCookies'])
+angular.module("root", ['app.service', 'kendo.directives', 'ngRoute', 'ngTagsInput', 'ngCookies', 'pascalprecht.translate']) 
     .config(['$routeProvider', function(route) {
         route.when('/login', {
             templateUrl: '/static/templates/login/login.html',
@@ -143,4 +154,19 @@ angular.module("root", ['app.service','kendo.directives', 'ngRoute', 'ngTagsInpu
         }).otherwise({
             redirectTo: '/dashboard'
         });
-    }]);
+    }])
+   .constant('LOCALES', {  
+         'locales': {  
+             'zh_CN': '中文',  
+             'en_US': 'English'  
+         },  
+         'preferredLocale': 'en_US'  
+     })  
+     .config(function($translateProvider) {  
+         $translateProvider.useStaticFilesLoader({  
+             prefix: '/static/resources/locale-',// path to translations files  
+             suffix: '.json'// suffix, currently- extension of the translations  
+         });  
+         $translateProvider.preferredLanguage('en_US');// is applied on first load  
+     });  
+

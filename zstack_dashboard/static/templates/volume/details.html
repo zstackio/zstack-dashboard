@@ -13,7 +13,7 @@
 
 <div class="z-pane">
     <ol class="breadcrumb">
-        <li><a href="/#/volume">VOLUME</a></li>
+        <li><a href="/#/volume">{{ "volume.details.VOLUME" | translate }}</a></li>
         <li class="active"><a href>{{model.current.name}}</a></li>
     </ol>
 
@@ -26,25 +26,25 @@
             </button>
             <div class="btn-group">
                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                    Action <span class="caret"></span>
+                    {{ "volume.details.Action" | translate }} <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">Enable</a></li>
-                    <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">Disable</a></li>
-                    <li><a href ng-click="action.attach()" ng-show="model.current.isAttachShow()">Attach</a></li>
-                    <li><a href ng-click="action.detach()" ng-show="model.current.isDetachShow()">Detach</a></li>
-                    <li><a href ng-click="action.takeSnapshot()" ng-show="model.current.isSnapshotShow()">Take Snapshot</a></li>
-                    <li><a href ng-click="action.createTemplate()" ng-show="model.current.isCreateTemplateShow()">Create Template</a></li>
+                    <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">{{ "volume.details.Enable" | translate }}</a></li>
+                    <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">{{ "volume.details.Disable" | translate }}</a></li>
+                    <li><a href ng-click="action.attach()" ng-show="model.current.isAttachShow()">{{ "volume.details.Attach" | translate }}</a></li>
+                    <li><a href ng-click="action.detach()" ng-show="model.current.isDetachShow()">{{ "volume.details.Detach" | translate }}</a></li>
+                    <li><a href ng-click="action.takeSnapshot()" ng-show="model.current.isSnapshotShow()">{{ "volume.details.Take Snapshot" | translate }}</a></li>
+                    <li><a href ng-click="action.createTemplate()" ng-show="model.current.isCreateTemplateShow()">{{ "volume.details.Create Template" | translate }}</a></li>
                     <li class="divider"></li>
-                    <li><a href style="color:red" ng-click="funcDeleteVolume(deleteVolume)" ng-show="model.current.isDeleteShow()">Delete</a></li>
+                    <li><a href style="color:red" ng-click="funcDeleteVolume(deleteVolume)" ng-show="model.current.isDeleteShow()">{{ "volume.details.Delete" | translate }}</a></li>
                 </ul>
             </div>
         </div>
     </div>
 
     <ul class="nav nav-pills">
-        <li class="active"><a data-target="#info" data-toggle="pill" href>Info</a></li>
-        <li><a data-target="#snapshot" data-toggle="pill" href>Snapshot</a></li>
+        <li class="active"><a data-target="#info" data-toggle="pill" href>{{ "volume.details.Info" | translate }}</a></li>
+        <li><a data-target="#snapshot" data-toggle="pill" href>{{ "volume.details.Snapshot" | translate }}</a></li>
     </ul>
 
 
@@ -58,7 +58,7 @@
                 <div class="panel-heading">
                     <a class="accordion-toggle" data-target="#infoDetails" data-toggle="collapse" href>
                         <i class="z-collapse fa fa-chevron-down"></i>
-                        <span>&nbsp; DETAILS</span>
+                        <span>&nbsp; {{ "volume.details.DETAILS" | translate }}</span>
                     </a>
                 </div>
 
@@ -66,63 +66,63 @@
                     <div class="panel-body">
                         <table class="table z-table-borderless">
                             <tr>
-                                <td><span class="z-label">DESCRIPTION:</span></td>
+                                <td><span class="z-label">{{ "volume.details.DESCRIPTION" | translate }}</span></td>
                                 <td><span class="z-description">{{model.current.description}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">STATE:</span></td>
+                                <td><span class="z-label">{{ "volume.details.STATE" | translate }}</span></td>
                                 <td><span class="{{model.current.stateLabel()}}">{{model.current.state}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">STATUS:</span></td>
+                                <td><span class="z-label">{{ "volume.details.STATUS" | translate }}</span></td>
                                 <td><span class="{{model.current.statusLabel()}}">{{model.current.status}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">FORMAT:</span></td>
+                                <td><span class="z-label">{{ "volume.details.FORMAT" | translate }}</span></td>
                                 <td><span>{{model.current.format}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">TYPE:</span></td>
+                                <td><span class="z-label">{{ "volume.details.TYPE" | translate }}</span></td>
                                 <td><span>{{model.current.type}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">DEVICE ID:</span></td>
+                                <td><span class="z-label">{{ "volume.details.DEVICE ID" | translate }}</span></td>
                                 <td><span>{{model.current.deviceId}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">SIZE:</span></td>
+                                <td><span class="z-label">{{ "volume.details.SIZE" | translate }}</span></td>
                                 <td><span>{{model.current.size | size}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">INSTALL PATH:</span></td>
+                                <td><span class="z-label">{{ "volume.details.INSTALL PATH" | translate }}</span></td>
                                 <td><span>{{model.current.installPath}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">UUID:</span></td>
+                                <td><span class="z-label">{{ "volume.details.UUID" | translate }}</span></td>
                                 <td><span>{{model.current.uuid}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">PRIMARY STORAGE UUID:</span></td>
+                                <td><span class="z-label">{{ "volume.details.PRIMARY STORAGE UUID" | translate }}</span></td>
                                 <td><a href="/#/primaryStorage/{{model.current.primaryStorageUuid}}">{{model.current.primaryStorageUuid}}</a></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">VM INSTANCE UUID:</span></td>
+                                <td><span class="z-label">{{ "volume.details.VM INSTANCE UUID" | translate }}</span></td>
                                 <td><a href="/#/vmInstance/{{model.current.vmInstanceUuid}}">{{model.current.vmInstanceUuid}}</a></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">ROOT IMAGE UUID:</span></td>
+                                <td><span class="z-label">{{ "volume.details.ROOT IMAGE UUID" | translate }}</span></td>
                                 <td><a href="/#/image/{{model.current.rootImageUuid}}">{{model.current.rootImageUuid}}</a></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">DISK OFFERING UUID:</span></td>
+                                <td><span class="z-label">{{ "volume.details.DISK OFFERING UUID" | translate }}</span></td>
                                 <td><a href="/#/diskOffering/{{model.current.diskOfferingUuid}}">{{model.current.diskOfferingUuid}}</a></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">CREATED DATE:</span></td>
+                                <td><span class="z-label">{{ "volume.details.CREATED DATE" | translate }}</span></td>
                                 <td><span>{{model.current.createDate}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">LAST UPDATED DATE:</span></td>
+                                <td><span class="z-label">{{ "volume.details.LAST UPDATED DATE" | translate }}</span></td>
                                 <td><span>{{model.current.lastOpDate}}</span></td>
                             </tr>
                         </table>

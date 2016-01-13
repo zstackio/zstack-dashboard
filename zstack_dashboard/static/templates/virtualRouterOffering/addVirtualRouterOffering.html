@@ -4,73 +4,73 @@
             <div class="tab-content">
                 <div id="createVirtualRouterOfferingInfo" class="tab-pane active">
                     <div class="alert alert-warning col-sm-21" ng-show="!infoPage.hasZone()">
-                        No zone has been created. Please go to <a href="/#/zone">zone page</a> to create a new one.
+                        {{ "virtualRouterOffering.addVirtualRouterOffering.ALERT1.1" | translate }}<a href="/#/zone">{{ "virtualRouterOffering.addVirtualRouterOffering.ALERT1.2" | translate }}</a>{{ "virtualRouterOffering.addVirtualRouterOffering.ALERT1.3" | translate }}
                     </div>
                     <div class="alert alert-warning col-sm-21" ng-show="!infoPage.hasL3Network() && infoPage.hasZone()">
-                        No L3 network has been created in the zone.
+                        {{ "virtualRouterOffering.addVirtualRouterOffering.ALERT2" | translate }}
                     </div>
                     <div class="alert alert-warning col-sm-21" ng-show="!infoPage.hasImage()">
-                        No image has been added. Please go to <a href="/#/image">image page</a> to add a new one.
+                        {{ "virtualRouterOffering.addVirtualRouterOffering.ALERT3.1" | translate }}<a href="/#/image">{{ "virtualRouterOffering.addVirtualRouterOffering.ALERT3.2" | translate }}</a>{{ "virtualRouterOffering.addVirtualRouterOffering.ALERT3.3" | translate }}
                     </div>
-                    <h4 class="z-win-h4">CREATE VIRTUAL ROUTER OFFERING</h4>
+                    <h4 class="z-win-h4">{{ "virtualRouterOffering.addVirtualRouterOffering.CREATE VIRTUAL ROUTER OFFERING" | translate }}</h4>
                     <form class="form" id="formCreate">
                         <div class="form-group col-sm-24">
-                            <label for="zone">ZONE</label>
+                            <label for="zone">{{ "virtualRouterOffering.addVirtualRouterOffering.ZONE" | translate }}</label>
                             <select id="zone" kendo-drop-down-list k-options="zoneOptions__" class="z-win-dropdown" ng-model="infoPage.zoneUuid"></select>
                         </div>
                         <div class="form-group col-sm-21">
-                            <label for="name">NAME</label>
+                            <label for="name">{{ "virtualRouterOffering.addVirtualRouterOffering.NAME" | translate }}</label>
                             <input class="form-control" type="text" id="name" placeholder="(Required) max length of 255 characters" ng-model="infoPage.name" required data-message="name is required">
                         </div>
                         <div class="form-group col-sm-21">
-                            <label for="description">DESCRIPTION</label>
+                            <label for="description">{{ "virtualRouterOffering.addVirtualRouterOffering.DESCRIPTION" | translate }}</label>
                             <textarea  class="form-control" rows="5" id="description" placeholder="(Optional) max length of 2048 characters" ng-model="infoPage.description"></textarea>
                         </div>
                         <div class="form-group col-sm-21">
-                            <label for="cpunum">CPU NUM</label>
+                            <label for="cpunum">{{ "virtualRouterOffering.addVirtualRouterOffering.CPU NUM" | translate }}</label>
                             <input type="text" class="form-control" id="cpunum" placeholder="CPU number" ng-model="infoPage.cpuNum">
                             <div class="alert alert-danger col-sm-21" ng-show="!infoPage.isCpuNumValid()">
-                                Not a number
+                                {{ "virtualRouterOffering.addVirtualRouterOffering.ALERT4" | translate }}
                             </div>
                         </div>
                         <div class="form-group col-sm-21">
-                            <label for="cpuspeed">CPU SPEED</label>
+                            <label for="cpuspeed">{{ "virtualRouterOffering.addVirtualRouterOffering.CPU SPEED" | translate }}</label>
                             <input type="text" class="form-control" id="cpuspeed" placeholder="CPU speed in HZ" ng-model="infoPage.cpuSpeed">
                             <div class="alert alert-danger col-sm-21" ng-show="!infoPage.isCpuSpeedValid()">
-                                Not a number
+                                {{ "virtualRouterOffering.addVirtualRouterOffering.ALERT4" | translate }}
                             </div>
                         </div>
                         <div class="form-group col-sm-21">
-                            <label for="memory">MEMORY</label>
+                            <label for="memory">{{ "virtualRouterOffering.addVirtualRouterOffering.MEMORY" | translate }}</label>
                             <input type="text" class="form-control" id="memory" placeholder="can be suffixed with T/G/M/K, default is byte, e.g. 512M" ng-model="infoPage.memorySize">
                             <div class="alert alert-danger col-sm-21" ng-show="!infoPage.isMemoryValid()">
-                                Not valid memory size. Memory size can only be a number suffixed with 'T/G/M/K'(or lowercase) or a number
+                                {{ "virtualRouterOffering.addVirtualRouterOffering.ALERT5" | translate }}
                             </div>
                         </div>
                         <div class="form-group col-sm-24">
-                            <label for="image">IMAGE</label>
+                            <label for="image">{{ "virtualRouterOffering.addVirtualRouterOffering.IMAGE" | translate }}</label>
                             <select id="image" kendo-drop-down-list k-options="imageOptions__" class="z-win-dropdown" ng-model="infoPage.imageUuid"></select>
                         </div>
                         <div class="form-group col-sm-24">
-                            <label for="mgmtL3">MANAGEMENT L3 NETWORK</label>
+                            <label for="mgmtL3">{{ "virtualRouterOffering.addVirtualRouterOffering.MANAGEMENT L3 NETWORK" | translate }}</label>
                             <select id="mgmtL3" kendo-drop-down-list k-options="mgmtL3Options__" class="z-win-dropdown" ng-model="infoPage.managementNetworkUuid"></select>
                         </div>
                         <div class="form-group col-sm-24">
-                            <label for="pubL3">PUBLIC L3 NETWORK</label>
+                            <label for="pubL3">{{ "virtualRouterOffering.addVirtualRouterOffering.PUBLIC L3 NETWORK" | translate }}</label>
                             <select id="pubL3" kendo-drop-down-list k-options="pubL3Options__" class="z-win-dropdown" ng-model="infoPage.publicNetworkUuid"></select>
                         </div>
                         <div class="form-group col-sm-24">
-                            <label for="allocator">ALLOCATOR STRATEGY</label>
+                            <label for="allocator">{{ "virtualRouterOffering.addVirtualRouterOffering.ALLOCATOR STRATEGY" | translate }}</label>
                             <select id="allocator" kendo-drop-down-list k-options="allocatorStrategyOptions__" class="z-win-dropdown" ng-model="infoPage.allocatorStrategy"></select>
-                            <p class="z-hint">(Optional) Host allocator strategy</p>
+                            <p class="z-hint">{{ "virtualRouterOffering.addVirtualRouterOffering.HINT1" | translate }}</p>
                         </div>
                         <div class="form-group col-sm-18">
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" ng-model="infoPage.isDefault"> <strong>DEFAULT OFFERING</strong>
+                                    <input type="checkbox" ng-model="infoPage.isDefault"> <strong>{{ "virtualRouterOffering.addVirtualRouterOffering.DEFAULT OFFERING" | translate }}</strong>
                                 </label>
                             </div>
-                            <p class="z-hint">(Optional) if checked, the offering will be set as default offering. A zone can only has one default offering that is used to create virtual router when there are multiple offerings existing</p>
+                            <p class="z-hint">{{ "virtualRouterOffering.addVirtualRouterOffering.HINT2" | translate }}</p>
                         </div>
                     </form>
                 </div>
@@ -84,7 +84,7 @@
         <div class="col-sm-7">
             <div class="z-wizard-bar">
                 <ul class="nav">
-                    <li class="active"><a data-target="#createVirtualRouterOfferingInfo" ng-click="button.pageClick('createVirtualRouterOfferingInfo')">VIRTUAL ROUTER OFFERING INFO</a></li>
+                    <li class="active"><a data-target="#createVirtualRouterOfferingInfo" ng-click="button.pageClick('createVirtualRouterOfferingInfo')">{{ "virtualRouterOffering.addVirtualRouterOffering.VIRTUAL ROUTER OFFERING INFO" | translate }}</a></li>
                 </ul>
             </div>
         </div>
