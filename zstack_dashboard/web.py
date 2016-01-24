@@ -14,7 +14,8 @@ import os
 import logging
 import kombu
 
-template_dir = os.path.join(os.path.dirname(__file__), 'static/templates')
+template_dir = os.path.join(os.getcwd(), os.path.join(os.path.dirname(__file__), 'static/templates'))
+print template_dir
 app = Flask(__name__, template_folder=template_dir)
 
 utils.configure_log("/var/log/zstack/zstack-ui.log")
