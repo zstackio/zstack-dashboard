@@ -722,7 +722,6 @@
         "l2Network.createL2Network.HINT5": "(Required) name of network device on hypervisor. For example, 'eth0' on KVM host",
         "l2Network.createL2Network.HINT6": "No cluster is eligible to attach. Please click 'Create' button to proceed.",
         "l2Network.createL2Network.ATTACH CLUSTER": "ATTACH CLUSTER",
-        "l2Network.createL2Network.L2 NETWORK INFO": "L2 NETWORK INFO",
         "l2Network.createL2Network.CLUSTER": "CLUSTER",
         "l2Network.createL2Network.HINT7": "(Optional) select one or more cluster to attach. Or do it later after creating l2Network",
         "l2Network.createL2Network.Previous": "Previous",
