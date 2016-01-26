@@ -116,11 +116,14 @@ module MRoot {
             };
             $scope.changeLanguage = (language) => {  
                  switch(language) {  
-                    case 'Chinese':  
-                        $translate.use('zh_CN');  
-                        break;  
                    case 'English':  
                         $translate.use('en_US');  
+                        break;  
+                   case 'Chinese (Simplified)':  
+                        $translate.use('zh_CN');  
+                        break;  
+                   case 'Chinese (Traditional)':  
+                        $translate.use('zh_TW');  
                         break;  
                 }  
            }  
@@ -157,7 +160,8 @@ angular.module("root", ['app.service', 'kendo.directives', 'ngRoute', 'ngTagsInp
     }])
    .constant('LOCALES', {  
          'locales': {  
-             'zh_CN': '中文',  
+             'zh_CN': '简体中文',  
+             'zh_TW': '繁体中文',  
              'en_US': 'English'  
          },  
          'preferredLocale': 'en_US'  
