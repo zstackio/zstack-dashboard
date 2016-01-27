@@ -702,6 +702,8 @@
     "volume.volume.Delete": "刪除",
     "volume.volume.HINT1": "單點擊列來顯示操作按鈕",
     "volume.volume.HINT2": "雙擊列進入詳細資訊頁面",
+    "volume.volume.Recover": "恢復",
+    "volume.volume.Expunge": "徹底刪除",
     "l2Network.attachCluster.HINT": "無叢集已新增或可以的所有叢集已都掛載到此L2網路,請轉到",
     "l2Network.attachCluster.cluster page": "叢集頁",
     "l2Network.attachCluster.to create a new one.": "來新增一個新",

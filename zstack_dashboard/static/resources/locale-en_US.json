@@ -702,6 +702,8 @@
         "volume.volume.Delete": "Delete",
         "volume.volume.HINT1": "Single click column to show action button",
         "volume.volume.HINT2": "Double click column to enter details page",
+        "volume.volume.Recover": "Recover",
+        "volume.volume.Expunge": "Expunge",
         "l2Network.attachCluster.HINT": "No cluster has been created or all eligible clusters have been attached to this l2 network. Please go to",
         "l2Network.attachCluster.cluster page": "cluster page",
         "l2Network.attachCluster.to create a new one.": "to create a new one.",

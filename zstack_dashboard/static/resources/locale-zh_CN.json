@@ -702,6 +702,8 @@
         "volume.volume.Delete": "删除",
         "volume.volume.HINT1": "单点击列来显示操作按钮",
         "volume.volume.HINT2": "双击列进入详细信息页面",
+        "volume.volume.Recover": "恢复",
+        "volume.volume.Expunge": "彻底删除",
         "l2Network.attachCluster.HINT": "没有已添加的集群或所有可用集群已都挂载到此L2网络,请转到",
         "l2Network.attachCluster.cluster page": "集群",
         "l2Network.attachCluster.to create a new one.": "来添加一个新的集群",

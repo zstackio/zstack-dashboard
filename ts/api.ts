@@ -9155,4 +9155,42 @@ module ApiHeader {
         timeout : number;
     }
 
+    export class APIExpungeDataVolumeEvent {
+        API_EVENT : string;
+        success : boolean;
+        error : ErrorCode;
+        BINDING_KEY_PERFIX : string;
+    }
+
+    export class APIRecoverDataVolumeEvent {
+        inventory : VolumeInventory;
+        API_EVENT : string;
+        success : boolean;
+        error : ErrorCode;
+        BINDING_KEY_PERFIX : string;
+    }
+
+    export class APIExpungeDataVolumeMsg implements APIMessage {
+        toApiMap() : any {
+            var msg = {
+                'org.zstack.header.volume.APIExpungeDataVolumeMsg': this
+            };
+            return msg;
+        }
+        uuid : string;
+        session : SessionInventory;
+        timeout : number;
+    }
+
+    export class APIRecoverDataVolumeMsg implements APIMessage {
+        toApiMap() : any {
+            var msg = {
+                'org.zstack.header.volume.APIRecoverDataVolumeMsg': this
+            };
+            return msg;
+        }
+        uuid : string;
+        session : SessionInventory;
+        timeout : number;
+    }
 }

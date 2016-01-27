@@ -6451,6 +6451,42 @@ var ApiHeader;
         return APIRecoverImageMsg;
     })();
     ApiHeader.APIRecoverImageMsg = APIRecoverImageMsg;
+    var APIExpungeDataVolumeEvent = (function () {
+        function APIExpungeDataVolumeEvent() {
+        }
+        return APIExpungeDataVolumeEvent;
+    })();
+    ApiHeader.APIExpungeDataVolumeEvent = APIExpungeDataVolumeEvent;
+    var APIRecoverDataVolumeEvent = (function () {
+        function APIRecoverDataVolumeEvent() {
+        }
+        return APIRecoverDataVolumeEvent;
+    })();
+    ApiHeader.APIRecoverDataVolumeEvent = APIRecoverDataVolumeEvent;
+    var APIExpungeDataVolumeMsg = (function () {
+        function APIExpungeDataVolumeMsg() {
+        }
+        APIExpungeDataVolumeMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.volume.APIExpungeDataVolumeMsg': this
+            };
+            return msg;
+        };
+        return APIExpungeDataVolumeMsg;
+    })();
+    ApiHeader.APIExpungeDataVolumeMsg = APIExpungeDataVolumeMsg;
+    var APIRecoverDataVolumeMsg = (function () {
+        function APIRecoverDataVolumeMsg() {
+        }
+        APIRecoverDataVolumeMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.volume.APIRecoverDataVolumeMsg': this
+            };
+            return msg;
+        };
+        return APIRecoverDataVolumeMsg;
+    })();
+    ApiHeader.APIRecoverDataVolumeMsg = APIRecoverDataVolumeMsg;
 })(ApiHeader || (ApiHeader = {}));
 /// <reference path="d.ts/angularjs/angular.d.ts" />
 var Utils;
@@ -20815,7 +20851,13 @@ var MVolume;
             return this.type == 'Root' && this.status == 'Ready';
         };
         Volume.prototype.isDeleteShow = function () {
-            return this.type == 'Data';
+            return this.type == 'Data' && this.status != 'Deleted';
+        };
+        Volume.prototype.isExpungeShow = function () {
+            return this.status == 'Deleted' && this.type == 'Data';
+        };
+        Volume.prototype.isRecoverShow = function () {
+            return this.status == 'Deleted' && this.type == 'Data';
         };
         Volume.prototype.isEnableShow = function () {
             return this.state == 'Disabled';
@@ -21008,6 +21050,33 @@ var MVolume;
                 done(ret);
                 _this.$rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
                     msg: Utils.sprintf('Deleted Data Volume: {0}', volume.name)
+                });
+            });
+        };
+        VolumeManager.prototype.expunge = function (volume, done) {
+            var _this = this;
+            volume.progressOn();
+            var msg = new ApiHeader.APIExpungeDataVolumeMsg();
+            msg.uuid = volume.uuid;
+            this.api.asyncApi(msg, function (ret) {
+                volume.progressOff();
+                done(ret);
+                _this.$rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
+                    msg: Utils.sprintf('Expunged Data Volume: {0}', volume.name)
+                });
+            });
+        };
+        VolumeManager.prototype.recover = function (volume) {
+            var _this = this;
+            volume.progressOn();
+            var msg = new ApiHeader.APIRecoverDataVolumeMsg();
+            msg.uuid = volume.uuid;
+            this.api.asyncApi(msg, function (ret) {
+                volume.updateObservableObject(ret.inventory);
+                volume.progressOff();
+                _this.$rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
+                    msg: Utils.sprintf('Recovered Data Volume: {0}', volume.name),
+                    link: Utils.sprintf('/#/volume/{0}', volume.uuid)
                 });
             });
         };
@@ -21235,6 +21304,9 @@ var MVolume;
         };
         Action.prototype.disable = function () {
             this.volumeMgr.disable(this.$scope.model.current);
+        };
+        Action.prototype.recover = function () {
+            this.volumeMgr.recover(this.$scope.model.current);
         };
         Action.prototype.attach = function () {
             this.$scope.attachVm.open();
@@ -21532,6 +21604,9 @@ var MVolume;
             $scope.funcDeleteVolume = function () {
                 $scope.deleteVolume.open();
             };
+            $scope.funcExpungeVolume = function (e) {
+                e.open();
+            };
             $scope.optionsDeleteVolume = {
                 title: 'DELETE VOLUME',
                 description: function () {
@@ -21540,6 +21615,15 @@ var MVolume;
                 btnType: 'btn-danger',
                 confirm: function () {
                     volumeMgr.delete($scope.model.current, function (ret) {
+                        $scope.model.resetCurrent();
+                    });
+                }
+            };
+            $scope.optionsExpungeVolume = {
+                title: 'EXPUNGE VOLUME',
+                btnType: 'btn-danger',
+                confirm: function () {
+                    volumeMgr.expunge($scope.model.current, function (ret) {
                         $scope.model.resetCurrent();
                     });
                 }
@@ -21784,6 +21868,9 @@ var MVolume;
             $scope.funcDeleteVolume = function () {
                 $scope.deleteVolume.open();
             };
+            $scope.funcExpungeVolume = function (e) {
+                e.open();
+            };
             $scope.optionsDeleteVolume = {
                 title: 'DELETE DATA VOLUME',
                 description: function () {
@@ -21792,6 +21879,15 @@ var MVolume;
                 btnType: 'btn-danger',
                 confirm: function () {
                     volumeMgr.delete($scope.model.current, function (ret) {
+                        $scope.oVolumeGrid.deleteCurrent();
+                    });
+                }
+            };
+            $scope.optionsExpungeVolume = {
+                title: 'EXPUNGE DATA VOLUME',
+                btnType: 'btn-danger',
+                confirm: function () {
+                    volumeMgr.expunge($scope.model.current, function (ret) {
                         $scope.oVolumeGrid.deleteCurrent();
                     });
                 }

@@ -35,8 +35,10 @@
                     <li><a href ng-click="action.detach()" ng-show="model.current.isDetachShow()">{{ "volume.details.Detach" | translate }}</a></li>
                     <li><a href ng-click="action.takeSnapshot()" ng-show="model.current.isSnapshotShow()">{{ "volume.details.Take Snapshot" | translate }}</a></li>
                     <li><a href ng-click="action.createTemplate()" ng-show="model.current.isCreateTemplateShow()">{{ "volume.details.Create Template" | translate }}</a></li>
+                    <li><a href ng-click="action.recover()" ng-show="model.current.isRecoverShow()">{{ "volume.volume.Recover" | translate }}</a></li>
                     <li class="divider"></li>
-                    <li><a href style="color:red" ng-click="funcDeleteVolume(deleteVolume)" ng-show="model.current.isDeleteShow()">{{ "volume.details.Delete" | translate }}</a></li>
+                    <li><a href style="color:red" ng-click="funcDeleteVolume(deleteVolume)" ng-show="model.current.isDeleteShow()">{{ "volume.volume.Delete" | translate }}</a></li>
+                    <li><a href style="color:red" ng-click="funcExpungeVolume(expungeVolume)" ng-show="model.current.isExpungeShow()">{{ "volume.volume.Expunge" | translate }}</a></li>
                 </ul>
             </div>
         </div>
