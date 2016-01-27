@@ -391,6 +391,8 @@
     "image.image.Delete": "刪除",
     "image.image.HINT": "單點擊列來顯示操作按鈕",
     "image.image.HINT2": "雙擊列進入詳細資訊頁面",
+    "image.image.Expunge": "徹底刪除",
+    "image.image.Recover": "恢復",
     "primaryStorage.primaryStorage.PRIMARY STORAGE": "主儲存",
     "primaryStorage.primaryStorage.New Primary Storage": "新建主儲存",
     "primaryStorage.primaryStorage.FILTER BY": "過濾",

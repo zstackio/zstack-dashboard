@@ -9113,4 +9113,46 @@ module ApiHeader {
     BINDING_KEY_PERFIX : string;
   }
 
+    export class APIRecoverImageEvent {
+        inventory : ImageInventory;
+        API_EVENT : string;
+        success : boolean;
+        error : ErrorCode;
+        BINDING_KEY_PERFIX : string;
+    }
+
+
+    export class APIExpungeImageEvent {
+        API_EVENT : string;
+        success : boolean;
+        error : ErrorCode;
+        BINDING_KEY_PERFIX : string;
+    }
+
+    export class APIExpungeImageMsg implements APIMessage {
+        toApiMap() : any {
+            var msg = {
+                'org.zstack.header.image.APIExpungeImageMsg': this
+            };
+            return msg;
+        }
+        imageUuid : string;
+        backupStorageUuids : Array<string>;
+        session : SessionInventory;
+        timeout : number;
+    }
+
+    export class APIRecoverImageMsg implements APIMessage {
+        toApiMap() : any {
+            var msg = {
+                'org.zstack.header.image.APIRecoverImageMsg': this
+            };
+            return msg;
+        }
+        imageUuid : string;
+        backupStorageUuids : Array<string>;
+        session : SessionInventory;
+        timeout : number;
+    }
+
 }

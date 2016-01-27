@@ -2,6 +2,7 @@
     <div z-create-image="winNewImage" z-options="optionsCreateImage"></div>
     <div z-search="search" z-options="optionsSearch"></div>
     <div z-confirm="deleteImage" z-options="optionsDeleteImage"></div>
+    <div z-confirm="expungeImage" z-options="optionsExpungeImage"></div>
 </div>
 
 <div>
@@ -47,8 +48,10 @@
             <ul class="dropdown-menu" role="menu">
                 <li><a href ng-click="action.enable()" ng-show="model.current.isEnableShow()">{{"image.image.Enable" | translate}}</a></li>
                 <li><a href ng-click="action.disable()" ng-show="model.current.isDisableShow()">{{"image.image.Disable" | translate}}</a></li>
+                <li><a href ng-click="action.recover()" ng-show="model.current.isRecoverShow()">{{"image.image.Recover" | translate}}</a></li>
                 <li class="divider"></li>
-                <li><a href style="color:red" ng-click="funcDeleteImage(deleteImage)">{{"image.image.Delete" | translate}}</a></li>
+                <li><a href style="color:red" ng-click="funcDeleteImage(deleteImage)" ng-show="model.current.isDeleteShow()">{{"image.image.Delete" | translate}}</a></li>
+                <li><a href style="color:red" ng-click="funcExpungeImage(expungeImage)" ng-show="model.current.isExpungeShow()">{{"image.image.Expunge" | translate}}</a></li>
             </ul>
         </div>
     </div>

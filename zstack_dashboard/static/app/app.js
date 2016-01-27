@@ -6415,6 +6415,42 @@ var ApiHeader;
         return APIRecoverVmInstanceEvent;
     })();
     ApiHeader.APIRecoverVmInstanceEvent = APIRecoverVmInstanceEvent;
+    var APIRecoverImageEvent = (function () {
+        function APIRecoverImageEvent() {
+        }
+        return APIRecoverImageEvent;
+    })();
+    ApiHeader.APIRecoverImageEvent = APIRecoverImageEvent;
+    var APIExpungeImageEvent = (function () {
+        function APIExpungeImageEvent() {
+        }
+        return APIExpungeImageEvent;
+    })();
+    ApiHeader.APIExpungeImageEvent = APIExpungeImageEvent;
+    var APIExpungeImageMsg = (function () {
+        function APIExpungeImageMsg() {
+        }
+        APIExpungeImageMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.image.APIExpungeImageMsg': this
+            };
+            return msg;
+        };
+        return APIExpungeImageMsg;
+    })();
+    ApiHeader.APIExpungeImageMsg = APIExpungeImageMsg;
+    var APIRecoverImageMsg = (function () {
+        function APIRecoverImageMsg() {
+        }
+        APIRecoverImageMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.image.APIRecoverImageMsg': this
+            };
+            return msg;
+        };
+        return APIRecoverImageMsg;
+    })();
+    ApiHeader.APIRecoverImageMsg = APIRecoverImageMsg;
 })(ApiHeader || (ApiHeader = {}));
 /// <reference path="d.ts/angularjs/angular.d.ts" />
 var Utils;
@@ -16239,6 +16275,15 @@ var MImage;
         Image.prototype.isDisableShow = function () {
             return this.state == 'Enabled' || this.state == 'Maintenance' || this.state == 'PreMaintenance';
         };
+        Image.prototype.isExpungeShow = function () {
+            return this.status == 'Deleted';
+        };
+        Image.prototype.isRecoverShow = function () {
+            return this.status == 'Deleted';
+        };
+        Image.prototype.isDeleteShow = function () {
+            return this.status != 'Deleted';
+        };
         Image.prototype.stateLabel = function () {
             if (this.state == 'Enabled') {
                 return 'label label-success';
@@ -16379,6 +16424,32 @@ var MImage;
                 });
             });
         };
+        ImageManager.prototype.expunge = function (image, done) {
+            var _this = this;
+            image.progressOn();
+            var msg = new ApiHeader.APIExpungeImageMsg();
+            msg.imageUuid = image.uuid;
+            this.api.asyncApi(msg, function (ret) {
+                image.progressOff();
+                done(ret);
+                _this.$rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
+                    msg: Utils.sprintf('Expunged Image: {0}', image.name)
+                });
+            });
+        };
+        ImageManager.prototype.recover = function (image) {
+            var _this = this;
+            image.progressOn();
+            var msg = new ApiHeader.APIRecoverImageMsg();
+            msg.imageUuid = image.uuid;
+            this.api.asyncApi(msg, function (ret) {
+                image.progressOff();
+                image.updateObservableObject(ret.inventory);
+                _this.$rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
+                    msg: Utils.sprintf('Recovered Image: {0}', image.name)
+                });
+            });
+        };
         ImageManager.$inject = ['Api', '$rootScope'];
         return ImageManager;
     })();
@@ -16468,6 +16539,9 @@ var MImage;
         };
         Action.prototype.disable = function () {
             this.imageMgr.disable(this.$scope.model.current);
+        };
+        Action.prototype.recover = function () {
+            this.imageMgr.recover(this.$scope.model.current);
         };
         return Action;
     })();
@@ -16590,6 +16664,19 @@ var MImage;
                 },
                 confirm: function () {
                     imageMgr.delete($scope.model.current, function (ret) {
+                        $scope.model.resetCurrent();
+                    });
+                }
+            };
+            $scope.optionsExpungeImage = {
+                title: 'EXPUNGE IMAGE',
+                width: '350px',
+                btnType: 'btn-danger',
+                description: function () {
+                    return $scope.model.current.name;
+                },
+                confirm: function () {
+                    imageMgr.expunge($scope.model.current, function (ret) {
                         $scope.model.resetCurrent();
                     });
                 }
@@ -16821,6 +16908,9 @@ var MImage;
             $scope.funcDeleteImage = function () {
                 $scope.deleteImage.open();
             };
+            $scope.funcExpungeImage = function (e) {
+                e.open();
+            };
             $scope.optionsDeleteImage = {
                 title: 'DELETE IMAGE',
                 width: '350px',
@@ -16830,6 +16920,19 @@ var MImage;
                 },
                 confirm: function () {
                     imageMgr.delete($scope.model.current, function (ret) {
+                        $scope.oImageGrid.deleteCurrent();
+                    });
+                }
+            };
+            $scope.optionsExpungeImage = {
+                title: 'EXPUNGE IMAGE',
+                width: '350px',
+                btnType: 'btn-danger',
+                description: function () {
+                    return $scope.model.current.name;
+                },
+                confirm: function () {
+                    imageMgr.expunge($scope.model.current, function (ret) {
                         $scope.oImageGrid.deleteCurrent();
                     });
                 }

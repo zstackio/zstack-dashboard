@@ -391,6 +391,8 @@
         "image.image.Delete": "删除",
         "image.image.HINT": "单点击列来显示操作按钮",
         "image.image.HINT2": "双击列进入详细信息页面",
+        "image.image.Expunge": "彻底删除",
+        "image.image.Recover": "恢复",
         "primaryStorage.primaryStorage.PRIMARY STORAGE": "主存储",
         "primaryStorage.primaryStorage.New Primary Storage": "新建主存储",
         "primaryStorage.primaryStorage.FILTER BY": "过滤",
