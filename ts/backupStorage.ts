@@ -1089,7 +1089,7 @@ module MBackupStorage {
           dataSource: new kendo.data.DataSource({data: []}),
           dataTextField: "name",
           dataValueField: "uuid",
-          itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
+          itemTemplate: '<div style="color: black"><span class="z-label">{{"backupStorage.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
           '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
           '<div style="color: black"><span class="z-label">URL:</span><span>#: url #</span></div>' +
           '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
@@ -1156,7 +1156,7 @@ module MBackupStorage {
           dataSource: new kendo.data.DataSource({data: []}),
           dataTextField: "name",
           dataValueField: "uuid",
-          itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
+          itemTemplate: '<div style="color: black"><span class="z-label">{{"backupStorage.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
           '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
 
           change: (e)=> {
