@@ -1,0 +1,9 @@
+#!  /bin/sh
+file=/root/zstack-repos/zstack-dashboard/zstack_dashboard/static/app/app.js
+if [ -f $file]
+  then rm -rf file
+fi
+cd /root/zstack-repos/zstack-dashboard/
+sudo bash compilets.sh
+cd /root/zstack-repos/zstack-dashboard/zstack_dashboard/static/app/
+yes |  mv app.js /var/lib/zstack/virtualenv/zstack-dashboard/lib/python2.7/site-packages/zstack_dashboard/static/app/app.js 
