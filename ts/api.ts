@@ -9072,4 +9072,45 @@ module ApiHeader {
 
 
   export var TagResourceTypeVipVO = 'VipVO';
+
+  export class APIExpungeVmInstanceMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.vm.APIExpungeVmInstanceMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+  export class APIExpungeVmInstanceEvent {
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+  export class APIRecoverVmInstanceMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.vm.APIRecoverVmInstanceMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    vmInstanceUuid : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+  export class APIRecoverVmInstanceEvent {
+    inventory : VmInstanceInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
 }

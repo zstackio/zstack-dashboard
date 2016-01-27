@@ -159,6 +159,8 @@
         "vm.attachL3Network.HINT": "(Required) L3 networks listed here are candidate that could be attached to this vm",
         "vm.attachL3Network.Cancel": "Cancel",
         "vm.attachL3Network.Attach": "Attach",
+        "vm.vm.Expunge": "Expunge",
+        "vm.vm.recover": "Recover",
         "host.createHost.hasCluster()": "No cluster has been created. Please go to",
         "host.createHost.cluster page": "cluster page",
         "host.createHost.hasCluster2()": "to create a new one.",

@@ -177,6 +177,34 @@ module MVmInstance {
       });
     }
 
+    expunge(vm: VmInstance, done : (ret : any)=>void) {
+      vm.progressOn();
+      vm.state = "Expunging";
+      var msg = new ApiHeader.APIExpungeVmInstanceMsg();
+      msg.uuid = vm.uuid;
+      this.api.asyncApi(msg, (ret : ApiHeader.APIExpungeVmInstanceEvent) => {
+          vm.progressOff();
+          done(ret);
+          this.$rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
+              msg: Utils.sprintf('Expunged VmInstance: {0}', vm.name)
+          });
+      });
+    }
+
+      recover(vm: VmInstance) {
+          vm.progressOn();
+          var msg = new ApiHeader.APIRecoverVmInstanceMsg();
+          msg.uuid = vm.uuid;
+          this.api.asyncApi(msg, (ret : ApiHeader.APIRecoverVmInstanceEvent) => {
+              vm.updateObservableObject(ret.inventory);
+              vm.progressOff();
+              this.$rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
+                  msg: Utils.sprintf('Recovered VmInstance: {0}',vm.name),
+                  link: Utils.sprintf('/#/vmInstance/{0}', vm.uuid)
+              });
+          });
+      }
+
     stop(vm : VmInstance) {
       vm.progressOn();
       vm.state = 'Stopping';
@@ -473,6 +501,10 @@ module MVmInstance {
       this.vmMgr.reboot(this.$scope.model.current);
     }
 
+      recover() {
+          this.vmMgr.recover(this.$scope.model.current);
+      }
+
     migrate() {
       this.$scope.migrateVm.open();
     }
@@ -517,7 +549,7 @@ module MVmInstance {
       } else if (action == 'attachVolume') {
         return this.$scope.model.current.state == 'Running' || this.$scope.model.current.state == 'Stopped';
       } else if (action == 'detachVolume' && Utils.notNullnotUndefined(this.$scope.model.current)) {
-        return this.$scope.model.current.allVolumes.length > 0;
+        return this.$scope.model.current.allVolumes.length > 0 && (this.$scope.model.current.state == 'Running' || this.$scope.model.current.state == 'Stopped');
       } else if (action == 'console' && Utils.notNullnotUndefined(this.$scope.model.current)) {
         return this.$scope.model.current.state == 'Starting' || this.$scope.model.current.state == 'Running' || this.$scope.model.current.state == 'Rebooting' || this.$scope.model.current.state == 'Stopping';
       } else if (action == 'attachL3Network' && Utils.notNullnotUndefined(this.$scope.model.current)) {
@@ -526,7 +558,13 @@ module MVmInstance {
         return (this.$scope.model.current.state == 'Running' || this.$scope.model.current.state == 'Stopped') &&
           this.$scope.model.current.vmNics.length > 0;
       } else if (action == 'changeInstanceOffering'  && Utils.notNullnotUndefined(this.$scope.model.current)) {
-        return this.$scope.model.current.state == 'Running' || this.$scope.model.current.state == 'Stopped';
+          return this.$scope.model.current.state == 'Running' || this.$scope.model.current.state == 'Stopped';
+      } else if (action == 'recoverVm' && Utils.notNullnotUndefined(this.$scope.model.current)) {
+          return this.$scope.model.current.state == 'Destroyed';
+      } else if (action == 'expungeVm' && Utils.notNullnotUndefined(this.$scope.model.current)) {
+          return this.$scope.model.current.state == 'Destroyed';
+      } else if (action == 'delete' && Utils.notNullnotUndefined(this.$scope.model.current)) {
+          return this.$scope.model.current.state != 'Destroyed';
       } else {
         return false;
       }
@@ -661,6 +699,10 @@ module MVmInstance {
         $scope.deleteVmInstance.open();
       };
 
+        $scope.funcExpungeVmInstance = () => {
+            $scope.expungeVmInstance.open();
+        };
+
       $scope.optionsDeleteVmInstance = {
         title: 'DELETE VM INSTANCE',
         btnType: 'btn-danger',
@@ -676,6 +718,22 @@ module MVmInstance {
           });
         }
       };
+
+        $scope.optionsExpungeVmInstance = {
+            title: 'EXPUNGE VM INSTANCE',
+            btnType: 'btn-danger',
+            width: '350px',
+
+            description: ()=> {
+                return current.name;
+            },
+
+            confirm: ()=> {
+                vmMgr.expunge($scope.model.current, (ret : any)=> {
+                    $scope.model.resetCurrent();
+                });
+            }
+        };
 
       $scope.console = ()=> {
         vmMgr.getConsole(current, (inv: ApiHeader.ConsoleInventory)=>{
@@ -957,6 +1015,10 @@ module MVmInstance {
         $scope.deleteVmInstance.open();
       };
 
+        $scope.funcExpungeVmInstance = () => {
+            $scope.expungeVmInstance.open();
+        };
+
       $scope.optionsDeleteVmInstance = {
         title: 'DELETE VM INSTANCE',
         btnType: 'btn-danger',
@@ -972,6 +1034,22 @@ module MVmInstance {
           });
         }
       };
+
+        $scope.optionsExpungeVmInstance = {
+            title: 'EXPUNGE VM INSTANCE',
+            btnType: 'btn-danger',
+            width: '350px',
+
+            description: ()=> {
+                return $scope.model.current.name;
+            },
+
+            confirm: ()=> {
+                vmMgr.expunge($scope.model.current, (ret : any)=> {
+                    $scope.oVmInstanceGrid.deleteCurrent();
+                });
+            }
+        };
 
       $scope.funcRefresh = ()=> {
         $scope.oVmInstanceGrid.refresh();

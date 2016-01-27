@@ -6379,6 +6379,42 @@ var ApiHeader;
     ApiHeader.TagResourceTypeSecurityGroupL3NetworkRefVO = 'SecurityGroupL3NetworkRefVO';
     ApiHeader.VipInventoryQueryable = ['uuid', 'name', 'description', 'l3NetworkUuid', 'ip', 'state', 'gateway', 'netmask', 'serviceProvider', 'peerL3NetworkUuid', 'useFor', 'createDate', 'lastOpDate'];
     ApiHeader.TagResourceTypeVipVO = 'VipVO';
+    var APIExpungeVmInstanceMsg = (function () {
+        function APIExpungeVmInstanceMsg() {
+        }
+        APIExpungeVmInstanceMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.vm.APIExpungeVmInstanceMsg': this
+            };
+            return msg;
+        };
+        return APIExpungeVmInstanceMsg;
+    })();
+    ApiHeader.APIExpungeVmInstanceMsg = APIExpungeVmInstanceMsg;
+    var APIExpungeVmInstanceEvent = (function () {
+        function APIExpungeVmInstanceEvent() {
+        }
+        return APIExpungeVmInstanceEvent;
+    })();
+    ApiHeader.APIExpungeVmInstanceEvent = APIExpungeVmInstanceEvent;
+    var APIRecoverVmInstanceMsg = (function () {
+        function APIRecoverVmInstanceMsg() {
+        }
+        APIRecoverVmInstanceMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.vm.APIRecoverVmInstanceMsg': this
+            };
+            return msg;
+        };
+        return APIRecoverVmInstanceMsg;
+    })();
+    ApiHeader.APIRecoverVmInstanceMsg = APIRecoverVmInstanceMsg;
+    var APIRecoverVmInstanceEvent = (function () {
+        function APIRecoverVmInstanceEvent() {
+        }
+        return APIRecoverVmInstanceEvent;
+    })();
+    ApiHeader.APIRecoverVmInstanceEvent = APIRecoverVmInstanceEvent;
 })(ApiHeader || (ApiHeader = {}));
 /// <reference path="d.ts/angularjs/angular.d.ts" />
 var Utils;
@@ -7370,11 +7406,14 @@ var MRoot;
             };
             $scope.changeLanguage = function (language) {
                 switch (language) {
-                    case 'Chinese':
-                        $translate.use('zh_CN');
-                        break;
                     case 'English':
                         $translate.use('en_US');
+                        break;
+                    case 'Chinese (Simplified)':
+                        $translate.use('zh_CN');
+                        break;
+                    case 'Chinese (Traditional)':
+                        $translate.use('zh_TW');
                         break;
                 }
             };
@@ -7414,7 +7453,8 @@ angular.module("root", ['app.service', 'kendo.directives', 'ngRoute', 'ngTagsInp
     }])
     .constant('LOCALES', {
     'locales': {
-        'zh_CN': '中文',
+        'zh_CN': '简体中文',
+        'zh_TW': '繁体中文',
         'en_US': 'English'
     },
     'preferredLocale': 'en_US'
@@ -10943,7 +10983,7 @@ var MPrimaryStorage;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">{{"primaryStorage.ts.Name" | translate}}</span>: #: name #</div>' + '<div style="color: black"><span class="z-label">State:</span>#: state #</div>' + '<div style="color: black"><span class="z-label">UUID:</span> #: uuid #</div>'
+                    template: '<div style="color: black"><span class="z-label">{{"primaryStorage.ts.Name" | translate}}</span>: #: name #</div>' + '<div style="color: black"><span class="z-label">{{"primaryStorage.ts.State" | translate}}:</span>#: state #</div>' + '<div style="color: black"><span class="z-label">UUID:</span> #: uuid #</div>'
                 };
                 $scope.typeList = {
                     dataSource: new kendo.data.DataSource({ data: [] }),
@@ -10968,7 +11008,7 @@ var MPrimaryStorage;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">{{"primaryStorage.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
                         '<div style="color: black"><span class="z-label">HYPERVISOR:</span><span>#: hypervisorType #</span></div>' +
                         '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
                 };
@@ -11048,7 +11088,7 @@ var MPrimaryStorage;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">{{"primaryStorage.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
                         '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
                     change: function (e) {
                         var select = e.sender;
@@ -11136,7 +11176,7 @@ var MPrimaryStorage;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">{{"primaryStorage.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
                         '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>' +
                         '<div style="color: black"><span class="z-label">Hypervisor:</span><span>#: hypervisorType #</span></div>',
                     change: function (e) {
@@ -15101,7 +15141,7 @@ var MBackupStorage;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">{{"backupStorage.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
                         '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
                         '<div style="color: black"><span class="z-label">URL:</span><span>#: url #</span></div>' +
                         '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
@@ -15165,7 +15205,7 @@ var MBackupStorage;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">{{"backupStorage.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
                         '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
                     change: function (e) {
                         var select = e.sender;
@@ -18694,6 +18734,34 @@ var MVmInstance;
                 callback(pris, ret.total);
             });
         };
+        VmInstanceManager.prototype.expunge = function (vm, done) {
+            var _this = this;
+            vm.progressOn();
+            vm.state = "Expunging";
+            var msg = new ApiHeader.APIExpungeVmInstanceMsg();
+            msg.uuid = vm.uuid;
+            this.api.asyncApi(msg, function (ret) {
+                vm.progressOff();
+                done(ret);
+                _this.$rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
+                    msg: Utils.sprintf('Expunged VmInstance: {0}', vm.name)
+                });
+            });
+        };
+        VmInstanceManager.prototype.recover = function (vm) {
+            var _this = this;
+            vm.progressOn();
+            var msg = new ApiHeader.APIRecoverVmInstanceMsg();
+            msg.uuid = vm.uuid;
+            this.api.asyncApi(msg, function (ret) {
+                vm.updateObservableObject(ret.inventory);
+                vm.progressOff();
+                _this.$rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
+                    msg: Utils.sprintf('Recovered VmInstance: {0}', vm.name),
+                    link: Utils.sprintf('/#/vmInstance/{0}', vm.uuid)
+                });
+            });
+        };
         VmInstanceManager.prototype.stop = function (vm) {
             var _this = this;
             vm.progressOn();
@@ -18995,6 +19063,9 @@ var MVmInstance;
         Action.prototype.reboot = function () {
             this.vmMgr.reboot(this.$scope.model.current);
         };
+        Action.prototype.recover = function () {
+            this.vmMgr.recover(this.$scope.model.current);
+        };
         Action.prototype.migrate = function () {
             this.$scope.migrateVm.open();
         };
@@ -19036,7 +19107,7 @@ var MVmInstance;
                 return this.$scope.model.current.state == 'Running' || this.$scope.model.current.state == 'Stopped';
             }
             else if (action == 'detachVolume' && Utils.notNullnotUndefined(this.$scope.model.current)) {
-                return this.$scope.model.current.allVolumes.length > 0;
+                return this.$scope.model.current.allVolumes.length > 0 && (this.$scope.model.current.state == 'Running' || this.$scope.model.current.state == 'Stopped');
             }
             else if (action == 'console' && Utils.notNullnotUndefined(this.$scope.model.current)) {
                 return this.$scope.model.current.state == 'Starting' || this.$scope.model.current.state == 'Running' || this.$scope.model.current.state == 'Rebooting' || this.$scope.model.current.state == 'Stopping';
@@ -19050,6 +19121,15 @@ var MVmInstance;
             }
             else if (action == 'changeInstanceOffering' && Utils.notNullnotUndefined(this.$scope.model.current)) {
                 return this.$scope.model.current.state == 'Running' || this.$scope.model.current.state == 'Stopped';
+            }
+            else if (action == 'recoverVm' && Utils.notNullnotUndefined(this.$scope.model.current)) {
+                return this.$scope.model.current.state == 'Destroyed';
+            }
+            else if (action == 'expungeVm' && Utils.notNullnotUndefined(this.$scope.model.current)) {
+                return this.$scope.model.current.state == 'Destroyed';
+            }
+            else if (action == 'delete' && Utils.notNullnotUndefined(this.$scope.model.current)) {
+                return this.$scope.model.current.state != 'Destroyed';
             }
             else {
                 return false;
@@ -19156,6 +19236,9 @@ var MVmInstance;
             $scope.funcDeleteVmInstance = function () {
                 $scope.deleteVmInstance.open();
             };
+            $scope.funcExpungeVmInstance = function () {
+                $scope.expungeVmInstance.open();
+            };
             $scope.optionsDeleteVmInstance = {
                 title: 'DELETE VM INSTANCE',
                 btnType: 'btn-danger',
@@ -19165,6 +19248,19 @@ var MVmInstance;
                 },
                 confirm: function () {
                     vmMgr.delete($scope.model.current, function (ret) {
+                        $scope.model.resetCurrent();
+                    });
+                }
+            };
+            $scope.optionsExpungeVmInstance = {
+                title: 'EXPUNGE VM INSTANCE',
+                btnType: 'btn-danger',
+                width: '350px',
+                description: function () {
+                    return current.name;
+                },
+                confirm: function () {
+                    vmMgr.expunge($scope.model.current, function (ret) {
                         $scope.model.resetCurrent();
                     });
                 }
@@ -19443,6 +19539,9 @@ var MVmInstance;
             $scope.funcDeleteVmInstance = function () {
                 $scope.deleteVmInstance.open();
             };
+            $scope.funcExpungeVmInstance = function () {
+                $scope.expungeVmInstance.open();
+            };
             $scope.optionsDeleteVmInstance = {
                 title: 'DELETE VM INSTANCE',
                 btnType: 'btn-danger',
@@ -19452,6 +19551,19 @@ var MVmInstance;
                 },
                 confirm: function () {
                     vmMgr.delete($scope.model.current, function (ret) {
+                        $scope.oVmInstanceGrid.deleteCurrent();
+                    });
+                }
+            };
+            $scope.optionsExpungeVmInstance = {
+                title: 'EXPUNGE VM INSTANCE',
+                btnType: 'btn-danger',
+                width: '350px',
+                description: function () {
+                    return $scope.model.current.name;
+                },
+                confirm: function () {
+                    vmMgr.expunge($scope.model.current, function (ret) {
                         $scope.oVmInstanceGrid.deleteCurrent();
                     });
                 }
@@ -23249,7 +23361,7 @@ var MSecurityGroup;
                     },
                     {
                         field: 'deviceId',
-                        title: '{{"securityGroup.ts.DEBICE ID" | translate}}',
+                        title: '{{"securityGroup.ts.DEVICE ID" | translate}}',
                         width: '25%'
                     },
                     {
@@ -24145,10 +24257,10 @@ var MSecurityGroup;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "id",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">{{"securityGroup.ts.VM Name" | translate}}:</span><span>#: vm.name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Nic IP" | translate}}:</span><span>#: nic.ip #</span></div>' +
-                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Nic Device ID" | translate}}:</span><span>#: nic.deviceId #</span></div>' +
-                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Nic UUID" | translate}}:</span><span>#: nic.uuid #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">VM Name:</span><span>#: vm.name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">Nic IP:</span><span>#: nic.ip #</span></div>' +
+                        '<div style="color: black"><span class="z-label">Nic Device ID:</span><span>#: nic.deviceId #</span></div>' +
+                        '<div style="color: black"><span class="z-label">Nic UUID:</span><span>#: nic.uuid #</span></div>',
                     change: function (e) {
                         var select = e.sender;
                         Utils.safeApply($scope, function () {
@@ -24262,10 +24374,10 @@ var MSecurityGroup;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "id",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">{{"securityGroup.ts.VM Name" | translate}}:</span><span>#: vm.name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Nic IP" | translate}}:</span><span>#: nic.ip #</span></div>' +
-                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Nic Device ID" | translate}}:</span><span>#: nic.deviceId #</span></div>' +
-                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Nic UUID" | translate}}:</span><span>#: nic.uuid #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">VM Name:</span><span>#: vm.name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">Nic IP:</span><span>#: nic.ip #</span></div>' +
+                        '<div style="color: black"><span class="z-label">Nic Device ID:</span><span>#: nic.deviceId #</span></div>' +
+                        '<div style="color: black"><span class="z-label">Nic UUID:</span><span>#: nic.uuid #</span></div>',
                     change: function (e) {
                         var select = e.sender;
                         Utils.safeApply($scope, function () {
@@ -24463,11 +24575,11 @@ var MSecurityGroup;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.TYPE" | translate}}:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Zone UUID" | translate}}:</span><span>#: zoneUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.L2 Network UUID" | translate}}:</span><span>#: l2NetworkUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">TYPE:</span><span>#: type #</span></div>' +
+                        '<div style="color: black"><span class="z-label">Zone UUID:</span><span>#: zoneUuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">L2 Network UUID:</span><span>#: l2NetworkUuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
                     change: function (e) {
                         var select = e.sender;
                         Utils.safeApply($scope, function () {
@@ -29492,7 +29604,7 @@ var MVirtualRouterOffering;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    template: '<div style="color: black"><span class="z-label">{{"virtualRouterOffering.ts.Name" | translate}}</span>: #: name #</div>' + '<div style="color: black"><span class="z-label">{{"virtualRouterOffering.ts.Name" | translate}}:</span>#: state #</div>' + '<div style="color: black"><span class="z-label">{{"virtualRouterOffering.ts.UUID" | translate}}:</span> #: uuid #</div>'
+                    template: '<div style="color: black"><span class="z-label">{{"virtualRouterOffering.ts.Name" | translate}}</span>: #: name #</div>' + '<div style="color: black"><span class="z-label">{{"virtualRouterOffering.ts.state" | translate}}:</span>#: state #</div>' + '<div style="color: black"><span class="z-label">{{"virtualRouterOffering.ts.UUID" | translate}}:</span> #: uuid #</div>'
                 };
                 $scope.$watch(function () {
                     return $scope.infoPage.zoneUuid;

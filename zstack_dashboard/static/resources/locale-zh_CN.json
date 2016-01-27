@@ -67,6 +67,7 @@
         "vm.vm.Delete": "删除",
         "vm.vm.HINT1": "单点击列来显示操作按钮",
         "vm.vm.HINT2": "双击列进入详细信息页面",
+        "vm.vm.Expunge": "彻底删除",
         "vm.migrateVm.MIGRATE VM HOST": "迁移云主机",
         "vm.migrateVm.TARGET INSTANCE": "目标云主机",
         "vm.migrateVm.HINT": "(必选) 选择虚拟机应该迁移到哪个目标物理机",
@@ -131,7 +132,7 @@
         "vm.createVm.Add": "添加",
         "vm.createVm.HINT3": "请添加至少一个L3网络",
         "vm.createVm.DEFAULT L3 NETWORK": "默认L3网络",
-        "vm.createVm.HINT4": "(必填) 选择一个默认L3网络为虚拟机规格默认路由和 DNS",
+        "vm.createVm.HINT4": "(必填) 选择一个默认L3网络为虚拟机规e默认路由和 DNS",
         "vm.createVm.DATA DISK OFFERING": "数据云盘规格",
         "vm.createVm.HINT5": "(选填) 选择一个或多个数据云盘规格，将被用来创建云主机的云盘",
         "vm.createVm.DESCRIPTION": "描述",
@@ -159,8 +160,9 @@
         "vm.attachL3Network.HINT": "(必选)在这里列出的L3网络是可以挂载到此云主机的候选者", 
         "vm.attachL3Network.Cancel": "取消",
         "vm.attachL3Network.Attach": "挂载",
+        "vm.vm.recover": "恢复",
         "host.createHost.hasCluster()": "无添加的集群,请转到",
-        "host.createHost.cluster page页": "集群页",
+        "host.createHost.cluster page": "集群页",
         "host.createHost.hasCluster2()": "来添加一个新的集群",
         "host.createHost.ADD HOST": "添加物理机",
         "host.createHost.ZONE": "区域",
@@ -1848,6 +1850,6 @@
         "dashboard.ts.IMAGE": "镜像",
         "dashboard.ts.VIRTUAL ROUTER": "虚拟路由",
         "dashboard.ts.RESOURCE NAME": "资源名称",
-        "dashboard.ts.COUNT": "统计"
+        "dashboard.ts.COUNT": "统计",
 }
 
