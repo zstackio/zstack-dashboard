@@ -663,7 +663,7 @@ module MSecurityGroup {
                     },
                     {
                         field: 'deviceId',
-                        title: '{{"securityGroup.ts.DEBICE ID" | translate}}',
+                        title: '{{"securityGroup.ts.DEVICE ID" | translate}}',
                         width: '25%'
                     },
                     {
@@ -1776,10 +1776,10 @@ module MSecurityGroup {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "id",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">{{"securityGroup.ts.VM Name" | translate}}:</span><span>#: vm.name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Nic IP" | translate}}:</span><span>#: nic.ip #</span></div>' +
-                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Nic Device ID" | translate}}:</span><span>#: nic.deviceId #</span></div>' +
-                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Nic UUID" | translate}}:</span><span>#: nic.uuid #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">VM Name:</span><span>#: vm.name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">Nic IP:</span><span>#: nic.ip #</span></div>' +
+                        '<div style="color: black"><span class="z-label">Nic Device ID:</span><span>#: nic.deviceId #</span></div>' +
+                        '<div style="color: black"><span class="z-label">Nic UUID:</span><span>#: nic.uuid #</span></div>',
 
                     change: (e)=> {
                         var select = e.sender;
@@ -1924,10 +1924,10 @@ module MSecurityGroup {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "id",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">{{"securityGroup.ts.VM Name" | translate}}:</span><span>#: vm.name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Nic IP" | translate}}:</span><span>#: nic.ip #</span></div>' +
-                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Nic Device ID" | translate}}:</span><span>#: nic.deviceId #</span></div>' +
-                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Nic UUID" | translate}}:</span><span>#: nic.uuid #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">VM Name:</span><span>#: vm.name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">Nic IP:</span><span>#: nic.ip #</span></div>' +
+                        '<div style="color: black"><span class="z-label">Nic Device ID:</span><span>#: nic.deviceId #</span></div>' +
+                        '<div style="color: black"><span class="z-label">Nic UUID:</span><span>#: nic.uuid #</span></div>',
 
                     change: (e)=> {
                         var select = e.sender;
@@ -2139,11 +2139,11 @@ module MSecurityGroup {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.TYPE" | translate}}:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Zone UUID" | translate}}:</span><span>#: zoneUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.L2 Network UUID" | translate}}:</span><span>#: l2NetworkUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">TYPE:</span><span>#: type #</span></div>' +
+                        '<div style="color: black"><span class="z-label">Zone UUID:</span><span>#: zoneUuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">L2 Network UUID:</span><span>#: l2NetworkUuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
 
                     change: (e)=> {
                         var select = e.sender;

@@ -1087,7 +1087,7 @@ module MPrimaryStorage {
           dataSource: new kendo.data.DataSource({data: []}),
           dataTextField: "name",
           dataValueField: "uuid",
-          template: '<div style="color: black"><span class="z-label">{{"primaryStorage.ts.Name" | translate}}</span>: #: name #</div>'+'<div style="color: black"><span class="z-label">State:</span>#: state #</div>'+'<div style="color: black"><span class="z-label">UUID:</span> #: uuid #</div>'
+          template: '<div style="color: black"><span class="z-label">{{"primaryStorage.ts.Name" | translate}}</span>: #: name #</div>'+'<div style="color: black"><span class="z-label">{{"primaryStorage.ts.State" | translate}}:</span>#: state #</div>'+'<div style="color: black"><span class="z-label">UUID:</span> #: uuid #</div>'
         };
 
         $scope.typeList = {
@@ -1115,7 +1115,7 @@ module MPrimaryStorage {
           dataSource: new kendo.data.DataSource({data: []}),
           dataTextField: "name",
           dataValueField: "uuid",
-          itemTemplate: '<div style="color: black"><span class="z-label">{{"primaryStorage.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+          itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
           '<div style="color: black"><span class="z-label">HYPERVISOR:</span><span>#: hypervisorType #</span></div>' +
           '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>'
         };
@@ -1186,7 +1186,7 @@ module MPrimaryStorage {
           dataSource: new kendo.data.DataSource({data: []}),
           dataTextField: "name",
           dataValueField: "uuid",
-          itemTemplate: '<div style="color: black"><span class="z-label">{{"primaryStorage.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+          itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
           '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
 
           change: (e)=> {
@@ -1291,7 +1291,7 @@ module MPrimaryStorage {
           dataSource: new kendo.data.DataSource({data: []}),
           dataTextField: "name",
           dataValueField: "uuid",
-          itemTemplate: '<div style="color: black"><span class="z-label">{{"primaryStorage.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+          itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
           '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>' +
           '<div style="color: black"><span class="z-label">Hypervisor:</span><span>#: hypervisorType #</span></div>',
 
