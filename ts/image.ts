@@ -25,6 +25,19 @@ module MImage {
         isDisableShow() : boolean {
             return this.state == 'Enabled' || this.state == 'Maintenance' || this.state == 'PreMaintenance';
         }
+
+        isExpungeShow() : boolean {
+            return this.status == 'Deleted';
+        }
+
+        isRecoverShow() : boolean {
+            return this.status == 'Deleted';
+        }
+
+        isDeleteShow() : boolean {
+            return this.status != 'Deleted';
+        }
+
         stateLabel() : string {
             if (this.state == 'Enabled') {
                 return 'label label-success';
@@ -167,6 +180,32 @@ module MImage {
                 });
             });
         }
+
+        expunge(image : Image, done : (ret: any)=>void) {
+            image.progressOn();
+            var msg = new ApiHeader.APIExpungeImageMsg();
+            msg.imageUuid = image.uuid;
+            this.api.asyncApi(msg, (ret : any)=> {
+                image.progressOff();
+                done(ret);
+                this.$rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
+                    msg: Utils.sprintf('Expunged Image: {0}', image.name)
+                });
+            });
+        }
+
+        recover(image : Image) {
+            image.progressOn();
+            var msg = new ApiHeader.APIRecoverImageMsg();
+            msg.imageUuid = image.uuid;
+            this.api.asyncApi(msg, (ret : any)=> {
+                image.progressOff();
+                image.updateObservableObject(ret.inventory);
+                this.$rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
+                    msg: Utils.sprintf('Recovered Image: {0}', image.name)
+                });
+            });
+        }
     }
 
     export class ImageModel extends Utils.Model {
@@ -248,6 +287,10 @@ module MImage {
 
         disable() {
             this.imageMgr.disable(this.$scope.model.current);
+        }
+
+        recover() {
+            this.imageMgr.recover(this.$scope.model.current);
         }
 
         constructor(private $scope : any, private imageMgr : ImageManager) {
@@ -395,6 +438,22 @@ module MImage {
 
                 confirm: ()=> {
                     imageMgr.delete($scope.model.current, (ret : any)=> {
+                        $scope.model.resetCurrent();
+                    });
+                }
+            };
+
+            $scope.optionsExpungeImage = {
+                title: 'EXPUNGE IMAGE',
+                width: '350px',
+                btnType: 'btn-danger',
+
+                description: ()=> {
+                    return $scope.model.current.name;
+                },
+
+                confirm: ()=> {
+                    imageMgr.expunge($scope.model.current, (ret : any)=> {
                         $scope.model.resetCurrent();
                     });
                 }
@@ -632,6 +691,10 @@ module MImage {
                 $scope.deleteImage.open();
             };
 
+            $scope.funcExpungeImage = (e) => {
+                e.open();
+            };
+
             $scope.optionsDeleteImage = {
                 title: 'DELETE IMAGE',
                 width: '350px',
@@ -643,6 +706,22 @@ module MImage {
 
                 confirm: ()=> {
                     imageMgr.delete($scope.model.current, (ret : any)=> {
+                        $scope.oImageGrid.deleteCurrent();
+                    });
+                }
+            };
+
+            $scope.optionsExpungeImage = {
+                title: 'EXPUNGE IMAGE',
+                width: '350px',
+                btnType: 'btn-danger',
+
+                description: ()=> {
+                    return $scope.model.current.name;
+                },
+
+                confirm: ()=> {
+                    imageMgr.expunge($scope.model.current, (ret : any)=> {
                         $scope.oImageGrid.deleteCurrent();
                     });
                 }

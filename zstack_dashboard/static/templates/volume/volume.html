@@ -2,6 +2,7 @@
     <div z-create-volume="winNewVolume" z-options="optionsCreateVolume"></div>
     <div z-search="search" z-options="optionsSearch"></div>
     <div z-confirm="deleteVolume" z-options="optionsDeleteVolume"></div>
+    <div z-confirm="expungeVolume" z-options="optionsExpungeVolume"></div>
     <div z-volume-attach-vm="attachVm" z-options="optionsAttachVm"></div>
     <div z-volume-detach-vm="detachVm" z-options="optionsDetachVm"></div>
     <div z-backup-data-volume="backupDataVolumeWin" z-options="optionsBackupDataVolume"></div>
@@ -56,8 +57,10 @@
                 <li><a href ng-click="action.detach()" ng-show="model.current.isDetachShow()">{{ "volume.volume.Detach" | translate }}</a></li>
                 <li><a href ng-click="action.createTemplate()" ng-show="model.current.isCreateTemplateShow()">{{ "volume.volume.Create Template" | translate }}</a></li>
                 <li><a href ng-click="action.takeSnapshot()" ng-show="model.current.isSnapshotShow()">{{ "volume.volume.Take Snapshot" | translate }}</a></li>
+                <li><a href ng-click="action.recover()" ng-show="model.current.isRecoverShow()">{{ "volume.volume.Recover" | translate }}</a></li>
                 <li class="divider"></li>
                 <li><a href style="color:red" ng-click="funcDeleteVolume(deleteVolume)" ng-show="model.current.isDeleteShow()">{{ "volume.volume.Delete" | translate }}</a></li>
+                <li><a href style="color:red" ng-click="funcExpungeVolume(expungeVolume)" ng-show="model.current.isExpungeShow()">{{ "volume.volume.Expunge" | translate }}</a></li>
             </ul>
         </div>
     </div>

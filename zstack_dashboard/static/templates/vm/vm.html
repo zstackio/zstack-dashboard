@@ -2,6 +2,7 @@
     <div z-create-vm-instance="winNewVmInstance" z-options="optionsCreateVmInstance"></div>
     <div z-search="search" z-options="optionsSearch"></div>
     <div z-confirm="deleteVmInstance" z-options="optionsDeleteVmInstance"></div>
+    <div z-confirm="expungeVmInstance" z-options="optionsExpungeVmInstance"></div>
     <div z-migrate-vm-instance="migrateVm" z-options="optionsMigrateVm"></div>
     <div z-change-instance-offering="changeInstanceOffering" z-options="optionsChangeInstanceOffering"></div>
     <div z-vm-attach-volume="attachVolume" z-options="optionsAttachVolume"></div>
@@ -61,8 +62,10 @@
                 <li><a href ng-click="action.attachL3Network()" ng-show="action.isActionShow('attachL3Network')">{{"vm.vm.Attach L3 Network" | translate}}</a></li>
                 <li><a href ng-click="action.detachL3Network()" ng-show="action.isActionShow('detachL3Network')">{{"vm.vm.Detach L3 Network" | translate}}</a></li>
                 <li><a href ng-click="action.changeInstanceOffering()" ng-show="action.isActionShow('changeInstanceOffering')">{{"vm.vm.Change Instance Offering" | translate}}</a></li>
+                <li><a href ng-click="action.recover()" ng-show="action.isActionShow('recoverVm')">{{"vm.vm.recover" | translate}}</a></li>
                 <li class="divider"></li>
-                <li><a href style="color:red" ng-click="funcDeleteVmInstance(deleteVmInstance)">{{"vm.vm.Delete" | translate}}</a></li>
+                <li><a href style="color:red" ng-click="funcDeleteVmInstance(deleteVmInstance)"  ng-show="action.isActionShow('delete')">{{"vm.vm.Delete" | translate}}</a></li>
+                <li><a href style="color:red" ng-click="funcExpungeVmInstance(expungeVmInstance)" ng-show="action.isActionShow('expungeVm')">{{"vm.vm.Expunge" | translate}}</a></li>
             </ul>
         </div>
     </div>

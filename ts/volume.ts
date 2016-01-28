@@ -30,7 +30,6 @@ module MVolume {
             return this.backupStorageRefs.length > 0;
         }
 
-
         statusLabel() : string {
             if (this.status == 'Ready') {
                 return 'label label-success';
@@ -106,7 +105,15 @@ module MVolume {
         }
 
         isDeleteShow() {
-            return this.type == 'Data';
+            return this.type == 'Data' && this.status != 'Deleted' ;
+        }
+
+        isExpungeShow() {
+            return this.status == 'Deleted' && this.type == 'Data';
+        }
+
+        isRecoverShow() {
+            return this.status == 'Deleted' && this.type == 'Data';
         }
 
         isEnableShow() : boolean {
@@ -305,6 +312,33 @@ module MVolume {
                 done(ret);
                 this.$rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
                     msg: Utils.sprintf('Deleted Data Volume: {0}', volume.name)
+                });
+            });
+        }
+
+        expunge(volume : Volume, done : (ret : any)=>void) {
+            volume.progressOn();
+            var msg = new ApiHeader.APIExpungeDataVolumeMsg();
+            msg.uuid = volume.uuid;
+            this.api.asyncApi(msg, (ret : any)=> {
+                volume.progressOff();
+                done(ret);
+                this.$rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
+                    msg: Utils.sprintf('Expunged Data Volume: {0}', volume.name)
+                });
+            });
+        }
+
+        recover(volume : Volume) {
+            volume.progressOn();
+            var msg = new ApiHeader.APIRecoverDataVolumeMsg();
+            msg.uuid = volume.uuid;
+            this.api.asyncApi(msg, (ret : ApiHeader.APIRecoverDataVolumeEvent) => {
+                volume.updateObservableObject(ret.inventory);
+                volume.progressOff();
+                this.$rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
+                    msg: Utils.sprintf('Recovered Data Volume: {0}', volume.name),
+                    link: Utils.sprintf('/#/volume/{0}', volume.uuid)
                 });
             });
         }
@@ -530,6 +564,10 @@ module MVolume {
 
         disable() {
             this.volumeMgr.disable(this.$scope.model.current);
+        }
+
+        recover() {
+            this.volumeMgr.recover(this.$scope.model.current);
         }
 
         attach() {
@@ -907,6 +945,11 @@ module MVolume {
                 $scope.deleteVolume.open();
             };
 
+            $scope.funcExpungeVolume = (e) => {
+                e.open();
+            };
+
+
             $scope.optionsDeleteVolume = {
                 title: 'DELETE VOLUME',
                 description: ()=> {
@@ -916,6 +959,17 @@ module MVolume {
 
                 confirm: ()=> {
                     volumeMgr.delete($scope.model.current, (ret : any)=> {
+                        $scope.model.resetCurrent();
+                    });
+                }
+            };
+
+            $scope.optionsExpungeVolume = {
+                title: 'EXPUNGE VOLUME',
+                btnType: 'btn-danger',
+
+                confirm: ()=> {
+                    volumeMgr.expunge($scope.model.current, (ret : any)=> {
                         $scope.model.resetCurrent();
                     });
                 }
@@ -1144,6 +1198,10 @@ module MVolume {
                 $scope.deleteVolume.open();
             };
 
+            $scope.funcExpungeVolume = (e) => {
+                e.open();
+            };
+
             $scope.optionsDeleteVolume = {
                 title: 'DELETE DATA VOLUME',
                 description: ()=> {
@@ -1153,6 +1211,17 @@ module MVolume {
 
                 confirm: ()=> {
                     volumeMgr.delete($scope.model.current, (ret : any)=> {
+                        $scope.oVolumeGrid.deleteCurrent();
+                    });
+                }
+            };
+
+            $scope.optionsExpungeVolume = {
+                title: 'EXPUNGE DATA VOLUME',
+                btnType: 'btn-danger',
+
+                confirm: ()=> {
+                    volumeMgr.expunge($scope.model.current, (ret : any)=> {
                         $scope.oVolumeGrid.deleteCurrent();
                     });
                 }

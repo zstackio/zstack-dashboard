@@ -9072,4 +9072,125 @@ module ApiHeader {
 
 
   export var TagResourceTypeVipVO = 'VipVO';
+
+  export class APIExpungeVmInstanceMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.vm.APIExpungeVmInstanceMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+  export class APIExpungeVmInstanceEvent {
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+  export class APIRecoverVmInstanceMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.header.vm.APIRecoverVmInstanceMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    vmInstanceUuid : string;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+  export class APIRecoverVmInstanceEvent {
+    inventory : VmInstanceInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+    export class APIRecoverImageEvent {
+        inventory : ImageInventory;
+        API_EVENT : string;
+        success : boolean;
+        error : ErrorCode;
+        BINDING_KEY_PERFIX : string;
+    }
+
+
+    export class APIExpungeImageEvent {
+        API_EVENT : string;
+        success : boolean;
+        error : ErrorCode;
+        BINDING_KEY_PERFIX : string;
+    }
+
+    export class APIExpungeImageMsg implements APIMessage {
+        toApiMap() : any {
+            var msg = {
+                'org.zstack.header.image.APIExpungeImageMsg': this
+            };
+            return msg;
+        }
+        imageUuid : string;
+        backupStorageUuids : Array<string>;
+        session : SessionInventory;
+        timeout : number;
+    }
+
+    export class APIRecoverImageMsg implements APIMessage {
+        toApiMap() : any {
+            var msg = {
+                'org.zstack.header.image.APIRecoverImageMsg': this
+            };
+            return msg;
+        }
+        imageUuid : string;
+        backupStorageUuids : Array<string>;
+        session : SessionInventory;
+        timeout : number;
+    }
+
+    export class APIExpungeDataVolumeEvent {
+        API_EVENT : string;
+        success : boolean;
+        error : ErrorCode;
+        BINDING_KEY_PERFIX : string;
+    }
+
+    export class APIRecoverDataVolumeEvent {
+        inventory : VolumeInventory;
+        API_EVENT : string;
+        success : boolean;
+        error : ErrorCode;
+        BINDING_KEY_PERFIX : string;
+    }
+
+    export class APIExpungeDataVolumeMsg implements APIMessage {
+        toApiMap() : any {
+            var msg = {
+                'org.zstack.header.volume.APIExpungeDataVolumeMsg': this
+            };
+            return msg;
+        }
+        uuid : string;
+        session : SessionInventory;
+        timeout : number;
+    }
+
+    export class APIRecoverDataVolumeMsg implements APIMessage {
+        toApiMap() : any {
+            var msg = {
+                'org.zstack.header.volume.APIRecoverDataVolumeMsg': this
+            };
+            return msg;
+        }
+        uuid : string;
+        session : SessionInventory;
+        timeout : number;
+    }
 }
