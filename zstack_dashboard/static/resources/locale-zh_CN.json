@@ -655,7 +655,7 @@
         "volume.reverSnapshot.VOLUME NAME": "云盘名称:",
         "volume.reverSnapshot.VOLUME TYPE": "云盘类型:",
         "volume.reverSnapshot.SNAPSHOT NAME": "快照名称:",
-        "volume.reverSnapshot.VM THE VOLUME ATTACHED": "云主机云盘附:",
+        "volume.reverSnapshot.VM THE VOLUME ATTACHED": "已挂载云盘的云主机:",
         "volume.reverSnapshot.HINT": "只有云主机处于停止状态时，云盘快照才可还原",
         "volume.reverSnapshot.Cancel": "取消",
         "volume.reverSnapshot.Revert": "恢复",
@@ -1258,7 +1258,7 @@
         "virtualRouter.details.INSTANCE OFFERING UUID": "云主机规格UUID",
         "virtualRouter.details.IMAGE UUID": "镜像 UUID",
         "virtualRouter.details.HOST UUID": "物理机 UUID",
-        "virtualRouter.details.LAST HOST UUID": "去年物理机 UUID",
+        "virtualRouter.details.LAST HOST UUID": "上次物理机 UUID",
         "virtualRouter.details.CLUSTER UUID": "集群 UUID",
         "virtualRouter.details.ZONE UUID": "区域 UUID",
         "virtualRouter.details.CREATED DATE": "创建时间",
@@ -1856,4 +1856,3 @@
         "dashboard.ts.RESOURCE NAME": "资源名称",
         "dashboard.ts.COUNT": "统计"
 }
-
