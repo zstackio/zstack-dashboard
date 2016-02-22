@@ -331,7 +331,7 @@
         "zone.zone.STATE": "可用状态", 
         "zone.zone.All": "所有",
         "zone.zone.Enabled": "已启用",
-        "zone.zone.Disabled": "禁用",
+        "zone.zone.Disabled": "已禁用",
         "zone.zone.Confirm": "确认",
         "zone.zone.Action": "操作",
         "zone.zone.Enable": "启用",
