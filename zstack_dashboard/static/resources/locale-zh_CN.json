@@ -417,7 +417,7 @@
         "primaryStorage.createPrimaryStorage.HINT2": "(必选) 选择主存储类型",
         "primaryStorage.createPrimaryStorage.URL": "URL",
         "primaryStorage.createPrimaryStorage.HINT3": "url (必填)为NFS主存储,是'IP/域名:绝对路径',例如,'192.168.0.10:/primaryStorage'",
-        "primaryStorage.createPrimaryStorage.HINT4": "(必填) 为本地存储,url 是一个绝对路径,例如,设置为'/volumes'，每个物理机都会使用创建病使用此目录",
+        "primaryStorage.createPrimaryStorage.HINT4": "(必填) 为本地存储,url 是一个绝对路径,例如,设置为'/volumes'，每个物理机都会使用创建并使用此目录",
         "primaryStorage.createPrimaryStorage.HINT5": "(必填) 为 ISCSI 存储与 BTRFS 后端,url 是一个绝对路径,例如,设置为'/volumes',将在BTRFS 服务器上创建此文件夹",
         "primaryStorage.createPrimaryStorage.ALERT": "没有可用的区域,请转到",
         "primaryStorage.createPrimaryStorage.ALERT.2": "区域页",
