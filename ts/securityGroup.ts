@@ -2031,11 +2031,11 @@ module MSecurityGroup {
                     dataSource: new kendo.data.DataSource({data: []}),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.TYPE" | translate}}:</span><span>#: type #</span></div>' +
-                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.Zone UUID" | translate}}:</span><span>#: zoneUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.L2 Network UUID" | translate}}:</span><span>#: l2NetworkUuid #</span></div>' +
-                        '<div style="color: black"><span class="z-label">{{"securityGroup.ts.UUID" | translate}}:</span><span>#: uuid #</span></div>',
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
+                        '<div style="color: black"><span class="z-label">TYPE:</span><span>#: type #</span></div>' +
+                        '<div style="color: black"><span class="z-label">Zone UUID:</span><span>#: zoneUuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">L2 Network UUID:</span><span>#: l2NetworkUuid #</span></div>' +
+                        '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
 
                     change: (e)=> {
                         var select = e.sender;
