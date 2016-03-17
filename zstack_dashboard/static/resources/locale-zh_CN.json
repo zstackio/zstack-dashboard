@@ -1439,7 +1439,7 @@
         "vm.ts.NAME": "名称",
         "vm.ts.DESCRIPTION": "描述",
         "vm.ts.DEFAULT IP": "默认 IP",
-        "vm.ts.HOST IP": "云主机 IP",
+        "vm.ts.HOST IP": "物理机 IP",
         "vm.ts.STATE": "可用状态",
         "vm.ts.UUID": "UUID",
         "vm.ts.DEVICE ID": "设备 ID",
