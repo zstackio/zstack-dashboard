@@ -30984,6 +30984,9 @@ var Directive;
                     var tmp = {};
                     angular.forEach(_this.conditions, function (cond) {
                         if (cond.op != 'in' && cond.op != 'not in') {
+                            if (cond.op == 'like' || cond.op == 'not like') {
+                                cond.value = '%' + cond.value + '%';
+                            }
                             ret.push(cond);
                         }
                         else {

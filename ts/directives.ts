@@ -253,6 +253,9 @@ module Directive {
                     var tmp = {};
                     angular.forEach(this.conditions, (cond : ApiHeader.QueryCondition)=> {
                         if (cond.op != 'in' && cond.op != 'not in') {
+                            if (cond.op == 'like' || cond.op == 'not like') {
+                                cond.value = '%' + cond.value + '%';
+                            }
                             ret.push(cond);
                         } else {
                             var queue = tmp[cond.name];
