@@ -172,5 +172,6 @@ angular.module("root", ['app.service', 'kendo.directives', 'ngRoute', 'ngTagsInp
              suffix: '.json'// suffix, currently- extension of the translations  
          });  
          $translateProvider.preferredLanguage('en_US');// is applied on first load  
+         $translateProvider.useCookieStorage();
      });  
 

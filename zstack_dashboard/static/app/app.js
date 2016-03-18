@@ -7537,6 +7537,7 @@ angular.module("root", ['app.service', 'kendo.directives', 'ngRoute', 'ngTagsInp
         suffix: '.json' // suffix, currently- extension of the translations  
     });
     $translateProvider.preferredLanguage('en_US'); // is applied on first load  
+    $translateProvider.useCookieStorage();
 });
 /// <reference path="d.ts/angularjs/angular.d.ts" />
 /// <reference path="d.ts/kendo.all.d.ts" />
