@@ -19408,7 +19408,7 @@ var MVmInstance;
             $scope.console = function () {
                 vmMgr.getConsole(current, function (inv) {
                     var windowName = current.name + current.uuid;
-                    $window.open(Utils.sprintf('/static/templates/console/vnc_auto.html?host={0}&port={1}&token={2}', inv.hostname, inv.port, inv.token), windowName);
+                    $window.open(Utils.sprintf('/static/templates/console/vnc_auto.html?host={0}&port={1}&token={2}&title={3}', inv.hostname, inv.port, inv.token, current.name), windowName);
                 });
             };
             $scope.optionsTag = {
@@ -19733,7 +19733,7 @@ var MVmInstance;
             $scope.console = function () {
                 vmMgr.getConsole($scope.model.current, function (inv) {
                     var windowName = $scope.model.current.name + $scope.model.current.uuid;
-                    $window.open(Utils.sprintf('/static/templates/console/vnc_auto.html?host={0}&port={1}&token={2}', inv.hostname, inv.port, inv.token), windowName);
+                    $window.open(Utils.sprintf('/static/templates/console/vnc_auto.html?host={0}&port={1}&token={2}&title={3}', inv.hostname, inv.port, inv.token, $scope.model.current.name), windowName);
                 });
             };
             $scope.optionsMigrateVm = {
@@ -28769,7 +28769,7 @@ var MVirtualRouter;
                 var current = $scope.model.current;
                 vmMgr.getConsole(current, function (inv) {
                     var windowName = current.name + current.uuid;
-                    $window.open(Utils.sprintf('/static/templates/console/vnc_auto.html?host={0}&port={1}&token={2}', inv.hostname, inv.port, inv.token), windowName);
+                    $window.open(Utils.sprintf('/static/templates/console/vnc_auto.html?host={0}&port={1}&token={2}&title={3}', inv.hostname, inv.port, inv.token, current.name), windowName);
                 });
             };
             $scope.funcDelete = function (win) {
@@ -29077,7 +29077,7 @@ var MVirtualRouter;
                 var current = $scope.model.current;
                 vmMgr.getConsole(current, function (inv) {
                     var windowName = current.name + current.uuid;
-                    $window.open(Utils.sprintf('/static/templates/console/vnc_auto.html?host={0}&port={1}&token={2}', inv.hostname, inv.port, inv.token), windowName);
+                    $window.open(Utils.sprintf('/static/templates/console/vnc_auto.html?host={0}&port={1}&token={2}&title={3}', inv.hostname, inv.port, inv.token, current.name), windowName);
                 });
             };
         }

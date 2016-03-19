@@ -738,7 +738,7 @@ module MVmInstance {
       $scope.console = ()=> {
         vmMgr.getConsole(current, (inv: ApiHeader.ConsoleInventory)=>{
           var windowName = current.name + current.uuid;
-          $window.open(Utils.sprintf('/static/templates/console/vnc_auto.html?host={0}&port={1}&token={2}', inv.hostname, inv.port, inv.token), windowName);
+          $window.open(Utils.sprintf('/static/templates/console/vnc_auto.html?host={0}&port={1}&token={2}&title={3}', inv.hostname, inv.port, inv.token, current.name), windowName);
         });
       };
 
@@ -1080,7 +1080,7 @@ module MVmInstance {
       $scope.console = ()=> {
         vmMgr.getConsole($scope.model.current, (inv: ApiHeader.ConsoleInventory)=>{
           var windowName = $scope.model.current.name + $scope.model.current.uuid;
-          $window.open(Utils.sprintf('/static/templates/console/vnc_auto.html?host={0}&port={1}&token={2}', inv.hostname, inv.port, inv.token), windowName);
+          $window.open(Utils.sprintf('/static/templates/console/vnc_auto.html?host={0}&port={1}&token={2}&title={3}', inv.hostname, inv.port, inv.token, $scope.model.current.name), windowName);
         });
       };
 

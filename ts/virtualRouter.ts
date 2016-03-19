@@ -468,7 +468,7 @@ module MVirtualRouter {
                 var current = $scope.model.current;
                 vmMgr.getConsole(current, (inv: ApiHeader.ConsoleInventory)=>{
                     var windowName = current.name + current.uuid;
-                    $window.open(Utils.sprintf('/static/templates/console/vnc_auto.html?host={0}&port={1}&token={2}', inv.hostname, inv.port, inv.token), windowName);
+                    $window.open(Utils.sprintf('/static/templates/console/vnc_auto.html?host={0}&port={1}&token={2}&title={3}', inv.hostname, inv.port, inv.token, current.name), windowName);
                 });
             };
 
@@ -803,7 +803,7 @@ module MVirtualRouter {
                 var current = $scope.model.current;
                 vmMgr.getConsole(current, (inv: ApiHeader.ConsoleInventory)=>{
                     var windowName = current.name + current.uuid;
-                    $window.open(Utils.sprintf('/static/templates/console/vnc_auto.html?host={0}&port={1}&token={2}', inv.hostname, inv.port, inv.token), windowName);
+                    $window.open(Utils.sprintf('/static/templates/console/vnc_auto.html?host={0}&port={1}&token={2}&title={3}', inv.hostname, inv.port, inv.token, current.name), windowName);
                 });
             };
         }
