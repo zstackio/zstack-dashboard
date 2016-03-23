@@ -83,7 +83,7 @@
         "vm.details.Migrate": "迁移",
         "vm.details.Console": "控制台",
         "vm.details.Attach Volume": "挂载云盘",
-        "vm.details.Detach Volume": "卸载云盘e",
+        "vm.details.Detach Volume": "卸载云盘",
         "vm.details.Attach L3 Network": "挂载L3网络",
         "vm.details.Detach L3 Network": "卸载L3网络",
         "vm.details.Change Instance Offering": "更改计算规格",
