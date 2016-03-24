@@ -82,7 +82,7 @@
     "vm.details.Migrate": "遷移",
     "vm.details.Console": "控制台",
     "vm.details.Attach Volume": "掛載雲磁碟",
-    "vm.details.Detach Volume": "卸載雲磁碟e",
+    "vm.details.Detach Volume": "卸載雲磁碟",
     "vm.details.Attach L3 Network": "掛載L3網路",
     "vm.details.Detach L3 Network": "卸載L3網路",
     "vm.details.Change Instance Offering": "更改計算規格",
