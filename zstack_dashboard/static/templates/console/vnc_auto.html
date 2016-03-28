@@ -144,7 +144,7 @@
             }
 
             password = WebUtil.getQueryVar('password', '');
-            path = WebUtil.getQueryVar('path', window.location);
+            path = WebUtil.getQueryVar('path', '?token=' + token);
 
             if ((!host) || (!port)) {
                 updateState('failed',
