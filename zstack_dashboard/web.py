@@ -13,6 +13,9 @@ import sys
 import os
 import logging
 import kombu
+import traceback
+import functools
+import time
 
 template_dir = os.path.join(os.getcwd(), os.path.join(os.path.dirname(__file__), 'static/templates'))
 print template_dir
@@ -44,17 +47,177 @@ def listen():
 
 listen()
 
+def exception_safe(func):
+    @functools.wraps(func)
+    def wrap(*args, **kwargs):
+        try:
+            return func(*args, **kwargs)
+        except:
+            log.warn(traceback.format_exc())
 
-class CloudBus(object):
+    return wrap
+
+class Connection(object):
     P2P_EXCHANGE = "P2P"
+    API_SERVICE_ID = "zstack.message.api.portal"
     BROADCAST_EXCHANGE = "BROADCAST"
     QUEUE_PREFIX = "zstack.ui.message.%s"
     API_EVENT_QUEUE_PREFIX = "zstck.ui.api.event.%s"
     API_EVENT_QUEUE_BINDING_KEY = "key.event.API.API_EVENT"
     CANONICAL_EVENT_QUEUE_PREFIX = "zstck.ui.canonical.event.%s"
     CANONICAL_EVENT_BINDING_KEY = "key.event.LOCAL.canonicalEvent"
-    API_SERVICE_ID = "zstack.message.api.portal"
 
+    STATUS_INIT = "init"
+    STATUS_READY = "ready"
+
+    def __init__(self):
+        self.urls = None
+        self.reply_callback = None
+        self.api_event_callback = None
+        self.canonical_event_callback = None
+        self.should_stop = False
+        self.reply_queue = None
+        self.api_event_queue = None
+        self.canonical_event_queue = None
+        self.reply_queue_name = None
+        self.api_event_queue_name = None
+        self.canonical_event_queue_name = None
+        self.conn = None
+
+        self._current_url = None
+
+        self._reply_consumer = None
+        self._api_event_consumer = None
+        self._canonical_event_consumer = None
+
+        self._consumer_thread = None
+
+        self._status = None
+
+    def stop(self):
+        if self._current_url:
+            self._cleanup_current_connection()
+
+    def start(self):
+        self._initalize()
+
+    def _cleanup_current_connection(self):
+        _rt = self._consumer_thread
+        @exception_safe
+        def join_consumer_thread():
+            if _rt:
+                _rt.join()
+
+        threading.Thread(target=join_consumer_thread).start()
+
+        @exception_safe
+        def release_connection(conn):
+            if conn:
+                conn.release()
+
+        release_connection(self.conn)
+
+        @exception_safe
+        def close_consumer(c):
+            if c:
+                c.close()
+
+        close_consumer(self._api_event_consumer)
+        close_consumer(self._reply_consumer)
+        close_consumer(self._canonical_event_consumer)
+
+        self._current_url = None
+
+    def _is_connection_error(self, ex):
+        return ex.__class__.__name__ == 'ConnectionError'
+
+    def _do_initalize_in_thread(self):
+        threading.Thread(target=self._initalize).start()
+
+    def _initalize(self):
+        if self._status == self.STATUS_INIT:
+            log.debug('connection is in initializing, ignore this call')
+            return
+
+        self._status = self.STATUS_INIT
+
+        if self._current_url:
+            self._cleanup_current_connection()
+
+        def find_usable_url():
+            while True:
+                for url in self.urls:
+                    conn = kombu.Connection(url)
+
+                    try:
+                        conn.connect()
+                        log.debug("find a live connection[%s]" % url)
+                        return url, conn
+                    except Exception as e:
+                        log.warn('cannot connect to %s, %s; try next one ...' % (url, str(e)))
+
+                log.warn('failed to connect all urls, sleep 5s and re-try')
+                time.sleep(5)
+
+        self._current_url, self.conn = find_usable_url()
+        self.should_stop = False
+
+        self.uuid = utils.uuid4()
+        self.p2p_exchange = kombu.Exchange(self.P2P_EXCHANGE, type='topic', passive=True)
+        self.broadcast_exchange = kombu.Exchange(self.BROADCAST_EXCHANGE, type='topic', passive=True)
+        
+        self.reply_queue_name = self.QUEUE_PREFIX % self.uuid
+        self.reply_queue = kombu.Queue(self.reply_queue_name, exchange=self.p2p_exchange, routing_key=self.reply_queue_name, auto_delete=True)
+        
+        self.api_event_queue_name = self.API_EVENT_QUEUE_PREFIX % self.uuid
+        self.api_event_queue = kombu.Queue(self.api_event_queue_name, exchange=self.broadcast_exchange, routing_key=self.API_EVENT_QUEUE_BINDING_KEY, auto_delete=True)
+
+        self.canonical_event_queue_name = self.CANONICAL_EVENT_QUEUE_PREFIX % self.uuid
+        self.canonical_event_queue = kombu.Queue(self.canonical_event_queue_name, exchange=self.broadcast_exchange, routing_key=self.CANONICAL_EVENT_BINDING_KEY, auto_delete=True)
+
+        def consumer_thread():
+            try:
+                log.debug('consumer thread starts')
+                self._reply_consumer = self.conn.Consumer([self.reply_queue], callbacks=[self.reply_callback])
+                self._api_event_consumer = self.conn.Consumer([self.api_event_queue], callbacks=[self.api_event_callback])
+                self._canonical_event_consumer = self.conn.Consumer([self.canonical_event_queue], callbacks=[self.canonical_event_callback])
+                with kombu.utils.nested(self._reply_consumer, self._api_event_consumer, self._canonical_event_consumer):
+                    while not self.should_stop:
+                        self.conn.drain_events()
+
+            except Exception as ce:
+                if 'exchange.declare' in str(ce):
+                    log.info('cannot declare RabbitMQ exchange(P2P), you need to start ZStack management server before starting dashboard')
+                    os._exit(1)
+                else:
+                    self.should_stop = True
+                    if self._is_connection_error(ce):
+                        log.warn('lost connection to %s, %s' % (self._current_url, str(ce)))
+                        self._do_initalize_in_thread()
+                        return
+
+                    raise
+
+        self._consumer_thread = threading.Thread(target=consumer_thread)
+        self._consumer_thread.start()
+
+        self._status = self.STATUS_READY
+        log.debug("connection to %s is ready" % self._current_url)
+
+    def send(self, msg):
+        if self.STATUS_READY != self._status:
+            raise Exception('the rabbitmq connection is not ready yet')
+
+        try:
+            with kombu.producers[self.conn].acquire(block=True) as producer:
+                producer.publish(msg, exchange=self.P2P_EXCHANGE, routing_key=self.API_SERVICE_ID)
+        except Exception as ce:
+            if self._is_connection_error(ce):
+                log.warn('lost connection to %s, %s' % (self._current_url, str(ce)))
+                self._do_initalize_in_thread()
+                raise
+
+class CloudBus(object):
     CORRELATION_ID = "correlationId"
     REPLY_TO = "replyTo"
     IS_MESSAGE_REPLY = "isReply"
@@ -120,119 +283,30 @@ class CloudBus(object):
             message.ack()
 
     def stop(self):
-        self.should_stop = True
         log.debug('stopping CloudBus ...')
-        if self.reply_consumer:
-            self.reply_consumer.close()
-        if self.reply_connection:
-            self.reply_connection.release()
-        if self.api_event_consumer:
-            self.api_event_consumer.close()
-        if self.api_event_connection:
-            self.api_event_connection.release()
-        if self.canonical_event_consumer:
-            self.canonical_event_consumer.close()
-        if self.canonical_event_connection:
-            self.canonical_event_connection.release()
-
-        self.reply_consumer_thread.join()
-        self.api_event_consumer_thread.join()
-        self.canonical_event_consumer_thread.join()
-        self.producer_connection.close()
+        self.conn.stop()
 
     def register_canonical_event_handler(self, path, handler):
         self.canonical_event_handlers[path] = handler
 
     def __init__(self, options):
         self.options = options
-        self.uuid = utils.uuid4()
-
-        self.canonical_event_handlers = {}
 
         rabbitmq_list = self.options.rabbitmq.split(',')
         rabbitmq_list = ["amqp://%s" % r for r in rabbitmq_list]
-        self.amqp_url = ';'.join(rabbitmq_list)
 
+        conn = Connection()
+        conn.urls = rabbitmq_list
+        conn.reply_callback = self._message_handler
+        conn.api_event_callback = self._api_event_handler
+        conn.canonical_event_callback = self._canonical_event_handler
+        self.conn = conn
+
+        self.canonical_event_handlers = {}
         self.requests = {}
-        self.p2p_exchange = kombu.Exchange(self.P2P_EXCHANGE, type='topic', passive=True)
-        self.broadcast_exchange = kombu.Exchange(self.BROADCAST_EXCHANGE, type='topic', passive=True)
-
-        self.reply_queue_name = self.QUEUE_PREFIX % self.uuid
-        self.reply_queue = kombu.Queue(self.reply_queue_name, exchange=self.p2p_exchange, routing_key=self.reply_queue_name, auto_delete=True)
-
-        self.api_event_queue_name = self.API_EVENT_QUEUE_PREFIX % self.uuid
-        self.api_event_queue = kombu.Queue(self.api_event_queue_name, exchange=self.broadcast_exchange, routing_key=self.API_EVENT_QUEUE_BINDING_KEY, auto_delete=True)
-
-        self.canonical_event_queue_name = self.CANONICAL_EVENT_QUEUE_PREFIX % self.uuid
-        self.canonical_event_queue = kombu.Queue(self.canonical_event_queue_name, exchange=self.broadcast_exchange, routing_key=self.CANONICAL_EVENT_BINDING_KEY, auto_delete=True)
-
-        self.should_stop = False
-        self.reply_connection = None
-        self.reply_consumer = None
-        def start_reply_consuming():
-            try:
-                log.debug('reply consumer thread starts')
-                with kombu.Connection(self.amqp_url) as conn:
-                    self.reply_connection = conn
-                    with conn.Consumer([self.reply_queue], callbacks=[self._message_handler]) as consumer:
-                        self.reply_consumer = consumer
-                        while not self.should_stop:
-                            conn.drain_events()
-            except Exception as ce:
-                if 'exchange.declare' in str(ce):
-                    log.info('cannot declare RabbitMQ exchange(P2P), you need to start ZStack management server before starting dashboard')
-                    os._exit(1)
-                else:
-                    raise ce
-
         self.api_tasks = {}
+        self.conn.start()
 
-        self.reply_consumer_thread = threading.Thread(target=start_reply_consuming)
-        self.reply_consumer_thread.start()
-
-        self.api_event_connection = None
-        self.api_event_consumer = None
-        def start_api_event_consuming():
-            try:
-                log.debug('api event consumer thread starts')
-                with kombu.Connection(self.amqp_url) as conn:
-                    self.api_event_connection = conn
-                    with conn.Consumer([self.api_event_queue], callbacks=[self._api_event_handler]) as consumer:
-                        self.api_event_consumer = consumer
-                        while not self.should_stop:
-                            conn.drain_events()
-            except Exception as ce:
-                if 'exchange.declare' in str(ce):
-                    log.info('cannot declare RabbitMQ exchange(BROADCAST), you need to start ZStack management server before starting dashboard')
-                    os._exit(1)
-                else:
-                    raise ce
-
-        self.api_event_consumer_thread = threading.Thread(target=start_api_event_consuming)
-        self.api_event_consumer_thread.start()
-
-        self.canonical_event_connection = None
-        self.canonical_event_consumer = None
-        def start_canonical_event_consumer():
-            try:
-                log.debug('canonical event consumer thread starts')
-                with kombu.Connection(self.amqp_url) as conn:
-                    self.canonical_event_connection = conn
-                    with conn.Consumer([self.canonical_event_queue], callbacks=[self._canonical_event_handler]) as consumer:
-                        self.canonical_event_consumer = consumer
-                        while not self.should_stop:
-                            conn.drain_events()
-            except Exception as ce:
-                if 'exchange.declare' in str(ce):
-                    log.info('cannot declare RabbitMQ exchange(BROADCAST), you need to start ZStack management server before starting dashboard')
-                    os._exit(1)
-                else:
-                    raise ce
-
-        self.canonical_event_consumer_thread = threading.Thread(target=start_canonical_event_consumer)
-        self.canonical_event_consumer_thread.start()
-
-        self.producer_connection = kombu.Connection(self.amqp_url)
 
     def _canonical_event_handler(self, body, message):
         try:
@@ -275,7 +349,7 @@ class CloudBus(object):
 
             headers = {
                 self.CORRELATION_ID: mid,
-                self.REPLY_TO: self.reply_queue_name,
+                self.REPLY_TO: self.conn.reply_queue_name,
                 self.NO_NEED_REPLY_MSG: 'false'
             }
             msg_body['headers'] = headers
@@ -286,8 +360,7 @@ class CloudBus(object):
             log.debug('add request[id:%s]' % mid)
             self.requests[mid] = req
 
-            with kombu.producers[self.producer_connection].acquire(block=True) as producer:
-                producer.publish(msg, exchange=self.P2P_EXCHANGE, routing_key=self.API_SERVICE_ID)
+            self.conn.send(msg)
 
             log.debug('sent message: %s' % simplejson.dumps(msg))
         except simplejson.JSONDecodeError:
