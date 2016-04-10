@@ -413,7 +413,11 @@ module MImage {
             $scope.model = new ImageModel();
             $scope.model.current = current;
 
-            $scope.funcDelete = (win : any) => {
+            $scope.funcDeleteImage = (win : any) => {
+                win.open();
+            };
+
+            $scope.funcExpungeImage = (win : any) => {
                 win.open();
             };
 
@@ -687,12 +691,12 @@ module MImage {
                 win.open();
             };
 
-            $scope.funcDeleteImage = () => {
-                $scope.deleteImage.open();
+            $scope.funcDeleteImage = (win : any) => {
+                win.open();
             };
 
-            $scope.funcExpungeImage = (e) => {
-                e.open();
+            $scope.funcExpungeImage = (win : any) => {
+                win.open();
             };
 
             $scope.optionsDeleteImage = {
