@@ -1150,9 +1150,6 @@ module MVmInstance {
         q.addCondition({name: 'uuid', op: '!=', value: this.options.vm.instanceOfferingUuid});
         this.insMgr.query(q, (ins: MInstanceOffering.InstanceOffering[])=>{
           this.$scope.instanceOfferingOptions__.dataSource.data(ins);
-          if (ins.length > 0) {
-            this.$scope.instanceOfferingUuid = ins[0].uuid;
-          }
           chain.next();
         });
       }).done(()=>{
