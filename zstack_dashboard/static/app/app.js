@@ -16682,7 +16682,10 @@ var MImage;
             this.tagService = tagService;
             $scope.model = new ImageModel();
             $scope.model.current = current;
-            $scope.funcDelete = function (win) {
+            $scope.funcDeleteImage = function (win) {
+                win.open();
+            };
+            $scope.funcExpungeImage = function (win) {
                 win.open();
             };
             $scope.action = new Action($scope, imageMgr);
@@ -16942,11 +16945,11 @@ var MImage;
             $scope.funcCreateImage = function (win) {
                 win.open();
             };
-            $scope.funcDeleteImage = function () {
-                $scope.deleteImage.open();
+            $scope.funcDeleteImage = function (win) {
+                win.open();
             };
-            $scope.funcExpungeImage = function (e) {
-                e.open();
+            $scope.funcExpungeImage = function (win) {
+                win.open();
             };
             $scope.optionsDeleteImage = {
                 title: 'DELETE IMAGE',
