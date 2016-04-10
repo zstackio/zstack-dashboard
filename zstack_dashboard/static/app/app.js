@@ -19824,9 +19824,6 @@ var MVmInstance;
                 q.addCondition({ name: 'uuid', op: '!=', value: _this.options.vm.instanceOfferingUuid });
                 _this.insMgr.query(q, function (ins) {
                     _this.$scope.instanceOfferingOptions__.dataSource.data(ins);
-                    if (ins.length > 0) {
-                        _this.$scope.instanceOfferingUuid = ins[0].uuid;
-                    }
                     chain.next();
                 });
             }).done(function () {
@@ -24697,7 +24694,7 @@ var MSecurityGroup;
                     dataTextField: "name",
                     dataValueField: "uuid",
                     itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
-                        '<div style="color: black"><span class="z-label">Type:</span><span>#: type #</span></div>' +
+                        '<div style="color: black"><span class="z-label">TYPE:</span><span>#: type #</span></div>' +
                         '<div style="color: black"><span class="z-label">Zone UUID:</span><span>#: zoneUuid #</span></div>' +
                         '<div style="color: black"><span class="z-label">L2 Network UUID:</span><span>#: l2NetworkUuid #</span></div>' +
                         '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
