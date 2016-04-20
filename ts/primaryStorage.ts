@@ -99,6 +99,8 @@ module MPrimaryStorage {
       } else if (ps.type == 'Ceph') {
         msg = new ApiHeader.APIAddCephPrimaryStorageMsg();
         msg.monUrls = ps.cephMonUrls;
+      }else if(ps.type == 'SharedMountPoint'){
+        msg = new ApiHeader.APIAddSharedMountPointPrimaryStorageMsg();
       }
       msg.name = ps.name;
       msg.description = ps.description;
@@ -927,7 +929,7 @@ module MPrimaryStorage {
               }
 
               return true;
-            } else if (this.type == 'IscsiFileSystemBackendPrimaryStorage' || this.type == 'LocalStorage' && Utils.notNullnotUndefined(this.url)) {
+            } else if (this.type == 'SharedMountPoint' || this.type == 'IscsiFileSystemBackendPrimaryStorage' || this.type == 'LocalStorage' && Utils.notNullnotUndefined(this.url)) {
               if (this.url.indexOf('/') != 0) {
                 return false;
               }

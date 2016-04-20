@@ -419,6 +419,7 @@
     "primaryStorage.createPrimaryStorage.HINT3": "url (必填)為NFS主儲存,是'ip_or_dns_name:absolute_path',例如,'192.168.0.10: primaryStorage'",
     "primaryStorage.createPrimaryStorage.HINT4": "(必填) 為本地儲存,url 是一個絕對路徑,例如'/volumes'的,將每個實體機上新增該文件夾",
     "primaryStorage.createPrimaryStorage.HINT5": "(必填) 為ISCSI 儲存與BTRFS 後端,url 是一個絕對路徑,例如'/volumes'的,文件夾將在BTRFS 伺服器上新增",
+    "primaryStorage.createPrimaryStorage.HINT6": "(必填) 爲共享本地存儲,url 是一個絕對路徑,例如,設置爲'/volumes'，每個物理機都會使用此目錄並共享相同的文件",
     "primaryStorage.createPrimaryStorage.ALERT": "沒有已新增好的區域,請轉到",
     "primaryStorage.createPrimaryStorage.ALERT.2": "區域頁",
     "primaryStorage.createPrimaryStorage.ALERT.3": "來新增一個新",
