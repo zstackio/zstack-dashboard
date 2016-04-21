@@ -1,10 +1,15 @@
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var ApiHeader;
 (function (ApiHeader) {
     var SessionInventory = (function () {
         function SessionInventory() {
         }
         return SessionInventory;
-    })();
+    }());
     ApiHeader.SessionInventory = SessionInventory;
     var APISilentMsg = (function () {
         function APISilentMsg() {
@@ -16,7 +21,7 @@ var ApiHeader;
             return msg;
         };
         return APISilentMsg;
-    })();
+    }());
     ApiHeader.APISilentMsg = APISilentMsg;
     var FakePolicyAllowMsg = (function () {
         function FakePolicyAllowMsg() {
@@ -28,7 +33,7 @@ var ApiHeader;
             return msg;
         };
         return FakePolicyAllowMsg;
-    })();
+    }());
     ApiHeader.FakePolicyAllowMsg = FakePolicyAllowMsg;
     var FakePolicyDenyMsg = (function () {
         function FakePolicyDenyMsg() {
@@ -40,7 +45,7 @@ var ApiHeader;
             return msg;
         };
         return FakePolicyDenyMsg;
-    })();
+    }());
     ApiHeader.FakePolicyDenyMsg = FakePolicyDenyMsg;
     var FakePolicyAllowHas2RoleMsg = (function () {
         function FakePolicyAllowHas2RoleMsg() {
@@ -52,13 +57,13 @@ var ApiHeader;
             return msg;
         };
         return FakePolicyAllowHas2RoleMsg;
-    })();
+    }());
     ApiHeader.FakePolicyAllowHas2RoleMsg = FakePolicyAllowHas2RoleMsg;
     var QueryCondition = (function () {
         function QueryCondition() {
         }
         return QueryCondition;
-    })();
+    }());
     ApiHeader.QueryCondition = QueryCondition;
     var APIQueryGlobalConfigMsg = (function () {
         function APIQueryGlobalConfigMsg() {
@@ -70,7 +75,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryGlobalConfigMsg;
-    })();
+    }());
     ApiHeader.APIQueryGlobalConfigMsg = APIQueryGlobalConfigMsg;
     var APIListGlobalConfigMsg = (function () {
         function APIListGlobalConfigMsg() {
@@ -82,7 +87,7 @@ var ApiHeader;
             return msg;
         };
         return APIListGlobalConfigMsg;
-    })();
+    }());
     ApiHeader.APIListGlobalConfigMsg = APIListGlobalConfigMsg;
     var APIGetGlobalConfigMsg = (function () {
         function APIGetGlobalConfigMsg() {
@@ -94,7 +99,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetGlobalConfigMsg;
-    })();
+    }());
     ApiHeader.APIGetGlobalConfigMsg = APIGetGlobalConfigMsg;
     var APIUpdateGlobalConfigMsg = (function () {
         function APIUpdateGlobalConfigMsg() {
@@ -106,7 +111,7 @@ var ApiHeader;
             return msg;
         };
         return APIUpdateGlobalConfigMsg;
-    })();
+    }());
     ApiHeader.APIUpdateGlobalConfigMsg = APIUpdateGlobalConfigMsg;
     var APIGenerateInventoryQueryDetailsMsg = (function () {
         function APIGenerateInventoryQueryDetailsMsg() {
@@ -118,7 +123,7 @@ var ApiHeader;
             return msg;
         };
         return APIGenerateInventoryQueryDetailsMsg;
-    })();
+    }());
     ApiHeader.APIGenerateInventoryQueryDetailsMsg = APIGenerateInventoryQueryDetailsMsg;
     var APIGenerateQueryableFieldsMsg = (function () {
         function APIGenerateQueryableFieldsMsg() {
@@ -130,7 +135,7 @@ var ApiHeader;
             return msg;
         };
         return APIGenerateQueryableFieldsMsg;
-    })();
+    }());
     ApiHeader.APIGenerateQueryableFieldsMsg = APIGenerateQueryableFieldsMsg;
     var APIGetHostAllocatorStrategiesMsg = (function () {
         function APIGetHostAllocatorStrategiesMsg() {
@@ -142,7 +147,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetHostAllocatorStrategiesMsg;
-    })();
+    }());
     ApiHeader.APIGetHostAllocatorStrategiesMsg = APIGetHostAllocatorStrategiesMsg;
     var APIGetCpuMemoryCapacityMsg = (function () {
         function APIGetCpuMemoryCapacityMsg() {
@@ -154,7 +159,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetCpuMemoryCapacityMsg;
-    })();
+    }());
     ApiHeader.APIGetCpuMemoryCapacityMsg = APIGetCpuMemoryCapacityMsg;
     var APIUpdateVmInstanceMsg = (function () {
         function APIUpdateVmInstanceMsg() {
@@ -166,7 +171,7 @@ var ApiHeader;
             return msg;
         };
         return APIUpdateVmInstanceMsg;
-    })();
+    }());
     ApiHeader.APIUpdateVmInstanceMsg = APIUpdateVmInstanceMsg;
     var APIGetVmAttachableL3NetworkMsg = (function () {
         function APIGetVmAttachableL3NetworkMsg() {
@@ -178,7 +183,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetVmAttachableL3NetworkMsg;
-    })();
+    }());
     ApiHeader.APIGetVmAttachableL3NetworkMsg = APIGetVmAttachableL3NetworkMsg;
     var APIMigrateVmMsg = (function () {
         function APIMigrateVmMsg() {
@@ -190,7 +195,7 @@ var ApiHeader;
             return msg;
         };
         return APIMigrateVmMsg;
-    })();
+    }());
     ApiHeader.APIMigrateVmMsg = APIMigrateVmMsg;
     var APIStopVmInstanceMsg = (function () {
         function APIStopVmInstanceMsg() {
@@ -202,7 +207,7 @@ var ApiHeader;
             return msg;
         };
         return APIStopVmInstanceMsg;
-    })();
+    }());
     ApiHeader.APIStopVmInstanceMsg = APIStopVmInstanceMsg;
     var APIChangeInstanceOfferingMsg = (function () {
         function APIChangeInstanceOfferingMsg() {
@@ -214,19 +219,19 @@ var ApiHeader;
             return msg;
         };
         return APIChangeInstanceOfferingMsg;
-    })();
+    }());
     ApiHeader.APIChangeInstanceOfferingMsg = APIChangeInstanceOfferingMsg;
     var NOVTriple = (function () {
         function NOVTriple() {
         }
         return NOVTriple;
-    })();
+    }());
     ApiHeader.NOVTriple = NOVTriple;
     var NOLTriple = (function () {
         function NOLTriple() {
         }
         return NOLTriple;
-    })();
+    }());
     ApiHeader.NOLTriple = NOLTriple;
     var APISearchVmInstanceMsg = (function () {
         function APISearchVmInstanceMsg() {
@@ -238,7 +243,7 @@ var ApiHeader;
             return msg;
         };
         return APISearchVmInstanceMsg;
-    })();
+    }());
     ApiHeader.APISearchVmInstanceMsg = APISearchVmInstanceMsg;
     var APIGetVmAttachableDataVolumeMsg = (function () {
         function APIGetVmAttachableDataVolumeMsg() {
@@ -250,7 +255,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetVmAttachableDataVolumeMsg;
-    })();
+    }());
     ApiHeader.APIGetVmAttachableDataVolumeMsg = APIGetVmAttachableDataVolumeMsg;
     var APIQueryVmNicMsg = (function () {
         function APIQueryVmNicMsg() {
@@ -262,7 +267,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryVmNicMsg;
-    })();
+    }());
     ApiHeader.APIQueryVmNicMsg = APIQueryVmNicMsg;
     var APIAttachL3NetworkToVmMsg = (function () {
         function APIAttachL3NetworkToVmMsg() {
@@ -274,7 +279,7 @@ var ApiHeader;
             return msg;
         };
         return APIAttachL3NetworkToVmMsg;
-    })();
+    }());
     ApiHeader.APIAttachL3NetworkToVmMsg = APIAttachL3NetworkToVmMsg;
     var APIDestroyVmInstanceMsg = (function () {
         function APIDestroyVmInstanceMsg() {
@@ -286,7 +291,7 @@ var ApiHeader;
             return msg;
         };
         return APIDestroyVmInstanceMsg;
-    })();
+    }());
     ApiHeader.APIDestroyVmInstanceMsg = APIDestroyVmInstanceMsg;
     var APIGetVmMigrationCandidateHostsMsg = (function () {
         function APIGetVmMigrationCandidateHostsMsg() {
@@ -298,7 +303,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetVmMigrationCandidateHostsMsg;
-    })();
+    }());
     ApiHeader.APIGetVmMigrationCandidateHostsMsg = APIGetVmMigrationCandidateHostsMsg;
     var APIQueryVmInstanceMsg = (function () {
         function APIQueryVmInstanceMsg() {
@@ -310,7 +315,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryVmInstanceMsg;
-    })();
+    }());
     ApiHeader.APIQueryVmInstanceMsg = APIQueryVmInstanceMsg;
     var APIDetachL3NetworkFromVmMsg = (function () {
         function APIDetachL3NetworkFromVmMsg() {
@@ -322,7 +327,7 @@ var ApiHeader;
             return msg;
         };
         return APIDetachL3NetworkFromVmMsg;
-    })();
+    }());
     ApiHeader.APIDetachL3NetworkFromVmMsg = APIDetachL3NetworkFromVmMsg;
     var APIListVmNicMsg = (function () {
         function APIListVmNicMsg() {
@@ -334,7 +339,7 @@ var ApiHeader;
             return msg;
         };
         return APIListVmNicMsg;
-    })();
+    }());
     ApiHeader.APIListVmNicMsg = APIListVmNicMsg;
     var APIListVmInstanceMsg = (function () {
         function APIListVmInstanceMsg() {
@@ -346,7 +351,7 @@ var ApiHeader;
             return msg;
         };
         return APIListVmInstanceMsg;
-    })();
+    }());
     ApiHeader.APIListVmInstanceMsg = APIListVmInstanceMsg;
     var APIRebootVmInstanceMsg = (function () {
         function APIRebootVmInstanceMsg() {
@@ -358,7 +363,7 @@ var ApiHeader;
             return msg;
         };
         return APIRebootVmInstanceMsg;
-    })();
+    }());
     ApiHeader.APIRebootVmInstanceMsg = APIRebootVmInstanceMsg;
     var APICreateVmInstanceMsg = (function () {
         function APICreateVmInstanceMsg() {
@@ -370,7 +375,7 @@ var ApiHeader;
             return msg;
         };
         return APICreateVmInstanceMsg;
-    })();
+    }());
     ApiHeader.APICreateVmInstanceMsg = APICreateVmInstanceMsg;
     var APIGetVmInstanceMsg = (function () {
         function APIGetVmInstanceMsg() {
@@ -382,7 +387,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetVmInstanceMsg;
-    })();
+    }());
     ApiHeader.APIGetVmInstanceMsg = APIGetVmInstanceMsg;
     var APIStartVmInstanceMsg = (function () {
         function APIStartVmInstanceMsg() {
@@ -394,7 +399,7 @@ var ApiHeader;
             return msg;
         };
         return APIStartVmInstanceMsg;
-    })();
+    }());
     ApiHeader.APIStartVmInstanceMsg = APIStartVmInstanceMsg;
     var APIChangeImageStateMsg = (function () {
         function APIChangeImageStateMsg() {
@@ -406,7 +411,7 @@ var ApiHeader;
             return msg;
         };
         return APIChangeImageStateMsg;
-    })();
+    }());
     ApiHeader.APIChangeImageStateMsg = APIChangeImageStateMsg;
     var APIGetImageMsg = (function () {
         function APIGetImageMsg() {
@@ -418,7 +423,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetImageMsg;
-    })();
+    }());
     ApiHeader.APIGetImageMsg = APIGetImageMsg;
     var APIUpdateImageMsg = (function () {
         function APIUpdateImageMsg() {
@@ -430,7 +435,7 @@ var ApiHeader;
             return msg;
         };
         return APIUpdateImageMsg;
-    })();
+    }());
     ApiHeader.APIUpdateImageMsg = APIUpdateImageMsg;
     var APIDeleteImageMsg = (function () {
         function APIDeleteImageMsg() {
@@ -442,7 +447,7 @@ var ApiHeader;
             return msg;
         };
         return APIDeleteImageMsg;
-    })();
+    }());
     ApiHeader.APIDeleteImageMsg = APIDeleteImageMsg;
     var APISearchImageMsg = (function () {
         function APISearchImageMsg() {
@@ -454,7 +459,7 @@ var ApiHeader;
             return msg;
         };
         return APISearchImageMsg;
-    })();
+    }());
     ApiHeader.APISearchImageMsg = APISearchImageMsg;
     var APICreateDataVolumeTemplateFromVolumeMsg = (function () {
         function APICreateDataVolumeTemplateFromVolumeMsg() {
@@ -466,7 +471,7 @@ var ApiHeader;
             return msg;
         };
         return APICreateDataVolumeTemplateFromVolumeMsg;
-    })();
+    }());
     ApiHeader.APICreateDataVolumeTemplateFromVolumeMsg = APICreateDataVolumeTemplateFromVolumeMsg;
     var APICreateRootVolumeTemplateFromRootVolumeMsg = (function () {
         function APICreateRootVolumeTemplateFromRootVolumeMsg() {
@@ -478,7 +483,7 @@ var ApiHeader;
             return msg;
         };
         return APICreateRootVolumeTemplateFromRootVolumeMsg;
-    })();
+    }());
     ApiHeader.APICreateRootVolumeTemplateFromRootVolumeMsg = APICreateRootVolumeTemplateFromRootVolumeMsg;
     var APIQueryImageMsg = (function () {
         function APIQueryImageMsg() {
@@ -490,7 +495,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryImageMsg;
-    })();
+    }());
     ApiHeader.APIQueryImageMsg = APIQueryImageMsg;
     var APIListImageMsg = (function () {
         function APIListImageMsg() {
@@ -502,7 +507,7 @@ var ApiHeader;
             return msg;
         };
         return APIListImageMsg;
-    })();
+    }());
     ApiHeader.APIListImageMsg = APIListImageMsg;
     var APICreateRootVolumeTemplateFromVolumeSnapshotMsg = (function () {
         function APICreateRootVolumeTemplateFromVolumeSnapshotMsg() {
@@ -514,7 +519,7 @@ var ApiHeader;
             return msg;
         };
         return APICreateRootVolumeTemplateFromVolumeSnapshotMsg;
-    })();
+    }());
     ApiHeader.APICreateRootVolumeTemplateFromVolumeSnapshotMsg = APICreateRootVolumeTemplateFromVolumeSnapshotMsg;
     var APIAddImageMsg = (function () {
         function APIAddImageMsg() {
@@ -526,7 +531,7 @@ var ApiHeader;
             return msg;
         };
         return APIAddImageMsg;
-    })();
+    }());
     ApiHeader.APIAddImageMsg = APIAddImageMsg;
     var APIRequestConsoleAccessMsg = (function () {
         function APIRequestConsoleAccessMsg() {
@@ -538,7 +543,7 @@ var ApiHeader;
             return msg;
         };
         return APIRequestConsoleAccessMsg;
-    })();
+    }());
     ApiHeader.APIRequestConsoleAccessMsg = APIRequestConsoleAccessMsg;
     var APIBackupDataVolumeMsg = (function () {
         function APIBackupDataVolumeMsg() {
@@ -550,7 +555,7 @@ var ApiHeader;
             return msg;
         };
         return APIBackupDataVolumeMsg;
-    })();
+    }());
     ApiHeader.APIBackupDataVolumeMsg = APIBackupDataVolumeMsg;
     var APIAttachDataVolumeToVmMsg = (function () {
         function APIAttachDataVolumeToVmMsg() {
@@ -562,7 +567,7 @@ var ApiHeader;
             return msg;
         };
         return APIAttachDataVolumeToVmMsg;
-    })();
+    }());
     ApiHeader.APIAttachDataVolumeToVmMsg = APIAttachDataVolumeToVmMsg;
     var APISearchVolumeMsg = (function () {
         function APISearchVolumeMsg() {
@@ -574,7 +579,7 @@ var ApiHeader;
             return msg;
         };
         return APISearchVolumeMsg;
-    })();
+    }());
     ApiHeader.APISearchVolumeMsg = APISearchVolumeMsg;
     var APIUpdateVolumeMsg = (function () {
         function APIUpdateVolumeMsg() {
@@ -586,7 +591,7 @@ var ApiHeader;
             return msg;
         };
         return APIUpdateVolumeMsg;
-    })();
+    }());
     ApiHeader.APIUpdateVolumeMsg = APIUpdateVolumeMsg;
     var APIQueryVolumeMsg = (function () {
         function APIQueryVolumeMsg() {
@@ -598,7 +603,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryVolumeMsg;
-    })();
+    }());
     ApiHeader.APIQueryVolumeMsg = APIQueryVolumeMsg;
     var APICreateDataVolumeFromVolumeSnapshotMsg = (function () {
         function APICreateDataVolumeFromVolumeSnapshotMsg() {
@@ -610,7 +615,7 @@ var ApiHeader;
             return msg;
         };
         return APICreateDataVolumeFromVolumeSnapshotMsg;
-    })();
+    }());
     ApiHeader.APICreateDataVolumeFromVolumeSnapshotMsg = APICreateDataVolumeFromVolumeSnapshotMsg;
     var APICreateDataVolumeFromVolumeTemplateMsg = (function () {
         function APICreateDataVolumeFromVolumeTemplateMsg() {
@@ -622,7 +627,7 @@ var ApiHeader;
             return msg;
         };
         return APICreateDataVolumeFromVolumeTemplateMsg;
-    })();
+    }());
     ApiHeader.APICreateDataVolumeFromVolumeTemplateMsg = APICreateDataVolumeFromVolumeTemplateMsg;
     var APIDetachDataVolumeFromVmMsg = (function () {
         function APIDetachDataVolumeFromVmMsg() {
@@ -634,7 +639,7 @@ var ApiHeader;
             return msg;
         };
         return APIDetachDataVolumeFromVmMsg;
-    })();
+    }());
     ApiHeader.APIDetachDataVolumeFromVmMsg = APIDetachDataVolumeFromVmMsg;
     var APIGetVolumeMsg = (function () {
         function APIGetVolumeMsg() {
@@ -646,7 +651,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetVolumeMsg;
-    })();
+    }());
     ApiHeader.APIGetVolumeMsg = APIGetVolumeMsg;
     var APICreateDataVolumeMsg = (function () {
         function APICreateDataVolumeMsg() {
@@ -658,7 +663,7 @@ var ApiHeader;
             return msg;
         };
         return APICreateDataVolumeMsg;
-    })();
+    }());
     ApiHeader.APICreateDataVolumeMsg = APICreateDataVolumeMsg;
     var APIGetDataVolumeAttachableVmMsg = (function () {
         function APIGetDataVolumeAttachableVmMsg() {
@@ -670,7 +675,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetDataVolumeAttachableVmMsg;
-    })();
+    }());
     ApiHeader.APIGetDataVolumeAttachableVmMsg = APIGetDataVolumeAttachableVmMsg;
     var APIGetVolumeFormatMsg = (function () {
         function APIGetVolumeFormatMsg() {
@@ -682,7 +687,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetVolumeFormatMsg;
-    })();
+    }());
     ApiHeader.APIGetVolumeFormatMsg = APIGetVolumeFormatMsg;
     var APIDeleteDataVolumeMsg = (function () {
         function APIDeleteDataVolumeMsg() {
@@ -694,7 +699,7 @@ var ApiHeader;
             return msg;
         };
         return APIDeleteDataVolumeMsg;
-    })();
+    }());
     ApiHeader.APIDeleteDataVolumeMsg = APIDeleteDataVolumeMsg;
     var APICreateVolumeSnapshotMsg = (function () {
         function APICreateVolumeSnapshotMsg() {
@@ -706,7 +711,7 @@ var ApiHeader;
             return msg;
         };
         return APICreateVolumeSnapshotMsg;
-    })();
+    }());
     ApiHeader.APICreateVolumeSnapshotMsg = APICreateVolumeSnapshotMsg;
     var APIListVolumeMsg = (function () {
         function APIListVolumeMsg() {
@@ -718,7 +723,7 @@ var ApiHeader;
             return msg;
         };
         return APIListVolumeMsg;
-    })();
+    }());
     ApiHeader.APIListVolumeMsg = APIListVolumeMsg;
     var APIChangeVolumeStateMsg = (function () {
         function APIChangeVolumeStateMsg() {
@@ -730,7 +735,7 @@ var ApiHeader;
             return msg;
         };
         return APIChangeVolumeStateMsg;
-    })();
+    }());
     ApiHeader.APIChangeVolumeStateMsg = APIChangeVolumeStateMsg;
     var APIIsReadyToGoMsg = (function () {
         function APIIsReadyToGoMsg() {
@@ -742,7 +747,7 @@ var ApiHeader;
             return msg;
         };
         return APIIsReadyToGoMsg;
-    })();
+    }());
     ApiHeader.APIIsReadyToGoMsg = APIIsReadyToGoMsg;
     var APIListDiskOfferingMsg = (function () {
         function APIListDiskOfferingMsg() {
@@ -754,7 +759,7 @@ var ApiHeader;
             return msg;
         };
         return APIListDiskOfferingMsg;
-    })();
+    }());
     ApiHeader.APIListDiskOfferingMsg = APIListDiskOfferingMsg;
     var APIGenerateApiTypeScriptDefinitionMsg = (function () {
         function APIGenerateApiTypeScriptDefinitionMsg() {
@@ -766,7 +771,7 @@ var ApiHeader;
             return msg;
         };
         return APIGenerateApiTypeScriptDefinitionMsg;
-    })();
+    }());
     ApiHeader.APIGenerateApiTypeScriptDefinitionMsg = APIGenerateApiTypeScriptDefinitionMsg;
     var APIDeleteDiskOfferingMsg = (function () {
         function APIDeleteDiskOfferingMsg() {
@@ -778,7 +783,7 @@ var ApiHeader;
             return msg;
         };
         return APIDeleteDiskOfferingMsg;
-    })();
+    }());
     ApiHeader.APIDeleteDiskOfferingMsg = APIDeleteDiskOfferingMsg;
     var APIGenerateGroovyClassMsg = (function () {
         function APIGenerateGroovyClassMsg() {
@@ -790,7 +795,7 @@ var ApiHeader;
             return msg;
         };
         return APIGenerateGroovyClassMsg;
-    })();
+    }());
     ApiHeader.APIGenerateGroovyClassMsg = APIGenerateGroovyClassMsg;
     var APIQueryInstanceOfferingMsg = (function () {
         function APIQueryInstanceOfferingMsg() {
@@ -802,7 +807,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryInstanceOfferingMsg;
-    })();
+    }());
     ApiHeader.APIQueryInstanceOfferingMsg = APIQueryInstanceOfferingMsg;
     var APIUpdateInstanceOfferingMsg = (function () {
         function APIUpdateInstanceOfferingMsg() {
@@ -814,7 +819,7 @@ var ApiHeader;
             return msg;
         };
         return APIUpdateInstanceOfferingMsg;
-    })();
+    }());
     ApiHeader.APIUpdateInstanceOfferingMsg = APIUpdateInstanceOfferingMsg;
     var APICreateInstanceOfferingMsg = (function () {
         function APICreateInstanceOfferingMsg() {
@@ -826,7 +831,7 @@ var ApiHeader;
             return msg;
         };
         return APICreateInstanceOfferingMsg;
-    })();
+    }());
     ApiHeader.APICreateInstanceOfferingMsg = APICreateInstanceOfferingMsg;
     var APIGenerateApiJsonTemplateMsg = (function () {
         function APIGenerateApiJsonTemplateMsg() {
@@ -838,7 +843,7 @@ var ApiHeader;
             return msg;
         };
         return APIGenerateApiJsonTemplateMsg;
-    })();
+    }());
     ApiHeader.APIGenerateApiJsonTemplateMsg = APIGenerateApiJsonTemplateMsg;
     var APICreateDiskOfferingMsg = (function () {
         function APICreateDiskOfferingMsg() {
@@ -850,7 +855,7 @@ var ApiHeader;
             return msg;
         };
         return APICreateDiskOfferingMsg;
-    })();
+    }());
     ApiHeader.APICreateDiskOfferingMsg = APICreateDiskOfferingMsg;
     var APIGetInstanceOfferingMsg = (function () {
         function APIGetInstanceOfferingMsg() {
@@ -862,7 +867,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetInstanceOfferingMsg;
-    })();
+    }());
     ApiHeader.APIGetInstanceOfferingMsg = APIGetInstanceOfferingMsg;
     var APIListInstanceOfferingMsg = (function () {
         function APIListInstanceOfferingMsg() {
@@ -874,7 +879,7 @@ var ApiHeader;
             return msg;
         };
         return APIListInstanceOfferingMsg;
-    })();
+    }());
     ApiHeader.APIListInstanceOfferingMsg = APIListInstanceOfferingMsg;
     var APISearchDnsMsg = (function () {
         function APISearchDnsMsg() {
@@ -886,7 +891,7 @@ var ApiHeader;
             return msg;
         };
         return APISearchDnsMsg;
-    })();
+    }());
     ApiHeader.APISearchDnsMsg = APISearchDnsMsg;
     var APISearchDiskOfferingMsg = (function () {
         function APISearchDiskOfferingMsg() {
@@ -898,7 +903,7 @@ var ApiHeader;
             return msg;
         };
         return APISearchDiskOfferingMsg;
-    })();
+    }());
     ApiHeader.APISearchDiskOfferingMsg = APISearchDiskOfferingMsg;
     var APIDeleteInstanceOfferingMsg = (function () {
         function APIDeleteInstanceOfferingMsg() {
@@ -910,7 +915,7 @@ var ApiHeader;
             return msg;
         };
         return APIDeleteInstanceOfferingMsg;
-    })();
+    }());
     ApiHeader.APIDeleteInstanceOfferingMsg = APIDeleteInstanceOfferingMsg;
     var APIGenerateSqlVOViewMsg = (function () {
         function APIGenerateSqlVOViewMsg() {
@@ -922,7 +927,7 @@ var ApiHeader;
             return msg;
         };
         return APIGenerateSqlVOViewMsg;
-    })();
+    }());
     ApiHeader.APIGenerateSqlVOViewMsg = APIGenerateSqlVOViewMsg;
     var APIGenerateTestLinkDocumentMsg = (function () {
         function APIGenerateTestLinkDocumentMsg() {
@@ -934,7 +939,7 @@ var ApiHeader;
             return msg;
         };
         return APIGenerateTestLinkDocumentMsg;
-    })();
+    }());
     ApiHeader.APIGenerateTestLinkDocumentMsg = APIGenerateTestLinkDocumentMsg;
     var APIGetGlobalPropertyMsg = (function () {
         function APIGetGlobalPropertyMsg() {
@@ -946,7 +951,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetGlobalPropertyMsg;
-    })();
+    }());
     ApiHeader.APIGetGlobalPropertyMsg = APIGetGlobalPropertyMsg;
     var APIChangeInstanceOfferingStateMsg = (function () {
         function APIChangeInstanceOfferingStateMsg() {
@@ -958,7 +963,7 @@ var ApiHeader;
             return msg;
         };
         return APIChangeInstanceOfferingStateMsg;
-    })();
+    }());
     ApiHeader.APIChangeInstanceOfferingStateMsg = APIChangeInstanceOfferingStateMsg;
     var APIGenerateSqlIndexMsg = (function () {
         function APIGenerateSqlIndexMsg() {
@@ -970,7 +975,7 @@ var ApiHeader;
             return msg;
         };
         return APIGenerateSqlIndexMsg;
-    })();
+    }());
     ApiHeader.APIGenerateSqlIndexMsg = APIGenerateSqlIndexMsg;
     var APIQueryDiskOfferingMsg = (function () {
         function APIQueryDiskOfferingMsg() {
@@ -982,7 +987,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryDiskOfferingMsg;
-    })();
+    }());
     ApiHeader.APIQueryDiskOfferingMsg = APIQueryDiskOfferingMsg;
     var APIGetDiskOfferingMsg = (function () {
         function APIGetDiskOfferingMsg() {
@@ -994,7 +999,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetDiskOfferingMsg;
-    })();
+    }());
     ApiHeader.APIGetDiskOfferingMsg = APIGetDiskOfferingMsg;
     var APIGenerateSqlForeignKeyMsg = (function () {
         function APIGenerateSqlForeignKeyMsg() {
@@ -1006,7 +1011,7 @@ var ApiHeader;
             return msg;
         };
         return APIGenerateSqlForeignKeyMsg;
-    })();
+    }());
     ApiHeader.APIGenerateSqlForeignKeyMsg = APIGenerateSqlForeignKeyMsg;
     var APIUpdateDiskOfferingMsg = (function () {
         function APIUpdateDiskOfferingMsg() {
@@ -1018,7 +1023,7 @@ var ApiHeader;
             return msg;
         };
         return APIUpdateDiskOfferingMsg;
-    })();
+    }());
     ApiHeader.APIUpdateDiskOfferingMsg = APIUpdateDiskOfferingMsg;
     var APIChangeDiskOfferingStateMsg = (function () {
         function APIChangeDiskOfferingStateMsg() {
@@ -1030,7 +1035,7 @@ var ApiHeader;
             return msg;
         };
         return APIChangeDiskOfferingStateMsg;
-    })();
+    }());
     ApiHeader.APIChangeDiskOfferingStateMsg = APIChangeDiskOfferingStateMsg;
     var APISearchInstanceOfferingMsg = (function () {
         function APISearchInstanceOfferingMsg() {
@@ -1042,7 +1047,7 @@ var ApiHeader;
             return msg;
         };
         return APISearchInstanceOfferingMsg;
-    })();
+    }());
     ApiHeader.APISearchInstanceOfferingMsg = APISearchInstanceOfferingMsg;
     var APISearchPrimaryStorageMsg = (function () {
         function APISearchPrimaryStorageMsg() {
@@ -1054,7 +1059,7 @@ var ApiHeader;
             return msg;
         };
         return APISearchPrimaryStorageMsg;
-    })();
+    }());
     ApiHeader.APISearchPrimaryStorageMsg = APISearchPrimaryStorageMsg;
     var APIGetPrimaryStorageTypesMsg = (function () {
         function APIGetPrimaryStorageTypesMsg() {
@@ -1066,7 +1071,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetPrimaryStorageTypesMsg;
-    })();
+    }());
     ApiHeader.APIGetPrimaryStorageTypesMsg = APIGetPrimaryStorageTypesMsg;
     var APIAttachPrimaryStorageToClusterMsg = (function () {
         function APIAttachPrimaryStorageToClusterMsg() {
@@ -1078,7 +1083,7 @@ var ApiHeader;
             return msg;
         };
         return APIAttachPrimaryStorageToClusterMsg;
-    })();
+    }());
     ApiHeader.APIAttachPrimaryStorageToClusterMsg = APIAttachPrimaryStorageToClusterMsg;
     var APIListPrimaryStorageMsg = (function () {
         function APIListPrimaryStorageMsg() {
@@ -1090,7 +1095,7 @@ var ApiHeader;
             return msg;
         };
         return APIListPrimaryStorageMsg;
-    })();
+    }());
     ApiHeader.APIListPrimaryStorageMsg = APIListPrimaryStorageMsg;
     var APIGetPrimaryStorageCapacityMsg = (function () {
         function APIGetPrimaryStorageCapacityMsg() {
@@ -1102,7 +1107,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetPrimaryStorageCapacityMsg;
-    })();
+    }());
     ApiHeader.APIGetPrimaryStorageCapacityMsg = APIGetPrimaryStorageCapacityMsg;
     var APIUpdatePrimaryStorageMsg = (function () {
         function APIUpdatePrimaryStorageMsg() {
@@ -1114,7 +1119,7 @@ var ApiHeader;
             return msg;
         };
         return APIUpdatePrimaryStorageMsg;
-    })();
+    }());
     ApiHeader.APIUpdatePrimaryStorageMsg = APIUpdatePrimaryStorageMsg;
     var APIGetPrimaryStorageMsg = (function () {
         function APIGetPrimaryStorageMsg() {
@@ -1126,7 +1131,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetPrimaryStorageMsg;
-    })();
+    }());
     ApiHeader.APIGetPrimaryStorageMsg = APIGetPrimaryStorageMsg;
     var APIQueryPrimaryStorageMsg = (function () {
         function APIQueryPrimaryStorageMsg() {
@@ -1138,7 +1143,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryPrimaryStorageMsg;
-    })();
+    }());
     ApiHeader.APIQueryPrimaryStorageMsg = APIQueryPrimaryStorageMsg;
     var APIChangePrimaryStorageStateMsg = (function () {
         function APIChangePrimaryStorageStateMsg() {
@@ -1150,7 +1155,7 @@ var ApiHeader;
             return msg;
         };
         return APIChangePrimaryStorageStateMsg;
-    })();
+    }());
     ApiHeader.APIChangePrimaryStorageStateMsg = APIChangePrimaryStorageStateMsg;
     var APISyncPrimaryStorageCapacityMsg = (function () {
         function APISyncPrimaryStorageCapacityMsg() {
@@ -1162,7 +1167,7 @@ var ApiHeader;
             return msg;
         };
         return APISyncPrimaryStorageCapacityMsg;
-    })();
+    }());
     ApiHeader.APISyncPrimaryStorageCapacityMsg = APISyncPrimaryStorageCapacityMsg;
     var APIDeletePrimaryStorageMsg = (function () {
         function APIDeletePrimaryStorageMsg() {
@@ -1174,7 +1179,7 @@ var ApiHeader;
             return msg;
         };
         return APIDeletePrimaryStorageMsg;
-    })();
+    }());
     ApiHeader.APIDeletePrimaryStorageMsg = APIDeletePrimaryStorageMsg;
     var APIReconnectPrimaryStorageMsg = (function () {
         function APIReconnectPrimaryStorageMsg() {
@@ -1186,7 +1191,7 @@ var ApiHeader;
             return msg;
         };
         return APIReconnectPrimaryStorageMsg;
-    })();
+    }());
     ApiHeader.APIReconnectPrimaryStorageMsg = APIReconnectPrimaryStorageMsg;
     var APIDetachPrimaryStorageFromClusterMsg = (function () {
         function APIDetachPrimaryStorageFromClusterMsg() {
@@ -1198,7 +1203,7 @@ var ApiHeader;
             return msg;
         };
         return APIDetachPrimaryStorageFromClusterMsg;
-    })();
+    }());
     ApiHeader.APIDetachPrimaryStorageFromClusterMsg = APIDetachPrimaryStorageFromClusterMsg;
     var APIGetPrimaryStorageAllocatorStrategiesMsg = (function () {
         function APIGetPrimaryStorageAllocatorStrategiesMsg() {
@@ -1210,7 +1215,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetPrimaryStorageAllocatorStrategiesMsg;
-    })();
+    }());
     ApiHeader.APIGetPrimaryStorageAllocatorStrategiesMsg = APIGetPrimaryStorageAllocatorStrategiesMsg;
     var APIQueryVolumeSnapshotTreeMsg = (function () {
         function APIQueryVolumeSnapshotTreeMsg() {
@@ -1222,7 +1227,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryVolumeSnapshotTreeMsg;
-    })();
+    }());
     ApiHeader.APIQueryVolumeSnapshotTreeMsg = APIQueryVolumeSnapshotTreeMsg;
     var APIDeleteVolumeSnapshotMsg = (function () {
         function APIDeleteVolumeSnapshotMsg() {
@@ -1234,7 +1239,7 @@ var ApiHeader;
             return msg;
         };
         return APIDeleteVolumeSnapshotMsg;
-    })();
+    }());
     ApiHeader.APIDeleteVolumeSnapshotMsg = APIDeleteVolumeSnapshotMsg;
     var APIUpdateVolumeSnapshotMsg = (function () {
         function APIUpdateVolumeSnapshotMsg() {
@@ -1246,7 +1251,7 @@ var ApiHeader;
             return msg;
         };
         return APIUpdateVolumeSnapshotMsg;
-    })();
+    }());
     ApiHeader.APIUpdateVolumeSnapshotMsg = APIUpdateVolumeSnapshotMsg;
     var APIDeleteVolumeSnapshotFromBackupStorageMsg = (function () {
         function APIDeleteVolumeSnapshotFromBackupStorageMsg() {
@@ -1258,7 +1263,7 @@ var ApiHeader;
             return msg;
         };
         return APIDeleteVolumeSnapshotFromBackupStorageMsg;
-    })();
+    }());
     ApiHeader.APIDeleteVolumeSnapshotFromBackupStorageMsg = APIDeleteVolumeSnapshotFromBackupStorageMsg;
     var APIQueryVolumeSnapshotMsg = (function () {
         function APIQueryVolumeSnapshotMsg() {
@@ -1270,7 +1275,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryVolumeSnapshotMsg;
-    })();
+    }());
     ApiHeader.APIQueryVolumeSnapshotMsg = APIQueryVolumeSnapshotMsg;
     var APIRevertVolumeFromSnapshotMsg = (function () {
         function APIRevertVolumeFromSnapshotMsg() {
@@ -1282,7 +1287,7 @@ var ApiHeader;
             return msg;
         };
         return APIRevertVolumeFromSnapshotMsg;
-    })();
+    }());
     ApiHeader.APIRevertVolumeFromSnapshotMsg = APIRevertVolumeFromSnapshotMsg;
     var APIBackupVolumeSnapshotMsg = (function () {
         function APIBackupVolumeSnapshotMsg() {
@@ -1294,7 +1299,7 @@ var ApiHeader;
             return msg;
         };
         return APIBackupVolumeSnapshotMsg;
-    })();
+    }());
     ApiHeader.APIBackupVolumeSnapshotMsg = APIBackupVolumeSnapshotMsg;
     var APIGetVolumeSnapshotTreeMsg = (function () {
         function APIGetVolumeSnapshotTreeMsg() {
@@ -1306,7 +1311,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetVolumeSnapshotTreeMsg;
-    })();
+    }());
     ApiHeader.APIGetVolumeSnapshotTreeMsg = APIGetVolumeSnapshotTreeMsg;
     var APIQueryBackupStorageMsg = (function () {
         function APIQueryBackupStorageMsg() {
@@ -1318,7 +1323,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryBackupStorageMsg;
-    })();
+    }());
     ApiHeader.APIQueryBackupStorageMsg = APIQueryBackupStorageMsg;
     var APIListBackupStorageMsg = (function () {
         function APIListBackupStorageMsg() {
@@ -1330,7 +1335,7 @@ var ApiHeader;
             return msg;
         };
         return APIListBackupStorageMsg;
-    })();
+    }());
     ApiHeader.APIListBackupStorageMsg = APIListBackupStorageMsg;
     var APIAttachBackupStorageToZoneMsg = (function () {
         function APIAttachBackupStorageToZoneMsg() {
@@ -1342,7 +1347,7 @@ var ApiHeader;
             return msg;
         };
         return APIAttachBackupStorageToZoneMsg;
-    })();
+    }());
     ApiHeader.APIAttachBackupStorageToZoneMsg = APIAttachBackupStorageToZoneMsg;
     var APISearchBackupStorageMsg = (function () {
         function APISearchBackupStorageMsg() {
@@ -1354,7 +1359,7 @@ var ApiHeader;
             return msg;
         };
         return APISearchBackupStorageMsg;
-    })();
+    }());
     ApiHeader.APISearchBackupStorageMsg = APISearchBackupStorageMsg;
     var APIGetBackupStorageMsg = (function () {
         function APIGetBackupStorageMsg() {
@@ -1366,7 +1371,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetBackupStorageMsg;
-    })();
+    }());
     ApiHeader.APIGetBackupStorageMsg = APIGetBackupStorageMsg;
     var APIGetBackupStorageTypesMsg = (function () {
         function APIGetBackupStorageTypesMsg() {
@@ -1378,7 +1383,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetBackupStorageTypesMsg;
-    })();
+    }());
     ApiHeader.APIGetBackupStorageTypesMsg = APIGetBackupStorageTypesMsg;
     var APIChangeBackupStorageStateMsg = (function () {
         function APIChangeBackupStorageStateMsg() {
@@ -1390,7 +1395,7 @@ var ApiHeader;
             return msg;
         };
         return APIChangeBackupStorageStateMsg;
-    })();
+    }());
     ApiHeader.APIChangeBackupStorageStateMsg = APIChangeBackupStorageStateMsg;
     var APIScanBackupStorageMsg = (function () {
         function APIScanBackupStorageMsg() {
@@ -1402,7 +1407,7 @@ var ApiHeader;
             return msg;
         };
         return APIScanBackupStorageMsg;
-    })();
+    }());
     ApiHeader.APIScanBackupStorageMsg = APIScanBackupStorageMsg;
     var APIGetBackupStorageCapacityMsg = (function () {
         function APIGetBackupStorageCapacityMsg() {
@@ -1414,7 +1419,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetBackupStorageCapacityMsg;
-    })();
+    }());
     ApiHeader.APIGetBackupStorageCapacityMsg = APIGetBackupStorageCapacityMsg;
     var APIDetachBackupStorageFromZoneMsg = (function () {
         function APIDetachBackupStorageFromZoneMsg() {
@@ -1426,7 +1431,7 @@ var ApiHeader;
             return msg;
         };
         return APIDetachBackupStorageFromZoneMsg;
-    })();
+    }());
     ApiHeader.APIDetachBackupStorageFromZoneMsg = APIDetachBackupStorageFromZoneMsg;
     var APIUpdateBackupStorageMsg = (function () {
         function APIUpdateBackupStorageMsg() {
@@ -1438,7 +1443,7 @@ var ApiHeader;
             return msg;
         };
         return APIUpdateBackupStorageMsg;
-    })();
+    }());
     ApiHeader.APIUpdateBackupStorageMsg = APIUpdateBackupStorageMsg;
     var APIDeleteBackupStorageMsg = (function () {
         function APIDeleteBackupStorageMsg() {
@@ -1450,7 +1455,7 @@ var ApiHeader;
             return msg;
         };
         return APIDeleteBackupStorageMsg;
-    })();
+    }());
     ApiHeader.APIDeleteBackupStorageMsg = APIDeleteBackupStorageMsg;
     var APIListL3NetworkMsg = (function () {
         function APIListL3NetworkMsg() {
@@ -1462,7 +1467,7 @@ var ApiHeader;
             return msg;
         };
         return APIListL3NetworkMsg;
-    })();
+    }());
     ApiHeader.APIListL3NetworkMsg = APIListL3NetworkMsg;
     var APIAddDnsToL3NetworkMsg = (function () {
         function APIAddDnsToL3NetworkMsg() {
@@ -1474,7 +1479,7 @@ var ApiHeader;
             return msg;
         };
         return APIAddDnsToL3NetworkMsg;
-    })();
+    }());
     ApiHeader.APIAddDnsToL3NetworkMsg = APIAddDnsToL3NetworkMsg;
     var APICreateL3NetworkMsg = (function () {
         function APICreateL3NetworkMsg() {
@@ -1486,7 +1491,7 @@ var ApiHeader;
             return msg;
         };
         return APICreateL3NetworkMsg;
-    })();
+    }());
     ApiHeader.APICreateL3NetworkMsg = APICreateL3NetworkMsg;
     var APIGetFreeIpMsg = (function () {
         function APIGetFreeIpMsg() {
@@ -1498,7 +1503,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetFreeIpMsg;
-    })();
+    }());
     ApiHeader.APIGetFreeIpMsg = APIGetFreeIpMsg;
     var APIUpdateL3NetworkMsg = (function () {
         function APIUpdateL3NetworkMsg() {
@@ -1510,7 +1515,7 @@ var ApiHeader;
             return msg;
         };
         return APIUpdateL3NetworkMsg;
-    })();
+    }());
     ApiHeader.APIUpdateL3NetworkMsg = APIUpdateL3NetworkMsg;
     var APIDeleteIpRangeMsg = (function () {
         function APIDeleteIpRangeMsg() {
@@ -1522,7 +1527,7 @@ var ApiHeader;
             return msg;
         };
         return APIDeleteIpRangeMsg;
-    })();
+    }());
     ApiHeader.APIDeleteIpRangeMsg = APIDeleteIpRangeMsg;
     var APIChangeL3NetworkStateMsg = (function () {
         function APIChangeL3NetworkStateMsg() {
@@ -1534,7 +1539,7 @@ var ApiHeader;
             return msg;
         };
         return APIChangeL3NetworkStateMsg;
-    })();
+    }());
     ApiHeader.APIChangeL3NetworkStateMsg = APIChangeL3NetworkStateMsg;
     var APIGetL3NetworkMsg = (function () {
         function APIGetL3NetworkMsg() {
@@ -1546,7 +1551,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetL3NetworkMsg;
-    })();
+    }());
     ApiHeader.APIGetL3NetworkMsg = APIGetL3NetworkMsg;
     var APIAddIpRangeMsg = (function () {
         function APIAddIpRangeMsg() {
@@ -1558,7 +1563,7 @@ var ApiHeader;
             return msg;
         };
         return APIAddIpRangeMsg;
-    })();
+    }());
     ApiHeader.APIAddIpRangeMsg = APIAddIpRangeMsg;
     var APIGetL3NetworkTypesMsg = (function () {
         function APIGetL3NetworkTypesMsg() {
@@ -1570,7 +1575,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetL3NetworkTypesMsg;
-    })();
+    }());
     ApiHeader.APIGetL3NetworkTypesMsg = APIGetL3NetworkTypesMsg;
     var APISearchL3NetworkMsg = (function () {
         function APISearchL3NetworkMsg() {
@@ -1582,7 +1587,7 @@ var ApiHeader;
             return msg;
         };
         return APISearchL3NetworkMsg;
-    })();
+    }());
     ApiHeader.APISearchL3NetworkMsg = APISearchL3NetworkMsg;
     var APIAddIpRangeByNetworkCidrMsg = (function () {
         function APIAddIpRangeByNetworkCidrMsg() {
@@ -1594,7 +1599,7 @@ var ApiHeader;
             return msg;
         };
         return APIAddIpRangeByNetworkCidrMsg;
-    })();
+    }());
     ApiHeader.APIAddIpRangeByNetworkCidrMsg = APIAddIpRangeByNetworkCidrMsg;
     var APIQueryIpRangeMsg = (function () {
         function APIQueryIpRangeMsg() {
@@ -1606,7 +1611,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryIpRangeMsg;
-    })();
+    }());
     ApiHeader.APIQueryIpRangeMsg = APIQueryIpRangeMsg;
     var APIRemoveDnsFromL3NetworkMsg = (function () {
         function APIRemoveDnsFromL3NetworkMsg() {
@@ -1618,7 +1623,7 @@ var ApiHeader;
             return msg;
         };
         return APIRemoveDnsFromL3NetworkMsg;
-    })();
+    }());
     ApiHeader.APIRemoveDnsFromL3NetworkMsg = APIRemoveDnsFromL3NetworkMsg;
     var APIListIpRangeMsg = (function () {
         function APIListIpRangeMsg() {
@@ -1630,7 +1635,7 @@ var ApiHeader;
             return msg;
         };
         return APIListIpRangeMsg;
-    })();
+    }());
     ApiHeader.APIListIpRangeMsg = APIListIpRangeMsg;
     var APIGetIpAddressCapacityMsg = (function () {
         function APIGetIpAddressCapacityMsg() {
@@ -1642,7 +1647,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetIpAddressCapacityMsg;
-    })();
+    }());
     ApiHeader.APIGetIpAddressCapacityMsg = APIGetIpAddressCapacityMsg;
     var APIDeleteL3NetworkMsg = (function () {
         function APIDeleteL3NetworkMsg() {
@@ -1654,7 +1659,7 @@ var ApiHeader;
             return msg;
         };
         return APIDeleteL3NetworkMsg;
-    })();
+    }());
     ApiHeader.APIDeleteL3NetworkMsg = APIDeleteL3NetworkMsg;
     var APIUpdateIpRangeMsg = (function () {
         function APIUpdateIpRangeMsg() {
@@ -1666,7 +1671,7 @@ var ApiHeader;
             return msg;
         };
         return APIUpdateIpRangeMsg;
-    })();
+    }());
     ApiHeader.APIUpdateIpRangeMsg = APIUpdateIpRangeMsg;
     var APIQueryL3NetworkMsg = (function () {
         function APIQueryL3NetworkMsg() {
@@ -1678,7 +1683,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryL3NetworkMsg;
-    })();
+    }());
     ApiHeader.APIQueryL3NetworkMsg = APIQueryL3NetworkMsg;
     var APIAttachNetworkServiceToL3NetworkMsg = (function () {
         function APIAttachNetworkServiceToL3NetworkMsg() {
@@ -1690,7 +1695,7 @@ var ApiHeader;
             return msg;
         };
         return APIAttachNetworkServiceToL3NetworkMsg;
-    })();
+    }());
     ApiHeader.APIAttachNetworkServiceToL3NetworkMsg = APIAttachNetworkServiceToL3NetworkMsg;
     var APIAddNetworkServiceProviderMsg = (function () {
         function APIAddNetworkServiceProviderMsg() {
@@ -1702,7 +1707,7 @@ var ApiHeader;
             return msg;
         };
         return APIAddNetworkServiceProviderMsg;
-    })();
+    }());
     ApiHeader.APIAddNetworkServiceProviderMsg = APIAddNetworkServiceProviderMsg;
     var APIQueryNetworkServiceL3NetworkRefMsg = (function () {
         function APIQueryNetworkServiceL3NetworkRefMsg() {
@@ -1714,7 +1719,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryNetworkServiceL3NetworkRefMsg;
-    })();
+    }());
     ApiHeader.APIQueryNetworkServiceL3NetworkRefMsg = APIQueryNetworkServiceL3NetworkRefMsg;
     var APIAttachNetworkServiceProviderToL2NetworkMsg = (function () {
         function APIAttachNetworkServiceProviderToL2NetworkMsg() {
@@ -1726,7 +1731,7 @@ var ApiHeader;
             return msg;
         };
         return APIAttachNetworkServiceProviderToL2NetworkMsg;
-    })();
+    }());
     ApiHeader.APIAttachNetworkServiceProviderToL2NetworkMsg = APIAttachNetworkServiceProviderToL2NetworkMsg;
     var APISearchNetworkServiceProviderMsg = (function () {
         function APISearchNetworkServiceProviderMsg() {
@@ -1738,7 +1743,7 @@ var ApiHeader;
             return msg;
         };
         return APISearchNetworkServiceProviderMsg;
-    })();
+    }());
     ApiHeader.APISearchNetworkServiceProviderMsg = APISearchNetworkServiceProviderMsg;
     var APIDetachNetworkServiceProviderFromL2NetworkMsg = (function () {
         function APIDetachNetworkServiceProviderFromL2NetworkMsg() {
@@ -1750,7 +1755,7 @@ var ApiHeader;
             return msg;
         };
         return APIDetachNetworkServiceProviderFromL2NetworkMsg;
-    })();
+    }());
     ApiHeader.APIDetachNetworkServiceProviderFromL2NetworkMsg = APIDetachNetworkServiceProviderFromL2NetworkMsg;
     var APIQueryNetworkServiceProviderMsg = (function () {
         function APIQueryNetworkServiceProviderMsg() {
@@ -1762,7 +1767,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryNetworkServiceProviderMsg;
-    })();
+    }());
     ApiHeader.APIQueryNetworkServiceProviderMsg = APIQueryNetworkServiceProviderMsg;
     var APIGetNetworkServiceTypesMsg = (function () {
         function APIGetNetworkServiceTypesMsg() {
@@ -1774,7 +1779,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetNetworkServiceTypesMsg;
-    })();
+    }());
     ApiHeader.APIGetNetworkServiceTypesMsg = APIGetNetworkServiceTypesMsg;
     var APIGetNetworkServiceProviderMsg = (function () {
         function APIGetNetworkServiceProviderMsg() {
@@ -1786,7 +1791,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetNetworkServiceProviderMsg;
-    })();
+    }());
     ApiHeader.APIGetNetworkServiceProviderMsg = APIGetNetworkServiceProviderMsg;
     var APIListNetworkServiceProviderMsg = (function () {
         function APIListNetworkServiceProviderMsg() {
@@ -1798,7 +1803,7 @@ var ApiHeader;
             return msg;
         };
         return APIListNetworkServiceProviderMsg;
-    })();
+    }());
     ApiHeader.APIListNetworkServiceProviderMsg = APIListNetworkServiceProviderMsg;
     var APIAttachL2NetworkToClusterMsg = (function () {
         function APIAttachL2NetworkToClusterMsg() {
@@ -1810,7 +1815,7 @@ var ApiHeader;
             return msg;
         };
         return APIAttachL2NetworkToClusterMsg;
-    })();
+    }());
     ApiHeader.APIAttachL2NetworkToClusterMsg = APIAttachL2NetworkToClusterMsg;
     var APIQueryL2VlanNetworkMsg = (function () {
         function APIQueryL2VlanNetworkMsg() {
@@ -1822,7 +1827,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryL2VlanNetworkMsg;
-    })();
+    }());
     ApiHeader.APIQueryL2VlanNetworkMsg = APIQueryL2VlanNetworkMsg;
     var APIGetL2NetworkMsg = (function () {
         function APIGetL2NetworkMsg() {
@@ -1834,7 +1839,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetL2NetworkMsg;
-    })();
+    }());
     ApiHeader.APIGetL2NetworkMsg = APIGetL2NetworkMsg;
     var APIListL2NetworkMsg = (function () {
         function APIListL2NetworkMsg() {
@@ -1846,7 +1851,7 @@ var ApiHeader;
             return msg;
         };
         return APIListL2NetworkMsg;
-    })();
+    }());
     ApiHeader.APIListL2NetworkMsg = APIListL2NetworkMsg;
     var APISearchL2VlanNetworkMsg = (function () {
         function APISearchL2VlanNetworkMsg() {
@@ -1858,7 +1863,7 @@ var ApiHeader;
             return msg;
         };
         return APISearchL2VlanNetworkMsg;
-    })();
+    }());
     ApiHeader.APISearchL2VlanNetworkMsg = APISearchL2VlanNetworkMsg;
     var APICreateL2VlanNetworkMsg = (function () {
         function APICreateL2VlanNetworkMsg() {
@@ -1870,7 +1875,7 @@ var ApiHeader;
             return msg;
         };
         return APICreateL2VlanNetworkMsg;
-    })();
+    }());
     ApiHeader.APICreateL2VlanNetworkMsg = APICreateL2VlanNetworkMsg;
     var APIDetachL2NetworkFromClusterMsg = (function () {
         function APIDetachL2NetworkFromClusterMsg() {
@@ -1882,7 +1887,7 @@ var ApiHeader;
             return msg;
         };
         return APIDetachL2NetworkFromClusterMsg;
-    })();
+    }());
     ApiHeader.APIDetachL2NetworkFromClusterMsg = APIDetachL2NetworkFromClusterMsg;
     var APIDeleteL2NetworkMsg = (function () {
         function APIDeleteL2NetworkMsg() {
@@ -1894,7 +1899,7 @@ var ApiHeader;
             return msg;
         };
         return APIDeleteL2NetworkMsg;
-    })();
+    }());
     ApiHeader.APIDeleteL2NetworkMsg = APIDeleteL2NetworkMsg;
     var APISearchL2NetworkMsg = (function () {
         function APISearchL2NetworkMsg() {
@@ -1906,7 +1911,7 @@ var ApiHeader;
             return msg;
         };
         return APISearchL2NetworkMsg;
-    })();
+    }());
     ApiHeader.APISearchL2NetworkMsg = APISearchL2NetworkMsg;
     var APICreateL2NoVlanNetworkMsg = (function () {
         function APICreateL2NoVlanNetworkMsg() {
@@ -1918,7 +1923,7 @@ var ApiHeader;
             return msg;
         };
         return APICreateL2NoVlanNetworkMsg;
-    })();
+    }());
     ApiHeader.APICreateL2NoVlanNetworkMsg = APICreateL2NoVlanNetworkMsg;
     var APIListL2VlanNetworkMsg = (function () {
         function APIListL2VlanNetworkMsg() {
@@ -1930,7 +1935,7 @@ var ApiHeader;
             return msg;
         };
         return APIListL2VlanNetworkMsg;
-    })();
+    }());
     ApiHeader.APIListL2VlanNetworkMsg = APIListL2VlanNetworkMsg;
     var APIUpdateL2NetworkMsg = (function () {
         function APIUpdateL2NetworkMsg() {
@@ -1942,7 +1947,7 @@ var ApiHeader;
             return msg;
         };
         return APIUpdateL2NetworkMsg;
-    })();
+    }());
     ApiHeader.APIUpdateL2NetworkMsg = APIUpdateL2NetworkMsg;
     var APIGetL2VlanNetworkMsg = (function () {
         function APIGetL2VlanNetworkMsg() {
@@ -1954,7 +1959,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetL2VlanNetworkMsg;
-    })();
+    }());
     ApiHeader.APIGetL2VlanNetworkMsg = APIGetL2VlanNetworkMsg;
     var APIGetL2NetworkTypesMsg = (function () {
         function APIGetL2NetworkTypesMsg() {
@@ -1966,7 +1971,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetL2NetworkTypesMsg;
-    })();
+    }());
     ApiHeader.APIGetL2NetworkTypesMsg = APIGetL2NetworkTypesMsg;
     var APIQueryL2NetworkMsg = (function () {
         function APIQueryL2NetworkMsg() {
@@ -1978,7 +1983,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryL2NetworkMsg;
-    })();
+    }());
     ApiHeader.APIQueryL2NetworkMsg = APIQueryL2NetworkMsg;
     var APIDeleteSearchIndexMsg = (function () {
         function APIDeleteSearchIndexMsg() {
@@ -1990,7 +1995,7 @@ var ApiHeader;
             return msg;
         };
         return APIDeleteSearchIndexMsg;
-    })();
+    }());
     ApiHeader.APIDeleteSearchIndexMsg = APIDeleteSearchIndexMsg;
     var APISearchGenerateSqlTriggerMsg = (function () {
         function APISearchGenerateSqlTriggerMsg() {
@@ -2002,7 +2007,7 @@ var ApiHeader;
             return msg;
         };
         return APISearchGenerateSqlTriggerMsg;
-    })();
+    }());
     ApiHeader.APISearchGenerateSqlTriggerMsg = APISearchGenerateSqlTriggerMsg;
     var APICreateSearchIndexMsg = (function () {
         function APICreateSearchIndexMsg() {
@@ -2014,7 +2019,7 @@ var ApiHeader;
             return msg;
         };
         return APICreateSearchIndexMsg;
-    })();
+    }());
     ApiHeader.APICreateSearchIndexMsg = APICreateSearchIndexMsg;
     var APIQueryUserTagMsg = (function () {
         function APIQueryUserTagMsg() {
@@ -2026,7 +2031,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryUserTagMsg;
-    })();
+    }());
     ApiHeader.APIQueryUserTagMsg = APIQueryUserTagMsg;
     var APIQuerySystemTagMsg = (function () {
         function APIQuerySystemTagMsg() {
@@ -2038,7 +2043,7 @@ var ApiHeader;
             return msg;
         };
         return APIQuerySystemTagMsg;
-    })();
+    }());
     ApiHeader.APIQuerySystemTagMsg = APIQuerySystemTagMsg;
     var APIDeleteTagMsg = (function () {
         function APIDeleteTagMsg() {
@@ -2050,7 +2055,7 @@ var ApiHeader;
             return msg;
         };
         return APIDeleteTagMsg;
-    })();
+    }());
     ApiHeader.APIDeleteTagMsg = APIDeleteTagMsg;
     var APICreateUserTagMsg = (function () {
         function APICreateUserTagMsg() {
@@ -2062,7 +2067,7 @@ var ApiHeader;
             return msg;
         };
         return APICreateUserTagMsg;
-    })();
+    }());
     ApiHeader.APICreateUserTagMsg = APICreateUserTagMsg;
     var APICreateSystemTagMsg = (function () {
         function APICreateSystemTagMsg() {
@@ -2074,7 +2079,7 @@ var ApiHeader;
             return msg;
         };
         return APICreateSystemTagMsg;
-    })();
+    }());
     ApiHeader.APICreateSystemTagMsg = APICreateSystemTagMsg;
     var APIUpdateSystemTagMsg = (function () {
         function APIUpdateSystemTagMsg() {
@@ -2086,7 +2091,7 @@ var ApiHeader;
             return msg;
         };
         return APIUpdateSystemTagMsg;
-    })();
+    }());
     ApiHeader.APIUpdateSystemTagMsg = APIUpdateSystemTagMsg;
     var APIQueryTagMsg = (function () {
         function APIQueryTagMsg() {
@@ -2098,7 +2103,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryTagMsg;
-    })();
+    }());
     ApiHeader.APIQueryTagMsg = APIQueryTagMsg;
     var APIQueryManagementNodeMsg = (function () {
         function APIQueryManagementNodeMsg() {
@@ -2110,7 +2115,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryManagementNodeMsg;
-    })();
+    }());
     ApiHeader.APIQueryManagementNodeMsg = APIQueryManagementNodeMsg;
     var APIListManagementNodeMsg = (function () {
         function APIListManagementNodeMsg() {
@@ -2122,7 +2127,7 @@ var ApiHeader;
             return msg;
         };
         return APIListManagementNodeMsg;
-    })();
+    }());
     ApiHeader.APIListManagementNodeMsg = APIListManagementNodeMsg;
     var APICreateMessage = (function () {
         function APICreateMessage() {
@@ -2134,7 +2139,7 @@ var ApiHeader;
             return msg;
         };
         return APICreateMessage;
-    })();
+    }());
     ApiHeader.APICreateMessage = APICreateMessage;
     var APIListClusterMsg = (function () {
         function APIListClusterMsg() {
@@ -2146,7 +2151,7 @@ var ApiHeader;
             return msg;
         };
         return APIListClusterMsg;
-    })();
+    }());
     ApiHeader.APIListClusterMsg = APIListClusterMsg;
     var APIGetClusterMsg = (function () {
         function APIGetClusterMsg() {
@@ -2158,7 +2163,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetClusterMsg;
-    })();
+    }());
     ApiHeader.APIGetClusterMsg = APIGetClusterMsg;
     var APISearchClusterMsg = (function () {
         function APISearchClusterMsg() {
@@ -2170,7 +2175,7 @@ var ApiHeader;
             return msg;
         };
         return APISearchClusterMsg;
-    })();
+    }());
     ApiHeader.APISearchClusterMsg = APISearchClusterMsg;
     var APIQueryClusterMsg = (function () {
         function APIQueryClusterMsg() {
@@ -2182,7 +2187,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryClusterMsg;
-    })();
+    }());
     ApiHeader.APIQueryClusterMsg = APIQueryClusterMsg;
     var APIDeleteClusterMsg = (function () {
         function APIDeleteClusterMsg() {
@@ -2194,7 +2199,7 @@ var ApiHeader;
             return msg;
         };
         return APIDeleteClusterMsg;
-    })();
+    }());
     ApiHeader.APIDeleteClusterMsg = APIDeleteClusterMsg;
     var APIUpdateClusterMsg = (function () {
         function APIUpdateClusterMsg() {
@@ -2206,7 +2211,7 @@ var ApiHeader;
             return msg;
         };
         return APIUpdateClusterMsg;
-    })();
+    }());
     ApiHeader.APIUpdateClusterMsg = APIUpdateClusterMsg;
     var APICreateClusterMsg = (function () {
         function APICreateClusterMsg() {
@@ -2218,7 +2223,7 @@ var ApiHeader;
             return msg;
         };
         return APICreateClusterMsg;
-    })();
+    }());
     ApiHeader.APICreateClusterMsg = APICreateClusterMsg;
     var APIChangeClusterStateMsg = (function () {
         function APIChangeClusterStateMsg() {
@@ -2230,7 +2235,7 @@ var ApiHeader;
             return msg;
         };
         return APIChangeClusterStateMsg;
-    })();
+    }());
     ApiHeader.APIChangeClusterStateMsg = APIChangeClusterStateMsg;
     var APIAttachPolicyToUserGroupMsg = (function () {
         function APIAttachPolicyToUserGroupMsg() {
@@ -2242,7 +2247,7 @@ var ApiHeader;
             return msg;
         };
         return APIAttachPolicyToUserGroupMsg;
-    })();
+    }());
     ApiHeader.APIAttachPolicyToUserGroupMsg = APIAttachPolicyToUserGroupMsg;
     var APIRemoveUserFromGroupMsg = (function () {
         function APIRemoveUserFromGroupMsg() {
@@ -2254,7 +2259,7 @@ var ApiHeader;
             return msg;
         };
         return APIRemoveUserFromGroupMsg;
-    })();
+    }());
     ApiHeader.APIRemoveUserFromGroupMsg = APIRemoveUserFromGroupMsg;
     var APIAttachPolicyToUserMsg = (function () {
         function APIAttachPolicyToUserMsg() {
@@ -2266,7 +2271,7 @@ var ApiHeader;
             return msg;
         };
         return APIAttachPolicyToUserMsg;
-    })();
+    }());
     ApiHeader.APIAttachPolicyToUserMsg = APIAttachPolicyToUserMsg;
     var APIGetAccountMsg = (function () {
         function APIGetAccountMsg() {
@@ -2278,7 +2283,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetAccountMsg;
-    })();
+    }());
     ApiHeader.APIGetAccountMsg = APIGetAccountMsg;
     var APIListAccountMsg = (function () {
         function APIListAccountMsg() {
@@ -2290,7 +2295,7 @@ var ApiHeader;
             return msg;
         };
         return APIListAccountMsg;
-    })();
+    }());
     ApiHeader.APIListAccountMsg = APIListAccountMsg;
     var APIAddUserToGroupMsg = (function () {
         function APIAddUserToGroupMsg() {
@@ -2302,7 +2307,7 @@ var ApiHeader;
             return msg;
         };
         return APIAddUserToGroupMsg;
-    })();
+    }());
     ApiHeader.APIAddUserToGroupMsg = APIAddUserToGroupMsg;
     var APIQueryQuotaMsg = (function () {
         function APIQueryQuotaMsg() {
@@ -2314,7 +2319,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryQuotaMsg;
-    })();
+    }());
     ApiHeader.APIQueryQuotaMsg = APIQueryQuotaMsg;
     var APIShareResourceMsg = (function () {
         function APIShareResourceMsg() {
@@ -2326,7 +2331,7 @@ var ApiHeader;
             return msg;
         };
         return APIShareResourceMsg;
-    })();
+    }());
     ApiHeader.APIShareResourceMsg = APIShareResourceMsg;
     var APIListPolicyMsg = (function () {
         function APIListPolicyMsg() {
@@ -2338,7 +2343,7 @@ var ApiHeader;
             return msg;
         };
         return APIListPolicyMsg;
-    })();
+    }());
     ApiHeader.APIListPolicyMsg = APIListPolicyMsg;
     var APICreateAccountMsg = (function () {
         function APICreateAccountMsg() {
@@ -2350,7 +2355,7 @@ var ApiHeader;
             return msg;
         };
         return APICreateAccountMsg;
-    })();
+    }());
     ApiHeader.APICreateAccountMsg = APICreateAccountMsg;
     var APIDeleteAccountMsg = (function () {
         function APIDeleteAccountMsg() {
@@ -2362,7 +2367,7 @@ var ApiHeader;
             return msg;
         };
         return APIDeleteAccountMsg;
-    })();
+    }());
     ApiHeader.APIDeleteAccountMsg = APIDeleteAccountMsg;
     var APICreateUserGroupMsg = (function () {
         function APICreateUserGroupMsg() {
@@ -2374,7 +2379,7 @@ var ApiHeader;
             return msg;
         };
         return APICreateUserGroupMsg;
-    })();
+    }());
     ApiHeader.APICreateUserGroupMsg = APICreateUserGroupMsg;
     var APICreateUserMsg = (function () {
         function APICreateUserMsg() {
@@ -2386,7 +2391,7 @@ var ApiHeader;
             return msg;
         };
         return APICreateUserMsg;
-    })();
+    }());
     ApiHeader.APICreateUserMsg = APICreateUserMsg;
     var APILogInByUserMsg = (function () {
         function APILogInByUserMsg() {
@@ -2398,7 +2403,7 @@ var ApiHeader;
             return msg;
         };
         return APILogInByUserMsg;
-    })();
+    }());
     ApiHeader.APILogInByUserMsg = APILogInByUserMsg;
     var APISearchAccountMsg = (function () {
         function APISearchAccountMsg() {
@@ -2410,7 +2415,7 @@ var ApiHeader;
             return msg;
         };
         return APISearchAccountMsg;
-    })();
+    }());
     ApiHeader.APISearchAccountMsg = APISearchAccountMsg;
     var APISearchPolicyMsg = (function () {
         function APISearchPolicyMsg() {
@@ -2422,7 +2427,7 @@ var ApiHeader;
             return msg;
         };
         return APISearchPolicyMsg;
-    })();
+    }());
     ApiHeader.APISearchPolicyMsg = APISearchPolicyMsg;
     var APISessionMessage = (function () {
         function APISessionMessage() {
@@ -2434,7 +2439,7 @@ var ApiHeader;
             return msg;
         };
         return APISessionMessage;
-    })();
+    }());
     ApiHeader.APISessionMessage = APISessionMessage;
     var APIGetUserMsg = (function () {
         function APIGetUserMsg() {
@@ -2446,7 +2451,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetUserMsg;
-    })();
+    }());
     ApiHeader.APIGetUserMsg = APIGetUserMsg;
     var APIGetUserGroupMsg = (function () {
         function APIGetUserGroupMsg() {
@@ -2458,7 +2463,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetUserGroupMsg;
-    })();
+    }());
     ApiHeader.APIGetUserGroupMsg = APIGetUserGroupMsg;
     var APIDetachPolicyFromUserGroupMsg = (function () {
         function APIDetachPolicyFromUserGroupMsg() {
@@ -2470,7 +2475,7 @@ var ApiHeader;
             return msg;
         };
         return APIDetachPolicyFromUserGroupMsg;
-    })();
+    }());
     ApiHeader.APIDetachPolicyFromUserGroupMsg = APIDetachPolicyFromUserGroupMsg;
     var APIUpdateQuotaMsg = (function () {
         function APIUpdateQuotaMsg() {
@@ -2482,7 +2487,7 @@ var ApiHeader;
             return msg;
         };
         return APIUpdateQuotaMsg;
-    })();
+    }());
     ApiHeader.APIUpdateQuotaMsg = APIUpdateQuotaMsg;
     var APIQueryAccountMsg = (function () {
         function APIQueryAccountMsg() {
@@ -2494,7 +2499,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryAccountMsg;
-    })();
+    }());
     ApiHeader.APIQueryAccountMsg = APIQueryAccountMsg;
     var APIQueryPolicyMsg = (function () {
         function APIQueryPolicyMsg() {
@@ -2506,7 +2511,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryPolicyMsg;
-    })();
+    }());
     ApiHeader.APIQueryPolicyMsg = APIQueryPolicyMsg;
     var APIQueryUserMsg = (function () {
         function APIQueryUserMsg() {
@@ -2518,7 +2523,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryUserMsg;
-    })();
+    }());
     ApiHeader.APIQueryUserMsg = APIQueryUserMsg;
     var APIDeletePolicyMsg = (function () {
         function APIDeletePolicyMsg() {
@@ -2530,7 +2535,7 @@ var ApiHeader;
             return msg;
         };
         return APIDeletePolicyMsg;
-    })();
+    }());
     ApiHeader.APIDeletePolicyMsg = APIDeletePolicyMsg;
     var APIRevokeResourceSharingMsg = (function () {
         function APIRevokeResourceSharingMsg() {
@@ -2542,7 +2547,7 @@ var ApiHeader;
             return msg;
         };
         return APIRevokeResourceSharingMsg;
-    })();
+    }());
     ApiHeader.APIRevokeResourceSharingMsg = APIRevokeResourceSharingMsg;
     var APILogInByAccountMsg = (function () {
         function APILogInByAccountMsg() {
@@ -2554,7 +2559,7 @@ var ApiHeader;
             return msg;
         };
         return APILogInByAccountMsg;
-    })();
+    }());
     ApiHeader.APILogInByAccountMsg = APILogInByAccountMsg;
     var APIValidateSessionMsg = (function () {
         function APIValidateSessionMsg() {
@@ -2566,7 +2571,7 @@ var ApiHeader;
             return msg;
         };
         return APIValidateSessionMsg;
-    })();
+    }());
     ApiHeader.APIValidateSessionMsg = APIValidateSessionMsg;
     var APISearchUserGroupMsg = (function () {
         function APISearchUserGroupMsg() {
@@ -2578,7 +2583,7 @@ var ApiHeader;
             return msg;
         };
         return APISearchUserGroupMsg;
-    })();
+    }());
     ApiHeader.APISearchUserGroupMsg = APISearchUserGroupMsg;
     var APIListUserMsg = (function () {
         function APIListUserMsg() {
@@ -2590,7 +2595,7 @@ var ApiHeader;
             return msg;
         };
         return APIListUserMsg;
-    })();
+    }());
     ApiHeader.APIListUserMsg = APIListUserMsg;
     var APIDeleteUserMsg = (function () {
         function APIDeleteUserMsg() {
@@ -2602,7 +2607,7 @@ var ApiHeader;
             return msg;
         };
         return APIDeleteUserMsg;
-    })();
+    }());
     ApiHeader.APIDeleteUserMsg = APIDeleteUserMsg;
     var APIUpdateUserMsg = (function () {
         function APIUpdateUserMsg() {
@@ -2614,7 +2619,7 @@ var ApiHeader;
             return msg;
         };
         return APIUpdateUserMsg;
-    })();
+    }());
     ApiHeader.APIUpdateUserMsg = APIUpdateUserMsg;
     var APISearchUserMsg = (function () {
         function APISearchUserMsg() {
@@ -2626,7 +2631,7 @@ var ApiHeader;
             return msg;
         };
         return APISearchUserMsg;
-    })();
+    }());
     ApiHeader.APISearchUserMsg = APISearchUserMsg;
     var APIUpdateAccountMsg = (function () {
         function APIUpdateAccountMsg() {
@@ -2638,7 +2643,7 @@ var ApiHeader;
             return msg;
         };
         return APIUpdateAccountMsg;
-    })();
+    }());
     ApiHeader.APIUpdateAccountMsg = APIUpdateAccountMsg;
     var APIDeleteUserGroupMsg = (function () {
         function APIDeleteUserGroupMsg() {
@@ -2650,7 +2655,7 @@ var ApiHeader;
             return msg;
         };
         return APIDeleteUserGroupMsg;
-    })();
+    }());
     ApiHeader.APIDeleteUserGroupMsg = APIDeleteUserGroupMsg;
     var APILogOutMsg = (function () {
         function APILogOutMsg() {
@@ -2662,7 +2667,7 @@ var ApiHeader;
             return msg;
         };
         return APILogOutMsg;
-    })();
+    }());
     ApiHeader.APILogOutMsg = APILogOutMsg;
     var APIGetPolicyMsg = (function () {
         function APIGetPolicyMsg() {
@@ -2674,7 +2679,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetPolicyMsg;
-    })();
+    }());
     ApiHeader.APIGetPolicyMsg = APIGetPolicyMsg;
     (function (StatementEffect) {
         StatementEffect[StatementEffect["Allow"] = 0] = "Allow";
@@ -2685,7 +2690,7 @@ var ApiHeader;
         function Statement() {
         }
         return Statement;
-    })();
+    }());
     ApiHeader.Statement = Statement;
     var APICreatePolicyMsg = (function () {
         function APICreatePolicyMsg() {
@@ -2697,7 +2702,7 @@ var ApiHeader;
             return msg;
         };
         return APICreatePolicyMsg;
-    })();
+    }());
     ApiHeader.APICreatePolicyMsg = APICreatePolicyMsg;
     var APIDetachPolicyFromUserMsg = (function () {
         function APIDetachPolicyFromUserMsg() {
@@ -2709,7 +2714,7 @@ var ApiHeader;
             return msg;
         };
         return APIDetachPolicyFromUserMsg;
-    })();
+    }());
     ApiHeader.APIDetachPolicyFromUserMsg = APIDetachPolicyFromUserMsg;
     var APIQueryUserGroupMsg = (function () {
         function APIQueryUserGroupMsg() {
@@ -2721,7 +2726,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryUserGroupMsg;
-    })();
+    }());
     ApiHeader.APIQueryUserGroupMsg = APIQueryUserGroupMsg;
     var APIUpdateZoneMsg = (function () {
         function APIUpdateZoneMsg() {
@@ -2733,7 +2738,7 @@ var ApiHeader;
             return msg;
         };
         return APIUpdateZoneMsg;
-    })();
+    }());
     ApiHeader.APIUpdateZoneMsg = APIUpdateZoneMsg;
     var APIGetZoneMsg = (function () {
         function APIGetZoneMsg() {
@@ -2745,7 +2750,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetZoneMsg;
-    })();
+    }());
     ApiHeader.APIGetZoneMsg = APIGetZoneMsg;
     var APIDeleteZoneMsg = (function () {
         function APIDeleteZoneMsg() {
@@ -2757,7 +2762,7 @@ var ApiHeader;
             return msg;
         };
         return APIDeleteZoneMsg;
-    })();
+    }());
     ApiHeader.APIDeleteZoneMsg = APIDeleteZoneMsg;
     var APICreateZoneMsg = (function () {
         function APICreateZoneMsg() {
@@ -2769,7 +2774,7 @@ var ApiHeader;
             return msg;
         };
         return APICreateZoneMsg;
-    })();
+    }());
     ApiHeader.APICreateZoneMsg = APICreateZoneMsg;
     var APISearchZoneMsg = (function () {
         function APISearchZoneMsg() {
@@ -2781,7 +2786,7 @@ var ApiHeader;
             return msg;
         };
         return APISearchZoneMsg;
-    })();
+    }());
     ApiHeader.APISearchZoneMsg = APISearchZoneMsg;
     var APIQueryZoneMsg = (function () {
         function APIQueryZoneMsg() {
@@ -2793,7 +2798,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryZoneMsg;
-    })();
+    }());
     ApiHeader.APIQueryZoneMsg = APIQueryZoneMsg;
     var APIListZonesMsg = (function () {
         function APIListZonesMsg() {
@@ -2805,7 +2810,7 @@ var ApiHeader;
             return msg;
         };
         return APIListZonesMsg;
-    })();
+    }());
     ApiHeader.APIListZonesMsg = APIListZonesMsg;
     var APIChangeZoneStateMsg = (function () {
         function APIChangeZoneStateMsg() {
@@ -2817,7 +2822,7 @@ var ApiHeader;
             return msg;
         };
         return APIChangeZoneStateMsg;
-    })();
+    }());
     ApiHeader.APIChangeZoneStateMsg = APIChangeZoneStateMsg;
     var APIChangeHostStateMsg = (function () {
         function APIChangeHostStateMsg() {
@@ -2829,7 +2834,7 @@ var ApiHeader;
             return msg;
         };
         return APIChangeHostStateMsg;
-    })();
+    }());
     ApiHeader.APIChangeHostStateMsg = APIChangeHostStateMsg;
     var APIReconnectHostMsg = (function () {
         function APIReconnectHostMsg() {
@@ -2841,7 +2846,7 @@ var ApiHeader;
             return msg;
         };
         return APIReconnectHostMsg;
-    })();
+    }());
     ApiHeader.APIReconnectHostMsg = APIReconnectHostMsg;
     var APIListHostMsg = (function () {
         function APIListHostMsg() {
@@ -2853,7 +2858,7 @@ var ApiHeader;
             return msg;
         };
         return APIListHostMsg;
-    })();
+    }());
     ApiHeader.APIListHostMsg = APIListHostMsg;
     var APIUpdateHostMsg = (function () {
         function APIUpdateHostMsg() {
@@ -2865,7 +2870,7 @@ var ApiHeader;
             return msg;
         };
         return APIUpdateHostMsg;
-    })();
+    }());
     ApiHeader.APIUpdateHostMsg = APIUpdateHostMsg;
     var APIDeleteHostMsg = (function () {
         function APIDeleteHostMsg() {
@@ -2877,7 +2882,7 @@ var ApiHeader;
             return msg;
         };
         return APIDeleteHostMsg;
-    })();
+    }());
     ApiHeader.APIDeleteHostMsg = APIDeleteHostMsg;
     var APIGetHostMsg = (function () {
         function APIGetHostMsg() {
@@ -2889,7 +2894,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetHostMsg;
-    })();
+    }());
     ApiHeader.APIGetHostMsg = APIGetHostMsg;
     var APISearchHostMsg = (function () {
         function APISearchHostMsg() {
@@ -2901,7 +2906,7 @@ var ApiHeader;
             return msg;
         };
         return APISearchHostMsg;
-    })();
+    }());
     ApiHeader.APISearchHostMsg = APISearchHostMsg;
     var APIGetHypervisorTypesMsg = (function () {
         function APIGetHypervisorTypesMsg() {
@@ -2913,7 +2918,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetHypervisorTypesMsg;
-    })();
+    }());
     ApiHeader.APIGetHypervisorTypesMsg = APIGetHypervisorTypesMsg;
     var APIQueryHostMsg = (function () {
         function APIQueryHostMsg() {
@@ -2925,7 +2930,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryHostMsg;
-    })();
+    }());
     ApiHeader.APIQueryHostMsg = APIQueryHostMsg;
     var APIAddSimulatorHostMsg = (function () {
         function APIAddSimulatorHostMsg() {
@@ -2937,7 +2942,7 @@ var ApiHeader;
             return msg;
         };
         return APIAddSimulatorHostMsg;
-    })();
+    }());
     ApiHeader.APIAddSimulatorHostMsg = APIAddSimulatorHostMsg;
     var APIAddSimulatorPrimaryStorageMsg = (function () {
         function APIAddSimulatorPrimaryStorageMsg() {
@@ -2949,7 +2954,7 @@ var ApiHeader;
             return msg;
         };
         return APIAddSimulatorPrimaryStorageMsg;
-    })();
+    }());
     ApiHeader.APIAddSimulatorPrimaryStorageMsg = APIAddSimulatorPrimaryStorageMsg;
     var APIAddSimulatorBackupStorageMsg = (function () {
         function APIAddSimulatorBackupStorageMsg() {
@@ -2961,7 +2966,7 @@ var ApiHeader;
             return msg;
         };
         return APIAddSimulatorBackupStorageMsg;
-    })();
+    }());
     ApiHeader.APIAddSimulatorBackupStorageMsg = APIAddSimulatorBackupStorageMsg;
     var APIListApplianceVmMsg = (function () {
         function APIListApplianceVmMsg() {
@@ -2973,7 +2978,7 @@ var ApiHeader;
             return msg;
         };
         return APIListApplianceVmMsg;
-    })();
+    }());
     ApiHeader.APIListApplianceVmMsg = APIListApplianceVmMsg;
     var APIQueryApplianceVmMsg = (function () {
         function APIQueryApplianceVmMsg() {
@@ -2985,7 +2990,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryApplianceVmMsg;
-    })();
+    }());
     ApiHeader.APIQueryApplianceVmMsg = APIQueryApplianceVmMsg;
     var APIAddIscsiFileSystemBackendPrimaryStorageMsg = (function () {
         function APIAddIscsiFileSystemBackendPrimaryStorageMsg() {
@@ -2997,7 +3002,7 @@ var ApiHeader;
             return msg;
         };
         return APIAddIscsiFileSystemBackendPrimaryStorageMsg;
-    })();
+    }());
     ApiHeader.APIAddIscsiFileSystemBackendPrimaryStorageMsg = APIAddIscsiFileSystemBackendPrimaryStorageMsg;
     var APIQueryIscsiFileSystemBackendPrimaryStorageMsg = (function () {
         function APIQueryIscsiFileSystemBackendPrimaryStorageMsg() {
@@ -3009,7 +3014,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryIscsiFileSystemBackendPrimaryStorageMsg;
-    })();
+    }());
     ApiHeader.APIQueryIscsiFileSystemBackendPrimaryStorageMsg = APIQueryIscsiFileSystemBackendPrimaryStorageMsg;
     var APIUpdateIscsiFileSystemBackendPrimaryStorageMsg = (function () {
         function APIUpdateIscsiFileSystemBackendPrimaryStorageMsg() {
@@ -3021,7 +3026,7 @@ var ApiHeader;
             return msg;
         };
         return APIUpdateIscsiFileSystemBackendPrimaryStorageMsg;
-    })();
+    }());
     ApiHeader.APIUpdateIscsiFileSystemBackendPrimaryStorageMsg = APIUpdateIscsiFileSystemBackendPrimaryStorageMsg;
     var APIAddLocalPrimaryStorageMsg = (function () {
         function APIAddLocalPrimaryStorageMsg() {
@@ -3033,8 +3038,20 @@ var ApiHeader;
             return msg;
         };
         return APIAddLocalPrimaryStorageMsg;
-    })();
+    }());
     ApiHeader.APIAddLocalPrimaryStorageMsg = APIAddLocalPrimaryStorageMsg;
+    var APIAddSharedMountPointPrimaryStorageMsg = (function () {
+        function APIAddSharedMountPointPrimaryStorageMsg() {
+        }
+        APIAddSharedMountPointPrimaryStorageMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.storage.primary.smp.APIAddSharedMountPointPrimaryStorageMsg': this
+            };
+            return msg;
+        };
+        return APIAddSharedMountPointPrimaryStorageMsg;
+    }());
+    ApiHeader.APIAddSharedMountPointPrimaryStorageMsg = APIAddSharedMountPointPrimaryStorageMsg;
     var APIQueryCephPrimaryStorageMsg = (function () {
         function APIQueryCephPrimaryStorageMsg() {
         }
@@ -3045,7 +3062,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryCephPrimaryStorageMsg;
-    })();
+    }());
     ApiHeader.APIQueryCephPrimaryStorageMsg = APIQueryCephPrimaryStorageMsg;
     var APIAddCephPrimaryStorageMsg = (function () {
         function APIAddCephPrimaryStorageMsg() {
@@ -3057,7 +3074,7 @@ var ApiHeader;
             return msg;
         };
         return APIAddCephPrimaryStorageMsg;
-    })();
+    }());
     ApiHeader.APIAddCephPrimaryStorageMsg = APIAddCephPrimaryStorageMsg;
     var APIAddMonToCephPrimaryStorageMsg = (function () {
         function APIAddMonToCephPrimaryStorageMsg() {
@@ -3069,7 +3086,7 @@ var ApiHeader;
             return msg;
         };
         return APIAddMonToCephPrimaryStorageMsg;
-    })();
+    }());
     ApiHeader.APIAddMonToCephPrimaryStorageMsg = APIAddMonToCephPrimaryStorageMsg;
     var APIRemoveMonFromCephPrimaryStorageMsg = (function () {
         function APIRemoveMonFromCephPrimaryStorageMsg() {
@@ -3081,7 +3098,7 @@ var ApiHeader;
             return msg;
         };
         return APIRemoveMonFromCephPrimaryStorageMsg;
-    })();
+    }());
     ApiHeader.APIRemoveMonFromCephPrimaryStorageMsg = APIRemoveMonFromCephPrimaryStorageMsg;
     var APIAddCephBackupStorageMsg = (function () {
         function APIAddCephBackupStorageMsg() {
@@ -3093,7 +3110,7 @@ var ApiHeader;
             return msg;
         };
         return APIAddCephBackupStorageMsg;
-    })();
+    }());
     ApiHeader.APIAddCephBackupStorageMsg = APIAddCephBackupStorageMsg;
     var APIAddMonToCephBackupStorageMsg = (function () {
         function APIAddMonToCephBackupStorageMsg() {
@@ -3105,7 +3122,7 @@ var ApiHeader;
             return msg;
         };
         return APIAddMonToCephBackupStorageMsg;
-    })();
+    }());
     ApiHeader.APIAddMonToCephBackupStorageMsg = APIAddMonToCephBackupStorageMsg;
     var APIQueryCephBackupStorageMsg = (function () {
         function APIQueryCephBackupStorageMsg() {
@@ -3117,7 +3134,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryCephBackupStorageMsg;
-    })();
+    }());
     ApiHeader.APIQueryCephBackupStorageMsg = APIQueryCephBackupStorageMsg;
     var APIRemoveMonFromCephBackupStorageMsg = (function () {
         function APIRemoveMonFromCephBackupStorageMsg() {
@@ -3129,7 +3146,7 @@ var ApiHeader;
             return msg;
         };
         return APIRemoveMonFromCephBackupStorageMsg;
-    })();
+    }());
     ApiHeader.APIRemoveMonFromCephBackupStorageMsg = APIRemoveMonFromCephBackupStorageMsg;
     var APIUpdateKVMHostMsg = (function () {
         function APIUpdateKVMHostMsg() {
@@ -3141,7 +3158,7 @@ var ApiHeader;
             return msg;
         };
         return APIUpdateKVMHostMsg;
-    })();
+    }());
     ApiHeader.APIUpdateKVMHostMsg = APIUpdateKVMHostMsg;
     var APIAddKVMHostMsg = (function () {
         function APIAddKVMHostMsg() {
@@ -3153,7 +3170,7 @@ var ApiHeader;
             return msg;
         };
         return APIAddKVMHostMsg;
-    })();
+    }());
     ApiHeader.APIAddKVMHostMsg = APIAddKVMHostMsg;
     var APIAddNfsPrimaryStorageMsg = (function () {
         function APIAddNfsPrimaryStorageMsg() {
@@ -3165,7 +3182,7 @@ var ApiHeader;
             return msg;
         };
         return APIAddNfsPrimaryStorageMsg;
-    })();
+    }());
     ApiHeader.APIAddNfsPrimaryStorageMsg = APIAddNfsPrimaryStorageMsg;
     var APIGetSftpBackupStorageMsg = (function () {
         function APIGetSftpBackupStorageMsg() {
@@ -3177,7 +3194,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetSftpBackupStorageMsg;
-    })();
+    }());
     ApiHeader.APIGetSftpBackupStorageMsg = APIGetSftpBackupStorageMsg;
     var APISearchSftpBackupStorageMsg = (function () {
         function APISearchSftpBackupStorageMsg() {
@@ -3189,7 +3206,7 @@ var ApiHeader;
             return msg;
         };
         return APISearchSftpBackupStorageMsg;
-    })();
+    }());
     ApiHeader.APISearchSftpBackupStorageMsg = APISearchSftpBackupStorageMsg;
     var APIQuerySftpBackupStorageMsg = (function () {
         function APIQuerySftpBackupStorageMsg() {
@@ -3201,7 +3218,7 @@ var ApiHeader;
             return msg;
         };
         return APIQuerySftpBackupStorageMsg;
-    })();
+    }());
     ApiHeader.APIQuerySftpBackupStorageMsg = APIQuerySftpBackupStorageMsg;
     var APIReconnectSftpBackupStorageMsg = (function () {
         function APIReconnectSftpBackupStorageMsg() {
@@ -3213,7 +3230,7 @@ var ApiHeader;
             return msg;
         };
         return APIReconnectSftpBackupStorageMsg;
-    })();
+    }());
     ApiHeader.APIReconnectSftpBackupStorageMsg = APIReconnectSftpBackupStorageMsg;
     var APIUpdateSftpBackupStorageMsg = (function () {
         function APIUpdateSftpBackupStorageMsg() {
@@ -3225,7 +3242,7 @@ var ApiHeader;
             return msg;
         };
         return APIUpdateSftpBackupStorageMsg;
-    })();
+    }());
     ApiHeader.APIUpdateSftpBackupStorageMsg = APIUpdateSftpBackupStorageMsg;
     var APIAddSftpBackupStorageMsg = (function () {
         function APIAddSftpBackupStorageMsg() {
@@ -3237,7 +3254,7 @@ var ApiHeader;
             return msg;
         };
         return APIAddSftpBackupStorageMsg;
-    })();
+    }());
     ApiHeader.APIAddSftpBackupStorageMsg = APIAddSftpBackupStorageMsg;
     var APIReconnectVirtualRouterMsg = (function () {
         function APIReconnectVirtualRouterMsg() {
@@ -3249,7 +3266,7 @@ var ApiHeader;
             return msg;
         };
         return APIReconnectVirtualRouterMsg;
-    })();
+    }());
     ApiHeader.APIReconnectVirtualRouterMsg = APIReconnectVirtualRouterMsg;
     var APICreateVirtualRouterVmMsg = (function () {
         function APICreateVirtualRouterVmMsg() {
@@ -3261,7 +3278,7 @@ var ApiHeader;
             return msg;
         };
         return APICreateVirtualRouterVmMsg;
-    })();
+    }());
     ApiHeader.APICreateVirtualRouterVmMsg = APICreateVirtualRouterVmMsg;
     var APIGetVirtualRouterOfferingMsg = (function () {
         function APIGetVirtualRouterOfferingMsg() {
@@ -3273,7 +3290,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetVirtualRouterOfferingMsg;
-    })();
+    }());
     ApiHeader.APIGetVirtualRouterOfferingMsg = APIGetVirtualRouterOfferingMsg;
     var APISearchVirtualRouterVmMsg = (function () {
         function APISearchVirtualRouterVmMsg() {
@@ -3285,7 +3302,7 @@ var ApiHeader;
             return msg;
         };
         return APISearchVirtualRouterVmMsg;
-    })();
+    }());
     ApiHeader.APISearchVirtualRouterVmMsg = APISearchVirtualRouterVmMsg;
     var APIQueryVirtualRouterOfferingMsg = (function () {
         function APIQueryVirtualRouterOfferingMsg() {
@@ -3297,7 +3314,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryVirtualRouterOfferingMsg;
-    })();
+    }());
     ApiHeader.APIQueryVirtualRouterOfferingMsg = APIQueryVirtualRouterOfferingMsg;
     var APICreateVirtualRouterOfferingMsg = (function () {
         function APICreateVirtualRouterOfferingMsg() {
@@ -3309,7 +3326,7 @@ var ApiHeader;
             return msg;
         };
         return APICreateVirtualRouterOfferingMsg;
-    })();
+    }());
     ApiHeader.APICreateVirtualRouterOfferingMsg = APICreateVirtualRouterOfferingMsg;
     var APIQueryVirtualRouterVmMsg = (function () {
         function APIQueryVirtualRouterVmMsg() {
@@ -3321,7 +3338,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryVirtualRouterVmMsg;
-    })();
+    }());
     ApiHeader.APIQueryVirtualRouterVmMsg = APIQueryVirtualRouterVmMsg;
     var APISearchVirtualRouterOffingMsg = (function () {
         function APISearchVirtualRouterOffingMsg() {
@@ -3333,7 +3350,7 @@ var ApiHeader;
             return msg;
         };
         return APISearchVirtualRouterOffingMsg;
-    })();
+    }());
     ApiHeader.APISearchVirtualRouterOffingMsg = APISearchVirtualRouterOffingMsg;
     var APIUpdateVirtualRouterOfferingMsg = (function () {
         function APIUpdateVirtualRouterOfferingMsg() {
@@ -3345,7 +3362,7 @@ var ApiHeader;
             return msg;
         };
         return APIUpdateVirtualRouterOfferingMsg;
-    })();
+    }());
     ApiHeader.APIUpdateVirtualRouterOfferingMsg = APIUpdateVirtualRouterOfferingMsg;
     var APIAttachPortForwardingRuleMsg = (function () {
         function APIAttachPortForwardingRuleMsg() {
@@ -3357,7 +3374,7 @@ var ApiHeader;
             return msg;
         };
         return APIAttachPortForwardingRuleMsg;
-    })();
+    }());
     ApiHeader.APIAttachPortForwardingRuleMsg = APIAttachPortForwardingRuleMsg;
     var APIDetachPortForwardingRuleMsg = (function () {
         function APIDetachPortForwardingRuleMsg() {
@@ -3369,7 +3386,7 @@ var ApiHeader;
             return msg;
         };
         return APIDetachPortForwardingRuleMsg;
-    })();
+    }());
     ApiHeader.APIDetachPortForwardingRuleMsg = APIDetachPortForwardingRuleMsg;
     var APIGetPortForwardingAttachableVmNicsMsg = (function () {
         function APIGetPortForwardingAttachableVmNicsMsg() {
@@ -3381,7 +3398,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetPortForwardingAttachableVmNicsMsg;
-    })();
+    }());
     ApiHeader.APIGetPortForwardingAttachableVmNicsMsg = APIGetPortForwardingAttachableVmNicsMsg;
     var APIChangePortForwardingRuleStateMsg = (function () {
         function APIChangePortForwardingRuleStateMsg() {
@@ -3393,7 +3410,7 @@ var ApiHeader;
             return msg;
         };
         return APIChangePortForwardingRuleStateMsg;
-    })();
+    }());
     ApiHeader.APIChangePortForwardingRuleStateMsg = APIChangePortForwardingRuleStateMsg;
     var APIUpdatePortForwardingRuleMsg = (function () {
         function APIUpdatePortForwardingRuleMsg() {
@@ -3405,7 +3422,7 @@ var ApiHeader;
             return msg;
         };
         return APIUpdatePortForwardingRuleMsg;
-    })();
+    }());
     ApiHeader.APIUpdatePortForwardingRuleMsg = APIUpdatePortForwardingRuleMsg;
     var APIListPortForwardingRuleMsg = (function () {
         function APIListPortForwardingRuleMsg() {
@@ -3417,7 +3434,7 @@ var ApiHeader;
             return msg;
         };
         return APIListPortForwardingRuleMsg;
-    })();
+    }());
     ApiHeader.APIListPortForwardingRuleMsg = APIListPortForwardingRuleMsg;
     var APICreatePortForwardingRuleMsg = (function () {
         function APICreatePortForwardingRuleMsg() {
@@ -3429,7 +3446,7 @@ var ApiHeader;
             return msg;
         };
         return APICreatePortForwardingRuleMsg;
-    })();
+    }());
     ApiHeader.APICreatePortForwardingRuleMsg = APICreatePortForwardingRuleMsg;
     var APIQueryPortForwardingRuleMsg = (function () {
         function APIQueryPortForwardingRuleMsg() {
@@ -3441,7 +3458,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryPortForwardingRuleMsg;
-    })();
+    }());
     ApiHeader.APIQueryPortForwardingRuleMsg = APIQueryPortForwardingRuleMsg;
     var APIDeletePortForwardingRuleMsg = (function () {
         function APIDeletePortForwardingRuleMsg() {
@@ -3453,7 +3470,7 @@ var ApiHeader;
             return msg;
         };
         return APIDeletePortForwardingRuleMsg;
-    })();
+    }());
     ApiHeader.APIDeletePortForwardingRuleMsg = APIDeletePortForwardingRuleMsg;
     var APIDetachEipMsg = (function () {
         function APIDetachEipMsg() {
@@ -3465,7 +3482,7 @@ var ApiHeader;
             return msg;
         };
         return APIDetachEipMsg;
-    })();
+    }());
     ApiHeader.APIDetachEipMsg = APIDetachEipMsg;
     var APIGetEipAttachableVmNicsMsg = (function () {
         function APIGetEipAttachableVmNicsMsg() {
@@ -3477,7 +3494,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetEipAttachableVmNicsMsg;
-    })();
+    }());
     ApiHeader.APIGetEipAttachableVmNicsMsg = APIGetEipAttachableVmNicsMsg;
     var APIUpdateEipMsg = (function () {
         function APIUpdateEipMsg() {
@@ -3489,7 +3506,7 @@ var ApiHeader;
             return msg;
         };
         return APIUpdateEipMsg;
-    })();
+    }());
     ApiHeader.APIUpdateEipMsg = APIUpdateEipMsg;
     var APIQueryEipMsg = (function () {
         function APIQueryEipMsg() {
@@ -3501,7 +3518,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryEipMsg;
-    })();
+    }());
     ApiHeader.APIQueryEipMsg = APIQueryEipMsg;
     var APIChangeEipStateMsg = (function () {
         function APIChangeEipStateMsg() {
@@ -3513,7 +3530,7 @@ var ApiHeader;
             return msg;
         };
         return APIChangeEipStateMsg;
-    })();
+    }());
     ApiHeader.APIChangeEipStateMsg = APIChangeEipStateMsg;
     var APIDeleteEipMsg = (function () {
         function APIDeleteEipMsg() {
@@ -3525,7 +3542,7 @@ var ApiHeader;
             return msg;
         };
         return APIDeleteEipMsg;
-    })();
+    }());
     ApiHeader.APIDeleteEipMsg = APIDeleteEipMsg;
     var APICreateEipMsg = (function () {
         function APICreateEipMsg() {
@@ -3537,7 +3554,7 @@ var ApiHeader;
             return msg;
         };
         return APICreateEipMsg;
-    })();
+    }());
     ApiHeader.APICreateEipMsg = APICreateEipMsg;
     var APIAttachEipMsg = (function () {
         function APIAttachEipMsg() {
@@ -3549,7 +3566,7 @@ var ApiHeader;
             return msg;
         };
         return APIAttachEipMsg;
-    })();
+    }());
     ApiHeader.APIAttachEipMsg = APIAttachEipMsg;
     var APIQueryLoadBalancerListenerMsg = (function () {
         function APIQueryLoadBalancerListenerMsg() {
@@ -3561,7 +3578,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryLoadBalancerListenerMsg;
-    })();
+    }());
     ApiHeader.APIQueryLoadBalancerListenerMsg = APIQueryLoadBalancerListenerMsg;
     var APIDeleteLoadBalancerMsg = (function () {
         function APIDeleteLoadBalancerMsg() {
@@ -3573,7 +3590,7 @@ var ApiHeader;
             return msg;
         };
         return APIDeleteLoadBalancerMsg;
-    })();
+    }());
     ApiHeader.APIDeleteLoadBalancerMsg = APIDeleteLoadBalancerMsg;
     var APICreateLoadBalancerListenerMsg = (function () {
         function APICreateLoadBalancerListenerMsg() {
@@ -3585,7 +3602,7 @@ var ApiHeader;
             return msg;
         };
         return APICreateLoadBalancerListenerMsg;
-    })();
+    }());
     ApiHeader.APICreateLoadBalancerListenerMsg = APICreateLoadBalancerListenerMsg;
     var APIRemoveVmNicFromLoadBalancerMsg = (function () {
         function APIRemoveVmNicFromLoadBalancerMsg() {
@@ -3597,7 +3614,7 @@ var ApiHeader;
             return msg;
         };
         return APIRemoveVmNicFromLoadBalancerMsg;
-    })();
+    }());
     ApiHeader.APIRemoveVmNicFromLoadBalancerMsg = APIRemoveVmNicFromLoadBalancerMsg;
     var APIAddVmNicToLoadBalancerMsg = (function () {
         function APIAddVmNicToLoadBalancerMsg() {
@@ -3609,7 +3626,7 @@ var ApiHeader;
             return msg;
         };
         return APIAddVmNicToLoadBalancerMsg;
-    })();
+    }());
     ApiHeader.APIAddVmNicToLoadBalancerMsg = APIAddVmNicToLoadBalancerMsg;
     var APICreateLoadBalancerMsg = (function () {
         function APICreateLoadBalancerMsg() {
@@ -3621,7 +3638,7 @@ var ApiHeader;
             return msg;
         };
         return APICreateLoadBalancerMsg;
-    })();
+    }());
     ApiHeader.APICreateLoadBalancerMsg = APICreateLoadBalancerMsg;
     var APIRefreshLoadBalancerMsg = (function () {
         function APIRefreshLoadBalancerMsg() {
@@ -3633,7 +3650,7 @@ var ApiHeader;
             return msg;
         };
         return APIRefreshLoadBalancerMsg;
-    })();
+    }());
     ApiHeader.APIRefreshLoadBalancerMsg = APIRefreshLoadBalancerMsg;
     var APIDeleteLoadBalancerListenerMsg = (function () {
         function APIDeleteLoadBalancerListenerMsg() {
@@ -3645,7 +3662,7 @@ var ApiHeader;
             return msg;
         };
         return APIDeleteLoadBalancerListenerMsg;
-    })();
+    }());
     ApiHeader.APIDeleteLoadBalancerListenerMsg = APIDeleteLoadBalancerListenerMsg;
     var APIQueryLoadBalancerMsg = (function () {
         function APIQueryLoadBalancerMsg() {
@@ -3657,7 +3674,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryLoadBalancerMsg;
-    })();
+    }());
     ApiHeader.APIQueryLoadBalancerMsg = APIQueryLoadBalancerMsg;
     var APIChangeSecurityGroupStateMsg = (function () {
         function APIChangeSecurityGroupStateMsg() {
@@ -3669,7 +3686,7 @@ var ApiHeader;
             return msg;
         };
         return APIChangeSecurityGroupStateMsg;
-    })();
+    }());
     ApiHeader.APIChangeSecurityGroupStateMsg = APIChangeSecurityGroupStateMsg;
     var APIDetachSecurityGroupFromL3NetworkMsg = (function () {
         function APIDetachSecurityGroupFromL3NetworkMsg() {
@@ -3681,7 +3698,7 @@ var ApiHeader;
             return msg;
         };
         return APIDetachSecurityGroupFromL3NetworkMsg;
-    })();
+    }());
     ApiHeader.APIDetachSecurityGroupFromL3NetworkMsg = APIDetachSecurityGroupFromL3NetworkMsg;
     var APIDeleteSecurityGroupRuleMsg = (function () {
         function APIDeleteSecurityGroupRuleMsg() {
@@ -3693,7 +3710,7 @@ var ApiHeader;
             return msg;
         };
         return APIDeleteSecurityGroupRuleMsg;
-    })();
+    }());
     ApiHeader.APIDeleteSecurityGroupRuleMsg = APIDeleteSecurityGroupRuleMsg;
     var APICreateSecurityGroupMsg = (function () {
         function APICreateSecurityGroupMsg() {
@@ -3705,7 +3722,7 @@ var ApiHeader;
             return msg;
         };
         return APICreateSecurityGroupMsg;
-    })();
+    }());
     ApiHeader.APICreateSecurityGroupMsg = APICreateSecurityGroupMsg;
     var APIListVmNicInSecurityGroupMsg = (function () {
         function APIListVmNicInSecurityGroupMsg() {
@@ -3717,7 +3734,7 @@ var ApiHeader;
             return msg;
         };
         return APIListVmNicInSecurityGroupMsg;
-    })();
+    }());
     ApiHeader.APIListVmNicInSecurityGroupMsg = APIListVmNicInSecurityGroupMsg;
     var APIQueryVmNicInSecurityGroupMsg = (function () {
         function APIQueryVmNicInSecurityGroupMsg() {
@@ -3729,7 +3746,7 @@ var ApiHeader;
             return msg;
         };
         return APIQueryVmNicInSecurityGroupMsg;
-    })();
+    }());
     ApiHeader.APIQueryVmNicInSecurityGroupMsg = APIQueryVmNicInSecurityGroupMsg;
     var APIQuerySecurityGroupMsg = (function () {
         function APIQuerySecurityGroupMsg() {
@@ -3741,13 +3758,13 @@ var ApiHeader;
             return msg;
         };
         return APIQuerySecurityGroupMsg;
-    })();
+    }());
     ApiHeader.APIQuerySecurityGroupMsg = APIQuerySecurityGroupMsg;
     var SecurityGroupRuleAO = (function () {
         function SecurityGroupRuleAO() {
         }
         return SecurityGroupRuleAO;
-    })();
+    }());
     ApiHeader.SecurityGroupRuleAO = SecurityGroupRuleAO;
     var APIAddSecurityGroupRuleMsg = (function () {
         function APIAddSecurityGroupRuleMsg() {
@@ -3759,7 +3776,7 @@ var ApiHeader;
             return msg;
         };
         return APIAddSecurityGroupRuleMsg;
-    })();
+    }());
     ApiHeader.APIAddSecurityGroupRuleMsg = APIAddSecurityGroupRuleMsg;
     var APIListSecurityGroupMsg = (function () {
         function APIListSecurityGroupMsg() {
@@ -3771,7 +3788,7 @@ var ApiHeader;
             return msg;
         };
         return APIListSecurityGroupMsg;
-    })();
+    }());
     ApiHeader.APIListSecurityGroupMsg = APIListSecurityGroupMsg;
     var APIQuerySecurityGroupRuleMsg = (function () {
         function APIQuerySecurityGroupRuleMsg() {
@@ -3783,7 +3800,7 @@ var ApiHeader;
             return msg;
         };
         return APIQuerySecurityGroupRuleMsg;
-    })();
+    }());
     ApiHeader.APIQuerySecurityGroupRuleMsg = APIQuerySecurityGroupRuleMsg;
     var APIDeleteSecurityGroupMsg = (function () {
         function APIDeleteSecurityGroupMsg() {
@@ -3795,7 +3812,7 @@ var ApiHeader;
             return msg;
         };
         return APIDeleteSecurityGroupMsg;
-    })();
+    }());
     ApiHeader.APIDeleteSecurityGroupMsg = APIDeleteSecurityGroupMsg;
     var APIUpdateSecurityGroupMsg = (function () {
         function APIUpdateSecurityGroupMsg() {
@@ -3807,7 +3824,7 @@ var ApiHeader;
             return msg;
         };
         return APIUpdateSecurityGroupMsg;
-    })();
+    }());
     ApiHeader.APIUpdateSecurityGroupMsg = APIUpdateSecurityGroupMsg;
     var APIDeleteVmNicFromSecurityGroupMsg = (function () {
         function APIDeleteVmNicFromSecurityGroupMsg() {
@@ -3819,7 +3836,7 @@ var ApiHeader;
             return msg;
         };
         return APIDeleteVmNicFromSecurityGroupMsg;
-    })();
+    }());
     ApiHeader.APIDeleteVmNicFromSecurityGroupMsg = APIDeleteVmNicFromSecurityGroupMsg;
     var APIGetCandidateVmNicForSecurityGroupMsg = (function () {
         function APIGetCandidateVmNicForSecurityGroupMsg() {
@@ -3831,7 +3848,7 @@ var ApiHeader;
             return msg;
         };
         return APIGetCandidateVmNicForSecurityGroupMsg;
-    })();
+    }());
     ApiHeader.APIGetCandidateVmNicForSecurityGroupMsg = APIGetCandidateVmNicForSecurityGroupMsg;
     var APIAttachSecurityGroupToL3NetworkMsg = (function () {
         function APIAttachSecurityGroupToL3NetworkMsg() {
@@ -3843,7 +3860,7 @@ var ApiHeader;
             return msg;
         };
         return APIAttachSecurityGroupToL3NetworkMsg;
-    })();
+    }());
     ApiHeader.APIAttachSecurityGroupToL3NetworkMsg = APIAttachSecurityGroupToL3NetworkMsg;
     var APIAddVmNicToSecurityGroupMsg = (function () {
         function APIAddVmNicToSecurityGroupMsg() {
@@ -3855,7 +3872,7 @@ var ApiHeader;
             return msg;
         };
         return APIAddVmNicToSecurityGroupMsg;
-    })();
+    }());
     ApiHeader.APIAddVmNicToSecurityGroupMsg = APIAddVmNicToSecurityGroupMsg;
     var APIDeleteVipMsg = (function () {
         function APIDeleteVipMsg() {
@@ -3867,7 +3884,7 @@ var ApiHeader;
             return msg;
         };
         return APIDeleteVipMsg;
-    })();
+    }());
     ApiHeader.APIDeleteVipMsg = APIDeleteVipMsg;
     var APIUpdateVipMsg = (function () {
         function APIUpdateVipMsg() {
@@ -3879,7 +3896,7 @@ var ApiHeader;
             return msg;
         };
         return APIUpdateVipMsg;
-    })();
+    }());
     ApiHeader.APIUpdateVipMsg = APIUpdateVipMsg;
     var APIChangeVipStateMsg = (function () {
         function APIChangeVipStateMsg() {
@@ -3891,7 +3908,7 @@ var ApiHeader;
             return msg;
         };
         return APIChangeVipStateMsg;
-    })();
+    }());
     ApiHeader.APIChangeVipStateMsg = APIChangeVipStateMsg;
     var APICreateVipMsg = (function () {
         function APICreateVipMsg() {
@@ -3903,7 +3920,7 @@ var ApiHeader;
             return msg;
         };
         return APICreateVipMsg;
-    })();
+    }());
     ApiHeader.APICreateVipMsg = APICreateVipMsg;
     var APIQueryVipMsg = (function () {
         function APIQueryVipMsg() {
@@ -3915,2329 +3932,2329 @@ var ApiHeader;
             return msg;
         };
         return APIQueryVipMsg;
-    })();
+    }());
     ApiHeader.APIQueryVipMsg = APIQueryVipMsg;
     var ErrorCode = (function () {
         function ErrorCode() {
         }
         return ErrorCode;
-    })();
+    }());
     ApiHeader.ErrorCode = ErrorCode;
     var FakeApiEvent = (function () {
         function FakeApiEvent() {
         }
         return FakeApiEvent;
-    })();
+    }());
     ApiHeader.FakeApiEvent = FakeApiEvent;
     var GlobalConfigInventory = (function () {
         function GlobalConfigInventory() {
         }
         return GlobalConfigInventory;
-    })();
+    }());
     ApiHeader.GlobalConfigInventory = GlobalConfigInventory;
     var APIUpdateGlobalConfigEvent = (function () {
         function APIUpdateGlobalConfigEvent() {
         }
         return APIUpdateGlobalConfigEvent;
-    })();
+    }());
     ApiHeader.APIUpdateGlobalConfigEvent = APIUpdateGlobalConfigEvent;
     var InProgressEvent = (function () {
         function InProgressEvent() {
         }
         return InProgressEvent;
-    })();
+    }());
     ApiHeader.InProgressEvent = InProgressEvent;
     var FixedInProgressEvent = (function () {
         function FixedInProgressEvent() {
         }
         return FixedInProgressEvent;
-    })();
+    }());
     ApiHeader.FixedInProgressEvent = FixedInProgressEvent;
     var APIGenerateInventoryQueryDetailsEvent = (function () {
         function APIGenerateInventoryQueryDetailsEvent() {
         }
         return APIGenerateInventoryQueryDetailsEvent;
-    })();
+    }());
     ApiHeader.APIGenerateInventoryQueryDetailsEvent = APIGenerateInventoryQueryDetailsEvent;
     var APIGenerateQueryableFieldsEvent = (function () {
         function APIGenerateQueryableFieldsEvent() {
         }
         return APIGenerateQueryableFieldsEvent;
-    })();
+    }());
     ApiHeader.APIGenerateQueryableFieldsEvent = APIGenerateQueryableFieldsEvent;
     var VmNicInventory = (function () {
         function VmNicInventory() {
         }
         return VmNicInventory;
-    })();
+    }());
     ApiHeader.VmNicInventory = VmNicInventory;
     var VolumeInventory = (function () {
         function VolumeInventory() {
         }
         return VolumeInventory;
-    })();
+    }());
     ApiHeader.VolumeInventory = VolumeInventory;
     var VmInstanceInventory = (function () {
         function VmInstanceInventory() {
         }
         return VmInstanceInventory;
-    })();
+    }());
     ApiHeader.VmInstanceInventory = VmInstanceInventory;
     var APIDetachL3NetworkFromVmEvent = (function () {
         function APIDetachL3NetworkFromVmEvent() {
         }
         return APIDetachL3NetworkFromVmEvent;
-    })();
+    }());
     ApiHeader.APIDetachL3NetworkFromVmEvent = APIDetachL3NetworkFromVmEvent;
     var APIStartVmInstanceEvent = (function () {
         function APIStartVmInstanceEvent() {
         }
         return APIStartVmInstanceEvent;
-    })();
+    }());
     ApiHeader.APIStartVmInstanceEvent = APIStartVmInstanceEvent;
     var APIAttachL3NetworkToVmEvent = (function () {
         function APIAttachL3NetworkToVmEvent() {
         }
         return APIAttachL3NetworkToVmEvent;
-    })();
+    }());
     ApiHeader.APIAttachL3NetworkToVmEvent = APIAttachL3NetworkToVmEvent;
     var APIStopVmInstanceEvent = (function () {
         function APIStopVmInstanceEvent() {
         }
         return APIStopVmInstanceEvent;
-    })();
+    }());
     ApiHeader.APIStopVmInstanceEvent = APIStopVmInstanceEvent;
     var APIMigrateVmEvent = (function () {
         function APIMigrateVmEvent() {
         }
         return APIMigrateVmEvent;
-    })();
+    }());
     ApiHeader.APIMigrateVmEvent = APIMigrateVmEvent;
     var APIUpdateVmInstanceEvent = (function () {
         function APIUpdateVmInstanceEvent() {
         }
         return APIUpdateVmInstanceEvent;
-    })();
+    }());
     ApiHeader.APIUpdateVmInstanceEvent = APIUpdateVmInstanceEvent;
     var APIDestroyVmInstanceEvent = (function () {
         function APIDestroyVmInstanceEvent() {
         }
         return APIDestroyVmInstanceEvent;
-    })();
+    }());
     ApiHeader.APIDestroyVmInstanceEvent = APIDestroyVmInstanceEvent;
     var APIChangeInstanceOfferingEvent = (function () {
         function APIChangeInstanceOfferingEvent() {
         }
         return APIChangeInstanceOfferingEvent;
-    })();
+    }());
     ApiHeader.APIChangeInstanceOfferingEvent = APIChangeInstanceOfferingEvent;
     var APICreateVmInstanceEvent = (function () {
         function APICreateVmInstanceEvent() {
         }
         return APICreateVmInstanceEvent;
-    })();
+    }());
     ApiHeader.APICreateVmInstanceEvent = APICreateVmInstanceEvent;
     var APIRebootVmInstanceEvent = (function () {
         function APIRebootVmInstanceEvent() {
         }
         return APIRebootVmInstanceEvent;
-    })();
+    }());
     ApiHeader.APIRebootVmInstanceEvent = APIRebootVmInstanceEvent;
     var ImageBackupStorageRefInventory = (function () {
         function ImageBackupStorageRefInventory() {
         }
         return ImageBackupStorageRefInventory;
-    })();
+    }());
     ApiHeader.ImageBackupStorageRefInventory = ImageBackupStorageRefInventory;
     var ImageInventory = (function () {
         function ImageInventory() {
         }
         return ImageInventory;
-    })();
+    }());
     ApiHeader.ImageInventory = ImageInventory;
     var APICreateRootVolumeTemplateFromRootVolumeEvent = (function () {
         function APICreateRootVolumeTemplateFromRootVolumeEvent() {
         }
         return APICreateRootVolumeTemplateFromRootVolumeEvent;
-    })();
+    }());
     ApiHeader.APICreateRootVolumeTemplateFromRootVolumeEvent = APICreateRootVolumeTemplateFromRootVolumeEvent;
     var APIChangeImageStateEvent = (function () {
         function APIChangeImageStateEvent() {
         }
         return APIChangeImageStateEvent;
-    })();
+    }());
     ApiHeader.APIChangeImageStateEvent = APIChangeImageStateEvent;
     var APIUpdateImageEvent = (function () {
         function APIUpdateImageEvent() {
         }
         return APIUpdateImageEvent;
-    })();
+    }());
     ApiHeader.APIUpdateImageEvent = APIUpdateImageEvent;
     var APICreateDataVolumeTemplateFromVolumeEvent = (function () {
         function APICreateDataVolumeTemplateFromVolumeEvent() {
         }
         return APICreateDataVolumeTemplateFromVolumeEvent;
-    })();
+    }());
     ApiHeader.APICreateDataVolumeTemplateFromVolumeEvent = APICreateDataVolumeTemplateFromVolumeEvent;
     var APICreateRootVolumeTemplateFromVolumeSnapshotEvent = (function () {
         function APICreateRootVolumeTemplateFromVolumeSnapshotEvent() {
         }
         return APICreateRootVolumeTemplateFromVolumeSnapshotEvent;
-    })();
+    }());
     ApiHeader.APICreateRootVolumeTemplateFromVolumeSnapshotEvent = APICreateRootVolumeTemplateFromVolumeSnapshotEvent;
     var APIAddImageEvent = (function () {
         function APIAddImageEvent() {
         }
         return APIAddImageEvent;
-    })();
+    }());
     ApiHeader.APIAddImageEvent = APIAddImageEvent;
     var APIDeleteImageEvent = (function () {
         function APIDeleteImageEvent() {
         }
         return APIDeleteImageEvent;
-    })();
+    }());
     ApiHeader.APIDeleteImageEvent = APIDeleteImageEvent;
     var ConsoleInventory = (function () {
         function ConsoleInventory() {
         }
         return ConsoleInventory;
-    })();
+    }());
     ApiHeader.ConsoleInventory = ConsoleInventory;
     var APIRequestConsoleAccessEvent = (function () {
         function APIRequestConsoleAccessEvent() {
         }
         return APIRequestConsoleAccessEvent;
-    })();
+    }());
     ApiHeader.APIRequestConsoleAccessEvent = APIRequestConsoleAccessEvent;
     var APICreateDataVolumeEvent = (function () {
         function APICreateDataVolumeEvent() {
         }
         return APICreateDataVolumeEvent;
-    })();
+    }());
     ApiHeader.APICreateDataVolumeEvent = APICreateDataVolumeEvent;
     var APIDetachDataVolumeFromVmEvent = (function () {
         function APIDetachDataVolumeFromVmEvent() {
         }
         return APIDetachDataVolumeFromVmEvent;
-    })();
+    }());
     ApiHeader.APIDetachDataVolumeFromVmEvent = APIDetachDataVolumeFromVmEvent;
     var APIUpdateVolumeEvent = (function () {
         function APIUpdateVolumeEvent() {
         }
         return APIUpdateVolumeEvent;
-    })();
+    }());
     ApiHeader.APIUpdateVolumeEvent = APIUpdateVolumeEvent;
     var APIDeleteDataVolumeEvent = (function () {
         function APIDeleteDataVolumeEvent() {
         }
         return APIDeleteDataVolumeEvent;
-    })();
+    }());
     ApiHeader.APIDeleteDataVolumeEvent = APIDeleteDataVolumeEvent;
     var APICreateDataVolumeFromVolumeSnapshotEvent = (function () {
         function APICreateDataVolumeFromVolumeSnapshotEvent() {
         }
         return APICreateDataVolumeFromVolumeSnapshotEvent;
-    })();
+    }());
     ApiHeader.APICreateDataVolumeFromVolumeSnapshotEvent = APICreateDataVolumeFromVolumeSnapshotEvent;
     var APIBackupDataVolumeEvent = (function () {
         function APIBackupDataVolumeEvent() {
         }
         return APIBackupDataVolumeEvent;
-    })();
+    }());
     ApiHeader.APIBackupDataVolumeEvent = APIBackupDataVolumeEvent;
     var APICreateDataVolumeFromVolumeTemplateEvent = (function () {
         function APICreateDataVolumeFromVolumeTemplateEvent() {
         }
         return APICreateDataVolumeFromVolumeTemplateEvent;
-    })();
+    }());
     ApiHeader.APICreateDataVolumeFromVolumeTemplateEvent = APICreateDataVolumeFromVolumeTemplateEvent;
     var APIChangeVolumeStateEvent = (function () {
         function APIChangeVolumeStateEvent() {
         }
         return APIChangeVolumeStateEvent;
-    })();
+    }());
     ApiHeader.APIChangeVolumeStateEvent = APIChangeVolumeStateEvent;
     var VolumeSnapshotBackupStorageRefInventory = (function () {
         function VolumeSnapshotBackupStorageRefInventory() {
         }
         return VolumeSnapshotBackupStorageRefInventory;
-    })();
+    }());
     ApiHeader.VolumeSnapshotBackupStorageRefInventory = VolumeSnapshotBackupStorageRefInventory;
     var VolumeSnapshotInventory = (function () {
         function VolumeSnapshotInventory() {
         }
         return VolumeSnapshotInventory;
-    })();
+    }());
     ApiHeader.VolumeSnapshotInventory = VolumeSnapshotInventory;
     var APICreateVolumeSnapshotEvent = (function () {
         function APICreateVolumeSnapshotEvent() {
         }
         return APICreateVolumeSnapshotEvent;
-    })();
+    }());
     ApiHeader.APICreateVolumeSnapshotEvent = APICreateVolumeSnapshotEvent;
     var APIAttachDataVolumeToVmEvent = (function () {
         function APIAttachDataVolumeToVmEvent() {
         }
         return APIAttachDataVolumeToVmEvent;
-    })();
+    }());
     ApiHeader.APIAttachDataVolumeToVmEvent = APIAttachDataVolumeToVmEvent;
     var DiskOfferingInventory = (function () {
         function DiskOfferingInventory() {
         }
         return DiskOfferingInventory;
-    })();
+    }());
     ApiHeader.DiskOfferingInventory = DiskOfferingInventory;
     var APICreateDiskOfferingEvent = (function () {
         function APICreateDiskOfferingEvent() {
         }
         return APICreateDiskOfferingEvent;
-    })();
+    }());
     ApiHeader.APICreateDiskOfferingEvent = APICreateDiskOfferingEvent;
     var APIChangeDiskOfferingStateEvent = (function () {
         function APIChangeDiskOfferingStateEvent() {
         }
         return APIChangeDiskOfferingStateEvent;
-    })();
+    }());
     ApiHeader.APIChangeDiskOfferingStateEvent = APIChangeDiskOfferingStateEvent;
     var APIUpdateDiskOfferingEvent = (function () {
         function APIUpdateDiskOfferingEvent() {
         }
         return APIUpdateDiskOfferingEvent;
-    })();
+    }());
     ApiHeader.APIUpdateDiskOfferingEvent = APIUpdateDiskOfferingEvent;
     var APIDeleteInstanceOfferingEvent = (function () {
         function APIDeleteInstanceOfferingEvent() {
         }
         return APIDeleteInstanceOfferingEvent;
-    })();
+    }());
     ApiHeader.APIDeleteInstanceOfferingEvent = APIDeleteInstanceOfferingEvent;
     var APIGenerateSqlForeignKeyEvent = (function () {
         function APIGenerateSqlForeignKeyEvent() {
         }
         return APIGenerateSqlForeignKeyEvent;
-    })();
+    }());
     ApiHeader.APIGenerateSqlForeignKeyEvent = APIGenerateSqlForeignKeyEvent;
     var APIDeleteDiskOfferingEvent = (function () {
         function APIDeleteDiskOfferingEvent() {
         }
         return APIDeleteDiskOfferingEvent;
-    })();
+    }());
     ApiHeader.APIDeleteDiskOfferingEvent = APIDeleteDiskOfferingEvent;
     var APIGenerateGroovyClassEvent = (function () {
         function APIGenerateGroovyClassEvent() {
         }
         return APIGenerateGroovyClassEvent;
-    })();
+    }());
     ApiHeader.APIGenerateGroovyClassEvent = APIGenerateGroovyClassEvent;
     var APIGenerateSqlIndexEvent = (function () {
         function APIGenerateSqlIndexEvent() {
         }
         return APIGenerateSqlIndexEvent;
-    })();
+    }());
     ApiHeader.APIGenerateSqlIndexEvent = APIGenerateSqlIndexEvent;
     var InstanceOfferingInventory = (function () {
         function InstanceOfferingInventory() {
         }
         return InstanceOfferingInventory;
-    })();
+    }());
     ApiHeader.InstanceOfferingInventory = InstanceOfferingInventory;
     var APIUpdateInstanceOfferingEvent = (function () {
         function APIUpdateInstanceOfferingEvent() {
         }
         return APIUpdateInstanceOfferingEvent;
-    })();
+    }());
     ApiHeader.APIUpdateInstanceOfferingEvent = APIUpdateInstanceOfferingEvent;
     var APIGenerateApiTypeScriptDefinitionEvent = (function () {
         function APIGenerateApiTypeScriptDefinitionEvent() {
         }
         return APIGenerateApiTypeScriptDefinitionEvent;
-    })();
+    }());
     ApiHeader.APIGenerateApiTypeScriptDefinitionEvent = APIGenerateApiTypeScriptDefinitionEvent;
     var APIGenerateSqlVOViewEvent = (function () {
         function APIGenerateSqlVOViewEvent() {
         }
         return APIGenerateSqlVOViewEvent;
-    })();
+    }());
     ApiHeader.APIGenerateSqlVOViewEvent = APIGenerateSqlVOViewEvent;
     var APICreateInstanceOfferingEvent = (function () {
         function APICreateInstanceOfferingEvent() {
         }
         return APICreateInstanceOfferingEvent;
-    })();
+    }());
     ApiHeader.APICreateInstanceOfferingEvent = APICreateInstanceOfferingEvent;
     var APIChangeInstanceOfferingStateEvent = (function () {
         function APIChangeInstanceOfferingStateEvent() {
         }
         return APIChangeInstanceOfferingStateEvent;
-    })();
+    }());
     ApiHeader.APIChangeInstanceOfferingStateEvent = APIChangeInstanceOfferingStateEvent;
     var APIGenerateTestLinkDocumentEvent = (function () {
         function APIGenerateTestLinkDocumentEvent() {
         }
         return APIGenerateTestLinkDocumentEvent;
-    })();
+    }());
     ApiHeader.APIGenerateTestLinkDocumentEvent = APIGenerateTestLinkDocumentEvent;
     var APIGenerateApiJsonTemplateEvent = (function () {
         function APIGenerateApiJsonTemplateEvent() {
         }
         return APIGenerateApiJsonTemplateEvent;
-    })();
+    }());
     ApiHeader.APIGenerateApiJsonTemplateEvent = APIGenerateApiJsonTemplateEvent;
     var PrimaryStorageInventory = (function () {
         function PrimaryStorageInventory() {
         }
         return PrimaryStorageInventory;
-    })();
+    }());
     ApiHeader.PrimaryStorageInventory = PrimaryStorageInventory;
     var APISyncPrimaryStorageCapacityEvent = (function () {
         function APISyncPrimaryStorageCapacityEvent() {
         }
         return APISyncPrimaryStorageCapacityEvent;
-    })();
+    }());
     ApiHeader.APISyncPrimaryStorageCapacityEvent = APISyncPrimaryStorageCapacityEvent;
     var APIDeletePrimaryStorageEvent = (function () {
         function APIDeletePrimaryStorageEvent() {
         }
         return APIDeletePrimaryStorageEvent;
-    })();
+    }());
     ApiHeader.APIDeletePrimaryStorageEvent = APIDeletePrimaryStorageEvent;
     var APIDetachPrimaryStorageFromClusterEvent = (function () {
         function APIDetachPrimaryStorageFromClusterEvent() {
         }
         return APIDetachPrimaryStorageFromClusterEvent;
-    })();
+    }());
     ApiHeader.APIDetachPrimaryStorageFromClusterEvent = APIDetachPrimaryStorageFromClusterEvent;
     var APIChangePrimaryStorageStateEvent = (function () {
         function APIChangePrimaryStorageStateEvent() {
         }
         return APIChangePrimaryStorageStateEvent;
-    })();
+    }());
     ApiHeader.APIChangePrimaryStorageStateEvent = APIChangePrimaryStorageStateEvent;
     var APIUpdatePrimaryStorageEvent = (function () {
         function APIUpdatePrimaryStorageEvent() {
         }
         return APIUpdatePrimaryStorageEvent;
-    })();
+    }());
     ApiHeader.APIUpdatePrimaryStorageEvent = APIUpdatePrimaryStorageEvent;
     var APIReconnectPrimaryStorageEvent = (function () {
         function APIReconnectPrimaryStorageEvent() {
         }
         return APIReconnectPrimaryStorageEvent;
-    })();
+    }());
     ApiHeader.APIReconnectPrimaryStorageEvent = APIReconnectPrimaryStorageEvent;
     var APIAttachPrimaryStorageToClusterEvent = (function () {
         function APIAttachPrimaryStorageToClusterEvent() {
         }
         return APIAttachPrimaryStorageToClusterEvent;
-    })();
+    }());
     ApiHeader.APIAttachPrimaryStorageToClusterEvent = APIAttachPrimaryStorageToClusterEvent;
     var APIAddPrimaryStorageEvent = (function () {
         function APIAddPrimaryStorageEvent() {
         }
         return APIAddPrimaryStorageEvent;
-    })();
+    }());
     ApiHeader.APIAddPrimaryStorageEvent = APIAddPrimaryStorageEvent;
     var APIDeleteVolumeSnapshotEvent = (function () {
         function APIDeleteVolumeSnapshotEvent() {
         }
         return APIDeleteVolumeSnapshotEvent;
-    })();
+    }());
     ApiHeader.APIDeleteVolumeSnapshotEvent = APIDeleteVolumeSnapshotEvent;
     var APIUpdateVolumeSnapshotEvent = (function () {
         function APIUpdateVolumeSnapshotEvent() {
         }
         return APIUpdateVolumeSnapshotEvent;
-    })();
+    }());
     ApiHeader.APIUpdateVolumeSnapshotEvent = APIUpdateVolumeSnapshotEvent;
     var APIRevertVolumeFromSnapshotEvent = (function () {
         function APIRevertVolumeFromSnapshotEvent() {
         }
         return APIRevertVolumeFromSnapshotEvent;
-    })();
+    }());
     ApiHeader.APIRevertVolumeFromSnapshotEvent = APIRevertVolumeFromSnapshotEvent;
     var APIDeleteVolumeSnapshotFromBackupStorageEvent = (function () {
         function APIDeleteVolumeSnapshotFromBackupStorageEvent() {
         }
         return APIDeleteVolumeSnapshotFromBackupStorageEvent;
-    })();
+    }());
     ApiHeader.APIDeleteVolumeSnapshotFromBackupStorageEvent = APIDeleteVolumeSnapshotFromBackupStorageEvent;
     var APIBackupVolumeSnapshotEvent = (function () {
         function APIBackupVolumeSnapshotEvent() {
         }
         return APIBackupVolumeSnapshotEvent;
-    })();
+    }());
     ApiHeader.APIBackupVolumeSnapshotEvent = APIBackupVolumeSnapshotEvent;
     var BackupStorageInventory = (function () {
         function BackupStorageInventory() {
         }
         return BackupStorageInventory;
-    })();
+    }());
     ApiHeader.BackupStorageInventory = BackupStorageInventory;
     var APIUpdateBackupStorageEvent = (function () {
         function APIUpdateBackupStorageEvent() {
         }
         return APIUpdateBackupStorageEvent;
-    })();
+    }());
     ApiHeader.APIUpdateBackupStorageEvent = APIUpdateBackupStorageEvent;
     var APIDetachBackupStorageFromZoneEvent = (function () {
         function APIDetachBackupStorageFromZoneEvent() {
         }
         return APIDetachBackupStorageFromZoneEvent;
-    })();
+    }());
     ApiHeader.APIDetachBackupStorageFromZoneEvent = APIDetachBackupStorageFromZoneEvent;
     var APIScanBackupStorageEvent = (function () {
         function APIScanBackupStorageEvent() {
         }
         return APIScanBackupStorageEvent;
-    })();
+    }());
     ApiHeader.APIScanBackupStorageEvent = APIScanBackupStorageEvent;
     var APIAddBackupStorageEvent = (function () {
         function APIAddBackupStorageEvent() {
         }
         return APIAddBackupStorageEvent;
-    })();
+    }());
     ApiHeader.APIAddBackupStorageEvent = APIAddBackupStorageEvent;
     var APIAttachBackupStorageToZoneEvent = (function () {
         function APIAttachBackupStorageToZoneEvent() {
         }
         return APIAttachBackupStorageToZoneEvent;
-    })();
+    }());
     ApiHeader.APIAttachBackupStorageToZoneEvent = APIAttachBackupStorageToZoneEvent;
     var APIChangeBackupStorageStateEvent = (function () {
         function APIChangeBackupStorageStateEvent() {
         }
         return APIChangeBackupStorageStateEvent;
-    })();
+    }());
     ApiHeader.APIChangeBackupStorageStateEvent = APIChangeBackupStorageStateEvent;
     var APIDeleteBackupStorageEvent = (function () {
         function APIDeleteBackupStorageEvent() {
         }
         return APIDeleteBackupStorageEvent;
-    })();
+    }());
     ApiHeader.APIDeleteBackupStorageEvent = APIDeleteBackupStorageEvent;
     var IpRangeInventory = (function () {
         function IpRangeInventory() {
         }
         return IpRangeInventory;
-    })();
+    }());
     ApiHeader.IpRangeInventory = IpRangeInventory;
     var APIAddIpRangeEvent = (function () {
         function APIAddIpRangeEvent() {
         }
         return APIAddIpRangeEvent;
-    })();
+    }());
     ApiHeader.APIAddIpRangeEvent = APIAddIpRangeEvent;
     var NetworkServiceL3NetworkRefInventory = (function () {
         function NetworkServiceL3NetworkRefInventory() {
         }
         return NetworkServiceL3NetworkRefInventory;
-    })();
+    }());
     ApiHeader.NetworkServiceL3NetworkRefInventory = NetworkServiceL3NetworkRefInventory;
     var L3NetworkInventory = (function () {
         function L3NetworkInventory() {
         }
         return L3NetworkInventory;
-    })();
+    }());
     ApiHeader.L3NetworkInventory = L3NetworkInventory;
     var APIRemoveDnsFromL3NetworkEvent = (function () {
         function APIRemoveDnsFromL3NetworkEvent() {
         }
         return APIRemoveDnsFromL3NetworkEvent;
-    })();
+    }());
     ApiHeader.APIRemoveDnsFromL3NetworkEvent = APIRemoveDnsFromL3NetworkEvent;
     var APIDeleteL3NetworkEvent = (function () {
         function APIDeleteL3NetworkEvent() {
         }
         return APIDeleteL3NetworkEvent;
-    })();
+    }());
     ApiHeader.APIDeleteL3NetworkEvent = APIDeleteL3NetworkEvent;
     var APIChangeL3NetworkStateEvent = (function () {
         function APIChangeL3NetworkStateEvent() {
         }
         return APIChangeL3NetworkStateEvent;
-    })();
+    }());
     ApiHeader.APIChangeL3NetworkStateEvent = APIChangeL3NetworkStateEvent;
     var APIDeleteIpRangeEvent = (function () {
         function APIDeleteIpRangeEvent() {
         }
         return APIDeleteIpRangeEvent;
-    })();
+    }());
     ApiHeader.APIDeleteIpRangeEvent = APIDeleteIpRangeEvent;
     var APIAddIpRangeByNetworkCidrEvent = (function () {
         function APIAddIpRangeByNetworkCidrEvent() {
         }
         return APIAddIpRangeByNetworkCidrEvent;
-    })();
+    }());
     ApiHeader.APIAddIpRangeByNetworkCidrEvent = APIAddIpRangeByNetworkCidrEvent;
     var APIUpdateIpRangeEvent = (function () {
         function APIUpdateIpRangeEvent() {
         }
         return APIUpdateIpRangeEvent;
-    })();
+    }());
     ApiHeader.APIUpdateIpRangeEvent = APIUpdateIpRangeEvent;
     var APIUpdateL3NetworkEvent = (function () {
         function APIUpdateL3NetworkEvent() {
         }
         return APIUpdateL3NetworkEvent;
-    })();
+    }());
     ApiHeader.APIUpdateL3NetworkEvent = APIUpdateL3NetworkEvent;
     var APIAddDnsToL3NetworkEvent = (function () {
         function APIAddDnsToL3NetworkEvent() {
         }
         return APIAddDnsToL3NetworkEvent;
-    })();
+    }());
     ApiHeader.APIAddDnsToL3NetworkEvent = APIAddDnsToL3NetworkEvent;
     var APICreateL3NetworkEvent = (function () {
         function APICreateL3NetworkEvent() {
         }
         return APICreateL3NetworkEvent;
-    })();
+    }());
     ApiHeader.APICreateL3NetworkEvent = APICreateL3NetworkEvent;
     var NetworkServiceProviderInventory = (function () {
         function NetworkServiceProviderInventory() {
         }
         return NetworkServiceProviderInventory;
-    })();
+    }());
     ApiHeader.NetworkServiceProviderInventory = NetworkServiceProviderInventory;
     var APIDetachNetworkServiceProviderFromL2NetworkEvent = (function () {
         function APIDetachNetworkServiceProviderFromL2NetworkEvent() {
         }
         return APIDetachNetworkServiceProviderFromL2NetworkEvent;
-    })();
+    }());
     ApiHeader.APIDetachNetworkServiceProviderFromL2NetworkEvent = APIDetachNetworkServiceProviderFromL2NetworkEvent;
     var APIAddNetworkServiceProviderEvent = (function () {
         function APIAddNetworkServiceProviderEvent() {
         }
         return APIAddNetworkServiceProviderEvent;
-    })();
+    }());
     ApiHeader.APIAddNetworkServiceProviderEvent = APIAddNetworkServiceProviderEvent;
     var APIAttachNetworkServiceProviderToL2NetworkEvent = (function () {
         function APIAttachNetworkServiceProviderToL2NetworkEvent() {
         }
         return APIAttachNetworkServiceProviderToL2NetworkEvent;
-    })();
+    }());
     ApiHeader.APIAttachNetworkServiceProviderToL2NetworkEvent = APIAttachNetworkServiceProviderToL2NetworkEvent;
     var APIAttachNetworkServiceToL3NetworkEvent = (function () {
         function APIAttachNetworkServiceToL3NetworkEvent() {
         }
         return APIAttachNetworkServiceToL3NetworkEvent;
-    })();
+    }());
     ApiHeader.APIAttachNetworkServiceToL3NetworkEvent = APIAttachNetworkServiceToL3NetworkEvent;
     var L2NetworkInventory = (function () {
         function L2NetworkInventory() {
         }
         return L2NetworkInventory;
-    })();
+    }());
     ApiHeader.L2NetworkInventory = L2NetworkInventory;
     var APIAttachL2NetworkToClusterEvent = (function () {
         function APIAttachL2NetworkToClusterEvent() {
         }
         return APIAttachL2NetworkToClusterEvent;
-    })();
+    }());
     ApiHeader.APIAttachL2NetworkToClusterEvent = APIAttachL2NetworkToClusterEvent;
     var L2VlanNetworkInventory = (function () {
         function L2VlanNetworkInventory() {
         }
         return L2VlanNetworkInventory;
-    })();
+    }());
     ApiHeader.L2VlanNetworkInventory = L2VlanNetworkInventory;
     var APICreateL2VlanNetworkEvent = (function () {
         function APICreateL2VlanNetworkEvent() {
         }
         return APICreateL2VlanNetworkEvent;
-    })();
+    }());
     ApiHeader.APICreateL2VlanNetworkEvent = APICreateL2VlanNetworkEvent;
     var APIDetachL2NetworkFromClusterEvent = (function () {
         function APIDetachL2NetworkFromClusterEvent() {
         }
         return APIDetachL2NetworkFromClusterEvent;
-    })();
+    }());
     ApiHeader.APIDetachL2NetworkFromClusterEvent = APIDetachL2NetworkFromClusterEvent;
     var APIDeleteL2NetworkEvent = (function () {
         function APIDeleteL2NetworkEvent() {
         }
         return APIDeleteL2NetworkEvent;
-    })();
+    }());
     ApiHeader.APIDeleteL2NetworkEvent = APIDeleteL2NetworkEvent;
     var APICreateL2NetworkEvent = (function () {
         function APICreateL2NetworkEvent() {
         }
         return APICreateL2NetworkEvent;
-    })();
+    }());
     ApiHeader.APICreateL2NetworkEvent = APICreateL2NetworkEvent;
     var APIUpdateL2NetworkEvent = (function () {
         function APIUpdateL2NetworkEvent() {
         }
         return APIUpdateL2NetworkEvent;
-    })();
+    }());
     ApiHeader.APIUpdateL2NetworkEvent = APIUpdateL2NetworkEvent;
     var APIDeleteSearchIndexEvent = (function () {
         function APIDeleteSearchIndexEvent() {
         }
         return APIDeleteSearchIndexEvent;
-    })();
+    }());
     ApiHeader.APIDeleteSearchIndexEvent = APIDeleteSearchIndexEvent;
     var APISearchGenerateSqlTriggerEvent = (function () {
         function APISearchGenerateSqlTriggerEvent() {
         }
         return APISearchGenerateSqlTriggerEvent;
-    })();
+    }());
     ApiHeader.APISearchGenerateSqlTriggerEvent = APISearchGenerateSqlTriggerEvent;
     var APICreateSearchIndexEvent = (function () {
         function APICreateSearchIndexEvent() {
         }
         return APICreateSearchIndexEvent;
-    })();
+    }());
     ApiHeader.APICreateSearchIndexEvent = APICreateSearchIndexEvent;
     var UserTagInventory = (function () {
         function UserTagInventory() {
         }
         return UserTagInventory;
-    })();
+    }());
     ApiHeader.UserTagInventory = UserTagInventory;
     var APICreateUserTagEvent = (function () {
         function APICreateUserTagEvent() {
         }
         return APICreateUserTagEvent;
-    })();
+    }());
     ApiHeader.APICreateUserTagEvent = APICreateUserTagEvent;
     var APIDeleteTagEvent = (function () {
         function APIDeleteTagEvent() {
         }
         return APIDeleteTagEvent;
-    })();
+    }());
     ApiHeader.APIDeleteTagEvent = APIDeleteTagEvent;
     var TagInventory = (function () {
         function TagInventory() {
         }
         return TagInventory;
-    })();
+    }());
     ApiHeader.TagInventory = TagInventory;
     var APICreateTagEvent = (function () {
         function APICreateTagEvent() {
         }
         return APICreateTagEvent;
-    })();
+    }());
     ApiHeader.APICreateTagEvent = APICreateTagEvent;
     var SystemTagInventory = (function () {
         function SystemTagInventory() {
         }
         return SystemTagInventory;
-    })();
+    }());
     ApiHeader.SystemTagInventory = SystemTagInventory;
     var APICreateSystemTagEvent = (function () {
         function APICreateSystemTagEvent() {
         }
         return APICreateSystemTagEvent;
-    })();
+    }());
     ApiHeader.APICreateSystemTagEvent = APICreateSystemTagEvent;
     var APIUpdateSystemTagEvent = (function () {
         function APIUpdateSystemTagEvent() {
         }
         return APIUpdateSystemTagEvent;
-    })();
+    }());
     ApiHeader.APIUpdateSystemTagEvent = APIUpdateSystemTagEvent;
     var APIEvent = (function () {
         function APIEvent() {
         }
         return APIEvent;
-    })();
+    }());
     ApiHeader.APIEvent = APIEvent;
     var APIDeleteClusterEvent = (function () {
         function APIDeleteClusterEvent() {
         }
         return APIDeleteClusterEvent;
-    })();
+    }());
     ApiHeader.APIDeleteClusterEvent = APIDeleteClusterEvent;
     var ClusterInventory = (function () {
         function ClusterInventory() {
         }
         return ClusterInventory;
-    })();
+    }());
     ApiHeader.ClusterInventory = ClusterInventory;
     var APICreateClusterEvent = (function () {
         function APICreateClusterEvent() {
         }
         return APICreateClusterEvent;
-    })();
+    }());
     ApiHeader.APICreateClusterEvent = APICreateClusterEvent;
     var APIChangeClusterStateEvent = (function () {
         function APIChangeClusterStateEvent() {
         }
         return APIChangeClusterStateEvent;
-    })();
+    }());
     ApiHeader.APIChangeClusterStateEvent = APIChangeClusterStateEvent;
     var APIUpdateClusterEvent = (function () {
         function APIUpdateClusterEvent() {
         }
         return APIUpdateClusterEvent;
-    })();
+    }());
     ApiHeader.APIUpdateClusterEvent = APIUpdateClusterEvent;
     var APIRemoveUserFromGroupEvent = (function () {
         function APIRemoveUserFromGroupEvent() {
         }
         return APIRemoveUserFromGroupEvent;
-    })();
+    }());
     ApiHeader.APIRemoveUserFromGroupEvent = APIRemoveUserFromGroupEvent;
     var AccountInventory = (function () {
         function AccountInventory() {
         }
         return AccountInventory;
-    })();
+    }());
     ApiHeader.AccountInventory = AccountInventory;
     var APICreateAccountEvent = (function () {
         function APICreateAccountEvent() {
         }
         return APICreateAccountEvent;
-    })();
+    }());
     ApiHeader.APICreateAccountEvent = APICreateAccountEvent;
     var APIDeleteUserGroupEvent = (function () {
         function APIDeleteUserGroupEvent() {
         }
         return APIDeleteUserGroupEvent;
-    })();
+    }());
     ApiHeader.APIDeleteUserGroupEvent = APIDeleteUserGroupEvent;
     var APIAttachPolicyToUserEvent = (function () {
         function APIAttachPolicyToUserEvent() {
         }
         return APIAttachPolicyToUserEvent;
-    })();
+    }());
     ApiHeader.APIAttachPolicyToUserEvent = APIAttachPolicyToUserEvent;
     var APIShareResourceEvent = (function () {
         function APIShareResourceEvent() {
         }
         return APIShareResourceEvent;
-    })();
+    }());
     ApiHeader.APIShareResourceEvent = APIShareResourceEvent;
     var APIDetachPolicyFromUserGroupEvent = (function () {
         function APIDetachPolicyFromUserGroupEvent() {
         }
         return APIDetachPolicyFromUserGroupEvent;
-    })();
+    }());
     ApiHeader.APIDetachPolicyFromUserGroupEvent = APIDetachPolicyFromUserGroupEvent;
     var APIDeletePolicyEvent = (function () {
         function APIDeletePolicyEvent() {
         }
         return APIDeletePolicyEvent;
-    })();
+    }());
     ApiHeader.APIDeletePolicyEvent = APIDeletePolicyEvent;
     var APIAddUserToGroupEvent = (function () {
         function APIAddUserToGroupEvent() {
         }
         return APIAddUserToGroupEvent;
-    })();
+    }());
     ApiHeader.APIAddUserToGroupEvent = APIAddUserToGroupEvent;
     var APIUpdateUserEvent = (function () {
         function APIUpdateUserEvent() {
         }
         return APIUpdateUserEvent;
-    })();
+    }());
     ApiHeader.APIUpdateUserEvent = APIUpdateUserEvent;
     var APIDeleteAccountEvent = (function () {
         function APIDeleteAccountEvent() {
         }
         return APIDeleteAccountEvent;
-    })();
+    }());
     ApiHeader.APIDeleteAccountEvent = APIDeleteAccountEvent;
     var APIUpdateAccountEvent = (function () {
         function APIUpdateAccountEvent() {
         }
         return APIUpdateAccountEvent;
-    })();
+    }());
     ApiHeader.APIUpdateAccountEvent = APIUpdateAccountEvent;
     var QuotaInventory = (function () {
         function QuotaInventory() {
         }
         return QuotaInventory;
-    })();
+    }());
     ApiHeader.QuotaInventory = QuotaInventory;
     var APIUpdateQuotaEvent = (function () {
         function APIUpdateQuotaEvent() {
         }
         return APIUpdateQuotaEvent;
-    })();
+    }());
     ApiHeader.APIUpdateQuotaEvent = APIUpdateQuotaEvent;
     var PolicyInventory = (function () {
         function PolicyInventory() {
         }
         return PolicyInventory;
-    })();
+    }());
     ApiHeader.PolicyInventory = PolicyInventory;
     var APICreatePolicyEvent = (function () {
         function APICreatePolicyEvent() {
         }
         return APICreatePolicyEvent;
-    })();
+    }());
     ApiHeader.APICreatePolicyEvent = APICreatePolicyEvent;
     var UserInventory = (function () {
         function UserInventory() {
         }
         return UserInventory;
-    })();
+    }());
     ApiHeader.UserInventory = UserInventory;
     var APICreateUserEvent = (function () {
         function APICreateUserEvent() {
         }
         return APICreateUserEvent;
-    })();
+    }());
     ApiHeader.APICreateUserEvent = APICreateUserEvent;
     var APIDetachPolicyFromUserEvent = (function () {
         function APIDetachPolicyFromUserEvent() {
         }
         return APIDetachPolicyFromUserEvent;
-    })();
+    }());
     ApiHeader.APIDetachPolicyFromUserEvent = APIDetachPolicyFromUserEvent;
     var APIDeleteUserEvent = (function () {
         function APIDeleteUserEvent() {
         }
         return APIDeleteUserEvent;
-    })();
+    }());
     ApiHeader.APIDeleteUserEvent = APIDeleteUserEvent;
     var UserGroupInventory = (function () {
         function UserGroupInventory() {
         }
         return UserGroupInventory;
-    })();
+    }());
     ApiHeader.UserGroupInventory = UserGroupInventory;
     var APICreateUserGroupEvent = (function () {
         function APICreateUserGroupEvent() {
         }
         return APICreateUserGroupEvent;
-    })();
+    }());
     ApiHeader.APICreateUserGroupEvent = APICreateUserGroupEvent;
     var APIAttachPolicyToUserGroupEvent = (function () {
         function APIAttachPolicyToUserGroupEvent() {
         }
         return APIAttachPolicyToUserGroupEvent;
-    })();
+    }());
     ApiHeader.APIAttachPolicyToUserGroupEvent = APIAttachPolicyToUserGroupEvent;
     var APIRevokeResourceSharingEvent = (function () {
         function APIRevokeResourceSharingEvent() {
         }
         return APIRevokeResourceSharingEvent;
-    })();
+    }());
     ApiHeader.APIRevokeResourceSharingEvent = APIRevokeResourceSharingEvent;
     var ZoneInventory = (function () {
         function ZoneInventory() {
         }
         return ZoneInventory;
-    })();
+    }());
     ApiHeader.ZoneInventory = ZoneInventory;
     var APIUpdateZoneEvent = (function () {
         function APIUpdateZoneEvent() {
         }
         return APIUpdateZoneEvent;
-    })();
+    }());
     ApiHeader.APIUpdateZoneEvent = APIUpdateZoneEvent;
     var APIChangeZoneStateEvent = (function () {
         function APIChangeZoneStateEvent() {
         }
         return APIChangeZoneStateEvent;
-    })();
+    }());
     ApiHeader.APIChangeZoneStateEvent = APIChangeZoneStateEvent;
     var APICreateZoneEvent = (function () {
         function APICreateZoneEvent() {
         }
         return APICreateZoneEvent;
-    })();
+    }());
     ApiHeader.APICreateZoneEvent = APICreateZoneEvent;
     var APIDeleteZoneEvent = (function () {
         function APIDeleteZoneEvent() {
         }
         return APIDeleteZoneEvent;
-    })();
+    }());
     ApiHeader.APIDeleteZoneEvent = APIDeleteZoneEvent;
     var HostInventory = (function () {
         function HostInventory() {
         }
         return HostInventory;
-    })();
+    }());
     ApiHeader.HostInventory = HostInventory;
     var APIAddHostEvent = (function () {
         function APIAddHostEvent() {
         }
         return APIAddHostEvent;
-    })();
+    }());
     ApiHeader.APIAddHostEvent = APIAddHostEvent;
     var APIChangeHostStateEvent = (function () {
         function APIChangeHostStateEvent() {
         }
         return APIChangeHostStateEvent;
-    })();
+    }());
     ApiHeader.APIChangeHostStateEvent = APIChangeHostStateEvent;
     var APIDeleteHostEvent = (function () {
         function APIDeleteHostEvent() {
         }
         return APIDeleteHostEvent;
-    })();
+    }());
     ApiHeader.APIDeleteHostEvent = APIDeleteHostEvent;
     var APIReconnectHostEvent = (function () {
         function APIReconnectHostEvent() {
         }
         return APIReconnectHostEvent;
-    })();
+    }());
     ApiHeader.APIReconnectHostEvent = APIReconnectHostEvent;
     var APIUpdateHostEvent = (function () {
         function APIUpdateHostEvent() {
         }
         return APIUpdateHostEvent;
-    })();
+    }());
     ApiHeader.APIUpdateHostEvent = APIUpdateHostEvent;
     var CephPrimaryStorageMonInventory = (function () {
         function CephPrimaryStorageMonInventory() {
         }
         return CephPrimaryStorageMonInventory;
-    })();
+    }());
     ApiHeader.CephPrimaryStorageMonInventory = CephPrimaryStorageMonInventory;
     var CephPrimaryStorageInventory = (function () {
         function CephPrimaryStorageInventory() {
         }
         return CephPrimaryStorageInventory;
-    })();
+    }());
     ApiHeader.CephPrimaryStorageInventory = CephPrimaryStorageInventory;
     var APIRemoveMonFromCephPrimaryStorageEvent = (function () {
         function APIRemoveMonFromCephPrimaryStorageEvent() {
         }
         return APIRemoveMonFromCephPrimaryStorageEvent;
-    })();
+    }());
     ApiHeader.APIRemoveMonFromCephPrimaryStorageEvent = APIRemoveMonFromCephPrimaryStorageEvent;
     var APIAddMonToCephPrimaryStorageEvent = (function () {
         function APIAddMonToCephPrimaryStorageEvent() {
         }
         return APIAddMonToCephPrimaryStorageEvent;
-    })();
+    }());
     ApiHeader.APIAddMonToCephPrimaryStorageEvent = APIAddMonToCephPrimaryStorageEvent;
     var CephBackupStorageMonInventory = (function () {
         function CephBackupStorageMonInventory() {
         }
         return CephBackupStorageMonInventory;
-    })();
+    }());
     ApiHeader.CephBackupStorageMonInventory = CephBackupStorageMonInventory;
     var CephBackupStorageInventory = (function () {
         function CephBackupStorageInventory() {
         }
         return CephBackupStorageInventory;
-    })();
+    }());
     ApiHeader.CephBackupStorageInventory = CephBackupStorageInventory;
     var APIRemoveMonFromCephBackupStorageEvent = (function () {
         function APIRemoveMonFromCephBackupStorageEvent() {
         }
         return APIRemoveMonFromCephBackupStorageEvent;
-    })();
+    }());
     ApiHeader.APIRemoveMonFromCephBackupStorageEvent = APIRemoveMonFromCephBackupStorageEvent;
     var APIAddMonToCephBackupStorageEvent = (function () {
         function APIAddMonToCephBackupStorageEvent() {
         }
         return APIAddMonToCephBackupStorageEvent;
-    })();
+    }());
     ApiHeader.APIAddMonToCephBackupStorageEvent = APIAddMonToCephBackupStorageEvent;
     var SftpBackupStorageInventory = (function () {
         function SftpBackupStorageInventory() {
         }
         return SftpBackupStorageInventory;
-    })();
+    }());
     ApiHeader.SftpBackupStorageInventory = SftpBackupStorageInventory;
     var APIAddSftpBackupStorageEvent = (function () {
         function APIAddSftpBackupStorageEvent() {
         }
         return APIAddSftpBackupStorageEvent;
-    })();
+    }());
     ApiHeader.APIAddSftpBackupStorageEvent = APIAddSftpBackupStorageEvent;
     var APIReconnectSftpBackupStorageEvent = (function () {
         function APIReconnectSftpBackupStorageEvent() {
         }
         return APIReconnectSftpBackupStorageEvent;
-    })();
+    }());
     ApiHeader.APIReconnectSftpBackupStorageEvent = APIReconnectSftpBackupStorageEvent;
     var ApplianceVmInventory = (function () {
         function ApplianceVmInventory() {
         }
         return ApplianceVmInventory;
-    })();
+    }());
     ApiHeader.ApplianceVmInventory = ApplianceVmInventory;
     var APIReconnectVirtualRouterEvent = (function () {
         function APIReconnectVirtualRouterEvent() {
         }
         return APIReconnectVirtualRouterEvent;
-    })();
+    }());
     ApiHeader.APIReconnectVirtualRouterEvent = APIReconnectVirtualRouterEvent;
     var APIDeletePortForwardingRuleEvent = (function () {
         function APIDeletePortForwardingRuleEvent() {
         }
         return APIDeletePortForwardingRuleEvent;
-    })();
+    }());
     ApiHeader.APIDeletePortForwardingRuleEvent = APIDeletePortForwardingRuleEvent;
     var PortForwardingRuleInventory = (function () {
         function PortForwardingRuleInventory() {
         }
         return PortForwardingRuleInventory;
-    })();
+    }());
     ApiHeader.PortForwardingRuleInventory = PortForwardingRuleInventory;
     var APIChangePortForwardingRuleStateEvent = (function () {
         function APIChangePortForwardingRuleStateEvent() {
         }
         return APIChangePortForwardingRuleStateEvent;
-    })();
+    }());
     ApiHeader.APIChangePortForwardingRuleStateEvent = APIChangePortForwardingRuleStateEvent;
     var APIDetachPortForwardingRuleEvent = (function () {
         function APIDetachPortForwardingRuleEvent() {
         }
         return APIDetachPortForwardingRuleEvent;
-    })();
+    }());
     ApiHeader.APIDetachPortForwardingRuleEvent = APIDetachPortForwardingRuleEvent;
     var APIAttachPortForwardingRuleEvent = (function () {
         function APIAttachPortForwardingRuleEvent() {
         }
         return APIAttachPortForwardingRuleEvent;
-    })();
+    }());
     ApiHeader.APIAttachPortForwardingRuleEvent = APIAttachPortForwardingRuleEvent;
     var APICreatePortForwardingRuleEvent = (function () {
         function APICreatePortForwardingRuleEvent() {
         }
         return APICreatePortForwardingRuleEvent;
-    })();
+    }());
     ApiHeader.APICreatePortForwardingRuleEvent = APICreatePortForwardingRuleEvent;
     var APIUpdatePortForwardingRuleEvent = (function () {
         function APIUpdatePortForwardingRuleEvent() {
         }
         return APIUpdatePortForwardingRuleEvent;
-    })();
+    }());
     ApiHeader.APIUpdatePortForwardingRuleEvent = APIUpdatePortForwardingRuleEvent;
     var EipInventory = (function () {
         function EipInventory() {
         }
         return EipInventory;
-    })();
+    }());
     ApiHeader.EipInventory = EipInventory;
     var APIChangeEipStateEvent = (function () {
         function APIChangeEipStateEvent() {
         }
         return APIChangeEipStateEvent;
-    })();
+    }());
     ApiHeader.APIChangeEipStateEvent = APIChangeEipStateEvent;
     var APIUpdateEipEvent = (function () {
         function APIUpdateEipEvent() {
         }
         return APIUpdateEipEvent;
-    })();
+    }());
     ApiHeader.APIUpdateEipEvent = APIUpdateEipEvent;
     var APICreateEipEvent = (function () {
         function APICreateEipEvent() {
         }
         return APICreateEipEvent;
-    })();
+    }());
     ApiHeader.APICreateEipEvent = APICreateEipEvent;
     var APIDetachEipEvent = (function () {
         function APIDetachEipEvent() {
         }
         return APIDetachEipEvent;
-    })();
+    }());
     ApiHeader.APIDetachEipEvent = APIDetachEipEvent;
     var APIAttachEipEvent = (function () {
         function APIAttachEipEvent() {
         }
         return APIAttachEipEvent;
-    })();
+    }());
     ApiHeader.APIAttachEipEvent = APIAttachEipEvent;
     var APIDeleteEipEvent = (function () {
         function APIDeleteEipEvent() {
         }
         return APIDeleteEipEvent;
-    })();
+    }());
     ApiHeader.APIDeleteEipEvent = APIDeleteEipEvent;
     var LoadBalancerListenerVmNicRefInventory = (function () {
         function LoadBalancerListenerVmNicRefInventory() {
         }
         return LoadBalancerListenerVmNicRefInventory;
-    })();
+    }());
     ApiHeader.LoadBalancerListenerVmNicRefInventory = LoadBalancerListenerVmNicRefInventory;
     var LoadBalancerListenerInventory = (function () {
         function LoadBalancerListenerInventory() {
         }
         return LoadBalancerListenerInventory;
-    })();
+    }());
     ApiHeader.LoadBalancerListenerInventory = LoadBalancerListenerInventory;
     var LoadBalancerInventory = (function () {
         function LoadBalancerInventory() {
         }
         return LoadBalancerInventory;
-    })();
+    }());
     ApiHeader.LoadBalancerInventory = LoadBalancerInventory;
     var APIRefreshLoadBalancerEvent = (function () {
         function APIRefreshLoadBalancerEvent() {
         }
         return APIRefreshLoadBalancerEvent;
-    })();
+    }());
     ApiHeader.APIRefreshLoadBalancerEvent = APIRefreshLoadBalancerEvent;
     var APICreateLoadBalancerEvent = (function () {
         function APICreateLoadBalancerEvent() {
         }
         return APICreateLoadBalancerEvent;
-    })();
+    }());
     ApiHeader.APICreateLoadBalancerEvent = APICreateLoadBalancerEvent;
     var APIRemoveVmNicFromLoadBalancerEvent = (function () {
         function APIRemoveVmNicFromLoadBalancerEvent() {
         }
         return APIRemoveVmNicFromLoadBalancerEvent;
-    })();
+    }());
     ApiHeader.APIRemoveVmNicFromLoadBalancerEvent = APIRemoveVmNicFromLoadBalancerEvent;
     var APIAddVmNicToLoadBalancerEvent = (function () {
         function APIAddVmNicToLoadBalancerEvent() {
         }
         return APIAddVmNicToLoadBalancerEvent;
-    })();
+    }());
     ApiHeader.APIAddVmNicToLoadBalancerEvent = APIAddVmNicToLoadBalancerEvent;
     var APIDeleteLoadBalancerListenerEvent = (function () {
         function APIDeleteLoadBalancerListenerEvent() {
         }
         return APIDeleteLoadBalancerListenerEvent;
-    })();
+    }());
     ApiHeader.APIDeleteLoadBalancerListenerEvent = APIDeleteLoadBalancerListenerEvent;
     var APICreateLoadBalancerListenerEvent = (function () {
         function APICreateLoadBalancerListenerEvent() {
         }
         return APICreateLoadBalancerListenerEvent;
-    })();
+    }());
     ApiHeader.APICreateLoadBalancerListenerEvent = APICreateLoadBalancerListenerEvent;
     var APIDeleteLoadBalancerEvent = (function () {
         function APIDeleteLoadBalancerEvent() {
         }
         return APIDeleteLoadBalancerEvent;
-    })();
+    }());
     ApiHeader.APIDeleteLoadBalancerEvent = APIDeleteLoadBalancerEvent;
     var SecurityGroupRuleInventory = (function () {
         function SecurityGroupRuleInventory() {
         }
         return SecurityGroupRuleInventory;
-    })();
+    }());
     ApiHeader.SecurityGroupRuleInventory = SecurityGroupRuleInventory;
     var SecurityGroupInventory = (function () {
         function SecurityGroupInventory() {
         }
         return SecurityGroupInventory;
-    })();
+    }());
     ApiHeader.SecurityGroupInventory = SecurityGroupInventory;
     var APIAttachSecurityGroupToL3NetworkEvent = (function () {
         function APIAttachSecurityGroupToL3NetworkEvent() {
         }
         return APIAttachSecurityGroupToL3NetworkEvent;
-    })();
+    }());
     ApiHeader.APIAttachSecurityGroupToL3NetworkEvent = APIAttachSecurityGroupToL3NetworkEvent;
     var APIDeleteSecurityGroupRuleEvent = (function () {
         function APIDeleteSecurityGroupRuleEvent() {
         }
         return APIDeleteSecurityGroupRuleEvent;
-    })();
+    }());
     ApiHeader.APIDeleteSecurityGroupRuleEvent = APIDeleteSecurityGroupRuleEvent;
     var APIAddVmNicToSecurityGroupEvent = (function () {
         function APIAddVmNicToSecurityGroupEvent() {
         }
         return APIAddVmNicToSecurityGroupEvent;
-    })();
+    }());
     ApiHeader.APIAddVmNicToSecurityGroupEvent = APIAddVmNicToSecurityGroupEvent;
     var APIChangeSecurityGroupStateEvent = (function () {
         function APIChangeSecurityGroupStateEvent() {
         }
         return APIChangeSecurityGroupStateEvent;
-    })();
+    }());
     ApiHeader.APIChangeSecurityGroupStateEvent = APIChangeSecurityGroupStateEvent;
     var APIUpdateSecurityGroupEvent = (function () {
         function APIUpdateSecurityGroupEvent() {
         }
         return APIUpdateSecurityGroupEvent;
-    })();
+    }());
     ApiHeader.APIUpdateSecurityGroupEvent = APIUpdateSecurityGroupEvent;
     var APIDeleteVmNicFromSecurityGroupEvent = (function () {
         function APIDeleteVmNicFromSecurityGroupEvent() {
         }
         return APIDeleteVmNicFromSecurityGroupEvent;
-    })();
+    }());
     ApiHeader.APIDeleteVmNicFromSecurityGroupEvent = APIDeleteVmNicFromSecurityGroupEvent;
     var APIAddSecurityGroupRuleEvent = (function () {
         function APIAddSecurityGroupRuleEvent() {
         }
         return APIAddSecurityGroupRuleEvent;
-    })();
+    }());
     ApiHeader.APIAddSecurityGroupRuleEvent = APIAddSecurityGroupRuleEvent;
     var APICreateSecurityGroupEvent = (function () {
         function APICreateSecurityGroupEvent() {
         }
         return APICreateSecurityGroupEvent;
-    })();
+    }());
     ApiHeader.APICreateSecurityGroupEvent = APICreateSecurityGroupEvent;
     var APIDetachSecurityGroupFromL3NetworkEvent = (function () {
         function APIDetachSecurityGroupFromL3NetworkEvent() {
         }
         return APIDetachSecurityGroupFromL3NetworkEvent;
-    })();
+    }());
     ApiHeader.APIDetachSecurityGroupFromL3NetworkEvent = APIDetachSecurityGroupFromL3NetworkEvent;
     var APIDeleteSecurityGroupEvent = (function () {
         function APIDeleteSecurityGroupEvent() {
         }
         return APIDeleteSecurityGroupEvent;
-    })();
+    }());
     ApiHeader.APIDeleteSecurityGroupEvent = APIDeleteSecurityGroupEvent;
     var VipInventory = (function () {
         function VipInventory() {
         }
         return VipInventory;
-    })();
+    }());
     ApiHeader.VipInventory = VipInventory;
     var APICreateVipEvent = (function () {
         function APICreateVipEvent() {
         }
         return APICreateVipEvent;
-    })();
+    }());
     ApiHeader.APICreateVipEvent = APICreateVipEvent;
     var APIUpdateVipEvent = (function () {
         function APIUpdateVipEvent() {
         }
         return APIUpdateVipEvent;
-    })();
+    }());
     ApiHeader.APIUpdateVipEvent = APIUpdateVipEvent;
     var APIDeleteVipEvent = (function () {
         function APIDeleteVipEvent() {
         }
         return APIDeleteVipEvent;
-    })();
+    }());
     ApiHeader.APIDeleteVipEvent = APIDeleteVipEvent;
     var APIChangeVipStateEvent = (function () {
         function APIChangeVipStateEvent() {
         }
         return APIChangeVipStateEvent;
-    })();
+    }());
     ApiHeader.APIChangeVipStateEvent = APIChangeVipStateEvent;
     var APIGetGlobalConfigReply = (function () {
         function APIGetGlobalConfigReply() {
         }
         return APIGetGlobalConfigReply;
-    })();
+    }());
     ApiHeader.APIGetGlobalConfigReply = APIGetGlobalConfigReply;
     var APIQueryGlobalConfigReply = (function () {
         function APIQueryGlobalConfigReply() {
         }
         return APIQueryGlobalConfigReply;
-    })();
+    }());
     ApiHeader.APIQueryGlobalConfigReply = APIQueryGlobalConfigReply;
     var APIListGlobalConfigReply = (function () {
         function APIListGlobalConfigReply() {
         }
         return APIListGlobalConfigReply;
-    })();
+    }());
     ApiHeader.APIListGlobalConfigReply = APIListGlobalConfigReply;
     var APIQueryReply = (function () {
         function APIQueryReply() {
         }
         return APIQueryReply;
-    })();
+    }());
     ApiHeader.APIQueryReply = APIQueryReply;
     var APIGetCpuMemoryCapacityReply = (function () {
         function APIGetCpuMemoryCapacityReply() {
         }
         return APIGetCpuMemoryCapacityReply;
-    })();
+    }());
     ApiHeader.APIGetCpuMemoryCapacityReply = APIGetCpuMemoryCapacityReply;
     var APIGetHostAllocatorStrategiesReply = (function () {
         function APIGetHostAllocatorStrategiesReply() {
         }
         return APIGetHostAllocatorStrategiesReply;
-    })();
+    }());
     ApiHeader.APIGetHostAllocatorStrategiesReply = APIGetHostAllocatorStrategiesReply;
     var APISearchVmInstanceReply = (function () {
         function APISearchVmInstanceReply() {
         }
         return APISearchVmInstanceReply;
-    })();
+    }());
     ApiHeader.APISearchVmInstanceReply = APISearchVmInstanceReply;
     var APIGetVmInstanceReply = (function () {
         function APIGetVmInstanceReply() {
         }
         return APIGetVmInstanceReply;
-    })();
+    }());
     ApiHeader.APIGetVmInstanceReply = APIGetVmInstanceReply;
     var APIGetVmAttachableDataVolumeReply = (function () {
         function APIGetVmAttachableDataVolumeReply() {
         }
         return APIGetVmAttachableDataVolumeReply;
-    })();
+    }());
     ApiHeader.APIGetVmAttachableDataVolumeReply = APIGetVmAttachableDataVolumeReply;
     var APIGetVmMigrationCandidateHostsReply = (function () {
         function APIGetVmMigrationCandidateHostsReply() {
         }
         return APIGetVmMigrationCandidateHostsReply;
-    })();
+    }());
     ApiHeader.APIGetVmMigrationCandidateHostsReply = APIGetVmMigrationCandidateHostsReply;
     var APIListVmInstanceReply = (function () {
         function APIListVmInstanceReply() {
         }
         return APIListVmInstanceReply;
-    })();
+    }());
     ApiHeader.APIListVmInstanceReply = APIListVmInstanceReply;
     var APIListVmNicReply = (function () {
         function APIListVmNicReply() {
         }
         return APIListVmNicReply;
-    })();
+    }());
     ApiHeader.APIListVmNicReply = APIListVmNicReply;
     var APIQueryVmInstanceReply = (function () {
         function APIQueryVmInstanceReply() {
         }
         return APIQueryVmInstanceReply;
-    })();
+    }());
     ApiHeader.APIQueryVmInstanceReply = APIQueryVmInstanceReply;
     var APIQueryVmNicReply = (function () {
         function APIQueryVmNicReply() {
         }
         return APIQueryVmNicReply;
-    })();
+    }());
     ApiHeader.APIQueryVmNicReply = APIQueryVmNicReply;
     var APIGetVmAttachableL3NetworkReply = (function () {
         function APIGetVmAttachableL3NetworkReply() {
         }
         return APIGetVmAttachableL3NetworkReply;
-    })();
+    }());
     ApiHeader.APIGetVmAttachableL3NetworkReply = APIGetVmAttachableL3NetworkReply;
     var APIGetImageReply = (function () {
         function APIGetImageReply() {
         }
         return APIGetImageReply;
-    })();
+    }());
     ApiHeader.APIGetImageReply = APIGetImageReply;
     var APIQueryImageReply = (function () {
         function APIQueryImageReply() {
         }
         return APIQueryImageReply;
-    })();
+    }());
     ApiHeader.APIQueryImageReply = APIQueryImageReply;
     var APIListImageReply = (function () {
         function APIListImageReply() {
         }
         return APIListImageReply;
-    })();
+    }());
     ApiHeader.APIListImageReply = APIListImageReply;
     var APISearchImageReply = (function () {
         function APISearchImageReply() {
         }
         return APISearchImageReply;
-    })();
+    }());
     ApiHeader.APISearchImageReply = APISearchImageReply;
     var VolumeFormatReplyStruct = (function () {
         function VolumeFormatReplyStruct() {
         }
         return VolumeFormatReplyStruct;
-    })();
+    }());
     ApiHeader.VolumeFormatReplyStruct = VolumeFormatReplyStruct;
     var APIGetVolumeFormatReply = (function () {
         function APIGetVolumeFormatReply() {
         }
         return APIGetVolumeFormatReply;
-    })();
+    }());
     ApiHeader.APIGetVolumeFormatReply = APIGetVolumeFormatReply;
     var APIGetDataVolumeAttachableVmReply = (function () {
         function APIGetDataVolumeAttachableVmReply() {
         }
         return APIGetDataVolumeAttachableVmReply;
-    })();
+    }());
     ApiHeader.APIGetDataVolumeAttachableVmReply = APIGetDataVolumeAttachableVmReply;
     var APIQueryVolumeReply = (function () {
         function APIQueryVolumeReply() {
         }
         return APIQueryVolumeReply;
-    })();
+    }());
     ApiHeader.APIQueryVolumeReply = APIQueryVolumeReply;
     var APIGetVolumeReply = (function () {
         function APIGetVolumeReply() {
         }
         return APIGetVolumeReply;
-    })();
+    }());
     ApiHeader.APIGetVolumeReply = APIGetVolumeReply;
     var APIListVolumeReply = (function () {
         function APIListVolumeReply() {
         }
         return APIListVolumeReply;
-    })();
+    }());
     ApiHeader.APIListVolumeReply = APIListVolumeReply;
     var APISearchVolumeReply = (function () {
         function APISearchVolumeReply() {
         }
         return APISearchVolumeReply;
-    })();
+    }());
     ApiHeader.APISearchVolumeReply = APISearchVolumeReply;
     var APIIsReadyToGoReply = (function () {
         function APIIsReadyToGoReply() {
         }
         return APIIsReadyToGoReply;
-    })();
+    }());
     ApiHeader.APIIsReadyToGoReply = APIIsReadyToGoReply;
     var APISearchInstanceOfferingReply = (function () {
         function APISearchInstanceOfferingReply() {
         }
         return APISearchInstanceOfferingReply;
-    })();
+    }());
     ApiHeader.APISearchInstanceOfferingReply = APISearchInstanceOfferingReply;
     var APIGetGlobalPropertyReply = (function () {
         function APIGetGlobalPropertyReply() {
         }
         return APIGetGlobalPropertyReply;
-    })();
+    }());
     ApiHeader.APIGetGlobalPropertyReply = APIGetGlobalPropertyReply;
     var APIListDiskOfferingReply = (function () {
         function APIListDiskOfferingReply() {
         }
         return APIListDiskOfferingReply;
-    })();
+    }());
     ApiHeader.APIListDiskOfferingReply = APIListDiskOfferingReply;
     var APIListInstanceOfferingReply = (function () {
         function APIListInstanceOfferingReply() {
         }
         return APIListInstanceOfferingReply;
-    })();
+    }());
     ApiHeader.APIListInstanceOfferingReply = APIListInstanceOfferingReply;
     var APISearchDnsReply = (function () {
         function APISearchDnsReply() {
         }
         return APISearchDnsReply;
-    })();
+    }());
     ApiHeader.APISearchDnsReply = APISearchDnsReply;
     var APIGetInstanceOfferingReply = (function () {
         function APIGetInstanceOfferingReply() {
         }
         return APIGetInstanceOfferingReply;
-    })();
+    }());
     ApiHeader.APIGetInstanceOfferingReply = APIGetInstanceOfferingReply;
     var APIQueryDiskOfferingReply = (function () {
         function APIQueryDiskOfferingReply() {
         }
         return APIQueryDiskOfferingReply;
-    })();
+    }());
     ApiHeader.APIQueryDiskOfferingReply = APIQueryDiskOfferingReply;
     var APISearchDiskOfferingReply = (function () {
         function APISearchDiskOfferingReply() {
         }
         return APISearchDiskOfferingReply;
-    })();
+    }());
     ApiHeader.APISearchDiskOfferingReply = APISearchDiskOfferingReply;
     var APIGetDiskOfferingReply = (function () {
         function APIGetDiskOfferingReply() {
         }
         return APIGetDiskOfferingReply;
-    })();
+    }());
     ApiHeader.APIGetDiskOfferingReply = APIGetDiskOfferingReply;
     var APIQueryInstanceOfferingReply = (function () {
         function APIQueryInstanceOfferingReply() {
         }
         return APIQueryInstanceOfferingReply;
-    })();
+    }());
     ApiHeader.APIQueryInstanceOfferingReply = APIQueryInstanceOfferingReply;
     var APIListPrimaryStorageReply = (function () {
         function APIListPrimaryStorageReply() {
         }
         return APIListPrimaryStorageReply;
-    })();
+    }());
     ApiHeader.APIListPrimaryStorageReply = APIListPrimaryStorageReply;
     var APIGetPrimaryStorageTypesReply = (function () {
         function APIGetPrimaryStorageTypesReply() {
         }
         return APIGetPrimaryStorageTypesReply;
-    })();
+    }());
     ApiHeader.APIGetPrimaryStorageTypesReply = APIGetPrimaryStorageTypesReply;
     var CreateTemplateFromVolumeOnPrimaryStorageReply = (function () {
         function CreateTemplateFromVolumeOnPrimaryStorageReply() {
         }
         return CreateTemplateFromVolumeOnPrimaryStorageReply;
-    })();
+    }());
     ApiHeader.CreateTemplateFromVolumeOnPrimaryStorageReply = CreateTemplateFromVolumeOnPrimaryStorageReply;
     var APIGetPrimaryStorageReply = (function () {
         function APIGetPrimaryStorageReply() {
         }
         return APIGetPrimaryStorageReply;
-    })();
+    }());
     ApiHeader.APIGetPrimaryStorageReply = APIGetPrimaryStorageReply;
     var APISearchPrimaryStorageReply = (function () {
         function APISearchPrimaryStorageReply() {
         }
         return APISearchPrimaryStorageReply;
-    })();
+    }());
     ApiHeader.APISearchPrimaryStorageReply = APISearchPrimaryStorageReply;
     var APIGetPrimaryStorageAllocatorStrategiesReply = (function () {
         function APIGetPrimaryStorageAllocatorStrategiesReply() {
         }
         return APIGetPrimaryStorageAllocatorStrategiesReply;
-    })();
+    }());
     ApiHeader.APIGetPrimaryStorageAllocatorStrategiesReply = APIGetPrimaryStorageAllocatorStrategiesReply;
     var APIQueryPrimaryStorageReply = (function () {
         function APIQueryPrimaryStorageReply() {
         }
         return APIQueryPrimaryStorageReply;
-    })();
+    }());
     ApiHeader.APIQueryPrimaryStorageReply = APIQueryPrimaryStorageReply;
     var APIGetPrimaryStorageCapacityReply = (function () {
         function APIGetPrimaryStorageCapacityReply() {
         }
         return APIGetPrimaryStorageCapacityReply;
-    })();
+    }());
     ApiHeader.APIGetPrimaryStorageCapacityReply = APIGetPrimaryStorageCapacityReply;
     var APIQueryVolumeSnapshotReply = (function () {
         function APIQueryVolumeSnapshotReply() {
         }
         return APIQueryVolumeSnapshotReply;
-    })();
+    }());
     ApiHeader.APIQueryVolumeSnapshotReply = APIQueryVolumeSnapshotReply;
     var SnapshotLeafInventory = (function () {
         function SnapshotLeafInventory() {
         }
         return SnapshotLeafInventory;
-    })();
+    }());
     ApiHeader.SnapshotLeafInventory = SnapshotLeafInventory;
     var VolumeSnapshotTreeInventory = (function () {
         function VolumeSnapshotTreeInventory() {
         }
         return VolumeSnapshotTreeInventory;
-    })();
+    }());
     ApiHeader.VolumeSnapshotTreeInventory = VolumeSnapshotTreeInventory;
     var APIQueryVolumeSnapshotTreeReply = (function () {
         function APIQueryVolumeSnapshotTreeReply() {
         }
         return APIQueryVolumeSnapshotTreeReply;
-    })();
+    }());
     ApiHeader.APIQueryVolumeSnapshotTreeReply = APIQueryVolumeSnapshotTreeReply;
     var APIGetVolumeSnapshotTreeReply = (function () {
         function APIGetVolumeSnapshotTreeReply() {
         }
         return APIGetVolumeSnapshotTreeReply;
-    })();
+    }());
     ApiHeader.APIGetVolumeSnapshotTreeReply = APIGetVolumeSnapshotTreeReply;
     var APISearchBackupStorageReply = (function () {
         function APISearchBackupStorageReply() {
         }
         return APISearchBackupStorageReply;
-    })();
+    }());
     ApiHeader.APISearchBackupStorageReply = APISearchBackupStorageReply;
     var APIGetBackupStorageCapacityReply = (function () {
         function APIGetBackupStorageCapacityReply() {
         }
         return APIGetBackupStorageCapacityReply;
-    })();
+    }());
     ApiHeader.APIGetBackupStorageCapacityReply = APIGetBackupStorageCapacityReply;
     var APIQueryBackupStorageReply = (function () {
         function APIQueryBackupStorageReply() {
         }
         return APIQueryBackupStorageReply;
-    })();
+    }());
     ApiHeader.APIQueryBackupStorageReply = APIQueryBackupStorageReply;
     var APIGetBackupStorageTypesReply = (function () {
         function APIGetBackupStorageTypesReply() {
         }
         return APIGetBackupStorageTypesReply;
-    })();
+    }());
     ApiHeader.APIGetBackupStorageTypesReply = APIGetBackupStorageTypesReply;
     var APIGetBackupStorageReply = (function () {
         function APIGetBackupStorageReply() {
         }
         return APIGetBackupStorageReply;
-    })();
+    }());
     ApiHeader.APIGetBackupStorageReply = APIGetBackupStorageReply;
     var APIListBackupStorageReply = (function () {
         function APIListBackupStorageReply() {
         }
         return APIListBackupStorageReply;
-    })();
+    }());
     ApiHeader.APIListBackupStorageReply = APIListBackupStorageReply;
     var APIListIpRangeReply = (function () {
         function APIListIpRangeReply() {
         }
         return APIListIpRangeReply;
-    })();
+    }());
     ApiHeader.APIListIpRangeReply = APIListIpRangeReply;
     var APISearchL3NetworkReply = (function () {
         function APISearchL3NetworkReply() {
         }
         return APISearchL3NetworkReply;
-    })();
+    }());
     ApiHeader.APISearchL3NetworkReply = APISearchL3NetworkReply;
     var APIGetL3NetworkTypesReply = (function () {
         function APIGetL3NetworkTypesReply() {
         }
         return APIGetL3NetworkTypesReply;
-    })();
+    }());
     ApiHeader.APIGetL3NetworkTypesReply = APIGetL3NetworkTypesReply;
     var APIGetL3NetworkReply = (function () {
         function APIGetL3NetworkReply() {
         }
         return APIGetL3NetworkReply;
-    })();
+    }());
     ApiHeader.APIGetL3NetworkReply = APIGetL3NetworkReply;
     var APIGetIpAddressCapacityReply = (function () {
         function APIGetIpAddressCapacityReply() {
         }
         return APIGetIpAddressCapacityReply;
-    })();
+    }());
     ApiHeader.APIGetIpAddressCapacityReply = APIGetIpAddressCapacityReply;
     var APIQueryL3NetworkReply = (function () {
         function APIQueryL3NetworkReply() {
         }
         return APIQueryL3NetworkReply;
-    })();
+    }());
     ApiHeader.APIQueryL3NetworkReply = APIQueryL3NetworkReply;
     var FreeIpInventory = (function () {
         function FreeIpInventory() {
         }
         return FreeIpInventory;
-    })();
+    }());
     ApiHeader.FreeIpInventory = FreeIpInventory;
     var APIGetFreeIpReply = (function () {
         function APIGetFreeIpReply() {
         }
         return APIGetFreeIpReply;
-    })();
+    }());
     ApiHeader.APIGetFreeIpReply = APIGetFreeIpReply;
     var APIQueryIpRangeReply = (function () {
         function APIQueryIpRangeReply() {
         }
         return APIQueryIpRangeReply;
-    })();
+    }());
     ApiHeader.APIQueryIpRangeReply = APIQueryIpRangeReply;
     var APIListL3NetworkReply = (function () {
         function APIListL3NetworkReply() {
         }
         return APIListL3NetworkReply;
-    })();
+    }());
     ApiHeader.APIListL3NetworkReply = APIListL3NetworkReply;
     var APIQueryNetworkServiceL3NetworkRefReply = (function () {
         function APIQueryNetworkServiceL3NetworkRefReply() {
         }
         return APIQueryNetworkServiceL3NetworkRefReply;
-    })();
+    }());
     ApiHeader.APIQueryNetworkServiceL3NetworkRefReply = APIQueryNetworkServiceL3NetworkRefReply;
     var APISearchNetworkServiceProviderReply = (function () {
         function APISearchNetworkServiceProviderReply() {
         }
         return APISearchNetworkServiceProviderReply;
-    })();
+    }());
     ApiHeader.APISearchNetworkServiceProviderReply = APISearchNetworkServiceProviderReply;
     var APIGetNetworkServiceProviderReply = (function () {
         function APIGetNetworkServiceProviderReply() {
         }
         return APIGetNetworkServiceProviderReply;
-    })();
+    }());
     ApiHeader.APIGetNetworkServiceProviderReply = APIGetNetworkServiceProviderReply;
     var APIGetNetworkServiceTypesReply = (function () {
         function APIGetNetworkServiceTypesReply() {
         }
         return APIGetNetworkServiceTypesReply;
-    })();
+    }());
     ApiHeader.APIGetNetworkServiceTypesReply = APIGetNetworkServiceTypesReply;
     var APIListNetworkServiceProviderReply = (function () {
         function APIListNetworkServiceProviderReply() {
         }
         return APIListNetworkServiceProviderReply;
-    })();
+    }());
     ApiHeader.APIListNetworkServiceProviderReply = APIListNetworkServiceProviderReply;
     var APIQueryNetworkServiceProviderReply = (function () {
         function APIQueryNetworkServiceProviderReply() {
         }
         return APIQueryNetworkServiceProviderReply;
-    })();
+    }());
     ApiHeader.APIQueryNetworkServiceProviderReply = APIQueryNetworkServiceProviderReply;
     var APIGetL2VlanNetworkReply = (function () {
         function APIGetL2VlanNetworkReply() {
         }
         return APIGetL2VlanNetworkReply;
-    })();
+    }());
     ApiHeader.APIGetL2VlanNetworkReply = APIGetL2VlanNetworkReply;
     var APIGetL2NetworkReply = (function () {
         function APIGetL2NetworkReply() {
         }
         return APIGetL2NetworkReply;
-    })();
+    }());
     ApiHeader.APIGetL2NetworkReply = APIGetL2NetworkReply;
     var APIQueryL2VlanNetworkReply = (function () {
         function APIQueryL2VlanNetworkReply() {
         }
         return APIQueryL2VlanNetworkReply;
-    })();
+    }());
     ApiHeader.APIQueryL2VlanNetworkReply = APIQueryL2VlanNetworkReply;
     var APIGetL2NetworkTypesReply = (function () {
         function APIGetL2NetworkTypesReply() {
         }
         return APIGetL2NetworkTypesReply;
-    })();
+    }());
     ApiHeader.APIGetL2NetworkTypesReply = APIGetL2NetworkTypesReply;
     var APIListL2VlanNetworkReply = (function () {
         function APIListL2VlanNetworkReply() {
         }
         return APIListL2VlanNetworkReply;
-    })();
+    }());
     ApiHeader.APIListL2VlanNetworkReply = APIListL2VlanNetworkReply;
     var APISearchL2VlanNetworkReply = (function () {
         function APISearchL2VlanNetworkReply() {
         }
         return APISearchL2VlanNetworkReply;
-    })();
+    }());
     ApiHeader.APISearchL2VlanNetworkReply = APISearchL2VlanNetworkReply;
     var APIQueryL2NetworkReply = (function () {
         function APIQueryL2NetworkReply() {
         }
         return APIQueryL2NetworkReply;
-    })();
+    }());
     ApiHeader.APIQueryL2NetworkReply = APIQueryL2NetworkReply;
     var APISearchL2NetworkReply = (function () {
         function APISearchL2NetworkReply() {
         }
         return APISearchL2NetworkReply;
-    })();
+    }());
     ApiHeader.APISearchL2NetworkReply = APISearchL2NetworkReply;
     var APIListL2NetworkReply = (function () {
         function APIListL2NetworkReply() {
         }
         return APIListL2NetworkReply;
-    })();
+    }());
     ApiHeader.APIListL2NetworkReply = APIListL2NetworkReply;
     var APISearchReply = (function () {
         function APISearchReply() {
         }
         return APISearchReply;
-    })();
+    }());
     ApiHeader.APISearchReply = APISearchReply;
     var APIQueryUserTagReply = (function () {
         function APIQueryUserTagReply() {
         }
         return APIQueryUserTagReply;
-    })();
+    }());
     ApiHeader.APIQueryUserTagReply = APIQueryUserTagReply;
     var APIQuerySystemTagReply = (function () {
         function APIQuerySystemTagReply() {
         }
         return APIQuerySystemTagReply;
-    })();
+    }());
     ApiHeader.APIQuerySystemTagReply = APIQuerySystemTagReply;
     var APIQueryTagReply = (function () {
         function APIQueryTagReply() {
         }
         return APIQueryTagReply;
-    })();
+    }());
     ApiHeader.APIQueryTagReply = APIQueryTagReply;
     var ManagementNodeInventory = (function () {
         function ManagementNodeInventory() {
         }
         return ManagementNodeInventory;
-    })();
+    }());
     ApiHeader.ManagementNodeInventory = ManagementNodeInventory;
     var APIQueryManagementNodeReply = (function () {
         function APIQueryManagementNodeReply() {
         }
         return APIQueryManagementNodeReply;
-    })();
+    }());
     ApiHeader.APIQueryManagementNodeReply = APIQueryManagementNodeReply;
     var APIListManagementNodeReply = (function () {
         function APIListManagementNodeReply() {
         }
         return APIListManagementNodeReply;
-    })();
+    }());
     ApiHeader.APIListManagementNodeReply = APIListManagementNodeReply;
     var APIReply = (function () {
         function APIReply() {
         }
         return APIReply;
-    })();
+    }());
     ApiHeader.APIReply = APIReply;
     var APISearchClusterReply = (function () {
         function APISearchClusterReply() {
         }
         return APISearchClusterReply;
-    })();
+    }());
     ApiHeader.APISearchClusterReply = APISearchClusterReply;
     var APIListClusterReply = (function () {
         function APIListClusterReply() {
         }
         return APIListClusterReply;
-    })();
+    }());
     ApiHeader.APIListClusterReply = APIListClusterReply;
     var APIGetClusterReply = (function () {
         function APIGetClusterReply() {
         }
         return APIGetClusterReply;
-    })();
+    }());
     ApiHeader.APIGetClusterReply = APIGetClusterReply;
     var APIQueryClusterReply = (function () {
         function APIQueryClusterReply() {
         }
         return APIQueryClusterReply;
-    })();
+    }());
     ApiHeader.APIQueryClusterReply = APIQueryClusterReply;
     var APIListUserReply = (function () {
         function APIListUserReply() {
         }
         return APIListUserReply;
-    })();
+    }());
     ApiHeader.APIListUserReply = APIListUserReply;
     var APIQueryUserGroupReply = (function () {
         function APIQueryUserGroupReply() {
         }
         return APIQueryUserGroupReply;
-    })();
+    }());
     ApiHeader.APIQueryUserGroupReply = APIQueryUserGroupReply;
     var APIGetUserReply = (function () {
         function APIGetUserReply() {
         }
         return APIGetUserReply;
-    })();
+    }());
     ApiHeader.APIGetUserReply = APIGetUserReply;
     var APIGetAccountReply = (function () {
         function APIGetAccountReply() {
         }
         return APIGetAccountReply;
-    })();
+    }());
     ApiHeader.APIGetAccountReply = APIGetAccountReply;
     var APIQueryUserReply = (function () {
         function APIQueryUserReply() {
         }
         return APIQueryUserReply;
-    })();
+    }());
     ApiHeader.APIQueryUserReply = APIQueryUserReply;
     var APIListAccountReply = (function () {
         function APIListAccountReply() {
         }
         return APIListAccountReply;
-    })();
+    }());
     ApiHeader.APIListAccountReply = APIListAccountReply;
     var APISearchPolicyReply = (function () {
         function APISearchPolicyReply() {
         }
         return APISearchPolicyReply;
-    })();
+    }());
     ApiHeader.APISearchPolicyReply = APISearchPolicyReply;
     var APIQueryAccountReply = (function () {
         function APIQueryAccountReply() {
         }
         return APIQueryAccountReply;
-    })();
+    }());
     ApiHeader.APIQueryAccountReply = APIQueryAccountReply;
     var APILogOutReply = (function () {
         function APILogOutReply() {
         }
         return APILogOutReply;
-    })();
+    }());
     ApiHeader.APILogOutReply = APILogOutReply;
     var APISearchUserGroupReply = (function () {
         function APISearchUserGroupReply() {
         }
         return APISearchUserGroupReply;
-    })();
+    }());
     ApiHeader.APISearchUserGroupReply = APISearchUserGroupReply;
     var APIGetPolicyReply = (function () {
         function APIGetPolicyReply() {
         }
         return APIGetPolicyReply;
-    })();
+    }());
     ApiHeader.APIGetPolicyReply = APIGetPolicyReply;
     var APILogInReply = (function () {
         function APILogInReply() {
         }
         return APILogInReply;
-    })();
+    }());
     ApiHeader.APILogInReply = APILogInReply;
     var APIListPolicyReply = (function () {
         function APIListPolicyReply() {
         }
         return APIListPolicyReply;
-    })();
+    }());
     ApiHeader.APIListPolicyReply = APIListPolicyReply;
     var APIQueryQuotaReply = (function () {
         function APIQueryQuotaReply() {
         }
         return APIQueryQuotaReply;
-    })();
+    }());
     ApiHeader.APIQueryQuotaReply = APIQueryQuotaReply;
     var APIGetUserGroupReply = (function () {
         function APIGetUserGroupReply() {
         }
         return APIGetUserGroupReply;
-    })();
+    }());
     ApiHeader.APIGetUserGroupReply = APIGetUserGroupReply;
     var APIQueryPolicyReply = (function () {
         function APIQueryPolicyReply() {
         }
         return APIQueryPolicyReply;
-    })();
+    }());
     ApiHeader.APIQueryPolicyReply = APIQueryPolicyReply;
     var APISearchAccountReply = (function () {
         function APISearchAccountReply() {
         }
         return APISearchAccountReply;
-    })();
+    }());
     ApiHeader.APISearchAccountReply = APISearchAccountReply;
     var APISearchUserReply = (function () {
         function APISearchUserReply() {
         }
         return APISearchUserReply;
-    })();
+    }());
     ApiHeader.APISearchUserReply = APISearchUserReply;
     var APIValidateSessionReply = (function () {
         function APIValidateSessionReply() {
         }
         return APIValidateSessionReply;
-    })();
+    }());
     ApiHeader.APIValidateSessionReply = APIValidateSessionReply;
     var APIGetZoneReply = (function () {
         function APIGetZoneReply() {
         }
         return APIGetZoneReply;
-    })();
+    }());
     ApiHeader.APIGetZoneReply = APIGetZoneReply;
     var APISearchZoneReply = (function () {
         function APISearchZoneReply() {
         }
         return APISearchZoneReply;
-    })();
+    }());
     ApiHeader.APISearchZoneReply = APISearchZoneReply;
     var APIListZonesReply = (function () {
         function APIListZonesReply() {
         }
         return APIListZonesReply;
-    })();
+    }());
     ApiHeader.APIListZonesReply = APIListZonesReply;
     var APIQueryZoneReply = (function () {
         function APIQueryZoneReply() {
         }
         return APIQueryZoneReply;
-    })();
+    }());
     ApiHeader.APIQueryZoneReply = APIQueryZoneReply;
     var APIGetHypervisorTypesReply = (function () {
         function APIGetHypervisorTypesReply() {
         }
         return APIGetHypervisorTypesReply;
-    })();
+    }());
     ApiHeader.APIGetHypervisorTypesReply = APIGetHypervisorTypesReply;
     var APIGetHostReply = (function () {
         function APIGetHostReply() {
         }
         return APIGetHostReply;
-    })();
+    }());
     ApiHeader.APIGetHostReply = APIGetHostReply;
     var APIListHostReply = (function () {
         function APIListHostReply() {
         }
         return APIListHostReply;
-    })();
+    }());
     ApiHeader.APIListHostReply = APIListHostReply;
     var APISearchHostReply = (function () {
         function APISearchHostReply() {
         }
         return APISearchHostReply;
-    })();
+    }());
     ApiHeader.APISearchHostReply = APISearchHostReply;
     var APIQueryHostReply = (function () {
         function APIQueryHostReply() {
         }
         return APIQueryHostReply;
-    })();
+    }());
     ApiHeader.APIQueryHostReply = APIQueryHostReply;
     var APIQueryApplianceVmReply = (function () {
         function APIQueryApplianceVmReply() {
         }
         return APIQueryApplianceVmReply;
-    })();
+    }());
     ApiHeader.APIQueryApplianceVmReply = APIQueryApplianceVmReply;
     var APIListApplianceVmReply = (function () {
         function APIListApplianceVmReply() {
         }
         return APIListApplianceVmReply;
-    })();
+    }());
     ApiHeader.APIListApplianceVmReply = APIListApplianceVmReply;
     var IscsiFileSystemBackendPrimaryStorageInventory = (function () {
         function IscsiFileSystemBackendPrimaryStorageInventory() {
         }
         return IscsiFileSystemBackendPrimaryStorageInventory;
-    })();
+    }());
     ApiHeader.IscsiFileSystemBackendPrimaryStorageInventory = IscsiFileSystemBackendPrimaryStorageInventory;
     var APIQueryIscsiFileSystemBackendPrimaryStorageReply = (function () {
         function APIQueryIscsiFileSystemBackendPrimaryStorageReply() {
         }
         return APIQueryIscsiFileSystemBackendPrimaryStorageReply;
-    })();
+    }());
     ApiHeader.APIQueryIscsiFileSystemBackendPrimaryStorageReply = APIQueryIscsiFileSystemBackendPrimaryStorageReply;
     var APIGetSftpBackupStorageReply = (function () {
         function APIGetSftpBackupStorageReply() {
         }
         return APIGetSftpBackupStorageReply;
-    })();
+    }());
     ApiHeader.APIGetSftpBackupStorageReply = APIGetSftpBackupStorageReply;
     var APIQuerySftpBackupStorageReply = (function () {
         function APIQuerySftpBackupStorageReply() {
         }
         return APIQuerySftpBackupStorageReply;
-    })();
+    }());
     ApiHeader.APIQuerySftpBackupStorageReply = APIQuerySftpBackupStorageReply;
     var APISearchSftpBackupStorageReply = (function () {
         function APISearchSftpBackupStorageReply() {
         }
         return APISearchSftpBackupStorageReply;
-    })();
+    }());
     ApiHeader.APISearchSftpBackupStorageReply = APISearchSftpBackupStorageReply;
     var APISearchVirtualRouterVmReply = (function () {
         function APISearchVirtualRouterVmReply() {
         }
         return APISearchVirtualRouterVmReply;
-    })();
+    }());
     ApiHeader.APISearchVirtualRouterVmReply = APISearchVirtualRouterVmReply;
     var APIGetVirtualRouterOfferingReply = (function () {
         function APIGetVirtualRouterOfferingReply() {
         }
         return APIGetVirtualRouterOfferingReply;
-    })();
+    }());
     ApiHeader.APIGetVirtualRouterOfferingReply = APIGetVirtualRouterOfferingReply;
     var APISearchVirtualRouterOffingReply = (function () {
         function APISearchVirtualRouterOffingReply() {
         }
         return APISearchVirtualRouterOffingReply;
-    })();
+    }());
     ApiHeader.APISearchVirtualRouterOffingReply = APISearchVirtualRouterOffingReply;
     var VirtualRouterOfferingInventory = (function () {
         function VirtualRouterOfferingInventory() {
         }
         return VirtualRouterOfferingInventory;
-    })();
+    }());
     ApiHeader.VirtualRouterOfferingInventory = VirtualRouterOfferingInventory;
     var APIQueryVirtualRouterOfferingReply = (function () {
         function APIQueryVirtualRouterOfferingReply() {
         }
         return APIQueryVirtualRouterOfferingReply;
-    })();
+    }());
     ApiHeader.APIQueryVirtualRouterOfferingReply = APIQueryVirtualRouterOfferingReply;
     var VirtualRouterVmInventory = (function () {
         function VirtualRouterVmInventory() {
         }
         return VirtualRouterVmInventory;
-    })();
+    }());
     ApiHeader.VirtualRouterVmInventory = VirtualRouterVmInventory;
     var APIQueryVirtualRouterVmReply = (function () {
         function APIQueryVirtualRouterVmReply() {
         }
         return APIQueryVirtualRouterVmReply;
-    })();
+    }());
     ApiHeader.APIQueryVirtualRouterVmReply = APIQueryVirtualRouterVmReply;
     var APIQueryPortForwardingRuleReply = (function () {
         function APIQueryPortForwardingRuleReply() {
         }
         return APIQueryPortForwardingRuleReply;
-    })();
+    }());
     ApiHeader.APIQueryPortForwardingRuleReply = APIQueryPortForwardingRuleReply;
     var APIListPortForwardingRuleReply = (function () {
         function APIListPortForwardingRuleReply() {
         }
         return APIListPortForwardingRuleReply;
-    })();
+    }());
     ApiHeader.APIListPortForwardingRuleReply = APIListPortForwardingRuleReply;
     var APIGetPortForwardingAttachableVmNicsReply = (function () {
         function APIGetPortForwardingAttachableVmNicsReply() {
         }
         return APIGetPortForwardingAttachableVmNicsReply;
-    })();
+    }());
     ApiHeader.APIGetPortForwardingAttachableVmNicsReply = APIGetPortForwardingAttachableVmNicsReply;
     var APIQueryEipReply = (function () {
         function APIQueryEipReply() {
         }
         return APIQueryEipReply;
-    })();
+    }());
     ApiHeader.APIQueryEipReply = APIQueryEipReply;
     var APIGetEipAttachableVmNicsReply = (function () {
         function APIGetEipAttachableVmNicsReply() {
         }
         return APIGetEipAttachableVmNicsReply;
-    })();
+    }());
     ApiHeader.APIGetEipAttachableVmNicsReply = APIGetEipAttachableVmNicsReply;
     var APIQueryLoadBalancerListenerReply = (function () {
         function APIQueryLoadBalancerListenerReply() {
         }
         return APIQueryLoadBalancerListenerReply;
-    })();
+    }());
     ApiHeader.APIQueryLoadBalancerListenerReply = APIQueryLoadBalancerListenerReply;
     var APIQueryLoadBalancerReply = (function () {
         function APIQueryLoadBalancerReply() {
         }
         return APIQueryLoadBalancerReply;
-    })();
+    }());
     ApiHeader.APIQueryLoadBalancerReply = APIQueryLoadBalancerReply;
     var APIListSecurityGroupReply = (function () {
         function APIListSecurityGroupReply() {
         }
         return APIListSecurityGroupReply;
-    })();
+    }());
     ApiHeader.APIListSecurityGroupReply = APIListSecurityGroupReply;
     var APIQuerySecurityGroupRuleReply = (function () {
         function APIQuerySecurityGroupRuleReply() {
         }
         return APIQuerySecurityGroupRuleReply;
-    })();
+    }());
     ApiHeader.APIQuerySecurityGroupRuleReply = APIQuerySecurityGroupRuleReply;
     var APIGetCandidateVmNicForSecurityGroupReply = (function () {
         function APIGetCandidateVmNicForSecurityGroupReply() {
         }
         return APIGetCandidateVmNicForSecurityGroupReply;
-    })();
+    }());
     ApiHeader.APIGetCandidateVmNicForSecurityGroupReply = APIGetCandidateVmNicForSecurityGroupReply;
     var VmNicSecurityGroupRefInventory = (function () {
         function VmNicSecurityGroupRefInventory() {
         }
         return VmNicSecurityGroupRefInventory;
-    })();
+    }());
     ApiHeader.VmNicSecurityGroupRefInventory = VmNicSecurityGroupRefInventory;
     var APIListVmNicInSecurityGroupReply = (function () {
         function APIListVmNicInSecurityGroupReply() {
         }
         return APIListVmNicInSecurityGroupReply;
-    })();
+    }());
     ApiHeader.APIListVmNicInSecurityGroupReply = APIListVmNicInSecurityGroupReply;
     var APIQuerySecurityGroupReply = (function () {
         function APIQuerySecurityGroupReply() {
         }
         return APIQuerySecurityGroupReply;
-    })();
+    }());
     ApiHeader.APIQuerySecurityGroupReply = APIQuerySecurityGroupReply;
     var APIQueryVmNicInSecurityGroupReply = (function () {
         function APIQueryVmNicInSecurityGroupReply() {
         }
         return APIQueryVmNicInSecurityGroupReply;
-    })();
+    }());
     ApiHeader.APIQueryVmNicInSecurityGroupReply = APIQueryVmNicInSecurityGroupReply;
     var APIQueryVipReply = (function () {
         function APIQueryVipReply() {
         }
         return APIQueryVipReply;
-    })();
+    }());
     ApiHeader.APIQueryVipReply = APIQueryVipReply;
     var HostCapacityInventory = (function () {
         function HostCapacityInventory() {
         }
         return HostCapacityInventory;
-    })();
+    }());
     ApiHeader.HostCapacityInventory = HostCapacityInventory;
     var ConsoleProxyInventory = (function () {
         function ConsoleProxyInventory() {
         }
         return ConsoleProxyInventory;
-    })();
+    }());
     ApiHeader.ConsoleProxyInventory = ConsoleProxyInventory;
     var PrimaryStorageClusterRefInventory = (function () {
         function PrimaryStorageClusterRefInventory() {
         }
         return PrimaryStorageClusterRefInventory;
-    })();
+    }());
     ApiHeader.PrimaryStorageClusterRefInventory = PrimaryStorageClusterRefInventory;
     var PrimaryStorageCapacityInventory = (function () {
         function PrimaryStorageCapacityInventory() {
         }
         return PrimaryStorageCapacityInventory;
-    })();
+    }());
     ApiHeader.PrimaryStorageCapacityInventory = PrimaryStorageCapacityInventory;
     var BackupStorageZoneRefInventory = (function () {
         function BackupStorageZoneRefInventory() {
         }
         return BackupStorageZoneRefInventory;
-    })();
+    }());
     ApiHeader.BackupStorageZoneRefInventory = BackupStorageZoneRefInventory;
     var IpUseInventory = (function () {
         function IpUseInventory() {
         }
         return IpUseInventory;
-    })();
+    }());
     ApiHeader.IpUseInventory = IpUseInventory;
     var L3NetworkDnsInventory = (function () {
         function L3NetworkDnsInventory() {
         }
         return L3NetworkDnsInventory;
-    })();
+    }());
     ApiHeader.L3NetworkDnsInventory = L3NetworkDnsInventory;
     var NetworkServiceTypeInventory = (function () {
         function NetworkServiceTypeInventory() {
         }
         return NetworkServiceTypeInventory;
-    })();
+    }());
     ApiHeader.NetworkServiceTypeInventory = NetworkServiceTypeInventory;
     var NetworkServiceProviderL2NetworkRefInventory = (function () {
         function NetworkServiceProviderL2NetworkRefInventory() {
         }
         return NetworkServiceProviderL2NetworkRefInventory;
-    })();
+    }());
     ApiHeader.NetworkServiceProviderL2NetworkRefInventory = NetworkServiceProviderL2NetworkRefInventory;
     var L2NetworkClusterRefInventory = (function () {
         function L2NetworkClusterRefInventory() {
         }
         return L2NetworkClusterRefInventory;
-    })();
+    }());
     ApiHeader.L2NetworkClusterRefInventory = L2NetworkClusterRefInventory;
     var AccountResourceRefInventory = (function () {
         function AccountResourceRefInventory() {
         }
         return AccountResourceRefInventory;
-    })();
+    }());
     ApiHeader.AccountResourceRefInventory = AccountResourceRefInventory;
     var UserGroupPolicyRefInventory = (function () {
         function UserGroupPolicyRefInventory() {
         }
         return UserGroupPolicyRefInventory;
-    })();
+    }());
     ApiHeader.UserGroupPolicyRefInventory = UserGroupPolicyRefInventory;
     var UserPolicyRefInventory = (function () {
         function UserPolicyRefInventory() {
         }
         return UserPolicyRefInventory;
-    })();
+    }());
     ApiHeader.UserPolicyRefInventory = UserPolicyRefInventory;
     var UserGroupUserRefInventory = (function () {
         function UserGroupUserRefInventory() {
         }
         return UserGroupUserRefInventory;
-    })();
+    }());
     ApiHeader.UserGroupUserRefInventory = UserGroupUserRefInventory;
     var SimulatorHostInventory = (function () {
         function SimulatorHostInventory() {
         }
         return SimulatorHostInventory;
-    })();
+    }());
     ApiHeader.SimulatorHostInventory = SimulatorHostInventory;
     var ApplianceVmFirewallRuleInventory = (function () {
         function ApplianceVmFirewallRuleInventory() {
         }
         return ApplianceVmFirewallRuleInventory;
-    })();
+    }());
     ApiHeader.ApplianceVmFirewallRuleInventory = ApplianceVmFirewallRuleInventory;
     var KVMHostInventory = (function () {
         function KVMHostInventory() {
         }
         return KVMHostInventory;
-    })();
+    }());
     ApiHeader.KVMHostInventory = KVMHostInventory;
     var VirtualRouterEipRefInventory = (function () {
         function VirtualRouterEipRefInventory() {
         }
         return VirtualRouterEipRefInventory;
-    })();
+    }());
     ApiHeader.VirtualRouterEipRefInventory = VirtualRouterEipRefInventory;
     var VirtualRouterLoadBalancerRefInventory = (function () {
         function VirtualRouterLoadBalancerRefInventory() {
         }
         return VirtualRouterLoadBalancerRefInventory;
-    })();
+    }());
     ApiHeader.VirtualRouterLoadBalancerRefInventory = VirtualRouterLoadBalancerRefInventory;
     var VirtualRouterVipInventory = (function () {
         function VirtualRouterVipInventory() {
         }
         return VirtualRouterVipInventory;
-    })();
+    }());
     ApiHeader.VirtualRouterVipInventory = VirtualRouterVipInventory;
     var VirtualRouterPortForwardingRuleRefInventory = (function () {
         function VirtualRouterPortForwardingRuleRefInventory() {
         }
         return VirtualRouterPortForwardingRuleRefInventory;
-    })();
+    }());
     ApiHeader.VirtualRouterPortForwardingRuleRefInventory = VirtualRouterPortForwardingRuleRefInventory;
     var SecurityGroupL3NetworkRefInventory = (function () {
         function SecurityGroupL3NetworkRefInventory() {
         }
         return SecurityGroupL3NetworkRefInventory;
-    })();
+    }());
     ApiHeader.SecurityGroupL3NetworkRefInventory = SecurityGroupL3NetworkRefInventory;
     ApiHeader.GlobalConfigInventoryQueryable = ['name', 'category', 'description', 'defaultValue', 'value'];
     ApiHeader.TagResourceTypeGlobalConfigVO = 'GlobalConfigVO';
@@ -6389,13 +6406,13 @@ var ApiHeader;
             return msg;
         };
         return APIExpungeVmInstanceMsg;
-    })();
+    }());
     ApiHeader.APIExpungeVmInstanceMsg = APIExpungeVmInstanceMsg;
     var APIExpungeVmInstanceEvent = (function () {
         function APIExpungeVmInstanceEvent() {
         }
         return APIExpungeVmInstanceEvent;
-    })();
+    }());
     ApiHeader.APIExpungeVmInstanceEvent = APIExpungeVmInstanceEvent;
     var APIRecoverVmInstanceMsg = (function () {
         function APIRecoverVmInstanceMsg() {
@@ -6407,25 +6424,25 @@ var ApiHeader;
             return msg;
         };
         return APIRecoverVmInstanceMsg;
-    })();
+    }());
     ApiHeader.APIRecoverVmInstanceMsg = APIRecoverVmInstanceMsg;
     var APIRecoverVmInstanceEvent = (function () {
         function APIRecoverVmInstanceEvent() {
         }
         return APIRecoverVmInstanceEvent;
-    })();
+    }());
     ApiHeader.APIRecoverVmInstanceEvent = APIRecoverVmInstanceEvent;
     var APIRecoverImageEvent = (function () {
         function APIRecoverImageEvent() {
         }
         return APIRecoverImageEvent;
-    })();
+    }());
     ApiHeader.APIRecoverImageEvent = APIRecoverImageEvent;
     var APIExpungeImageEvent = (function () {
         function APIExpungeImageEvent() {
         }
         return APIExpungeImageEvent;
-    })();
+    }());
     ApiHeader.APIExpungeImageEvent = APIExpungeImageEvent;
     var APIExpungeImageMsg = (function () {
         function APIExpungeImageMsg() {
@@ -6437,7 +6454,7 @@ var ApiHeader;
             return msg;
         };
         return APIExpungeImageMsg;
-    })();
+    }());
     ApiHeader.APIExpungeImageMsg = APIExpungeImageMsg;
     var APIRecoverImageMsg = (function () {
         function APIRecoverImageMsg() {
@@ -6449,19 +6466,19 @@ var ApiHeader;
             return msg;
         };
         return APIRecoverImageMsg;
-    })();
+    }());
     ApiHeader.APIRecoverImageMsg = APIRecoverImageMsg;
     var APIExpungeDataVolumeEvent = (function () {
         function APIExpungeDataVolumeEvent() {
         }
         return APIExpungeDataVolumeEvent;
-    })();
+    }());
     ApiHeader.APIExpungeDataVolumeEvent = APIExpungeDataVolumeEvent;
     var APIRecoverDataVolumeEvent = (function () {
         function APIRecoverDataVolumeEvent() {
         }
         return APIRecoverDataVolumeEvent;
-    })();
+    }());
     ApiHeader.APIRecoverDataVolumeEvent = APIRecoverDataVolumeEvent;
     var APIExpungeDataVolumeMsg = (function () {
         function APIExpungeDataVolumeMsg() {
@@ -6473,7 +6490,7 @@ var ApiHeader;
             return msg;
         };
         return APIExpungeDataVolumeMsg;
-    })();
+    }());
     ApiHeader.APIExpungeDataVolumeMsg = APIExpungeDataVolumeMsg;
     var APIRecoverDataVolumeMsg = (function () {
         function APIRecoverDataVolumeMsg() {
@@ -6485,7 +6502,7 @@ var ApiHeader;
             return msg;
         };
         return APIRecoverDataVolumeMsg;
-    })();
+    }());
     ApiHeader.APIRecoverDataVolumeMsg = APIRecoverDataVolumeMsg;
 })(ApiHeader || (ApiHeader = {}));
 /// <reference path="d.ts/angularjs/angular.d.ts" />
@@ -6495,7 +6512,7 @@ var Utils;
         function Receipt() {
         }
         return Receipt;
-    })();
+    }());
     var Tag = (function () {
         function Tag(api) {
             this.api = api;
@@ -6529,7 +6546,7 @@ var Utils;
             });
         };
         return Tag;
-    })();
+    }());
     Utils.Tag = Tag;
     var Api = (function () {
         function Api($http, $rootScope, $location) {
@@ -6855,7 +6872,7 @@ var Utils;
         Api.STATUS_DONE = 2;
         Api.STATUS_PROCESSING = 1;
         return Api;
-    })();
+    }());
     Utils.Api = Api;
     var Chain = (function () {
         function Chain() {
@@ -6893,7 +6910,7 @@ var Utils;
             this.next();
         };
         return Chain;
-    })();
+    }());
     Utils.Chain = Chain;
     function periodicalRun(func, interval) {
         var cb = function () {
@@ -7147,7 +7164,7 @@ var Utils;
             });
         };
         return Translator;
-    })();
+    }());
     Utils.Translator = Translator;
     var Model = (function () {
         function Model() {
@@ -7157,7 +7174,7 @@ var Utils;
             this.current = null;
         };
         return Model;
-    })();
+    }());
     Utils.Model = Model;
     var OGrid = (function () {
         function OGrid() {
@@ -7264,7 +7281,7 @@ var Utils;
             };
         };
         return OGrid;
-    })();
+    }());
     Utils.OGrid = OGrid;
     var WizardButton = (function () {
         function WizardButton(pages, mediator) {
@@ -7351,7 +7368,7 @@ var Utils;
             }
         };
         return WizardButton;
-    })();
+    }());
     Utils.WizardButton = WizardButton;
 })(Utils || (Utils = {}));
 angular.module("app.service", []).factory('Api', ['$http', '$rootScope', '$location', function ($http, $rootScope, $location) {
@@ -7371,7 +7388,7 @@ var MRoot;
         }
         Events.NOTIFICATION = "root.notification";
         return Events;
-    })();
+    }());
     MRoot.Events = Events;
     var main = (function () {
         function main($scope, $rootScope, api, apiDetails, $location, $cookies, $translate) {
@@ -7492,7 +7509,7 @@ var MRoot;
         }
         main.$inject = ['$scope', '$rootScope', 'Api', 'ApiDetails', '$location', '$cookies', '$translate'];
         return main;
-    })();
+    }());
     MRoot.main = main;
 })(MRoot || (MRoot = {}));
 var ApiHeader;
@@ -7511,7 +7528,7 @@ var ApiHeader;
             this.conditions.push(cond);
         };
         return QueryObject;
-    })();
+    }());
     ApiHeader.QueryObject = QueryObject;
 })(ApiHeader || (ApiHeader = {}));
 angular.module("root", ['app.service', 'kendo.directives', 'ngRoute', 'ngTagsInput', 'ngCookies', 'pascalprecht.translate'])
@@ -7643,7 +7660,7 @@ var Controller;
             */
         }
         return SideBar;
-    })();
+    }());
     Controller.SideBar = SideBar;
 })(Controller || (Controller = {}));
 /// <reference path="d.ts/angularjs/angular.d.ts" />
@@ -7678,16 +7695,11 @@ var MNav;
         };
         Controller.$inject = ['$scope', 'Api'];
         return Controller;
-    })();
+    }());
     MNav.Controller = Controller;
 })(MNav || (MNav = {}));
 /// <reference path="d.ts/angularjs/angular.d.ts" />
 /// <reference path="d.ts/kendo.all.d.ts" />
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
 var MZone;
 (function (MZone) {
     var Zone = (function (_super) {
@@ -7739,7 +7751,7 @@ var MZone;
             self.set('lastOpDate', inv.lastOpDate);
         };
         return Zone;
-    })(ApiHeader.ZoneInventory);
+    }(ApiHeader.ZoneInventory));
     MZone.Zone = Zone;
     var ZoneManager = (function () {
         function ZoneManager(api, $rootScope) {
@@ -7830,7 +7842,7 @@ var MZone;
         };
         ZoneManager.$inject = ['Api'];
         return ZoneManager;
-    })();
+    }());
     MZone.ZoneManager = ZoneManager;
     var ZoneModel = (function () {
         function ZoneModel() {
@@ -7843,7 +7855,7 @@ var MZone;
             this.current = zone;
         };
         return ZoneModel;
-    })();
+    }());
     MZone.ZoneModel = ZoneModel;
     var CreateZoneModel = (function () {
         function CreateZoneModel() {
@@ -7853,7 +7865,7 @@ var MZone;
             return angular.isDefined(this.name);
         };
         return CreateZoneModel;
-    })();
+    }());
     MZone.CreateZoneModel = CreateZoneModel;
     var Action = (function () {
         function Action($scope, zoneMgr) {
@@ -7880,7 +7892,7 @@ var MZone;
         Action.prototype.attachBackupStorage = function () {
         };
         return Action;
-    })();
+    }());
     var DetailsController = (function () {
         function DetailsController($scope, zoneMgr, api, clusterMgr, $location, $routeParams, tagService, psMgr, current, l2Mgr, bsMgr) {
             var _this = this;
@@ -8252,7 +8264,7 @@ var MZone;
         DetailsController.$inject = ['$scope', 'ZoneManager', 'Api', 'ClusterManager', '$location', '$routeParams', 'Tag',
             'PrimaryStorageManager', 'current', 'L2NetworkManager', 'BackupStorageManager'];
         return DetailsController;
-    })();
+    }());
     MZone.DetailsController = DetailsController;
     var FilterBy = (function () {
         function FilterBy() {
@@ -8271,7 +8283,7 @@ var MZone;
             return this.state;
         };
         return FilterBy;
-    })();
+    }());
     MZone.FilterBy = FilterBy;
     var Controller = (function () {
         function Controller($scope, zoneMgr, api, $location) {
@@ -8512,7 +8524,7 @@ var MZone;
         }
         Controller.$inject = ['$scope', 'ZoneManager', 'Api', '$location'];
         return Controller;
-    })();
+    }());
     MZone.Controller = Controller;
 })(MZone || (MZone = {}));
 angular.module('root').factory('ZoneManager', ['Api', '$rootScope', function (api, $rootScope) {
@@ -8593,7 +8605,7 @@ var MCluster;
             self.set('lastOpDate', inv.lastOpDate);
         };
         return Cluster;
-    })(ApiHeader.ClusterInventory);
+    }(ApiHeader.ClusterInventory));
     MCluster.Cluster = Cluster;
     var ClusterManager = (function () {
         function ClusterManager(api, $rootScope) {
@@ -8762,7 +8774,7 @@ var MCluster;
         };
         ClusterManager.$inject = ['Api', '$rootScope'];
         return ClusterManager;
-    })();
+    }());
     MCluster.ClusterManager = ClusterManager;
     var ClusterModel = (function (_super) {
         __extends(ClusterModel, _super);
@@ -8771,7 +8783,7 @@ var MCluster;
             this.current = new Cluster();
         }
         return ClusterModel;
-    })(Utils.Model);
+    }(Utils.Model));
     MCluster.ClusterModel = ClusterModel;
     var OClusterGrid = (function (_super) {
         __extends(OClusterGrid, _super);
@@ -8821,7 +8833,7 @@ var MCluster;
             };
         }
         return OClusterGrid;
-    })(Utils.OGrid);
+    }(Utils.OGrid));
     var Action = (function () {
         function Action($scope, clusterMgr) {
             this.$scope = $scope;
@@ -8849,7 +8861,7 @@ var MCluster;
             this.$scope.winDetachPrimaryStorage.open();
         };
         return Action;
-    })();
+    }());
     var FilterBy = (function () {
         function FilterBy($scope, hypervisorTypes) {
             var _this = this;
@@ -8925,7 +8937,7 @@ var MCluster;
         FilterBy.STATE = 'state';
         FilterBy.HYPERVISOR = 'hypervisorType';
         return FilterBy;
-    })();
+    }());
     var DetailsController = (function () {
         function DetailsController($scope, clusterMgr, $routeParams, tagService, psMgr, current, l2Mgr, hostMgr) {
             var _this = this;
@@ -9266,7 +9278,7 @@ var MCluster;
         };
         DetailsController.$inject = ['$scope', 'ClusterManager', '$routeParams', 'Tag', 'PrimaryStorageManager', 'current', 'L2NetworkManager', 'HostManager'];
         return DetailsController;
-    })();
+    }());
     MCluster.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, clusterMgr, hypervisorTypes, $location, hostMgr) {
@@ -9414,13 +9426,13 @@ var MCluster;
         }
         Controller.$inject = ['$scope', 'ClusterManager', 'hypervisorTypes', '$location', 'HostManager'];
         return Controller;
-    })();
+    }());
     MCluster.Controller = Controller;
     var CreateClusterOptions = (function () {
         function CreateClusterOptions() {
         }
         return CreateClusterOptions;
-    })();
+    }());
     MCluster.CreateClusterOptions = CreateClusterOptions;
     var CreateCluster = (function () {
         function CreateCluster(api, zoneMgr, clusterMgr, psMgr, l2Mgr) {
@@ -9706,13 +9718,13 @@ var MCluster;
             }).start();
         };
         return CreateCluster;
-    })();
+    }());
     MCluster.CreateCluster = CreateCluster;
     var AttachL2NetworkOptions = (function () {
         function AttachL2NetworkOptions() {
         }
         return AttachL2NetworkOptions;
-    })();
+    }());
     MCluster.AttachL2NetworkOptions = AttachL2NetworkOptions;
     var ClusterAttachL2Network = (function () {
         function ClusterAttachL2Network(l2Mgr, clusterMgr) {
@@ -9795,13 +9807,13 @@ var MCluster;
             }).start();
         };
         return ClusterAttachL2Network;
-    })();
+    }());
     MCluster.ClusterAttachL2Network = ClusterAttachL2Network;
     var DetachL2NetworkOptions = (function () {
         function DetachL2NetworkOptions() {
         }
         return DetachL2NetworkOptions;
-    })();
+    }());
     MCluster.DetachL2NetworkOptions = DetachL2NetworkOptions;
     var ClusterDetachL2Network = (function () {
         function ClusterDetachL2Network(l2Mgr, clusterMgr) {
@@ -9882,13 +9894,13 @@ var MCluster;
             }).start();
         };
         return ClusterDetachL2Network;
-    })();
+    }());
     MCluster.ClusterDetachL2Network = ClusterDetachL2Network;
     var AttachPrimaryStorageOptions = (function () {
         function AttachPrimaryStorageOptions() {
         }
         return AttachPrimaryStorageOptions;
-    })();
+    }());
     MCluster.AttachPrimaryStorageOptions = AttachPrimaryStorageOptions;
     var ClusterAttachPrimaryStorage = (function () {
         function ClusterAttachPrimaryStorage(psMgr, clusterMgr) {
@@ -9971,13 +9983,13 @@ var MCluster;
             }).start();
         };
         return ClusterAttachPrimaryStorage;
-    })();
+    }());
     MCluster.ClusterAttachPrimaryStorage = ClusterAttachPrimaryStorage;
     var DetachPrimaryStorageOptions = (function () {
         function DetachPrimaryStorageOptions() {
         }
         return DetachPrimaryStorageOptions;
-    })();
+    }());
     MCluster.DetachPrimaryStorageOptions = DetachPrimaryStorageOptions;
     var ClusterDetachPrimaryStorage = (function () {
         function ClusterDetachPrimaryStorage(psMgr, clusterMgr) {
@@ -10058,7 +10070,7 @@ var MCluster;
             }).start();
         };
         return ClusterDetachPrimaryStorage;
-    })();
+    }());
     MCluster.ClusterDetachPrimaryStorage = ClusterDetachPrimaryStorage;
 })(MCluster || (MCluster = {}));
 angular.module('root').factory('ClusterManager', ['Api', '$rootScope', function (api, $rootScope) {
@@ -10169,7 +10181,7 @@ var MPrimaryStorage;
             self.set('lastOpDate', inv.lastOpDate);
         };
         return PrimaryStorage;
-    })(ApiHeader.PrimaryStorageInventory);
+    }(ApiHeader.PrimaryStorageInventory));
     MPrimaryStorage.PrimaryStorage = PrimaryStorage;
     var PrimaryStorageManager = (function () {
         function PrimaryStorageManager(api, $rootScope) {
@@ -10207,6 +10219,9 @@ var MPrimaryStorage;
             else if (ps.type == 'Ceph') {
                 msg = new ApiHeader.APIAddCephPrimaryStorageMsg();
                 msg.monUrls = ps.cephMonUrls;
+            }
+            else if (ps.type == 'SharedMountPoint') {
+                msg = new ApiHeader.APIAddSharedMountPointPrimaryStorageMsg();
             }
             msg.name = ps.name;
             msg.description = ps.description;
@@ -10342,7 +10357,7 @@ var MPrimaryStorage;
         };
         PrimaryStorageManager.$inject = ['Api', '$rootScope'];
         return PrimaryStorageManager;
-    })();
+    }());
     MPrimaryStorage.PrimaryStorageManager = PrimaryStorageManager;
     var PrimaryStorageModel = (function (_super) {
         __extends(PrimaryStorageModel, _super);
@@ -10351,7 +10366,7 @@ var MPrimaryStorage;
             this.current = new PrimaryStorage();
         }
         return PrimaryStorageModel;
-    })(Utils.Model);
+    }(Utils.Model));
     MPrimaryStorage.PrimaryStorageModel = PrimaryStorageModel;
     var OPrimaryStorageGrid = (function (_super) {
         __extends(OPrimaryStorageGrid, _super);
@@ -10424,7 +10439,7 @@ var MPrimaryStorage;
             };
         }
         return OPrimaryStorageGrid;
-    })(Utils.OGrid);
+    }(Utils.OGrid));
     var Action = (function () {
         function Action($scope, psMgr) {
             this.$scope = $scope;
@@ -10452,7 +10467,7 @@ var MPrimaryStorage;
             this.$scope.detachCluster.open();
         };
         return Action;
-    })();
+    }());
     var FilterBy = (function () {
         function FilterBy($scope, psTypes) {
             var _this = this;
@@ -10527,7 +10542,7 @@ var MPrimaryStorage;
         FilterBy.STATE = 'state';
         FilterBy.TYPE = 'type';
         return FilterBy;
-    })();
+    }());
     var DetailsController = (function () {
         function DetailsController($scope, psMgr, $routeParams, tagService, current, clusterMgr) {
             var _this = this;
@@ -10687,7 +10702,7 @@ var MPrimaryStorage;
         };
         DetailsController.$inject = ['$scope', 'PrimaryStorageManager', '$routeParams', 'Tag', 'current', 'ClusterManager'];
         return DetailsController;
-    })();
+    }());
     MPrimaryStorage.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, psMgr, primaryStorageTypes, $location) {
@@ -10827,13 +10842,13 @@ var MPrimaryStorage;
         }
         Controller.$inject = ['$scope', 'PrimaryStorageManager', 'primaryStorageTypes', '$location'];
         return Controller;
-    })();
+    }());
     MPrimaryStorage.Controller = Controller;
     var CreatePrimaryStorageOptions = (function () {
         function CreatePrimaryStorageOptions() {
         }
         return CreatePrimaryStorageOptions;
-    })();
+    }());
     MPrimaryStorage.CreatePrimaryStorageOptions = CreatePrimaryStorageOptions;
     var CreatePrimaryStorage = (function () {
         function CreatePrimaryStorage(api, zoneMgr, psMgr, clusterMgr) {
@@ -10923,7 +10938,7 @@ var MPrimaryStorage;
                             }
                             return true;
                         }
-                        else if (this.type == 'IscsiFileSystemBackendPrimaryStorage' || this.type == 'LocalStorage' && Utils.notNullnotUndefined(this.url)) {
+                        else if (this.type == 'SharedMountPoint' || this.type == 'IscsiFileSystemBackendPrimaryStorage' || this.type == 'LocalStorage' && Utils.notNullnotUndefined(this.url)) {
                             if (this.url.indexOf('/') != 0) {
                                 return false;
                             }
@@ -11142,7 +11157,7 @@ var MPrimaryStorage;
             }).start();
         };
         return CreatePrimaryStorage;
-    })();
+    }());
     MPrimaryStorage.CreatePrimaryStorage = CreatePrimaryStorage;
     var AttachCluster = (function () {
         function AttachCluster(clusterMgr, psMgr) {
@@ -11222,13 +11237,13 @@ var MPrimaryStorage;
             }).start();
         };
         return AttachCluster;
-    })();
+    }());
     MPrimaryStorage.AttachCluster = AttachCluster;
     var DetachClusterOptions = (function () {
         function DetachClusterOptions() {
         }
         return DetachClusterOptions;
-    })();
+    }());
     MPrimaryStorage.DetachClusterOptions = DetachClusterOptions;
     var DetachCluster = (function () {
         function DetachCluster(psMgr, clusterMgr) {
@@ -11308,7 +11323,7 @@ var MPrimaryStorage;
             }).start();
         };
         return DetachCluster;
-    })();
+    }());
     MPrimaryStorage.DetachCluster = DetachCluster;
 })(MPrimaryStorage || (MPrimaryStorage = {}));
 angular.module('root').factory('PrimaryStorageManager', ['Api', '$rootScope', function (api, $rootScope) {
@@ -11382,7 +11397,7 @@ var ML2Network;
             self.set('lastOpDate', inv.lastOpDate);
         };
         return L2Network;
-    })(ApiHeader.L2NetworkInventory);
+    }(ApiHeader.L2NetworkInventory));
     ML2Network.L2Network = L2Network;
     var L2NetworkManager = (function () {
         function L2NetworkManager(api, $rootScope) {
@@ -11496,7 +11511,7 @@ var ML2Network;
         };
         L2NetworkManager.$inject = ['Api', '$rootScope'];
         return L2NetworkManager;
-    })();
+    }());
     ML2Network.L2NetworkManager = L2NetworkManager;
     var L2NetworkModel = (function (_super) {
         __extends(L2NetworkModel, _super);
@@ -11505,7 +11520,7 @@ var ML2Network;
             this.current = new L2Network();
         }
         return L2NetworkModel;
-    })(Utils.Model);
+    }(Utils.Model));
     ML2Network.L2NetworkModel = L2NetworkModel;
     var OL2NetworkGrid = (function (_super) {
         __extends(OL2NetworkGrid, _super);
@@ -11554,7 +11569,7 @@ var ML2Network;
             };
         }
         return OL2NetworkGrid;
-    })(Utils.OGrid);
+    }(Utils.OGrid));
     var Action = (function () {
         function Action($scope, l2Mgr) {
             this.$scope = $scope;
@@ -11567,7 +11582,7 @@ var ML2Network;
             this.$scope.detachCluster.open();
         };
         return Action;
-    })();
+    }());
     var FilterBy = (function () {
         function FilterBy($scope, l2Types) {
             var _this = this;
@@ -11634,7 +11649,7 @@ var ML2Network;
         FilterBy.NONE = 'none';
         FilterBy.TYPE = 'type';
         return FilterBy;
-    })();
+    }());
     var DetailsController = (function () {
         function DetailsController($scope, l2Mgr, $routeParams, tagService, current, clusterMgr) {
             var _this = this;
@@ -11795,7 +11810,7 @@ var ML2Network;
         };
         DetailsController.$inject = ['$scope', 'L2NetworkManager', '$routeParams', 'Tag', 'current', 'ClusterManager'];
         return DetailsController;
-    })();
+    }());
     ML2Network.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, l2Mgr, l2NetworkTypes, $location) {
@@ -11935,13 +11950,13 @@ var ML2Network;
         }
         Controller.$inject = ['$scope', 'L2NetworkManager', 'l2NetworkTypes', '$location'];
         return Controller;
-    })();
+    }());
     ML2Network.Controller = Controller;
     var CreateL2NetworkOptions = (function () {
         function CreateL2NetworkOptions() {
         }
         return CreateL2NetworkOptions;
-    })();
+    }());
     ML2Network.CreateL2NetworkOptions = CreateL2NetworkOptions;
     var CreateL2NetworkModel = (function () {
         function CreateL2NetworkModel() {
@@ -11951,7 +11966,7 @@ var ML2Network;
                 angular.isDefined(this.zoneUuid) && Utils.notNullnotUndefined(this.physicalInterface);
         };
         return CreateL2NetworkModel;
-    })();
+    }());
     ML2Network.CreateL2NetworkModel = CreateL2NetworkModel;
     var CreateL2Network = (function () {
         function CreateL2Network(api, zoneMgr, l2Mgr, clusterMgr) {
@@ -12212,7 +12227,7 @@ var ML2Network;
             }).start();
         };
         return CreateL2Network;
-    })();
+    }());
     ML2Network.CreateL2Network = CreateL2Network;
     var AttachCluster = (function () {
         function AttachCluster(clusterMgr, l2Mgr) {
@@ -12293,13 +12308,13 @@ var ML2Network;
             }).start();
         };
         return AttachCluster;
-    })();
+    }());
     ML2Network.AttachCluster = AttachCluster;
     var DetachClusterOptions = (function () {
         function DetachClusterOptions() {
         }
         return DetachClusterOptions;
-    })();
+    }());
     ML2Network.DetachClusterOptions = DetachClusterOptions;
     var DetachCluster = (function () {
         function DetachCluster(l2Mgr, clusterMgr) {
@@ -12379,7 +12394,7 @@ var ML2Network;
             }).start();
         };
         return DetachCluster;
-    })();
+    }());
     ML2Network.DetachCluster = DetachCluster;
 })(ML2Network || (ML2Network = {}));
 angular.module('root').factory('L2NetworkManager', ['Api', '$rootScope', function (api, $rootScope) {
@@ -12481,7 +12496,7 @@ var ML3Network;
             self.set('networkServices', inv.networkServices);
         };
         return L3Network;
-    })(ApiHeader.L3NetworkInventory);
+    }(ApiHeader.L3NetworkInventory));
     ML3Network.L3Network = L3Network;
     var L3NetworkManager = (function () {
         function L3NetworkManager(api, $rootScope) {
@@ -12687,7 +12702,7 @@ var ML3Network;
         };
         L3NetworkManager.$inject = ['Api', '$rootScope'];
         return L3NetworkManager;
-    })();
+    }());
     ML3Network.L3NetworkManager = L3NetworkManager;
     var L3NetworkModel = (function (_super) {
         __extends(L3NetworkModel, _super);
@@ -12696,7 +12711,7 @@ var ML3Network;
             this.current = new L3Network();
         }
         return L3NetworkModel;
-    })(Utils.Model);
+    }(Utils.Model));
     ML3Network.L3NetworkModel = L3NetworkModel;
     var OL3NetworkGrid = (function (_super) {
         __extends(OL3NetworkGrid, _super);
@@ -12752,7 +12767,7 @@ var ML3Network;
             };
         }
         return OL3NetworkGrid;
-    })(Utils.OGrid);
+    }(Utils.OGrid));
     var Action = (function () {
         function Action($scope, l3Mgr) {
             this.$scope = $scope;
@@ -12777,7 +12792,7 @@ var ML3Network;
             this.$scope.winDeleteDns.open();
         };
         return Action;
-    })();
+    }());
     var FilterBy = (function () {
         function FilterBy($scope, l3Types) {
             var _this = this;
@@ -12852,7 +12867,7 @@ var ML3Network;
         FilterBy.TYPE = 'type';
         FilterBy.STATE = 'state';
         return FilterBy;
-    })();
+    }());
     var DetailsController = (function () {
         function DetailsController($scope, l3Mgr, $routeParams, tagService, current) {
             var _this = this;
@@ -13095,7 +13110,7 @@ var ML3Network;
         };
         DetailsController.$inject = ['$scope', 'L3NetworkManager', '$routeParams', 'Tag', 'current'];
         return DetailsController;
-    })();
+    }());
     ML3Network.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, l3Mgr, l3NetworkTypes, $location) {
@@ -13234,13 +13249,13 @@ var ML3Network;
         }
         Controller.$inject = ['$scope', 'L3NetworkManager', 'l3NetworkTypes', '$location'];
         return Controller;
-    })();
+    }());
     ML3Network.Controller = Controller;
     var AddDnsOptions = (function () {
         function AddDnsOptions() {
         }
         return AddDnsOptions;
-    })();
+    }());
     ML3Network.AddDnsOptions = AddDnsOptions;
     var AddDns = (function () {
         function AddDns(l3Mgr) {
@@ -13295,13 +13310,13 @@ var ML3Network;
             this.$scope.addDns__.open();
         };
         return AddDns;
-    })();
+    }());
     ML3Network.AddDns = AddDns;
     var AddIpRangeOptions = (function () {
         function AddIpRangeOptions() {
         }
         return AddIpRangeOptions;
-    })();
+    }());
     ML3Network.AddIpRangeOptions = AddIpRangeOptions;
     var AddIpRange = (function () {
         function AddIpRange(l3Mgr) {
@@ -13439,13 +13454,13 @@ var ML3Network;
             this.$scope.addIpRange__.open();
         };
         return AddIpRange;
-    })();
+    }());
     ML3Network.AddIpRange = AddIpRange;
     var CreateL3NetworkOptions = (function () {
         function CreateL3NetworkOptions() {
         }
         return CreateL3NetworkOptions;
-    })();
+    }());
     ML3Network.CreateL3NetworkOptions = CreateL3NetworkOptions;
     var CreateL3NetworkModel = (function () {
         function CreateL3NetworkModel() {
@@ -13455,7 +13470,7 @@ var ML3Network;
                 angular.isDefined(this.l2NetworkUuid);
         };
         return CreateL3NetworkModel;
-    })();
+    }());
     ML3Network.CreateL3NetworkModel = CreateL3NetworkModel;
     var CreateL3Network = (function () {
         function CreateL3Network(api, zoneMgr, l3Mgr, l2Mgr) {
@@ -14060,13 +14075,13 @@ var ML3Network;
             }).start();
         };
         return CreateL3Network;
-    })();
+    }());
     ML3Network.CreateL3Network = CreateL3Network;
     var DeleteIpRangeOptions = (function () {
         function DeleteIpRangeOptions() {
         }
         return DeleteIpRangeOptions;
-    })();
+    }());
     ML3Network.DeleteIpRangeOptions = DeleteIpRangeOptions;
     var DeleteIpRange = (function () {
         function DeleteIpRange(l3Mgr) {
@@ -14127,13 +14142,13 @@ var ML3Network;
             this.$scope.deleteIpRange__.open();
         };
         return DeleteIpRange;
-    })();
+    }());
     ML3Network.DeleteIpRange = DeleteIpRange;
     var DeleteDnsOptions = (function () {
         function DeleteDnsOptions() {
         }
         return DeleteDnsOptions;
-    })();
+    }());
     ML3Network.DeleteDnsOptions = DeleteDnsOptions;
     var DeleteDns = (function () {
         function DeleteDns(l3Mgr) {
@@ -14196,7 +14211,7 @@ var ML3Network;
             this.$scope.deleteDns__.open();
         };
         return DeleteDns;
-    })();
+    }());
     ML3Network.DeleteDns = DeleteDns;
 })(ML3Network || (ML3Network = {}));
 angular.module('root').factory('L3NetworkManager', ['Api', '$rootScope', function (api, $rootScope) {
@@ -14305,7 +14320,7 @@ var MBackupStorage;
             self.set('lastOpDate', inv.lastOpDate);
         };
         return BackupStorage;
-    })(ApiHeader.BackupStorageInventory);
+    }(ApiHeader.BackupStorageInventory));
     MBackupStorage.BackupStorage = BackupStorage;
     var BackupStorageManager = (function () {
         function BackupStorageManager(api, $rootScope) {
@@ -14479,7 +14494,7 @@ var MBackupStorage;
         };
         BackupStorageManager.$inject = ['Api', '$rootScope'];
         return BackupStorageManager;
-    })();
+    }());
     MBackupStorage.BackupStorageManager = BackupStorageManager;
     var BackupStorageModel = (function (_super) {
         __extends(BackupStorageModel, _super);
@@ -14488,7 +14503,7 @@ var MBackupStorage;
             this.current = new BackupStorage();
         }
         return BackupStorageModel;
-    })(Utils.Model);
+    }(Utils.Model));
     MBackupStorage.BackupStorageModel = BackupStorageModel;
     var OBackupStorageGrid = (function (_super) {
         __extends(OBackupStorageGrid, _super);
@@ -14561,7 +14576,7 @@ var MBackupStorage;
             };
         }
         return OBackupStorageGrid;
-    })(Utils.OGrid);
+    }(Utils.OGrid));
     var Action = (function () {
         function Action($scope, bsMgr) {
             this.$scope = $scope;
@@ -14595,7 +14610,7 @@ var MBackupStorage;
             return this.$scope.model.current.type == 'SftpBackupStorage';
         };
         return Action;
-    })();
+    }());
     var FilterBy = (function () {
         function FilterBy($scope, bsTypes) {
             var _this = this;
@@ -14678,7 +14693,7 @@ var MBackupStorage;
         FilterBy.STATUS = 'status';
         FilterBy.TYPE = 'type';
         return FilterBy;
-    })();
+    }());
     var DetailsController = (function () {
         function DetailsController($scope, bsMgr, $routeParams, tagService, current, zoneMgr) {
             var _this = this;
@@ -14832,7 +14847,7 @@ var MBackupStorage;
         };
         DetailsController.$inject = ['$scope', 'BackupStorageManager', '$routeParams', 'Tag', 'current', 'ZoneManager'];
         return DetailsController;
-    })();
+    }());
     MBackupStorage.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, bsMgr, backupStorageTypes, $location) {
@@ -14999,13 +15014,13 @@ var MBackupStorage;
         }
         Controller.$inject = ['$scope', 'BackupStorageManager', 'backupStorageTypes', '$location'];
         return Controller;
-    })();
+    }());
     MBackupStorage.Controller = Controller;
     var CreateBackupStorageOptions = (function () {
         function CreateBackupStorageOptions() {
         }
         return CreateBackupStorageOptions;
-    })();
+    }());
     MBackupStorage.CreateBackupStorageOptions = CreateBackupStorageOptions;
     var CreateBackupStorageModel = (function () {
         function CreateBackupStorageModel() {
@@ -15015,7 +15030,7 @@ var MBackupStorage;
                 Utils.notNullnotUndefined(this.url);
         };
         return CreateBackupStorageModel;
-    })();
+    }());
     MBackupStorage.CreateBackupStorageModel = CreateBackupStorageModel;
     var CreateBackupStorage = (function () {
         function CreateBackupStorage(api, bsMgr, zoneMgr) {
@@ -15259,7 +15274,7 @@ var MBackupStorage;
             }).start();
         };
         return CreateBackupStorage;
-    })();
+    }());
     MBackupStorage.CreateBackupStorage = CreateBackupStorage;
     var AttachZone = (function () {
         function AttachZone(zoneMgr, bsMgr) {
@@ -15331,13 +15346,13 @@ var MBackupStorage;
             }).start();
         };
         return AttachZone;
-    })();
+    }());
     MBackupStorage.AttachZone = AttachZone;
     var DetachZoneOptions = (function () {
         function DetachZoneOptions() {
         }
         return DetachZoneOptions;
-    })();
+    }());
     MBackupStorage.DetachZoneOptions = DetachZoneOptions;
     var DetachZone = (function () {
         function DetachZone(bsMgr, zoneMgr) {
@@ -15413,7 +15428,7 @@ var MBackupStorage;
             }).start();
         };
         return DetachZone;
-    })();
+    }());
     MBackupStorage.DetachZone = DetachZone;
 })(MBackupStorage || (MBackupStorage = {}));
 angular.module('root').factory('BackupStorageManager', ['Api', '$rootScope', function (api, $rootScope) {
@@ -15518,7 +15533,7 @@ var MHost;
             self.set('lastOpDate', inv.lastOpDate);
         };
         return Host;
-    })(ApiHeader.HostInventory);
+    }(ApiHeader.HostInventory));
     MHost.Host = Host;
     var HostManager = (function () {
         function HostManager(api, $rootScope) {
@@ -15655,7 +15670,7 @@ var MHost;
         };
         HostManager.$inject = ['Api', '$rootScope'];
         return HostManager;
-    })();
+    }());
     MHost.HostManager = HostManager;
     var HostModel = (function (_super) {
         __extends(HostModel, _super);
@@ -15664,7 +15679,7 @@ var MHost;
             this.current = new Host();
         }
         return HostModel;
-    })(Utils.Model);
+    }(Utils.Model));
     MHost.HostModel = HostModel;
     var OHostGrid = (function (_super) {
         __extends(OHostGrid, _super);
@@ -15725,7 +15740,7 @@ var MHost;
             };
         }
         return OHostGrid;
-    })(Utils.OGrid);
+    }(Utils.OGrid));
     var Action = (function () {
         function Action($scope, hostMgr) {
             this.$scope = $scope;
@@ -15752,7 +15767,7 @@ var MHost;
             }
         };
         return Action;
-    })();
+    }());
     var FilterBy = (function () {
         function FilterBy($scope, hypervisorTypes) {
             var _this = this;
@@ -15835,7 +15850,7 @@ var MHost;
         FilterBy.STATUS = 'status';
         FilterBy.TYPE = 'hypervisorType';
         return FilterBy;
-    })();
+    }());
     var DetailsController = (function () {
         function DetailsController($scope, hostMgr, $routeParams, tagService, current, clusterMgr, api) {
             var _this = this;
@@ -15901,7 +15916,7 @@ var MHost;
         };
         DetailsController.$inject = ['$scope', 'HostManager', '$routeParams', 'Tag', 'current', 'ClusterManager', 'Api'];
         return DetailsController;
-    })();
+    }());
     MHost.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, hostMgr, hypervisorTypes, $location) {
@@ -16030,13 +16045,13 @@ var MHost;
         }
         Controller.$inject = ['$scope', 'HostManager', 'hypervisorTypes', '$location'];
         return Controller;
-    })();
+    }());
     MHost.Controller = Controller;
     var CreateHostOptions = (function () {
         function CreateHostOptions() {
         }
         return CreateHostOptions;
-    })();
+    }());
     MHost.CreateHostOptions = CreateHostOptions;
     var CreateHostModel = (function () {
         function CreateHostModel() {
@@ -16053,7 +16068,7 @@ var MHost;
             }
         };
         return CreateHostModel;
-    })();
+    }());
     MHost.CreateHostModel = CreateHostModel;
     var CreateHost = (function () {
         function CreateHost(api, zoneMgr, hostMgr, clusterMgr) {
@@ -16250,7 +16265,7 @@ var MHost;
             }).start();
         };
         return CreateHost;
-    })();
+    }());
     MHost.CreateHost = CreateHost;
 })(MHost || (MHost = {}));
 angular.module('root').factory('HostManager', ['Api', '$rootScope', function (api, $rootScope) {
@@ -16358,7 +16373,7 @@ var MImage;
             self.set('lastOpDate', inv.lastOpDate);
         };
         return Image;
-    })(ApiHeader.ImageInventory);
+    }(ApiHeader.ImageInventory));
     MImage.Image = Image;
     var ImageManager = (function () {
         function ImageManager(api, $rootScope) {
@@ -16489,7 +16504,7 @@ var MImage;
         };
         ImageManager.$inject = ['Api', '$rootScope'];
         return ImageManager;
-    })();
+    }());
     MImage.ImageManager = ImageManager;
     var ImageModel = (function (_super) {
         __extends(ImageModel, _super);
@@ -16498,7 +16513,7 @@ var MImage;
             this.current = new Image();
         }
         return ImageModel;
-    })(Utils.Model);
+    }(Utils.Model));
     MImage.ImageModel = ImageModel;
     var OImageGrid = (function (_super) {
         __extends(OImageGrid, _super);
@@ -16565,7 +16580,7 @@ var MImage;
             };
         }
         return OImageGrid;
-    })(Utils.OGrid);
+    }(Utils.OGrid));
     var Action = (function () {
         function Action($scope, imageMgr) {
             this.$scope = $scope;
@@ -16581,7 +16596,7 @@ var MImage;
             this.imageMgr.recover(this.$scope.model.current);
         };
         return Action;
-    })();
+    }());
     var FilterBy = (function () {
         function FilterBy($scope, hypervisorTypes) {
             var _this = this;
@@ -16672,7 +16687,7 @@ var MImage;
         FilterBy.TYPE = 'mediaType';
         FilterBy.FORMAT = 'format';
         return FilterBy;
-    })();
+    }());
     var DetailsController = (function () {
         function DetailsController($scope, imageMgr, $routeParams, tagService, current, bsMgr) {
             var _this = this;
@@ -16829,7 +16844,7 @@ var MImage;
         };
         DetailsController.$inject = ['$scope', 'ImageManager', '$routeParams', 'Tag', 'current', 'BackupStorageManager'];
         return DetailsController;
-    })();
+    }());
     MImage.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, imageMgr, hypervisorTypes, $location) {
@@ -17001,13 +17016,13 @@ var MImage;
         }
         Controller.$inject = ['$scope', 'ImageManager', 'hypervisorTypes', '$location'];
         return Controller;
-    })();
+    }());
     MImage.Controller = Controller;
     var CreateImageOptions = (function () {
         function CreateImageOptions() {
         }
         return CreateImageOptions;
-    })();
+    }());
     MImage.CreateImageOptions = CreateImageOptions;
     var CreateImageModel = (function () {
         function CreateImageModel() {
@@ -17017,7 +17032,7 @@ var MImage;
                 angular.isDefined(this.format) && Utils.notNullnotUndefined(this.backupStorageUuid);
         };
         return CreateImageModel;
-    })();
+    }());
     MImage.CreateImageModel = CreateImageModel;
     var CreateImage = (function () {
         function CreateImage(api, bsMgr, imageMgr) {
@@ -17221,7 +17236,7 @@ var MImage;
         CreateImage.MEDIA_TYPES = ['RootVolumeTemplate', 'DataVolumeTemplate', 'ISO'];
         CreateImage.BITS = [64, 32];
         return CreateImage;
-    })();
+    }());
     MImage.CreateImage = CreateImage;
 })(MImage || (MImage = {}));
 angular.module('root').factory('ImageManager', ['Api', '$rootScope', function (api, $rootScope) {
@@ -17309,7 +17324,7 @@ var MInstanceOffering;
             self.set('lastOpDate', inv.lastOpDate);
         };
         return InstanceOffering;
-    })(ApiHeader.InstanceOfferingInventory);
+    }(ApiHeader.InstanceOfferingInventory));
     MInstanceOffering.InstanceOffering = InstanceOffering;
     var InstanceOfferingManager = (function () {
         function InstanceOfferingManager(api, $rootScope) {
@@ -17413,7 +17428,7 @@ var MInstanceOffering;
         };
         InstanceOfferingManager.$inject = ['Api', '$rootScope'];
         return InstanceOfferingManager;
-    })();
+    }());
     MInstanceOffering.InstanceOfferingManager = InstanceOfferingManager;
     var InstanceOfferingModel = (function (_super) {
         __extends(InstanceOfferingModel, _super);
@@ -17422,7 +17437,7 @@ var MInstanceOffering;
             this.current = new InstanceOffering();
         }
         return InstanceOfferingModel;
-    })(Utils.Model);
+    }(Utils.Model));
     MInstanceOffering.InstanceOfferingModel = InstanceOfferingModel;
     var OInstanceOfferingGrid = (function (_super) {
         __extends(OInstanceOfferingGrid, _super);
@@ -17483,7 +17498,7 @@ var MInstanceOffering;
             };
         }
         return OInstanceOfferingGrid;
-    })(Utils.OGrid);
+    }(Utils.OGrid));
     var Action = (function () {
         function Action($scope, instanceOfferingMgr) {
             this.$scope = $scope;
@@ -17496,7 +17511,7 @@ var MInstanceOffering;
             this.instanceOfferingMgr.disable(this.$scope.model.current);
         };
         return Action;
-    })();
+    }());
     var FilterBy = (function () {
         function FilterBy($scope, hypervisorTypes) {
             var _this = this;
@@ -17563,7 +17578,7 @@ var MInstanceOffering;
         FilterBy.NONE = 'none';
         FilterBy.STATE = 'state';
         return FilterBy;
-    })();
+    }());
     var DetailsController = (function () {
         function DetailsController($scope, instanceOfferingMgr, $routeParams, tagService, current) {
             var _this = this;
@@ -17628,7 +17643,7 @@ var MInstanceOffering;
         };
         DetailsController.$inject = ['$scope', 'InstanceOfferingManager', '$routeParams', 'Tag', 'current'];
         return DetailsController;
-    })();
+    }());
     MInstanceOffering.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, instanceOfferingMgr, hypervisorTypes, $location) {
@@ -17749,13 +17764,13 @@ var MInstanceOffering;
         }
         Controller.$inject = ['$scope', 'InstanceOfferingManager', 'hypervisorTypes', '$location'];
         return Controller;
-    })();
+    }());
     MInstanceOffering.Controller = Controller;
     var CreateInstanceOfferingOptions = (function () {
         function CreateInstanceOfferingOptions() {
         }
         return CreateInstanceOfferingOptions;
-    })();
+    }());
     MInstanceOffering.CreateInstanceOfferingOptions = CreateInstanceOfferingOptions;
     var CreateInstanceOfferingModel = (function () {
         function CreateInstanceOfferingModel() {
@@ -17765,7 +17780,7 @@ var MInstanceOffering;
                 Utils.notNullnotUndefined(this.cpuSpeed) && Utils.notNullnotUndefined(this.memorySize);
         };
         return CreateInstanceOfferingModel;
-    })();
+    }());
     MInstanceOffering.CreateInstanceOfferingModel = CreateInstanceOfferingModel;
     var CreateInstanceOffering = (function () {
         function CreateInstanceOffering(api, instanceOfferingMgr) {
@@ -17905,7 +17920,7 @@ var MInstanceOffering;
             });
         };
         return CreateInstanceOffering;
-    })();
+    }());
     MInstanceOffering.CreateInstanceOffering = CreateInstanceOffering;
 })(MInstanceOffering || (MInstanceOffering = {}));
 angular.module('root').factory('InstanceOfferingManager', ['Api', '$rootScope', function (api, $rootScope) {
@@ -17991,7 +18006,7 @@ var MDiskOffering;
             self.set('lastOpDate', inv.lastOpDate);
         };
         return DiskOffering;
-    })(ApiHeader.DiskOfferingInventory);
+    }(ApiHeader.DiskOfferingInventory));
     MDiskOffering.DiskOffering = DiskOffering;
     var DiskOfferingManager = (function () {
         function DiskOfferingManager(api, $rootScope) {
@@ -18088,7 +18103,7 @@ var MDiskOffering;
         };
         DiskOfferingManager.$inject = ['Api', '$rootScope'];
         return DiskOfferingManager;
-    })();
+    }());
     MDiskOffering.DiskOfferingManager = DiskOfferingManager;
     var DiskOfferingModel = (function (_super) {
         __extends(DiskOfferingModel, _super);
@@ -18097,7 +18112,7 @@ var MDiskOffering;
             this.current = new DiskOffering();
         }
         return DiskOfferingModel;
-    })(Utils.Model);
+    }(Utils.Model));
     MDiskOffering.DiskOfferingModel = DiskOfferingModel;
     var ODiskOfferingGrid = (function (_super) {
         __extends(ODiskOfferingGrid, _super);
@@ -18148,7 +18163,7 @@ var MDiskOffering;
             };
         }
         return ODiskOfferingGrid;
-    })(Utils.OGrid);
+    }(Utils.OGrid));
     var Action = (function () {
         function Action($scope, diskOfferingMgr) {
             this.$scope = $scope;
@@ -18161,7 +18176,7 @@ var MDiskOffering;
             this.diskOfferingMgr.disable(this.$scope.model.current);
         };
         return Action;
-    })();
+    }());
     var FilterBy = (function () {
         function FilterBy($scope) {
             var _this = this;
@@ -18227,7 +18242,7 @@ var MDiskOffering;
         FilterBy.NONE = 'none';
         FilterBy.STATE = 'state';
         return FilterBy;
-    })();
+    }());
     var DetailsController = (function () {
         function DetailsController($scope, diskOfferingMgr, $routeParams, tagService, current) {
             var _this = this;
@@ -18292,7 +18307,7 @@ var MDiskOffering;
         };
         DetailsController.$inject = ['$scope', 'DiskOfferingManager', '$routeParams', 'Tag', 'current'];
         return DetailsController;
-    })();
+    }());
     MDiskOffering.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, diskOfferingMgr, $location) {
@@ -18404,13 +18419,13 @@ var MDiskOffering;
         }
         Controller.$inject = ['$scope', 'DiskOfferingManager', '$location'];
         return Controller;
-    })();
+    }());
     MDiskOffering.Controller = Controller;
     var CreateDiskOfferingOptions = (function () {
         function CreateDiskOfferingOptions() {
         }
         return CreateDiskOfferingOptions;
-    })();
+    }());
     MDiskOffering.CreateDiskOfferingOptions = CreateDiskOfferingOptions;
     var CreateDiskOfferingModel = (function () {
         function CreateDiskOfferingModel() {
@@ -18419,7 +18434,7 @@ var MDiskOffering;
             return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.diskSize);
         };
         return CreateDiskOfferingModel;
-    })();
+    }());
     MDiskOffering.CreateDiskOfferingModel = CreateDiskOfferingModel;
     var CreateDiskOffering = (function () {
         function CreateDiskOffering(api, diskOfferingMgr) {
@@ -18535,7 +18550,7 @@ var MDiskOffering;
             });
         };
         return CreateDiskOffering;
-    })();
+    }());
     MDiskOffering.CreateDiskOffering = CreateDiskOffering;
 })(MDiskOffering || (MDiskOffering = {}));
 angular.module('root').factory('DiskOfferingManager', ['Api', '$rootScope', function (api, $rootScope) {
@@ -18572,12 +18587,12 @@ var MApiDetails;
         function Details() {
         }
         return Details;
-    })();
+    }());
     var Controller = (function () {
         function Controller() {
         }
         return Controller;
-    })();
+    }());
     MApiDetails.Controller = Controller;
     var DetailsController = (function () {
         function DetailsController($scope, $rootScope, apiDetails, $routeParams) {
@@ -18605,7 +18620,7 @@ var MApiDetails;
         }
         DetailsController.$inject = ['$scope', '$rootScope', 'ApiDetails', '$routeParams'];
         return DetailsController;
-    })();
+    }());
     MApiDetails.DetailsController = DetailsController;
     var ApiDetails = (function () {
         function ApiDetails($rootScope, api, $location) {
@@ -18691,7 +18706,7 @@ var MApiDetails;
         }
         ApiDetails.$inject = ['$rootScope', 'Api', '$location'];
         return ApiDetails;
-    })();
+    }());
     MApiDetails.ApiDetails = ApiDetails;
 })(MApiDetails || (MApiDetails = {}));
 angular.module('root').config(['$routeProvider', function (route) {
@@ -18739,7 +18754,7 @@ var MVmInstance;
             self.set('lastOpDate', inv.lastOpDate);
         };
         return VmNic;
-    })(ApiHeader.VmNicInventory);
+    }(ApiHeader.VmNicInventory));
     MVmInstance.VmNic = VmNic;
     var VmInstance = (function (_super) {
         __extends(VmInstance, _super);
@@ -18795,7 +18810,7 @@ var MVmInstance;
         };
         VmInstance.STATES = ['Running', 'Starting', 'Stopping', 'Stopped', 'Rebooting', 'Migrating', 'Unknown', 'Created'];
         return VmInstance;
-    })(ApiHeader.VmInstanceInventory);
+    }(ApiHeader.VmInstanceInventory));
     MVmInstance.VmInstance = VmInstance;
     var VmInstanceManager = (function () {
         function VmInstanceManager(api, $rootScope) {
@@ -19094,7 +19109,7 @@ var MVmInstance;
         };
         VmInstanceManager.$inject = ['Api', '$rootScope'];
         return VmInstanceManager;
-    })();
+    }());
     MVmInstance.VmInstanceManager = VmInstanceManager;
     var VmInstanceModel = (function (_super) {
         __extends(VmInstanceModel, _super);
@@ -19103,7 +19118,7 @@ var MVmInstance;
             this.current = new VmInstance();
         }
         return VmInstanceModel;
-    })(Utils.Model);
+    }(Utils.Model));
     MVmInstance.VmInstanceModel = VmInstanceModel;
     var OVmInstanceGrid = (function (_super) {
         __extends(OVmInstanceGrid, _super);
@@ -19191,7 +19206,7 @@ var MVmInstance;
             };
         }
         return OVmInstanceGrid;
-    })(Utils.OGrid);
+    }(Utils.OGrid));
     var Action = (function () {
         function Action($scope, vmMgr) {
             this.$scope = $scope;
@@ -19279,7 +19294,7 @@ var MVmInstance;
             }
         };
         return Action;
-    })();
+    }());
     var FilterBy = (function () {
         function FilterBy($scope, hypervisorTypes) {
             var _this = this;
@@ -19354,7 +19369,7 @@ var MVmInstance;
         FilterBy.STATE = 'state';
         FilterBy.TYPE = 'hypervisorType';
         return FilterBy;
-    })();
+    }());
     var DetailsController = (function () {
         function DetailsController($scope, vmMgr, $routeParams, tagService, vm, clusterMgr, $rootScope, $window) {
             var _this = this;
@@ -19590,7 +19605,7 @@ var MVmInstance;
         };
         DetailsController.$inject = ['$scope', 'VmInstanceManager', '$routeParams', 'Tag', 'current', 'ClusterManager', '$rootScope', '$window'];
         return DetailsController;
-    })();
+    }());
     MVmInstance.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, vmMgr, hostMgr, hypervisorTypes, $location, $rootScope, $window, Translator, $translate) {
@@ -19772,7 +19787,7 @@ var MVmInstance;
         }
         Controller.$inject = ['$scope', 'VmInstanceManager', 'HostManager', 'hypervisorTypes', '$location', '$rootScope', '$window', 'Translator', '$translate'];
         return Controller;
-    })();
+    }());
     MVmInstance.Controller = Controller;
     var ChangeInstanceOffering = (function () {
         function ChangeInstanceOffering(api, vmMgr, insMgr) {
@@ -19835,7 +19850,7 @@ var MVmInstance;
             }).start();
         };
         return ChangeInstanceOffering;
-    })();
+    }());
     MVmInstance.ChangeInstanceOffering = ChangeInstanceOffering;
     var MigrateVm = (function () {
         function MigrateVm(api, vmMgr) {
@@ -19898,13 +19913,13 @@ var MVmInstance;
             }).start();
         };
         return MigrateVm;
-    })();
+    }());
     MVmInstance.MigrateVm = MigrateVm;
     var CreateVmInstanceOptions = (function () {
         function CreateVmInstanceOptions() {
         }
         return CreateVmInstanceOptions;
-    })();
+    }());
     MVmInstance.CreateVmInstanceOptions = CreateVmInstanceOptions;
     var CreateVmInstance = (function () {
         function CreateVmInstance(api, vmMgr, clusterMgr, hostMgr, zoneMgr, instOfferingMgr, diskOfferingMgr, l3Mgr, imageMgr) {
@@ -20392,7 +20407,7 @@ var MVmInstance;
             }).start();
         };
         return CreateVmInstance;
-    })();
+    }());
     MVmInstance.CreateVmInstance = CreateVmInstance;
     var AttachL3Network = (function () {
         function AttachL3Network(api, vmMgr) {
@@ -20457,7 +20472,7 @@ var MVmInstance;
             }).start();
         };
         return AttachL3Network;
-    })();
+    }());
     MVmInstance.AttachL3Network = AttachL3Network;
     var DetachL3Network = (function () {
         function DetachL3Network(api, vmMgr, l3Mgr) {
@@ -20544,7 +20559,7 @@ var MVmInstance;
             }).start();
         };
         return DetachL3Network;
-    })();
+    }());
     MVmInstance.DetachL3Network = DetachL3Network;
     var AttachVolume = (function () {
         function AttachVolume(api, vmMgr) {
@@ -20610,7 +20625,7 @@ var MVmInstance;
             }).start();
         };
         return AttachVolume;
-    })();
+    }());
     MVmInstance.AttachVolume = AttachVolume;
     var DetachVolume = (function () {
         function DetachVolume(api, vmMgr) {
@@ -20675,7 +20690,7 @@ var MVmInstance;
             this.$scope.detachVolume__.open();
         };
         return DetachVolume;
-    })();
+    }());
     MVmInstance.DetachVolume = DetachVolume;
 })(MVmInstance || (MVmInstance = {}));
 angular.module('root').factory('VmInstanceManager', ['Api', '$rootScope', function (api, $rootScope) {
@@ -20820,7 +20835,7 @@ var MVolume;
             return new kendo.data.ObservableObject(sp);
         };
         return VolumeSnapshot;
-    })(ApiHeader.VolumeSnapshotInventory);
+    }(ApiHeader.VolumeSnapshotInventory));
     MVolume.VolumeSnapshot = VolumeSnapshot;
     var Volume = (function (_super) {
         __extends(Volume, _super);
@@ -20908,7 +20923,7 @@ var MVolume;
             self.set('lastOpDate', inv.lastOpDate);
         };
         return Volume;
-    })(ApiHeader.VolumeInventory);
+    }(ApiHeader.VolumeInventory));
     MVolume.Volume = Volume;
     var VolumeManager = (function () {
         function VolumeManager(api, $rootScope) {
@@ -21136,7 +21151,7 @@ var MVolume;
         };
         VolumeManager.$inject = ['Api', '$rootScope'];
         return VolumeManager;
-    })();
+    }());
     MVolume.VolumeManager = VolumeManager;
     var VolumeModel = (function (_super) {
         __extends(VolumeModel, _super);
@@ -21145,7 +21160,7 @@ var MVolume;
             this.current = new Volume();
         }
         return VolumeModel;
-    })(Utils.Model);
+    }(Utils.Model));
     MVolume.VolumeModel = VolumeModel;
     var SnapshotManager = (function () {
         function SnapshotManager(api, $rootScope) {
@@ -21232,7 +21247,7 @@ var MVolume;
             });
         };
         return SnapshotManager;
-    })();
+    }());
     MVolume.SnapshotManager = SnapshotManager;
     var OVolumeGrid = (function (_super) {
         __extends(OVolumeGrid, _super);
@@ -21294,7 +21309,7 @@ var MVolume;
             };
         }
         return OVolumeGrid;
-    })(Utils.OGrid);
+    }(Utils.OGrid));
     var Action = (function () {
         function Action($scope, volumeMgr) {
             this.$scope = $scope;
@@ -21325,7 +21340,7 @@ var MVolume;
             this.$scope.createTemplateWin.open();
         };
         return Action;
-    })();
+    }());
     var FilterBy = (function () {
         function FilterBy($scope, hypervisorTypes) {
             var _this = this;
@@ -21416,7 +21431,7 @@ var MVolume;
         FilterBy.TYPE = 'type';
         FilterBy.HYPERVISOR = 'hypervisorType';
         return FilterBy;
-    })();
+    }());
     var SnapshotAction = (function () {
         function SnapshotAction($scope, spMgr) {
             this.$scope = $scope;
@@ -21435,7 +21450,7 @@ var MVolume;
             this.$scope.deleteSnapshotFromBackupStorageWin.open();
         };
         return SnapshotAction;
-    })();
+    }());
     var SnapshotDetailsController = (function () {
         function SnapshotDetailsController($scope, spMgr, $routeParams, tagService, current, vmMgr, bsMgr) {
             var _this = this;
@@ -21578,7 +21593,7 @@ var MVolume;
         };
         SnapshotDetailsController.$inject = ['$scope', 'SnapshotManager', '$routeParams', 'Tag', 'current', 'VmInstanceManager', 'BackupStorageManager'];
         return SnapshotDetailsController;
-    })();
+    }());
     MVolume.SnapshotDetailsController = SnapshotDetailsController;
     var DetailsController = (function () {
         function DetailsController($scope, volumeMgr, $routeParams, tagService, vol, vmMgr, spMgr, bsMgr) {
@@ -21774,7 +21789,7 @@ var MVolume;
         };
         DetailsController.$inject = ['$scope', 'VolumeManager', '$routeParams', 'Tag', 'current', 'VmInstanceManager', 'SnapshotManager', 'BackupStorageManager'];
         return DetailsController;
-    })();
+    }());
     MVolume.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, volumeMgr, hypervisorTypes, $location) {
@@ -21936,7 +21951,7 @@ var MVolume;
         }
         Controller.$inject = ['$scope', 'VolumeManager', 'hypervisorTypes', '$location'];
         return Controller;
-    })();
+    }());
     MVolume.Controller = Controller;
     var CreateVolume = (function () {
         function CreateVolume(api, diskOfferingMgr, volumeMgr, vmMgr) {
@@ -22127,7 +22142,7 @@ var MVolume;
             }).start();
         };
         return CreateVolume;
-    })();
+    }());
     MVolume.CreateVolume = CreateVolume;
     var AttachVm = (function () {
         function AttachVm(api, volMgr) {
@@ -22194,7 +22209,7 @@ var MVolume;
             }).start();
         };
         return AttachVm;
-    })();
+    }());
     MVolume.AttachVm = AttachVm;
     var DetachVm = (function () {
         function DetachVm(volMgr, vmMgr) {
@@ -22275,7 +22290,7 @@ var MVolume;
             });
         };
         return DetachVm;
-    })();
+    }());
     MVolume.DetachVm = DetachVm;
     var TakeSnapshot = (function () {
         function TakeSnapshot(volMgr) {
@@ -22316,7 +22331,7 @@ var MVolume;
             this.$scope.takeSnapshot__.open();
         };
         return TakeSnapshot;
-    })();
+    }());
     MVolume.TakeSnapshot = TakeSnapshot;
     var RevertSnapshot = (function () {
         function RevertSnapshot(spMgr, volMgr, vmMgr) {
@@ -22398,7 +22413,7 @@ var MVolume;
             }).start();
         };
         return RevertSnapshot;
-    })();
+    }());
     MVolume.RevertSnapshot = RevertSnapshot;
     var BackupSnapshot = (function () {
         function BackupSnapshot(spMgr, psMgr, bsMgr) {
@@ -22490,7 +22505,7 @@ var MVolume;
             }).start();
         };
         return BackupSnapshot;
-    })();
+    }());
     MVolume.BackupSnapshot = BackupSnapshot;
     var BackupDataVolume = (function () {
         function BackupDataVolume(volMgr, psMgr, bsMgr) {
@@ -22584,7 +22599,7 @@ var MVolume;
             }).start();
         };
         return BackupDataVolume;
-    })();
+    }());
     MVolume.BackupDataVolume = BackupDataVolume;
     var DeleteDataVolumeFromBackupStorage = (function () {
         function DeleteDataVolumeFromBackupStorage(volMgr, psMgr, bsMgr) {
@@ -22652,7 +22667,7 @@ var MVolume;
             });
         };
         return DeleteDataVolumeFromBackupStorage;
-    })();
+    }());
     MVolume.DeleteDataVolumeFromBackupStorage = DeleteDataVolumeFromBackupStorage;
     var CreateTemplateFromRootVolume = (function () {
         function CreateTemplateFromRootVolume(volMgr, bsMgr, psMgr, vmMgr, api) {
@@ -22786,7 +22801,7 @@ var MVolume;
             }).start();
         };
         return CreateTemplateFromRootVolume;
-    })();
+    }());
     MVolume.CreateTemplateFromRootVolume = CreateTemplateFromRootVolume;
     var DeleteSnapshotFromBackupStorage = (function () {
         function DeleteSnapshotFromBackupStorage(spMgr, bsMgr) {
@@ -22853,7 +22868,7 @@ var MVolume;
             });
         };
         return DeleteSnapshotFromBackupStorage;
-    })();
+    }());
     MVolume.DeleteSnapshotFromBackupStorage = DeleteSnapshotFromBackupStorage;
 })(MVolume || (MVolume = {}));
 angular.module('root').factory('VolumeManager', ['Api', '$rootScope', function (api, $rootScope) {
@@ -22992,7 +23007,7 @@ var MSecurityGroup;
             self.set('lastOpDate', inv.lastOpDate);
         };
         return SecurityGroup;
-    })(ApiHeader.SecurityGroupInventory);
+    }(ApiHeader.SecurityGroupInventory));
     MSecurityGroup.SecurityGroup = SecurityGroup;
     var SecurityGroupManager = (function () {
         function SecurityGroupManager(api, $rootScope) {
@@ -23198,7 +23213,7 @@ var MSecurityGroup;
         };
         SecurityGroupManager.$inject = ['Api', '$rootScope'];
         return SecurityGroupManager;
-    })();
+    }());
     MSecurityGroup.SecurityGroupManager = SecurityGroupManager;
     var SecurityGroupModel = (function (_super) {
         __extends(SecurityGroupModel, _super);
@@ -23207,7 +23222,7 @@ var MSecurityGroup;
             this.current = new SecurityGroup();
         }
         return SecurityGroupModel;
-    })(Utils.Model);
+    }(Utils.Model));
     MSecurityGroup.SecurityGroupModel = SecurityGroupModel;
     var OSecurityGroupGrid = (function (_super) {
         __extends(OSecurityGroupGrid, _super);
@@ -23252,7 +23267,7 @@ var MSecurityGroup;
             };
         }
         return OSecurityGroupGrid;
-    })(Utils.OGrid);
+    }(Utils.OGrid));
     var Action = (function () {
         function Action($scope, sgMgr) {
             this.$scope = $scope;
@@ -23289,7 +23304,7 @@ var MSecurityGroup;
             return false;
         };
         return Action;
-    })();
+    }());
     var FilterBy = (function () {
         function FilterBy($scope) {
             var _this = this;
@@ -23355,7 +23370,7 @@ var MSecurityGroup;
         FilterBy.NONE = 'none';
         FilterBy.STATE = 'state';
         return FilterBy;
-    })();
+    }());
     var DetailsController = (function () {
         function DetailsController($scope, sgMgr, $routeParams, tagService, current, l3Mgr, api) {
             var _this = this;
@@ -23676,7 +23691,7 @@ var MSecurityGroup;
         };
         DetailsController.$inject = ['$scope', 'SecurityGroupManager', '$routeParams', 'Tag', 'current', 'L3NetworkManager', 'Api'];
         return DetailsController;
-    })();
+    }());
     MSecurityGroup.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, sgMgr, $location) {
@@ -23813,7 +23828,7 @@ var MSecurityGroup;
         }
         Controller.$inject = ['$scope', 'SecurityGroupManager', '$location'];
         return Controller;
-    })();
+    }());
     MSecurityGroup.Controller = Controller;
     var AddRule = (function () {
         function AddRule(sgMgr) {
@@ -24009,7 +24024,7 @@ var MSecurityGroup;
             this.$scope.addRule__.open();
         };
         return AddRule;
-    })();
+    }());
     MSecurityGroup.AddRule = AddRule;
     var CreateSecurityGroup = (function () {
         function CreateSecurityGroup(api, sgMgr, l3Mgr) {
@@ -24326,7 +24341,7 @@ var MSecurityGroup;
             });
         };
         return CreateSecurityGroup;
-    })();
+    }());
     MSecurityGroup.CreateSecurityGroup = CreateSecurityGroup;
     var DeleteRule = (function () {
         function DeleteRule(sgMgr) {
@@ -24436,7 +24451,7 @@ var MSecurityGroup;
             this.$scope.deleteRule__.open();
         };
         return DeleteRule;
-    })();
+    }());
     MSecurityGroup.DeleteRule = DeleteRule;
     var AddVmNic = (function () {
         function AddVmNic(sgMgr, vmMgr) {
@@ -24552,7 +24567,7 @@ var MSecurityGroup;
             }).start();
         };
         return AddVmNic;
-    })();
+    }());
     MSecurityGroup.AddVmNic = AddVmNic;
     var RemoveVmNic = (function () {
         function RemoveVmNic(sgMgr, vmMgr, api) {
@@ -24675,7 +24690,7 @@ var MSecurityGroup;
             }).start();
         };
         return RemoveVmNic;
-    })();
+    }());
     MSecurityGroup.RemoveVmNic = RemoveVmNic;
     var AttachL3Network = (function () {
         function AttachL3Network(sgMgr, l3Mgr) {
@@ -24754,7 +24769,7 @@ var MSecurityGroup;
             }).start();
         };
         return AttachL3Network;
-    })();
+    }());
     MSecurityGroup.AttachL3Network = AttachL3Network;
     var DetachL3Network = (function () {
         function DetachL3Network(sgMgr, l3Mgr) {
@@ -24841,7 +24856,7 @@ var MSecurityGroup;
             }).start();
         };
         return DetachL3Network;
-    })();
+    }());
     MSecurityGroup.DetachL3Network = DetachL3Network;
 })(MSecurityGroup || (MSecurityGroup = {}));
 angular.module('root').factory('SecurityGroupManager', ['Api', '$rootScope', function (api, $rootScope) {
@@ -24935,7 +24950,7 @@ var MVip;
             self.set('lastOpDate', inv.lastOpDate);
         };
         return Vip;
-    })(ApiHeader.VipInventory);
+    }(ApiHeader.VipInventory));
     MVip.Vip = Vip;
     var VipManager = (function () {
         function VipManager(api, $rootScope) {
@@ -25033,7 +25048,7 @@ var MVip;
         };
         VipManager.$inject = ['Api', '$rootScope'];
         return VipManager;
-    })();
+    }());
     MVip.VipManager = VipManager;
     var VipModel = (function (_super) {
         __extends(VipModel, _super);
@@ -25042,7 +25057,7 @@ var MVip;
             this.current = new Vip();
         }
         return VipModel;
-    })(Utils.Model);
+    }(Utils.Model));
     MVip.VipModel = VipModel;
     var OVipGrid = (function (_super) {
         __extends(OVipGrid, _super);
@@ -25108,7 +25123,7 @@ var MVip;
             };
         }
         return OVipGrid;
-    })(Utils.OGrid);
+    }(Utils.OGrid));
     var Action = (function () {
         function Action($scope, vipMgr) {
             this.$scope = $scope;
@@ -25121,7 +25136,7 @@ var MVip;
             this.vipMgr.disable(this.$scope.model.current);
         };
         return Action;
-    })();
+    }());
     var FilterBy = (function () {
         function FilterBy($scope) {
             var _this = this;
@@ -25187,7 +25202,7 @@ var MVip;
         FilterBy.NONE = 'none';
         FilterBy.STATE = 'state';
         return FilterBy;
-    })();
+    }());
     var DetailsController = (function () {
         function DetailsController($scope, vipMgr, $routeParams, tagService, current) {
             var _this = this;
@@ -25248,7 +25263,7 @@ var MVip;
         };
         DetailsController.$inject = ['$scope', 'VipManager', '$routeParams', 'Tag', 'current'];
         return DetailsController;
-    })();
+    }());
     MVip.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, vipMgr, $location) {
@@ -25372,13 +25387,13 @@ var MVip;
         }
         Controller.$inject = ['$scope', 'VipManager', '$location'];
         return Controller;
-    })();
+    }());
     MVip.Controller = Controller;
     var CreateVipOptions = (function () {
         function CreateVipOptions() {
         }
         return CreateVipOptions;
-    })();
+    }());
     MVip.CreateVipOptions = CreateVipOptions;
     var CreateVip = (function () {
         function CreateVip(api, vipMgr, zoneMgr, l3Mgr) {
@@ -25541,7 +25556,7 @@ var MVip;
             });
         };
         return CreateVip;
-    })();
+    }());
     MVip.CreateVip = CreateVip;
 })(MVip || (MVip = {}));
 angular.module('root').factory('VipManager', ['Api', '$rootScope', function (api, $rootScope) {
@@ -25639,7 +25654,7 @@ var MEip;
             return eip;
         };
         return Eip;
-    })(ApiHeader.EipInventory);
+    }(ApiHeader.EipInventory));
     MEip.Eip = Eip;
     var EipManager = (function () {
         function EipManager(api, $rootScope) {
@@ -25785,7 +25800,7 @@ var MEip;
         };
         EipManager.$inject = ['Api', '$rootScope'];
         return EipManager;
-    })();
+    }());
     MEip.EipManager = EipManager;
     var EipModel = (function (_super) {
         __extends(EipModel, _super);
@@ -25794,7 +25809,7 @@ var MEip;
             this.current = new Eip();
         }
         return EipModel;
-    })(Utils.Model);
+    }(Utils.Model));
     MEip.EipModel = EipModel;
     var OEipGrid = (function (_super) {
         __extends(OEipGrid, _super);
@@ -25924,7 +25939,7 @@ var MEip;
             };
         }
         return OEipGrid;
-    })(Utils.OGrid);
+    }(Utils.OGrid));
     var Action = (function () {
         function Action($scope, eipMgr) {
             this.$scope = $scope;
@@ -25943,7 +25958,7 @@ var MEip;
             this.$scope.detachEip.open();
         };
         return Action;
-    })();
+    }());
     var FilterBy = (function () {
         function FilterBy($scope) {
             var _this = this;
@@ -26009,7 +26024,7 @@ var MEip;
         FilterBy.NONE = 'none';
         FilterBy.STATE = 'state';
         return FilterBy;
-    })();
+    }());
     var DetailsController = (function () {
         function DetailsController($scope, eipMgr, $routeParams, tagService, current, vmMgr) {
             var _this = this;
@@ -26098,7 +26113,7 @@ var MEip;
         };
         DetailsController.$inject = ['$scope', 'EipManager', '$routeParams', 'Tag', 'current', 'VmInstanceManager'];
         return DetailsController;
-    })();
+    }());
     MEip.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, eipMgr, $location, vipMgr, vmMgr) {
@@ -26274,7 +26289,7 @@ var MEip;
         }
         Controller.$inject = ['$scope', 'EipManager', '$location', 'VipManager', 'VmInstanceManager'];
         return Controller;
-    })();
+    }());
     MEip.Controller = Controller;
     var CreateEip = (function () {
         function CreateEip(api, eipMgr, vipMgr, l3Mgr, vmMgr) {
@@ -26599,7 +26614,7 @@ var MEip;
         CreateEip.USE_EXISTING_VIP = "existing";
         CreateEip.CREATE_NEW_VIP = "new";
         return CreateEip;
-    })();
+    }());
     MEip.CreateEip = CreateEip;
     var AttachEip = (function () {
         function AttachEip(eipMgr, vmMgr) {
@@ -26709,7 +26724,7 @@ var MEip;
             }).start();
         };
         return AttachEip;
-    })();
+    }());
     MEip.AttachEip = AttachEip;
     var DetachEip = (function () {
         function DetachEip(eipMgr, vmMgr) {
@@ -26798,7 +26813,7 @@ var MEip;
             });
         };
         return DetachEip;
-    })();
+    }());
     MEip.DetachEip = DetachEip;
 })(MEip || (MEip = {}));
 angular.module('root').factory('EipManager', ['Api', '$rootScope', function (api, $rootScope) {
@@ -26942,7 +26957,7 @@ var MPortForwarding;
             return pf;
         };
         return PortForwarding;
-    })(ApiHeader.PortForwardingRuleInventory);
+    }(ApiHeader.PortForwardingRuleInventory));
     MPortForwarding.PortForwarding = PortForwarding;
     var PortForwardingManager = (function () {
         function PortForwardingManager(api, $rootScope) {
@@ -27087,7 +27102,7 @@ var MPortForwarding;
         };
         PortForwardingManager.$inject = ['Api', '$rootScope'];
         return PortForwardingManager;
-    })();
+    }());
     MPortForwarding.PortForwardingManager = PortForwardingManager;
     var PortForwardingModel = (function (_super) {
         __extends(PortForwardingModel, _super);
@@ -27096,7 +27111,7 @@ var MPortForwarding;
             this.current = new PortForwarding();
         }
         return PortForwardingModel;
-    })(Utils.Model);
+    }(Utils.Model));
     MPortForwarding.PortForwardingModel = PortForwardingModel;
     var OPortForwardingGrid = (function (_super) {
         __extends(OPortForwardingGrid, _super);
@@ -27246,7 +27261,7 @@ var MPortForwarding;
             };
         }
         return OPortForwardingGrid;
-    })(Utils.OGrid);
+    }(Utils.OGrid));
     var Action = (function () {
         function Action($scope, pfMgr) {
             this.$scope = $scope;
@@ -27265,7 +27280,7 @@ var MPortForwarding;
             this.$scope.detachPortForwarding.open();
         };
         return Action;
-    })();
+    }());
     var FilterBy = (function () {
         function FilterBy($scope) {
             var _this = this;
@@ -27331,7 +27346,7 @@ var MPortForwarding;
         FilterBy.NONE = 'none';
         FilterBy.STATE = 'state';
         return FilterBy;
-    })();
+    }());
     var DetailsController = (function () {
         function DetailsController($scope, pfMgr, $routeParams, tagService, current, vmMgr) {
             var _this = this;
@@ -27420,7 +27435,7 @@ var MPortForwarding;
         };
         DetailsController.$inject = ['$scope', 'PortForwardingManager', '$routeParams', 'Tag', 'current', 'VmInstanceManager'];
         return DetailsController;
-    })();
+    }());
     MPortForwarding.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, pfMgr, $location, vipMgr, vmMgr) {
@@ -27620,7 +27635,7 @@ var MPortForwarding;
         }
         Controller.$inject = ['$scope', 'PortForwardingManager', '$location', 'VipManager', 'VmInstanceManager'];
         return Controller;
-    })();
+    }());
     MPortForwarding.Controller = Controller;
     var CreatePortForwarding = (function () {
         function CreatePortForwarding(api, pfMgr, vipMgr, l3Mgr, vmMgr) {
@@ -28045,7 +28060,7 @@ var MPortForwarding;
         CreatePortForwarding.USE_EXISTING_VIP = "existing";
         CreatePortForwarding.CREATE_NEW_VIP = "new";
         return CreatePortForwarding;
-    })();
+    }());
     MPortForwarding.CreatePortForwarding = CreatePortForwarding;
     var AttachPortForwarding = (function () {
         function AttachPortForwarding(pfMgr, vmMgr) {
@@ -28155,7 +28170,7 @@ var MPortForwarding;
             }).start();
         };
         return AttachPortForwarding;
-    })();
+    }());
     MPortForwarding.AttachPortForwarding = AttachPortForwarding;
     var DetachPortForwarding = (function () {
         function DetachPortForwarding(pfMgr, vmMgr) {
@@ -28245,7 +28260,7 @@ var MPortForwarding;
             });
         };
         return DetachPortForwarding;
-    })();
+    }());
     MPortForwarding.DetachPortForwarding = DetachPortForwarding;
 })(MPortForwarding || (MPortForwarding = {}));
 angular.module('root').factory('PortForwardingManager', ['Api', '$rootScope', function (api, $rootScope) {
@@ -28348,7 +28363,7 @@ var MVirtualRouter;
             self.set('lastOpDate', inv.lastOpDate);
         };
         return VmNic;
-    })(ApiHeader.VmNicInventory);
+    }(ApiHeader.VmNicInventory));
     MVirtualRouter.VmNic = VmNic;
     var VirtualRouter = (function (_super) {
         __extends(VirtualRouter, _super);
@@ -28412,7 +28427,7 @@ var MVirtualRouter;
         };
         VirtualRouter.STATES = ['Running', 'Starting', 'Stopping', 'Stopped', 'Rebooting', 'Migrating', 'Unknown', 'Created'];
         return VirtualRouter;
-    })(ApiHeader.ApplianceVmInventory);
+    }(ApiHeader.ApplianceVmInventory));
     MVirtualRouter.VirtualRouter = VirtualRouter;
     var VirtualRouterManager = (function () {
         function VirtualRouterManager(api, $rootScope) {
@@ -28559,7 +28574,7 @@ var MVirtualRouter;
         };
         VirtualRouterManager.$inject = ['Api', '$rootScope'];
         return VirtualRouterManager;
-    })();
+    }());
     MVirtualRouter.VirtualRouterManager = VirtualRouterManager;
     var VirtualRouterModel = (function (_super) {
         __extends(VirtualRouterModel, _super);
@@ -28568,7 +28583,7 @@ var MVirtualRouter;
             this.current = new VirtualRouter();
         }
         return VirtualRouterModel;
-    })(Utils.Model);
+    }(Utils.Model));
     MVirtualRouter.VirtualRouterModel = VirtualRouterModel;
     var OVirtualRouterGrid = (function (_super) {
         __extends(OVirtualRouterGrid, _super);
@@ -28624,7 +28639,7 @@ var MVirtualRouter;
             };
         }
         return OVirtualRouterGrid;
-    })(Utils.OGrid);
+    }(Utils.OGrid));
     var Action = (function () {
         function Action($scope, vmMgr) {
             this.$scope = $scope;
@@ -28678,7 +28693,7 @@ var MVirtualRouter;
             }
         };
         return Action;
-    })();
+    }());
     var FilterBy = (function () {
         function FilterBy($scope, hypervisorTypes) {
             var _this = this;
@@ -28753,7 +28768,7 @@ var MVirtualRouter;
         FilterBy.STATE = 'state';
         FilterBy.TYPE = 'hypervisorType';
         return FilterBy;
-    })();
+    }());
     var DetailsController = (function () {
         function DetailsController($scope, vmMgr, $routeParams, tagService, current, clusterMgr, $rootScope, $window) {
             var _this = this;
@@ -28939,7 +28954,7 @@ var MVirtualRouter;
         };
         DetailsController.$inject = ['$scope', 'VirtualRouterManager', '$routeParams', 'Tag', 'current', 'ClusterManager', '$rootScope', '$window'];
         return DetailsController;
-    })();
+    }());
     MVirtualRouter.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, vmMgr, hypervisorTypes, $location, $rootScope, $window) {
@@ -29083,7 +29098,7 @@ var MVirtualRouter;
         }
         Controller.$inject = ['$scope', 'VirtualRouterManager', 'hypervisorTypes', '$location', '$rootScope', '$window'];
         return Controller;
-    })();
+    }());
     MVirtualRouter.Controller = Controller;
 })(MVirtualRouter || (MVirtualRouter = {}));
 angular.module('root').factory('VirtualRouterManager', ['Api', '$rootScope', function (api, $rootScope) {
@@ -29180,7 +29195,7 @@ var MVirtualRouterOffering;
             self.set('imageUuid', inv.imageUuid);
         };
         return VirtualRouterOffering;
-    })(ApiHeader.VirtualRouterOfferingInventory);
+    }(ApiHeader.VirtualRouterOfferingInventory));
     MVirtualRouterOffering.VirtualRouterOffering = VirtualRouterOffering;
     var VirtualRouterOfferingManager = (function () {
         function VirtualRouterOfferingManager(api, $rootScope) {
@@ -29289,7 +29304,7 @@ var MVirtualRouterOffering;
         };
         VirtualRouterOfferingManager.$inject = ['Api', '$rootScope'];
         return VirtualRouterOfferingManager;
-    })();
+    }());
     MVirtualRouterOffering.VirtualRouterOfferingManager = VirtualRouterOfferingManager;
     var VirtualRouterOfferingModel = (function (_super) {
         __extends(VirtualRouterOfferingModel, _super);
@@ -29298,7 +29313,7 @@ var MVirtualRouterOffering;
             this.current = new VirtualRouterOffering();
         }
         return VirtualRouterOfferingModel;
-    })(Utils.Model);
+    }(Utils.Model));
     MVirtualRouterOffering.VirtualRouterOfferingModel = VirtualRouterOfferingModel;
     var OVirtualRouterOfferingGrid = (function (_super) {
         __extends(OVirtualRouterOfferingGrid, _super);
@@ -29365,7 +29380,7 @@ var MVirtualRouterOffering;
             };
         }
         return OVirtualRouterOfferingGrid;
-    })(Utils.OGrid);
+    }(Utils.OGrid));
     var Action = (function () {
         function Action($scope, virtualRouterOfferingMgr) {
             this.$scope = $scope;
@@ -29378,7 +29393,7 @@ var MVirtualRouterOffering;
             this.virtualRouterOfferingMgr.disable(this.$scope.model.current);
         };
         return Action;
-    })();
+    }());
     var FilterBy = (function () {
         function FilterBy($scope, hypervisorTypes) {
             var _this = this;
@@ -29445,7 +29460,7 @@ var MVirtualRouterOffering;
         FilterBy.NONE = 'none';
         FilterBy.STATE = 'state';
         return FilterBy;
-    })();
+    }());
     var DetailsController = (function () {
         function DetailsController($scope, virtualRouterOfferingMgr, $routeParams, tagService, current) {
             var _this = this;
@@ -29512,7 +29527,7 @@ var MVirtualRouterOffering;
         };
         DetailsController.$inject = ['$scope', 'VirtualRouterOfferingManager', '$routeParams', 'Tag', 'current'];
         return DetailsController;
-    })();
+    }());
     MVirtualRouterOffering.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, virtualRouterOfferingMgr, hypervisorTypes, $location) {
@@ -29633,13 +29648,13 @@ var MVirtualRouterOffering;
         }
         Controller.$inject = ['$scope', 'VirtualRouterOfferingManager', 'hypervisorTypes', '$location'];
         return Controller;
-    })();
+    }());
     MVirtualRouterOffering.Controller = Controller;
     var CreateVirtualRouterOfferingOptions = (function () {
         function CreateVirtualRouterOfferingOptions() {
         }
         return CreateVirtualRouterOfferingOptions;
-    })();
+    }());
     MVirtualRouterOffering.CreateVirtualRouterOfferingOptions = CreateVirtualRouterOfferingOptions;
     var CreateVirtualRouterOffering = (function () {
         function CreateVirtualRouterOffering(api, virtualRouterOfferingMgr, l3Mgr, imgMgr, zoneMgr, bsMgr) {
@@ -29906,7 +29921,7 @@ var MVirtualRouterOffering;
             }).start();
         };
         return CreateVirtualRouterOffering;
-    })();
+    }());
     MVirtualRouterOffering.CreateVirtualRouterOffering = CreateVirtualRouterOffering;
 })(MVirtualRouterOffering || (MVirtualRouterOffering = {}));
 angular.module('root').factory('VirtualRouterOfferingManager', ['Api', '$rootScope', function (api, $rootScope) {
@@ -29988,7 +30003,7 @@ var MDashboard;
         }
         DashboardManager.$inject = ['Api'];
         return DashboardManager;
-    })();
+    }());
     MDashboard.DashboardManager = DashboardManager;
     var Controller = (function () {
         function Controller($scope, api, $location, zoneMgr, Translator, $translate) {
@@ -30396,7 +30411,7 @@ var MDashboard;
         }
         Controller.$inject = ['$scope', 'Api', '$location', 'ZoneManager', 'Translator', '$translate'];
         return Controller;
-    })();
+    }());
     MDashboard.Controller = Controller;
 })(MDashboard || (MDashboard = {}));
 angular.module('root').factory('DashboardManager', ['Api', '$rootScope', function (api, $rootScope) {
@@ -30447,7 +30462,7 @@ var MGlobalConfig;
         };
         GlobalConfigManager.$inject = ['Api', '$rootScope'];
         return GlobalConfigManager;
-    })();
+    }());
     MGlobalConfig.GlobalConfigManager = GlobalConfigManager;
     var GlobalConfigModel = (function (_super) {
         __extends(GlobalConfigModel, _super);
@@ -30456,7 +30471,7 @@ var MGlobalConfig;
             this.current = null;
         }
         return GlobalConfigModel;
-    })(Utils.Model);
+    }(Utils.Model));
     MGlobalConfig.GlobalConfigModel = GlobalConfigModel;
     var OGlobalConfigGrid = (function (_super) {
         __extends(OGlobalConfigGrid, _super);
@@ -30500,7 +30515,7 @@ var MGlobalConfig;
             this.options.dataSource.pageSize(30);
         }
         return OGlobalConfigGrid;
-    })(Utils.OGrid);
+    }(Utils.OGrid));
     var Action = (function () {
         function Action($scope, globalConfigMgr) {
             this.$scope = $scope;
@@ -30510,7 +30525,7 @@ var MGlobalConfig;
             this.$scope.editGlobalConfigWin.open();
         };
         return Action;
-    })();
+    }());
     var FilterBy = (function () {
         function FilterBy($scope, categories) {
             var _this = this;
@@ -30579,7 +30594,7 @@ var MGlobalConfig;
         FilterBy.NONE = 'none';
         FilterBy.CATEGORY = 'category';
         return FilterBy;
-    })();
+    }());
     var DetailsController = (function () {
         function DetailsController($scope, gMgr, $routeParams, current) {
             var _this = this;
@@ -30623,7 +30638,7 @@ var MGlobalConfig;
         };
         DetailsController.$inject = ['$scope', 'GlobalConfigManager', '$routeParams', 'current'];
         return DetailsController;
-    })();
+    }());
     MGlobalConfig.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, gMgr, configs, $location) {
@@ -30717,7 +30732,7 @@ var MGlobalConfig;
         }
         Controller.$inject = ['$scope', 'GlobalConfigManager', 'configs', '$location'];
         return Controller;
-    })();
+    }());
     MGlobalConfig.Controller = Controller;
     var EditGlobalConfig = (function () {
         function EditGlobalConfig(gMgr) {
@@ -30768,7 +30783,7 @@ var MGlobalConfig;
             this.$scope.editGlobalConfig__.open();
         };
         return EditGlobalConfig;
-    })();
+    }());
     MGlobalConfig.EditGlobalConfig = EditGlobalConfig;
 })(MGlobalConfig || (MGlobalConfig = {}));
 angular.module('root').factory('GlobalConfigManager', ['Api', '$rootScope', function (api, $rootScope) {
@@ -30842,7 +30857,7 @@ var Directive;
             this.replace = false;
         }
         return PanelHeaderIn;
-    })();
+    }());
     Directive.PanelHeaderIn = PanelHeaderIn;
     var PopoverImpl = (function () {
         function PopoverImpl($scope, $attrs, $element) {
@@ -30882,7 +30897,7 @@ var Directive;
             this.isOpen = !this.isOpen;
         };
         return PopoverImpl;
-    })();
+    }());
     var Popover = (function () {
         function Popover() {
             this.scope = true;
@@ -30894,7 +30909,7 @@ var Directive;
             };
         }
         return Popover;
-    })();
+    }());
     Directive.Popover = Popover;
     var SearchBoxSchema = (function () {
         function SearchBoxSchema() {
@@ -30903,7 +30918,7 @@ var Directive;
         SearchBoxSchema.VALUE_TYPE_LIST = "list";
         SearchBoxSchema.VALUE_TYPE_TIMESTAMP = "timeStamp";
         return SearchBoxSchema;
-    })();
+    }());
     Directive.SearchBoxSchema = SearchBoxSchema;
     var SearchCondition = (function () {
         function SearchCondition() {
@@ -30950,7 +30965,7 @@ var Directive;
             }
         };
         return SearchCondition;
-    })();
+    }());
     var SearchBox = (function () {
         function SearchBox($compile) {
             var _this = this;
@@ -31238,7 +31253,7 @@ var Directive;
         SearchBox.TAG_OPS = ['in', 'not in'];
         SearchBox.USER_TAG_CONDITION_NAME = '__userTag__';
         return SearchBox;
-    })();
+    }());
     Directive.SearchBox = SearchBox;
     var GridDoubleClick = (function () {
         function GridDoubleClick() {
@@ -31258,7 +31273,7 @@ var Directive;
             };
         }
         return GridDoubleClick;
-    })();
+    }());
     Directive.GridDoubleClick = GridDoubleClick;
     var SortByData = (function () {
         function SortByData() {
@@ -31273,7 +31288,7 @@ var Directive;
             return Utils.sprintf('{0}:{1}', this.field, this.direction);
         };
         return SortByData;
-    })();
+    }());
     Directive.SortByData = SortByData;
     var SortBy = (function () {
         function SortBy() {
@@ -31316,13 +31331,13 @@ var Directive;
         }
         SortBy.NO_SORT_BY_NAME = '-- No Sort --';
         return SortBy;
-    })();
+    }());
     Directive.SortBy = SortBy;
     var DeleteConfirmOptions = (function () {
         function DeleteConfirmOptions() {
         }
         return DeleteConfirmOptions;
-    })();
+    }());
     Directive.DeleteConfirmOptions = DeleteConfirmOptions;
     var DeleteConfirmImpl = (function () {
         function DeleteConfirmImpl($scope, $attrs, $element) {
@@ -31360,7 +31375,7 @@ var Directive;
             this.$scope.winDelete__.open();
         };
         return DeleteConfirmImpl;
-    })();
+    }());
     var DeleteConfirm = (function () {
         function DeleteConfirm() {
             this.scope = true;
@@ -31372,7 +31387,7 @@ var Directive;
             };
         }
         return DeleteConfirm;
-    })();
+    }());
     Directive.DeleteConfirm = DeleteConfirm;
     var ConfirmBoxImpl = (function () {
         function ConfirmBoxImpl($scope, $attrs, $element) {
@@ -31418,7 +31433,7 @@ var Directive;
             this.$scope.confirmBox__.open();
         };
         return ConfirmBoxImpl;
-    })();
+    }());
     var ConfirmBox = (function () {
         function ConfirmBox() {
             this.scope = true;
@@ -31430,7 +31445,7 @@ var Directive;
             };
         }
         return ConfirmBox;
-    })();
+    }());
     Directive.ConfirmBox = ConfirmBox;
 })(Directive || (Directive = {}));
 angular.module('root')

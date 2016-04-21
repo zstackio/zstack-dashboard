@@ -419,6 +419,7 @@
         "primaryStorage.createPrimaryStorage.HINT3": "(Required) for NFS primary storage, url is 'ip_or_dns_name:absolute_path', for example, '192.168.0.10:/primaryStorage'",
         "primaryStorage.createPrimaryStorage.HINT4": "(Required) for local storage, url is an absolute path, for example, '/volumes'. The folder will be created on every host.",
         "primaryStorage.createPrimaryStorage.HINT5": "(Required) for ISCSI storage with BTRFS backend, url is an absolute path, for example, '/volumes'. The folder will be created on the BTRFS server.",
+        "primaryStorage.createPrimaryStorage.HINT6": "(Required) for local shared mount point storage, url is an absolute path, for example, '/volumes'. The folder will be used and shared on every host.",
         "primaryStorage.createPrimaryStorage.ALERT": "No zone has been created. Please go to ",
         "primaryStorage.createPrimaryStorage.ALERT.2": "zone page",
         "primaryStorage.createPrimaryStorage.ALERT.3": " to create a new one.",

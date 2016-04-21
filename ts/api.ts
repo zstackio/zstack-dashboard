@@ -3987,6 +3987,20 @@ module ApiHeader {
     timeout : number;
   }
 
+   export class APIAddSharedMountPointPrimaryStorageMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.storage.primary.smp.APIAddSharedMountPointPrimaryStorageMsg': this
+      };
+      return msg;
+    }
+    url : string;
+    name : string;
+    description : string;
+    zoneUuid : string;
+    session : SessionInventory;
+    timeout : number;
+  }
 
   export class APIQueryCephPrimaryStorageMsg implements APIMessage {
     toApiMap() : any {
