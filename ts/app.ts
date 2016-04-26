@@ -7,6 +7,14 @@ module MRoot {
         static NOTIFICATION = "root.notification";
     }
 
+    export class ChangePasswordModel {
+        password: string;
+        repeatPassword: string;
+        canChange() : boolean {
+            return angular.equals(this.password, this.repeatPassword);
+        }
+    }
+
     export class main {
         static $inject = ['$scope', '$rootScope', 'Api', 'ApiDetails', '$location', '$cookies', '$translate']; 
 
@@ -78,6 +86,28 @@ module MRoot {
 
             $scope.getAccountName = () => {
                 return $cookies.accountName;
+            };
+            
+            $scope.changePassword = (win : kendo.ui.Window)=>{
+                $scope.modelChangePassword = new ChangePasswordModel();
+                win.center();
+                win.open();
+            }
+
+            $scope.funcChangePasswordDone = (win : kendo.ui.Window)=>{
+                var msg = new ApiHeader.APIUpdateAccountMsg();
+                msg.uuid = '36c27e8ff05c4780bf6d2fa65700f22e';
+                msg.password = CryptoJS.SHA512($scope.modelChangePassword.password).toString();
+                this.api.syncApi(msg, (ret: ApiHeader.APIUpdateAccountEvent)=>{
+                    $rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
+                        msg: Utils.sprintf('Changed password: {0}', $cookies.accountName)
+                    });
+                });
+                win.close();
+            };
+            
+            $scope.funcChangePasswordCancel = (win : kendo.ui.Window)=>{
+                win.close();
             };
 
             $scope.logout = () => {
