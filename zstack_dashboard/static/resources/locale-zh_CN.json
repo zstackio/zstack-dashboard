@@ -428,7 +428,7 @@
         "primaryStorage.createPrimaryStorage.ALERT3": "不是绝对路径,该路径必须与开始 '/'",
         "primaryStorage.createPrimaryStorage.HOSTNAME": "物理名",
         "primaryStorage.createPrimaryStorage.SSH USERNAME": "SSH 用户名",
-        "primaryStorage.createPrimaryStorage.HINT6": "用户必须拥有root用户权限 btrfs 服务器上",
+        "primaryStorage.createPrimaryStorage.HINT12": "用户必须拥有root用户权限 btrfs 服务器上",
         "primaryStorage.createPrimaryStorage.SSH PASSWORD": "SSH 密码",
         "primaryStorage.createPrimaryStorage.CHAP USERNAME": "CHAP 用户名",
         "primaryStorage.createPrimaryStorage.HINT7": "ISCSI 服务器 (可选) CHAP 用户名",

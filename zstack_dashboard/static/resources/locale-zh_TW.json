@@ -428,7 +428,7 @@
     "primaryStorage.createPrimaryStorage.ALERT3": "不是絕對路徑,該路徑必須與開始'/'",
     "primaryStorage.createPrimaryStorage.HOSTNAME": "物理名",
     "primaryStorage.createPrimaryStorage.SSH USERNAME": "SSH 用戶名",
-    "primaryStorage.createPrimaryStorage.HINT6": "用戶必須擁有root用戶權限btrfs 伺服器上",
+    "primaryStorage.createPrimaryStorage.HINT12": "用戶必須擁有root用戶權限btrfs 伺服器上",
     "primaryStorage.createPrimaryStorage.SSH PASSWORD": "SSH 密碼",
     "primaryStorage.createPrimaryStorage.CHAP USERNAME": "CHAP 用戶名",
     "primaryStorage.createPrimaryStorage.HINT7": "ISCSI 伺服器(可選) CHAP 用戶名",
