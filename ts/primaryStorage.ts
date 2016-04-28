@@ -99,7 +99,10 @@ module MPrimaryStorage {
       } else if (ps.type == 'Ceph') {
         msg = new ApiHeader.APIAddCephPrimaryStorageMsg();
         msg.monUrls = ps.cephMonUrls;
-      }else if(ps.type == 'SharedMountPoint'){
+      } else if (ps.type == 'Fusionstor') {
+        msg = new ApiHeader.APIAddFusionstorPrimaryStorageMsg();
+        msg.monUrls = ps.fusionstorMonUrls;
+      } else if(ps.type == 'SharedMountPoint'){
         msg = new ApiHeader.APIAddSharedMountPointPrimaryStorageMsg();
       }
       msg.name = ps.name;
@@ -801,6 +804,7 @@ module MPrimaryStorage {
       var chain = new Utils.Chain();
       this.$scope.clusterList__.value([]);
       this.$scope.cephMonGrid__.dataSource.data([]);
+      this.$scope.fusionstorMonGrid__.dataSource.data([]);
       this.$scope.button.reset();
       chain.then(()=> {
         if (Utils.notNullnotUndefined(this.options.zone)) {
@@ -879,6 +883,35 @@ module MPrimaryStorage {
           dataSource: new kendo.data.DataSource([])
         };
 
+        $scope.fusionstorMonGrid__ = {
+          pageSize: 20,
+          resizable: true,
+          scrollable: true,
+          pageable: true,
+          columns: [
+            {
+              width: '20%',
+              title: '',
+              template: '<button type="button" class="btn btn-xs btn-default" ng-click="infoPage.delFusionstorMon(dataItem.uid)"><i class="fa fa-times"></i></button>'
+            },
+            {
+              field: 'url',
+              title: '{{"primaryStorage.ts.MON URL" | translate}}',
+              width: '80%'
+            }
+          ],
+
+          dataBound: (e)=> {
+            var grid = e.sender;
+            if (grid.dataSource.total() == 0 || grid.dataSource.totalPages() == 1) {
+              grid.pager.element.hide();
+            }
+          },
+
+          dataSource: new kendo.data.DataSource([])
+        };
+
+
         var infoPage: Utils.WizardPage = $scope.infoPage  = {
           activeState: true,
 
@@ -893,9 +926,17 @@ module MPrimaryStorage {
           sshUsername: 'root',
           sshPassword: null,
           cephMonUrls: [],
+          fusionstorMonUrls: [],
 
           addCephMon(): void {
             $scope.cephMonGrid__.dataSource.insert(0,
+              {url: this.sshUsername + ":" + this.sshPassword + "@" + this.hostname});
+            this.hostname = null;
+            this.sshPassword = null;
+          },
+
+          addFusionstorMon(): void {
+            $scope.fusionstorMonGrid__.dataSource.insert(0,
               {url: this.sshUsername + ":" + this.sshPassword + "@" + this.hostname});
             this.hostname = null;
             this.sshPassword = null;
@@ -909,6 +950,11 @@ module MPrimaryStorage {
           delCephMon(uid: string) : void {
             var row = $scope.cephMonGrid__.dataSource.getByUid(uid);
             $scope.cephMonGrid__.dataSource.remove(row);
+          },
+
+          delFusionstorMon(uid: string) : void {
+            var row = $scope.fusionstorMonGrid__.dataSource.getByUid(uid);
+            $scope.fusionstorMonGrid__.dataSource.remove(row);
           },
 
 
@@ -948,7 +994,10 @@ module MPrimaryStorage {
             if (this.type == 'Ceph') {
               return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.zoneUuid) &&
                 $scope.cephMonGrid__.dataSource.data().length > 0;
-            } else {
+            } else if (this.type == 'Fusionstor') {
+              return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.zoneUuid) &&
+                $scope.fusionstorMonGrid__.dataSource.data().length > 0;
+            }  else {
               return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.zoneUuid)
                 && Utils.notNullnotUndefined(this.type) && Utils.notNullnotUndefined(this.url) && this.isUrlValid();
             }
@@ -986,6 +1035,7 @@ module MPrimaryStorage {
             this.sshUsername = 'root';
             this.hostname = null;
             this.cephMonUrls = [];
+            this.fusionstorMonUrls = [];
           }
         };
 
@@ -1044,6 +1094,10 @@ module MPrimaryStorage {
             chain.then(()=> {
               angular.forEach($scope.cephMonGrid__.dataSource.data(), (it)=>{
                 $scope.infoPage.cephMonUrls.push(it.url);
+              });
+
+              angular.forEach($scope.fusionstorMonGrid__.dataSource.data(), (it)=>{
+                $scope.infoPage.fusionstorMonUrls.push(it.url);
               });
 
               psMgr.create(infoPage, (ret : PrimaryStorage)=> {

@@ -91,7 +91,11 @@ module MBackupStorage {
       } else if (bs.type == 'Ceph') {
         msg = new ApiHeader.APIAddCephBackupStorageMsg();
         msg.monUrls = bs.cephMonUrls;
+      } else if (bs.type == 'Fusionstor') {
+        msg = new ApiHeader.APIAddFusionstorBackupStorageMsg();
+        msg.monUrls = bs.fusionstorMonUrls;
       }
+
       if (Utils.notNullnotUndefined(bs.resourceUuid)) {
         msg.resourceUuid = bs.resourceUuid;
       }
@@ -836,6 +840,7 @@ module MBackupStorage {
       this.$scope.zoneList__.value([]);
       this.$scope.button.reset();
       this.$scope.cephMonGrid__.dataSource.data([]);
+      this.$scope.fusionstorMonGrid__.dataSource.data([]);
       chain.then(()=> {
         this.api.getBackupStorageTypes((bsTypes: string[])=> {
           var types = [];
@@ -908,6 +913,36 @@ module MBackupStorage {
           dataSource: new kendo.data.DataSource([])
         };
 
+        $scope.fusionstorMonGrid__ = {
+          pageSize: 20,
+          resizable: true,
+          scrollable: true,
+          pageable: true,
+          columns: [
+            {
+              width: '20%',
+              title: '',
+              template: '<button type="button" class="btn btn-xs btn-default" ng-click="infoPage.delFusionstorMon(dataItem.uid)"><i class="fa fa-times"></i></button>'
+            },
+            {
+              field: 'url',
+              title: '{{"backupStorage.ts.MON URL" | translate}}',
+              width: '80%'
+            }
+          ],
+
+          dataBound: (e)=> {
+            var grid = e.sender;
+            if (grid.dataSource.total() == 0 || grid.dataSource.totalPages() == 1) {
+              grid.pager.element.hide();
+            }
+          },
+
+          dataSource: new kendo.data.DataSource([])
+        };
+
+
+
         var infoPage: Utils.WizardPage = $scope.infoPage  = {
           activeState: true,
 
@@ -919,6 +954,7 @@ module MBackupStorage {
           username: 'root',
           password: null,
           cephMonUrls: [],
+          fusionstorMonUrls: [],
 
           isUrlValid() : boolean {
             if (this.type == 'SftpBackupStorage' && Utils.notNullnotUndefined(this.url)) {
@@ -939,6 +975,8 @@ module MBackupStorage {
                 && this.isUrlValid();
             } else if (this.type == 'Ceph') {
               return $scope.cephMonGrid__.dataSource.data().length > 0;
+            } else if (this.type == 'Fusionstor') {
+              return $scope.fusionstorMonGrid__.dataSource.data().length > 0;
             } else {
               return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.type)
                 && Utils.notNullnotUndefined(this.url);
@@ -972,6 +1010,13 @@ module MBackupStorage {
             this.password = null;
           },
 
+          addFusionstorMon(): void {
+            $scope.fusionstor.dataSource.insert(0,
+              {url: this.username + ":" + this.password + "@" + this.hostname});
+            this.hostname = null;
+            this.password = null;
+          },
+
           canAddMon() : boolean {
             return Utils.notNullnotUndefined(this.username) && Utils.notNullnotUndefined(this.hostname)
               && Utils.notNullnotUndefined(this.password);
@@ -980,6 +1025,11 @@ module MBackupStorage {
           delCephMon(uid: string) : void {
             var row = $scope.cephMonGrid__.dataSource.getByUid(uid);
             $scope.cephMonGrid__.dataSource.remove(row);
+          },
+
+          delFusionstorMon(uid: string) : void {
+            var row = $scope.fusionstorMonGrid__.dataSource.getByUid(uid);
+            $scope.fusionstorMonGrid__.dataSource.remove(row);
           },
 
           reset() : void {
@@ -992,6 +1042,7 @@ module MBackupStorage {
             this.url = null;
             this.activeState = false;
             this.cephMonUrls = [];
+            this.fusionstorMonUrls = [];
           }
         } ;
 
@@ -1048,6 +1099,10 @@ module MBackupStorage {
             if (Utils.notNullnotUndefined(this.options.done)) {
               angular.forEach($scope.cephMonGrid__.dataSource.data(), (it)=>{
                 $scope.infoPage.cephMonUrls.push(it.url);
+              });
+
+              angular.forEach($scope.fusionstorMonGrid__.dataSource.data(), (it)=>{
+                $scope.infoPage.fusionstorMonUrls.push(it.url);
               });
 
               this.options.done({

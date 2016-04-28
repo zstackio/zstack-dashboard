@@ -67,6 +67,33 @@
                                 <div kendo-grid k-options="cephMonGrid__"></div>
                               </div>
                             </div>
+
+                            <div ng-switch-when="Fusionstor">
+                              <div class="form-group col-sm-21">
+                                <label for="fusionstorhostname">{{ "backupStorage.createBackupStorage.HOSTNAME" | translate }}</label>
+                                <input type="text" class="form-control" id="fusionstorhostname" placeholder="IP or DNS name of fusionstor mon server" ng-model="infoPage.hostname">
+                              </div>
+                              <div class="form-group col-sm-21">
+                                <label for="fusionstorusername">{{ "backupStorage.createBackupStorage.USER NAME" | translate }}</label>
+                                <input type="text" class="form-control" id="fusionstorusername" placeholder="ssh user name of fusionstor mon server" ng-model="infoPage.username">
+                                <p class="z-hint">{{ "backupStorage.createBackupStorage.HINT7" | translate }}</p>
+                              </div>
+                              <div class="form-group col-sm-21">
+                                <label for="fusionstorpassword">{{ "backupStorage.createBackupStorage.PASSWORD" | translate }}</label>
+                                <input type="password" class="form-control" id="fusionstorpassword" placeholder="ssh password of fusionstor mon server" ng-model="infoPage.password">
+                              </div>
+                              <div class="form-group col-sm-24">
+                                <button type="button" class="btn btn-default" ng-click="infoPage.addFusionstorMon()" ng-disabled="!infoPage.canAddMon()">
+                                  <i class="fa fa-plus" style="font-size: 1.2em"></i>
+                                  <span>{{ "backupStorage.createBackupStorage.Add" | translate }}</span>
+                                </button>
+                                <span class="z-hint">{{ "backupStorage.createBackupStorage.HINT8" | translate }}</span>
+                              </div>
+                              <div class="form-group col-sm-24">
+                                <div kendo-grid k-options="fusionstorMonGrid__"></div>
+                              </div>
+                            </div>
+
                         </div>
                     </form>
                 </div>

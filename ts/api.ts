@@ -4142,6 +4142,146 @@ module ApiHeader {
     timeout : number;
   }
 
+  export class APIQueryFusionstorPrimaryStorageMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.storage.fusionstor.primary.APIQueryFusionstorPrimaryStorageMsg': this
+      };
+      return msg;
+    }
+    conditions : Array<QueryCondition>;
+    limit : number;
+    start : number;
+    count : boolean;
+    replyWithCount : boolean;
+    sortBy : string;
+    sortDirection : string;
+    fields : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIAddFusionstorPrimaryStorageMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.storage.fusionstor.primary.APIAddFusionstorPrimaryStorageMsg': this
+      };
+      return msg;
+    }
+    monUrls : Array<string>;
+    rootVolumePoolName : string;
+    dataVolumePoolName : string;
+    imageCachePoolName : string;
+    url : string;
+    name : string;
+    description : string;
+    type : string;
+    zoneUuid : string;
+    resourceUuid : string;
+    userTags : Array<string>;
+    systemTags : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIAddMonToFusionstorPrimaryStorageMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.storage.fusionstor.primary.APIAddMonToFusionstorPrimaryStorageMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    monUrls : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIRemoveMonFromFusionstorPrimaryStorageMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.storage.fusionstor.primary.APIRemoveMonFromFusionstorPrimaryStorageMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    monHostnames : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIAddFusionstorBackupStorageMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.storage.fusionstor.backup.APIAddFusionstorBackupStorageMsg': this
+      };
+      return msg;
+    }
+    monUrls : Array<string>;
+    poolName : string;
+    url : string;
+    name : string;
+    description : string;
+    type : string;
+    resourceUuid : string;
+    userTags : Array<string>;
+    systemTags : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIAddMonToFusionstorBackupStorageMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.storage.fusionstor.backup.APIAddMonToFusionstorBackupStorageMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    monUrls : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIQueryFusionstorBackupStorageMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.storage.fusionstor.backup.APIQueryFusionstorBackupStorageMsg': this
+      };
+      return msg;
+    }
+    conditions : Array<QueryCondition>;
+    limit : number;
+    start : number;
+    count : boolean;
+    replyWithCount : boolean;
+    sortBy : string;
+    sortDirection : string;
+    fields : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
+
+  export class APIRemoveMonFromFusionstorBackupStorageMsg implements APIMessage {
+    toApiMap() : any {
+      var msg = {
+        'org.zstack.storage.fusionstor.backup.APIRemoveMonFromFusionstorBackupStorageMsg': this
+      };
+      return msg;
+    }
+    uuid : string;
+    monHostnames : Array<string>;
+    session : SessionInventory;
+    timeout : number;
+  }
+
 
   export class APIUpdateKVMHostMsg implements APIMessage {
     toApiMap() : any {
@@ -6878,6 +7018,103 @@ module ApiHeader {
     BINDING_KEY_PERFIX : string;
   }
 
+  export class FusionstorPrimaryStorageMonInventory {
+    hostname : string;
+    monPort : number;
+    createDate : string;
+    lastOpDate : string;
+    primaryStorageUuid : string;
+  }
+
+
+  export class FusionstorPrimaryStorageInventory {
+    mons : Array<FusionstorPrimaryStorageMonInventory>;
+    fsid : string;
+    rootVolumePoolName : string;
+    dataVolumePoolName : string;
+    imageCachePoolName : string;
+    uuid : string;
+    zoneUuid : string;
+    name : string;
+    url : string;
+    description : string;
+    totalCapacity : number;
+    availableCapacity : number;
+    totalPhysicalCapacity : number;
+    availablePhysicalCapacity : number;
+    type : string;
+    state : string;
+    status : string;
+    mountPath : string;
+    createDate : string;
+    lastOpDate : string;
+    attachedClusterUuids : Array<string>;
+  }
+
+
+  export class APIRemoveMonFromFusionstorPrimaryStorageEvent {
+    inventory : FusionstorPrimaryStorageInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APIAddMonToFusionstorPrimaryStorageEvent {
+    inventory : FusionstorPrimaryStorageInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class FusionstorBackupStorageMonInventory {
+    hostname : string;
+    monPort : number;
+    createDate : string;
+    lastOpDate : string;
+    backupStorageUuid : string;
+  }
+
+
+  export class FusionstorBackupStorageInventory {
+    mons : Array<FusionstorBackupStorageMonInventory>;
+    fsid : string;
+    poolName : string;
+    uuid : string;
+    name : string;
+    url : string;
+    description : string;
+    totalCapacity : number;
+    availableCapacity : number;
+    type : string;
+    state : string;
+    status : string;
+    createDate : string;
+    lastOpDate : string;
+    attachedZoneUuids : Array<string>;
+  }
+
+
+  export class APIRemoveMonFromFusionstorBackupStorageEvent {
+    inventory : FusionstorBackupStorageInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
+
+  export class APIAddMonToFusionstorBackupStorageEvent {
+    inventory : FusionstorBackupStorageInventory;
+    API_EVENT : string;
+    success : boolean;
+    error : ErrorCode;
+    BINDING_KEY_PERFIX : string;
+  }
+
 
   export class SftpBackupStorageInventory {
     hostname : string;
@@ -8996,6 +9233,26 @@ module ApiHeader {
 
 
   export var TagResourceTypeCephBackupStorageMonVO = 'CephBackupStorageMonVO';
+
+  export var FusionstorPrimaryStorageInventoryQueryable = ['mons.hostname', 'mons.monPort', 'mons.createDate', 'mons.lastOpDate', 'mons.primaryStorageUuid', 'fsid', 'rootVolumePoolName', 'dataVolumePoolName', 'imageCachePoolName', 'uuid', 'zoneUuid', 'name', 'url', 'description', 'totalCapacity', 'availableCapacity', 'totalPhysicalCapacity', 'availablePhysicalCapacity', 'type', 'state', 'status', 'mountPath', 'createDate', 'lastOpDate', 'attachedClusterUuids'];
+
+
+  export var TagResourceTypeFusionstorPrimaryStorageVO = 'FusionstorPrimaryStorageVO';
+
+  export var FusionstorPrimaryStorageMonInventoryQueryable = ['hostname', 'monPort', 'createDate', 'lastOpDate', 'primaryStorageUuid'];
+
+
+  export var TagResourceTypeFusionstorPrimaryStorageMonVO = 'FusionstorPrimaryStorageMonVO';
+
+  export var FusionstorBackupStorageInventoryQueryable = ['mons.hostname', 'mons.monPort', 'mons.createDate', 'mons.lastOpDate', 'mons.backupStorageUuid', 'fsid', 'poolName', 'uuid', 'name', 'url', 'description', 'totalCapacity', 'availableCapacity', 'type', 'state', 'status', 'createDate', 'lastOpDate', 'attachedZoneUuids'];
+
+
+  export var TagResourceTypeFusionstorBackupStorageVO = 'FusionstorBackupStorageVO';
+
+  export var FusionstorBackupStorageMonInventoryQueryable = ['hostname', 'monPort', 'createDate', 'lastOpDate', 'backupStorageUuid'];
+
+
+  export var TagResourceTypeFusionstorBackupStorageMonVO = 'FusionstorBackupStorageMonVO';
 
   export var KVMHostInventoryQueryable = ['username', 'zoneUuid', 'name', 'uuid', 'clusterUuid', 'description', 'managementIp', 'hypervisorType', 'state', 'status', 'totalCpuCapacity', 'availableCpuCapacity', 'totalMemoryCapacity', 'availableMemoryCapacity', 'createDate', 'lastOpDate'];
 
