@@ -96,11 +96,14 @@ module MPrimaryStorage {
         msg.hostname = ps.hostname;
       } else if (ps.type == 'LocalStorage') {
         msg = new ApiHeader.APIAddLocalPrimaryStorageMsg();
+        msg.type = 'LocalStorage';
       } else if (ps.type == 'Ceph') {
         msg = new ApiHeader.APIAddCephPrimaryStorageMsg();
+        msg.type = 'Ceph';
         msg.monUrls = ps.cephMonUrls;
       } else if (ps.type == 'Fusionstor') {
         msg = new ApiHeader.APIAddFusionstorPrimaryStorageMsg();
+        msg.type = 'Fusionstor';
         msg.monUrls = ps.fusionstorMonUrls;
       } else if(ps.type == 'SharedMountPoint'){
         msg = new ApiHeader.APIAddSharedMountPointPrimaryStorageMsg();

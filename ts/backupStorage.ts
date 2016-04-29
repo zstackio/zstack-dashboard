@@ -90,9 +90,11 @@ module MBackupStorage {
         msg.type = 'SimulatorBackupStorage';
       } else if (bs.type == 'Ceph') {
         msg = new ApiHeader.APIAddCephBackupStorageMsg();
+        msg.type = 'Ceph';
         msg.monUrls = bs.cephMonUrls;
       } else if (bs.type == 'Fusionstor') {
         msg = new ApiHeader.APIAddFusionstorBackupStorageMsg();
+        msg.type = 'Fusionstor';
         msg.monUrls = bs.fusionstorMonUrls;
       }
 
