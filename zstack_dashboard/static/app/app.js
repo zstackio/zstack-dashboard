@@ -3148,6 +3148,102 @@ var ApiHeader;
         return APIRemoveMonFromCephBackupStorageMsg;
     }());
     ApiHeader.APIRemoveMonFromCephBackupStorageMsg = APIRemoveMonFromCephBackupStorageMsg;
+    var APIQueryFusionstorPrimaryStorageMsg = (function () {
+        function APIQueryFusionstorPrimaryStorageMsg() {
+        }
+        APIQueryFusionstorPrimaryStorageMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.storage.fusionstor.primary.APIQueryFusionstorPrimaryStorageMsg': this
+            };
+            return msg;
+        };
+        return APIQueryFusionstorPrimaryStorageMsg;
+    }());
+    ApiHeader.APIQueryFusionstorPrimaryStorageMsg = APIQueryFusionstorPrimaryStorageMsg;
+    var APIAddFusionstorPrimaryStorageMsg = (function () {
+        function APIAddFusionstorPrimaryStorageMsg() {
+        }
+        APIAddFusionstorPrimaryStorageMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.storage.fusionstor.primary.APIAddFusionstorPrimaryStorageMsg': this
+            };
+            return msg;
+        };
+        return APIAddFusionstorPrimaryStorageMsg;
+    }());
+    ApiHeader.APIAddFusionstorPrimaryStorageMsg = APIAddFusionstorPrimaryStorageMsg;
+    var APIAddMonToFusionstorPrimaryStorageMsg = (function () {
+        function APIAddMonToFusionstorPrimaryStorageMsg() {
+        }
+        APIAddMonToFusionstorPrimaryStorageMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.storage.fusionstor.primary.APIAddMonToFusionstorPrimaryStorageMsg': this
+            };
+            return msg;
+        };
+        return APIAddMonToFusionstorPrimaryStorageMsg;
+    }());
+    ApiHeader.APIAddMonToFusionstorPrimaryStorageMsg = APIAddMonToFusionstorPrimaryStorageMsg;
+    var APIRemoveMonFromFusionstorPrimaryStorageMsg = (function () {
+        function APIRemoveMonFromFusionstorPrimaryStorageMsg() {
+        }
+        APIRemoveMonFromFusionstorPrimaryStorageMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.storage.fusionstor.primary.APIRemoveMonFromFusionstorPrimaryStorageMsg': this
+            };
+            return msg;
+        };
+        return APIRemoveMonFromFusionstorPrimaryStorageMsg;
+    }());
+    ApiHeader.APIRemoveMonFromFusionstorPrimaryStorageMsg = APIRemoveMonFromFusionstorPrimaryStorageMsg;
+    var APIAddFusionstorBackupStorageMsg = (function () {
+        function APIAddFusionstorBackupStorageMsg() {
+        }
+        APIAddFusionstorBackupStorageMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.storage.fusionstor.backup.APIAddFusionstorBackupStorageMsg': this
+            };
+            return msg;
+        };
+        return APIAddFusionstorBackupStorageMsg;
+    }());
+    ApiHeader.APIAddFusionstorBackupStorageMsg = APIAddFusionstorBackupStorageMsg;
+    var APIAddMonToFusionstorBackupStorageMsg = (function () {
+        function APIAddMonToFusionstorBackupStorageMsg() {
+        }
+        APIAddMonToFusionstorBackupStorageMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.storage.fusionstor.backup.APIAddMonToFusionstorBackupStorageMsg': this
+            };
+            return msg;
+        };
+        return APIAddMonToFusionstorBackupStorageMsg;
+    }());
+    ApiHeader.APIAddMonToFusionstorBackupStorageMsg = APIAddMonToFusionstorBackupStorageMsg;
+    var APIQueryFusionstorBackupStorageMsg = (function () {
+        function APIQueryFusionstorBackupStorageMsg() {
+        }
+        APIQueryFusionstorBackupStorageMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.storage.fusionstor.backup.APIQueryFusionstorBackupStorageMsg': this
+            };
+            return msg;
+        };
+        return APIQueryFusionstorBackupStorageMsg;
+    }());
+    ApiHeader.APIQueryFusionstorBackupStorageMsg = APIQueryFusionstorBackupStorageMsg;
+    var APIRemoveMonFromFusionstorBackupStorageMsg = (function () {
+        function APIRemoveMonFromFusionstorBackupStorageMsg() {
+        }
+        APIRemoveMonFromFusionstorBackupStorageMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.storage.fusionstor.backup.APIRemoveMonFromFusionstorBackupStorageMsg': this
+            };
+            return msg;
+        };
+        return APIRemoveMonFromFusionstorBackupStorageMsg;
+    }());
+    ApiHeader.APIRemoveMonFromFusionstorBackupStorageMsg = APIRemoveMonFromFusionstorBackupStorageMsg;
     var APIUpdateKVMHostMsg = (function () {
         function APIUpdateKVMHostMsg() {
         }
@@ -4948,6 +5044,54 @@ var ApiHeader;
         return APIAddMonToCephBackupStorageEvent;
     }());
     ApiHeader.APIAddMonToCephBackupStorageEvent = APIAddMonToCephBackupStorageEvent;
+    var FusionstorPrimaryStorageMonInventory = (function () {
+        function FusionstorPrimaryStorageMonInventory() {
+        }
+        return FusionstorPrimaryStorageMonInventory;
+    }());
+    ApiHeader.FusionstorPrimaryStorageMonInventory = FusionstorPrimaryStorageMonInventory;
+    var FusionstorPrimaryStorageInventory = (function () {
+        function FusionstorPrimaryStorageInventory() {
+        }
+        return FusionstorPrimaryStorageInventory;
+    }());
+    ApiHeader.FusionstorPrimaryStorageInventory = FusionstorPrimaryStorageInventory;
+    var APIRemoveMonFromFusionstorPrimaryStorageEvent = (function () {
+        function APIRemoveMonFromFusionstorPrimaryStorageEvent() {
+        }
+        return APIRemoveMonFromFusionstorPrimaryStorageEvent;
+    }());
+    ApiHeader.APIRemoveMonFromFusionstorPrimaryStorageEvent = APIRemoveMonFromFusionstorPrimaryStorageEvent;
+    var APIAddMonToFusionstorPrimaryStorageEvent = (function () {
+        function APIAddMonToFusionstorPrimaryStorageEvent() {
+        }
+        return APIAddMonToFusionstorPrimaryStorageEvent;
+    }());
+    ApiHeader.APIAddMonToFusionstorPrimaryStorageEvent = APIAddMonToFusionstorPrimaryStorageEvent;
+    var FusionstorBackupStorageMonInventory = (function () {
+        function FusionstorBackupStorageMonInventory() {
+        }
+        return FusionstorBackupStorageMonInventory;
+    }());
+    ApiHeader.FusionstorBackupStorageMonInventory = FusionstorBackupStorageMonInventory;
+    var FusionstorBackupStorageInventory = (function () {
+        function FusionstorBackupStorageInventory() {
+        }
+        return FusionstorBackupStorageInventory;
+    }());
+    ApiHeader.FusionstorBackupStorageInventory = FusionstorBackupStorageInventory;
+    var APIRemoveMonFromFusionstorBackupStorageEvent = (function () {
+        function APIRemoveMonFromFusionstorBackupStorageEvent() {
+        }
+        return APIRemoveMonFromFusionstorBackupStorageEvent;
+    }());
+    ApiHeader.APIRemoveMonFromFusionstorBackupStorageEvent = APIRemoveMonFromFusionstorBackupStorageEvent;
+    var APIAddMonToFusionstorBackupStorageEvent = (function () {
+        function APIAddMonToFusionstorBackupStorageEvent() {
+        }
+        return APIAddMonToFusionstorBackupStorageEvent;
+    }());
+    ApiHeader.APIAddMonToFusionstorBackupStorageEvent = APIAddMonToFusionstorBackupStorageEvent;
     var SftpBackupStorageInventory = (function () {
         function SftpBackupStorageInventory() {
         }
@@ -6360,6 +6504,14 @@ var ApiHeader;
     ApiHeader.TagResourceTypeCephBackupStorageVO = 'CephBackupStorageVO';
     ApiHeader.CephBackupStorageMonInventoryQueryable = ['hostname', 'monPort', 'createDate', 'lastOpDate', 'backupStorageUuid'];
     ApiHeader.TagResourceTypeCephBackupStorageMonVO = 'CephBackupStorageMonVO';
+    ApiHeader.FusionstorPrimaryStorageInventoryQueryable = ['mons.hostname', 'mons.monPort', 'mons.createDate', 'mons.lastOpDate', 'mons.primaryStorageUuid', 'fsid', 'rootVolumePoolName', 'dataVolumePoolName', 'imageCachePoolName', 'uuid', 'zoneUuid', 'name', 'url', 'description', 'totalCapacity', 'availableCapacity', 'totalPhysicalCapacity', 'availablePhysicalCapacity', 'type', 'state', 'status', 'mountPath', 'createDate', 'lastOpDate', 'attachedClusterUuids'];
+    ApiHeader.TagResourceTypeFusionstorPrimaryStorageVO = 'FusionstorPrimaryStorageVO';
+    ApiHeader.FusionstorPrimaryStorageMonInventoryQueryable = ['hostname', 'monPort', 'createDate', 'lastOpDate', 'primaryStorageUuid'];
+    ApiHeader.TagResourceTypeFusionstorPrimaryStorageMonVO = 'FusionstorPrimaryStorageMonVO';
+    ApiHeader.FusionstorBackupStorageInventoryQueryable = ['mons.hostname', 'mons.monPort', 'mons.createDate', 'mons.lastOpDate', 'mons.backupStorageUuid', 'fsid', 'poolName', 'uuid', 'name', 'url', 'description', 'totalCapacity', 'availableCapacity', 'type', 'state', 'status', 'createDate', 'lastOpDate', 'attachedZoneUuids'];
+    ApiHeader.TagResourceTypeFusionstorBackupStorageVO = 'FusionstorBackupStorageVO';
+    ApiHeader.FusionstorBackupStorageMonInventoryQueryable = ['hostname', 'monPort', 'createDate', 'lastOpDate', 'backupStorageUuid'];
+    ApiHeader.TagResourceTypeFusionstorBackupStorageMonVO = 'FusionstorBackupStorageMonVO';
     ApiHeader.KVMHostInventoryQueryable = ['username', 'zoneUuid', 'name', 'uuid', 'clusterUuid', 'description', 'managementIp', 'hypervisorType', 'state', 'status', 'totalCpuCapacity', 'availableCpuCapacity', 'totalMemoryCapacity', 'availableMemoryCapacity', 'createDate', 'lastOpDate'];
     ApiHeader.TagResourceTypeKVMHostVO = 'KVMHostVO';
     ApiHeader.SftpBackupStorageInventoryQueryable = ['hostname', 'uuid', 'name', 'url', 'description', 'totalCapacity', 'availableCapacity', 'type', 'state', 'status', 'createDate', 'lastOpDate', 'attachedZoneUuids'];
@@ -10215,10 +10367,17 @@ var MPrimaryStorage;
             }
             else if (ps.type == 'LocalStorage') {
                 msg = new ApiHeader.APIAddLocalPrimaryStorageMsg();
+                msg.type = 'LocalStorage';
             }
             else if (ps.type == 'Ceph') {
                 msg = new ApiHeader.APIAddCephPrimaryStorageMsg();
+                msg.type = 'Ceph';
                 msg.monUrls = ps.cephMonUrls;
+            }
+            else if (ps.type == 'Fusionstor') {
+                msg = new ApiHeader.APIAddFusionstorPrimaryStorageMsg();
+                msg.type = 'Fusionstor';
+                msg.monUrls = ps.fusionstorMonUrls;
             }
             else if (ps.type == 'SharedMountPoint') {
                 msg = new ApiHeader.APIAddSharedMountPointPrimaryStorageMsg();
@@ -10897,6 +11056,31 @@ var MPrimaryStorage;
                     },
                     dataSource: new kendo.data.DataSource([])
                 };
+                $scope.fusionstorMonGrid__ = {
+                    pageSize: 20,
+                    resizable: true,
+                    scrollable: true,
+                    pageable: true,
+                    columns: [
+                        {
+                            width: '20%',
+                            title: '',
+                            template: '<button type="button" class="btn btn-xs btn-default" ng-click="infoPage.delFusionstorMon(dataItem.uid)"><i class="fa fa-times"></i></button>'
+                        },
+                        {
+                            field: 'url',
+                            title: '{{"primaryStorage.ts.MON URL" | translate}}',
+                            width: '80%'
+                        }
+                    ],
+                    dataBound: function (e) {
+                        var grid = e.sender;
+                        if (grid.dataSource.total() == 0 || grid.dataSource.totalPages() == 1) {
+                            grid.pager.element.hide();
+                        }
+                    },
+                    dataSource: new kendo.data.DataSource([])
+                };
                 var infoPage = $scope.infoPage = {
                     activeState: true,
                     name: null,
@@ -10910,8 +11094,14 @@ var MPrimaryStorage;
                     sshUsername: 'root',
                     sshPassword: null,
                     cephMonUrls: [],
+                    fusionstorMonUrls: [],
                     addCephMon: function () {
                         $scope.cephMonGrid__.dataSource.insert(0, { url: this.sshUsername + ":" + this.sshPassword + "@" + this.hostname });
+                        this.hostname = null;
+                        this.sshPassword = null;
+                    },
+                    addFusionstorMon: function () {
+                        $scope.fusionstorMonGrid__.dataSource.insert(0, { url: this.sshUsername + ":" + this.sshPassword + "@" + this.hostname });
                         this.hostname = null;
                         this.sshPassword = null;
                     },
@@ -10922,6 +11112,10 @@ var MPrimaryStorage;
                     delCephMon: function (uid) {
                         var row = $scope.cephMonGrid__.dataSource.getByUid(uid);
                         $scope.cephMonGrid__.dataSource.remove(row);
+                    },
+                    delFusionstorMon: function (uid) {
+                        var row = $scope.fusionstorMonGrid__.dataSource.getByUid(uid);
+                        $scope.fusionstorMonGrid__.dataSource.remove(row);
                     },
                     hasZone: function () {
                         return $scope.zoneList.dataSource.data().length > 0;
@@ -10953,6 +11147,10 @@ var MPrimaryStorage;
                         if (this.type == 'Ceph') {
                             return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.zoneUuid) &&
                                 $scope.cephMonGrid__.dataSource.data().length > 0;
+                        }
+                        else if (this.type == 'Fusionstor') {
+                            return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.zoneUuid) &&
+                                $scope.fusionstorMonGrid__.dataSource.data().length > 0;
                         }
                         else {
                             return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.zoneUuid)
@@ -10986,6 +11184,7 @@ var MPrimaryStorage;
                         this.sshUsername = 'root';
                         this.hostname = null;
                         this.cephMonUrls = [];
+                        this.fusionstorMonUrls = [];
                     }
                 };
                 var clusterPage = $scope.clusterPage = {
@@ -11032,6 +11231,9 @@ var MPrimaryStorage;
                         chain.then(function () {
                             angular.forEach($scope.cephMonGrid__.dataSource.data(), function (it) {
                                 $scope.infoPage.cephMonUrls.push(it.url);
+                            });
+                            angular.forEach($scope.fusionstorMonGrid__.dataSource.data(), function (it) {
+                                $scope.infoPage.fusionstorMonUrls.push(it.url);
                             });
                             psMgr.create(infoPage, function (ret) {
                                 resultPs = ret;
@@ -11125,6 +11327,7 @@ var MPrimaryStorage;
             var chain = new Utils.Chain();
             this.$scope.clusterList__.value([]);
             this.$scope.cephMonGrid__.dataSource.data([]);
+            this.$scope.fusionstorMonGrid__.dataSource.data([]);
             this.$scope.button.reset();
             chain.then(function () {
                 if (Utils.notNullnotUndefined(_this.options.zone)) {
@@ -14349,7 +14552,13 @@ var MBackupStorage;
             }
             else if (bs.type == 'Ceph') {
                 msg = new ApiHeader.APIAddCephBackupStorageMsg();
+                msg.type = 'Ceph';
                 msg.monUrls = bs.cephMonUrls;
+            }
+            else if (bs.type == 'Fusionstor') {
+                msg = new ApiHeader.APIAddFusionstorBackupStorageMsg();
+                msg.type = 'Fusionstor';
+                msg.monUrls = bs.fusionstorMonUrls;
             }
             if (Utils.notNullnotUndefined(bs.resourceUuid)) {
                 msg.resourceUuid = bs.resourceUuid;
@@ -15078,6 +15287,31 @@ var MBackupStorage;
                     },
                     dataSource: new kendo.data.DataSource([])
                 };
+                $scope.fusionstorMonGrid__ = {
+                    pageSize: 20,
+                    resizable: true,
+                    scrollable: true,
+                    pageable: true,
+                    columns: [
+                        {
+                            width: '20%',
+                            title: '',
+                            template: '<button type="button" class="btn btn-xs btn-default" ng-click="infoPage.delFusionstorMon(dataItem.uid)"><i class="fa fa-times"></i></button>'
+                        },
+                        {
+                            field: 'url',
+                            title: '{{"backupStorage.ts.MON URL" | translate}}',
+                            width: '80%'
+                        }
+                    ],
+                    dataBound: function (e) {
+                        var grid = e.sender;
+                        if (grid.dataSource.total() == 0 || grid.dataSource.totalPages() == 1) {
+                            grid.pager.element.hide();
+                        }
+                    },
+                    dataSource: new kendo.data.DataSource([])
+                };
                 var infoPage = $scope.infoPage = {
                     activeState: true,
                     name: null,
@@ -15088,6 +15322,7 @@ var MBackupStorage;
                     username: 'root',
                     password: null,
                     cephMonUrls: [],
+                    fusionstorMonUrls: [],
                     isUrlValid: function () {
                         if (this.type == 'SftpBackupStorage' && Utils.notNullnotUndefined(this.url)) {
                             return this.url.indexOf('/') == 0;
@@ -15106,6 +15341,9 @@ var MBackupStorage;
                         }
                         else if (this.type == 'Ceph') {
                             return $scope.cephMonGrid__.dataSource.data().length > 0;
+                        }
+                        else if (this.type == 'Fusionstor') {
+                            return $scope.fusionstorMonGrid__.dataSource.data().length > 0;
                         }
                         else {
                             return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.type)
@@ -15132,6 +15370,11 @@ var MBackupStorage;
                         this.hostname = null;
                         this.password = null;
                     },
+                    addFusionstorMon: function () {
+                        $scope.fusionstorMonGrid__.dataSource.insert(0, { url: this.username + ":" + this.password + "@" + this.hostname });
+                        this.hostname = null;
+                        this.password = null;
+                    },
                     canAddMon: function () {
                         return Utils.notNullnotUndefined(this.username) && Utils.notNullnotUndefined(this.hostname)
                             && Utils.notNullnotUndefined(this.password);
@@ -15139,6 +15382,10 @@ var MBackupStorage;
                     delCephMon: function (uid) {
                         var row = $scope.cephMonGrid__.dataSource.getByUid(uid);
                         $scope.cephMonGrid__.dataSource.remove(row);
+                    },
+                    delFusionstorMon: function (uid) {
+                        var row = $scope.fusionstorMonGrid__.dataSource.getByUid(uid);
+                        $scope.fusionstorMonGrid__.dataSource.remove(row);
                     },
                     reset: function () {
                         this.name = Utils.shortHashName("bs");
@@ -15150,6 +15397,7 @@ var MBackupStorage;
                         this.url = null;
                         this.activeState = false;
                         this.cephMonUrls = [];
+                        this.fusionstorMonUrls = [];
                     }
                 };
                 var zonePage = $scope.zonePage = {
@@ -15194,6 +15442,9 @@ var MBackupStorage;
                         if (Utils.notNullnotUndefined(_this.options.done)) {
                             angular.forEach($scope.cephMonGrid__.dataSource.data(), function (it) {
                                 $scope.infoPage.cephMonUrls.push(it.url);
+                            });
+                            angular.forEach($scope.fusionstorMonGrid__.dataSource.data(), function (it) {
+                                $scope.infoPage.fusionstorMonUrls.push(it.url);
                             });
                             _this.options.done({
                                 info: infoPage,
@@ -15247,6 +15498,7 @@ var MBackupStorage;
             this.$scope.zoneList__.value([]);
             this.$scope.button.reset();
             this.$scope.cephMonGrid__.dataSource.data([]);
+            this.$scope.fusionstorMonGrid__.dataSource.data([]);
             chain.then(function () {
                 _this.api.getBackupStorageTypes(function (bsTypes) {
                     var types = [];

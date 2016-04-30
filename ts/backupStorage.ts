@@ -944,7 +944,6 @@ module MBackupStorage {
         };
 
 
-
         var infoPage: Utils.WizardPage = $scope.infoPage  = {
           activeState: true,
 
@@ -1013,7 +1012,7 @@ module MBackupStorage {
           },
 
           addFusionstorMon(): void {
-            $scope.fusionstor.dataSource.insert(0,
+            $scope.fusionstorMonGrid__.dataSource.insert(0,
               {url: this.username + ":" + this.password + "@" + this.hostname});
             this.hostname = null;
             this.password = null;

@@ -27,7 +27,7 @@
                             <select id="type" kendo-drop-down-list k-options="typeList" class="z-win-dropdown" ng-model="infoPage.type"></select>
                             <p class="z-hint">{{ "primaryStorage.createPrimaryStorage.HINT2" | translate }}</p>
                         </div>
-                        <div class="form-group col-sm-21" ng-show="infoPage.type != 'Ceph' && info.Page.type != 'Fusionstor'">
+                        <div class="form-group col-sm-21" ng-show="infoPage.type != 'Ceph' && infoPage.type != 'Fusionstor'">
                             <label for="url" class="z-block-label">{{ "primaryStorage.createPrimaryStorage.URL" | translate }}</label>
                             <input id="url" type="text" ng-model="infoPage.url" class="form-control" placeholder="(Required) Url of primary storage">
                             <p class="z-hint" ng-show="infoPage.type == 'NFS'">{{ "primaryStorage.createPrimaryStorage.HINT3" | translate }}</p>
