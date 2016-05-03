@@ -428,7 +428,7 @@
         "primaryStorage.createPrimaryStorage.ALERT3": " Not an absolute path. The path must be start with '/'",
         "primaryStorage.createPrimaryStorage.HOSTNAME": "HOSTNAME",
         "primaryStorage.createPrimaryStorage.SSH USERNAME": "SSH USERNAME",
-        "primaryStorage.createPrimaryStorage.HINT6": "The user must have root privilege on btrfs server",
+        "primaryStorage.createPrimaryStorage.HINT12": "The user must have root privilege on btrfs server",
         "primaryStorage.createPrimaryStorage.SSH PASSWORD": "SSH PASSWORD",
         "primaryStorage.createPrimaryStorage.CHAP USERNAME": "CHAP USERNAME",
         "primaryStorage.createPrimaryStorage.HINT7": "(Optional) CHAP username for ISCSI server",
