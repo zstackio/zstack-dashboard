@@ -27,7 +27,7 @@
                             <select id="type" kendo-drop-down-list k-options="typeList" class="z-win-dropdown" ng-model="infoPage.type"></select>
                             <p class="z-hint">{{ "primaryStorage.createPrimaryStorage.HINT2" | translate }}</p>
                         </div>
-                        <div class="form-group col-sm-21" ng-show="infoPage.type != 'Ceph'">
+                        <div class="form-group col-sm-21" ng-show="infoPage.type != 'Ceph' && infoPage.type != 'Fusionstor'">
                             <label for="url" class="z-block-label">{{ "primaryStorage.createPrimaryStorage.URL" | translate }}</label>
                             <input id="url" type="text" ng-model="infoPage.url" class="form-control" placeholder="(Required) Url of primary storage">
                             <p class="z-hint" ng-show="infoPage.type == 'NFS'">{{ "primaryStorage.createPrimaryStorage.HINT3" | translate }}</p>
@@ -74,6 +74,7 @@
                             <p class="z-hint">{{ "primaryStorage.createPrimaryStorage.HINT8" | translate }}</p>
                           </div>
                         </div>
+
                         <div ng-switch-when="Ceph">
                           <div class="form-group col-sm-21">
                             <label for="cephhostname">{{ "primaryStorage.createPrimaryStorage.HOSTNAME" | translate }}</label>
@@ -99,6 +100,32 @@
                             <div kendo-grid k-options="cephMonGrid__"></div>
                           </div>
                         </div>
+
+                        <div ng-switch-when="Fusionstor">
+                          <div class="form-group col-sm-21">
+                            <label for="fusionstorhostname">{{ "primaryStorage.createPrimaryStorage.HOSTNAME" | translate }}</label> <input type="text" class="form-control" id="fusionstorhostname" placeholder="IP or DNS name of fusionstor mon server" ng-model="infoPage.hostname">
+                          </div>
+                          <div class="form-group col-sm-21">
+                            <label for="fusionstorusername">{{ "primaryStorage.createPrimaryStorage.SSH USERNAME" | translate }}</label>
+                            <input type="text" class="form-control" id="fusionstorusername" placeholder="ssh user name of fusionstor mon server" ng-model="infoPage.sshUsername">
+                            <p class="z-hint">{{ "primaryStorage.createPrimaryStorage.HINT12" | translate }}</p>
+                          </div>
+                          <div class="form-group col-sm-21">
+                            <label for="fusionstorpassword">{{ "primaryStorage.createPrimaryStorage.SSH PASSWORD" | translate }}</label>
+                            <input type="password" class="form-control" id="fusionstorpassword" placeholder="ssh password of fusionstor mon server" ng-model="infoPage.sshPassword">
+                          </div>
+                          <div class="form-group col-sm-24">
+                            <button type="button" class="btn btn-default" ng-click="infoPage.addFusionstorMon()" ng-disabled="!infoPage.canAddMon()">
+                              <i class="fa fa-plus" style="font-size: 1.2em"></i>
+                              <span>Add</span>
+                            </button>
+                            <span class="z-hint">{{ "primaryStorage.createPrimaryStorage.HINT13" | translate }}</span>
+                          </div>
+                          <div class="form-group col-sm-24">
+                            <div kendo-grid k-options="fusionstorMonGrid__"></div>
+                          </div>
+                        </div>
+
                       </div>
                     </form>
                 </div>
