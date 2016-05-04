@@ -7390,6 +7390,15 @@ var MRoot;
         return Events;
     }());
     MRoot.Events = Events;
+    var ChangePasswordModel = (function () {
+        function ChangePasswordModel() {
+        }
+        ChangePasswordModel.prototype.canChange = function () {
+            return angular.equals(this.password, this.repeatPassword);
+        };
+        return ChangePasswordModel;
+    }());
+    MRoot.ChangePasswordModel = ChangePasswordModel;
     var main = (function () {
         function main($scope, $rootScope, api, apiDetails, $location, $cookies, $translate) {
             var _this = this;
@@ -7458,6 +7467,25 @@ var MRoot;
             };
             $scope.getAccountName = function () {
                 return $cookies.accountName;
+            };
+            $scope.changePassword = function (win) {
+                $scope.modelChangePassword = new ChangePasswordModel();
+                win.center();
+                win.open();
+            };
+            $scope.funcChangePasswordDone = function (win) {
+                var msg = new ApiHeader.APIUpdateAccountMsg();
+                msg.uuid = '36c27e8ff05c4780bf6d2fa65700f22e';
+                msg.password = CryptoJS.SHA512($scope.modelChangePassword.password).toString();
+                _this.api.syncApi(msg, function (ret) {
+                    $rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
+                        msg: Utils.sprintf('Changed password: {0}', $cookies.accountName)
+                    });
+                });
+                win.close();
+            };
+            $scope.funcChangePasswordCancel = function (win) {
+                win.close();
             };
             $scope.logout = function () {
                 var msg = new ApiHeader.APILogOutMsg();
