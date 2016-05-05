@@ -20119,7 +20119,9 @@ var MVmInstance;
             chain.then(function () {
                 var q = new ApiHeader.QueryObject();
                 q.addCondition({ name: 'state', op: '=', value: 'Enabled' });
-                q.addCondition({ name: 'uuid', op: '!=', value: _this.options.vm.instanceOfferingUuid });
+                if (_this.options.vm.instanceOfferingUuid) {
+                    q.addCondition({ name: 'uuid', op: '!=', value: _this.options.vm.instanceOfferingUuid });
+                }
                 _this.insMgr.query(q, function (ins) {
                     _this.$scope.instanceOfferingOptions__.dataSource.data(ins);
                     chain.next();
