@@ -80,9 +80,8 @@ module Utils {
                 return $rootScope.user;
             },()=>{
                 if (Utils.notNullnotUndefined($rootScope.user)) {
-                    this.session = {
-                        uuid: $rootScope.user.sessionUuid
-                    };
+                    this.session = new ApiHeader.SessionInventory();
+                    this.session.uuid = $rootScope.user.sessionUuid;
                 }
             });
         }
@@ -355,9 +354,8 @@ module Utils {
             }
             */
             if (Utils.notNullnotUndefined(this.$rootScope.sessionUuid)) {
-                this.session = {
-                    uuid: this.$rootScope.sessionUuid
-                };
+                this.session = new ApiHeader.SessionInventory();
+                this.session.uuid = this.$rootScope.sessionUuid;
             }
 
             this.syncCall(data, callback, error);
@@ -374,9 +372,8 @@ module Utils {
             }
             */
             if (Utils.notNullnotUndefined(this.$rootScope.sessionUuid)) {
-                this.session = {
-                    uuid: this.$rootScope.sessionUuid
-                };
+                this.session = new ApiHeader.SessionInventory();
+                this.session.uuid = this.$rootScope.sessionUuid;
             }
 
             this.asyncCall(data, callback, error);
