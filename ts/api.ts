@@ -4,8 +4,11 @@ module ApiHeader {
     toApiMap() : any;
   }
 
+
   export class SessionInventory {
     uuid : string;
+    accountUuid : string;
+    userUuid : string;
   }
 
 

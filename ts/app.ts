@@ -87,7 +87,15 @@ module MRoot {
             $scope.getAccountName = () => {
                 return $cookies.accountName;
             };
-            
+
+            $scope.getAccountUuid = () => {
+                return $cookies.accountUuid;
+            }
+
+            $scope.getUserUuid = () => {
+                return $cookies.userUuid;
+            }
+
             $scope.changePassword = (win : kendo.ui.Window)=>{
                 $scope.modelChangePassword = new ChangePasswordModel();
                 win.center();
@@ -96,7 +104,7 @@ module MRoot {
 
             $scope.funcChangePasswordDone = (win : kendo.ui.Window)=>{
                 var msg = new ApiHeader.APIUpdateAccountMsg();
-                msg.uuid = '36c27e8ff05c4780bf6d2fa65700f22e';
+                msg.uuid = $cookies.accountUuid;
                 msg.password = CryptoJS.SHA512($scope.modelChangePassword.password).toString();
                 this.api.syncApi(msg, (ret: ApiHeader.APIUpdateAccountEvent)=>{
                     $rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
@@ -135,6 +143,8 @@ module MRoot {
                         $rootScope.sessionUuid  = ret.inventory.uuid;
                         $cookies.sessionUuid =  ret.inventory.uuid;
                         $cookies.accountName =  $scope.username;
+                        $cookies.accountUuid = ret.inventory.accountUuid;
+                        $cookies.userUuid = ret.inventory.userUuid;
                         $scope.username = null;
                         $scope.password = null;
                         $location.path("/dashboard");

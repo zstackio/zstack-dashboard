@@ -6715,9 +6715,8 @@ var Utils;
                 return $rootScope.user;
             }, function () {
                 if (Utils.notNullnotUndefined($rootScope.user)) {
-                    _this.session = {
-                        uuid: $rootScope.user.sessionUuid
-                    };
+                    _this.session = new ApiHeader.SessionInventory();
+                    _this.session.uuid = $rootScope.user.sessionUuid;
                 }
             });
         }
@@ -6980,9 +6979,8 @@ var Utils;
             }
             */
             if (Utils.notNullnotUndefined(this.$rootScope.sessionUuid)) {
-                this.session = {
-                    uuid: this.$rootScope.sessionUuid
-                };
+                this.session = new ApiHeader.SessionInventory();
+                this.session.uuid = this.$rootScope.sessionUuid;
             }
             this.syncCall(data, callback, error);
         };
@@ -6998,9 +6996,8 @@ var Utils;
             }
             */
             if (Utils.notNullnotUndefined(this.$rootScope.sessionUuid)) {
-                this.session = {
-                    uuid: this.$rootScope.sessionUuid
-                };
+                this.session = new ApiHeader.SessionInventory();
+                this.session.uuid = this.$rootScope.sessionUuid;
             }
             this.asyncCall(data, callback, error);
         };
@@ -7620,6 +7617,12 @@ var MRoot;
             $scope.getAccountName = function () {
                 return $cookies.accountName;
             };
+            $scope.getAccountUuid = function () {
+                return $cookies.accountUuid;
+            };
+            $scope.getUserUuid = function () {
+                return $cookies.userUuid;
+            };
             $scope.changePassword = function (win) {
                 $scope.modelChangePassword = new ChangePasswordModel();
                 win.center();
@@ -7627,7 +7630,7 @@ var MRoot;
             };
             $scope.funcChangePasswordDone = function (win) {
                 var msg = new ApiHeader.APIUpdateAccountMsg();
-                msg.uuid = '36c27e8ff05c4780bf6d2fa65700f22e';
+                msg.uuid = $cookies.accountUuid;
                 msg.password = CryptoJS.SHA512($scope.modelChangePassword.password).toString();
                 _this.api.syncApi(msg, function (ret) {
                     $rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
@@ -7663,6 +7666,8 @@ var MRoot;
                         $rootScope.sessionUuid = ret.inventory.uuid;
                         $cookies.sessionUuid = ret.inventory.uuid;
                         $cookies.accountName = $scope.username;
+                        $cookies.accountUuid = ret.inventory.accountUuid;
+                        $cookies.userUuid = ret.inventory.userUuid;
                         $scope.username = null;
                         $scope.password = null;
                         $location.path("/dashboard");
