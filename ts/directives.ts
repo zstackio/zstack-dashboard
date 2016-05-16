@@ -771,8 +771,8 @@ angular.module('root')
         return new Directive.ConfirmBox();
     }).filter('size', [function() {
         return Utils.toSizeString;
-    }]).filter('HZ', [function () {
-        return Utils.toHZString;
+    }]).filter('VCPU', [function () {
+        return Utils.toVCPUString;
     }]).filter('percent', [function () {
         return Utils.toPercentageString;
     }]).filter('commas', [function () {

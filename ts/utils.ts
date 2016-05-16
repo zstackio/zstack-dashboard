@@ -659,8 +659,8 @@ module Utils {
         }
     }
 
-    export function toHZString (input) {
-        return input + ' HZ';
+    export function toVCPUString (input) {
+        return input + ' VCPUs';
     }
 
     export function toPercentageString(input) {

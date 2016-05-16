@@ -1179,7 +1179,6 @@ module MVmInstance {
           dataValueField: "uuid",
           template: '<div style="color: black"><span class="z-label">{{"vm.ts.Name" | translate}}</span><span>#: name #</span></div>' +
           '<div style="color: black"><span class="z-label">{{"vm.ts.CPU Number" | translate}}</span><span>#: cpuNum #</span></div>' +
-          '<div style="color: black"><span class="z-label">{{"vm.ts.CPU Speed" | translate}}</span><span>#: cpuSpeed #</span></div>' +
           '<div style="color: black"><span class="z-label">{{"vm.ts.Memory" | translate}}</span><span>#: memorySize #</span></div>' +
           '<div style="color: black"><span class="z-label">{{"vm.ts.UUID" | translate}}</span><span>#: uuid #</span></div>'
         };
@@ -1773,7 +1772,6 @@ module MVmInstance {
           dataValueField: "uuid",
           template: '<div style="color: black"><span class="z-label">{{"vm.ts.Name" | translate}}</span><span>#: name #</span></div>' +
           '<div style="color: black"><span class="z-label">{{"vm.ts.CPU Number" | translate}}</span><span>#: cpuNum #</span></div>' +
-          '<div style="color: black"><span class="z-label">{{"vm.ts.CPU Speed" | translate}}</span><span>#: cpuSpeed #</span></div>' +
           '<div style="color: black"><span class="z-label">{{"vm.ts.Memory" | translate}}</span><span>#: memorySize #</span></div>' +
           '<div style="color: black"><span class="z-label">{{"vm.ts.UUID" | translate}}</span><span>#: uuid #</span></div>'
         };

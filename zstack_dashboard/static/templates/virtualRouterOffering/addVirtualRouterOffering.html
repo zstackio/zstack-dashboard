@@ -34,13 +34,6 @@
                             </div>
                         </div>
                         <div class="form-group col-sm-21">
-                            <label for="cpuspeed">{{ "virtualRouterOffering.addVirtualRouterOffering.CPU SPEED" | translate }}</label>
-                            <input type="text" class="form-control" id="cpuspeed" placeholder="CPU speed in HZ" ng-model="infoPage.cpuSpeed">
-                            <div class="alert alert-danger col-sm-21" ng-show="!infoPage.isCpuSpeedValid()">
-                                {{ "virtualRouterOffering.addVirtualRouterOffering.ALERT4" | translate }}
-                            </div>
-                        </div>
-                        <div class="form-group col-sm-21">
                             <label for="memory">{{ "virtualRouterOffering.addVirtualRouterOffering.MEMORY" | translate }}</label>
                             <input type="text" class="form-control" id="memory" placeholder="can be suffixed with T/G/M/K, default is byte, e.g. 512M" ng-model="infoPage.memorySize">
                             <div class="alert alert-danger col-sm-21" ng-show="!infoPage.isMemoryValid()">

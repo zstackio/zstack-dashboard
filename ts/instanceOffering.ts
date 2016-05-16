@@ -72,7 +72,7 @@ module MInstanceOffering {
             msg.name = instanceOffering.name;
             msg.description = instanceOffering.description;
             msg.cpuNum = instanceOffering.cpuNum;
-            msg.cpuSpeed = instanceOffering.cpuSpeed;
+            msg.cpuSpeed = 1;
             msg.memorySize = instanceOffering.memorySize;
             msg.allocatorStrategy = instanceOffering.allocatorStrategy;
             this.api.asyncApi(msg, (ret : ApiHeader.APICreateInstanceOfferingEvent)=> {
@@ -183,11 +183,6 @@ module MInstanceOffering {
                 {
                     field: 'cpuNum',
                     title: '{{"instanceOffering.ts.CPU NUMBER" | translate}}',
-                    width: '10%'
-                },
-                {
-                    field: 'cpuSpeed',
-                    title: '{{"instanceOffering.ts.CPU SPEED" | translate}}',
                     width: '10%'
                 },
                 {
@@ -407,10 +402,6 @@ module MInstanceOffering {
                         value: 'cpuNum'
                     },
                     {
-                        name: '{{"instanceOffering.ts.CPU Speed" | translate}}',
-                        value: 'cpuSpeed'
-                    },
-                    {
                         name: '{{"instanceOffering.ts.Memory" | translate}}',
                         value: 'memorySize'
                     },
@@ -526,13 +517,12 @@ module MInstanceOffering {
         name: string;
         description: string;
         cpuNum: number;
-        cpuSpeed: number;
         memorySize: number;
         allocatorStrategy: string;
 
         canCreate() : boolean {
             return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.cpuNum) &&
-               Utils.notNullnotUndefined(this.cpuSpeed) && Utils.notNullnotUndefined(this.memorySize);
+               Utils.notNullnotUndefined(this.memorySize);
         }
     }
 
@@ -587,7 +577,6 @@ module MInstanceOffering {
                     description: null,
                     memorySize: null,
                     cpuNum: null,
-                    cpuSpeed: null,
                     allocatorStrategy: null,
 
                     canMoveToPrevious(): boolean {
@@ -596,7 +585,7 @@ module MInstanceOffering {
 
                     canMoveToNext(): boolean {
                         return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.memorySize) && Utils.notNullnotUndefined(this.cpuNum)
-                            && Utils.notNullnotUndefined(this.cpuSpeed) && this.isCpuNumValid() && this.isCpuSpeedValid() && this.isMemoryValid();
+                            && this.isCpuNumValid() && this.isMemoryValid();
                     },
 
                     show(): void {
@@ -626,13 +615,6 @@ module MInstanceOffering {
                         return true;
                     },
 
-                    isCpuSpeedValid(): boolean {
-                        if (Utils.notNullnotUndefinedNotEmptyString(this.cpuSpeed)) {
-                            return !isNaN(this.cpuSpeed);
-                        }
-                        return true;
-                    },
-
                     isMemoryValid() {
                         if (Utils.notNullnotUndefinedNotEmptyString(this.memorySize)) {
                             return Utils.isValidSizeStr(this.memorySize);
@@ -644,7 +626,6 @@ module MInstanceOffering {
                         this.name = Utils.shortHashName('ioffering');
                         this.memorySize = null;
                         this.cpuNum = null;
-                        this.cpuSpeed = null;
                         this.allocatorStrategy = null;
                         this.description = null;
                         this.activeState = false;
