@@ -84,7 +84,7 @@ module MVirtualRouterOffering {
             msg.name = virtualRouterOffering.name;
             msg.description = virtualRouterOffering.description;
             msg.cpuNum = virtualRouterOffering.cpuNum;
-            msg.cpuSpeed = virtualRouterOffering.cpuSpeed;
+            msg.cpuSpeed = 1;
             msg.memorySize = virtualRouterOffering.memorySize;
             msg.allocatorStrategy = virtualRouterOffering.allocatorStrategy;
             msg.managementNetworkUuid = virtualRouterOffering.managementNetworkUuid;
@@ -200,11 +200,6 @@ module MVirtualRouterOffering {
                 {
                     field: 'cpuNum',
                     title: '{{"virtualRouterOffering.ts.CPU NUMBER" | translate}}',
-                    width: '10%'
-                },
-                {
-                    field: 'cpuSpeed',
-                    title: '{{"virtualRouterOffering.ts.CPU SPEED" | translate}}',
                     width: '10%'
                 },
                 {
@@ -431,10 +426,6 @@ module MVirtualRouterOffering {
                         value: 'cpuNum'
                     },
                     {
-                        name: '{{"virtualRouterOffering.ts.CPU Speed" | translate}}',
-                        value: 'cpuSpeed'
-                    },
-                    {
                         name: '{{"virtualRouterOffering.ts.Memory" | translate}}',
                         value: 'memorySize'
                     },
@@ -612,7 +603,6 @@ module MVirtualRouterOffering {
                     description: null,
                     memorySize: null,
                     cpuNum: null,
-                    cpuSpeed: null,
                     allocatorStrategy: null,
                     zoneUuid: null,
                     managementNetworkUuid: null,
@@ -639,13 +629,6 @@ module MVirtualRouterOffering {
                         return true;
                     },
 
-                    isCpuSpeedValid() : boolean {
-                        if (Utils.notNullnotUndefined(this.cpuSpeed)) {
-                            return !isNaN(this.cpuSpeed);
-                        }
-                        return true;
-                    },
-
                     isMemoryValid() : boolean {
                         if (Utils.notNullnotUndefined(this.memorySize)) {
                             return Utils.isValidSizeStr(this.memorySize);
@@ -659,9 +642,9 @@ module MVirtualRouterOffering {
 
                     canMoveToNext(): boolean {
                         return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.memorySize) && Utils.notNullnotUndefined(this.cpuNum)
-                            && Utils.notNullnotUndefined(this.cpuSpeed) && Utils.notNullnotUndefined(this.zoneUuid) && Utils.notNullnotUndefined(this.managementNetworkUuid)
+                            && Utils.notNullnotUndefined(this.zoneUuid) && Utils.notNullnotUndefined(this.managementNetworkUuid)
                             && Utils.notNullnotUndefined(this.publicNetworkUuid) && Utils.notNullnotUndefined(this.imageUuid)
-                            && this.isCpuNumValid() && this.isCpuSpeedValid() && this.isMemoryValid();
+                            && this.isCpuNumValid() && this.isMemoryValid();
                     },
 
                     show(): void {
@@ -688,7 +671,6 @@ module MVirtualRouterOffering {
                         this.name = Utils.shortHashName('vrOffering');
                         this.memorySize = null;
                         this.cpuNum = null;
-                        this.cpuSpeed = null;
                         this.allocatorStrategy = null;
                         this.description = null;
                         this.managementNetworkUuid = null;
