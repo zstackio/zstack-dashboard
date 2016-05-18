@@ -83,8 +83,8 @@ module MDashboard {
                             var chain = new Utils.Chain();
                             chain.then(()=>{
                                 api.getMemoryCpuCapacityByAll((ret: ApiHeader.APIGetCpuMemoryCapacityReply)=>{
-                                    cpu.set('total', Utils.toHZString(ret.totalCpu));
-                                    cpu.set('available', Utils.toHZString(ret.availableCpu));
+                                    cpu.set('total', Utils.toVCPUString(ret.totalCpu));
+                                    cpu.set('available', Utils.toVCPUString(ret.availableCpu));
                                     cpu.set('percent', Utils.toPercentageString(ret.totalCpu == 0 ? 0 : ret.availableCpu / ret.totalCpu));
 
                                     memory.set('total',Utils.toSizeString(ret.totalMemory));

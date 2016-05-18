@@ -1147,7 +1147,9 @@ module MVmInstance {
       chain.then(()=> {
         var q = new ApiHeader.QueryObject();
         q.addCondition({name: 'state', op: '=', value: 'Enabled'});
-        q.addCondition({name: 'uuid', op: '!=', value: this.options.vm.instanceOfferingUuid});
+        if (this.options.vm.instanceOfferingUuid) {
+          q.addCondition({name: 'uuid', op: '!=', value: this.options.vm.instanceOfferingUuid});
+        }
         this.insMgr.query(q, (ins: MInstanceOffering.InstanceOffering[])=>{
           this.$scope.instanceOfferingOptions__.dataSource.data(ins);
           chain.next();
@@ -1177,7 +1179,6 @@ module MVmInstance {
           dataValueField: "uuid",
           template: '<div style="color: black"><span class="z-label">{{"vm.ts.Name" | translate}}</span><span>#: name #</span></div>' +
           '<div style="color: black"><span class="z-label">{{"vm.ts.CPU Number" | translate}}</span><span>#: cpuNum #</span></div>' +
-          '<div style="color: black"><span class="z-label">{{"vm.ts.CPU Speed" | translate}}</span><span>#: cpuSpeed #</span></div>' +
           '<div style="color: black"><span class="z-label">{{"vm.ts.Memory" | translate}}</span><span>#: memorySize #</span></div>' +
           '<div style="color: black"><span class="z-label">{{"vm.ts.UUID" | translate}}</span><span>#: uuid #</span></div>'
         };
@@ -1771,7 +1772,6 @@ module MVmInstance {
           dataValueField: "uuid",
           template: '<div style="color: black"><span class="z-label">{{"vm.ts.Name" | translate}}</span><span>#: name #</span></div>' +
           '<div style="color: black"><span class="z-label">{{"vm.ts.CPU Number" | translate}}</span><span>#: cpuNum #</span></div>' +
-          '<div style="color: black"><span class="z-label">{{"vm.ts.CPU Speed" | translate}}</span><span>#: cpuSpeed #</span></div>' +
           '<div style="color: black"><span class="z-label">{{"vm.ts.Memory" | translate}}</span><span>#: memorySize #</span></div>' +
           '<div style="color: black"><span class="z-label">{{"vm.ts.UUID" | translate}}</span><span>#: uuid #</span></div>'
         };

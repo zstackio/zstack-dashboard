@@ -6715,9 +6715,8 @@ var Utils;
                 return $rootScope.user;
             }, function () {
                 if (Utils.notNullnotUndefined($rootScope.user)) {
-                    _this.session = {
-                        uuid: $rootScope.user.sessionUuid
-                    };
+                    _this.session = new ApiHeader.SessionInventory();
+                    _this.session.uuid = $rootScope.user.sessionUuid;
                 }
             });
         }
@@ -6980,9 +6979,8 @@ var Utils;
             }
             */
             if (Utils.notNullnotUndefined(this.$rootScope.sessionUuid)) {
-                this.session = {
-                    uuid: this.$rootScope.sessionUuid
-                };
+                this.session = new ApiHeader.SessionInventory();
+                this.session.uuid = this.$rootScope.sessionUuid;
             }
             this.syncCall(data, callback, error);
         };
@@ -6998,9 +6996,8 @@ var Utils;
             }
             */
             if (Utils.notNullnotUndefined(this.$rootScope.sessionUuid)) {
-                this.session = {
-                    uuid: this.$rootScope.sessionUuid
-                };
+                this.session = new ApiHeader.SessionInventory();
+                this.session.uuid = this.$rootScope.sessionUuid;
             }
             this.asyncCall(data, callback, error);
         };
@@ -7288,10 +7285,10 @@ var Utils;
         }
     }
     Utils.toSizeString = toSizeString;
-    function toHZString(input) {
-        return input + ' HZ';
+    function toVCPUString(input) {
+        return input + ' VCPUs';
     }
-    Utils.toHZString = toHZString;
+    Utils.toVCPUString = toVCPUString;
     function toPercentageString(input) {
         var per = parseFloat(input) * 100;
         var perStr = per.toString();
@@ -7542,6 +7539,15 @@ var MRoot;
         return Events;
     }());
     MRoot.Events = Events;
+    var ChangePasswordModel = (function () {
+        function ChangePasswordModel() {
+        }
+        ChangePasswordModel.prototype.canChange = function () {
+            return angular.equals(this.password, this.repeatPassword);
+        };
+        return ChangePasswordModel;
+    }());
+    MRoot.ChangePasswordModel = ChangePasswordModel;
     var main = (function () {
         function main($scope, $rootScope, api, apiDetails, $location, $cookies, $translate) {
             var _this = this;
@@ -7611,6 +7617,31 @@ var MRoot;
             $scope.getAccountName = function () {
                 return $cookies.accountName;
             };
+            $scope.getAccountUuid = function () {
+                return $cookies.accountUuid;
+            };
+            $scope.getUserUuid = function () {
+                return $cookies.userUuid;
+            };
+            $scope.changePassword = function (win) {
+                $scope.modelChangePassword = new ChangePasswordModel();
+                win.center();
+                win.open();
+            };
+            $scope.funcChangePasswordDone = function (win) {
+                var msg = new ApiHeader.APIUpdateAccountMsg();
+                msg.uuid = $cookies.accountUuid;
+                msg.password = CryptoJS.SHA512($scope.modelChangePassword.password).toString();
+                _this.api.syncApi(msg, function (ret) {
+                    $rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
+                        msg: Utils.sprintf('Changed password: {0}', $cookies.accountName)
+                    });
+                });
+                win.close();
+            };
+            $scope.funcChangePasswordCancel = function (win) {
+                win.close();
+            };
             $scope.logout = function () {
                 var msg = new ApiHeader.APILogOutMsg();
                 msg.sessionUuid = $cookies.sessionUuid;
@@ -7635,6 +7666,8 @@ var MRoot;
                         $rootScope.sessionUuid = ret.inventory.uuid;
                         $cookies.sessionUuid = ret.inventory.uuid;
                         $cookies.accountName = $scope.username;
+                        $cookies.accountUuid = ret.inventory.accountUuid;
+                        $cookies.userUuid = ret.inventory.userUuid;
                         $scope.username = null;
                         $scope.password = null;
                         $location.path("/dashboard");
@@ -17595,7 +17628,7 @@ var MInstanceOffering;
             msg.name = instanceOffering.name;
             msg.description = instanceOffering.description;
             msg.cpuNum = instanceOffering.cpuNum;
-            msg.cpuSpeed = instanceOffering.cpuSpeed;
+            msg.cpuSpeed = 1;
             msg.memorySize = instanceOffering.memorySize;
             msg.allocatorStrategy = instanceOffering.allocatorStrategy;
             this.api.asyncApi(msg, function (ret) {
@@ -17712,11 +17745,6 @@ var MInstanceOffering;
                 {
                     field: 'cpuNum',
                     title: '{{"instanceOffering.ts.CPU NUMBER" | translate}}',
-                    width: '10%'
-                },
-                {
-                    field: 'cpuSpeed',
-                    title: '{{"instanceOffering.ts.CPU SPEED" | translate}}',
                     width: '10%'
                 },
                 {
@@ -17921,10 +17949,6 @@ var MInstanceOffering;
                         value: 'cpuNum'
                     },
                     {
-                        name: '{{"instanceOffering.ts.CPU Speed" | translate}}',
-                        value: 'cpuSpeed'
-                    },
-                    {
                         name: '{{"instanceOffering.ts.Memory" | translate}}',
                         value: 'memorySize'
                     },
@@ -18029,7 +18053,7 @@ var MInstanceOffering;
         }
         CreateInstanceOfferingModel.prototype.canCreate = function () {
             return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.cpuNum) &&
-                Utils.notNullnotUndefined(this.cpuSpeed) && Utils.notNullnotUndefined(this.memorySize);
+                Utils.notNullnotUndefined(this.memorySize);
         };
         return CreateInstanceOfferingModel;
     }());
@@ -18060,14 +18084,13 @@ var MInstanceOffering;
                     description: null,
                     memorySize: null,
                     cpuNum: null,
-                    cpuSpeed: null,
                     allocatorStrategy: null,
                     canMoveToPrevious: function () {
                         return false;
                     },
                     canMoveToNext: function () {
                         return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.memorySize) && Utils.notNullnotUndefined(this.cpuNum)
-                            && Utils.notNullnotUndefined(this.cpuSpeed) && this.isCpuNumValid() && this.isCpuSpeedValid() && this.isMemoryValid();
+                            && this.isCpuNumValid() && this.isMemoryValid();
                     },
                     show: function () {
                         this.getAnchorElement().tab('show');
@@ -18090,12 +18113,6 @@ var MInstanceOffering;
                         }
                         return true;
                     },
-                    isCpuSpeedValid: function () {
-                        if (Utils.notNullnotUndefinedNotEmptyString(this.cpuSpeed)) {
-                            return !isNaN(this.cpuSpeed);
-                        }
-                        return true;
-                    },
                     isMemoryValid: function () {
                         if (Utils.notNullnotUndefinedNotEmptyString(this.memorySize)) {
                             return Utils.isValidSizeStr(this.memorySize);
@@ -18106,7 +18123,6 @@ var MInstanceOffering;
                         this.name = Utils.shortHashName('ioffering');
                         this.memorySize = null;
                         this.cpuNum = null;
-                        this.cpuSpeed = null;
                         this.allocatorStrategy = null;
                         this.description = null;
                         this.activeState = false;
@@ -20063,7 +20079,6 @@ var MVmInstance;
                     dataValueField: "uuid",
                     template: '<div style="color: black"><span class="z-label">{{"vm.ts.Name" | translate}}</span><span>#: name #</span></div>' +
                         '<div style="color: black"><span class="z-label">{{"vm.ts.CPU Number" | translate}}</span><span>#: cpuNum #</span></div>' +
-                        '<div style="color: black"><span class="z-label">{{"vm.ts.CPU Speed" | translate}}</span><span>#: cpuSpeed #</span></div>' +
                         '<div style="color: black"><span class="z-label">{{"vm.ts.Memory" | translate}}</span><span>#: memorySize #</span></div>' +
                         '<div style="color: black"><span class="z-label">{{"vm.ts.UUID" | translate}}</span><span>#: uuid #</span></div>'
                 };
@@ -20091,7 +20106,9 @@ var MVmInstance;
             chain.then(function () {
                 var q = new ApiHeader.QueryObject();
                 q.addCondition({ name: 'state', op: '=', value: 'Enabled' });
-                q.addCondition({ name: 'uuid', op: '!=', value: _this.options.vm.instanceOfferingUuid });
+                if (_this.options.vm.instanceOfferingUuid) {
+                    q.addCondition({ name: 'uuid', op: '!=', value: _this.options.vm.instanceOfferingUuid });
+                }
                 _this.insMgr.query(q, function (ins) {
                     _this.$scope.instanceOfferingOptions__.dataSource.data(ins);
                     chain.next();
@@ -20495,7 +20512,6 @@ var MVmInstance;
                     dataValueField: "uuid",
                     template: '<div style="color: black"><span class="z-label">{{"vm.ts.Name" | translate}}</span><span>#: name #</span></div>' +
                         '<div style="color: black"><span class="z-label">{{"vm.ts.CPU Number" | translate}}</span><span>#: cpuNum #</span></div>' +
-                        '<div style="color: black"><span class="z-label">{{"vm.ts.CPU Speed" | translate}}</span><span>#: cpuSpeed #</span></div>' +
                         '<div style="color: black"><span class="z-label">{{"vm.ts.Memory" | translate}}</span><span>#: memorySize #</span></div>' +
                         '<div style="color: black"><span class="z-label">{{"vm.ts.UUID" | translate}}</span><span>#: uuid #</span></div>'
                 };
@@ -29466,7 +29482,7 @@ var MVirtualRouterOffering;
             msg.name = virtualRouterOffering.name;
             msg.description = virtualRouterOffering.description;
             msg.cpuNum = virtualRouterOffering.cpuNum;
-            msg.cpuSpeed = virtualRouterOffering.cpuSpeed;
+            msg.cpuSpeed = 1;
             msg.memorySize = virtualRouterOffering.memorySize;
             msg.allocatorStrategy = virtualRouterOffering.allocatorStrategy;
             msg.managementNetworkUuid = virtualRouterOffering.managementNetworkUuid;
@@ -29588,11 +29604,6 @@ var MVirtualRouterOffering;
                 {
                     field: 'cpuNum',
                     title: '{{"virtualRouterOffering.ts.CPU NUMBER" | translate}}',
-                    width: '10%'
-                },
-                {
-                    field: 'cpuSpeed',
-                    title: '{{"virtualRouterOffering.ts.CPU SPEED" | translate}}',
                     width: '10%'
                 },
                 {
@@ -29805,10 +29816,6 @@ var MVirtualRouterOffering;
                         value: 'cpuNum'
                     },
                     {
-                        name: '{{"virtualRouterOffering.ts.CPU Speed" | translate}}',
-                        value: 'cpuSpeed'
-                    },
-                    {
                         name: '{{"virtualRouterOffering.ts.Memory" | translate}}',
                         value: 'memorySize'
                     },
@@ -29938,7 +29945,6 @@ var MVirtualRouterOffering;
                     description: null,
                     memorySize: null,
                     cpuNum: null,
-                    cpuSpeed: null,
                     allocatorStrategy: null,
                     zoneUuid: null,
                     managementNetworkUuid: null,
@@ -29960,12 +29966,6 @@ var MVirtualRouterOffering;
                         }
                         return true;
                     },
-                    isCpuSpeedValid: function () {
-                        if (Utils.notNullnotUndefined(this.cpuSpeed)) {
-                            return !isNaN(this.cpuSpeed);
-                        }
-                        return true;
-                    },
                     isMemoryValid: function () {
                         if (Utils.notNullnotUndefined(this.memorySize)) {
                             return Utils.isValidSizeStr(this.memorySize);
@@ -29977,9 +29977,9 @@ var MVirtualRouterOffering;
                     },
                     canMoveToNext: function () {
                         return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.memorySize) && Utils.notNullnotUndefined(this.cpuNum)
-                            && Utils.notNullnotUndefined(this.cpuSpeed) && Utils.notNullnotUndefined(this.zoneUuid) && Utils.notNullnotUndefined(this.managementNetworkUuid)
+                            && Utils.notNullnotUndefined(this.zoneUuid) && Utils.notNullnotUndefined(this.managementNetworkUuid)
                             && Utils.notNullnotUndefined(this.publicNetworkUuid) && Utils.notNullnotUndefined(this.imageUuid)
-                            && this.isCpuNumValid() && this.isCpuSpeedValid() && this.isMemoryValid();
+                            && this.isCpuNumValid() && this.isMemoryValid();
                     },
                     show: function () {
                         this.getAnchorElement().tab('show');
@@ -30000,7 +30000,6 @@ var MVirtualRouterOffering;
                         this.name = Utils.shortHashName('vrOffering');
                         this.memorySize = null;
                         this.cpuNum = null;
-                        this.cpuSpeed = null;
                         this.allocatorStrategy = null;
                         this.description = null;
                         this.managementNetworkUuid = null;
@@ -30331,8 +30330,8 @@ var MDashboard;
                             var chain = new Utils.Chain();
                             chain.then(function () {
                                 api.getMemoryCpuCapacityByAll(function (ret) {
-                                    cpu.set('total', Utils.toHZString(ret.totalCpu));
-                                    cpu.set('available', Utils.toHZString(ret.availableCpu));
+                                    cpu.set('total', Utils.toVCPUString(ret.totalCpu));
+                                    cpu.set('available', Utils.toVCPUString(ret.availableCpu));
                                     cpu.set('percent', Utils.toPercentageString(ret.totalCpu == 0 ? 0 : ret.availableCpu / ret.totalCpu));
                                     memory.set('total', Utils.toSizeString(ret.totalMemory));
                                     memory.set('available', Utils.toSizeString(ret.availableMemory));
@@ -31717,8 +31716,8 @@ angular.module('root')
     return new Directive.ConfirmBox();
 }).filter('size', [function () {
         return Utils.toSizeString;
-    }]).filter('HZ', [function () {
-        return Utils.toHZString;
+    }]).filter('VCPU', [function () {
+        return Utils.toVCPUString;
     }]).filter('percent', [function () {
         return Utils.toPercentageString;
     }]).filter('commas', [function () {

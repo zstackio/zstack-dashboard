@@ -7,6 +7,14 @@ module MRoot {
         static NOTIFICATION = "root.notification";
     }
 
+    export class ChangePasswordModel {
+        password: string;
+        repeatPassword: string;
+        canChange() : boolean {
+            return angular.equals(this.password, this.repeatPassword);
+        }
+    }
+
     export class main {
         static $inject = ['$scope', '$rootScope', 'Api', 'ApiDetails', '$location', '$cookies', '$translate']; 
 
@@ -80,6 +88,36 @@ module MRoot {
                 return $cookies.accountName;
             };
 
+            $scope.getAccountUuid = () => {
+                return $cookies.accountUuid;
+            }
+
+            $scope.getUserUuid = () => {
+                return $cookies.userUuid;
+            }
+
+            $scope.changePassword = (win : kendo.ui.Window)=>{
+                $scope.modelChangePassword = new ChangePasswordModel();
+                win.center();
+                win.open();
+            }
+
+            $scope.funcChangePasswordDone = (win : kendo.ui.Window)=>{
+                var msg = new ApiHeader.APIUpdateAccountMsg();
+                msg.uuid = $cookies.accountUuid;
+                msg.password = CryptoJS.SHA512($scope.modelChangePassword.password).toString();
+                this.api.syncApi(msg, (ret: ApiHeader.APIUpdateAccountEvent)=>{
+                    $rootScope.$broadcast(MRoot.Events.NOTIFICATION, {
+                        msg: Utils.sprintf('Changed password: {0}', $cookies.accountName)
+                    });
+                });
+                win.close();
+            };
+            
+            $scope.funcChangePasswordCancel = (win : kendo.ui.Window)=>{
+                win.close();
+            };
+
             $scope.logout = () => {
                 var msg = new ApiHeader.APILogOutMsg();
                 msg.sessionUuid = $cookies.sessionUuid;
@@ -105,6 +143,8 @@ module MRoot {
                         $rootScope.sessionUuid  = ret.inventory.uuid;
                         $cookies.sessionUuid =  ret.inventory.uuid;
                         $cookies.accountName =  $scope.username;
+                        $cookies.accountUuid = ret.inventory.accountUuid;
+                        $cookies.userUuid = ret.inventory.userUuid;
                         $scope.username = null;
                         $scope.password = null;
                         $location.path("/dashboard");

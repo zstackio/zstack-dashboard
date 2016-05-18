@@ -70,6 +70,28 @@
 <span kendo-notification="apiNotification" k-options="optionsNotification"></span>
 <div ng-include="'/static/templates/zone/templates.html'"></div>
 
+<div style="display: none">
+    <div kendo-window="winChangePassword" k-visible="false" k-options="optionsChangePassword">
+        <div>
+            <h4 class="z-win-h4">{{"index.CHANGE PASSWORD" | translate}}</h4>
+            <form class="form" id="formChangePassword">
+                <div class="form-group col-lg-18">
+                    <label for="name">{{"index.NEW PASSWORD" | translate}}</label>
+                    <input class="form-control" type="password" id="newPassword" placeholder="(Required) max length of 255 characters" ng-model="modelChangePassword.password" required data-message="new password is required">
+                </div>
+                <div class="form-group col-lg-18">
+                    <label for="name">{{"index.REPEAT PASSWORD" | translate}}</label>
+                    <input class="form-control" type="password" id="repeatPassword" placeholder="(Required) max length of 255 characters" ng-model="modelChangePassword.repeatPassword" required data-message="repeat password is required">
+                </div>
+                <div class="form-group col-lg-18">
+                    <button type="button" class="btn btn-default" ng-click="funcChangePasswordCancel(winChangePassword)">{{"index.Cancel" | translate}}</button>
+                    <button type="button" class="btn btn-primary" ng-disabled="!modelChangePassword.canChange()" ng-click="funcChangePasswordDone(winChangePassword)">{{"index.Change" | translate}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 <nav class="navbar navbar-default" role="navigation">
     <div class="navbar-header" ng-controller="MNav.Controller">
         <a class="navbar-brand" href="#">
@@ -106,6 +128,7 @@
                     {{getAccountName()}}
                     <b class="caret"></b></a>
                 <ul class="dropdown-menu">
+                    <li><a href ng-click="changePassword(winChangePassword)">{{"index.Change Password" | translate}}</a></li>
                     <li><a href ng-click="logout()">{{"index.Sign Out" | translate}}</a></li>
                 </ul>
             </li>
