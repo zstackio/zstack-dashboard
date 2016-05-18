@@ -92,9 +92,9 @@ module MBackupStorage {
         msg = new ApiHeader.APIAddCephBackupStorageMsg();
         msg.type = 'Ceph';
         msg.monUrls = bs.cephMonUrls;
-      } else if (bs.type == 'Fusionstor') {
+      } else if (bs.type == 'SS100-Storage') {
         msg = new ApiHeader.APIAddFusionstorBackupStorageMsg();
-        msg.type = 'Fusionstor';
+        msg.type = 'SS100-Storage';
         msg.monUrls = bs.fusionstorMonUrls;
       }
 
@@ -976,7 +976,7 @@ module MBackupStorage {
                 && this.isUrlValid();
             } else if (this.type == 'Ceph') {
               return $scope.cephMonGrid__.dataSource.data().length > 0;
-            } else if (this.type == 'Fusionstor') {
+            } else if (this.type == 'SS100-Storage') {
               return $scope.fusionstorMonGrid__.dataSource.data().length > 0;
             } else {
               return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.type)

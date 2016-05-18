@@ -10374,9 +10374,9 @@ var MPrimaryStorage;
                 msg.type = 'Ceph';
                 msg.monUrls = ps.cephMonUrls;
             }
-            else if (ps.type == 'Fusionstor') {
+            else if (ps.type == 'SS100-Storage') {
                 msg = new ApiHeader.APIAddFusionstorPrimaryStorageMsg();
-                msg.type = 'Fusionstor';
+                msg.type = 'SS100-Storage';
                 msg.monUrls = ps.fusionstorMonUrls;
             }
             else if (ps.type == 'SharedMountPoint') {
@@ -11148,7 +11148,7 @@ var MPrimaryStorage;
                             return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.zoneUuid) &&
                                 $scope.cephMonGrid__.dataSource.data().length > 0;
                         }
-                        else if (this.type == 'Fusionstor') {
+                        else if (this.type == 'SS100-Storage') {
                             return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.zoneUuid) &&
                                 $scope.fusionstorMonGrid__.dataSource.data().length > 0;
                         }
@@ -14555,9 +14555,9 @@ var MBackupStorage;
                 msg.type = 'Ceph';
                 msg.monUrls = bs.cephMonUrls;
             }
-            else if (bs.type == 'Fusionstor') {
+            else if (bs.type == 'SS100-Storage') {
                 msg = new ApiHeader.APIAddFusionstorBackupStorageMsg();
-                msg.type = 'Fusionstor';
+                msg.type = 'SS100-Storage';
                 msg.monUrls = bs.fusionstorMonUrls;
             }
             if (Utils.notNullnotUndefined(bs.resourceUuid)) {
@@ -15342,7 +15342,7 @@ var MBackupStorage;
                         else if (this.type == 'Ceph') {
                             return $scope.cephMonGrid__.dataSource.data().length > 0;
                         }
-                        else if (this.type == 'Fusionstor') {
+                        else if (this.type == 'SS100-Storage') {
                             return $scope.fusionstorMonGrid__.dataSource.data().length > 0;
                         }
                         else {

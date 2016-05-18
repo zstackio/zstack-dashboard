@@ -101,9 +101,9 @@ module MPrimaryStorage {
         msg = new ApiHeader.APIAddCephPrimaryStorageMsg();
         msg.type = 'Ceph';
         msg.monUrls = ps.cephMonUrls;
-      } else if (ps.type == 'Fusionstor') {
+      } else if (ps.type == 'SS100-Storage') {
         msg = new ApiHeader.APIAddFusionstorPrimaryStorageMsg();
-        msg.type = 'Fusionstor';
+        msg.type = 'SS100-Storage';
         msg.monUrls = ps.fusionstorMonUrls;
       } else if(ps.type == 'SharedMountPoint'){
         msg = new ApiHeader.APIAddSharedMountPointPrimaryStorageMsg();
@@ -997,7 +997,7 @@ module MPrimaryStorage {
             if (this.type == 'Ceph') {
               return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.zoneUuid) &&
                 $scope.cephMonGrid__.dataSource.data().length > 0;
-            } else if (this.type == 'Fusionstor') {
+            } else if (this.type == 'SS100-Storage') {
               return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.zoneUuid) &&
                 $scope.fusionstorMonGrid__.dataSource.data().length > 0;
             }  else {
