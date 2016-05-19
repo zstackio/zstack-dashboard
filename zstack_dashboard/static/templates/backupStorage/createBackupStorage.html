@@ -18,7 +18,7 @@
                             <select id="type" kendo-drop-down-list k-options="typeList" class="z-win-dropdown" ng-model="infoPage.type"></select>
                             <p class="z-hint">{{ "backupStorage.createBackupStorage.HINT1" | translate }}</p>
                         </div>
-                        <div class="form-group col-sm-21" ng-show="infoPage.type != 'Ceph' && infoPage.type != 'Fusionstor'">
+                        <div class="form-group col-sm-21" ng-show="infoPage.type != 'Ceph' && infoPage.type != 'SS100-Storage'">
                             <label for="url" class="z-block-label">{{ "backupStorage.createBackupStorage.URL" | translate }}</label>
                             <input id="url" type="text" ng-model="infoPage.url" class="form-control" placeholder="(Required) Url of backup storage">
                             <p class="z-hint">{{ "backupStorage.createBackupStorage.HINT2" | translate }}</p>
@@ -69,19 +69,19 @@
                               </div>
                             </div>
 
-                            <div ng-switch-when="Fusionstor">
+                            <div ng-switch-when="SS100-Storage">
                               <div class="form-group col-sm-21">
                                 <label for="fusionstorhostname">{{ "backupStorage.createBackupStorage.HOSTNAME" | translate }}</label>
-                                <input type="text" class="form-control" id="fusionstorhostname" placeholder="IP or DNS name of fusionstor mon server" ng-model="infoPage.hostname">
+                                <input type="text" class="form-control" id="fusionstorhostname" placeholder="IP or DNS name of SS100-Storage mon server" ng-model="infoPage.hostname">
                               </div>
                               <div class="form-group col-sm-21">
                                 <label for="fusionstorusername">{{ "backupStorage.createBackupStorage.USER NAME" | translate }}</label>
-                                <input type="text" class="form-control" id="fusionstorusername" placeholder="ssh user name of fusionstor mon server" ng-model="infoPage.username">
+                                <input type="text" class="form-control" id="fusionstorusername" placeholder="ssh user name of SS100-Storage mon server" ng-model="infoPage.username">
                                 <p class="z-hint">{{ "backupStorage.createBackupStorage.HINT7" | translate }}</p>
                               </div>
                               <div class="form-group col-sm-21">
                                 <label for="fusionstorpassword">{{ "backupStorage.createBackupStorage.PASSWORD" | translate }}</label>
-                                <input type="password" class="form-control" id="fusionstorpassword" placeholder="ssh password of fusionstor mon server" ng-model="infoPage.password">
+                                <input type="password" class="form-control" id="fusionstorpassword" placeholder="ssh password of SS100-Storage mon server" ng-model="infoPage.password">
                               </div>
                               <div class="form-group col-sm-24">
                                 <button type="button" class="btn btn-default" ng-click="infoPage.addFusionstorMon()" ng-disabled="!infoPage.canAddMon()">
