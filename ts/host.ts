@@ -60,6 +60,7 @@ module MHost {
             self.set('status', inv.status);
             self.set('createDate', inv.createDate);
             self.set('lastOpDate', inv.lastOpDate);
+            self.set('sshPort', inv.sshPort);
         }
     }
 
@@ -85,6 +86,7 @@ module MHost {
                 msg = new ApiHeader.APIAddKVMHostMsg();
                 msg.username  = host.username;
                 msg.password = host.password;
+                msg.sshPort = host.sshPort;
             } else if (host.hypervisorType == 'Simulator') {
                 msg = new ApiHeader.APIAddSimulatorHostMsg();
             }
