@@ -10407,9 +10407,9 @@ var MPrimaryStorage;
                 msg.type = 'Ceph';
                 msg.monUrls = ps.cephMonUrls;
             }
-            else if (ps.type == 'SS100-Storage') {
+            else if (ps.type == 'SS100-Storage' || ps.type == 'Fusionstor') {
                 msg = new ApiHeader.APIAddFusionstorPrimaryStorageMsg();
-                msg.type = 'SS100-Storage';
+                msg.type = ps.type;
                 msg.monUrls = ps.fusionstorMonUrls;
             }
             else if (ps.type == 'SharedMountPoint') {
@@ -11181,7 +11181,7 @@ var MPrimaryStorage;
                             return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.zoneUuid) &&
                                 $scope.cephMonGrid__.dataSource.data().length > 0;
                         }
-                        else if (this.type == 'SS100-Storage') {
+                        else if (this.type == 'SS100-Storage' || this.type == 'Fusionstor') {
                             return Utils.notNullnotUndefined(this.name) && Utils.notNullnotUndefined(this.zoneUuid) &&
                                 $scope.fusionstorMonGrid__.dataSource.data().length > 0;
                         }
@@ -14588,9 +14588,9 @@ var MBackupStorage;
                 msg.type = 'Ceph';
                 msg.monUrls = bs.cephMonUrls;
             }
-            else if (bs.type == 'SS100-Storage') {
+            else if (bs.type == 'SS100-Storage' || bs.type == 'Fusionstor') {
                 msg = new ApiHeader.APIAddFusionstorBackupStorageMsg();
-                msg.type = 'SS100-Storage';
+                msg.type = bs.type;
                 msg.monUrls = bs.fusionstorMonUrls;
             }
             if (Utils.notNullnotUndefined(bs.resourceUuid)) {
@@ -15375,7 +15375,7 @@ var MBackupStorage;
                         else if (this.type == 'Ceph') {
                             return $scope.cephMonGrid__.dataSource.data().length > 0;
                         }
-                        else if (this.type == 'SS100-Storage') {
+                        else if (this.type == 'SS100-Storage' || this.type == 'Fusionstor') {
                             return $scope.fusionstorMonGrid__.dataSource.data().length > 0;
                         }
                         else {
