@@ -58,7 +58,8 @@ module MBackupStorage {
       self.set('attachedZoneUuids', inv.attachedZoneUuids);
       self.set('createDate', inv.createDate);
       self.set('lastOpDate', inv.lastOpDate);
-    }
+      self.set('sshport', inv.sshport);
+   }
   }
 
   export class BackupStorageManager {
@@ -84,6 +85,7 @@ module MBackupStorage {
         msg.hostname = bs.hostname;
         msg.username = bs.username;
         msg.password = bs.password;
+        msg.sshport = bs.sshport;
         msg.type = 'SftpBackupStorage';
       } else if (bs.type == 'SimulatorBackupStorage') {
         msg = new ApiHeader.APIAddSimulatorBackupStorageMsg();
