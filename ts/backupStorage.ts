@@ -58,7 +58,7 @@ module MBackupStorage {
       self.set('attachedZoneUuids', inv.attachedZoneUuids);
       self.set('createDate', inv.createDate);
       self.set('lastOpDate', inv.lastOpDate);
-      self.set('port', inv.port);
+      self.set('sshPort', inv.sshPort);
    }
   }
 

@@ -60,7 +60,7 @@ module MHost {
             self.set('status', inv.status);
             self.set('createDate', inv.createDate);
             self.set('lastOpDate', inv.lastOpDate);
-            self.set('port', inv.port);
+            self.set('sshPort', inv.sshPort);
         }
     }
 

@@ -6127,7 +6127,7 @@ module ApiHeader {
     totalCapacity : number;
     availableCapacity : number;
     type : string;
-    port : number;
+    sshPort : number;
     state : string;
     status : string;
     createDate : string;
@@ -6872,7 +6872,7 @@ module ApiHeader {
     description : string;
     managementIp : string;
     hypervisorType : string;
-    port : number;
+    sshPort : number;
     state : string;
     status : string;
     totalCpuCapacity : number;
@@ -7131,7 +7131,7 @@ module ApiHeader {
     description : string;
     totalCapacity : number;
     availableCapacity : number;
-    port : number;
+    sshPort : number;
     type : string;
     state : string;
     status : string;
