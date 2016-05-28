@@ -4313,7 +4313,7 @@ module ApiHeader {
     username : string;
     password : string;
     name : string;
-    sshPort : number;
+    port : number;
     description : string;
     managementIp : string;
     clusterUuid : string;
@@ -4436,7 +4436,7 @@ module ApiHeader {
     hostname : string;
     username : string;
     password : string;
-    sshport : number;
+    port : number;
     url : string;
     name : string;
     description : string;
@@ -6127,7 +6127,7 @@ module ApiHeader {
     totalCapacity : number;
     availableCapacity : number;
     type : string;
-    sshport : number;
+    port : number;
     state : string;
     status : string;
     createDate : string;
@@ -6872,7 +6872,7 @@ module ApiHeader {
     description : string;
     managementIp : string;
     hypervisorType : string;
-    sshPort : number;
+    port : number;
     state : string;
     status : string;
     totalCpuCapacity : number;
@@ -7131,7 +7131,7 @@ module ApiHeader {
     description : string;
     totalCapacity : number;
     availableCapacity : number;
-    sshport : number;
+    port : number;
     type : string;
     state : string;
     status : string;

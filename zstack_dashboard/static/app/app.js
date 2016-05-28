@@ -14554,7 +14554,7 @@ var MBackupStorage;
             self.set('attachedZoneUuids', inv.attachedZoneUuids);
             self.set('createDate', inv.createDate);
             self.set('lastOpDate', inv.lastOpDate);
-            self.set('sshport', inv.sshport);
+            self.set('port', inv.port);
         };
         return BackupStorage;
     }(ApiHeader.BackupStorageInventory));
@@ -14578,7 +14578,7 @@ var MBackupStorage;
                 msg.hostname = bs.hostname;
                 msg.username = bs.username;
                 msg.password = bs.password;
-                msg.sshport = bs.sshport;
+                msg.port = bs.port;
                 msg.type = 'SftpBackupStorage';
             }
             else if (bs.type == 'SimulatorBackupStorage') {
@@ -15818,7 +15818,7 @@ var MHost;
             self.set('status', inv.status);
             self.set('createDate', inv.createDate);
             self.set('lastOpDate', inv.lastOpDate);
-            self.set('sshPort', inv.sshPort);
+            self.set('port', inv.port);
         };
         return Host;
     }(ApiHeader.HostInventory));
@@ -15841,7 +15841,7 @@ var MHost;
                 msg = new ApiHeader.APIAddKVMHostMsg();
                 msg.username = host.username;
                 msg.password = host.password;
-                msg.sshPort = host.sshPort;
+                msg.port = host.port;
             }
             else if (host.hypervisorType == 'Simulator') {
                 msg = new ApiHeader.APIAddSimulatorHostMsg();
