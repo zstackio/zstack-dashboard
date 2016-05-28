@@ -1,4 +1,4 @@
-{
+{       
     "login.login.HINT1": "Please sign in",
     "login.login.HINT2": "Incorrect username or password",
     "login.login.Login": "Login",
@@ -448,8 +448,10 @@
     "primaryStorage.createPrimaryStorage.HINT11": "(Optional) select one or more cluster to attach. Or do it later after creating primary storage",
     "primaryStorage.createPrimaryStorage.Previous": "Previous",
     "primaryStorage.createPrimaryStorage.PRIMARY STORAGE INFO": "PRIMARY STORAGE INFO",
-    "primaryStorage.createPrimaryStorage.HINT12": "The user must have root privilege on the SS100-Storage mon server",
-    "primaryStorage.createPrimaryStorage.HINT13": "Please add at least one SS100-Storage mon server",
+    "primaryStorage.createPrimaryStorage.HINT13": "The user must have root privilege on the SS100-Storage mon server",
+    "primaryStorage.createPrimaryStorage.HINT14": "Please add at least one SS100-Storage mon server",
+    "primaryStorage.createPrimaryStorage.HINT15": "The user must have root privilege on the Fusionstor mon server",
+    "primaryStorage.createPrimaryStorage.HINT16": "Please add at least one Fusionstor mon server",
     "primaryStorage.details.PRIMARY STORAGE": "PRIMARY STORAGE",
     "primaryStorage.details.Action": "Action",
     "primaryStorage.details.Enable": "Enable",
@@ -514,6 +516,8 @@
     "backupStorage.createBackupStorage.BACKUP STORAGE INFO": "BACKUP STORAGE INFO",
     "backupStorage.createBackupStorage.HINT7": "The user must have root privilege on the SS100-Storage mon server",
     "backupStorage.createBackupStorage.HINT8": "Please add at least one SS100-Storage mon server",
+    "backupStorage.createBackupStorage.HINT9": "The user must have root privilege on the Fusionstor mon server",
+    "backupStorage.createBackupStorage.HINT10": "Please add at least one Fusionstor mon server",
     "backupStorage.createBackupStorage.SSH Port": "SSH Port",
     "backupStorage.backupStorage.BACKUP STORAGE": "BACKUP STORAGE",
     "backupStorage.backupStorage.New Backup Storage": "New Backup Storage",
