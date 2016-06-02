@@ -976,6 +976,7 @@ module MImage {
                         data:[
                             'Linux',
                             'Windows',
+                            'WindowsVirtio',
                             'Other',
                             'Paravirtualization'
                         ]

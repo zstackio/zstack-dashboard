@@ -17437,6 +17437,7 @@ var MImage;
                         data: [
                             'Linux',
                             'Windows',
+                            'WindowsVirtio',
                             'Other',
                             'Paravirtualization'
                         ]
@@ -22973,6 +22974,7 @@ var MVolume;
                     dataSource: new kendo.data.DataSource({ data: [
                             'Linux',
                             'Windows',
+                            'WindowsVirtio',
                             'Other',
                             'Paravirtualization'
                         ] })
