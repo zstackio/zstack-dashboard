@@ -9472,4 +9472,22 @@ module ApiHeader {
         session : SessionInventory;
         timeout : number;
     }
+
+    export class APIGetVersionMsg implements APIMessage {
+      toApiMap() : any {
+        var msg = {
+          'org.zstack.header.managementnode.APIGetVersionMsg': this
+        };
+        return msg;
+      }
+      uuid : string;
+      session : SessionInventory;
+      timeout : number;
+      version : string;
+    }
+
+    export class APIGetVersionMsgEvent {
+      success : boolean;
+      version : string;
+    }
 }

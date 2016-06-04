@@ -1,4 +1,4 @@
-﻿var __extends = (this && this.__extends) || function (d, b) {
+var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -6656,6 +6656,24 @@ var ApiHeader;
         return APIRecoverDataVolumeMsg;
     }());
     ApiHeader.APIRecoverDataVolumeMsg = APIRecoverDataVolumeMsg;
+    var APIGetVersionMsg = (function () {
+        function APIGetVersionMsg() {
+        }
+        APIGetVersionMsg.prototype.toApiMap = function () {
+            var msg = {
+                'org.zstack.header.managementnode.APIGetVersionMsg': this
+            };
+            return msg;
+        };
+        return APIGetVersionMsg;
+    }());
+    ApiHeader.APIGetVersionMsg = APIGetVersionMsg;
+    var APIGetVersionMsgEvent = (function () {
+        function APIGetVersionMsgEvent() {
+        }
+        return APIGetVersionMsgEvent;
+    }());
+    ApiHeader.APIGetVersionMsgEvent = APIGetVersionMsgEvent;
 })(ApiHeader || (ApiHeader = {}));
 /// <reference path="d.ts/angularjs/angular.d.ts" />
 var Utils;
@@ -7858,6 +7876,7 @@ var MNav;
             this.$scope = $scope;
             this.api = api;
             this.pendingRequestNum = 0;
+            this.getZStackVersion = '';
             api.installListener(function (msg) {
                 _this.pendingRequestNum++;
             }, function (msg, ret) {
@@ -7870,6 +7889,18 @@ var MNav;
             };
             $scope.funcPendingRequestNum = function () {
                 return _this.pendingRequestNum;
+            };
+            $scope.funcgetZStackVersion = function () {
+                if (_this.getZStackVersion === '') {
+                    var msg = new ApiHeader.APIGetVersionMsg();
+                    _this.api.syncApi(msg, function (ret) {
+                        _this.getZStackVersion = ret.version;
+                    });
+                    return _this.getZStackVersion;
+                }
+                else {
+                    return _this.getZStackVersion;
+                }
             };
         }
         Controller.prototype.decrease = function () {
