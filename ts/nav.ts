@@ -6,7 +6,7 @@ module MNav {
         static $inject = ['$scope', 'Api'];
 
         private pendingRequestNum : number = 0;
-        private getZStackVersion: string = '';
+        private getZStackVersion : string = '';
 
         private decrease() {
             this.pendingRequestNum --;
