@@ -6,6 +6,7 @@ module MNav {
         static $inject = ['$scope', 'Api'];
 
         private pendingRequestNum : number = 0;
+        private getZStackVersion : string = '';
 
         private decrease() {
             this.pendingRequestNum --;
@@ -29,6 +30,19 @@ module MNav {
 
             $scope.funcPendingRequestNum = ()=> {
                 return this.pendingRequestNum;
+            };
+
+            $scope.funcgetZStackVersion = ()=> {
+                if (this.getZStackVersion === ''){
+                    var msg = new ApiHeader.APIGetVersionMsg();
+                    this.api.syncApi(msg, (ret : ApiHeader.APIGetVersionMsgEvent)=> {
+                        this.getZStackVersion = ret.version;
+                    });
+                    return this.getZStackVersion;
+                }
+                else {
+                    return this.getZStackVersion;
+                }
             };
         }
     }
