@@ -11,7 +11,7 @@ module MRoot {
         password: string;
         repeatPassword: string;
         canChange() : boolean {
-            return angular.equals(this.password, this.repeatPassword);
+            return angular.equals(this.password, this.repeatPassword) && angular.isDefined(this.password);
         }
     }
 
