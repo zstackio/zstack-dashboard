@@ -7561,7 +7561,7 @@ var MRoot;
         function ChangePasswordModel() {
         }
         ChangePasswordModel.prototype.canChange = function () {
-            return angular.equals(this.password, this.repeatPassword);
+            return angular.equals(this.password, this.repeatPassword) && angular.isDefined(this.password);
         };
         return ChangePasswordModel;
     }());
