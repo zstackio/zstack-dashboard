@@ -81,7 +81,6 @@ module MCluster {
                     msg: Utils.sprintf('Created new cluster: {0}',c.name),
                     link: Utils.sprintf('/#/cluster/{0}', c.uuid)
                 });
-                done(new kendo.data.ObservableObject(c));
             });
         }
 
