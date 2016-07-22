@@ -28391,7 +28391,7 @@ var MPortForwarding;
                         '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Nic Netmask" | translate}}:</span><span>#: nicNetmask #</span></div>' +
                         '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Nic Gateway" | translate}}:</span><span>#: nicGateway #</span></div>' +
                         '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Nic Mac" | translate}}:</span><span>#: nicMac #</span></div>' +
-                        '<div style="color: black"><span class="z-label">{{{{"portForwarding.ts.L3 Network UUID" | translate}}:</span><span>#: l3NetworkUuid #</span></div>'
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.L3 Network UUID" | translate}}:</span><span>#: l3NetworkUuid #</span></div>'
                 };
                 $scope.hasVm = function () {
                     return $scope.vmListOptions__.dataSource.data().length > 0;
@@ -28424,7 +28424,7 @@ var MPortForwarding;
             var composedVms = [];
             chain.then(function () {
                 _this.pfMgr.getAttachableVmNicByPortForwardingUuid(_this.options.pf.uuid, function (nics) {
-                    vmNics = nics;
+                    vmNics = typeof (nics) == 'undefined' ? [] : nics;
                     chain.next();
                 });
             }).then(function () {
