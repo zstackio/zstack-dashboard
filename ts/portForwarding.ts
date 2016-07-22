@@ -1325,7 +1325,7 @@ module MPortForwarding {
             var composedVms = [];
             chain.then(()=>{
                 this.pfMgr.getAttachableVmNicByPortForwardingUuid(this.options.pf.uuid, (nics: ApiHeader.VmNicInventory[])=>{
-                    vmNics = nics;
+                    vmNics = typeof(nics) == 'undefined' ? [] : nics;
                     chain.next();
                 });
             }).then(()=>{
@@ -1402,7 +1402,7 @@ module MPortForwarding {
                         '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Nic Netmask" | translate}}:</span><span>#: nicNetmask #</span></div>' +
                         '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Nic Gateway" | translate}}:</span><span>#: nicGateway #</span></div>' +
                         '<div style="color: black"><span class="z-label">{{"portForwarding.ts.Nic Mac" | translate}}:</span><span>#: nicMac #</span></div>' +
-                        '<div style="color: black"><span class="z-label">{{{{"portForwarding.ts.L3 Network UUID" | translate}}:</span><span>#: l3NetworkUuid #</span></div>'
+                        '<div style="color: black"><span class="z-label">{{"portForwarding.ts.L3 Network UUID" | translate}}:</span><span>#: l3NetworkUuid #</span></div>'
                 };
 
                 $scope.hasVm = () => {
