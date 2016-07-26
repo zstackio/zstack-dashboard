@@ -357,7 +357,7 @@ module MBackupStorage {
         return false;
       }
 
-      return this.$scope.model.current.type == 'SftpBackupStorage';
+      return true;
     }
 
     constructor(private $scope : any, private bsMgr : BackupStorageManager) {

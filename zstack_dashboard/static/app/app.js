@@ -14882,7 +14882,7 @@ var MBackupStorage;
             if (!Utils.notNullnotUndefined(this.$scope.model.current)) {
                 return false;
             }
-            return this.$scope.model.current.type == 'SftpBackupStorage';
+            return true;
         };
         return Action;
     }());
