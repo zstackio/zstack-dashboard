@@ -15873,7 +15873,7 @@ var MHost;
                 msg = new ApiHeader.APIAddKVMHostMsg();
                 msg.username = host.username;
                 msg.password = host.password;
-                msg.port = host.port;
+                msg.sshPort = host.port;
             }
             else if (host.hypervisorType == 'Simulator') {
                 msg = new ApiHeader.APIAddSimulatorHostMsg();
