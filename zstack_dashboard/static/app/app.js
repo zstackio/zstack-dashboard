@@ -7877,7 +7877,7 @@ var MNav;
             this.$scope = $scope;
             this.api = api;
             this.pendingRequestNum = 0;
-            this.getZStackVersion = '';
+            this.zstackVersion = '';
             api.installListener(function (msg) {
                 _this.pendingRequestNum++;
             }, function (msg, ret) {
@@ -7891,18 +7891,19 @@ var MNav;
             $scope.funcPendingRequestNum = function () {
                 return _this.pendingRequestNum;
             };
-            $scope.funcgetZStackVersion = function () {
-                if (_this.getZStackVersion === '') {
-                    var msg = new ApiHeader.APIGetVersionMsg();
-                    _this.api.syncApi(msg, function (ret) {
-                        _this.getZStackVersion = ret.version;
-                    });
-                    return _this.getZStackVersion;
-                }
-                else {
-                    return _this.getZStackVersion;
-                }
+            $scope.getZStackVersion = function () {
+                return _this.zstackVersion;
             };
+            $scope.$watch(function () {
+                return _this.zstackVersion;
+            }, function () {
+                if (_this.zstackVersion == '') {
+                    var msgVerSion = new ApiHeader.APIGetVersionMsg();
+                    _this.api.syncApi(msgVerSion, function (ret) {
+                        _this.zstackVersion = ret.version;
+                    });
+                }
+            });
         }
         Controller.prototype.decrease = function () {
             this.pendingRequestNum--;

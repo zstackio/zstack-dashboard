@@ -16,7 +16,7 @@ module MRoot {
     }
 
     export class main {
-        static $inject = ['$scope', '$rootScope', 'Api', 'ApiDetails', '$location', '$cookies', '$translate']; 
+        static $inject = ['$scope', '$rootScope', 'Api', 'ApiDetails', '$location', '$cookies', '$translate'];
 
         constructor(private $scope : any, private $rootScope : any, private api : Utils.Api,
                      private apiDetails: MApiDetails.ApiDetails, private $location: ng.ILocationService, private $cookies: any, private $translate: any) {
