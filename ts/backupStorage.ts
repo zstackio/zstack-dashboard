@@ -85,7 +85,7 @@ module MBackupStorage {
         msg.hostname = bs.hostname;
         msg.username = bs.username;
         msg.password = bs.password;
-        msg.port = bs.port;
+        msg.sshPort = bs.port;
         msg.type = 'SftpBackupStorage';
       } else if (bs.type == 'SimulatorBackupStorage') {
         msg = new ApiHeader.APIAddSimulatorBackupStorageMsg();
