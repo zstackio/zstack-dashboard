@@ -11199,8 +11199,10 @@ var MPrimaryStorage;
                             return true;
                         }
                         else if (this.type == 'SharedMountPoint' || this.type == 'IscsiFileSystemBackendPrimaryStorage' || this.type == 'LocalStorage' && Utils.notNullnotUndefined(this.url)) {
-                            if (this.url.indexOf('/') != 0) {
-                                return false;
+                            if (!!this.url) {
+                                if (this.url.indexOf('/') != 0) {
+                                    return false;
+                                }
                             }
                             return true;
                         }
