@@ -152,8 +152,6 @@
     "vm.changeInstanceOffering.INSTANCE OFFERING": "INSTANCE OFFERING",
     "vm.changeInstanceOffering.Cancel": "Cancel",
     "vm.changeInstanceOffering.Change": "Change",
-    "vm.createVm.hasImage()": "No image is eligible to create vm. Eligible images are ones with state 'Enabled' and status 'Ready'.",
-    "vm.createVm.hasInstanceOffering()": "No instance offering is eligible to create vm. Eligible instance offerings are ones with state 'Enabled'.",
     "vm.attachVolume.ATTACH DATA VOLUME": "ATTACH DATA VOLUME",
     "vm.attachVolume.DATA VOLUME": "DATA VOLUME",
     "vm.attachVolume.HINT": "(Required) volumes listed here are candidate that could be attached to this vm",

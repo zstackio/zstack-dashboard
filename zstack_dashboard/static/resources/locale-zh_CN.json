@@ -153,8 +153,6 @@
     "vm.changeInstanceOffering.INSTANCE OFFERING": "计算规格",
     "vm.changeInstanceOffering.Cancel": "取消",
     "vm.changeInstanceOffering.Change": "更改",
-    "vm.createVm.hasImage()": "没有可用的镜像. 有效镜像的可用状态为 'Enabled' 连接状态为 'Ready'",
-    "vm.createVm.hasInstanceOffering()": "没有可用的计算规格. 有效的计算规格的可用状态为 'Enabled'",
     "vm.attachVolume.ATTACH DATA VOLUME": "挂载数据云盘",
     "vm.attachVolume.DATA VOLUME": "数据云盘",
     "vm.attachVolume.HINT": "(必需的) 可供挂载的云盘列表",

@@ -152,8 +152,6 @@
     "vm.changeInstanceOffering.INSTANCE OFFERING": "雲主機規格",
     "vm.changeInstanceOffering.Cancel": "取消",
     "vm.changeInstanceOffering.Change": "更改",
-    "vm.createVm.hasImage()": "沒有可以建立雲主機的映像檔. 有效映像檔的可用狀態為'Enabled' 連接狀態為'Ready'",
-    "vm.createVm.hasInstanceOffering()": "沒有可以建立雲主機的雲主機規格. 有效的雲主機規格的可用狀態為'Enabled'",
     "vm.attachVolume.ATTACH DATA VOLUME": "掛載數據磁碟",
     "vm.attachVolume.DATA VOLUME": "數據磁碟",
     "vm.attachVolume.HINT": "(必需的) 在這裡列出可以掛載到此虛擬機的候選雲磁碟",
