@@ -1178,6 +1178,7 @@
     "portForwarding.createPortForwarding.HINT7": "无效的端口,有效的端口必须在 [1,65535]范围内",
     "portForwarding.createPortForwarding.VIP END PORT": "虚拟IP 结束端口",
     "portForwarding.createPortForwarding.GUEST START PORT": "云主机起始端口",
+    "portForwarding.createPortForwarding.GUEST END PORT": "云主机结束端口",
     "portForwarding.createPortForwarding.ALLOWED CIDR": "允许 CIDR",
     "portForwarding.createPortForwarding.HINT8": "无效的CIDR,有效的端口格式为， IP/CIDR_Length,例如,10.0.0.0/8",
     "portForwarding.createPortForwarding.HINT9": "没有云主机网卡可以挂载,请单击添加按钮继续.",

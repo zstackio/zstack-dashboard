@@ -1178,6 +1178,7 @@
     "portForwarding.createPortForwarding.HINT7": "Not a valid port. Valid port must be in range of [1, 65535]",
     "portForwarding.createPortForwarding.VIP END PORT": "VIP END PORT",
     "portForwarding.createPortForwarding.GUEST START PORT": "GUEST START PORT",
+    "portForwarding.createPortForwarding.GUEST END PORT": "GUEST END PORT",
     "portForwarding.createPortForwarding.ALLOWED CIDR": "ALLOWED CIDR",
     "portForwarding.createPortForwarding.HINT8": "Not a valid CIDR. Valid port must be in format of ip/cidr_length, for example, 10.0.0.0/8",
     "portForwarding.createPortForwarding.HINT9": "No vm nic is eligible to attach. Please click 'Create' button to proceed.",

@@ -1178,6 +1178,7 @@
     "portForwarding.createPortForwarding.HINT7": "無效的連接埠,有效的連接埠必須在範圍內的[1,65535]",
     "portForwarding.createPortForwarding.VIP END PORT": "虛擬IP 結束連接埠",
     "portForwarding.createPortForwarding.GUEST START PORT": "雲主機開始連接埠",
+    "portForwarding.createPortForwarding.GUEST END PORT": "雲主機結束連接埠",
     "portForwarding.createPortForwarding.ALLOWED CIDR": "允許CIDR",
     "portForwarding.createPortForwarding.HINT8": "無效的CIDR,有效的連接埠必須是格式的ip cidr_length,例如,10.0.0.0 8",
     "portForwarding.createPortForwarding.HINT9": "沒有云主機網路卡可以掛載,請單擊新增按鈕繼續.",

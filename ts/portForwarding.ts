@@ -249,7 +249,7 @@ module MPortForwarding {
                     field: 'name',
                     title: '{{"portForwarding.ts.NAME" | translate}}',
                     width: '10%',
-                    template: '<a href="/\\#/pf/{{dataItem.uuid}}">{{dataItem.name}}</a>'
+                    template: '<a href="/\\#/portForwarding/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'state',
