@@ -13247,7 +13247,7 @@ var ML3Network;
                 columns: [
                     {
                         field: 'dns',
-                        title: '{{"l3Network.ts.UUID" | translate}}DNS',
+                        title: 'DNS',
                         width: '100%'
                     }
                 ],
