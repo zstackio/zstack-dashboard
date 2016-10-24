@@ -594,7 +594,7 @@
     "volume.createTemplateFromVolume.ALERT1.3": "创建新的备份存储",
     "volume.createTemplateFromVolume.CREATE TEMPLATE FROM ROOT VOLUME": "从根云盘添加镜像",
     "volume.createTemplateFromVolume.ALERT2.1": "云主机",
-    "volume.createTemplateFromVolume.ALERT2.2": "是在运行状态的",
+    "volume.createTemplateFromVolume.ALERT2.2": "的状态是",
     "volume.createTemplateFromVolume.ALERT2.3": "只有云主机处于停止状态时,才可添加模板",
     "volume.createTemplateFromVolume.BACKUP STORAGE": "备份存储",
     "volume.createTemplateFromVolume.NAME": "名称",

@@ -7,7 +7,7 @@
 
         <h4 class="z-win-h4">{{ "volume.createTemplateFromVolume.CREATE TEMPLATE FROM ROOT VOLUME" | translate }}</h4>
         <div class="alert alert-warning col-sm-21" ng-show="!isVmInCorrectState()">
-            {{ "volume.createTemplateFromVolume.ALERT2.1" | translate }}<a herf="/#/vmInstance/{{vm.uuid}}">{{vm.name}}</a>{{ "volume.createTemplateFromVolume.ALERT2.2" | translate }}{{vm.state}}{{ "volume.createTemplateFromVolume.ALERT2.3" | translate }}
+            {{ "volume.createTemplateFromVolume.ALERT2.1" | translate }}<a herf="/#/vmInstance/{{vm.uuid}}">{{vm.name}}</a>{{ "volume.createTemplateFromVolume.ALERT2.2" | translate }}{{vm.state}},{{ "volume.createTemplateFromVolume.ALERT2.3" | translate }}
             
         </div>
         <form class="form">
