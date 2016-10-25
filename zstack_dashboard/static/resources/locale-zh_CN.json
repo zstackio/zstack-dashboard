@@ -910,6 +910,7 @@
     "l3Network.l3Network.Delete": "删除",
     "l3Network.l3Network.HINT": "单击列显示操作按钮",
     "l3Network.l3Network.HINT2": "双击列进入详细信息页面",
+    "l3Network.l3Network.NETWORK": "网络",
     "securityGroup.securityGroup.SECURITY GROUP": "安全组",
     "securityGroup.securityGroup.New Security Group": "创建安全组",
     "securityGroup.securityGroup.FILTER BY": "过滤",

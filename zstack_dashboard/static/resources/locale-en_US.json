@@ -908,6 +908,7 @@
     "l3Network.l3Network.Add DNS": "Add DNS",
     "l3Network.l3Network.Delete DNS": "Delete DNS",
     "l3Network.l3Network.Delete": "Delete",
+    "l3Network.l3Network.NETWORK": "Network",
     "l3Network.l3Network.HINT": "Single click column to show action button",
     "l3Network.l3Network.HINT2": "Double click column to enter details page",
     "securityGroup.securityGroup.SECURITY GROUP": "SECURITY GROUP",
