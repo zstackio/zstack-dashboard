@@ -9806,8 +9806,8 @@ var MCluster;
                             if (Utils.notNullnotUndefined(_this.options.done)) {
                                 _this.options.done(resultCluster);
                             }
-                            $scope.winCreateCluster__.close();
                         }).start();
+                        $scope.winCreateCluster__.close();
                     }
                 };
                 $scope.button = new Utils.WizardButton([

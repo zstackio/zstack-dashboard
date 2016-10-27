@@ -1186,8 +1186,8 @@ module MCluster {
                             if (Utils.notNullnotUndefined(this.options.done)) {
                                 this.options.done(resultCluster);
                             }
-                            $scope.winCreateCluster__.close();
                         }).start();
+                        $scope.winCreateCluster__.close();
                     }
                 };
 
