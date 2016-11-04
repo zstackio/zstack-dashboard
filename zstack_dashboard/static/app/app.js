@@ -28758,9 +28758,9 @@ var MVirtualRouter;
             msg.replyWithCount = true;
             msg.conditions = qobj.conditions ? qobj.conditions : [];
             msg.conditions.push({
-                name: "applianceVmType",
+                name: "type",
                 op: "=",
-                value: "VirtualRouter"
+                value: "ApplianceVm"
             });
             if (Utils.notNullnotUndefined(this.sortBy) && this.sortBy.isValid()) {
                 msg.sortBy = this.sortBy.field;
