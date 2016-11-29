@@ -262,7 +262,7 @@ module MVirtualRouter {
                     field: 'name',
                     title: '{{"virtualRouter.ts.NAME" | translate}}',
                     width: '20%',
-                    template: '<a href="/\\#/vmInstance/{{dataItem.uuid}}">{{dataItem.name}}</a>'
+                    template: '<a href="/\\#/virtualRouter/{{dataItem.uuid}}">{{dataItem.name}}</a>'
                 },
                 {
                     field: 'description',
