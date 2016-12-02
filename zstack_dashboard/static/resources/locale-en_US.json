@@ -960,7 +960,6 @@
     "securityGroup.createSecurityGroup.DESCRIPTION": "DESCRIPTION",
     "securityGroup.createSecurityGroup.ADD RULE": "ADD RULE",
     "securityGroup.createSecurityGroup.TYPE": "TYPE",
-    "securityGroup.createSecurityGroup.START PORT": "START PORT",
     "securityGroup.createSecurityGroup.HINT1": "Not a valid port. Valid port must be in range of [1, 65535]",
     "securityGroup.createSecurityGroup.END PORT": "END PORT",
     "securityGroup.createSecurityGroup.HINT2": "Not a valid port. Valid port must be in range of [1, 65535]",
