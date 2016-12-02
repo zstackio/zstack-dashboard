@@ -1,26 +1,26 @@
 <div kendo-window="deleteIpRange__" k-visible="false" k-options="deleteIpRangeOptions__">
     <div>
-        <h4 class="z-win-h4">{{"l3Network.deleteDns.DELETE IP RANGE" | translate}} </h4>
+        <h4 class="z-win-h4">{{"l3Network.deleteIpRange.DELETE IP RANGE" | translate}} </h4>
         <form class="form">
             <div class="form-group col-sm-18">
-                <label for="ps">{{"l3Network.deleteDns.IP RANGE" | translate}}</label>
+                <label for="ps">{{"l3Network.deleteIpRange.IP RANGE" | translate}}</label>
                 <select id="ps" kendo-multi-select="ipRangeList__" k-options="ipRangeListOptions__" class="z-win-dropdown"></select>
-                <p class="z-hint">{{"l3Network.deleteDns.HINT" | translate}}</p>
+                <p class="z-hint">{{"l3Network.deleteIpRange.HINT" | translate}}</p>
             </div>
 
             <div class="form-group col-sm-18" style="color: #000000">
-                <p><strong>{{"l3Network.deleteDns.HINT2" | translate}}:</strong></p>
+                <p><strong>{{"l3Network.deleteIpRange.HINT2" | translate}}:</strong></p>
                 <ul>
-                    <li><strong>{{"l3Network.deleteDns.HINT3" | translate}}</strong></li>
-                    <li><strong>{{"l3Network.deleteDns.HINT4" | translate}}</strong></li>
+                    <li><strong>{{"l3Network.deleteIpRange.HINT3" | translate}}</strong></li>
+                    <li><strong>{{"l3Network.deleteIpRange.HINT4" | translate}}</strong></li>
                 </ul>
                 <input class="form-control" style="width: 200px" type="text" ng-model="ok">
-                <p class="z-hint">{{"l3Network.deleteDns.Type 'ok' to confirm" | translate}}</p>
+                <p class="z-hint">{{"l3Network.deleteIpRange.Type 'ok' to confirm" | translate}}</p>
             </div>
 
             <div class="form-group col-lg-18">
-                <button type="button" class="btn btn-default" ng-click="cancel()">{{"l3Network.deleteDns.Cancel" | translate}}</button>
-                <button type="button" class="btn btn-danger" ng-disabled="!canProceed() || ok!='ok'" ng-click="done()">{{"l3Network.deleteDns.Delete" | translate}}</button>
+                <button type="button" class="btn btn-default" ng-click="cancel()">{{"l3Network.deleteIpRange.Cancel" | translate}}</button>
+                <button type="button" class="btn btn-danger" ng-disabled="!canProceed() || ok!='ok'" ng-click="done()">{{"l3Network.deleteIpRange.Delete" | translate}}</button>
             </div>
         </form>
     </div>
