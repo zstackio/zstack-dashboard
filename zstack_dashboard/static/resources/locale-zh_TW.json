@@ -103,7 +103,7 @@
     "vm.details.UUID": "UUID:",
     "vm.details.CPU NUM": "CPU 數量:",
     "vm.details.MEMORY SIZE": "記憶體大小:",
-    "vm.details.HOST NAME": "物理機名稱:",
+    "vm.details.HOST NAME": "雲主機名稱:",
     "vm.details.INSTANCE OFFERING UUID": "雲主機規格UUID:",
     "vm.details.DEFAULT L3 NETWORK UUID": "預設L3 網路UUID:",
     "vm.details.IMAGE UUID": "映像檔 UUID:",

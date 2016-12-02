@@ -104,7 +104,7 @@
     "vm.details.UUID": "UUID:",
     "vm.details.CPU NUM": "CPU 数量:",
     "vm.details.MEMORY SIZE": "内存大小:",
-    "vm.details.HOST NAME": "物理机名称:",
+    "vm.details.HOST NAME": "云主机名称:",
     "vm.details.INSTANCE OFFERING UUID": "计算规格 UUID:",
     "vm.details.DEFAULT L3 NETWORK UUID": "默认L3网络UUID:",
     "vm.details.IMAGE UUID": "镜像 UUID:",
