@@ -1253,7 +1253,7 @@
     "portForwarding.portForwarding.Delete": "Delete",
     "portForwarding.portForwarding.HINT1": "Single click column to show action button",
     "portForwarding.portForwarding.HINT2": "Double click column to enter details page",
-    "virtualRouter.details.VM INSTANCE": "VM INSTANCE",
+    "virtualRouter.details.VIRTUAL ROUTER": "VIRTUAL ROUTER",
     "virtualRouter.details.Action": "Action",
     "virtualRouter.details.Start": "Start",
     "virtualRouter.details.Stop": "Stop",

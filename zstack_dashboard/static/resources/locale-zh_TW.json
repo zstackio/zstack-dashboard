@@ -1253,7 +1253,7 @@
     "portForwarding.portForwarding.Delete": "刪除",
     "portForwarding.portForwarding.HINT1": "單點擊列來顯示操作按鈕",
     "portForwarding.portForwarding.HINT2": "雙擊列進入詳細資訊頁面",
-    "virtualRouter.details.VM INSTANCE": "雲主機雲主機",
+    "virtualRouter.details.VIRTUAL ROUTER": "虛擬路由器",
     "virtualRouter.details.Action": "操作",
     "virtualRouter.details.Start": "開始",
     "virtualRouter.details.Stop": "停止",

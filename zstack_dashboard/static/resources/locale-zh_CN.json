@@ -1253,7 +1253,7 @@
     "portForwarding.portForwarding.Delete": "删除",
     "portForwarding.portForwarding.HINT1": "单击列显示操作按钮",
     "portForwarding.portForwarding.HINT2": "双击列进入详细信息页面",
-    "virtualRouter.details.VM INSTANCE": "云主机",
+    "virtualRouter.details.VIRTUAL ROUTER": "虚拟路由器",
     "virtualRouter.details.Action": "操作",
     "virtualRouter.details.Start": "开始",
     "virtualRouter.details.Stop": "停止",
