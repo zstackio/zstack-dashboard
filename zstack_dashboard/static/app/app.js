@@ -2681,11 +2681,11 @@ var ApiHeader;
         return APIGetPolicyMsg;
     }());
     ApiHeader.APIGetPolicyMsg = APIGetPolicyMsg;
+    var StatementEffect;
     (function (StatementEffect) {
         StatementEffect[StatementEffect["Allow"] = 0] = "Allow";
         StatementEffect[StatementEffect["Deny"] = 1] = "Deny";
-    })(ApiHeader.StatementEffect || (ApiHeader.StatementEffect = {}));
-    var StatementEffect = ApiHeader.StatementEffect;
+    })(StatementEffect = ApiHeader.StatementEffect || (ApiHeader.StatementEffect = {}));
     var Statement = (function () {
         function Statement() {
         }
@@ -7033,13 +7033,13 @@ var Utils;
                 this.errorCallListeners.push(error);
             }
         };
-        Api.ASYNC_CALL_PATH = "/api/async";
-        Api.SYNC_CALL_PATH = "/api/sync";
-        Api.QUERY_PATH = "/api/query";
-        Api.STATUS_DONE = 2;
-        Api.STATUS_PROCESSING = 1;
         return Api;
     }());
+    Api.ASYNC_CALL_PATH = "/api/async";
+    Api.SYNC_CALL_PATH = "/api/sync";
+    Api.QUERY_PATH = "/api/query";
+    Api.STATUS_DONE = 2;
+    Api.STATUS_PROCESSING = 1;
     Utils.Api = Api;
     var Chain = (function () {
         function Chain() {
@@ -7553,9 +7553,9 @@ var MRoot;
     var Events = (function () {
         function Events() {
         }
-        Events.NOTIFICATION = "root.notification";
         return Events;
     }());
+    Events.NOTIFICATION = "root.notification";
     MRoot.Events = Events;
     var ChangePasswordModel = (function () {
         function ChangePasswordModel() {
@@ -7710,9 +7710,9 @@ var MRoot;
                 }
             };
         }
-        main.$inject = ['$scope', '$rootScope', 'Api', 'ApiDetails', '$location', '$cookies', '$translate'];
         return main;
     }());
+    main.$inject = ['$scope', '$rootScope', 'Api', 'ApiDetails', '$location', '$cookies', '$translate'];
     MRoot.main = main;
 })(MRoot || (MRoot = {}));
 var ApiHeader;
@@ -7911,9 +7911,9 @@ var MNav;
                 this.pendingRequestNum = 0;
             }
         };
-        Controller.$inject = ['$scope', 'Api'];
         return Controller;
     }());
+    Controller.$inject = ['$scope', 'Api'];
     MNav.Controller = Controller;
 })(MNav || (MNav = {}));
 /// <reference path="d.ts/angularjs/angular.d.ts" />
@@ -7923,7 +7923,7 @@ var MZone;
     var Zone = (function (_super) {
         __extends(Zone, _super);
         function Zone() {
-            _super.apply(this, arguments);
+            return _super.apply(this, arguments) || this;
         }
         Zone.prototype.progressOn = function () {
             this.inProgress = true;
@@ -8045,7 +8045,7 @@ var MZone;
                 });
             });
         };
-        ZoneManager.prototype.delete = function (zone, done) {
+        ZoneManager.prototype["delete"] = function (zone, done) {
             var _this = this;
             zone.progressOn();
             var msg = new ApiHeader.APIDeleteZoneMsg();
@@ -8058,9 +8058,9 @@ var MZone;
                 done(ret);
             });
         };
-        ZoneManager.$inject = ['Api'];
         return ZoneManager;
     }());
+    ZoneManager.$inject = ['Api'];
     MZone.ZoneManager = ZoneManager;
     var ZoneModel = (function () {
         function ZoneModel() {
@@ -8149,7 +8149,7 @@ var MZone;
             };
             $scope.optionsDeleteZone = {
                 confirm: function () {
-                    zoneMgr.delete($scope.model.current, function (ret) {
+                    zoneMgr["delete"]($scope.model.current, function (ret) {
                         $scope.model.current = null;
                     });
                 },
@@ -8479,10 +8479,10 @@ var MZone;
                 _this.$scope.model.current = zones[0];
             });
         };
-        DetailsController.$inject = ['$scope', 'ZoneManager', 'Api', 'ClusterManager', '$location', '$routeParams', 'Tag',
-            'PrimaryStorageManager', 'current', 'L2NetworkManager', 'BackupStorageManager'];
         return DetailsController;
     }());
+    DetailsController.$inject = ['$scope', 'ZoneManager', 'Api', 'ClusterManager', '$location', '$routeParams', 'Tag',
+        'PrimaryStorageManager', 'current', 'L2NetworkManager', 'BackupStorageManager'];
     MZone.DetailsController = DetailsController;
     var FilterBy = (function () {
         function FilterBy() {
@@ -8618,7 +8618,7 @@ var MZone;
             $scope.model = new ZoneModel();
             $scope.optionsDeleteZone = {
                 confirm: function () {
-                    zoneMgr.delete($scope.model.current, function (ret) {
+                    zoneMgr["delete"]($scope.model.current, function (ret) {
                         var row = $scope.optionsZoneGrid.dataSource.getByUid(_this.$scope.model.current.uid);
                         $scope.model.resetCurrent();
                         $scope.optionsZoneGrid.dataSource.remove(row);
@@ -8740,9 +8740,9 @@ var MZone;
                 })
             };
         }
-        Controller.$inject = ['$scope', 'ZoneManager', 'Api', '$location'];
         return Controller;
     }());
+    Controller.$inject = ['$scope', 'ZoneManager', 'Api', '$location'];
     MZone.Controller = Controller;
 })(MZone || (MZone = {}));
 angular.module('root').factory('ZoneManager', ['Api', '$rootScope', function (api, $rootScope) {
@@ -8776,7 +8776,7 @@ var MCluster;
     var Cluster = (function (_super) {
         __extends(Cluster, _super);
         function Cluster() {
-            _super.apply(this, arguments);
+            return _super.apply(this, arguments) || this;
         }
         Cluster.prototype.progressOn = function () {
             this.inProgress = true;
@@ -8977,7 +8977,7 @@ var MCluster;
                 });
             });
         };
-        ClusterManager.prototype.delete = function (cluster, done) {
+        ClusterManager.prototype["delete"] = function (cluster, done) {
             var _this = this;
             cluster.progressOn();
             var msg = new ApiHeader.APIDeleteClusterMsg();
@@ -8990,15 +8990,16 @@ var MCluster;
                 });
             });
         };
-        ClusterManager.$inject = ['Api', '$rootScope'];
         return ClusterManager;
     }());
+    ClusterManager.$inject = ['Api', '$rootScope'];
     MCluster.ClusterManager = ClusterManager;
     var ClusterModel = (function (_super) {
         __extends(ClusterModel, _super);
         function ClusterModel() {
-            _super.call(this);
-            this.current = new Cluster();
+            var _this = _super.call(this) || this;
+            _this.current = new Cluster();
+            return _this;
         }
         return ClusterModel;
     }(Utils.Model));
@@ -9006,10 +9007,10 @@ var MCluster;
     var OClusterGrid = (function (_super) {
         __extends(OClusterGrid, _super);
         function OClusterGrid($scope, clusterMgr) {
-            _super.call(this);
-            this.clusterMgr = clusterMgr;
-            _super.prototype.init.call(this, $scope, $scope.clusterGrid);
-            this.options.columns = [
+            var _this = _super.call(this) || this;
+            _this.clusterMgr = clusterMgr;
+            _super.prototype.init.call(_this, $scope, $scope.clusterGrid);
+            _this.options.columns = [
                 {
                     field: 'name',
                     title: '{{"cluster.ts.NAME" | translate}}',
@@ -9038,7 +9039,7 @@ var MCluster;
                     width: '30%'
                 }
             ];
-            this.options.dataSource.transport.read = function (options) {
+            _this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
                 qobj.start = options.data.pageSize * (options.data.page - 1);
@@ -9049,6 +9050,7 @@ var MCluster;
                     });
                 });
             };
+            return _this;
         }
         return OClusterGrid;
     }(Utils.OGrid));
@@ -9151,11 +9153,11 @@ var MCluster;
                 value: this.value
             };
         };
-        FilterBy.NONE = 'none';
-        FilterBy.STATE = 'state';
-        FilterBy.HYPERVISOR = 'hypervisorType';
         return FilterBy;
     }());
+    FilterBy.NONE = 'none';
+    FilterBy.STATE = 'state';
+    FilterBy.HYPERVISOR = 'hypervisorType';
     var DetailsController = (function () {
         function DetailsController($scope, clusterMgr, $routeParams, tagService, psMgr, current, l2Mgr, hostMgr) {
             var _this = this;
@@ -9183,7 +9185,7 @@ var MCluster;
                 title: 'DELETE CLUSTER',
                 description: 'Deleting cluster will cause all sub resources(e.g Host, VM) being deleted and no way to recover',
                 confirm: function () {
-                    clusterMgr.delete($scope.model.current, function (ret) {
+                    clusterMgr["delete"]($scope.model.current, function (ret) {
                         $scope.model.resetCurrent();
                     });
                 }
@@ -9494,9 +9496,9 @@ var MCluster;
                 _this.$scope.model.current = clusters[0];
             });
         };
-        DetailsController.$inject = ['$scope', 'ClusterManager', '$routeParams', 'Tag', 'PrimaryStorageManager', 'current', 'L2NetworkManager', 'HostManager'];
         return DetailsController;
     }());
+    DetailsController.$inject = ['$scope', 'ClusterManager', '$routeParams', 'Tag', 'PrimaryStorageManager', 'current', 'L2NetworkManager', 'HostManager'];
     MCluster.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, clusterMgr, hypervisorTypes, $location, hostMgr) {
@@ -9616,7 +9618,7 @@ var MCluster;
                 title: 'DELETE CLUSTER',
                 description: 'Deleting cluster will cause all sub resources(e.g Host, VM) being deleted and no way to recover',
                 confirm: function () {
-                    clusterMgr.delete($scope.model.current, function (ret) {
+                    clusterMgr["delete"]($scope.model.current, function (ret) {
                         $scope.oClusterGrid.deleteCurrent();
                     });
                 }
@@ -9642,9 +9644,9 @@ var MCluster;
                 }
             };
         }
-        Controller.$inject = ['$scope', 'ClusterManager', 'hypervisorTypes', '$location', 'HostManager'];
         return Controller;
     }());
+    Controller.$inject = ['$scope', 'ClusterManager', 'hypervisorTypes', '$location', 'HostManager'];
     MCluster.Controller = Controller;
     var CreateClusterOptions = (function () {
         function CreateClusterOptions() {
@@ -10341,7 +10343,7 @@ var MPrimaryStorage;
     var PrimaryStorage = (function (_super) {
         __extends(PrimaryStorage, _super);
         function PrimaryStorage() {
-            _super.apply(this, arguments);
+            return _super.apply(this, arguments) || this;
         }
         PrimaryStorage.prototype.progressOn = function () {
             this.inProgress = true;
@@ -10567,7 +10569,7 @@ var MPrimaryStorage;
                 });
             });
         };
-        PrimaryStorageManager.prototype.delete = function (ps, done) {
+        PrimaryStorageManager.prototype["delete"] = function (ps, done) {
             var _this = this;
             ps.progressOn();
             var msg = new ApiHeader.APIDeletePrimaryStorageMsg();
@@ -10580,15 +10582,16 @@ var MPrimaryStorage;
                 });
             });
         };
-        PrimaryStorageManager.$inject = ['Api', '$rootScope'];
         return PrimaryStorageManager;
     }());
+    PrimaryStorageManager.$inject = ['Api', '$rootScope'];
     MPrimaryStorage.PrimaryStorageManager = PrimaryStorageManager;
     var PrimaryStorageModel = (function (_super) {
         __extends(PrimaryStorageModel, _super);
         function PrimaryStorageModel() {
-            _super.call(this);
-            this.current = new PrimaryStorage();
+            var _this = _super.call(this) || this;
+            _this.current = new PrimaryStorage();
+            return _this;
         }
         return PrimaryStorageModel;
     }(Utils.Model));
@@ -10596,10 +10599,10 @@ var MPrimaryStorage;
     var OPrimaryStorageGrid = (function (_super) {
         __extends(OPrimaryStorageGrid, _super);
         function OPrimaryStorageGrid($scope, psMgr) {
-            _super.call(this);
-            this.psMgr = psMgr;
-            _super.prototype.init.call(this, $scope, $scope.primaryStorageGrid);
-            this.options.columns = [
+            var _this = _super.call(this) || this;
+            _this.psMgr = psMgr;
+            _super.prototype.init.call(_this, $scope, $scope.primaryStorageGrid);
+            _this.options.columns = [
                 {
                     field: 'name',
                     title: '{{"primaryStorage.ts.NAME" | translate}}',
@@ -10651,7 +10654,7 @@ var MPrimaryStorage;
                     width: '20%'
                 }
             ];
-            this.options.dataSource.transport.read = function (options) {
+            _this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
                 qobj.start = options.data.pageSize * (options.data.page - 1);
@@ -10662,6 +10665,7 @@ var MPrimaryStorage;
                     });
                 });
             };
+            return _this;
         }
         return OPrimaryStorageGrid;
     }(Utils.OGrid));
@@ -10763,11 +10767,11 @@ var MPrimaryStorage;
                 value: this.value
             };
         };
-        FilterBy.NONE = 'none';
-        FilterBy.STATE = 'state';
-        FilterBy.TYPE = 'type';
         return FilterBy;
     }());
+    FilterBy.NONE = 'none';
+    FilterBy.STATE = 'state';
+    FilterBy.TYPE = 'type';
     var DetailsController = (function () {
         function DetailsController($scope, psMgr, $routeParams, tagService, current, clusterMgr) {
             var _this = this;
@@ -10794,7 +10798,7 @@ var MPrimaryStorage;
                     '<li><strong>VMs which has volumes on this primary storage will be deleted</strong></li></ul>' +
                     '<strong><p>those results are not recoverable</p></strong>',
                 confirm: function () {
-                    psMgr.delete($scope.model.current, function (ret) {
+                    psMgr["delete"]($scope.model.current, function (ret) {
                         $scope.model.resetCurrent();
                     });
                 }
@@ -10925,9 +10929,9 @@ var MPrimaryStorage;
                 _this.$scope.model.current = pss[0];
             });
         };
-        DetailsController.$inject = ['$scope', 'PrimaryStorageManager', '$routeParams', 'Tag', 'current', 'ClusterManager'];
         return DetailsController;
     }());
+    DetailsController.$inject = ['$scope', 'PrimaryStorageManager', '$routeParams', 'Tag', 'current', 'ClusterManager'];
     MPrimaryStorage.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, psMgr, primaryStorageTypes, $location) {
@@ -11029,7 +11033,7 @@ var MPrimaryStorage;
                     '<li><strong>VMs which has volumes on this primary storage will be deleted</strong></li></ul>' +
                     '<strong><p>those results are not recoverable</p></strong>',
                 confirm: function () {
-                    psMgr.delete($scope.model.current, function (ret) {
+                    psMgr["delete"]($scope.model.current, function (ret) {
                         $scope.oPrimaryStorageGrid.deleteCurrent();
                     });
                 }
@@ -11065,9 +11069,9 @@ var MPrimaryStorage;
                 $scope.optionsDetachCluster.primaryStorage = $scope.model.current;
             });
         }
-        Controller.$inject = ['$scope', 'PrimaryStorageManager', 'primaryStorageTypes', '$location'];
         return Controller;
     }());
+    Controller.$inject = ['$scope', 'PrimaryStorageManager', 'primaryStorageTypes', '$location'];
     MPrimaryStorage.Controller = Controller;
     var CreatePrimaryStorageOptions = (function () {
         function CreatePrimaryStorageOptions() {
@@ -11643,7 +11647,7 @@ var ML2Network;
     var L2Network = (function (_super) {
         __extends(L2Network, _super);
         function L2Network() {
-            _super.apply(this, arguments);
+            return _super.apply(this, arguments) || this;
         }
         L2Network.prototype.progressOn = function () {
             this.inProgress = true;
@@ -11767,7 +11771,7 @@ var ML2Network;
                 });
             });
         };
-        L2NetworkManager.prototype.delete = function (l2, done) {
+        L2NetworkManager.prototype["delete"] = function (l2, done) {
             var _this = this;
             l2.progressOn();
             var msg = new ApiHeader.APIDeleteL2NetworkMsg();
@@ -11780,15 +11784,16 @@ var ML2Network;
                 });
             });
         };
-        L2NetworkManager.$inject = ['Api', '$rootScope'];
         return L2NetworkManager;
     }());
+    L2NetworkManager.$inject = ['Api', '$rootScope'];
     ML2Network.L2NetworkManager = L2NetworkManager;
     var L2NetworkModel = (function (_super) {
         __extends(L2NetworkModel, _super);
         function L2NetworkModel() {
-            _super.call(this);
-            this.current = new L2Network();
+            var _this = _super.call(this) || this;
+            _this.current = new L2Network();
+            return _this;
         }
         return L2NetworkModel;
     }(Utils.Model));
@@ -11796,10 +11801,10 @@ var ML2Network;
     var OL2NetworkGrid = (function (_super) {
         __extends(OL2NetworkGrid, _super);
         function OL2NetworkGrid($scope, l2Mgr) {
-            _super.call(this);
-            this.l2Mgr = l2Mgr;
-            _super.prototype.init.call(this, $scope, $scope.l2NetworkGrid);
-            this.options.columns = [
+            var _this = _super.call(this) || this;
+            _this.l2Mgr = l2Mgr;
+            _super.prototype.init.call(_this, $scope, $scope.l2NetworkGrid);
+            _this.options.columns = [
                 {
                     field: 'name',
                     title: '{{"l2Network.ts.NAME" | translate}}',
@@ -11827,7 +11832,7 @@ var ML2Network;
                     width: '20%'
                 }
             ];
-            this.options.dataSource.transport.read = function (options) {
+            _this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
                 qobj.start = options.data.pageSize * (options.data.page - 1);
@@ -11838,6 +11843,7 @@ var ML2Network;
                     });
                 });
             };
+            return _this;
         }
         return OL2NetworkGrid;
     }(Utils.OGrid));
@@ -11917,10 +11923,10 @@ var ML2Network;
                 value: this.value
             };
         };
-        FilterBy.NONE = 'none';
-        FilterBy.TYPE = 'type';
         return FilterBy;
     }());
+    FilterBy.NONE = 'none';
+    FilterBy.TYPE = 'type';
     var DetailsController = (function () {
         function DetailsController($scope, l2Mgr, $routeParams, tagService, current, clusterMgr) {
             var _this = this;
@@ -11948,7 +11954,7 @@ var ML2Network;
                     '<li><strong>VMs whose nic on l3Network belonging to this l2Network will be stopped</strong></li></ul>' +
                     '<strong><p>those results are not recoverable</p></strong>',
                 confirm: function () {
-                    l2Mgr.delete($scope.model.current, function (ret) {
+                    l2Mgr["delete"]($scope.model.current, function (ret) {
                         $scope.model.resetCurrent();
                     });
                 }
@@ -12079,9 +12085,9 @@ var ML2Network;
                 _this.$scope.model.current = l2s[0];
             });
         };
-        DetailsController.$inject = ['$scope', 'L2NetworkManager', '$routeParams', 'Tag', 'current', 'ClusterManager'];
         return DetailsController;
     }());
+    DetailsController.$inject = ['$scope', 'L2NetworkManager', '$routeParams', 'Tag', 'current', 'ClusterManager'];
     ML2Network.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, l2Mgr, l2NetworkTypes, $location) {
@@ -12183,7 +12189,7 @@ var ML2Network;
                     '<li><strong>VMs whose nic on l3Network belonging to this l2Network will be stopped</strong></li></ul>' +
                     '<strong><p>those results are not recoverable</p></strong>',
                 confirm: function () {
-                    l2Mgr.delete($scope.model.current, function (ret) {
+                    l2Mgr["delete"]($scope.model.current, function (ret) {
                         $scope.oL2NetworkGrid.deleteCurrent();
                     });
                 }
@@ -12219,9 +12225,9 @@ var ML2Network;
                 $scope.optionsDetachCluster.l2Network = $scope.model.current;
             });
         }
-        Controller.$inject = ['$scope', 'L2NetworkManager', 'l2NetworkTypes', '$location'];
         return Controller;
     }());
+    Controller.$inject = ['$scope', 'L2NetworkManager', 'l2NetworkTypes', '$location'];
     ML2Network.Controller = Controller;
     var CreateL2NetworkOptions = (function () {
         function CreateL2NetworkOptions() {
@@ -12714,7 +12720,7 @@ var ML3Network;
     var L3Network = (function (_super) {
         __extends(L3Network, _super);
         function L3Network() {
-            _super.apply(this, arguments);
+            return _super.apply(this, arguments) || this;
         }
         L3Network.prototype.progressOn = function () {
             this.inProgress = true;
@@ -12958,7 +12964,7 @@ var ML3Network;
                 callback(pris, ret.total);
             });
         };
-        L3NetworkManager.prototype.delete = function (l3, done) {
+        L3NetworkManager.prototype["delete"] = function (l3, done) {
             var _this = this;
             l3.progressOn();
             var msg = new ApiHeader.APIDeleteL3NetworkMsg();
@@ -12971,15 +12977,16 @@ var ML3Network;
                 });
             });
         };
-        L3NetworkManager.$inject = ['Api', '$rootScope'];
         return L3NetworkManager;
     }());
+    L3NetworkManager.$inject = ['Api', '$rootScope'];
     ML3Network.L3NetworkManager = L3NetworkManager;
     var L3NetworkModel = (function (_super) {
         __extends(L3NetworkModel, _super);
         function L3NetworkModel() {
-            _super.call(this);
-            this.current = new L3Network();
+            var _this = _super.call(this) || this;
+            _this.current = new L3Network();
+            return _this;
         }
         return L3NetworkModel;
     }(Utils.Model));
@@ -12987,10 +12994,10 @@ var ML3Network;
     var OL3NetworkGrid = (function (_super) {
         __extends(OL3NetworkGrid, _super);
         function OL3NetworkGrid($scope, l3Mgr) {
-            _super.call(this);
-            this.l3Mgr = l3Mgr;
-            _super.prototype.init.call(this, $scope, $scope.l3NetworkGrid);
-            this.options.columns = [
+            var _this = _super.call(this) || this;
+            _this.l3Mgr = l3Mgr;
+            _super.prototype.init.call(_this, $scope, $scope.l3NetworkGrid);
+            _this.options.columns = [
                 {
                     field: 'name',
                     title: '{{"l3Network.ts.NAME" | translate}}',
@@ -13025,7 +13032,7 @@ var ML3Network;
                     width: '25%'
                 }
             ];
-            this.options.dataSource.transport.read = function (options) {
+            _this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
                 qobj.start = options.data.pageSize * (options.data.page - 1);
@@ -13036,6 +13043,7 @@ var ML3Network;
                     });
                 });
             };
+            return _this;
         }
         return OL3NetworkGrid;
     }(Utils.OGrid));
@@ -13134,11 +13142,11 @@ var ML3Network;
                 value: this.value
             };
         };
-        FilterBy.NONE = 'none';
-        FilterBy.TYPE = 'type';
-        FilterBy.STATE = 'state';
         return FilterBy;
     }());
+    FilterBy.NONE = 'none';
+    FilterBy.TYPE = 'type';
+    FilterBy.STATE = 'state';
     var DetailsController = (function () {
         function DetailsController($scope, l3Mgr, $routeParams, tagService, current) {
             var _this = this;
@@ -13167,7 +13175,7 @@ var ML3Network;
                     '<li><strong>VMs whose nic belongs to this l3Network will be stopped</strong></li></ul>' +
                     '<strong><p>those results are not recoverable</p></strong>',
                 confirm: function () {
-                    l3Mgr.delete($scope.model.current, function (ret) {
+                    l3Mgr["delete"]($scope.model.current, function (ret) {
                         $scope.model.resetCurrent();
                     });
                 }
@@ -13379,9 +13387,9 @@ var ML3Network;
                 _this.$scope.model.current = l3s[0];
             });
         };
-        DetailsController.$inject = ['$scope', 'L3NetworkManager', '$routeParams', 'Tag', 'current'];
         return DetailsController;
     }());
+    DetailsController.$inject = ['$scope', 'L3NetworkManager', '$routeParams', 'Tag', 'current'];
     ML3Network.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, l3Mgr, l3NetworkTypes, $location) {
@@ -13473,7 +13481,7 @@ var ML3Network;
                     '<li><strong>VMs whose nic belongs to this l3Network will be stopped</strong></li></ul>' +
                     '<strong><p>those results are not recoverable</p></strong>',
                 confirm: function () {
-                    l3Mgr.delete($scope.model.current, function (ret) {
+                    l3Mgr["delete"]($scope.model.current, function (ret) {
                         $scope.oL3NetworkGrid.deleteCurrent();
                     });
                 }
@@ -13518,9 +13526,9 @@ var ML3Network;
                 }
             });
         }
-        Controller.$inject = ['$scope', 'L3NetworkManager', 'l3NetworkTypes', '$location'];
         return Controller;
     }());
+    Controller.$inject = ['$scope', 'L3NetworkManager', 'l3NetworkTypes', '$location'];
     ML3Network.Controller = Controller;
     var AddDnsOptions = (function () {
         function AddDnsOptions() {
@@ -14535,7 +14543,7 @@ var MBackupStorage;
     var BackupStorage = (function (_super) {
         __extends(BackupStorage, _super);
         function BackupStorage() {
-            _super.apply(this, arguments);
+            return _super.apply(this, arguments) || this;
         }
         BackupStorage.prototype.progressOn = function () {
             this.inProgress = true;
@@ -14758,7 +14766,7 @@ var MBackupStorage;
                 });
             });
         };
-        BackupStorageManager.prototype.delete = function (bs, done) {
+        BackupStorageManager.prototype["delete"] = function (bs, done) {
             var _this = this;
             bs.progressOn();
             var msg = new ApiHeader.APIDeleteBackupStorageMsg();
@@ -14771,15 +14779,16 @@ var MBackupStorage;
                 });
             });
         };
-        BackupStorageManager.$inject = ['Api', '$rootScope'];
         return BackupStorageManager;
     }());
+    BackupStorageManager.$inject = ['Api', '$rootScope'];
     MBackupStorage.BackupStorageManager = BackupStorageManager;
     var BackupStorageModel = (function (_super) {
         __extends(BackupStorageModel, _super);
         function BackupStorageModel() {
-            _super.call(this);
-            this.current = new BackupStorage();
+            var _this = _super.call(this) || this;
+            _this.current = new BackupStorage();
+            return _this;
         }
         return BackupStorageModel;
     }(Utils.Model));
@@ -14787,10 +14796,10 @@ var MBackupStorage;
     var OBackupStorageGrid = (function (_super) {
         __extends(OBackupStorageGrid, _super);
         function OBackupStorageGrid($scope, bsMgr) {
-            _super.call(this);
-            this.bsMgr = bsMgr;
-            _super.prototype.init.call(this, $scope, $scope.backupStorageGrid);
-            this.options.columns = [
+            var _this = _super.call(this) || this;
+            _this.bsMgr = bsMgr;
+            _super.prototype.init.call(_this, $scope, $scope.backupStorageGrid);
+            _this.options.columns = [
                 {
                     field: 'name',
                     title: '{{"backupStorage.ts.NAME" | translate}}',
@@ -14842,7 +14851,7 @@ var MBackupStorage;
                     width: '20%'
                 }
             ];
-            this.options.dataSource.transport.read = function (options) {
+            _this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
                 qobj.start = options.data.pageSize * (options.data.page - 1);
@@ -14853,6 +14862,7 @@ var MBackupStorage;
                     });
                 });
             };
+            return _this;
         }
         return OBackupStorageGrid;
     }(Utils.OGrid));
@@ -14967,12 +14977,12 @@ var MBackupStorage;
                 value: this.value
             };
         };
-        FilterBy.NONE = 'none';
-        FilterBy.STATE = 'state';
-        FilterBy.STATUS = 'status';
-        FilterBy.TYPE = 'type';
         return FilterBy;
     }());
+    FilterBy.NONE = 'none';
+    FilterBy.STATE = 'state';
+    FilterBy.STATUS = 'status';
+    FilterBy.TYPE = 'type';
     var DetailsController = (function () {
         function DetailsController($scope, bsMgr, $routeParams, tagService, current, zoneMgr) {
             var _this = this;
@@ -14998,7 +15008,7 @@ var MBackupStorage;
                     '<ul><li><strong>Zones to which this backup storage has attached will be detached</strong></li>' +
                     '<strong><p>those results are not recoverable</p></strong>',
                 confirm: function () {
-                    bsMgr.delete($scope.model.current, function (ret) {
+                    bsMgr["delete"]($scope.model.current, function (ret) {
                         $scope.model.resetCurrent();
                     });
                 }
@@ -15124,9 +15134,9 @@ var MBackupStorage;
                 _this.$scope.model.current = bss[0];
             });
         };
-        DetailsController.$inject = ['$scope', 'BackupStorageManager', '$routeParams', 'Tag', 'current', 'ZoneManager'];
         return DetailsController;
     }());
+    DetailsController.$inject = ['$scope', 'BackupStorageManager', '$routeParams', 'Tag', 'current', 'ZoneManager'];
     MBackupStorage.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, bsMgr, backupStorageTypes, $location) {
@@ -15235,7 +15245,7 @@ var MBackupStorage;
                     '<ul><li><strong>Zones to which this backup storage has attached will be detached</strong></li>' +
                     '<strong><p>those results are not recoverable</p></strong>',
                 confirm: function () {
-                    bsMgr.delete($scope.model.current, function (ret) {
+                    bsMgr["delete"]($scope.model.current, function (ret) {
                         $scope.oBackupStorageGrid.deleteCurrent();
                     });
                 }
@@ -15291,9 +15301,9 @@ var MBackupStorage;
                 $scope.optionsDetachZone.backupStorage = $scope.model.current;
             });
         }
-        Controller.$inject = ['$scope', 'BackupStorageManager', 'backupStorageTypes', '$location'];
         return Controller;
     }());
+    Controller.$inject = ['$scope', 'BackupStorageManager', 'backupStorageTypes', '$location'];
     MBackupStorage.Controller = Controller;
     var CreateBackupStorageOptions = (function () {
         function CreateBackupStorageOptions() {
@@ -15695,7 +15705,7 @@ var MBackupStorage;
                     dataSource: new kendo.data.DataSource({ data: [] }),
                     dataTextField: "name",
                     dataValueField: "uuid",
-                    itemTemplate: '<div style="color: black"><span class="z-label">{{"backupStorage.ts.Name" | translate}}:</span><span>#: name #</span></div>' +
+                    itemTemplate: '<div style="color: black"><span class="z-label">Name:</span><span>#: name #</span></div>' +
                         '<div style="color: black"><span class="z-label">UUID:</span><span>#: uuid #</span></div>',
                     change: function (e) {
                         var select = e.sender;
@@ -15799,7 +15809,7 @@ var MHost;
     var Host = (function (_super) {
         __extends(Host, _super);
         function Host() {
-            _super.apply(this, arguments);
+            return _super.apply(this, arguments) || this;
         }
         Host.prototype.progressOn = function () {
             this.inProgress = true;
@@ -15979,7 +15989,7 @@ var MHost;
                 });
             });
         };
-        HostManager.prototype.delete = function (host, done) {
+        HostManager.prototype["delete"] = function (host, done) {
             var _this = this;
             host.progressOn();
             var msg = new ApiHeader.APIDeleteHostMsg();
@@ -15992,15 +16002,16 @@ var MHost;
                 });
             });
         };
-        HostManager.$inject = ['Api', '$rootScope'];
         return HostManager;
     }());
+    HostManager.$inject = ['Api', '$rootScope'];
     MHost.HostManager = HostManager;
     var HostModel = (function (_super) {
         __extends(HostModel, _super);
         function HostModel() {
-            _super.call(this);
-            this.current = new Host();
+            var _this = _super.call(this) || this;
+            _this.current = new Host();
+            return _this;
         }
         return HostModel;
     }(Utils.Model));
@@ -16008,10 +16019,10 @@ var MHost;
     var OHostGrid = (function (_super) {
         __extends(OHostGrid, _super);
         function OHostGrid($scope, hostMgr) {
-            _super.call(this);
-            this.hostMgr = hostMgr;
-            _super.prototype.init.call(this, $scope, $scope.hostGrid);
-            this.options.columns = [
+            var _this = _super.call(this) || this;
+            _this.hostMgr = hostMgr;
+            _super.prototype.init.call(_this, $scope, $scope.hostGrid);
+            _this.options.columns = [
                 {
                     field: 'name',
                     title: '{{"host.ts.NAME" | translate}}',
@@ -16051,7 +16062,7 @@ var MHost;
                     width: '20%'
                 }
             ];
-            this.options.dataSource.transport.read = function (options) {
+            _this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
                 qobj.start = options.data.pageSize * (options.data.page - 1);
@@ -16062,6 +16073,7 @@ var MHost;
                     });
                 });
             };
+            return _this;
         }
         return OHostGrid;
     }(Utils.OGrid));
@@ -16169,12 +16181,12 @@ var MHost;
                 value: this.value
             };
         };
-        FilterBy.NONE = 'none';
-        FilterBy.STATE = 'state';
-        FilterBy.STATUS = 'status';
-        FilterBy.TYPE = 'hypervisorType';
         return FilterBy;
     }());
+    FilterBy.NONE = 'none';
+    FilterBy.STATE = 'state';
+    FilterBy.STATUS = 'status';
+    FilterBy.TYPE = 'hypervisorType';
     var DetailsController = (function () {
         function DetailsController($scope, hostMgr, $routeParams, tagService, current, clusterMgr, api) {
             var _this = this;
@@ -16199,7 +16211,7 @@ var MHost;
                 title: 'DELETE HOST',
                 description: "Deleting Host will cause all VMs on this host being stopped",
                 confirm: function () {
-                    hostMgr.delete($scope.model.current, function (ret) {
+                    hostMgr["delete"]($scope.model.current, function (ret) {
                         $scope.model.resetCurrent();
                     });
                 }
@@ -16238,9 +16250,9 @@ var MHost;
                 _this.$scope.model.current = hosts[0];
             });
         };
-        DetailsController.$inject = ['$scope', 'HostManager', '$routeParams', 'Tag', 'current', 'ClusterManager', 'Api'];
         return DetailsController;
     }());
+    DetailsController.$inject = ['$scope', 'HostManager', '$routeParams', 'Tag', 'current', 'ClusterManager', 'Api'];
     MHost.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, hostMgr, hypervisorTypes, $location) {
@@ -16339,7 +16351,7 @@ var MHost;
                 title: 'DELETE HOST',
                 description: "Deleting Host will cause all VMs on this host being stopped",
                 confirm: function () {
-                    hostMgr.delete($scope.model.current, function (ret) {
+                    hostMgr["delete"]($scope.model.current, function (ret) {
                         $scope.oHostGrid.deleteCurrent();
                     });
                 }
@@ -16367,9 +16379,9 @@ var MHost;
                 }
             };
         }
-        Controller.$inject = ['$scope', 'HostManager', 'hypervisorTypes', '$location'];
         return Controller;
     }());
+    Controller.$inject = ['$scope', 'HostManager', 'hypervisorTypes', '$location'];
     MHost.Controller = Controller;
     var CreateHostOptions = (function () {
         function CreateHostOptions() {
@@ -16634,7 +16646,7 @@ var MImage;
     var Image = (function (_super) {
         __extends(Image, _super);
         function Image() {
-            _super.apply(this, arguments);
+            return _super.apply(this, arguments) || this;
         }
         Image.prototype.progressOn = function () {
             this.inProgress = true;
@@ -16787,7 +16799,7 @@ var MImage;
                 });
             });
         };
-        ImageManager.prototype.delete = function (image, done) {
+        ImageManager.prototype["delete"] = function (image, done) {
             var _this = this;
             image.progressOn();
             var msg = new ApiHeader.APIDeleteImageMsg();
@@ -16826,15 +16838,16 @@ var MImage;
                 });
             });
         };
-        ImageManager.$inject = ['Api', '$rootScope'];
         return ImageManager;
     }());
+    ImageManager.$inject = ['Api', '$rootScope'];
     MImage.ImageManager = ImageManager;
     var ImageModel = (function (_super) {
         __extends(ImageModel, _super);
         function ImageModel() {
-            _super.call(this);
-            this.current = new Image();
+            var _this = _super.call(this) || this;
+            _this.current = new Image();
+            return _this;
         }
         return ImageModel;
     }(Utils.Model));
@@ -16842,10 +16855,10 @@ var MImage;
     var OImageGrid = (function (_super) {
         __extends(OImageGrid, _super);
         function OImageGrid($scope, imageMgr) {
-            _super.call(this);
-            this.imageMgr = imageMgr;
-            _super.prototype.init.call(this, $scope, $scope.imageGrid);
-            this.options.columns = [
+            var _this = _super.call(this) || this;
+            _this.imageMgr = imageMgr;
+            _super.prototype.init.call(_this, $scope, $scope.imageGrid);
+            _this.options.columns = [
                 {
                     field: 'name',
                     title: '{{"image.ts.NAME" | translate}}',
@@ -16891,7 +16904,7 @@ var MImage;
                     width: '20%'
                 }
             ];
-            this.options.dataSource.transport.read = function (options) {
+            _this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
                 qobj.start = options.data.pageSize * (options.data.page - 1);
@@ -16902,6 +16915,7 @@ var MImage;
                     });
                 });
             };
+            return _this;
         }
         return OImageGrid;
     }(Utils.OGrid));
@@ -17005,13 +17019,13 @@ var MImage;
                 value: this.value
             };
         };
-        FilterBy.NONE = 'none';
-        FilterBy.STATE = 'state';
-        FilterBy.STATUS = 'status';
-        FilterBy.TYPE = 'mediaType';
-        FilterBy.FORMAT = 'format';
         return FilterBy;
     }());
+    FilterBy.NONE = 'none';
+    FilterBy.STATE = 'state';
+    FilterBy.STATUS = 'status';
+    FilterBy.TYPE = 'mediaType';
+    FilterBy.FORMAT = 'format';
     var DetailsController = (function () {
         function DetailsController($scope, imageMgr, $routeParams, tagService, current, bsMgr) {
             var _this = this;
@@ -17042,7 +17056,7 @@ var MImage;
                     return $scope.model.current.name;
                 },
                 confirm: function () {
-                    imageMgr.delete($scope.model.current, function (ret) {
+                    imageMgr["delete"]($scope.model.current, function (ret) {
                         $scope.model.resetCurrent();
                     });
                 }
@@ -17166,9 +17180,9 @@ var MImage;
                 _this.$scope.model.current = images[0];
             });
         };
-        DetailsController.$inject = ['$scope', 'ImageManager', '$routeParams', 'Tag', 'current', 'BackupStorageManager'];
         return DetailsController;
     }());
+    DetailsController.$inject = ['$scope', 'ImageManager', '$routeParams', 'Tag', 'current', 'BackupStorageManager'];
     MImage.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, imageMgr, hypervisorTypes, $location) {
@@ -17298,7 +17312,7 @@ var MImage;
                     return $scope.model.current.name;
                 },
                 confirm: function () {
-                    imageMgr.delete($scope.model.current, function (ret) {
+                    imageMgr["delete"]($scope.model.current, function (ret) {
                         $scope.oImageGrid.deleteCurrent();
                     });
                 }
@@ -17338,9 +17352,9 @@ var MImage;
                 }
             };
         }
-        Controller.$inject = ['$scope', 'ImageManager', 'hypervisorTypes', '$location'];
         return Controller;
     }());
+    Controller.$inject = ['$scope', 'ImageManager', 'hypervisorTypes', '$location'];
     MImage.Controller = Controller;
     var CreateImageOptions = (function () {
         function CreateImageOptions() {
@@ -17558,10 +17572,10 @@ var MImage;
                 win.open();
             }).start();
         };
-        CreateImage.MEDIA_TYPES = ['RootVolumeTemplate', 'DataVolumeTemplate', 'ISO'];
-        CreateImage.BITS = [64, 32];
         return CreateImage;
     }());
+    CreateImage.MEDIA_TYPES = ['RootVolumeTemplate', 'DataVolumeTemplate', 'ISO'];
+    CreateImage.BITS = [64, 32];
     MImage.CreateImage = CreateImage;
 })(MImage || (MImage = {}));
 angular.module('root').factory('ImageManager', ['Api', '$rootScope', function (api, $rootScope) {
@@ -17606,7 +17620,7 @@ var MInstanceOffering;
     var InstanceOffering = (function (_super) {
         __extends(InstanceOffering, _super);
         function InstanceOffering() {
-            _super.apply(this, arguments);
+            return _super.apply(this, arguments) || this;
         }
         InstanceOffering.prototype.progressOn = function () {
             this.inProgress = true;
@@ -17738,7 +17752,7 @@ var MInstanceOffering;
                 });
             });
         };
-        InstanceOfferingManager.prototype.delete = function (instanceOffering, done) {
+        InstanceOfferingManager.prototype["delete"] = function (instanceOffering, done) {
             var _this = this;
             instanceOffering.progressOn();
             var msg = new ApiHeader.APIDeleteInstanceOfferingMsg();
@@ -17751,15 +17765,16 @@ var MInstanceOffering;
                 });
             });
         };
-        InstanceOfferingManager.$inject = ['Api', '$rootScope'];
         return InstanceOfferingManager;
     }());
+    InstanceOfferingManager.$inject = ['Api', '$rootScope'];
     MInstanceOffering.InstanceOfferingManager = InstanceOfferingManager;
     var InstanceOfferingModel = (function (_super) {
         __extends(InstanceOfferingModel, _super);
         function InstanceOfferingModel() {
-            _super.call(this);
-            this.current = new InstanceOffering();
+            var _this = _super.call(this) || this;
+            _this.current = new InstanceOffering();
+            return _this;
         }
         return InstanceOfferingModel;
     }(Utils.Model));
@@ -17767,10 +17782,10 @@ var MInstanceOffering;
     var OInstanceOfferingGrid = (function (_super) {
         __extends(OInstanceOfferingGrid, _super);
         function OInstanceOfferingGrid($scope, instanceOfferingMgr) {
-            _super.call(this);
-            this.instanceOfferingMgr = instanceOfferingMgr;
-            _super.prototype.init.call(this, $scope, $scope.instanceOfferingGrid);
-            this.options.columns = [
+            var _this = _super.call(this) || this;
+            _this.instanceOfferingMgr = instanceOfferingMgr;
+            _super.prototype.init.call(_this, $scope, $scope.instanceOfferingGrid);
+            _this.options.columns = [
                 {
                     field: 'name',
                     title: '{{"instanceOffering.ts.NAME" | translate}}',
@@ -17805,7 +17820,7 @@ var MInstanceOffering;
                     width: '20%'
                 }
             ];
-            this.options.dataSource.transport.read = function (options) {
+            _this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
                 qobj.start = options.data.pageSize * (options.data.page - 1);
@@ -17816,6 +17831,7 @@ var MInstanceOffering;
                     });
                 });
             };
+            return _this;
         }
         return OInstanceOfferingGrid;
     }(Utils.OGrid));
@@ -17895,10 +17911,10 @@ var MInstanceOffering;
                 value: this.value
             };
         };
-        FilterBy.NONE = 'none';
-        FilterBy.STATE = 'state';
         return FilterBy;
     }());
+    FilterBy.NONE = 'none';
+    FilterBy.STATE = 'state';
     var DetailsController = (function () {
         function DetailsController($scope, instanceOfferingMgr, $routeParams, tagService, current) {
             var _this = this;
@@ -17926,7 +17942,7 @@ var MInstanceOffering;
                     return current.name;
                 },
                 confirm: function () {
-                    instanceOfferingMgr.delete($scope.model.current, function (ret) {
+                    instanceOfferingMgr["delete"]($scope.model.current, function (ret) {
                         $scope.model.resetCurrent();
                     });
                 }
@@ -17961,9 +17977,9 @@ var MInstanceOffering;
                 _this.$scope.model.current = instanceOfferings[0];
             });
         };
-        DetailsController.$inject = ['$scope', 'InstanceOfferingManager', '$routeParams', 'Tag', 'current'];
         return DetailsController;
     }());
+    DetailsController.$inject = ['$scope', 'InstanceOfferingManager', '$routeParams', 'Tag', 'current'];
     MInstanceOffering.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, instanceOfferingMgr, hypervisorTypes, $location) {
@@ -18058,7 +18074,7 @@ var MInstanceOffering;
                     return $scope.model.current.name;
                 },
                 confirm: function () {
-                    instanceOfferingMgr.delete($scope.model.current, function (ret) {
+                    instanceOfferingMgr["delete"]($scope.model.current, function (ret) {
                         $scope.oInstanceOfferingGrid.deleteCurrent();
                     });
                 }
@@ -18078,9 +18094,9 @@ var MInstanceOffering;
                 }
             };
         }
-        Controller.$inject = ['$scope', 'InstanceOfferingManager', 'hypervisorTypes', '$location'];
         return Controller;
     }());
+    Controller.$inject = ['$scope', 'InstanceOfferingManager', 'hypervisorTypes', '$location'];
     MInstanceOffering.Controller = Controller;
     var CreateInstanceOfferingOptions = (function () {
         function CreateInstanceOfferingOptions() {
@@ -18273,7 +18289,7 @@ var MDiskOffering;
     var DiskOffering = (function (_super) {
         __extends(DiskOffering, _super);
         function DiskOffering() {
-            _super.apply(this, arguments);
+            return _super.apply(this, arguments) || this;
         }
         DiskOffering.prototype.progressOn = function () {
             this.inProgress = true;
@@ -18396,7 +18412,7 @@ var MDiskOffering;
                 });
             });
         };
-        DiskOfferingManager.prototype.delete = function (diskOffering, done) {
+        DiskOfferingManager.prototype["delete"] = function (diskOffering, done) {
             var _this = this;
             diskOffering.progressOn();
             var msg = new ApiHeader.APIDeleteDiskOfferingMsg();
@@ -18409,15 +18425,16 @@ var MDiskOffering;
                 });
             });
         };
-        DiskOfferingManager.$inject = ['Api', '$rootScope'];
         return DiskOfferingManager;
     }());
+    DiskOfferingManager.$inject = ['Api', '$rootScope'];
     MDiskOffering.DiskOfferingManager = DiskOfferingManager;
     var DiskOfferingModel = (function (_super) {
         __extends(DiskOfferingModel, _super);
         function DiskOfferingModel() {
-            _super.call(this);
-            this.current = new DiskOffering();
+            var _this = _super.call(this) || this;
+            _this.current = new DiskOffering();
+            return _this;
         }
         return DiskOfferingModel;
     }(Utils.Model));
@@ -18425,10 +18442,10 @@ var MDiskOffering;
     var ODiskOfferingGrid = (function (_super) {
         __extends(ODiskOfferingGrid, _super);
         function ODiskOfferingGrid($scope, diskOfferingMgr) {
-            _super.call(this);
-            this.diskOfferingMgr = diskOfferingMgr;
-            _super.prototype.init.call(this, $scope, $scope.diskOfferingGrid);
-            this.options.columns = [
+            var _this = _super.call(this) || this;
+            _this.diskOfferingMgr = diskOfferingMgr;
+            _super.prototype.init.call(_this, $scope, $scope.diskOfferingGrid);
+            _this.options.columns = [
                 {
                     field: 'name',
                     title: '{{"diskOffering.ts.NAME" | translate}}',
@@ -18458,7 +18475,7 @@ var MDiskOffering;
                     width: '20%'
                 }
             ];
-            this.options.dataSource.transport.read = function (options) {
+            _this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
                 qobj.start = options.data.pageSize * (options.data.page - 1);
@@ -18469,6 +18486,7 @@ var MDiskOffering;
                     });
                 });
             };
+            return _this;
         }
         return ODiskOfferingGrid;
     }(Utils.OGrid));
@@ -18547,10 +18565,10 @@ var MDiskOffering;
                 value: this.value
             };
         };
-        FilterBy.NONE = 'none';
-        FilterBy.STATE = 'state';
         return FilterBy;
     }());
+    FilterBy.NONE = 'none';
+    FilterBy.STATE = 'state';
     var DetailsController = (function () {
         function DetailsController($scope, diskOfferingMgr, $routeParams, tagService, current) {
             var _this = this;
@@ -18578,7 +18596,7 @@ var MDiskOffering;
                 btnType: 'btn-danger',
                 width: '350px',
                 confirm: function () {
-                    diskOfferingMgr.delete($scope.model.current, function (ret) {
+                    diskOfferingMgr["delete"]($scope.model.current, function (ret) {
                         $scope.model.resetCurrent();
                     });
                 }
@@ -18613,9 +18631,9 @@ var MDiskOffering;
                 _this.$scope.model.current = diskOfferings[0];
             });
         };
-        DetailsController.$inject = ['$scope', 'DiskOfferingManager', '$routeParams', 'Tag', 'current'];
         return DetailsController;
     }());
+    DetailsController.$inject = ['$scope', 'DiskOfferingManager', '$routeParams', 'Tag', 'current'];
     MDiskOffering.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, diskOfferingMgr, $location) {
@@ -18705,7 +18723,7 @@ var MDiskOffering;
                 btnType: 'btn-danger',
                 width: '350px',
                 confirm: function () {
-                    diskOfferingMgr.delete($scope.model.current, function (ret) {
+                    diskOfferingMgr["delete"]($scope.model.current, function (ret) {
                         $scope.oDiskOfferingGrid.deleteCurrent();
                     });
                 }
@@ -18725,9 +18743,9 @@ var MDiskOffering;
                 }
             };
         }
-        Controller.$inject = ['$scope', 'DiskOfferingManager', '$location'];
         return Controller;
     }());
+    Controller.$inject = ['$scope', 'DiskOfferingManager', '$location'];
     MDiskOffering.Controller = Controller;
     var CreateDiskOfferingOptions = (function () {
         function CreateDiskOfferingOptions() {
@@ -18926,9 +18944,9 @@ var MApiDetails;
                 return api.success ? 'label label-success' : 'label label-danger';
             };
         }
-        DetailsController.$inject = ['$scope', '$rootScope', 'ApiDetails', '$routeParams'];
         return DetailsController;
     }());
+    DetailsController.$inject = ['$scope', '$rootScope', 'ApiDetails', '$routeParams'];
     MApiDetails.DetailsController = DetailsController;
     var ApiDetails = (function () {
         function ApiDetails($rootScope, api, $location) {
@@ -19012,9 +19030,9 @@ var MApiDetails;
                 }
             };
         }
-        ApiDetails.$inject = ['$rootScope', 'Api', '$location'];
         return ApiDetails;
     }());
+    ApiDetails.$inject = ['$rootScope', 'Api', '$location'];
     MApiDetails.ApiDetails = ApiDetails;
 })(MApiDetails || (MApiDetails = {}));
 angular.module('root').config(['$routeProvider', function (route) {
@@ -19035,7 +19053,7 @@ var MVmInstance;
     var VmNic = (function (_super) {
         __extends(VmNic, _super);
         function VmNic() {
-            _super.apply(this, arguments);
+            return _super.apply(this, arguments) || this;
         }
         VmNic.prototype.progressOn = function () {
             this.inProgress = true;
@@ -19067,7 +19085,7 @@ var MVmInstance;
     var VmInstance = (function (_super) {
         __extends(VmInstance, _super);
         function VmInstance() {
-            _super.apply(this, arguments);
+            return _super.apply(this, arguments) || this;
         }
         VmInstance.prototype.progressOn = function () {
             this.inProgress = true;
@@ -19116,9 +19134,9 @@ var MVmInstance;
             self.set('cpuNum', inv.cpuNum);
             self.set('allocatorStrategy', inv.allocatorStrategy);
         };
-        VmInstance.STATES = ['Running', 'Starting', 'Stopping', 'Stopped', 'Rebooting', 'Migrating', 'Unknown', 'Created'];
         return VmInstance;
     }(ApiHeader.VmInstanceInventory));
+    VmInstance.STATES = ['Running', 'Starting', 'Stopping', 'Stopped', 'Rebooting', 'Migrating', 'Unknown', 'Created'];
     MVmInstance.VmInstance = VmInstance;
     var VmInstanceManager = (function () {
         function VmInstanceManager(api, $rootScope) {
@@ -19275,7 +19293,7 @@ var MVmInstance;
                 vm.progressOff();
             });
         };
-        VmInstanceManager.prototype.delete = function (vm, done) {
+        VmInstanceManager.prototype["delete"] = function (vm, done) {
             var _this = this;
             vm.progressOn();
             vm.state = 'Destroying';
@@ -19415,15 +19433,16 @@ var MVmInstance;
                 callback(pris, ret.total);
             });
         };
-        VmInstanceManager.$inject = ['Api', '$rootScope'];
         return VmInstanceManager;
     }());
+    VmInstanceManager.$inject = ['Api', '$rootScope'];
     MVmInstance.VmInstanceManager = VmInstanceManager;
     var VmInstanceModel = (function (_super) {
         __extends(VmInstanceModel, _super);
         function VmInstanceModel() {
-            _super.call(this);
-            this.current = new VmInstance();
+            var _this = _super.call(this) || this;
+            _this.current = new VmInstance();
+            return _this;
         }
         return VmInstanceModel;
     }(Utils.Model));
@@ -19431,12 +19450,11 @@ var MVmInstance;
     var OVmInstanceGrid = (function (_super) {
         __extends(OVmInstanceGrid, _super);
         function OVmInstanceGrid($scope, vmMgr, hostMgr) {
-            var _this = this;
-            _super.call(this);
-            this.vmMgr = vmMgr;
-            this.hostMgr = hostMgr;
-            _super.prototype.init.call(this, $scope, $scope.vmGrid);
-            this.options.columns = [
+            var _this = _super.call(this) || this;
+            _this.vmMgr = vmMgr;
+            _this.hostMgr = hostMgr;
+            _super.prototype.init.call(_this, $scope, $scope.vmGrid);
+            _this.options.columns = [
                 {
                     field: 'name',
                     title: '{{"vm.ts.NAME" | translate}}',
@@ -19472,7 +19490,7 @@ var MVmInstance;
                     width: '20%'
                 }
             ];
-            this.options.dataSource.transport.read = function (options) {
+            _this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
                 qobj.start = options.data.pageSize * (options.data.page - 1);
@@ -19512,6 +19530,7 @@ var MVmInstance;
                     }
                 });
             };
+            return _this;
         }
         return OVmInstanceGrid;
     }(Utils.OGrid));
@@ -19673,11 +19692,11 @@ var MVmInstance;
                 value: this.value
             };
         };
-        FilterBy.NONE = 'none';
-        FilterBy.STATE = 'state';
-        FilterBy.TYPE = 'hypervisorType';
         return FilterBy;
     }());
+    FilterBy.NONE = 'none';
+    FilterBy.STATE = 'state';
+    FilterBy.TYPE = 'hypervisorType';
     var DetailsController = (function () {
         function DetailsController($scope, vmMgr, $routeParams, tagService, vm, clusterMgr, $rootScope, $window) {
             var _this = this;
@@ -19713,7 +19732,7 @@ var MVmInstance;
                     return current.name;
                 },
                 confirm: function () {
-                    vmMgr.delete($scope.model.current, function (ret) {
+                    vmMgr["delete"]($scope.model.current, function (ret) {
                         $scope.model.resetCurrent();
                     });
                 }
@@ -19911,9 +19930,9 @@ var MVmInstance;
                 });
             });
         };
-        DetailsController.$inject = ['$scope', 'VmInstanceManager', '$routeParams', 'Tag', 'current', 'ClusterManager', '$rootScope', '$window'];
         return DetailsController;
     }());
+    DetailsController.$inject = ['$scope', 'VmInstanceManager', '$routeParams', 'Tag', 'current', 'ClusterManager', '$rootScope', '$window'];
     MVmInstance.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, vmMgr, hostMgr, hypervisorTypes, $location, $rootScope, $window, Translator, $translate) {
@@ -20016,7 +20035,7 @@ var MVmInstance;
                     return $scope.model.current.name;
                 },
                 confirm: function () {
-                    vmMgr.delete($scope.model.current, function (ret) {
+                    vmMgr["delete"]($scope.model.current, function (ret) {
                         $scope.oVmInstanceGrid.deleteCurrent();
                     });
                 }
@@ -20093,9 +20112,9 @@ var MVmInstance;
                 }
             });
         }
-        Controller.$inject = ['$scope', 'VmInstanceManager', 'HostManager', 'hypervisorTypes', '$location', '$rootScope', '$window', 'Translator', '$translate'];
         return Controller;
     }());
+    Controller.$inject = ['$scope', 'VmInstanceManager', 'HostManager', 'hypervisorTypes', '$location', '$rootScope', '$window', 'Translator', '$translate'];
     MVmInstance.Controller = Controller;
     var ChangeInstanceOffering = (function () {
         function ChangeInstanceOffering(api, vmMgr, insMgr) {
@@ -21085,7 +21104,7 @@ var MVolume;
     var VolumeSnapshot = (function (_super) {
         __extends(VolumeSnapshot, _super);
         function VolumeSnapshot() {
-            _super.apply(this, arguments);
+            return _super.apply(this, arguments) || this;
         }
         VolumeSnapshot.prototype.progressOn = function () {
             this.inProgress = true;
@@ -21148,7 +21167,7 @@ var MVolume;
     var Volume = (function (_super) {
         __extends(Volume, _super);
         function Volume() {
-            _super.apply(this, arguments);
+            return _super.apply(this, arguments) || this;
         }
         Volume.prototype.progressOn = function () {
             this.inProgress = true;
@@ -21364,7 +21383,7 @@ var MVolume;
                 });
             });
         };
-        VolumeManager.prototype.delete = function (volume, done) {
+        VolumeManager.prototype["delete"] = function (volume, done) {
             var _this = this;
             volume.progressOn();
             var msg = new ApiHeader.APIDeleteDataVolumeMsg();
@@ -21457,15 +21476,16 @@ var MVolume;
                 done(ret.inventories);
             });
         };
-        VolumeManager.$inject = ['Api', '$rootScope'];
         return VolumeManager;
     }());
+    VolumeManager.$inject = ['Api', '$rootScope'];
     MVolume.VolumeManager = VolumeManager;
     var VolumeModel = (function (_super) {
         __extends(VolumeModel, _super);
         function VolumeModel() {
-            _super.call(this);
-            this.current = new Volume();
+            var _this = _super.call(this) || this;
+            _this.current = new Volume();
+            return _this;
         }
         return VolumeModel;
     }(Utils.Model));
@@ -21501,7 +21521,7 @@ var MVolume;
                 callback(pris, ret.total);
             });
         };
-        SnapshotManager.prototype.delete = function (sp, done) {
+        SnapshotManager.prototype["delete"] = function (sp, done) {
             var msg = new ApiHeader.APIDeleteVolumeSnapshotMsg();
             msg.uuid = sp.uuid;
             this.api.asyncApi(msg, function (ret) {
@@ -21560,10 +21580,10 @@ var MVolume;
     var OVolumeGrid = (function (_super) {
         __extends(OVolumeGrid, _super);
         function OVolumeGrid($scope, volumeMgr) {
-            _super.call(this);
-            this.volumeMgr = volumeMgr;
-            _super.prototype.init.call(this, $scope, $scope.volumeGrid);
-            this.options.columns = [
+            var _this = _super.call(this) || this;
+            _this.volumeMgr = volumeMgr;
+            _super.prototype.init.call(_this, $scope, $scope.volumeGrid);
+            _this.options.columns = [
                 {
                     field: 'name',
                     title: '{{"volume.ts.NAME" | translate}}',
@@ -21604,7 +21624,7 @@ var MVolume;
                     width: '20%'
                 }
             ];
-            this.options.dataSource.transport.read = function (options) {
+            _this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
                 qobj.start = options.data.pageSize * (options.data.page - 1);
@@ -21615,6 +21635,7 @@ var MVolume;
                     });
                 });
             };
+            return _this;
         }
         return OVolumeGrid;
     }(Utils.OGrid));
@@ -21733,13 +21754,13 @@ var MVolume;
                 value: this.value
             };
         };
-        FilterBy.NONE = 'none';
-        FilterBy.STATE = 'state';
-        FilterBy.STATUS = 'status';
-        FilterBy.TYPE = 'type';
-        FilterBy.HYPERVISOR = 'hypervisorType';
         return FilterBy;
     }());
+    FilterBy.NONE = 'none';
+    FilterBy.STATE = 'state';
+    FilterBy.STATUS = 'status';
+    FilterBy.TYPE = 'type';
+    FilterBy.HYPERVISOR = 'hypervisorType';
     var SnapshotAction = (function () {
         function SnapshotAction($scope, spMgr) {
             this.$scope = $scope;
@@ -21748,7 +21769,7 @@ var MVolume;
         SnapshotAction.prototype.revert = function () {
             this.$scope.revertSnapshot.open();
         };
-        SnapshotAction.prototype.delete = function () {
+        SnapshotAction.prototype["delete"] = function () {
             this.$scope.deleteSnapshotWin.open();
         };
         SnapshotAction.prototype.backup = function () {
@@ -21784,7 +21805,7 @@ var MVolume;
                 title: 'DELETE VOLUME SNAPSHOT',
                 description: "All descendants of this snapshot will be deleted as well",
                 confirm: function () {
-                    spMgr.delete($scope.model.current, function () {
+                    spMgr["delete"]($scope.model.current, function () {
                         $scope.model.resetCurrent();
                     });
                 }
@@ -21899,9 +21920,9 @@ var MVolume;
                 _this.marshalBackupStorage(sps[0]);
             });
         };
-        SnapshotDetailsController.$inject = ['$scope', 'SnapshotManager', '$routeParams', 'Tag', 'current', 'VmInstanceManager', 'BackupStorageManager'];
         return SnapshotDetailsController;
     }());
+    SnapshotDetailsController.$inject = ['$scope', 'SnapshotManager', '$routeParams', 'Tag', 'current', 'VmInstanceManager', 'BackupStorageManager'];
     MVolume.SnapshotDetailsController = SnapshotDetailsController;
     var DetailsController = (function () {
         function DetailsController($scope, volumeMgr, $routeParams, tagService, vol, vmMgr, spMgr, bsMgr) {
@@ -21938,7 +21959,7 @@ var MVolume;
                 },
                 btnType: 'btn-danger',
                 confirm: function () {
-                    volumeMgr.delete($scope.model.current, function (ret) {
+                    volumeMgr["delete"]($scope.model.current, function (ret) {
                         $scope.model.resetCurrent();
                     });
                 }
@@ -21956,7 +21977,7 @@ var MVolume;
                 title: 'DELETE VOLUME SNAPSHOT',
                 description: "All descendants of this snapshot will be deleted as well",
                 confirm: function () {
-                    spMgr.delete($scope.model.snapshot, function () {
+                    spMgr["delete"]($scope.model.snapshot, function () {
                         _this.reloadSnapshot(current.uuid);
                         $scope.model.snapshot = null;
                     });
@@ -22095,9 +22116,9 @@ var MVolume;
             });
             this.$scope.optionsSnapshotTree.dataSource.data(strees);
         };
-        DetailsController.$inject = ['$scope', 'VolumeManager', '$routeParams', 'Tag', 'current', 'VmInstanceManager', 'SnapshotManager', 'BackupStorageManager'];
         return DetailsController;
     }());
+    DetailsController.$inject = ['$scope', 'VolumeManager', '$routeParams', 'Tag', 'current', 'VmInstanceManager', 'SnapshotManager', 'BackupStorageManager'];
     MVolume.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, volumeMgr, hypervisorTypes, $location) {
@@ -22202,7 +22223,7 @@ var MVolume;
                 },
                 btnType: 'btn-danger',
                 confirm: function () {
-                    volumeMgr.delete($scope.model.current, function (ret) {
+                    volumeMgr["delete"]($scope.model.current, function (ret) {
                         $scope.oVolumeGrid.deleteCurrent();
                     });
                 }
@@ -22257,9 +22278,9 @@ var MVolume;
                 }
             });
         }
-        Controller.$inject = ['$scope', 'VolumeManager', 'hypervisorTypes', '$location'];
         return Controller;
     }());
+    Controller.$inject = ['$scope', 'VolumeManager', 'hypervisorTypes', '$location'];
     MVolume.Controller = Controller;
     var CreateVolume = (function () {
         function CreateVolume(api, diskOfferingMgr, volumeMgr, vmMgr) {
@@ -23275,7 +23296,7 @@ var MSecurityGroup;
     var SecurityGroup = (function (_super) {
         __extends(SecurityGroup, _super);
         function SecurityGroup() {
-            _super.apply(this, arguments);
+            return _super.apply(this, arguments) || this;
         }
         SecurityGroup.prototype.progressOn = function () {
             this.inProgress = true;
@@ -23468,7 +23489,7 @@ var MSecurityGroup;
                 callback(pris, ret.total);
             });
         };
-        SecurityGroupManager.prototype.delete = function (sg, done) {
+        SecurityGroupManager.prototype["delete"] = function (sg, done) {
             var _this = this;
             sg.progressOn();
             var msg = new ApiHeader.APIDeleteSecurityGroupMsg();
@@ -23520,15 +23541,16 @@ var MSecurityGroup;
                 });
             });
         };
-        SecurityGroupManager.$inject = ['Api', '$rootScope'];
         return SecurityGroupManager;
     }());
+    SecurityGroupManager.$inject = ['Api', '$rootScope'];
     MSecurityGroup.SecurityGroupManager = SecurityGroupManager;
     var SecurityGroupModel = (function (_super) {
         __extends(SecurityGroupModel, _super);
         function SecurityGroupModel() {
-            _super.call(this);
-            this.current = new SecurityGroup();
+            var _this = _super.call(this) || this;
+            _this.current = new SecurityGroup();
+            return _this;
         }
         return SecurityGroupModel;
     }(Utils.Model));
@@ -23536,10 +23558,10 @@ var MSecurityGroup;
     var OSecurityGroupGrid = (function (_super) {
         __extends(OSecurityGroupGrid, _super);
         function OSecurityGroupGrid($scope, sgMgr) {
-            _super.call(this);
-            this.sgMgr = sgMgr;
-            _super.prototype.init.call(this, $scope, $scope.securityGroupGrid);
-            this.options.columns = [
+            var _this = _super.call(this) || this;
+            _this.sgMgr = sgMgr;
+            _super.prototype.init.call(_this, $scope, $scope.securityGroupGrid);
+            _this.options.columns = [
                 {
                     field: 'name',
                     title: '{{"securityGroup.ts.NAME" | translate}}',
@@ -23563,7 +23585,7 @@ var MSecurityGroup;
                     width: '25%'
                 }
             ];
-            this.options.dataSource.transport.read = function (options) {
+            _this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
                 qobj.start = options.data.pageSize * (options.data.page - 1);
@@ -23574,6 +23596,7 @@ var MSecurityGroup;
                     });
                 });
             };
+            return _this;
         }
         return OSecurityGroupGrid;
     }(Utils.OGrid));
@@ -23676,10 +23699,10 @@ var MSecurityGroup;
                 value: this.value
             };
         };
-        FilterBy.NONE = 'none';
-        FilterBy.STATE = 'state';
         return FilterBy;
     }());
+    FilterBy.NONE = 'none';
+    FilterBy.STATE = 'state';
     var DetailsController = (function () {
         function DetailsController($scope, sgMgr, $routeParams, tagService, current, l3Mgr, api) {
             var _this = this;
@@ -23708,7 +23731,7 @@ var MSecurityGroup;
                     '<li><strong>All l3Networks this security group has attached will be detached</strong></li>' +
                     '<strong><p>those results are not recoverable</p></strong>',
                 confirm: function () {
-                    sgMgr.delete($scope.model.current, function (ret) {
+                    sgMgr["delete"]($scope.model.current, function (ret) {
                         $scope.model.resetCurrent();
                     });
                 }
@@ -23998,9 +24021,9 @@ var MSecurityGroup;
                 _this.$scope.model.current = sgs[0];
             });
         };
-        DetailsController.$inject = ['$scope', 'SecurityGroupManager', '$routeParams', 'Tag', 'current', 'L3NetworkManager', 'Api'];
         return DetailsController;
     }());
+    DetailsController.$inject = ['$scope', 'SecurityGroupManager', '$routeParams', 'Tag', 'current', 'L3NetworkManager', 'Api'];
     MSecurityGroup.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, sgMgr, $location) {
@@ -24085,7 +24108,7 @@ var MSecurityGroup;
                     '<li><strong>All l3Networks this security group has attached will be detached</strong></li>' +
                     '<strong><p>those results are not recoverable</p></strong>',
                 confirm: function () {
-                    sgMgr.delete($scope.model.current, function (ret) {
+                    sgMgr["delete"]($scope.model.current, function (ret) {
                         $scope.oSecurityGroupGrid.deleteCurrent();
                     });
                 }
@@ -24135,9 +24158,9 @@ var MSecurityGroup;
                 }
             });
         }
-        Controller.$inject = ['$scope', 'SecurityGroupManager', '$location'];
         return Controller;
     }());
+    Controller.$inject = ['$scope', 'SecurityGroupManager', '$location'];
     MSecurityGroup.Controller = Controller;
     var AddRule = (function () {
         function AddRule(sgMgr) {
@@ -25213,7 +25236,7 @@ var MVip;
     var Vip = (function (_super) {
         __extends(Vip, _super);
         function Vip() {
-            _super.apply(this, arguments);
+            return _super.apply(this, arguments) || this;
         }
         Vip.prototype.progressOn = function () {
             this.inProgress = true;
@@ -25342,7 +25365,7 @@ var MVip;
                 });
             });
         };
-        VipManager.prototype.delete = function (vip, done) {
+        VipManager.prototype["delete"] = function (vip, done) {
             var _this = this;
             vip.progressOn();
             var msg = new ApiHeader.APIDeleteVipMsg();
@@ -25355,15 +25378,16 @@ var MVip;
                 });
             });
         };
-        VipManager.$inject = ['Api', '$rootScope'];
         return VipManager;
     }());
+    VipManager.$inject = ['Api', '$rootScope'];
     MVip.VipManager = VipManager;
     var VipModel = (function (_super) {
         __extends(VipModel, _super);
         function VipModel() {
-            _super.call(this);
-            this.current = new Vip();
+            var _this = _super.call(this) || this;
+            _this.current = new Vip();
+            return _this;
         }
         return VipModel;
     }(Utils.Model));
@@ -25371,10 +25395,10 @@ var MVip;
     var OVipGrid = (function (_super) {
         __extends(OVipGrid, _super);
         function OVipGrid($scope, vipMgr) {
-            _super.call(this);
-            this.vipMgr = vipMgr;
-            _super.prototype.init.call(this, $scope, $scope.vipGrid);
-            this.options.columns = [
+            var _this = _super.call(this) || this;
+            _this.vipMgr = vipMgr;
+            _super.prototype.init.call(_this, $scope, $scope.vipGrid);
+            _this.options.columns = [
                 {
                     field: 'name',
                     title: '{{"vip.ts.NAME" | translate}}',
@@ -25419,7 +25443,7 @@ var MVip;
                     width: '14%'
                 }
             ];
-            this.options.dataSource.transport.read = function (options) {
+            _this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
                 qobj.start = options.data.pageSize * (options.data.page - 1);
@@ -25430,6 +25454,7 @@ var MVip;
                     });
                 });
             };
+            return _this;
         }
         return OVipGrid;
     }(Utils.OGrid));
@@ -25508,10 +25533,10 @@ var MVip;
                 value: this.value
             };
         };
-        FilterBy.NONE = 'none';
-        FilterBy.STATE = 'state';
         return FilterBy;
     }());
+    FilterBy.NONE = 'none';
+    FilterBy.STATE = 'state';
     var DetailsController = (function () {
         function DetailsController($scope, vipMgr, $routeParams, tagService, current) {
             var _this = this;
@@ -25535,7 +25560,7 @@ var MVip;
                 title: 'DELETE VIP',
                 description: 'Deleting will delete all network services that this VIP is used for. For example, if the VIP is used for EIP, the EIP will be deleted as well',
                 confirm: function () {
-                    vipMgr.delete($scope.model.current, function (ret) {
+                    vipMgr["delete"]($scope.model.current, function (ret) {
                         $scope.model.resetCurrent();
                     });
                 }
@@ -25570,9 +25595,9 @@ var MVip;
                 _this.$scope.model.current = vips[0];
             });
         };
-        DetailsController.$inject = ['$scope', 'VipManager', '$routeParams', 'Tag', 'current'];
         return DetailsController;
     }());
+    DetailsController.$inject = ['$scope', 'VipManager', '$routeParams', 'Tag', 'current'];
     MVip.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, vipMgr, $location) {
@@ -25674,7 +25699,7 @@ var MVip;
                 title: 'DELETE VIP',
                 description: 'Deleting will delete all network services that this VIP is used for. For example, if the VIP is used for EIP, the EIP will be deleted as well',
                 confirm: function () {
-                    vipMgr.delete($scope.model.current, function (ret) {
+                    vipMgr["delete"]($scope.model.current, function (ret) {
                         $scope.oVipGrid.deleteCurrent();
                     });
                 }
@@ -25694,9 +25719,9 @@ var MVip;
                 }
             };
         }
-        Controller.$inject = ['$scope', 'VipManager', '$location'];
         return Controller;
     }());
+    Controller.$inject = ['$scope', 'VipManager', '$location'];
     MVip.Controller = Controller;
     var CreateVipOptions = (function () {
         function CreateVipOptions() {
@@ -25901,7 +25926,7 @@ var MEip;
     var Eip = (function (_super) {
         __extends(Eip, _super);
         function Eip() {
-            _super.apply(this, arguments);
+            return _super.apply(this, arguments) || this;
         }
         Eip.prototype.progressOn = function () {
             this.inProgress = true;
@@ -26094,7 +26119,7 @@ var MEip;
                 });
             });
         };
-        EipManager.prototype.delete = function (eip, done) {
+        EipManager.prototype["delete"] = function (eip, done) {
             var _this = this;
             eip.progressOn();
             var msg = new ApiHeader.APIDeleteEipMsg();
@@ -26107,15 +26132,16 @@ var MEip;
                 });
             });
         };
-        EipManager.$inject = ['Api', '$rootScope'];
         return EipManager;
     }());
+    EipManager.$inject = ['Api', '$rootScope'];
     MEip.EipManager = EipManager;
     var EipModel = (function (_super) {
         __extends(EipModel, _super);
         function EipModel() {
-            _super.call(this);
-            this.current = new Eip();
+            var _this = _super.call(this) || this;
+            _this.current = new Eip();
+            return _this;
         }
         return EipModel;
     }(Utils.Model));
@@ -26123,12 +26149,12 @@ var MEip;
     var OEipGrid = (function (_super) {
         __extends(OEipGrid, _super);
         function OEipGrid($scope, eipMgr, vmMgr, vipMgr) {
-            _super.call(this);
-            this.eipMgr = eipMgr;
-            this.vmMgr = vmMgr;
-            this.vipMgr = vipMgr;
-            _super.prototype.init.call(this, $scope, $scope.eipGrid);
-            this.options.columns = [
+            var _this = _super.call(this) || this;
+            _this.eipMgr = eipMgr;
+            _this.vmMgr = vmMgr;
+            _this.vipMgr = vipMgr;
+            _super.prototype.init.call(_this, $scope, $scope.eipGrid);
+            _this.options.columns = [
                 {
                     field: 'name',
                     title: '{{"eip.ts.NAME" | translate}}',
@@ -26152,7 +26178,7 @@ var MEip;
                     width: '25%'
                 },
             ];
-            this.options.dataSource.transport.read = function (options) {
+            _this.options.dataSource.transport.read = function (options) {
                 var chain = new Utils.Chain();
                 var eips = [];
                 var vips = {};
@@ -26246,6 +26272,7 @@ var MEip;
                     });
                 }).start();
             };
+            return _this;
         }
         return OEipGrid;
     }(Utils.OGrid));
@@ -26330,10 +26357,10 @@ var MEip;
                 value: this.value
             };
         };
-        FilterBy.NONE = 'none';
-        FilterBy.STATE = 'state';
         return FilterBy;
     }());
+    FilterBy.NONE = 'none';
+    FilterBy.STATE = 'state';
     var DetailsController = (function () {
         function DetailsController($scope, eipMgr, $routeParams, tagService, current, vmMgr) {
             var _this = this;
@@ -26364,7 +26391,7 @@ var MEip;
                     return current.name;
                 },
                 confirm: function () {
-                    eipMgr.delete($scope.model.current, function (ret) {
+                    eipMgr["delete"]($scope.model.current, function (ret) {
                         $scope.model.resetCurrent();
                     });
                 }
@@ -26420,9 +26447,9 @@ var MEip;
                 _this.$scope.model.current = eips[0];
             });
         };
-        DetailsController.$inject = ['$scope', 'EipManager', '$routeParams', 'Tag', 'current', 'VmInstanceManager'];
         return DetailsController;
     }());
+    DetailsController.$inject = ['$scope', 'EipManager', '$routeParams', 'Tag', 'current', 'VmInstanceManager'];
     MEip.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, eipMgr, $location, vipMgr, vmMgr) {
@@ -26510,7 +26537,7 @@ var MEip;
                     return $scope.model.current.name;
                 },
                 confirm: function () {
-                    eipMgr.delete($scope.model.current, function (ret) {
+                    eipMgr["delete"]($scope.model.current, function (ret) {
                         $scope.oEipGrid.deleteCurrent();
                     });
                 }
@@ -26596,9 +26623,9 @@ var MEip;
                 }
             };
         }
-        Controller.$inject = ['$scope', 'EipManager', '$location', 'VipManager', 'VmInstanceManager'];
         return Controller;
     }());
+    Controller.$inject = ['$scope', 'EipManager', '$location', 'VipManager', 'VmInstanceManager'];
     MEip.Controller = Controller;
     var CreateEip = (function () {
         function CreateEip(api, eipMgr, vipMgr, l3Mgr, vmMgr) {
@@ -26920,10 +26947,10 @@ var MEip;
                 win.open();
             }).start();
         };
-        CreateEip.USE_EXISTING_VIP = "existing";
-        CreateEip.CREATE_NEW_VIP = "new";
         return CreateEip;
     }());
+    CreateEip.USE_EXISTING_VIP = "existing";
+    CreateEip.CREATE_NEW_VIP = "new";
     MEip.CreateEip = CreateEip;
     var AttachEip = (function () {
         function AttachEip(eipMgr, vmMgr) {
@@ -27198,7 +27225,7 @@ var MPortForwarding;
     var PortForwarding = (function (_super) {
         __extends(PortForwarding, _super);
         function PortForwarding() {
-            _super.apply(this, arguments);
+            return _super.apply(this, arguments) || this;
         }
         PortForwarding.prototype.progressOn = function () {
             this.inProgress = true;
@@ -27396,7 +27423,7 @@ var MPortForwarding;
                 });
             });
         };
-        PortForwardingManager.prototype.delete = function (pf, done) {
+        PortForwardingManager.prototype["delete"] = function (pf, done) {
             var _this = this;
             pf.progressOn();
             var msg = new ApiHeader.APIDeletePortForwardingRuleMsg();
@@ -27409,15 +27436,16 @@ var MPortForwarding;
                 });
             });
         };
-        PortForwardingManager.$inject = ['Api', '$rootScope'];
         return PortForwardingManager;
     }());
+    PortForwardingManager.$inject = ['Api', '$rootScope'];
     MPortForwarding.PortForwardingManager = PortForwardingManager;
     var PortForwardingModel = (function (_super) {
         __extends(PortForwardingModel, _super);
         function PortForwardingModel() {
-            _super.call(this);
-            this.current = new PortForwarding();
+            var _this = _super.call(this) || this;
+            _this.current = new PortForwarding();
+            return _this;
         }
         return PortForwardingModel;
     }(Utils.Model));
@@ -27425,12 +27453,12 @@ var MPortForwarding;
     var OPortForwardingGrid = (function (_super) {
         __extends(OPortForwardingGrid, _super);
         function OPortForwardingGrid($scope, pfMgr, vmMgr, vipMgr) {
-            _super.call(this);
-            this.pfMgr = pfMgr;
-            this.vmMgr = vmMgr;
-            this.vipMgr = vipMgr;
-            _super.prototype.init.call(this, $scope, $scope.pfGrid);
-            this.options.columns = [
+            var _this = _super.call(this) || this;
+            _this.pfMgr = pfMgr;
+            _this.vmMgr = vmMgr;
+            _this.vipMgr = vipMgr;
+            _super.prototype.init.call(_this, $scope, $scope.pfGrid);
+            _this.options.columns = [
                 {
                     field: 'name',
                     title: '{{"portForwarding.ts.NAME" | translate}}',
@@ -27474,7 +27502,7 @@ var MPortForwarding;
                     width: '20%'
                 },
             ];
-            this.options.dataSource.transport.read = function (options) {
+            _this.options.dataSource.transport.read = function (options) {
                 var chain = new Utils.Chain();
                 var pfs = [];
                 var vips = {};
@@ -27568,6 +27596,7 @@ var MPortForwarding;
                     });
                 }).start();
             };
+            return _this;
         }
         return OPortForwardingGrid;
     }(Utils.OGrid));
@@ -27652,10 +27681,10 @@ var MPortForwarding;
                 value: this.value
             };
         };
-        FilterBy.NONE = 'none';
-        FilterBy.STATE = 'state';
         return FilterBy;
     }());
+    FilterBy.NONE = 'none';
+    FilterBy.STATE = 'state';
     var DetailsController = (function () {
         function DetailsController($scope, pfMgr, $routeParams, tagService, current, vmMgr) {
             var _this = this;
@@ -27686,7 +27715,7 @@ var MPortForwarding;
                 btnType: 'btn-danger',
                 width: '350px',
                 confirm: function () {
-                    pfMgr.delete($scope.model.current, function (ret) {
+                    pfMgr["delete"]($scope.model.current, function (ret) {
                         $scope.model.resetCurrent();
                     });
                 }
@@ -27742,9 +27771,9 @@ var MPortForwarding;
                 _this.$scope.model.current = pfs[0];
             });
         };
-        DetailsController.$inject = ['$scope', 'PortForwardingManager', '$routeParams', 'Tag', 'current', 'VmInstanceManager'];
         return DetailsController;
     }());
+    DetailsController.$inject = ['$scope', 'PortForwardingManager', '$routeParams', 'Tag', 'current', 'VmInstanceManager'];
     MPortForwarding.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, pfMgr, $location, vipMgr, vmMgr) {
@@ -27856,7 +27885,7 @@ var MPortForwarding;
                 btnType: 'btn-danger',
                 width: '350px',
                 confirm: function () {
-                    pfMgr.delete($scope.model.current, function (ret) {
+                    pfMgr["delete"]($scope.model.current, function (ret) {
                         $scope.oPortForwardingGrid.deleteCurrent();
                     });
                 }
@@ -27942,9 +27971,9 @@ var MPortForwarding;
                 }
             };
         }
-        Controller.$inject = ['$scope', 'PortForwardingManager', '$location', 'VipManager', 'VmInstanceManager'];
         return Controller;
     }());
+    Controller.$inject = ['$scope', 'PortForwardingManager', '$location', 'VipManager', 'VmInstanceManager'];
     MPortForwarding.Controller = Controller;
     var CreatePortForwarding = (function () {
         function CreatePortForwarding(api, pfMgr, vipMgr, l3Mgr, vmMgr) {
@@ -28366,10 +28395,10 @@ var MPortForwarding;
                 win.open();
             }).start();
         };
-        CreatePortForwarding.USE_EXISTING_VIP = "existing";
-        CreatePortForwarding.CREATE_NEW_VIP = "new";
         return CreatePortForwarding;
     }());
+    CreatePortForwarding.USE_EXISTING_VIP = "existing";
+    CreatePortForwarding.CREATE_NEW_VIP = "new";
     MPortForwarding.CreatePortForwarding = CreatePortForwarding;
     var AttachPortForwarding = (function () {
         function AttachPortForwarding(pfMgr, vmMgr) {
@@ -28645,7 +28674,7 @@ var MVirtualRouter;
     var VmNic = (function (_super) {
         __extends(VmNic, _super);
         function VmNic() {
-            _super.apply(this, arguments);
+            return _super.apply(this, arguments) || this;
         }
         VmNic.prototype.progressOn = function () {
             this.inProgress = true;
@@ -28677,7 +28706,7 @@ var MVirtualRouter;
     var VirtualRouter = (function (_super) {
         __extends(VirtualRouter, _super);
         function VirtualRouter() {
-            _super.apply(this, arguments);
+            return _super.apply(this, arguments) || this;
         }
         VirtualRouter.prototype.progressOn = function () {
             this.inProgress = true;
@@ -28734,9 +28763,9 @@ var MVirtualRouter;
             self.set('createDate', inv.createDate);
             self.set('lastOpDate', inv.lastOpDate);
         };
-        VirtualRouter.STATES = ['Running', 'Starting', 'Stopping', 'Stopped', 'Rebooting', 'Migrating', 'Unknown', 'Created'];
         return VirtualRouter;
     }(ApiHeader.ApplianceVmInventory));
+    VirtualRouter.STATES = ['Running', 'Starting', 'Stopping', 'Stopped', 'Rebooting', 'Migrating', 'Unknown', 'Created'];
     MVirtualRouter.VirtualRouter = VirtualRouter;
     var VirtualRouterManager = (function () {
         function VirtualRouterManager(api, $rootScope) {
@@ -28830,7 +28859,7 @@ var MVirtualRouter;
                 vm.progressOff();
             });
         };
-        VirtualRouterManager.prototype.delete = function (vm, done) {
+        VirtualRouterManager.prototype["delete"] = function (vm, done) {
             var _this = this;
             vm.progressOn();
             vm.state = 'Destroying';
@@ -28881,15 +28910,16 @@ var MVirtualRouter;
                 });
             });
         };
-        VirtualRouterManager.$inject = ['Api', '$rootScope'];
         return VirtualRouterManager;
     }());
+    VirtualRouterManager.$inject = ['Api', '$rootScope'];
     MVirtualRouter.VirtualRouterManager = VirtualRouterManager;
     var VirtualRouterModel = (function (_super) {
         __extends(VirtualRouterModel, _super);
         function VirtualRouterModel() {
-            _super.call(this);
-            this.current = new VirtualRouter();
+            var _this = _super.call(this) || this;
+            _this.current = new VirtualRouter();
+            return _this;
         }
         return VirtualRouterModel;
     }(Utils.Model));
@@ -28897,10 +28927,10 @@ var MVirtualRouter;
     var OVirtualRouterGrid = (function (_super) {
         __extends(OVirtualRouterGrid, _super);
         function OVirtualRouterGrid($scope, vmMgr) {
-            _super.call(this);
-            this.vmMgr = vmMgr;
-            _super.prototype.init.call(this, $scope, $scope.vmGrid);
-            this.options.columns = [
+            var _this = _super.call(this) || this;
+            _this.vmMgr = vmMgr;
+            _super.prototype.init.call(_this, $scope, $scope.vmGrid);
+            _this.options.columns = [
                 {
                     field: 'name',
                     title: '{{"virtualRouter.ts.NAME" | translate}}',
@@ -28935,7 +28965,7 @@ var MVirtualRouter;
                     width: '20%'
                 }
             ];
-            this.options.dataSource.transport.read = function (options) {
+            _this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
                 qobj.start = options.data.pageSize * (options.data.page - 1);
@@ -28946,6 +28976,7 @@ var MVirtualRouter;
                     });
                 });
             };
+            return _this;
         }
         return OVirtualRouterGrid;
     }(Utils.OGrid));
@@ -28966,7 +28997,7 @@ var MVirtualRouter;
         Action.prototype.migrate = function () {
             this.$scope.migrateVm.open();
         };
-        Action.prototype.delete = function () {
+        Action.prototype["delete"] = function () {
             this.$scope.deleteVirtualRouter.open();
         };
         Action.prototype.reconnect = function () {
@@ -29073,11 +29104,11 @@ var MVirtualRouter;
                 value: this.value
             };
         };
-        FilterBy.NONE = 'none';
-        FilterBy.STATE = 'state';
-        FilterBy.TYPE = 'hypervisorType';
         return FilterBy;
     }());
+    FilterBy.NONE = 'none';
+    FilterBy.STATE = 'state';
+    FilterBy.TYPE = 'hypervisorType';
     var DetailsController = (function () {
         function DetailsController($scope, vmMgr, $routeParams, tagService, current, clusterMgr, $rootScope, $window) {
             var _this = this;
@@ -29109,7 +29140,7 @@ var MVirtualRouter;
             $scope.optionsDeleteVirtualRouter = {
                 title: 'DELETE VIRTUAL ROUTER',
                 confirm: function () {
-                    vmMgr.delete($scope.model.current, function (ret) {
+                    vmMgr["delete"]($scope.model.current, function (ret) {
                         $scope.model.resetCurrent();
                     });
                 }
@@ -29261,9 +29292,9 @@ var MVirtualRouter;
                 _this.$scope.model.current = vms[0];
             });
         };
-        DetailsController.$inject = ['$scope', 'VirtualRouterManager', '$routeParams', 'Tag', 'current', 'ClusterManager', '$rootScope', '$window'];
         return DetailsController;
     }());
+    DetailsController.$inject = ['$scope', 'VirtualRouterManager', '$routeParams', 'Tag', 'current', 'ClusterManager', '$rootScope', '$window'];
     MVirtualRouter.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, vmMgr, hypervisorTypes, $location, $rootScope, $window) {
@@ -29355,7 +29386,7 @@ var MVirtualRouter;
             $scope.optionsDeleteVirtualRouter = {
                 title: 'DELETE VIRTUAL ROUTER',
                 confirm: function () {
-                    vmMgr.delete($scope.model.current, function (ret) {
+                    vmMgr["delete"]($scope.model.current, function (ret) {
                         $scope.oVirtualRouterGrid.deleteCurrent();
                     });
                 }
@@ -29405,9 +29436,9 @@ var MVirtualRouter;
                 });
             };
         }
-        Controller.$inject = ['$scope', 'VirtualRouterManager', 'hypervisorTypes', '$location', '$rootScope', '$window'];
         return Controller;
     }());
+    Controller.$inject = ['$scope', 'VirtualRouterManager', 'hypervisorTypes', '$location', '$rootScope', '$window'];
     MVirtualRouter.Controller = Controller;
 })(MVirtualRouter || (MVirtualRouter = {}));
 angular.module('root').factory('VirtualRouterManager', ['Api', '$rootScope', function (api, $rootScope) {
@@ -29450,7 +29481,7 @@ var MVirtualRouterOffering;
     var VirtualRouterOffering = (function (_super) {
         __extends(VirtualRouterOffering, _super);
         function VirtualRouterOffering() {
-            _super.apply(this, arguments);
+            return _super.apply(this, arguments) || this;
         }
         VirtualRouterOffering.prototype.progressOn = function () {
             this.inProgress = true;
@@ -29598,7 +29629,7 @@ var MVirtualRouterOffering;
                 });
             });
         };
-        VirtualRouterOfferingManager.prototype.delete = function (virtualRouterOffering, done) {
+        VirtualRouterOfferingManager.prototype["delete"] = function (virtualRouterOffering, done) {
             var _this = this;
             virtualRouterOffering.progressOn();
             var msg = new ApiHeader.APIDeleteInstanceOfferingMsg();
@@ -29611,15 +29642,16 @@ var MVirtualRouterOffering;
                 });
             });
         };
-        VirtualRouterOfferingManager.$inject = ['Api', '$rootScope'];
         return VirtualRouterOfferingManager;
     }());
+    VirtualRouterOfferingManager.$inject = ['Api', '$rootScope'];
     MVirtualRouterOffering.VirtualRouterOfferingManager = VirtualRouterOfferingManager;
     var VirtualRouterOfferingModel = (function (_super) {
         __extends(VirtualRouterOfferingModel, _super);
         function VirtualRouterOfferingModel() {
-            _super.call(this);
-            this.current = new VirtualRouterOffering();
+            var _this = _super.call(this) || this;
+            _this.current = new VirtualRouterOffering();
+            return _this;
         }
         return VirtualRouterOfferingModel;
     }(Utils.Model));
@@ -29627,10 +29659,10 @@ var MVirtualRouterOffering;
     var OVirtualRouterOfferingGrid = (function (_super) {
         __extends(OVirtualRouterOfferingGrid, _super);
         function OVirtualRouterOfferingGrid($scope, virtualRouterOfferingMgr) {
-            _super.call(this);
-            this.virtualRouterOfferingMgr = virtualRouterOfferingMgr;
-            _super.prototype.init.call(this, $scope, $scope.virtualRouterOfferingGrid);
-            this.options.columns = [
+            var _this = _super.call(this) || this;
+            _this.virtualRouterOfferingMgr = virtualRouterOfferingMgr;
+            _super.prototype.init.call(_this, $scope, $scope.virtualRouterOfferingGrid);
+            _this.options.columns = [
                 {
                     field: 'name',
                     title: '{{"virtualRouterOffering.ts.NAME" | translate}}',
@@ -29671,7 +29703,7 @@ var MVirtualRouterOffering;
                     width: '20%'
                 }
             ];
-            this.options.dataSource.transport.read = function (options) {
+            _this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
                 qobj.start = options.data.pageSize * (options.data.page - 1);
@@ -29682,6 +29714,7 @@ var MVirtualRouterOffering;
                     });
                 });
             };
+            return _this;
         }
         return OVirtualRouterOfferingGrid;
     }(Utils.OGrid));
@@ -29761,10 +29794,10 @@ var MVirtualRouterOffering;
                 value: this.value
             };
         };
-        FilterBy.NONE = 'none';
-        FilterBy.STATE = 'state';
         return FilterBy;
     }());
+    FilterBy.NONE = 'none';
+    FilterBy.STATE = 'state';
     var DetailsController = (function () {
         function DetailsController($scope, virtualRouterOfferingMgr, $routeParams, tagService, current) {
             var _this = this;
@@ -29794,7 +29827,7 @@ var MVirtualRouterOffering;
                 },
                 width: '400px',
                 confirm: function () {
-                    virtualRouterOfferingMgr.delete($scope.model.current, function (ret) {
+                    virtualRouterOfferingMgr["delete"]($scope.model.current, function (ret) {
                         $scope.model.resetCurrent();
                     });
                 }
@@ -29829,9 +29862,9 @@ var MVirtualRouterOffering;
                 _this.$scope.model.current = virtualRouterOfferings[0];
             });
         };
-        DetailsController.$inject = ['$scope', 'VirtualRouterOfferingManager', '$routeParams', 'Tag', 'current'];
         return DetailsController;
     }());
+    DetailsController.$inject = ['$scope', 'VirtualRouterOfferingManager', '$routeParams', 'Tag', 'current'];
     MVirtualRouterOffering.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, virtualRouterOfferingMgr, hypervisorTypes, $location) {
@@ -29926,7 +29959,7 @@ var MVirtualRouterOffering;
                 },
                 width: '400px',
                 confirm: function () {
-                    virtualRouterOfferingMgr.delete($scope.model.current, function (ret) {
+                    virtualRouterOfferingMgr["delete"]($scope.model.current, function (ret) {
                         $scope.oVirtualRouterOfferingGrid.deleteCurrent();
                     });
                 }
@@ -29946,9 +29979,9 @@ var MVirtualRouterOffering;
                 }
             };
         }
-        Controller.$inject = ['$scope', 'VirtualRouterOfferingManager', 'hypervisorTypes', '$location'];
         return Controller;
     }());
+    Controller.$inject = ['$scope', 'VirtualRouterOfferingManager', 'hypervisorTypes', '$location'];
     MVirtualRouterOffering.Controller = Controller;
     var CreateVirtualRouterOfferingOptions = (function () {
         function CreateVirtualRouterOfferingOptions() {
@@ -30293,9 +30326,9 @@ var MDashboard;
             this.api = api;
             this.$rootScope = $rootScope;
         }
-        DashboardManager.$inject = ['Api'];
         return DashboardManager;
     }());
+    DashboardManager.$inject = ['Api'];
     MDashboard.DashboardManager = DashboardManager;
     var Controller = (function () {
         function Controller($scope, api, $location, zoneMgr, Translator, $translate) {
@@ -30701,9 +30734,9 @@ var MDashboard;
                 })
             };
         }
-        Controller.$inject = ['$scope', 'Api', '$location', 'ZoneManager', 'Translator', '$translate'];
         return Controller;
     }());
+    Controller.$inject = ['$scope', 'Api', '$location', 'ZoneManager', 'Translator', '$translate'];
     MDashboard.Controller = Controller;
 })(MDashboard || (MDashboard = {}));
 angular.module('root').factory('DashboardManager', ['Api', '$rootScope', function (api, $rootScope) {
@@ -30752,15 +30785,16 @@ var MGlobalConfig;
                 }
             });
         };
-        GlobalConfigManager.$inject = ['Api', '$rootScope'];
         return GlobalConfigManager;
     }());
+    GlobalConfigManager.$inject = ['Api', '$rootScope'];
     MGlobalConfig.GlobalConfigManager = GlobalConfigManager;
     var GlobalConfigModel = (function (_super) {
         __extends(GlobalConfigModel, _super);
         function GlobalConfigModel() {
-            _super.call(this);
-            this.current = null;
+            var _this = _super.call(this) || this;
+            _this.current = null;
+            return _this;
         }
         return GlobalConfigModel;
     }(Utils.Model));
@@ -30768,10 +30802,10 @@ var MGlobalConfig;
     var OGlobalConfigGrid = (function (_super) {
         __extends(OGlobalConfigGrid, _super);
         function OGlobalConfigGrid($scope, globalConfigMgr) {
-            _super.call(this);
-            this.globalConfigMgr = globalConfigMgr;
-            _super.prototype.init.call(this, $scope, $scope.globalConfigGrid);
-            this.options.columns = [
+            var _this = _super.call(this) || this;
+            _this.globalConfigMgr = globalConfigMgr;
+            _super.prototype.init.call(_this, $scope, $scope.globalConfigGrid);
+            _this.options.columns = [
                 {
                     field: 'name',
                     title: '{{"globalConfig.ts.NAME" | translate}}',
@@ -30793,7 +30827,7 @@ var MGlobalConfig;
                     width: '20%'
                 }
             ];
-            this.options.dataSource.transport.read = function (options) {
+            _this.options.dataSource.transport.read = function (options) {
                 var qobj = new ApiHeader.QueryObject();
                 qobj.limit = options.data.take;
                 qobj.start = options.data.pageSize * (options.data.page - 1);
@@ -30804,7 +30838,8 @@ var MGlobalConfig;
                     });
                 });
             };
-            this.options.dataSource.pageSize(30);
+            _this.options.dataSource.pageSize(30);
+            return _this;
         }
         return OGlobalConfigGrid;
     }(Utils.OGrid));
@@ -30883,10 +30918,10 @@ var MGlobalConfig;
                 value: this.value
             };
         };
-        FilterBy.NONE = 'none';
-        FilterBy.CATEGORY = 'category';
         return FilterBy;
     }());
+    FilterBy.NONE = 'none';
+    FilterBy.CATEGORY = 'category';
     var DetailsController = (function () {
         function DetailsController($scope, gMgr, $routeParams, current) {
             var _this = this;
@@ -30928,9 +30963,9 @@ var MGlobalConfig;
                 _this.$scope.model.current = globalConfigs[0];
             });
         };
-        DetailsController.$inject = ['$scope', 'GlobalConfigManager', '$routeParams', 'current'];
         return DetailsController;
     }());
+    DetailsController.$inject = ['$scope', 'GlobalConfigManager', '$routeParams', 'current'];
     MGlobalConfig.DetailsController = DetailsController;
     var Controller = (function () {
         function Controller($scope, gMgr, configs, $location) {
@@ -31022,9 +31057,9 @@ var MGlobalConfig;
                 }
             });
         }
-        Controller.$inject = ['$scope', 'GlobalConfigManager', 'configs', '$location'];
         return Controller;
     }());
+    Controller.$inject = ['$scope', 'GlobalConfigManager', 'configs', '$location'];
     MGlobalConfig.Controller = Controller;
     var EditGlobalConfig = (function () {
         function EditGlobalConfig(gMgr) {
@@ -31206,11 +31241,11 @@ var Directive;
     var SearchBoxSchema = (function () {
         function SearchBoxSchema() {
         }
-        SearchBoxSchema.VALUE_TYPE_TEXT = "text";
-        SearchBoxSchema.VALUE_TYPE_LIST = "list";
-        SearchBoxSchema.VALUE_TYPE_TIMESTAMP = "timeStamp";
         return SearchBoxSchema;
     }());
+    SearchBoxSchema.VALUE_TYPE_TEXT = "text";
+    SearchBoxSchema.VALUE_TYPE_LIST = "list";
+    SearchBoxSchema.VALUE_TYPE_TIMESTAMP = "timeStamp";
     Directive.SearchBoxSchema = SearchBoxSchema;
     var SearchCondition = (function () {
         function SearchCondition() {
@@ -31541,11 +31576,11 @@ var Directive;
         SearchBox.prototype.getSchema = function () {
             return this.options.schema[this.$scope.currentCondition.name];
         };
-        SearchBox.OPS = ["=", "!=", ">", "<", ">=", "<=", "in", "not in", "is null", "is not null", "like", "not like"];
-        SearchBox.TAG_OPS = ['in', 'not in'];
-        SearchBox.USER_TAG_CONDITION_NAME = '__userTag__';
         return SearchBox;
     }());
+    SearchBox.OPS = ["=", "!=", ">", "<", ">=", "<=", "in", "not in", "is null", "is not null", "like", "not like"];
+    SearchBox.TAG_OPS = ['in', 'not in'];
+    SearchBox.USER_TAG_CONDITION_NAME = '__userTag__';
     Directive.SearchBox = SearchBox;
     var GridDoubleClick = (function () {
         function GridDoubleClick() {
@@ -31621,9 +31656,9 @@ var Directive;
                 };
             };
         }
-        SortBy.NO_SORT_BY_NAME = '-- No Sort --';
         return SortBy;
     }());
+    SortBy.NO_SORT_BY_NAME = '-- No Sort --';
     Directive.SortBy = SortBy;
     var DeleteConfirmOptions = (function () {
         function DeleteConfirmOptions() {
