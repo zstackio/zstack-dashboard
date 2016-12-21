@@ -285,7 +285,7 @@
     "cluster.details.Disable": "禁用",
     "cluster.details.Add Host": "新增實體機",
     "cluster.details.Attach L2Network": "掛載L2網路",
-    "cluster.details.Detach L2Network": "卸載網路",
+    "cluster.details.Detach L2Network": "卸載L2網路",
     "cluster.details.Attach Primary Storage": "掛載主儲存",
     "cluster.details.Detach Primary Storage": "卸載主儲存",
     "cluster.details.Delete": "刪除",

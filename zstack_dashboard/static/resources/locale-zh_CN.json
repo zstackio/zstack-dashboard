@@ -285,7 +285,7 @@
     "cluster.details.Disable": "禁用",
     "cluster.details.Add Host": "添加物理机",
     "cluster.details.Attach L2Network": "挂载L2网络",
-    "cluster.details.Detach L2Network": "卸载网络",
+    "cluster.details.Detach L2Network": "卸载L2网络",
     "cluster.details.Attach Primary Storage": "挂载主存储",
     "cluster.details.Detach Primary Storage": "卸载主存储",
     "cluster.details.Delete": "删除",
