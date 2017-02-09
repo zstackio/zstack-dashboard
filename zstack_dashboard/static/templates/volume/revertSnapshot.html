@@ -4,23 +4,23 @@
 
         <table class="table z-table-borderless">
             <tr>
-                <td><span class="z-label">{{ "volume.reverSnapshot.VOLUME NAME:" | translate }}</span></td>
+                <td><span class="z-label">{{ "volume.reverSnapshot.VOLUME NAME" | translate }}</span></td>
                 <td><span class="z-description">{{volume.name}}</span></td>
             </tr>
             <tr>
-                <td><span class="z-label">{{ "volume.reverSnapshot.VOLUME TYPE:" | translate }}</span></td>
+                <td><span class="z-label">{{ "volume.reverSnapshot.VOLUME TYPE" | translate }}</span></td>
                 <td><span class="z-description">{{volume.type}}</span></td>
             </tr>
             <tr>
-                <td><span class="z-label">{{ "volume.reverSnapshot.SNAPSHOT NAME:" | translate }}</span></td>
+                <td><span class="z-label">{{ "volume.reverSnapshot.SNAPSHOT NAME" | translate }}</span></td>
                 <td><span>{{snapshot.name}}</span></td>
             </tr>
             <tr>
-                <td><span class="z-label">{{ "volume.reverSnapshot.SNAPSHOT UUID:" | translate }}</span></td>
+                <td><span class="z-label">{{ "volume.reverSnapshot.SNAPSHOT UUID" | translate }}</span></td>
                 <td><span>{{snapshot.uuid}}</span></td>
             </tr>
             <tr ng-show="isVmInCorrectState()">
-                <td><span class="z-label">{{ "volume.reverSnapshot.VM THE VOLUME ATTACHED:" | translate }}</span></td>
+                <td><span class="z-label">{{ "volume.reverSnapshot.VM THE VOLUME ATTACHED" | translate }}</span></td>
                 <td><span class="z-description">{{vm.name}}</span></td>
             </tr>
         </table>

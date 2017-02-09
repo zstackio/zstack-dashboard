@@ -1068,11 +1068,11 @@ module MVolume {
                     '<span class="caret"></span>' +
                     '</button>' +
                     '<ul class="dropdown-menu" role="menu">' +
-                    '<li><a href="/\\#/volumeSnapshot/{{dataItem.inventory.uuid}}">See details</a></li>' +
-                    '<li><a href ng-click="revertToSnapshot(dataItem.inventory)" ng-show="dataItem.inventory.isRevertShow()">Revert volume to this snapshot</a></li>' +
-                    '<li><a href ng-click="backupSnapshot(dataItem.inventory)" ng-show="dataItem.inventory.isBackupShow()">Backup</a></li>' +
-                    '<li><a href ng-click="deleteSnapshotFromBackupStorage(dataItem.inventory)" ng-show="dataItem.inventory.isDeleteFromBackupStorageShow()">Delete From Backup Storage</a></li>' +
-                    '<li><a href style="color:red" ng-click="deleteSnapshot(dataItem.inventory)">Delete</a></li>' +
+                    '<li><a href="/\\#/volumeSnapshot/{{dataItem.inventory.uuid}}">{{"volume.ts.See details" | translate}}</a></li>' +
+                    '<li><a href ng-click="revertToSnapshot(dataItem.inventory)" ng-show="dataItem.inventory.isRevertShow()">{{"volume.ts.Revert volume to this snapshot" | translate}}</a></li>' +
+                    '<li><a href ng-click="backupSnapshot(dataItem.inventory)" ng-show="dataItem.inventory.isBackupShow()">{{"volume.ts.Backup" | translate}}</a></li>' +
+                    '<li><a href ng-click="deleteSnapshotFromBackupStorage(dataItem.inventory)" ng-show="dataItem.inventory.isDeleteFromBackupStorageShow()">{{"volume.ts.Delete From Backup Storage" | translate}}</a></li>' +
+                    '<li><a href style="color:red" ng-click="deleteSnapshot(dataItem.inventory)">{{"volume.ts.Delete" | translate}}</a></li>' +
                     '</ul>' +
                     '</div>',
 

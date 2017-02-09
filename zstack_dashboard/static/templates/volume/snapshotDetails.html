@@ -59,63 +59,63 @@
                     <div class="panel-body">
                         <table class="table z-table-borderless">
                             <tr>
-                                <td><span class="z-label">{{ "volume.snapshotDetails.DESCRIPTION:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "volume.snapshotDetails.DESCRIPTION" | translate }}</span></td>
                                 <td><span class="z-description">{{model.current.description}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "volume.snapshotDetails.STATUS:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "volume.snapshotDetails.STATUS" | translate }}</span></td>
                                 <td><span class="{{model.current.statusLabel()}}">{{model.current.status}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "volume.snapshotDetails.HYPERVISOR:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "volume.snapshotDetails.HYPERVISOR" | translate }}</span></td>
                                 <td><span>{{model.current.hypervisorType}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "volume.snapshotDetails.TYPE:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "volume.snapshotDetails.TYPE" | translate }}</span></td>
                                 <td><span>{{model.current.type}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "volume.snapshotDetails.SIZE:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "volume.snapshotDetails.SIZE" | translate }}</span></td>
                                 <td><span>{{model.current.size}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "volume.snapshotDetails.VOLUME TYPE:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "volume.snapshotDetails.VOLUME TYPE" | translate }}</span></td>
                                 <td><span>{{model.current.volumeType}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "volume.snapshotDetails.UUID:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "volume.snapshotDetails.UUID" | translate }}</span></td>
                                 <td><span>{{model.current.uuid}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "volume.snapshotDetails.TREE UUID:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "volume.snapshotDetails.TREE UUID" | translate }}</span></td>
                                 <td>{{model.current.treeUuid}}</td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "volume.snapshotDetails.PARENT UUID:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "volume.snapshotDetails.PARENT UUID" | translate }}</span></td>
                                 <td><a href="/#/volume/snapshot/{{model.current.parentUuid}}">{{model.current.parentUuid}}</a></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "volume.snapshotDetails.PRIMARY STORAGE UUID:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "volume.snapshotDetails.PRIMARY STORAGE UUID" | translate }}</span></td>
                                 <td><a href="/#/primaryStorage/{{model.current.primaryStorageUuid}}">{{model.current.primaryStorageUuid}}</a></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "volume.snapshotDetails.PRIMARY INSTALL PATH:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "volume.snapshotDetails.PRIMARY INSTALL PATH" | translate }}</span></td>
                                 <td><span>{{model.current.primaryStorageInstallPath}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "volume.snapshotDetails.VOLUME UUID:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "volume.snapshotDetails.VOLUME UUID" | translate }}</span></td>
                                 <td><a href="/#/volume/{{model.current.volumeUuid}}">{{model.current.volumeUuid}}</a></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "volume.snapshotDetails.IS LATEST IN TREE:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "volume.snapshotDetails.IS LATEST IN TREE" | translate }}</span></td>
                                 <td>{{model.current.latest}}</td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "volume.snapshotDetails.CREATED DATE:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "volume.snapshotDetails.CREATED DATE" | translate }}</span></td>
                                 <td><span>{{model.current.createDate}}</span></td>
                             </tr>
                             <tr>
-                                <td><span class="z-label">{{ "volume.snapshotDetails.LAST UPDATED DATE:" | translate }}</span></td>
+                                <td><span class="z-label">{{ "volume.snapshotDetails.LAST UPDATED DATE" | translate }}</span></td>
                                 <td><span>{{model.current.lastOpDate}}</span></td>
                             </tr>
                         </table>
