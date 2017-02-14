@@ -494,7 +494,12 @@ def index():
 
 def main():
     logging.getLogger('pika').setLevel(logging.DEBUG)
-    app.run(host="0.0.0.0", threaded=True)
+    port = os.getenv('ZSTACK_DASHBOARD_PORT')
+    if not port:
+        port = 5000
+    else:
+        port = int(port)
+    app.run(host="0.0.0.0", port=port, threaded=True)
 
 if __name__ == "__main__":
     main()
