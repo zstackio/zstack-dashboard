@@ -1189,6 +1189,9 @@ module ML3Network {
                 this.l3Mgr.queryNetworkServiceProvider([], (providers: ApiHeader.NetworkServiceProviderInventory[])=> {
                     this.networkServiceProviders = {};
                     angular.forEach(providers, (pro : ApiHeader.NetworkServiceProviderInventory)=> {
+                        if ((pro.type == "vrouter") && (pro.networkServiceTypes.indexOf("IPsec") > -1)){
+                            pro.networkServiceTypes.splice(pro.networkServiceTypes.indexOf("IPsec"), 1);
+                        }
                         this.networkServiceProviders[pro.uuid] = pro;
                     });
 

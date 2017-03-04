@@ -1,8 +1,13 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var ApiHeader;
 (function (ApiHeader) {
     var SessionInventory = (function () {
@@ -7923,7 +7928,7 @@ var MZone;
     var Zone = (function (_super) {
         __extends(Zone, _super);
         function Zone() {
-            return _super.apply(this, arguments) || this;
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         Zone.prototype.progressOn = function () {
             this.inProgress = true;
@@ -8776,7 +8781,7 @@ var MCluster;
     var Cluster = (function (_super) {
         __extends(Cluster, _super);
         function Cluster() {
-            return _super.apply(this, arguments) || this;
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         Cluster.prototype.progressOn = function () {
             this.inProgress = true;
@@ -10343,7 +10348,7 @@ var MPrimaryStorage;
     var PrimaryStorage = (function (_super) {
         __extends(PrimaryStorage, _super);
         function PrimaryStorage() {
-            return _super.apply(this, arguments) || this;
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         PrimaryStorage.prototype.progressOn = function () {
             this.inProgress = true;
@@ -11647,7 +11652,7 @@ var ML2Network;
     var L2Network = (function (_super) {
         __extends(L2Network, _super);
         function L2Network() {
-            return _super.apply(this, arguments) || this;
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         L2Network.prototype.progressOn = function () {
             this.inProgress = true;
@@ -12720,7 +12725,7 @@ var ML3Network;
     var L3Network = (function (_super) {
         __extends(L3Network, _super);
         function L3Network() {
-            return _super.apply(this, arguments) || this;
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         L3Network.prototype.progressOn = function () {
             this.inProgress = true;
@@ -14341,6 +14346,9 @@ var ML3Network;
                 _this.l3Mgr.queryNetworkServiceProvider([], function (providers) {
                     _this.networkServiceProviders = {};
                     angular.forEach(providers, function (pro) {
+                        if ((pro.type == "vrouter") && (pro.networkServiceTypes.indexOf("IPsec") > -1)) {
+                            pro.networkServiceTypes.splice(pro.networkServiceTypes.indexOf("IPsec"), 1);
+                        }
                         _this.networkServiceProviders[pro.uuid] = pro;
                     });
                     _this.$scope.optionsProviderList__.dataSource.data(providers);
@@ -14543,7 +14551,7 @@ var MBackupStorage;
     var BackupStorage = (function (_super) {
         __extends(BackupStorage, _super);
         function BackupStorage() {
-            return _super.apply(this, arguments) || this;
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         BackupStorage.prototype.progressOn = function () {
             this.inProgress = true;
@@ -15809,7 +15817,7 @@ var MHost;
     var Host = (function (_super) {
         __extends(Host, _super);
         function Host() {
-            return _super.apply(this, arguments) || this;
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         Host.prototype.progressOn = function () {
             this.inProgress = true;
@@ -16646,7 +16654,7 @@ var MImage;
     var Image = (function (_super) {
         __extends(Image, _super);
         function Image() {
-            return _super.apply(this, arguments) || this;
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         Image.prototype.progressOn = function () {
             this.inProgress = true;
@@ -17620,7 +17628,7 @@ var MInstanceOffering;
     var InstanceOffering = (function (_super) {
         __extends(InstanceOffering, _super);
         function InstanceOffering() {
-            return _super.apply(this, arguments) || this;
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         InstanceOffering.prototype.progressOn = function () {
             this.inProgress = true;
@@ -18289,7 +18297,7 @@ var MDiskOffering;
     var DiskOffering = (function (_super) {
         __extends(DiskOffering, _super);
         function DiskOffering() {
-            return _super.apply(this, arguments) || this;
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         DiskOffering.prototype.progressOn = function () {
             this.inProgress = true;
@@ -19053,7 +19061,7 @@ var MVmInstance;
     var VmNic = (function (_super) {
         __extends(VmNic, _super);
         function VmNic() {
-            return _super.apply(this, arguments) || this;
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         VmNic.prototype.progressOn = function () {
             this.inProgress = true;
@@ -19085,7 +19093,7 @@ var MVmInstance;
     var VmInstance = (function (_super) {
         __extends(VmInstance, _super);
         function VmInstance() {
-            return _super.apply(this, arguments) || this;
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         VmInstance.prototype.progressOn = function () {
             this.inProgress = true;
@@ -21104,7 +21112,7 @@ var MVolume;
     var VolumeSnapshot = (function (_super) {
         __extends(VolumeSnapshot, _super);
         function VolumeSnapshot() {
-            return _super.apply(this, arguments) || this;
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         VolumeSnapshot.prototype.progressOn = function () {
             this.inProgress = true;
@@ -21167,7 +21175,7 @@ var MVolume;
     var Volume = (function (_super) {
         __extends(Volume, _super);
         function Volume() {
-            return _super.apply(this, arguments) || this;
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         Volume.prototype.progressOn = function () {
             this.inProgress = true;
@@ -23296,7 +23304,7 @@ var MSecurityGroup;
     var SecurityGroup = (function (_super) {
         __extends(SecurityGroup, _super);
         function SecurityGroup() {
-            return _super.apply(this, arguments) || this;
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         SecurityGroup.prototype.progressOn = function () {
             this.inProgress = true;
@@ -25236,7 +25244,7 @@ var MVip;
     var Vip = (function (_super) {
         __extends(Vip, _super);
         function Vip() {
-            return _super.apply(this, arguments) || this;
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         Vip.prototype.progressOn = function () {
             this.inProgress = true;
@@ -25926,7 +25934,7 @@ var MEip;
     var Eip = (function (_super) {
         __extends(Eip, _super);
         function Eip() {
-            return _super.apply(this, arguments) || this;
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         Eip.prototype.progressOn = function () {
             this.inProgress = true;
@@ -26929,6 +26937,7 @@ var MEip;
                         angular.forEach(ret, function (it) {
                             _this.existingVip[it.uuid] = it;
                         });
+                        //this.$scope.vipPage.vipUuid = ret[0].uuid;
                     }
                     chain.next();
                 });
@@ -27225,7 +27234,7 @@ var MPortForwarding;
     var PortForwarding = (function (_super) {
         __extends(PortForwarding, _super);
         function PortForwarding() {
-            return _super.apply(this, arguments) || this;
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         PortForwarding.prototype.progressOn = function () {
             this.inProgress = true;
@@ -28674,7 +28683,7 @@ var MVirtualRouter;
     var VmNic = (function (_super) {
         __extends(VmNic, _super);
         function VmNic() {
-            return _super.apply(this, arguments) || this;
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         VmNic.prototype.progressOn = function () {
             this.inProgress = true;
@@ -28706,7 +28715,7 @@ var MVirtualRouter;
     var VirtualRouter = (function (_super) {
         __extends(VirtualRouter, _super);
         function VirtualRouter() {
-            return _super.apply(this, arguments) || this;
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         VirtualRouter.prototype.progressOn = function () {
             this.inProgress = true;
@@ -29481,7 +29490,7 @@ var MVirtualRouterOffering;
     var VirtualRouterOffering = (function (_super) {
         __extends(VirtualRouterOffering, _super);
         function VirtualRouterOffering() {
-            return _super.apply(this, arguments) || this;
+            return _super !== null && _super.apply(this, arguments) || this;
         }
         VirtualRouterOffering.prototype.progressOn = function () {
             this.inProgress = true;
