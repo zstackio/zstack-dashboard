@@ -171,7 +171,7 @@
     "host.createHost.ZONE": "ZONE",
     "host.createHost.HINT": "(Required) select zone where the Host is being added",
     "host.createHost.CLUSTER": "CLUSTER",
-    "host.createHost.HINT2": "(Required) select zone where the Host is being added",
+    "host.createHost.HINT2": "(Required) select cluster where the Host is being added",
     "host.createHost.NAME": "NAME",
     "host.createHost.DESCRIPTION": "DESCRIPTION",
     "host.createHost.HOST IP": "HOST IP",
