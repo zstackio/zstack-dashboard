@@ -137,6 +137,7 @@ p { word-break: break-all }
 }
 
 .z-win-h4 {
+    float: left;
     padding-bottom: 20px;
     margin-top: 0;
     margin-left: 5px;
