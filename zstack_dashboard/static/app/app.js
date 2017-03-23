@@ -7309,7 +7309,7 @@ var Utils;
     }
     Utils.toSizeString = toSizeString;
     function toVCPUString(input) {
-        return input + ' VCPUs';
+        return input + ' vCPUs';
     }
     Utils.toVCPUString = toVCPUString;
     function toPercentageString(input) {

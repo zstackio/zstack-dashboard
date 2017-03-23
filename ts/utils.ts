@@ -660,7 +660,7 @@ module Utils {
     }
 
     export function toVCPUString (input) {
-        return input + ' VCPUs';
+        return input + ' vCPUs';
     }
 
     export function toPercentageString(input) {
