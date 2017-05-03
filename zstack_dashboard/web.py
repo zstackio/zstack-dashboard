@@ -62,9 +62,9 @@ class Connection(object):
     API_SERVICE_ID = "zstack.message.api.portal"
     BROADCAST_EXCHANGE = "BROADCAST"
     QUEUE_PREFIX = "zstack.ui.message.%s"
-    API_EVENT_QUEUE_PREFIX = "zstck.ui.api.event.%s"
+    API_EVENT_QUEUE_PREFIX = "zstack.ui.api.event.%s"
     API_EVENT_QUEUE_BINDING_KEY = "key.event.API.API_EVENT"
-    CANONICAL_EVENT_QUEUE_PREFIX = "zstck.ui.canonical.event.%s"
+    CANONICAL_EVENT_QUEUE_PREFIX = "zstack.ui.canonical.event.%s"
     CANONICAL_EVENT_BINDING_KEY = "key.event.LOCAL.canonicalEvent"
 
     STATUS_INIT = "init"
